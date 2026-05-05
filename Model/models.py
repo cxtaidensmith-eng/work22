@@ -21,23 +21,32 @@ class Cheb_GCN(nn.Module):
         return x
 
     def torch_compute_gso(self, adj):
+        """归一化 Laplacian: L = I - D^(-1/2) A D^(-1/2)
+        其特征值上界为 2（Defferrard 2016 标准近似），直接令 eigv_max=2.0
+        避免训练中 torch.linalg.eigvals 的反向传播数值不稳定（在 modal_gate 极端时会触发 singular solve）。
+        Cheb 多项式期望 gso ∈ [-1, 1]，所以 gso = (2/2) L - I = L - I.
+        """
         num_nodes = adj.shape[0]
         d = torch.sum(adj, axis=1)
-        d_inv_sqrt = torch.pow(d, -0.5)
-        d_inv_sqrt[torch.isinf(d_inv_sqrt)] = 0.
+        d_inv_sqrt = torch.pow(d.clamp(min=1e-8), -0.5)
         d_mat_inv_sqrt = torch.diag(d_inv_sqrt)
         laplacian = torch.eye(num_nodes, device=adj.device) - torch.matmul(torch.matmul(d_mat_inv_sqrt, adj),
                                                                            d_mat_inv_sqrt)
         if torch.isnan(laplacian).any():
             laplacian = torch.where(torch.isnan(laplacian), torch.zeros_like(laplacian), laplacian)
 
-        eigv_max = torch.max(torch.linalg.eigvals(laplacian).abs())
-        gso = (2.0 / eigv_max) * laplacian - torch.eye(laplacian.shape[0], device=laplacian.device)
-
+        gso = laplacian - torch.eye(laplacian.shape[0], device=laplacian.device)
         return gso
     
 class graph_learning(nn.Module):
-    def __init__(self, DATASET_Dict, Hidden_size, rate=0.1):
+    """学习样本邻接矩阵。
+    use_raw_x=True 时（旧行为）：内部 Linear(In_channels, Hidden_size) 把 raw X 投影后算 cosine 相似度。
+    use_raw_x=False 时（v4 新行为）：直接接收已学到的 sample embedding (B, Hidden_size)，不再用 raw X。
+        理由：raw X (360 维) 中 MRI/PET 弱信号特征 (288 维) 数量上压倒强信号 modal (60 维)，
+        cos 相似度被弱信号主导。改用模型学到的 sample embedding（已经吸收了 modal 重要性）算 sim 更合理。
+    """
+
+    def __init__(self, DATASET_Dict, Hidden_size, rate=0.1, use_raw_x=True):
         super(graph_learning, self).__init__()
 
         self.adj_ = DATASET_Dict['Adj']
@@ -45,14 +54,17 @@ class graph_learning(nn.Module):
         self.rate = rate
         self.sample_num = DATASET_Dict['Sample_Num']
         self.In_channels = DATASET_Dict['In_Channels']
+        self.use_raw_x = use_raw_x
 
         self.W = self.adj_ * 0.9 + (1 - self.adj_) * 0.1
         W_upper_triangle = torch.nn.Parameter(self.W.triu(1), requires_grad=True)
         W_diag = torch.nn.Parameter(self.W.diag(), requires_grad=True)
         self.Ws_Parameter = W_upper_triangle + W_upper_triangle.t() + W_diag.diag()
 
-        # self.attention_adj = nn.MultiheadAttention(self.Hidden_size, 1, batch_first=True)
-        self.layer_ = nn.Linear(self.In_channels, self.Hidden_size)
+        if use_raw_x:
+            self.layer_ = nn.Linear(self.In_channels, self.Hidden_size)
+        else:
+            self.layer_ = nn.Identity()
 
         if rate == 0:
             self.relu = nn.ReLU()
@@ -60,14 +72,6 @@ class graph_learning(nn.Module):
             self.relu = nn.LeakyReLU(negative_slope=self.rate)
 
     def forward(self, X):
-
-        # X_ = self.layer_(X)
-        # X_T = torch.unsqueeze(X_, 0)
-        # _, attention_sorce = self.attention_adj(X_T, X_T, X_T)
-        # attention_sorce = torch.squeeze(attention_sorce, 0)
-        # attention_sorce = (attention_sorce + attention_sorce.T) / 2
-        # Adj_ = torch.squeeze(attention_sorce, 0) * torch.clamp(self.Ws_Parameter, min=0, max=1)
-
         X_ = self.layer_(X)
         x_norm = F.normalize(X_, dim=-1)
         Cos_sorce = self.relu(torch.mm(x_norm, x_norm.T))
@@ -86,5 +90,3 @@ class graph_learning(nn.Module):
         result = (tensor - a) / (b - a) * (d - c) + c
         return result
 
-    def named_parameters(self, prefix='', recurse=True):
-        return self.model.named_parameters(prefix, recurse)

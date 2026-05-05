@@ -7,9 +7,7 @@ from torch.optim import Optimizer
 import torch.nn.functional as F
 import math
 from configparser import ConfigParser
-from loguru import logger
 from datetime import datetime
-import pytz
 from sklearn.metrics import confusion_matrix, recall_score, f1_score
 
 
@@ -124,7 +122,8 @@ def load_path(Root_path, DATA_SET, Task):
     return Feature_Data_path, Feature_dict_path, Save_History_path, class_names
 
 
-def run_epoch(model, fold, criterion, optimizer, data, data_dict):
+def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=None,
+              grad_clip=None, ema=None, mixup_alpha=0.0, gate_sparsity_lambda=0.0):
     X, Y = data['Feature'], data['Label']
     train_mask, test_mask = data['Mask'][fold]
     train_num = data['Train_Num'][fold]
@@ -133,58 +132,134 @@ def run_epoch(model, fold, criterion, optimizer, data, data_dict):
 
     model.train()
     optimizer.zero_grad()
-    output, _Label_embedding, _Auxi_classifier_output = model(X)
-    loss = criterion(output, Y, train_mask, _Label_embedding, _Auxi_classifier_output)
+
+    if mixup_alpha > 0.0:
+        # 只在 train 样本之间做 mixup，避免 test 信息通过 Adj_Learning / Global_Message 泄漏
+        train_idx = torch.where(train_mask)[0]
+        perm_train = train_idx[torch.randperm(train_idx.size(0), device=X.device)]
+        lam = float(np.random.beta(mixup_alpha, mixup_alpha))
+
+        X_in = X.clone()
+        X_in[train_idx] = lam * X[train_idx] + (1.0 - lam) * X[perm_train]
+
+        Y_b = Y.clone()
+        Y_b[train_idx] = Y[perm_train]
+
+        output, _Label_embedding, _Auxi_classifier_output = model(X_in)
+        loss_a = criterion(output, Y, train_mask, _Label_embedding, _Auxi_classifier_output)
+        loss_b = criterion(output, Y_b, train_mask, _Label_embedding, _Auxi_classifier_output)
+        loss = lam * loss_a + (1.0 - lam) * loss_b
+    else:
+        output, _Label_embedding, _Auxi_classifier_output = model(X)
+        loss = criterion(output, Y, train_mask, _Label_embedding, _Auxi_classifier_output)
+
+    if gate_sparsity_lambda > 0 and hasattr(model, 'gate_sparsity_loss'):
+        loss = loss + gate_sparsity_lambda * model.gate_sparsity_loss()
+
     loss_train = loss.item()
 
     loss.backward()
+    if grad_clip is not None and grad_clip > 0:
+        torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
     optimizer.step()
 
     pred = torch.argmax(output[train_mask], dim=1)
     correct = torch.sum(pred == Y[train_mask])
     acc_train = correct.item() / train_num
 
-    model.eval()
-    with torch.no_grad():
-        output, _Label_embedding, _Auxi_classifier_output  = model(X)
-        loss = criterion(output, Y, test_mask, _Label_embedding, _Auxi_classifier_output)
-        loss_test = loss.item()
-        pred = torch.argmax(output[test_mask], dim=1)
-        correct = torch.sum(pred == Y[test_mask])
-        acc_test = correct.item() / test_num
-        auc_test = get_auc(y_true=F.one_hot(Y[test_mask].cpu(), num_classes=Class_num),
-                               y_pred=output[test_mask].cpu())
+    if ema is not None:
+        ema.update(model)
+        ema.swap_in(model)
 
-        if Class_num == 2:
-            Y_pred = pred.cpu().numpy()
-            Y_true = Y[test_mask].cpu().numpy()
-            tn, fp, fn, tp = confusion_matrix(Y_true, Y_pred).ravel()
+    eval_net = eval_model if eval_model is not None else model
+    eval_net.eval()
+    try:
+        with torch.no_grad():
+            output, _Label_embedding, _Auxi_classifier_output = eval_net(X)
+            loss = criterion(output, Y, test_mask, _Label_embedding, _Auxi_classifier_output)
+            loss_test = loss.item()
+            pred = torch.argmax(output[test_mask], dim=1)
+            correct = torch.sum(pred == Y[test_mask])
+            acc_test = correct.item() / test_num
+            auc_test = get_auc(y_true=F.one_hot(Y[test_mask].cpu(), num_classes=Class_num),
+                                   y_pred=output[test_mask].cpu())
 
-            f1_test = f1_score(Y_true, Y_pred, average='weighted')
-            sensitivity_test = tp / (tp + fn)
-            specificity_test = tn / (tn + fp)
+            if Class_num == 2:
+                Y_pred = pred.cpu().numpy()
+                Y_true = Y[test_mask].cpu().numpy()
+                tn, fp, fn, tp = confusion_matrix(Y_true, Y_pred).ravel()
 
-        else:
-            Y_pred = pred.cpu().numpy()
-            Y_true = Y[test_mask].cpu().numpy()
+                f1_test = f1_score(Y_true, Y_pred, average='weighted')
+                sensitivity_test = tp / (tp + fn)
+                specificity_test = tn / (tn + fp)
+            else:
+                Y_pred = pred.cpu().numpy()
+                Y_true = Y[test_mask].cpu().numpy()
+                f1_test = f1_score(Y_true, Y_pred, average='weighted')
+                sensitivity_test = recall_score(Y_true, Y_pred, average='weighted')
+                specificity_test = 0.0
 
-            f1_test = f1_score(Y_true, Y_pred, average='weighted')
-            sensitivity_test = recall_score(Y_true, Y_pred, average='weighted')
-            specificity_test = 0.0
+            Feature_1 = eval_net.GCN.GCN_feature_1.cpu().numpy()
+            Feature_2 = eval_net.GCN.GCN_feature_2.cpu().numpy()
+            Y_full_pred = torch.argmax(output, dim=1).cpu().numpy()
+            test_logit = output[test_mask].cpu().numpy()
+    finally:
+        if ema is not None:
+            ema.swap_out(model)
 
-        Feature_1 = model.GCN.GCN_feature_1.cpu().numpy()
-        Feature_2 = model.GCN.GCN_feature_2.cpu().numpy()
-
-    return acc_train, loss_train, acc_test, loss_test, auc_test, sensitivity_test, specificity_test, f1_test, Feature_1, Feature_2, torch.argmax(output, dim=1).cpu().numpy()
+    return acc_train, loss_train, acc_test, loss_test, auc_test, sensitivity_test, specificity_test, f1_test, Feature_1, Feature_2, Y_full_pred, test_logit
 
 
-class CustomCosineAnnealingLR(torch.optim.lr_scheduler._LRScheduler):
-    def __init__(self, optimizer: Optimizer, T_max: int, eta_min: float = 0.01, last_epoch: int = -1, verbose: bool = False):
+class ModelEMA:
+    """Exponential Moving Average of model weights (swap-style, deepcopy-free).
+    维护参数字典的滑动平均；eval 时通过 .swap_in(model) 把 EMA 权重临时装入 student，
+    eval 完调用 .swap_out(model) 还原 student 当前训练权重。
+    适合包含非叶子 tensor 的模型（如 graph_learning.Ws_Parameter）。
+    """
+
+    def __init__(self, model, decay=0.999):
+        self.decay = decay
+        self.shadow = {}
+        for k, v in model.state_dict().items():
+            self.shadow[k] = v.detach().clone()
+        self._backup = None
+
+    @torch.no_grad()
+    def update(self, model):
+        msd = model.state_dict()
+        for k in self.shadow:
+            v = msd[k]
+            if v.dtype.is_floating_point:
+                self.shadow[k].mul_(self.decay).add_(v.detach(), alpha=1.0 - self.decay)
+            else:
+                self.shadow[k].copy_(v.detach())
+
+    @torch.no_grad()
+    def swap_in(self, model):
+        """把 EMA 权重装入 model，原 student 权重保存到 self._backup。"""
+        msd = model.state_dict()
+        self._backup = {k: msd[k].detach().clone() for k in self.shadow}
+        for k, v in self.shadow.items():
+            msd[k].copy_(v)
+
+    @torch.no_grad()
+    def swap_out(self, model):
+        """恢复 student 训练权重。"""
+        if self._backup is None:
+            return
+        msd = model.state_dict()
+        for k, v in self._backup.items():
+            msd[k].copy_(v)
+        self._backup = None
+
+
+class CustomCosineAnnealingLR(torch.optim.lr_scheduler.LRScheduler):
+    def __init__(self, optimizer: Optimizer, T_max: int, eta_min: float = 0.01, last_epoch: int = -1):
         self.T_max = T_max  # 总的 epoch 数
         self.eta_min = eta_min  # 最小学习率
         self.hold_epoch = 20  # 前 20 个 epoch 保持学习率不变
         self.initial_lr = optimizer.param_groups[0]['lr']  # 初始学习率
-        super(CustomCosineAnnealingLR, self).__init__(optimizer, last_epoch, verbose)
+        super(CustomCosineAnnealingLR, self).__init__(optimizer, last_epoch)
 
     def get_lr(self):
         if self.last_epoch < self.hold_epoch:
@@ -235,6 +310,16 @@ class Config_(object):
         self.T_max = config.getint('Scheduler', 'T_max')
         self.Lr_Min = config.getfloat('Scheduler', 'Lr_Min')
 
+        self.use_ema = config.getboolean('Optim', 'use_ema', fallback=False)
+        self.ema_decay = config.getfloat('Optim', 'ema_decay', fallback=0.999)
+        self.grad_clip = config.getfloat('Optim', 'grad_clip', fallback=0.0)
+        self.n_seeds = config.getint('Optim', 'n_seeds', fallback=1)
+        self.mixup_alpha = config.getfloat('Optim', 'mixup_alpha', fallback=0.0)
+        self.num_layers = config.getint('Modal', 'num_layers', fallback=2)
+        self.num_heads = config.getint('Modal', 'num_heads', fallback=4)
+        self.input_noise_std = config.getfloat('Modal', 'input_noise_std', fallback=0.05)
+        self.drop_path = config.getfloat('Modal', 'drop_path', fallback=0.05)
+        self.gate_sparsity_lambda = config.getfloat('Optim', 'gate_sparsity_lambda', fallback=0.0)
 
         self.SAVE_GAPH = config.getboolean('SAVE', 'SAVE_GAPH')
         
@@ -251,22 +336,24 @@ class Config_(object):
             else:
                 self.Device = torch.device(f'cuda:{self.Cuda_id}' if torch.cuda.is_available() else 'cpu')
 
-        shanghai_tz = pytz.timezone('Asia/Shanghai')
-        current_time = datetime.now(shanghai_tz).strftime('%Y-%m-%d_%H-%M')
-        # self.history_name = f'{self.DATA_SET}_{self.Task}_{current_time}'
         Config_name = os.path.basename(Config_name)
-        self.history_name = f'{self.DATA_SET}_{self.Task}_{Config_name[:-4]}'
+        self.config_name = Config_name
+        self.config_stem = os.path.splitext(Config_name)[0]
 
-        self.logger = logger
-        self.logger.remove()
-        self.logger.add(os.path.join(Root_path, f"logs/{self.history_name}.log"), format="{time} | {message}")
+        self.result_dir = os.path.join(Root_path, 'Result', self.DATA_SET, self.Task)
+        os.makedirs(self.result_dir, exist_ok=True)
 
-        self.Save_History_Path = os.path.join(Root_path, f"Result/{self.history_name}.npy")
+        time_str = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+        run_stem = f'{time_str}_{self.config_stem}'
+        collision_index = 1
+        while os.path.exists(os.path.join(self.result_dir, f'{run_stem}.json')):
+            collision_index += 1
+            run_stem = f'{time_str}_{self.config_stem}_{collision_index}'
+        self.history_name = run_stem
 
-
-        self.result_dir = os.path.join(Root_path, 'Result')
-        if not os.path.exists(self.result_dir):
-            os.makedirs(self.result_dir)
+        self.Save_History_Path = os.path.join(self.result_dir, f'{self.history_name}.json')
+        self.Epoch_CSV_Path = os.path.join(self.result_dir, f'{self.history_name}_epochs.csv')
+        self.Split_CSV_Path = os.path.join(self.result_dir, f'{self.history_name}_splits.csv')
 
         self.Graph_dir = os.path.join(Root_path, 'Graph', self.DATA_SET, self.Task, self.history_name)
 

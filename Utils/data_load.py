@@ -1,3 +1,7 @@
+import os
+
+os.environ.setdefault('OMP_NUM_THREADS', '1')
+
 import pandas as pd
 import torch
 import numpy as np
@@ -21,9 +25,9 @@ def load_dataset(Feature_Data_path, Feature_dict_path, Device, Class_names_list,
     Adj_ = feature_to_adj(Data_X.values, k_nearest_neighobrs=k_nearest_neighobrs,
                           rm_common_neighbors=rm_common_neighbors)
 
-    Adj = torch.from_numpy(Adj_).float()
-    Data_X = torch.from_numpy(Data_X.values).float()
-    Data_Y = torch.from_numpy(Data_Y.values).long()
+    Adj = torch.from_numpy(np.array(Adj_, copy=True)).float()
+    Data_X = torch.from_numpy(Data_X.to_numpy(copy=True)).float()
+    Data_Y = torch.from_numpy(Data_Y.to_numpy(copy=True)).long()
 
     Mask_list = Get_Mask(Data_X, Data_Y, Device, n_splits=10, train_size=train_size, random_seed=Random_seed)
     train_num = [Mask_[0].int().sum().item() for Mask_ in Mask_list]
@@ -60,6 +64,7 @@ def load_dataset(Feature_Data_path, Feature_dict_path, Device, Class_names_list,
                     'In_Channels': in_channels,
                     'Class_Num': Class_num,
                     'Adj': Adj,
+                    'Feature_Num': Data_X.shape[1],
                     'Sample_Num': Data_X.shape[0],
                     'Class_Names': Class_names_list,
                     'Label_Weight': label_weight}

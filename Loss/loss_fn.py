@@ -87,13 +87,13 @@ def orthogonality_lossv2(features, epsilon=1e-8):
 
 
 class criterion_lossv2(object):
-    def __init__(self, DATASET_Dict, Device, rate=0.001):
+    def __init__(self, DATASET_Dict, Device, rate=0.001, label_smoothing=0.05):
         super(criterion_lossv2, self).__init__()
         self.DATASET_Dict = DATASET_Dict
         self.weight = DATASET_Dict['Label_Weight']
         self.Label_num = DATASET_Dict['Class_Num']
 
-        self.CE_loss = nn.CrossEntropyLoss(weight=self.weight).to(Device)
+        self.CE_loss = nn.CrossEntropyLoss(weight=self.weight, label_smoothing=label_smoothing).to(Device)
         self.rate = rate
 
         self.aux_loss_dict = nn.ModuleDict()
@@ -102,7 +102,7 @@ class criterion_lossv2(object):
             weight_matrix[1] = self.weight[i]
             weight_matrix[0] = torch.sum(self.weight) - weight_matrix[1]
 
-            self.aux_loss_dict[f'aux_loss_{i}'] = nn.CrossEntropyLoss(weight=weight_matrix).to(Device)
+            self.aux_loss_dict[f'aux_loss_{i}'] = nn.CrossEntropyLoss(weight=weight_matrix, label_smoothing=label_smoothing).to(Device)
 
     def __call__(self, output, Y, mask, _Label_embedding, _Auxi_classifier_output):
         ce_loss = self.CE_loss(output[mask], Y[mask])
