@@ -37,7 +37,109 @@ class Cheb_GCN(nn.Module):
 
         gso = laplacian - torch.eye(laplacian.shape[0], device=laplacian.device)
         return gso
-    
+
+
+def _row_normalize_adj(adj, eps=1e-12):
+    adj = adj.clamp_min(0.0)
+    degree = adj.sum(dim=-1, keepdim=True).clamp_min(eps)
+    return adj / degree
+
+
+class DenseAdvDIFFormerConv(nn.Module):
+    def __init__(self, in_dim, out_dim, num_heads=1, beta=0.5, K_order=3):
+        super().__init__()
+        self.in_dim = in_dim
+        self.num_heads = num_heads
+        self.beta = float(beta)
+        self.K_order = int(K_order)
+        self.Wq = nn.Linear(in_dim, in_dim * num_heads)
+        self.Wk = nn.Linear(in_dim, in_dim * num_heads)
+        self.Wo = nn.Linear(in_dim * num_heads * (self.K_order + 1), out_dim)
+
+    @staticmethod
+    def _gcn(x, adj_norm):
+        return torch.einsum("nm,mhd->nhd", adj_norm, x)
+
+    @staticmethod
+    def _attn(qs, ks, vs, eps=1e-12):
+        n = qs.shape[0]
+        kvs = torch.einsum("lhm,lhd->hmd", ks, vs)
+        qkvs = torch.einsum("nhm,hmd->nhd", qs, kvs)
+        vs_sum = vs.sum(dim=0).unsqueeze(0).expand(n, -1, -1)
+        num = qkvs + vs_sum
+        ks_sum = ks.sum(dim=0)
+        den = torch.einsum("nhm,hm->nh", qs, ks_sum).unsqueeze(-1) + n
+        return num / den.clamp_min(eps)
+
+    def forward(self, x, adj_norm, eps=1e-12):
+        q = self.Wq(x).reshape(-1, self.num_heads, self.in_dim)
+        k = self.Wk(x).reshape(-1, self.num_heads, self.in_dim)
+        qs = q / torch.norm(q, p=2, dim=2, keepdim=True).clamp_min(eps)
+        ks = k / torch.norm(k, p=2, dim=2, keepdim=True).clamp_min(eps)
+
+        x_in = x.unsqueeze(1).expand(-1, self.num_heads, -1)
+        x_list = [x_in]
+        for _ in range(self.K_order):
+            attn_i = self._attn(qs, ks, x_list[-1])
+            gcn_i = self._gcn(x_list[-1], adj_norm)
+            x_list.append(self.beta * gcn_i + attn_i)
+
+        x_concat = torch.cat(x_list, dim=-1).reshape(
+            -1, self.num_heads * self.in_dim * (self.K_order + 1)
+        )
+        return self.Wo(x_concat) / self.num_heads
+
+
+class AdvDIFFormer_GraphHead(nn.Module):
+    def __init__(
+        self,
+        Dim_emb,
+        hidden,
+        out_channels,
+        P,
+        num_layers=1,
+        num_heads=2,
+        beta=0.5,
+        K_order=3,
+    ):
+        super().__init__()
+        self.input_proj = nn.Linear(Dim_emb, hidden)
+        self.input_norm = nn.LayerNorm(hidden)
+        self.layers = nn.ModuleList(
+            [
+                DenseAdvDIFFormerConv(
+                    hidden, hidden, num_heads=num_heads, beta=beta, K_order=K_order
+                )
+                for _ in range(num_layers)
+            ]
+        )
+        self.layer_norms = nn.ModuleList([nn.LayerNorm(hidden) for _ in range(num_layers)])
+        self.dropout = P
+        self.classifier = nn.Sequential(
+            nn.Linear(hidden, hidden),
+            nn.LayerNorm(hidden),
+            nn.GELU(),
+            nn.Dropout(P),
+            nn.Linear(hidden, out_channels),
+        )
+        self.GCN_feature_1 = None
+        self.GCN_feature_2 = None
+        self.last_adj = None
+
+    def forward(self, x, gso):
+        adj_norm = _row_normalize_adj(gso)
+        self.last_adj = adj_norm
+        h = F.gelu(self.input_norm(self.input_proj(x)))
+        h = F.dropout(h, p=self.dropout, training=self.training)
+        for layer, norm in zip(self.layers, self.layer_norms):
+            h = norm(h + layer(h, adj_norm))
+            h = F.gelu(h)
+            h = F.dropout(h, p=self.dropout, training=self.training)
+        self.GCN_feature_1 = h
+        logits = self.classifier(h)
+        self.GCN_feature_2 = logits
+        return logits
+     
 class graph_learning(nn.Module):
     """学习样本邻接矩阵。
     use_raw_x=True 时（旧行为）：内部 Linear(In_channels, Hidden_size) 把 raw X 投影后算 cosine 相似度。
@@ -89,4 +191,3 @@ class graph_learning(nn.Module):
         (c, d) = to_range
         result = (tensor - a) / (b - a) * (d - c) + c
         return result
-

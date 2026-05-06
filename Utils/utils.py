@@ -319,6 +319,11 @@ class Config_(object):
         self.num_heads = config.getint('Modal', 'num_heads', fallback=4)
         self.input_noise_std = config.getfloat('Modal', 'input_noise_std', fallback=0.05)
         self.drop_path = config.getfloat('Modal', 'drop_path', fallback=0.05)
+        self.Graph_head = config.get('Modal', 'Graph_head', fallback='cheb')
+        self.graph_layers = config.getint('Modal', 'graph_layers', fallback=1)
+        self.graph_heads = config.getint('Modal', 'graph_heads', fallback=2)
+        self.graph_beta = config.getfloat('Modal', 'graph_beta', fallback=0.5)
+        self.graph_k_order = config.getint('Modal', 'graph_k_order', fallback=3)
         self.gate_sparsity_lambda = config.getfloat('Optim', 'gate_sparsity_lambda', fallback=0.0)
 
         self.SAVE_GAPH = config.getboolean('SAVE', 'SAVE_GAPH')

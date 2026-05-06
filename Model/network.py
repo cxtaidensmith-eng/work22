@@ -1,4 +1,4 @@
-from .models import Cheb_GCN, graph_learning
+from .models import AdvDIFFormer_GraphHead, Cheb_GCN, graph_learning
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -232,7 +232,9 @@ class HeterGraph_Model_Kmeans(nn.Module):
     """
 
     def __init__(self, DATASET_Dict, Herter_Graph, Hidden_size, Drop_rate, K,
-                 num_layers=3, num_heads=4, input_noise_std=0.05, drop_path=0.05):
+                 num_layers=3, num_heads=4, input_noise_std=0.05, drop_path=0.05,
+                 graph_head='cheb', graph_layers=1, graph_heads=2,
+                 graph_beta=0.5, graph_k_order=3):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -307,10 +309,21 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.Adj_Learning = graph_learning(
             self.DATASET_Dict, Hidden_size, rate=0.1, use_raw_x=True,
         )
-        self.GCN = Cheb_GCN(
-            Dim_emb=Hidden_size, hidden=Hidden_size // 2,
-            out_channels=self._Label_num, P=Drop_rate, K=K,
-        )
+        graph_head = graph_head.lower()
+        if graph_head in {'cheb', 'chebgcn', 'cheb_gcn'}:
+            self.GCN = Cheb_GCN(
+                Dim_emb=Hidden_size, hidden=Hidden_size // 2,
+                out_channels=self._Label_num, P=Drop_rate, K=K,
+            )
+        elif graph_head in {'advdif', 'advdifformer', 'adv_difformer'}:
+            self.GCN = AdvDIFFormer_GraphHead(
+                Dim_emb=Hidden_size, hidden=Hidden_size // 2,
+                out_channels=self._Label_num, P=Drop_rate,
+                num_layers=graph_layers, num_heads=graph_heads,
+                beta=graph_beta, K_order=graph_k_order,
+            )
+        else:
+            raise ValueError(f'Unknown graph_head: {graph_head}')
 
         self.Message_MLP = nn.Sequential(
             nn.Linear(self._Label_num * Hidden_size, (self._Label_num * Hidden_size) // 2),

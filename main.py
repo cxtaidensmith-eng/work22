@@ -45,6 +45,7 @@ def config_to_dict(CONFIG):
         'Hidden_size', 'epochs', 'lr', 'weight_decay', 'Loss_rate', 'Use_scheduler',
         'T_max', 'Lr_Min', 'use_ema', 'ema_decay', 'grad_clip', 'n_seeds',
         'mixup_alpha', 'num_layers', 'num_heads', 'input_noise_std', 'drop_path',
+        'Graph_head', 'graph_layers', 'graph_heads', 'graph_beta', 'graph_k_order',
         'gate_sparsity_lambda', 'SAVE_GAPH', 'remove_repeat', 'remove_self_loop',
     ]
     result = {key: getattr(CONFIG, key) for key in keys if hasattr(CONFIG, key)}
@@ -110,6 +111,11 @@ def main(CONFIG):
                 num_layers=CONFIG.num_layers, num_heads=CONFIG.num_heads,
                 input_noise_std=CONFIG.input_noise_std,
                 drop_path=CONFIG.drop_path,
+                graph_head=CONFIG.Graph_head,
+                graph_layers=CONFIG.graph_layers,
+                graph_heads=CONFIG.graph_heads,
+                graph_beta=CONFIG.graph_beta,
+                graph_k_order=CONFIG.graph_k_order,
             ).to(CONFIG.Device)
             criterion = criterion_lossv2(DATASET_Dict, CONFIG.Device, rate=CONFIG.Loss_rate)
             optimizer = optim.Adam(Hetergraph_Model.parameters(), lr=CONFIG.lr, weight_decay=CONFIG.weight_decay)
