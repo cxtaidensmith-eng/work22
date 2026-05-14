@@ -246,6 +246,7 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self._modal_num = len(DATASET_Dict['Modal_Name'])
         self._modal_index = DATASET_Dict['Modal_Index']
         self.input_noise_std = input_noise_std
+        self.noise_scale = input_noise_std / 0.1 if input_noise_std > 0 else 0.0
 
         if Hidden_size % num_heads != 0:
             for nh in [4, 2, 1]:
@@ -344,7 +345,7 @@ class HeterGraph_Model_Kmeans(nn.Module):
         X = self.Feature_Modal(X_raw)
         if self.training:
             per_feature_noise_std = self._modal_noise_std[self.feature_to_modal]
-            X = X + torch.randn_like(X) * per_feature_noise_std.view(1, -1)
+            X = X + torch.randn_like(X) * (per_feature_noise_std * self.noise_scale).view(1, -1)
 
         modal_gate = torch.sigmoid(self.modal_gate_logit)
 
