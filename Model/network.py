@@ -1,4 +1,4 @@
-from .models import AdvDIFFormer_GraphHead, Cheb_GCN, graph_learning
+from .models import AdvDIFFormer_GraphHead, Cheb_GCN, DIFFormer_GraphHead, graph_learning
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -234,7 +234,7 @@ class HeterGraph_Model_Kmeans(nn.Module):
     def __init__(self, DATASET_Dict, Herter_Graph, Hidden_size, Drop_rate, K,
                  num_layers=3, num_heads=4, input_noise_std=0.05, drop_path=0.05,
                  graph_head='cheb', graph_layers=1, graph_heads=2,
-                 graph_beta=0.5, graph_k_order=3):
+                 graph_beta=0.5, graph_k_order=3, global_word_emb=None):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -304,8 +304,9 @@ class HeterGraph_Model_Kmeans(nn.Module):
             nn.Linear(Hidden_size, 2) for _ in range(self._Label_num)
         ])
 
+        global_word_emb = Hidden_size if global_word_emb is None else global_word_emb
         self.Global_Message = _Global_Message_Model(
-            self.DATASET_Dict, Hidden_size=Hidden_size, word_emb=Hidden_size,
+            self.DATASET_Dict, Hidden_size=Hidden_size, word_emb=global_word_emb,
         )
         self.Adj_Learning = graph_learning(
             self.DATASET_Dict, Hidden_size, rate=0.1, use_raw_x=True,
@@ -322,6 +323,16 @@ class HeterGraph_Model_Kmeans(nn.Module):
                 out_channels=self._Label_num, P=Drop_rate,
                 num_layers=graph_layers, num_heads=graph_heads,
                 beta=graph_beta, K_order=graph_k_order,
+            )
+        elif graph_head in {'dif', 'difformer', 'dif_former'}:
+            self.GCN = DIFFormer_GraphHead(
+                Dim_emb=Hidden_size, hidden=Hidden_size // 2,
+                out_channels=self._Label_num, P=Drop_rate,
+                num_layers=graph_layers, num_heads=graph_heads,
+                graph_weight=graph_beta,
+                alpha=0.5,
+                kernel='simple',
+                use_graph=True,
             )
         else:
             raise ValueError(f'Unknown graph_head: {graph_head}')

@@ -90,6 +90,132 @@ class DenseAdvDIFFormerConv(nn.Module):
         return self.Wo(x_concat) / self.num_heads
 
 
+class DenseDIFFormerConv(nn.Module):
+    def __init__(
+        self,
+        in_dim,
+        out_dim,
+        num_heads=1,
+        kernel='simple',
+        graph_weight=0.5,
+        use_graph=True,
+        use_source=False,
+    ):
+        super().__init__()
+        self.out_dim = out_dim
+        self.num_heads = num_heads
+        self.kernel = kernel
+        self.graph_weight = float(graph_weight)
+        self.use_graph = use_graph
+        self.use_source = use_source
+        self.Wq = nn.Linear(in_dim, out_dim * num_heads)
+        self.Wk = nn.Linear(in_dim, out_dim * num_heads)
+        self.Wv = nn.Linear(in_dim, out_dim * num_heads)
+
+    @staticmethod
+    def _gcn(x, adj_norm):
+        return torch.einsum("nm,mhd->nhd", adj_norm, x)
+
+    @staticmethod
+    def _simple_attn(qs, ks, vs, eps=1e-12):
+        n = qs.shape[0]
+        qs = qs / torch.norm(qs, p=2, dim=2, keepdim=True).clamp_min(eps)
+        ks = ks / torch.norm(ks, p=2, dim=2, keepdim=True).clamp_min(eps)
+        kvs = torch.einsum("lhm,lhd->hmd", ks, vs)
+        qkvs = torch.einsum("nhm,hmd->nhd", qs, kvs)
+        vs_sum = vs.sum(dim=0).unsqueeze(0).expand(n, -1, -1)
+        ks_sum = ks.sum(dim=0)
+        den = torch.einsum("nhm,hm->nh", qs, ks_sum).unsqueeze(-1) + n
+        return (qkvs + vs_sum) / den.clamp_min(eps)
+
+    @staticmethod
+    def _sigmoid_attn(qs, ks, vs, eps=1e-12):
+        attn = torch.sigmoid(torch.einsum("nhm,lhm->nlh", qs, ks))
+        den = attn.sum(dim=1, keepdim=True).clamp_min(eps)
+        attn = attn / den
+        return torch.einsum("nlh,lhd->nhd", attn, vs)
+
+    def forward(self, x, adj_norm):
+        q = self.Wq(x).reshape(-1, self.num_heads, self.out_dim)
+        k = self.Wk(x).reshape(-1, self.num_heads, self.out_dim)
+        v = self.Wv(x).reshape(-1, self.num_heads, self.out_dim)
+
+        if self.kernel == 'sigmoid':
+            attn_out = self._sigmoid_attn(q, k, v)
+        else:
+            attn_out = self._simple_attn(q, k, v)
+
+        if self.use_graph:
+            gcn_out = self._gcn(v, adj_norm)
+            if self.graph_weight >= 0:
+                out = (1.0 - self.graph_weight) * attn_out + self.graph_weight * gcn_out
+            else:
+                out = attn_out + gcn_out
+        else:
+            out = attn_out
+
+        out = out.mean(dim=1)
+        if self.use_source:
+            out = out + x
+        return out
+
+
+class DIFFormer_GraphHead(nn.Module):
+    def __init__(
+        self,
+        Dim_emb,
+        hidden,
+        out_channels,
+        P,
+        num_layers=1,
+        num_heads=2,
+        graph_weight=0.5,
+        alpha=0.5,
+        kernel='simple',
+        use_graph=True,
+    ):
+        super().__init__()
+        self.input_proj = nn.Linear(Dim_emb, hidden)
+        self.input_norm = nn.LayerNorm(hidden)
+        self.layers = nn.ModuleList([
+            DenseDIFFormerConv(
+                hidden,
+                hidden,
+                num_heads=num_heads,
+                kernel=kernel,
+                graph_weight=graph_weight,
+                use_graph=use_graph,
+            )
+            for _ in range(num_layers)
+        ])
+        self.layer_norms = nn.ModuleList([nn.LayerNorm(hidden) for _ in range(num_layers)])
+        self.classifier = nn.Linear(hidden, out_channels)
+        self.dropout = P
+        self.alpha = float(alpha)
+        self.GCN_feature_1 = None
+        self.GCN_feature_2 = None
+        self.last_adj = None
+
+    def forward(self, x, gso):
+        adj_norm = _row_normalize_adj(gso)
+        self.last_adj = adj_norm
+        h = F.relu(self.input_norm(self.input_proj(x)))
+        h = F.dropout(h, p=self.dropout, training=self.training)
+
+        layer_cache = [h]
+        for idx, (layer, norm) in enumerate(zip(self.layers, self.layer_norms)):
+            h_new = layer(h, adj_norm)
+            h = self.alpha * h_new + (1.0 - self.alpha) * layer_cache[idx]
+            h = norm(h)
+            h = F.dropout(h, p=self.dropout, training=self.training)
+            layer_cache.append(h)
+
+        self.GCN_feature_1 = h
+        logits = self.classifier(h)
+        self.GCN_feature_2 = logits
+        return logits
+
+
 class AdvDIFFormer_GraphHead(nn.Module):
     def __init__(
         self,

@@ -324,6 +324,7 @@ class Config_(object):
         self.graph_heads = config.getint('Modal', 'graph_heads', fallback=2)
         self.graph_beta = config.getfloat('Modal', 'graph_beta', fallback=0.5)
         self.graph_k_order = config.getint('Modal', 'graph_k_order', fallback=3)
+        self.global_word_emb = config.getint('Modal', 'global_word_emb', fallback=self.Hidden_size)
         self.gate_sparsity_lambda = config.getfloat('Optim', 'gate_sparsity_lambda', fallback=0.0)
 
         self.SAVE_GAPH = config.getboolean('SAVE', 'SAVE_GAPH')
