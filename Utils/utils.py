@@ -123,7 +123,8 @@ def load_path(Root_path, DATA_SET, Task):
 
 
 def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=None,
-              grad_clip=None, ema=None, mixup_alpha=0.0, gate_sparsity_lambda=0.0):
+              grad_clip=None, ema=None, mixup_alpha=0.0, gate_sparsity_lambda=0.0,
+              label_graph_reg_lambda=0.0):
     X, Y = data['Feature'], data['Label']
     train_mask, test_mask = data['Mask'][fold]
     train_num = data['Train_Num'][fold]
@@ -155,6 +156,8 @@ def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=Non
 
     if gate_sparsity_lambda > 0 and hasattr(model, 'gate_sparsity_loss'):
         loss = loss + gate_sparsity_lambda * model.gate_sparsity_loss()
+    if label_graph_reg_lambda > 0 and hasattr(model, 'label_relation_loss'):
+        loss = loss + label_graph_reg_lambda * model.label_relation_loss(train_mask)
 
     loss_train = loss.item()
 
@@ -325,6 +328,11 @@ class Config_(object):
         self.graph_beta = config.getfloat('Modal', 'graph_beta', fallback=0.5)
         self.graph_k_order = config.getint('Modal', 'graph_k_order', fallback=3)
         self.global_word_emb = config.getint('Modal', 'global_word_emb', fallback=self.Hidden_size)
+        self.semantic_branch = config.get('Modal', 'semantic_branch', fallback='both')
+        self.adj_mode = config.get('Modal', 'adj_mode', fallback='learned')
+        self.label_graph_alpha = config.getfloat('Modal', 'label_graph_alpha', fallback=0.0)
+        self.label_graph_topk = config.getint('Modal', 'label_graph_topk', fallback=0)
+        self.label_graph_reg_lambda = config.getfloat('Optim', 'label_graph_reg_lambda', fallback=0.0)
         self.gate_sparsity_lambda = config.getfloat('Optim', 'gate_sparsity_lambda', fallback=0.0)
 
         self.SAVE_GAPH = config.getboolean('SAVE', 'SAVE_GAPH')

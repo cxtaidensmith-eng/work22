@@ -234,7 +234,10 @@ class HeterGraph_Model_Kmeans(nn.Module):
     def __init__(self, DATASET_Dict, Herter_Graph, Hidden_size, Drop_rate, K,
                  num_layers=3, num_heads=4, input_noise_std=0.05, drop_path=0.05,
                  graph_head='cheb', graph_layers=1, graph_heads=2,
-                 graph_beta=0.5, graph_k_order=3, global_word_emb=None):
+                 graph_beta=0.5, graph_k_order=3, global_word_emb=None,
+                 semantic_branch='both', adj_mode='learned',
+                 label_graph_alpha=0.0, label_graph_topk=0,
+                 label_graph_reg_lambda=0.0):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -247,6 +250,43 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self._modal_index = DATASET_Dict['Modal_Index']
         self.input_noise_std = input_noise_std
         self.noise_scale = input_noise_std / 0.1 if input_noise_std > 0 else 0.0
+        branch_alias = {
+            'both': 'both',
+            'per_label_global': 'both',
+            'per-label+global': 'both',
+            'per_label': 'per_label',
+            'per-label': 'per_label',
+            'label': 'per_label',
+            'global': 'global',
+            'global_only': 'global',
+        }
+        adj_alias = {
+            'learned': 'learned',
+            'learn': 'learned',
+            'learning': 'learned',
+            'fixed': 'fixed',
+            'static': 'fixed',
+            'none': 'none',
+            'no': 'none',
+            'identity': 'none',
+        }
+        self.semantic_branch = branch_alias.get(str(semantic_branch).lower(), str(semantic_branch).lower())
+        self.adj_mode = adj_alias.get(str(adj_mode).lower(), str(adj_mode).lower())
+        if self.semantic_branch not in {'both', 'per_label', 'global'}:
+            raise ValueError(f'Unknown semantic_branch: {semantic_branch}')
+        if self.adj_mode not in {'learned', 'fixed', 'none'}:
+            raise ValueError(f'Unknown adj_mode: {adj_mode}')
+        self.label_graph_alpha = float(label_graph_alpha)
+        self.label_graph_topk = int(label_graph_topk)
+        self.label_graph_reg_lambda = float(label_graph_reg_lambda)
+        self.last_adj_base = None
+        self.last_label_relation = None
+
+        fixed_adj = self.DATASET_Dict.get('Adj')
+        if fixed_adj is not None:
+            self.register_buffer('fixed_adj', fixed_adj.float().clone().detach())
+        else:
+            self.fixed_adj = None
 
         if Hidden_size % num_heads != 0:
             for nh in [4, 2, 1]:
@@ -352,6 +392,37 @@ class HeterGraph_Model_Kmeans(nn.Module):
         gate = torch.sigmoid(self.modal_gate_logit)
         return (gate * self._noise_modal_mask).sum()
 
+    def _label_relation_graph(self, Label_embedding):
+        relation = None
+        for label_emb in Label_embedding:
+            z = F.normalize(label_emb, dim=-1)
+            sim = torch.mm(z, z.t())
+            sim = (sim + 1.0) * 0.5
+            relation = sim if relation is None else relation + sim
+        relation = relation / max(1, len(Label_embedding))
+        relation = torch.nan_to_num(relation, nan=0.0, posinf=1.0, neginf=0.0).clamp(0.0, 1.0)
+        if 0 < self.label_graph_topk < relation.size(1):
+            values, indices = torch.topk(relation, k=self.label_graph_topk, dim=1)
+            sparse_relation = torch.zeros_like(relation)
+            relation = sparse_relation.scatter(1, indices, values)
+        eye = torch.eye(relation.size(0), device=relation.device, dtype=relation.dtype)
+        return relation * (1.0 - eye) + eye
+
+    def label_relation_loss(self, train_mask=None):
+        if self.last_adj_base is None or self.last_label_relation is None:
+            device = self.modal_gate_logit.device
+            return torch.zeros((), device=device)
+
+        adj = self.last_adj_base
+        relation = self.last_label_relation.detach()
+        if train_mask is not None:
+            idx = torch.where(train_mask)[0]
+            adj = adj.index_select(0, idx).index_select(1, idx)
+            relation = relation.index_select(0, idx).index_select(1, idx)
+
+        off_diag = 1.0 - torch.eye(adj.size(0), device=adj.device, dtype=adj.dtype)
+        return F.mse_loss(adj * off_diag, relation * off_diag)
+
     def forward(self, X_raw):
         X = self.Feature_Modal(X_raw)
         if self.training:
@@ -360,27 +431,55 @@ class HeterGraph_Model_Kmeans(nn.Module):
 
         modal_gate = torch.sigmoid(self.modal_gate_logit)
 
-        H = self.modal_token_encoder(X)
-        H = H * modal_gate.view(1, -1, 1)
+        if self.semantic_branch == 'global':
+            Label_embedding = [
+                X_raw.new_zeros((X_raw.size(0), self.Hidden_size))
+                for _ in range(self._Label_num)
+            ]
+            Auxi_classifier_output = [
+                X_raw.new_zeros((X_raw.size(0), 2))
+                for _ in range(self._Label_num)
+            ]
+            Y = X_raw.new_zeros((X_raw.size(0), self.Hidden_size))
+        else:
+            H = self.modal_token_encoder(X)
+            H = H * modal_gate.view(1, -1, 1)
 
-        for blk in self.shared_transformer:
-            H = blk(H)
+            for blk in self.shared_transformer:
+                H = blk(H)
 
-        Label_embedding = []
-        Auxi_classifier_output = []
-        for label_idx in range(self._Label_num):
-            label_emb = self.label_pools[label_idx](H)
-            aux_out = self._Auxi_classifier[label_idx](label_emb)
-            Label_embedding.append(label_emb)
-            Auxi_classifier_output.append(aux_out)
+            Label_embedding = []
+            Auxi_classifier_output = []
+            for label_idx in range(self._Label_num):
+                label_emb = self.label_pools[label_idx](H)
+                aux_out = self._Auxi_classifier[label_idx](label_emb)
+                Label_embedding.append(label_emb)
+                Auxi_classifier_output.append(aux_out)
 
-        Y = self.Message_MLP(torch.cat(Label_embedding, dim=-1))
+            Y = self.Message_MLP(torch.cat(Label_embedding, dim=-1))
 
         feature_gate = modal_gate[self.feature_to_modal]
         X_gated = X * feature_gate.view(1, -1)
 
-        Global_Embedding = self.Global_Message(X_gated)
-        Adj = self.Adj_Learning(X_gated)
+        if self.semantic_branch == 'per_label':
+            Global_Embedding = X_raw.new_zeros((X_raw.size(0), self.Hidden_size))
+        else:
+            Global_Embedding = self.Global_Message(X_gated)
+
+        if self.adj_mode == 'learned':
+            Adj = self.Adj_Learning(X_gated)
+        elif self.adj_mode == 'fixed' and self.fixed_adj is not None:
+            Adj = self.fixed_adj.to(device=X_raw.device, dtype=X_raw.dtype)
+        else:
+            Adj = torch.eye(X_raw.size(0), device=X_raw.device, dtype=X_raw.dtype)
+        self.last_adj_base = Adj
+        self.last_label_relation = None
+        if (self.label_graph_alpha > 0 or self.label_graph_reg_lambda > 0) and self.semantic_branch != 'global':
+            R_label = self._label_relation_graph(Label_embedding)
+            self.last_label_relation = R_label
+            alpha = max(0.0, min(1.0, self.label_graph_alpha))
+            if alpha > 0:
+                Adj = (1.0 - alpha) * Adj + alpha * R_label
         Y = self.GCN(Y + Global_Embedding, Adj)
 
         return Y, Label_embedding, Auxi_classifier_output

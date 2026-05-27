@@ -46,7 +46,10 @@ def config_to_dict(CONFIG):
         'T_max', 'Lr_Min', 'use_ema', 'ema_decay', 'grad_clip', 'n_seeds',
         'mixup_alpha', 'num_layers', 'num_heads', 'input_noise_std', 'drop_path',
         'Graph_head', 'graph_layers', 'graph_heads', 'graph_beta', 'graph_k_order',
-        'global_word_emb', 'gate_sparsity_lambda', 'SAVE_GAPH', 'remove_repeat', 'remove_self_loop',
+        'global_word_emb', 'semantic_branch', 'adj_mode',
+        'label_graph_alpha', 'label_graph_topk',
+        'gate_sparsity_lambda', 'label_graph_reg_lambda',
+        'SAVE_GAPH', 'remove_repeat', 'remove_self_loop',
     ]
     result = {key: getattr(CONFIG, key) for key in keys if hasattr(CONFIG, key)}
     result['device'] = str(CONFIG.Device)
@@ -117,6 +120,11 @@ def main(CONFIG):
                 graph_beta=CONFIG.graph_beta,
                 graph_k_order=CONFIG.graph_k_order,
                 global_word_emb=CONFIG.global_word_emb,
+                semantic_branch=CONFIG.semantic_branch,
+                adj_mode=CONFIG.adj_mode,
+                label_graph_alpha=CONFIG.label_graph_alpha,
+                label_graph_topk=CONFIG.label_graph_topk,
+                label_graph_reg_lambda=CONFIG.label_graph_reg_lambda,
             ).to(CONFIG.Device)
             criterion = criterion_lossv2(DATASET_Dict, CONFIG.Device, rate=CONFIG.Loss_rate)
             optimizer = optim.Adam(Hetergraph_Model.parameters(), lr=CONFIG.lr, weight_decay=CONFIG.weight_decay)
@@ -138,6 +146,7 @@ def main(CONFIG):
                         grad_clip=CONFIG.grad_clip, ema=ema,
                         mixup_alpha=CONFIG.mixup_alpha,
                         gate_sparsity_lambda=CONFIG.gate_sparsity_lambda,
+                        label_graph_reg_lambda=CONFIG.label_graph_reg_lambda,
                     )
                     print_str = (f'Split {fold + 1} Seed {seed_idx + 1}/{CONFIG.n_seeds} '
                                  f'Epoch {step + 1}/{CONFIG.epochs} '
