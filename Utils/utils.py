@@ -124,7 +124,7 @@ def load_path(Root_path, DATA_SET, Task):
 
 def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=None,
               grad_clip=None, ema=None, mixup_alpha=0.0, gate_sparsity_lambda=0.0,
-              label_graph_reg_lambda=0.0):
+              label_graph_reg_lambda=0.0, logit_adjust_tau=0.0):
     X, Y = data['Feature'], data['Label']
     train_mask, test_mask = data['Mask'][fold]
     train_num = data['Train_Num'][fold]
@@ -181,11 +181,15 @@ def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=Non
             output, _Label_embedding, _Auxi_classifier_output = eval_net(X)
             loss = criterion(output, Y, test_mask, _Label_embedding, _Auxi_classifier_output)
             loss_test = loss.item()
-            pred = torch.argmax(output[test_mask], dim=1)
+            metric_output = output
+            if logit_adjust_tau != 0.0:
+                class_weight = data_dict['Label_Weight'].to(output).clamp_min(1e-8)
+                metric_output = metric_output - float(logit_adjust_tau) * class_weight.log().view(1, -1)
+            pred = torch.argmax(metric_output[test_mask], dim=1)
             correct = torch.sum(pred == Y[test_mask])
             acc_test = correct.item() / test_num
             auc_test = get_auc(y_true=F.one_hot(Y[test_mask].cpu(), num_classes=Class_num),
-                                   y_pred=output[test_mask].cpu())
+                                   y_pred=metric_output[test_mask].cpu())
 
             if Class_num == 2:
                 Y_pred = pred.cpu().numpy()
@@ -204,13 +208,16 @@ def run_epoch(model, fold, criterion, optimizer, data, data_dict, eval_model=Non
 
             Feature_1 = eval_net.GCN.GCN_feature_1.cpu().numpy()
             Feature_2 = eval_net.GCN.GCN_feature_2.cpu().numpy()
-            Y_full_pred = torch.argmax(output, dim=1).cpu().numpy()
-            test_logit = output[test_mask].cpu().numpy()
+            Y_full_pred = torch.argmax(metric_output, dim=1).cpu().numpy()
+            test_logit = metric_output[test_mask].cpu().numpy()
+            raw_test_logit = output[test_mask].cpu().numpy()
     finally:
         if ema is not None:
             ema.swap_out(model)
 
-    return acc_train, loss_train, acc_test, loss_test, auc_test, sensitivity_test, specificity_test, f1_test, Feature_1, Feature_2, Y_full_pred, test_logit
+    return (acc_train, loss_train, acc_test, loss_test, auc_test,
+            sensitivity_test, specificity_test, f1_test, Feature_1, Feature_2,
+            Y_full_pred, test_logit, raw_test_logit)
 
 
 class ModelEMA:
@@ -327,6 +334,11 @@ class Config_(object):
         self.graph_heads = config.getint('Modal', 'graph_heads', fallback=2)
         self.graph_beta = config.getfloat('Modal', 'graph_beta', fallback=0.5)
         self.graph_k_order = config.getint('Modal', 'graph_k_order', fallback=3)
+        self.graph_alpha = config.getfloat('Modal', 'graph_alpha', fallback=0.5)
+        self.graph_kernel = config.get('Modal', 'graph_kernel', fallback='simple')
+        self.graph_use_graph = config.getboolean('Modal', 'graph_use_graph', fallback=True)
+        self.graph_dropout = config.getfloat('Modal', 'graph_dropout', fallback=self.Drop_rate)
+        self.graph_hidden = config.getint('Modal', 'graph_hidden', fallback=max(1, self.Hidden_size // 2))
         self.global_word_emb = config.getint('Modal', 'global_word_emb', fallback=self.Hidden_size)
         self.semantic_branch = config.get('Modal', 'semantic_branch', fallback='both')
         self.adj_mode = config.get('Modal', 'adj_mode', fallback='learned')
@@ -334,6 +346,8 @@ class Config_(object):
         self.label_graph_topk = config.getint('Modal', 'label_graph_topk', fallback=0)
         self.label_graph_reg_lambda = config.getfloat('Optim', 'label_graph_reg_lambda', fallback=0.0)
         self.gate_sparsity_lambda = config.getfloat('Optim', 'gate_sparsity_lambda', fallback=0.0)
+        self.logit_adjust_tau = config.getfloat('Optim', 'logit_adjust_tau', fallback=0.0)
+        self.save_raw_logits = config.getboolean('SAVE', 'save_raw_logits', fallback=False)
 
         self.SAVE_GAPH = config.getboolean('SAVE', 'SAVE_GAPH')
         
@@ -368,6 +382,7 @@ class Config_(object):
         self.Save_History_Path = os.path.join(self.result_dir, f'{self.history_name}.json')
         self.Epoch_CSV_Path = os.path.join(self.result_dir, f'{self.history_name}_epochs.csv')
         self.Split_CSV_Path = os.path.join(self.result_dir, f'{self.history_name}_splits.csv')
+        self.Raw_Logit_Path = os.path.join(self.result_dir, f'{self.history_name}_logits.npz')
 
         self.Graph_dir = os.path.join(Root_path, 'Graph', self.DATA_SET, self.Task, self.history_name)
 

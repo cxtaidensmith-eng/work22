@@ -235,6 +235,8 @@ class HeterGraph_Model_Kmeans(nn.Module):
                  num_layers=3, num_heads=4, input_noise_std=0.05, drop_path=0.05,
                  graph_head='cheb', graph_layers=1, graph_heads=2,
                  graph_beta=0.5, graph_k_order=3, global_word_emb=None,
+                 graph_alpha=0.5, graph_kernel='simple', graph_use_graph=True,
+                 graph_dropout=None, graph_hidden=None,
                  semantic_branch='both', adj_mode='learned',
                  label_graph_alpha=0.0, label_graph_topk=0,
                  label_graph_reg_lambda=0.0):
@@ -365,14 +367,16 @@ class HeterGraph_Model_Kmeans(nn.Module):
                 beta=graph_beta, K_order=graph_k_order,
             )
         elif graph_head in {'dif', 'difformer', 'dif_former'}:
+            graph_hidden = Hidden_size // 2 if graph_hidden is None else graph_hidden
+            graph_dropout = Drop_rate if graph_dropout is None else graph_dropout
             self.GCN = DIFFormer_GraphHead(
-                Dim_emb=Hidden_size, hidden=Hidden_size // 2,
-                out_channels=self._Label_num, P=Drop_rate,
+                Dim_emb=Hidden_size, hidden=graph_hidden,
+                out_channels=self._Label_num, P=graph_dropout,
                 num_layers=graph_layers, num_heads=graph_heads,
                 graph_weight=graph_beta,
-                alpha=0.5,
-                kernel='simple',
-                use_graph=True,
+                alpha=graph_alpha,
+                kernel=graph_kernel,
+                use_graph=graph_use_graph,
             )
         else:
             raise ValueError(f'Unknown graph_head: {graph_head}')

@@ -46,10 +46,12 @@ def config_to_dict(CONFIG):
         'T_max', 'Lr_Min', 'use_ema', 'ema_decay', 'grad_clip', 'n_seeds',
         'mixup_alpha', 'num_layers', 'num_heads', 'input_noise_std', 'drop_path',
         'Graph_head', 'graph_layers', 'graph_heads', 'graph_beta', 'graph_k_order',
+        'graph_alpha', 'graph_kernel', 'graph_use_graph', 'graph_dropout', 'graph_hidden',
         'global_word_emb', 'semantic_branch', 'adj_mode',
         'label_graph_alpha', 'label_graph_topk',
         'gate_sparsity_lambda', 'label_graph_reg_lambda',
-        'SAVE_GAPH', 'remove_repeat', 'remove_self_loop',
+        'logit_adjust_tau',
+        'SAVE_GAPH', 'save_raw_logits', 'remove_repeat', 'remove_self_loop',
     ]
     result = {key: getattr(CONFIG, key) for key in keys if hasattr(CONFIG, key)}
     result['device'] = str(CONFIG.Device)
@@ -89,6 +91,7 @@ def main(CONFIG):
     Save_dict = {}
     epoch_rows = []
     split_rows = []
+    raw_logit_payload = {}
 
     from sklearn.metrics import f1_score, recall_score, confusion_matrix, roc_auc_score
     import torch
@@ -103,6 +106,7 @@ def main(CONFIG):
 
         seed_test_logits = []  # [n_seeds] each (epochs, B_test, C)
         seed_full_preds = []   # [n_seeds] each (epochs, B,)
+        seed_raw_test_logits = [] if CONFIG.save_raw_logits else None
 
         for seed_idx in range(CONFIG.n_seeds):
             seed_value = CONFIG.seed * 100 + seed_idx
@@ -119,6 +123,11 @@ def main(CONFIG):
                 graph_heads=CONFIG.graph_heads,
                 graph_beta=CONFIG.graph_beta,
                 graph_k_order=CONFIG.graph_k_order,
+                graph_alpha=CONFIG.graph_alpha,
+                graph_kernel=CONFIG.graph_kernel,
+                graph_use_graph=CONFIG.graph_use_graph,
+                graph_dropout=CONFIG.graph_dropout,
+                graph_hidden=CONFIG.graph_hidden,
                 global_word_emb=CONFIG.global_word_emb,
                 semantic_branch=CONFIG.semantic_branch,
                 adj_mode=CONFIG.adj_mode,
@@ -135,18 +144,21 @@ def main(CONFIG):
 
             epoch_test_logits = []
             epoch_full_preds = []
+            epoch_raw_test_logits = [] if CONFIG.save_raw_logits else None
 
             with tqdm(range(CONFIG.epochs), total=CONFIG.epochs) as pbar:
                 for step in pbar:
                     (acc_train, loss_train, acc_test, loss_test, auc_test,
                      sen_test, spe_test, f1_test,
-                     Feature_1, Feature_2, Y_Pred, test_logit) = run_epoch(
+                     Feature_1, Feature_2, Y_Pred, test_logit,
+                     raw_test_logit) = run_epoch(
                         Hetergraph_Model, fold, criterion, optimizer,
                         DATASET_DATA, DATASET_Dict,
                         grad_clip=CONFIG.grad_clip, ema=ema,
                         mixup_alpha=CONFIG.mixup_alpha,
                         gate_sparsity_lambda=CONFIG.gate_sparsity_lambda,
                         label_graph_reg_lambda=CONFIG.label_graph_reg_lambda,
+                        logit_adjust_tau=CONFIG.logit_adjust_tau,
                     )
                     print_str = (f'Split {fold + 1} Seed {seed_idx + 1}/{CONFIG.n_seeds} '
                                  f'Epoch {step + 1}/{CONFIG.epochs} '
@@ -173,11 +185,22 @@ def main(CONFIG):
 
                     epoch_test_logits.append(test_logit)
                     epoch_full_preds.append(Y_Pred)
+                    if CONFIG.save_raw_logits:
+                        epoch_raw_test_logits.append(raw_test_logit)
 
                 pbar.close()
 
             seed_test_logits.append(np.stack(epoch_test_logits, axis=0))
             seed_full_preds.append(np.stack(epoch_full_preds, axis=0))
+            if CONFIG.save_raw_logits:
+                seed_raw_test_logits.append(np.stack(epoch_raw_test_logits, axis=0))
+
+        if CONFIG.save_raw_logits:
+            fold_key = f'fold_{fold + 1}'
+            raw_logit_payload[f'{fold_key}_main'] = np.stack(seed_raw_test_logits, axis=0)
+            raw_logit_payload[f'{fold_key}_y_true'] = Y_test_true_np
+            original_indices = np.asarray(DATASET_Dict['Index'])
+            raw_logit_payload[f'{fold_key}_sample_index'] = original_indices[Y_test_mask.cpu().numpy()]
 
         seed_logits_arr = np.stack(seed_test_logits, axis=0)
 
@@ -338,10 +361,14 @@ def main(CONFIG):
         json.dump(to_jsonable(result), json_file, ensure_ascii=False, indent=2)
     write_csv_rows(CONFIG.Epoch_CSV_Path, epoch_rows)
     write_csv_rows(CONFIG.Split_CSV_Path, split_rows)
+    if CONFIG.save_raw_logits:
+        np.savez_compressed(CONFIG.Raw_Logit_Path, **raw_logit_payload)
 
     print(f'Result JSON saved to {CONFIG.Save_History_Path}')
     print(f'Epoch CSV saved to {CONFIG.Epoch_CSV_Path}')
     print(f'Split CSV saved to {CONFIG.Split_CSV_Path}')
+    if CONFIG.save_raw_logits:
+        print(f'Raw logits saved to {CONFIG.Raw_Logit_Path}')
 
     if CONFIG.SAVE_GAPH:
 
