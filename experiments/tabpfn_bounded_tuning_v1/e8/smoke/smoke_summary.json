@@ -1,0 +1,97 @@
+{
+  "arm": "e8",
+  "checks": {
+    "all_modalities_100_percent": true,
+    "artifacts_saved_and_read_back": true,
+    "checkpoint_loaded": true,
+    "cuda_available": true,
+    "effective_n_estimators": 8,
+    "fixed_class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "full_feature_union_count": 360,
+    "internal_feature_subspace_members": 8,
+    "metrics_exactly_recomputed": true,
+    "no_nan_or_inf": true,
+    "predict_proba_shape": [
+      60,
+      3
+    ],
+    "probability_rows_sum_to_one": true,
+    "requested_n_estimators": 8,
+    "uncovered_feature_count": 0
+  },
+  "excluded_from_formal_results": true,
+  "fold": 0,
+  "fresh_classifier_uuid": "de5b39f4-b383-43db-a494-87dfc8f330a7",
+  "metrics": {
+    "acc": 0.9166666666666666,
+    "bacc": 0.8792882744495647,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        2
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        2,
+        29
+      ]
+    ],
+    "cuda_peak_memory_allocated_bytes": 778540544,
+    "fold": 0,
+    "macro_auc": 0.9839474642380649,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9026701119724375,
+    "per_class": {
+      "AD": {
+        "f1": 0.8571428571428571,
+        "precision": 1.0,
+        "recall": 0.75,
+        "support": 8
+      },
+      "CN": {
+        "f1": 0.9302325581395349,
+        "precision": 0.9090909090909091,
+        "recall": 0.9523809523809523,
+        "support": 21
+      },
+      "SMCI": {
+        "f1": 0.9206349206349206,
+        "precision": 0.90625,
+        "recall": 0.9354838709677419,
+        "support": 31
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9926092624664307,
+      "maximum_absolute_row_sum_error": 6.891787052154541e-08,
+      "minimum": 1.3056011084700003e-05,
+      "row_sum_maximum": 1.0000000593718141,
+      "row_sum_minimum": 0.9999999310821295,
+      "shape": [
+        60,
+        3
+      ]
+    },
+    "runtime_seconds": {
+      "fit": 0.967359900008887,
+      "predict_proba": 4.979987500002608,
+      "total": 5.952518700156361
+    },
+    "split_sha256": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "test_size": 60,
+    "train_size": 538,
+    "weighted_f1": 0.9155284852959272
+  },
+  "smoke_passed": true
+}

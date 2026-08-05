@@ -1,0 +1,29 @@
+{
+  "condition_1_passed": true,
+  "condition_2_passed": false,
+  "decision": "RUN_E8",
+  "e4": {
+    "acc": 0.9163879598662207,
+    "bacc": 0.9013186544732287,
+    "correct_count": 548,
+    "macro_auc": 0.9764191581686475,
+    "macro_f1": 0.9058959712564674,
+    "weighted_f1": 0.9163072846281483
+  },
+  "immutable_rule": {
+    "condition_1": "E4 correct_count >= 546",
+    "condition_2": "E4 correct_count == 545 and BACC > locked E2 BACC and Macro-AUC >= 0.970",
+    "logic": "condition_1 OR condition_2"
+  },
+  "locked_e2": {
+    "acc": 0.9113712374581939,
+    "bacc": 0.8863430223425243,
+    "correct_count": 545,
+    "macro_auc": 0.976828823792558,
+    "macro_f1": 0.8962751307156939,
+    "weighted_f1": 0.9111080702928556
+  },
+  "passed": true,
+  "reason": "E4 passed the predeclared E8 gate.",
+  "schema_version": 1
+}

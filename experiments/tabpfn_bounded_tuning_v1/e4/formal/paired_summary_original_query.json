@@ -1,0 +1,163 @@
+{
+  "alignment": {
+    "alignment_key": "subject_index",
+    "fold_assignments_equal": true,
+    "row_count": 598,
+    "subject_index_sets_equal": true,
+    "truths_equal": true,
+    "unique_subject_indices": 598
+  },
+  "broken_subject_indices": [
+    7,
+    17,
+    26,
+    49,
+    50,
+    89,
+    133,
+    155,
+    158,
+    173,
+    183,
+    207,
+    222,
+    248,
+    259,
+    261,
+    264,
+    282,
+    284,
+    361,
+    377,
+    407,
+    428,
+    451,
+    480,
+    517,
+    528,
+    574,
+    583,
+    594
+  ],
+  "by_true_class": {
+    "AD": {
+      "both_wrong": 5,
+      "original_query_correct": 62,
+      "original_query_only_correct": 5,
+      "support": 72,
+      "tabpfn_correct": 62,
+      "tabpfn_only_correct": 5
+    },
+    "CN": {
+      "both_wrong": 7,
+      "original_query_correct": 198,
+      "original_query_only_correct": 12,
+      "support": 209,
+      "tabpfn_correct": 190,
+      "tabpfn_only_correct": 4
+    },
+    "SMCI": {
+      "both_wrong": 8,
+      "original_query_correct": 296,
+      "original_query_only_correct": 13,
+      "support": 317,
+      "tabpfn_correct": 296,
+      "tabpfn_only_correct": 13
+    }
+  },
+  "corrected_subject_indices": [
+    4,
+    16,
+    27,
+    33,
+    53,
+    185,
+    196,
+    197,
+    203,
+    350,
+    369,
+    378,
+    401,
+    430,
+    433,
+    473,
+    492,
+    502,
+    519,
+    538,
+    569,
+    592
+  ],
+  "counts": {
+    "both_correct": 526,
+    "both_wrong": 20,
+    "discordant": 52,
+    "original_query_only_correct": 30,
+    "tabpfn_only_correct": 22
+  },
+  "exact_mcnemar_two_sided_p": 0.3317497633694906,
+  "other_metrics_recomputed": {
+    "acc": 0.9297658862876255,
+    "bacc": 0.9140778251271361,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ],
+    "historical_adjusted_score_macro_auc": 0.9500701795923208,
+    "macro_auc": 0.9560490697782983,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9140778251271361,
+    "per_class": {
+      "AD": {
+        "f1": 0.8611111111111112,
+        "precision": 0.8611111111111112,
+        "recall": 0.8611111111111112,
+        "support": 72
+      },
+      "CN": {
+        "f1": 0.9473684210526315,
+        "precision": 0.9473684210526315,
+        "recall": 0.9473684210526315,
+        "support": 209
+      },
+      "SMCI": {
+        "f1": 0.9337539432176656,
+        "precision": 0.9337539432176656,
+        "recall": 0.9337539432176656,
+        "support": 317
+      }
+    },
+    "prediction_matches_probability_argmax": true,
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9931174516677856,
+      "maximum_absolute_row_sum_error": 1.3085082173347473e-07,
+      "minimum": 0.0008466223953291774,
+      "row_sum_maximum": 1.0000001308508217,
+      "row_sum_minimum": 0.9999998805578798,
+      "shape": [
+        598,
+        3
+      ]
+    },
+    "weighted_f1": 0.9297658862876255
+  },
+  "other_name": "original_query",
+  "other_oof_expected_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565",
+  "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\oof_predictions.csv",
+  "other_oof_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565"
+}

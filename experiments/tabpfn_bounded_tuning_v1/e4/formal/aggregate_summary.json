@@ -1,0 +1,958 @@
+{
+  "comparisons": {
+    "e2_full_feature": {
+      "alignment": {
+        "fold_assignments_equal": true,
+        "row_count": 598,
+        "subject_indices_equal": true,
+        "truths_equal": true,
+        "unique_subject_indices": 598
+      },
+      "broken_subject_indices": [
+        377,
+        439,
+        517
+      ],
+      "by_true_class": {
+        "AD": {
+          "both_wrong": 10,
+          "e2_full_feature_correct": 59,
+          "e2_full_feature_only_correct": 0,
+          "support": 72,
+          "tuned_correct": 62,
+          "tuned_only_correct": 3
+        },
+        "CN": {
+          "both_wrong": 19,
+          "e2_full_feature_correct": 188,
+          "e2_full_feature_only_correct": 0,
+          "support": 209,
+          "tuned_correct": 190,
+          "tuned_only_correct": 2
+        },
+        "SMCI": {
+          "both_wrong": 18,
+          "e2_full_feature_correct": 298,
+          "e2_full_feature_only_correct": 3,
+          "support": 317,
+          "tuned_correct": 296,
+          "tuned_only_correct": 1
+        }
+      },
+      "corrected_subject_indices": [
+        11,
+        27,
+        58,
+        185,
+        242,
+        403
+      ],
+      "counts": {
+        "both_correct": 542,
+        "both_wrong": 47,
+        "discordant": 9,
+        "e2_full_feature_only_correct": 3,
+        "tuned_only_correct": 6
+      },
+      "exact_mcnemar_two_sided_p": 0.5078125,
+      "other_metrics_recomputed": {
+        "acc": 0.9113712374581939,
+        "bacc": 0.8863430223425243,
+        "confusion_matrix": [
+          [
+            59,
+            0,
+            13
+          ],
+          [
+            0,
+            188,
+            21
+          ],
+          [
+            8,
+            11,
+            298
+          ]
+        ],
+        "macro_auc": 0.976828823792558,
+        "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+        "macro_f1": 0.8962751307156939,
+        "per_class": {
+          "AD": {
+            "f1": 0.8489208633093526,
+            "precision": 0.8805970149253731,
+            "recall": 0.8194444444444444,
+            "support": 72
+          },
+          "CN": {
+            "f1": 0.9215686274509803,
+            "precision": 0.9447236180904522,
+            "recall": 0.8995215311004785,
+            "support": 209
+          },
+          "SMCI": {
+            "f1": 0.9183359013867488,
+            "precision": 0.8975903614457831,
+            "recall": 0.9400630914826499,
+            "support": 317
+          }
+        },
+        "prediction_matches_probability_argmax": true,
+        "probability_validation": {
+          "finite": true,
+          "maximum": 0.9986852407455444,
+          "maximum_absolute_row_sum_error": 8.777715265750885e-08,
+          "minimum": 1.2999125829082914e-05,
+          "row_sum_maximum": 1.0000000877771527,
+          "row_sum_minimum": 0.9999999169413059,
+          "shape": [
+            598,
+            3
+          ]
+        },
+        "weighted_f1": 0.9111080702928556
+      },
+      "other_name": "e2_full_feature",
+      "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tabpfn_bounded_tuning_v1\\experiments\\tabpfn_full_feature_minimal_v1\\formal\\oof_predictions.csv",
+      "other_oof_sha256": "03732120ebebde721fd06c6336b751a8726b02fc93562c228bd64c3ab0086336"
+    },
+    "original_query": {
+      "alignment": {
+        "alignment_key": "subject_index",
+        "fold_assignments_equal": true,
+        "row_count": 598,
+        "subject_index_sets_equal": true,
+        "truths_equal": true,
+        "unique_subject_indices": 598
+      },
+      "broken_subject_indices": [
+        7,
+        17,
+        26,
+        49,
+        50,
+        89,
+        133,
+        155,
+        158,
+        173,
+        183,
+        207,
+        222,
+        248,
+        259,
+        261,
+        264,
+        282,
+        284,
+        361,
+        377,
+        407,
+        428,
+        451,
+        480,
+        517,
+        528,
+        574,
+        583,
+        594
+      ],
+      "by_true_class": {
+        "AD": {
+          "both_wrong": 5,
+          "original_query_correct": 62,
+          "original_query_only_correct": 5,
+          "support": 72,
+          "tabpfn_correct": 62,
+          "tabpfn_only_correct": 5
+        },
+        "CN": {
+          "both_wrong": 7,
+          "original_query_correct": 198,
+          "original_query_only_correct": 12,
+          "support": 209,
+          "tabpfn_correct": 190,
+          "tabpfn_only_correct": 4
+        },
+        "SMCI": {
+          "both_wrong": 8,
+          "original_query_correct": 296,
+          "original_query_only_correct": 13,
+          "support": 317,
+          "tabpfn_correct": 296,
+          "tabpfn_only_correct": 13
+        }
+      },
+      "corrected_subject_indices": [
+        4,
+        16,
+        27,
+        33,
+        53,
+        185,
+        196,
+        197,
+        203,
+        350,
+        369,
+        378,
+        401,
+        430,
+        433,
+        473,
+        492,
+        502,
+        519,
+        538,
+        569,
+        592
+      ],
+      "counts": {
+        "both_correct": 526,
+        "both_wrong": 20,
+        "discordant": 52,
+        "original_query_only_correct": 30,
+        "tabpfn_only_correct": 22
+      },
+      "exact_mcnemar_two_sided_p": 0.3317497633694906,
+      "other_metrics_recomputed": {
+        "acc": 0.9297658862876255,
+        "bacc": 0.9140778251271361,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            198,
+            11
+          ],
+          [
+            10,
+            11,
+            296
+          ]
+        ],
+        "historical_adjusted_score_macro_auc": 0.9500701795923208,
+        "macro_auc": 0.9560490697782983,
+        "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+        "macro_f1": 0.9140778251271361,
+        "per_class": {
+          "AD": {
+            "f1": 0.8611111111111112,
+            "precision": 0.8611111111111112,
+            "recall": 0.8611111111111112,
+            "support": 72
+          },
+          "CN": {
+            "f1": 0.9473684210526315,
+            "precision": 0.9473684210526315,
+            "recall": 0.9473684210526315,
+            "support": 209
+          },
+          "SMCI": {
+            "f1": 0.9337539432176656,
+            "precision": 0.9337539432176656,
+            "recall": 0.9337539432176656,
+            "support": 317
+          }
+        },
+        "prediction_matches_probability_argmax": true,
+        "probability_validation": {
+          "finite": true,
+          "maximum": 0.9931174516677856,
+          "maximum_absolute_row_sum_error": 1.3085082173347473e-07,
+          "minimum": 0.0008466223953291774,
+          "row_sum_maximum": 1.0000001308508217,
+          "row_sum_minimum": 0.9999998805578798,
+          "shape": [
+            598,
+            3
+          ]
+        },
+        "weighted_f1": 0.9297658862876255
+      },
+      "other_name": "original_query",
+      "other_oof_expected_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565",
+      "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\oof_predictions.csv",
+      "other_oof_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565"
+    },
+    "seps_q_v1": {
+      "alignment": {
+        "alignment_key": "subject_index",
+        "fold_assignments_equal": true,
+        "row_count": 598,
+        "subject_index_sets_equal": true,
+        "truths_equal": true,
+        "unique_subject_indices": 598
+      },
+      "broken_subject_indices": [
+        18,
+        26,
+        50,
+        120,
+        133,
+        155,
+        173,
+        207,
+        222,
+        261,
+        264,
+        270,
+        282,
+        284,
+        364,
+        377,
+        397,
+        407,
+        428,
+        438,
+        480,
+        517,
+        528,
+        574,
+        583
+      ],
+      "by_true_class": {
+        "AD": {
+          "both_wrong": 7,
+          "seps_q_v1_correct": 62,
+          "seps_q_v1_only_correct": 3,
+          "support": 72,
+          "tabpfn_correct": 62,
+          "tabpfn_only_correct": 3
+        },
+        "CN": {
+          "both_wrong": 10,
+          "seps_q_v1_correct": 193,
+          "seps_q_v1_only_correct": 9,
+          "support": 209,
+          "tabpfn_correct": 190,
+          "tabpfn_only_correct": 6
+        },
+        "SMCI": {
+          "both_wrong": 8,
+          "seps_q_v1_correct": 298,
+          "seps_q_v1_only_correct": 13,
+          "support": 317,
+          "tabpfn_correct": 296,
+          "tabpfn_only_correct": 11
+        }
+      },
+      "corrected_subject_indices": [
+        47,
+        63,
+        68,
+        186,
+        197,
+        226,
+        245,
+        272,
+        273,
+        317,
+        357,
+        378,
+        383,
+        393,
+        487,
+        502,
+        519,
+        523,
+        569,
+        593
+      ],
+      "counts": {
+        "both_correct": 528,
+        "both_wrong": 25,
+        "discordant": 45,
+        "seps_q_v1_only_correct": 25,
+        "tabpfn_only_correct": 20
+      },
+      "exact_mcnemar_two_sided_p": 0.5514843298025198,
+      "other_metrics_recomputed": {
+        "acc": 0.9247491638795987,
+        "bacc": 0.9082063928901053,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            193,
+            16
+          ],
+          [
+            7,
+            12,
+            298
+          ]
+        ],
+        "historical_adjusted_score_macro_auc": 0.9571291149332602,
+        "macro_auc": 0.9532899410556896,
+        "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+        "macro_f1": 0.9138656552532017,
+        "per_class": {
+          "AD": {
+            "f1": 0.8794326241134752,
+            "precision": 0.8985507246376812,
+            "recall": 0.8611111111111112,
+            "support": 72
+          },
+          "CN": {
+            "f1": 0.9323671497584541,
+            "precision": 0.9414634146341463,
+            "recall": 0.9234449760765551,
+            "support": 209
+          },
+          "SMCI": {
+            "f1": 0.9297971918876755,
+            "precision": 0.9197530864197531,
+            "recall": 0.9400630914826499,
+            "support": 317
+          }
+        },
+        "prediction_matches_probability_argmax": true,
+        "probability_validation": {
+          "finite": true,
+          "maximum": 0.9942394495010376,
+          "maximum_absolute_row_sum_error": 1.3364478945732117e-07,
+          "minimum": 0.00040863873437047005,
+          "row_sum_maximum": 1.0000001336447895,
+          "row_sum_minimum": 0.9999998821876943,
+          "shape": [
+            598,
+            3
+          ]
+        },
+        "weighted_f1": 0.9246314265285625
+      },
+      "other_name": "seps_q_v1",
+      "other_oof_expected_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68",
+      "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tabpfn_bounded_tuning_v1\\experiments\\query_pool_component_sharing_v1\\tenfold_seed0\\oof_predictions.csv",
+      "other_oof_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68"
+    }
+  },
+  "e8_gate_decision": {
+    "condition_1_passed": true,
+    "condition_2_passed": false,
+    "decision": "RUN_E8",
+    "e4": {
+      "acc": 0.9163879598662207,
+      "bacc": 0.9013186544732287,
+      "correct_count": 548,
+      "macro_auc": 0.9764191581686475,
+      "macro_f1": 0.9058959712564674,
+      "weighted_f1": 0.9163072846281483
+    },
+    "immutable_rule": {
+      "condition_1": "E4 correct_count >= 546",
+      "condition_2": "E4 correct_count == 545 and BACC > locked E2 BACC and Macro-AUC >= 0.970",
+      "logic": "condition_1 OR condition_2"
+    },
+    "locked_e2": {
+      "acc": 0.9113712374581939,
+      "bacc": 0.8863430223425243,
+      "correct_count": 545,
+      "macro_auc": 0.976828823792558,
+      "macro_f1": 0.8962751307156939,
+      "weighted_f1": 0.9111080702928556
+    },
+    "passed": true,
+    "reason": "E4 passed the predeclared E8 gate.",
+    "schema_version": 1
+  },
+  "feature_coverage_summary": {
+    "all_folds_all_modalities_100_percent": true,
+    "all_folds_effective_n_estimators_exact": true,
+    "all_folds_uncovered_count_zero": true,
+    "all_folds_union_is_360": true,
+    "expected_effective_n_estimators": 4,
+    "fold_count": 10,
+    "folds": [
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 0,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 1,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 2,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 3,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 4,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 5,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 6,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 7,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 8,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      },
+      {
+        "all_member_intersection_count": 2,
+        "duplicate_coverage_feature_count": 360,
+        "effective_n_estimators": 4,
+        "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+        "fold": 9,
+        "internal_member_count": 4,
+        "member_feature_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "modal_union_coverage_rates": {
+          "CSF": 1.0,
+          "Cognitive": 1.0,
+          "MRI": 1.0,
+          "PET": 1.0,
+          "ROI": 1.0,
+          "Risk": 1.0
+        },
+        "modal_union_feature_counts": {
+          "CSF": 3,
+          "Cognitive": 24,
+          "MRI": 138,
+          "PET": 150,
+          "ROI": 9,
+          "Risk": 36
+        },
+        "requested_n_estimators": 4,
+        "uncovered_count": 0,
+        "union_count": 360
+      }
+    ],
+    "modal_total_feature_counts": {
+      "CSF": 3,
+      "Cognitive": 24,
+      "MRI": 138,
+      "PET": 150,
+      "ROI": 9,
+      "Risk": 36
+    },
+    "passed": true,
+    "pooled_feature_coverage_csv_sha256": "bba42402b2a1b8760249c7544147af136953a1de0f853f96aa1ebc966f49c48a",
+    "pooled_feature_coverage_sha256": "5986d933778715536b617f26d8040d2e7f33932c03f6e10fe2619774f33750ff"
+  },
+  "fold_metric_summary": [
+    {
+      "maximum": 0.95,
+      "mean": 0.9163276836158193,
+      "metric": "acc",
+      "minimum": 0.864406779661017,
+      "pooled_oof": 0.9163879598662207,
+      "sample_std": 0.025274304560612283
+    },
+    {
+      "maximum": 0.9602251407129456,
+      "mean": 0.9052103340116637,
+      "metric": "macro_f1",
+      "minimum": 0.830005120327701,
+      "pooled_oof": 0.9058959712564674,
+      "sample_std": 0.03998408325835282
+    },
+    {
+      "maximum": 0.9578373015873015,
+      "mean": 0.9017847542242704,
+      "metric": "bacc",
+      "minimum": 0.8095238095238094,
+      "pooled_oof": 0.9013186544732287,
+      "sample_std": 0.04917231750258291
+    },
+    {
+      "maximum": 0.9972559269434269,
+      "mean": 0.9763432681853879,
+      "metric": "macro_auc",
+      "minimum": 0.9597292445339983,
+      "pooled_oof": 0.9764191581686475,
+      "sample_std": 0.012419705536091
+    },
+    {
+      "maximum": 0.949796973052787,
+      "mean": 0.915845240979054,
+      "metric": "weighted_f1",
+      "minimum": 0.864406779661017,
+      "pooled_oof": 0.9163072846281483,
+      "sample_std": 0.02559051022700068
+    }
+  ],
+  "fresh_classifier_instances": {
+    "all_unique": true,
+    "count": 10,
+    "instance_uuids": [
+      "0f5cfa32-42ae-4064-9469-2cf5c88ddbd8",
+      "982081d3-a76b-43d0-bc79-ac5910e3af36",
+      "8e2bcb9c-5078-4428-a51c-2db4c5b8dd81",
+      "b49d166d-7419-4eb4-8224-11cb89cf57f5",
+      "54be3224-22d5-4103-9f0e-4cb7c0a1e9e1",
+      "57a3e1c2-f213-4d17-9abd-2d03edfd1428",
+      "97758497-5b7b-4461-9591-4b71c52812e4",
+      "787af893-a0dc-44a2-b78e-376bdcb25e22",
+      "682a8845-299d-4f09-8062-83ac87569073",
+      "855122f6-e41c-4eee-b5fc-b1ec22a8fd46"
+    ],
+    "unique_count": 10
+  },
+  "model_semantics": {
+    "checkpoint_count": 1,
+    "external_model_count": 1,
+    "independently_trained_model_count": 0,
+    "internal_feature_subspace_members_per_fold": 4,
+    "probability_fusion": false,
+    "seed_ensemble": false
+  },
+  "oof_integrity": {
+    "all_ten_folds_present": true,
+    "each_source_row_predicted_once": true,
+    "identity_limitation": "subject_index is a source CSV row index, not a verified RID",
+    "row_count": 598,
+    "subject_index_set_is_0_to_597": true,
+    "unique_shuffled_positions": 598,
+    "unique_subject_indices": 598
+  },
+  "oof_metrics": {
+    "acc": 0.9163879598662207,
+    "bacc": 0.9013186544732287,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        190,
+        19
+      ],
+      [
+        8,
+        13,
+        296
+      ]
+    ],
+    "macro_auc": 0.9764191581686475,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9058959712564674,
+    "per_class": {
+      "AD": {
+        "f1": 0.8732394366197183,
+        "precision": 0.8857142857142857,
+        "recall": 0.8611111111111112,
+        "support": 72
+      },
+      "CN": {
+        "f1": 0.9223300970873787,
+        "precision": 0.9359605911330049,
+        "recall": 0.9090909090909091,
+        "support": 209
+      },
+      "SMCI": {
+        "f1": 0.9221183800623053,
+        "precision": 0.9107692307692308,
+        "recall": 0.9337539432176656,
+        "support": 317
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9985918998718262,
+      "maximum_absolute_row_sum_error": 8.274128049379215e-08,
+      "minimum": 1.3009064787183888e-05,
+      "row_sum_maximum": 1.0000000759946488,
+      "row_sum_minimum": 0.9999999172587195,
+      "shape": [
+        598,
+        3
+      ]
+    },
+    "weighted_f1": 0.9163072846281483
+  },
+  "runtime_seconds": {
+    "fit_sum": 7.5267716001253575,
+    "fold_total_sum": 24.280571900540963,
+    "predict_proba_sum": 16.716696200193837
+  }
+}

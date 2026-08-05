@@ -1,0 +1,13 @@
+{
+  "effective_n_estimators": 4,
+  "feature_coverage_csv_sha256": "e6f33cb302a0f6cf3b2ba633f7a01eacdca918d265a217515d8bc1f5c3b45d75",
+  "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+  "member_file_sha256": {
+    "member_00": "c3dd7ec561e6973a04991c6b1e728c97d3c846940b932d042352860a43acaa4f",
+    "member_01": "f71efc34c0c44986ea7a46466482b65a095b6c0730a9738dbd3a2ac9b380b67c",
+    "member_02": "f952d5c3f189bdc7ec9456ad9aa2c389ecb3a6bf35af0a280f33776dd1977a57",
+    "member_03": "bced65144cd085d1c65bd7677894159dc017659b57b7c820838ba75bdcaa50c2"
+  },
+  "passed": true,
+  "requested_n_estimators": 4
+}

@@ -1,0 +1,142 @@
+{
+  "bias_selected_independently_for_this_outer_fold": true,
+  "broken_count": 1,
+  "broken_subject_indices": [
+    569
+  ],
+  "calibrated": {
+    "acc": 0.9666666666666667,
+    "bacc": 0.9791666666666666,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        0,
+        2,
+        30
+      ]
+    ],
+    "macro_auc": 0.9972559269434269,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9740957966764419,
+    "per_class": {
+      "AD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 7
+      },
+      "CN": {
+        "f1": 0.9545454545454546,
+        "precision": 0.9130434782608695,
+        "recall": 1.0,
+        "support": 21
+      },
+      "SMCI": {
+        "f1": 0.967741935483871,
+        "precision": 1.0,
+        "recall": 0.9375,
+        "support": 32
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9965250275762796,
+      "maximum_absolute_row_sum_error": 2.220446049250313e-16,
+      "minimum": 9.83656800174617e-06,
+      "row_sum_maximum": 1.0000000000000002,
+      "row_sum_minimum": 0.9999999999999999,
+      "shape": [
+        60,
+        3
+      ]
+    },
+    "weighted_f1": 0.9668866080156403
+  },
+  "corrected_count": 2,
+  "corrected_subject_indices": [
+    158,
+    270
+  ],
+  "cuda_peak_memory_allocated_bytes": 712196096,
+  "fold": 2,
+  "outer_test_labels_used_for_bias_selection": false,
+  "raw": {
+    "acc": 0.95,
+    "bacc": 0.9578373015873015,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        0,
+        1,
+        31
+      ]
+    ],
+    "macro_auc": 0.9972559269434269,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9602251407129456,
+    "per_class": {
+      "AD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 7
+      },
+      "CN": {
+        "f1": 0.926829268292683,
+        "precision": 0.95,
+        "recall": 0.9047619047619048,
+        "support": 21
+      },
+      "SMCI": {
+        "f1": 0.9538461538461539,
+        "precision": 0.9393939393939394,
+        "recall": 0.96875,
+        "support": 32
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9971545338630676,
+      "maximum_absolute_row_sum_error": 6.945356290088966e-08,
+      "minimum": 1.3017301171203144e-05,
+      "row_sum_maximum": 1.0000000572435965,
+      "row_sum_minimum": 0.9999999305464371,
+      "shape": [
+        60,
+        3
+      ]
+    },
+    "weighted_f1": 0.9497748592870544
+  },
+  "runtime_seconds": {
+    "inner_fit_sum": 3.873894599964842,
+    "inner_predict_sum": 8.073120699962601,
+    "total": 19.795011800015345
+  },
+  "selected_bias": {
+    "b_AD": -0.2,
+    "b_CN": 0.1,
+    "b_SMCI": 0.0
+  },
+  "split_sha256": "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+  "test_size": 60,
+  "train_size": 538
+}

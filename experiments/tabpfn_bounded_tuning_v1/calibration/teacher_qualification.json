@@ -1,0 +1,38 @@
+{
+  "decision": "STOP",
+  "formal_conclusion": "在有限内部成员扩展和严格训练折内类别校准后，TabPFN-3仍未达到T-MEL软概率教师标准，因此停止原始TabPFN概率蒸馏方案，不再继续调参。",
+  "ideal_teacher_threshold": false,
+  "minimum_teacher_candidate": false,
+  "minimum_teacher_candidate_numeric": false,
+  "operational_definitions_fixed_before_interpretation": {
+    "class_sacrifice": "pooled ACC increases while any class recall decreases by more than 0.02",
+    "fold_volatility_worsened": "calibrated fold ACC sample SD exceeds selected raw SD by more than 0.01",
+    "meaningful_nonzero_exclusive": "at least one calibrated-only correct sample versus Original or SEPS",
+    "no_anomalous_fold": "all ten folds complete validation and fold ACC >= 0.80",
+    "paired_clearly_favors_original_and_seps": "for both comparisons, other-only correct exceeds calibrated-only correct by at least 5"
+  },
+  "per_class_recall_delta_calibrated_minus_selected": {
+    "AD": -0.01388888888888895,
+    "CN": 0.009569377990430672,
+    "SMCI": -0.006309148264984188
+  },
+  "schema_version": 1,
+  "stop_reasons": [
+    "calibrated ACC < 0.9200",
+    "calibrated BACC < 0.9000",
+    "paired correct-only counts favor both Original and SEPS by at least 5"
+  ],
+  "strong_teacher_threshold": false,
+  "teacher_qualification_level": "STOP",
+  "threshold_checks": {
+    "acc_at_least_0_9200": false,
+    "bacc_at_least_0_9000": false,
+    "class_sacrifice_detected": false,
+    "fold_volatility_worsened": false,
+    "inference_expansion_selected_over_e2": true,
+    "macro_auc_at_least_0_9700": true,
+    "meaningful_nonzero_exclusive": true,
+    "no_anomalous_fold": true,
+    "paired_clearly_favors_original_and_seps": true
+  }
+}

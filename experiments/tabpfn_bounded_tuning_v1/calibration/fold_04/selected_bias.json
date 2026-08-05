@@ -1,0 +1,32 @@
+{
+  "acc": 0.9200743494423792,
+  "b_AD": 0.3,
+  "b_CN": 0.2,
+  "b_SMCI": 0.0,
+  "b_SMCI_fixed": 0.0,
+  "bacc": 0.9147557929192868,
+  "bias_l2_norm": 0.3605551275463989,
+  "correct_count": 495.0,
+  "grid_b_AD": [
+    -1.0,
+    1.0,
+    0.1
+  ],
+  "grid_b_CN": [
+    -1.0,
+    1.0,
+    0.1
+  ],
+  "grid_size": 441,
+  "macro_f1": 0.9104805261855721,
+  "outer_test_labels_used_for_selection": false,
+  "selection_inputs": "outer-train cross-fitted probabilities and outer-train labels only",
+  "selection_rule": [
+    "ACC descending",
+    "BACC descending",
+    "Macro-F1 descending",
+    "bias L2 norm ascending",
+    "b_AD ascending",
+    "b_CN ascending"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "acc": 0.95,
+  "bacc": 0.9632936507936508,
+  "confusion_matrix": [
+    [
+      7,
+      0,
+      0
+    ],
+    [
+      0,
+      20,
+      1
+    ],
+    [
+      0,
+      2,
+      30
+    ]
+  ],
+  "cuda_peak_memory_allocated_bytes": 778540544,
+  "fold": 2,
+  "macro_auc": 0.9984419515669516,
+  "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+  "macro_f1": 0.9608711701734958,
+  "per_class": {
+    "AD": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 7
+    },
+    "CN": {
+      "f1": 0.9302325581395349,
+      "precision": 0.9090909090909091,
+      "recall": 0.9523809523809523,
+      "support": 21
+    },
+    "SMCI": {
+      "f1": 0.9523809523809523,
+      "precision": 0.967741935483871,
+      "recall": 0.9375,
+      "support": 32
+    }
+  },
+  "probability_validation": {
+    "finite": true,
+    "maximum": 0.9964344501495361,
+    "maximum_absolute_row_sum_error": 8.755523595027626e-08,
+    "minimum": 1.3050180314166937e-05,
+    "row_sum_maximum": 1.0000000660402293,
+    "row_sum_minimum": 0.999999912444764,
+    "shape": [
+      60,
+      3
+    ]
+  },
+  "runtime_seconds": {
+    "fit": 0.9591413999442011,
+    "predict_proba": 3.2932418000418693,
+    "total": 4.257054799934849
+  },
+  "split_sha256": "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+  "test_size": 60,
+  "train_size": 538,
+  "weighted_f1": 0.9501845699520117
+}

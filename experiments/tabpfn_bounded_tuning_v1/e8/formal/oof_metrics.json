@@ -1,0 +1,57 @@
+{
+  "acc": 0.9096989966555183,
+  "bacc": 0.8935344507111068,
+  "confusion_matrix": [
+    [
+      61,
+      0,
+      11
+    ],
+    [
+      0,
+      190,
+      19
+    ],
+    [
+      9,
+      15,
+      293
+    ]
+  ],
+  "macro_auc": 0.978497690971076,
+  "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+  "macro_f1": 0.8975514419042434,
+  "per_class": {
+    "AD": {
+      "f1": 0.8591549295774648,
+      "precision": 0.8714285714285714,
+      "recall": 0.8472222222222222,
+      "support": 72
+    },
+    "CN": {
+      "f1": 0.9178743961352657,
+      "precision": 0.926829268292683,
+      "recall": 0.9090909090909091,
+      "support": 209
+    },
+    "SMCI": {
+      "f1": 0.915625,
+      "precision": 0.9071207430340558,
+      "recall": 0.9242902208201893,
+      "support": 317
+    }
+  },
+  "probability_validation": {
+    "finite": true,
+    "maximum": 0.9976209402084351,
+    "maximum_absolute_row_sum_error": 1.0172516340389848e-07,
+    "minimum": 1.3015643162361812e-05,
+    "row_sum_maximum": 1.0000000752770575,
+    "row_sum_minimum": 0.9999998982748366,
+    "shape": [
+      598,
+      3
+    ]
+  },
+  "weighted_f1": 0.9096120881636254
+}

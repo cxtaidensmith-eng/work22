@@ -1,0 +1,15 @@
+{
+  "calibrated_probability_finite": true,
+  "calibrated_probability_rows_sum_to_one": true,
+  "cross_fitted_probability_rows": 538,
+  "grid_rows": 441,
+  "inner_validation_sets_pairwise_disjoint": true,
+  "inner_validation_union_equals_outer_train": true,
+  "metrics_exactly_recomputed": true,
+  "outer_fold": 4,
+  "outer_test_labels_used_for_selection": false,
+  "outer_test_leakage_count": 0,
+  "outer_test_predictions_sha256": "4bd26640a608717c88485a16a3dc97d4091e5746e36b02365a5daecd010574e2",
+  "passed": true,
+  "raw_probability_finite": true
+}

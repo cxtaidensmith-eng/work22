@@ -1,0 +1,62 @@
+2026-08-05T07:14:42.860849+00:00 start selected=e4 requested=4 effective=4
+2026-08-05T07:14:44.332794+00:00 outer=0 inner=0 fresh_classifier_uuid=b940fdf9-249f-4406-ab30-d2ff68181d55 train=430 validation=108
+2026-08-05T07:14:49.821722+00:00 outer=0 inner=1 fresh_classifier_uuid=7a769851-892a-4c2c-8715-15bb6bf8ff32 train=430 validation=108
+2026-08-05T07:14:52.370151+00:00 outer=0 inner=2 fresh_classifier_uuid=17943630-d5f6-43e4-a795-a2015cedb5fb train=430 validation=108
+2026-08-05T07:14:54.807884+00:00 outer=0 inner=3 fresh_classifier_uuid=ca65ab78-7699-4fd0-941a-9761764a3824 train=431 validation=107
+2026-08-05T07:14:57.196877+00:00 outer=0 inner=4 fresh_classifier_uuid=a4f2e0be-10a5-4777-b0e2-e14d2402f547 train=431 validation=107
+2026-08-05T07:15:05.843160+00:00 outer=0 selected_bias=(-0.0,-0.0,0.0) raw_acc=0.916666667 calibrated_acc=0.916666667 corrected=0 broken=0
+2026-08-05T07:15:05.963093+00:00 outer=1 inner=0 fresh_classifier_uuid=6e182c41-0f7c-427b-a012-feefbc49ba36 train=430 validation=108
+2026-08-05T07:15:08.753732+00:00 outer=1 inner=1 fresh_classifier_uuid=565b6737-69cb-4585-a179-8eec99987ddc train=430 validation=108
+2026-08-05T07:15:11.355970+00:00 outer=1 inner=2 fresh_classifier_uuid=f057dd98-3f2e-4114-b650-7caeb8b69bec train=430 validation=108
+2026-08-05T07:15:14.008310+00:00 outer=1 inner=3 fresh_classifier_uuid=679cfd9b-e30a-477d-a150-0ffe99120700 train=431 validation=107
+2026-08-05T07:15:16.634072+00:00 outer=1 inner=4 fresh_classifier_uuid=ad7eb403-807b-4ac3-9731-b05818a237ec train=431 validation=107
+2026-08-05T07:15:25.453345+00:00 outer=1 selected_bias=(0.4,0.2,0.0) raw_acc=0.950000000 calibrated_acc=0.950000000 corrected=0 broken=0
+2026-08-05T07:15:25.566937+00:00 outer=2 inner=0 fresh_classifier_uuid=08b71831-0566-4485-9df7-2d5d505a89fb train=430 validation=108
+2026-08-05T07:15:28.325964+00:00 outer=2 inner=1 fresh_classifier_uuid=89aa7a04-b3a0-440a-8666-b9c27e04ab6a train=430 validation=108
+2026-08-05T07:15:30.838239+00:00 outer=2 inner=2 fresh_classifier_uuid=0b7d04d2-410a-444e-a267-f41a80b288ff train=430 validation=108
+2026-08-05T07:15:33.488873+00:00 outer=2 inner=3 fresh_classifier_uuid=dabacbed-86df-4acf-b30a-844f9e2de136 train=431 validation=107
+2026-08-05T07:15:36.074012+00:00 outer=2 inner=4 fresh_classifier_uuid=ec46ac2a-7c67-4068-bffb-e4d131429814 train=431 validation=107
+2026-08-05T07:15:45.279220+00:00 outer=2 selected_bias=(-0.2,0.1,0.0) raw_acc=0.950000000 calibrated_acc=0.966666667 corrected=2 broken=1
+2026-08-05T07:15:45.445510+00:00 outer=3 inner=0 fresh_classifier_uuid=997e13ce-9bfa-4148-b958-e154adf547d5 train=430 validation=108
+2026-08-05T07:15:48.184956+00:00 outer=3 inner=1 fresh_classifier_uuid=019a780c-1356-4454-8e86-e29bc6b5ddbe train=430 validation=108
+2026-08-05T07:15:50.703639+00:00 outer=3 inner=2 fresh_classifier_uuid=26eae1ed-15b1-4fb0-b9ea-82a5cd7bb991 train=430 validation=108
+2026-08-05T07:15:53.164365+00:00 outer=3 inner=3 fresh_classifier_uuid=f5d34718-ea90-4ab4-a9fd-554a85dad856 train=431 validation=107
+2026-08-05T07:15:55.668666+00:00 outer=3 inner=4 fresh_classifier_uuid=978aa70b-7fd7-4d1e-a1c4-9050a2622f4b train=431 validation=107
+2026-08-05T07:16:03.827697+00:00 outer=3 selected_bias=(-0.3,-0.0,0.0) raw_acc=0.916666667 calibrated_acc=0.900000000 corrected=0 broken=1
+2026-08-05T07:16:03.938716+00:00 outer=4 inner=0 fresh_classifier_uuid=d66ac864-4caa-4894-9500-8d7b3a88d30a train=430 validation=108
+2026-08-05T07:16:06.682469+00:00 outer=4 inner=1 fresh_classifier_uuid=8a85c0b0-60a1-4524-89ad-fba7c1937bcc train=430 validation=108
+2026-08-05T07:16:09.125756+00:00 outer=4 inner=2 fresh_classifier_uuid=5698380f-b5fc-4d48-bcde-032486db036b train=430 validation=108
+2026-08-05T07:16:11.629982+00:00 outer=4 inner=3 fresh_classifier_uuid=db836aac-ca95-4798-8c4a-e12c21e49cfa train=431 validation=107
+2026-08-05T07:16:14.007140+00:00 outer=4 inner=4 fresh_classifier_uuid=0e552918-86db-419f-82ff-cdcd8aa196e7 train=431 validation=107
+2026-08-05T07:16:21.663031+00:00 outer=4 selected_bias=(0.3,0.2,0.0) raw_acc=0.900000000 calibrated_acc=0.883333333 corrected=0 broken=1
+2026-08-05T07:16:21.774798+00:00 outer=5 inner=0 fresh_classifier_uuid=54d10101-b55f-469c-921e-b10b64628c21 train=430 validation=108
+2026-08-05T07:16:24.403491+00:00 outer=5 inner=1 fresh_classifier_uuid=fea81265-21b3-4ee6-8065-34b4aa2d5f36 train=430 validation=108
+2026-08-05T07:16:26.753755+00:00 outer=5 inner=2 fresh_classifier_uuid=68a84112-da8e-4df1-b59f-3bfc339e107a train=430 validation=108
+2026-08-05T07:16:29.074178+00:00 outer=5 inner=3 fresh_classifier_uuid=1d85483c-9cf1-4328-b489-5a3c222e83b1 train=431 validation=107
+2026-08-05T07:16:31.408040+00:00 outer=5 inner=4 fresh_classifier_uuid=ab01489b-8ccd-4ea5-8f92-90841d0aa682 train=431 validation=107
+2026-08-05T07:16:39.171447+00:00 outer=5 selected_bias=(-0.0,-0.1,0.0) raw_acc=0.900000000 calibrated_acc=0.900000000 corrected=0 broken=0
+2026-08-05T07:16:39.297241+00:00 outer=6 inner=0 fresh_classifier_uuid=fb08aa7e-4a6e-436f-93c1-d0369b86dfd2 train=430 validation=108
+2026-08-05T07:16:41.988851+00:00 outer=6 inner=1 fresh_classifier_uuid=7cea6632-606d-4d6c-a054-6ebceb39d9b2 train=430 validation=108
+2026-08-05T07:16:44.283794+00:00 outer=6 inner=2 fresh_classifier_uuid=3414997a-c7a3-421d-87e4-e3a1949904b3 train=430 validation=108
+2026-08-05T07:16:46.645208+00:00 outer=6 inner=3 fresh_classifier_uuid=07bdb61b-60b0-4f7f-8e0f-74a7e6aca828 train=431 validation=107
+2026-08-05T07:16:49.218879+00:00 outer=6 inner=4 fresh_classifier_uuid=e42c10e1-a27e-4ef5-aa1a-63d895cdde00 train=431 validation=107
+2026-08-05T07:16:58.070888+00:00 outer=6 selected_bias=(-0.0,-0.0,0.0) raw_acc=0.916666667 calibrated_acc=0.916666667 corrected=0 broken=0
+2026-08-05T07:16:58.207262+00:00 outer=7 inner=0 fresh_classifier_uuid=de69174b-488d-47de-8722-8b2308405316 train=430 validation=108
+2026-08-05T07:17:01.049546+00:00 outer=7 inner=1 fresh_classifier_uuid=57b48329-f76b-4536-97cb-2ac2e80178f1 train=430 validation=108
+2026-08-05T07:17:03.605536+00:00 outer=7 inner=2 fresh_classifier_uuid=2a755cfb-a4c7-47fb-825a-a3e7ec11ff43 train=430 validation=108
+2026-08-05T07:17:06.131977+00:00 outer=7 inner=3 fresh_classifier_uuid=15589e53-4f8f-4934-b50a-b8e0c5833047 train=431 validation=107
+2026-08-05T07:17:08.683748+00:00 outer=7 inner=4 fresh_classifier_uuid=2e610756-ce38-4a1d-8fbb-e1510e1ac59e train=431 validation=107
+2026-08-05T07:17:17.261572+00:00 outer=7 selected_bias=(0.1,-0.1,0.0) raw_acc=0.916666667 calibrated_acc=0.916666667 corrected=0 broken=0
+2026-08-05T07:17:17.381833+00:00 outer=8 inner=0 fresh_classifier_uuid=a6d76201-1829-4a85-9021-b5c382e81a42 train=431 validation=108
+2026-08-05T07:17:20.247398+00:00 outer=8 inner=1 fresh_classifier_uuid=84042fca-19a1-42eb-85c5-36e162e5b295 train=431 validation=108
+2026-08-05T07:17:22.714383+00:00 outer=8 inner=2 fresh_classifier_uuid=356431d5-0aff-43fe-8d00-3580cebf86cc train=431 validation=108
+2026-08-05T07:17:25.209842+00:00 outer=8 inner=3 fresh_classifier_uuid=7b97f78b-0cc1-4b97-9038-0ad485334869 train=431 validation=108
+2026-08-05T07:17:27.750236+00:00 outer=8 inner=4 fresh_classifier_uuid=a24d1f01-ad9c-4f79-abdf-b33e4377760a train=432 validation=107
+2026-08-05T07:17:36.402968+00:00 outer=8 selected_bias=(-0.0,0.1,0.0) raw_acc=0.864406780 calibrated_acc=0.864406780 corrected=0 broken=0
+2026-08-05T07:17:36.519605+00:00 outer=9 inner=0 fresh_classifier_uuid=1f773a91-d776-45d6-b9fa-1d3f421162f2 train=431 validation=108
+2026-08-05T07:17:39.245993+00:00 outer=9 inner=1 fresh_classifier_uuid=e44a253e-4df2-49f2-82b9-bf122552e733 train=431 validation=108
+2026-08-05T07:17:41.733753+00:00 outer=9 inner=2 fresh_classifier_uuid=0f2a2d50-dd55-412f-8d60-be442b67b5de train=431 validation=108
+2026-08-05T07:17:44.206819+00:00 outer=9 inner=3 fresh_classifier_uuid=f016c4e5-a8a2-48b4-a560-b34301d05f80 train=431 validation=108
+2026-08-05T07:17:46.690411+00:00 outer=9 inner=4 fresh_classifier_uuid=029d8814-c057-4b36-a6cb-32b2c17d9c21 train=432 validation=107
+2026-08-05T07:17:55.971594+00:00 outer=9 selected_bias=(-0.1,-0.0,0.0) raw_acc=0.932203390 calibrated_acc=0.932203390 corrected=0 broken=0
+2026-08-05T07:17:56.150287+00:00 complete calibrated_acc=0.914715719 calibrated_bacc=0.897775768 calibrated_auc=0.976716339 decision=STOP

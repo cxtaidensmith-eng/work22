@@ -1,0 +1,488 @@
+{
+  "base_commit": "77f3943f4c5deb9193123ad8d6f0c933da5ecc0d",
+  "branch": "experiment/tabpfn-bounded-tuning-v1",
+  "calibration": {
+    "bias_reused_across_outer_folds": false,
+    "form": "softmax(log(max(p,1e-12)) + [b_AD,b_CN,0])",
+    "grid": {
+      "b_AD": [
+        -1.0,
+        1.0,
+        0.1
+      ],
+      "b_CN": [
+        -1.0,
+        1.0,
+        0.1
+      ],
+      "b_SMCI": 0.0,
+      "count": 441
+    },
+    "outer_test_labels_used_for_selection": false,
+    "outer_train_inner_split": {
+      "class": "StratifiedKFold",
+      "n_splits": 5,
+      "random_state": 0,
+      "shuffle": true
+    }
+  },
+  "checkpoint": {
+    "credential_material_recorded": false,
+    "filename": "tabpfn-v3-classifier-v3_default.ckpt",
+    "license": "Prior Labs TabPFN-3 license accepted by the user; verified before execution",
+    "model_version": "TabPFN-3 classifier v3_default",
+    "official_repository": "Prior-Labs/tabpfn_3",
+    "official_revision": "24a16a89d245878b846555110985634aa2e656d7",
+    "outside_repository": true,
+    "path": "C:\\Users\\cxt10\\AppData\\Roaming\\tabpfn\\tabpfn-v3-classifier-v3_default.ckpt",
+    "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "size_bytes": 212804803
+  },
+  "completed": true,
+  "completed_at_utc": "2026-08-05T07:17:56.148113+00:00",
+  "data": {
+    "class_counts": {
+      "AD": 72,
+      "CN": 209,
+      "SMCI": 317
+    },
+    "class_mapping": {
+      "AD": 0,
+      "CN": 1,
+      "SMCI": 2
+    },
+    "dataset_path": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_processed_standard_data.csv",
+    "dataset_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042",
+    "duplicate_feature_row_count": 0,
+    "each_source_row_test_once": true,
+    "each_source_row_train_nine_times": true,
+    "fold_manifest_canonical_sha256": "be020ede2a03d59dbd5e8bbf715cb4d097f8398f9824c122521c3240e00b6515",
+    "fold_manifest_file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+    "fold_manifest_path": "experiments/ovr_aligned_shared_query_v1/formal/reference_fold_manifest.json",
+    "folds": [
+      {
+        "fold": 0,
+        "split_sha256": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+        "test_class_count": {
+          "AD": 8,
+          "CN": 21,
+          "SMCI": 31
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 64,
+          "CN": 188,
+          "SMCI": 286
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 1,
+        "split_sha256": "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 2,
+        "split_sha256": "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 3,
+        "split_sha256": "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 4,
+        "split_sha256": "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 5,
+        "split_sha256": "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 6,
+        "split_sha256": "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 7,
+        "split_sha256": "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 32
+        },
+        "test_size": 60,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "train_constant_feature_count": 4,
+        "train_constant_feature_indices": [
+          299,
+          305,
+          318,
+          326
+        ],
+        "train_size": 538
+      },
+      {
+        "fold": 8,
+        "split_sha256": "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+        "test_class_count": {
+          "AD": 7,
+          "CN": 21,
+          "SMCI": 31
+        },
+        "test_size": 59,
+        "train_class_count": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 286
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 539
+      },
+      {
+        "fold": 9,
+        "split_sha256": "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12",
+        "test_class_count": {
+          "AD": 8,
+          "CN": 20,
+          "SMCI": 31
+        },
+        "test_size": 59,
+        "train_class_count": {
+          "AD": 64,
+          "CN": 189,
+          "SMCI": 286
+        },
+        "train_constant_feature_count": 3,
+        "train_constant_feature_indices": [
+          299,
+          318,
+          326
+        ],
+        "train_size": 539
+      }
+    ],
+    "global_constant_feature_count": 3,
+    "global_constant_feature_indices": [
+      299,
+      318,
+      326
+    ],
+    "global_constant_feature_names": [
+      "PTEDUCAT_[4, 6)",
+      "AGE_[90.4, 92.4)",
+      "PTEDUCAT_[6, 8)"
+    ],
+    "identity_kind": "source CSV row index; not a verified patient/RID identifier",
+    "identity_limitation": "The committed protocol proves 598 unique source CSV rows; no RID column is present, so person-level uniqueness is not independently verifiable.",
+    "input_dtype": "float64",
+    "label_order_sha256": "40aa3114eeb832ce1b80a8706b47e50f99da7a48030d40560ef56164e109662a",
+    "label_shape": [
+      598
+    ],
+    "modal_dictionary_path": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+    "modal_dictionary_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273",
+    "modalities": {
+      "COGNITIVE_TEST": 24,
+      "RISK_FACTOR": 36,
+      "ROI_AVERAGE": 9,
+      "UCBERKELEYAV45": 150,
+      "UCSFFSX": 138,
+      "UPENNBIOMK9": 3
+    },
+    "nan_count": 0,
+    "negative_inf_count": 0,
+    "positive_inf_count": 0,
+    "sample_order_sha256": "7ef70c38282cd3c3fa2fa95f41d5d7dfd3ee456d7ac58a25f80e2d7c378df668",
+    "shape": [
+      598,
+      360
+    ],
+    "test_fold_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+    "test_sets_pairwise_disjoint": true,
+    "test_union_count": 598
+  },
+  "environment": {
+    "captured_at_utc": "2026-08-05T07:14:41.969999+00:00",
+    "conda_default_env": null,
+    "conda_environment_path": "D:\\Anaconda\\envs\\work22-tabpfn-v1",
+    "cuda_available": true,
+    "cuda_device": "cuda:0",
+    "cudnn_version": 90100,
+    "determinism": {
+      "note": "TabPFN documents that fixed seeds do not guarantee bitwise reproducibility across hardware.",
+      "seed": 0,
+      "torch_cudnn_benchmark": false,
+      "torch_cudnn_deterministic": true,
+      "torch_deterministic_algorithms_forced": false
+    },
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpu_total_memory_bytes": 4294443008,
+    "nvidia_smi": "NVIDIA GeForce RTX 3050 Ti Laptop GPU, 546.30, 4096",
+    "package_versions": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.17.1",
+      "tabpfn": "8.2.0",
+      "torch": "2.5.1+cu121"
+    },
+    "pip_freeze": [
+      "annotated-types==0.8.0",
+      "anyio==4.14.2",
+      "certifi==2026.7.22",
+      "click==8.4.2",
+      "colorama==0.4.6",
+      "einops==0.8.2",
+      "filelock==3.29.0",
+      "fsspec==2026.4.0",
+      "h11==0.16.0",
+      "hf-xet==1.6.0",
+      "httpcore==1.0.9",
+      "httpx==0.28.1",
+      "huggingface_hub==1.26.0",
+      "idna==3.18",
+      "Jinja2==3.1.6",
+      "joblib==1.5.3",
+      "lightgbm==4.7.0",
+      "MarkupSafe==3.0.3",
+      "mpmath==1.3.0",
+      "narwhals==2.24.0",
+      "networkx==3.6.1",
+      "numpy==2.4.6",
+      "packaging==26.0",
+      "pandas==3.0.5",
+      "pydantic==2.13.4",
+      "pydantic-settings==2.14.2",
+      "pydantic_core==2.46.4",
+      "python-dateutil==2.9.0.post0",
+      "python-dotenv==1.2.2",
+      "PyYAML==6.0.3",
+      "safetensors==0.8.0",
+      "scikit-learn==1.9.0",
+      "scipy==1.17.1",
+      "six==1.17.0",
+      "sympy==1.13.1",
+      "tabpfn==8.2.0",
+      "threadpoolctl==3.6.0",
+      "torch==2.5.1+cu121",
+      "tqdm==4.70.0",
+      "typing-inspection==0.4.2",
+      "typing_extensions==4.15.0",
+      "tzdata==2026.3"
+    ],
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python_executable": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe",
+    "python_version": "3.11.15",
+    "torch_cuda_build": "12.1",
+    "torch_version": "2.5.1+cu121"
+  },
+  "experiment": "TabPFN-3 Bounded Inference and Calibration Tuning v1",
+  "selected_biases": [
+    {
+      "b_AD": -0.0,
+      "b_CN": -0.0,
+      "b_SMCI": 0.0,
+      "fold": 0
+    },
+    {
+      "b_AD": 0.4,
+      "b_CN": 0.2,
+      "b_SMCI": 0.0,
+      "fold": 1
+    },
+    {
+      "b_AD": -0.2,
+      "b_CN": 0.1,
+      "b_SMCI": 0.0,
+      "fold": 2
+    },
+    {
+      "b_AD": -0.3,
+      "b_CN": -0.0,
+      "b_SMCI": 0.0,
+      "fold": 3
+    },
+    {
+      "b_AD": 0.3,
+      "b_CN": 0.2,
+      "b_SMCI": 0.0,
+      "fold": 4
+    },
+    {
+      "b_AD": -0.0,
+      "b_CN": -0.1,
+      "b_SMCI": 0.0,
+      "fold": 5
+    },
+    {
+      "b_AD": -0.0,
+      "b_CN": -0.0,
+      "b_SMCI": 0.0,
+      "fold": 6
+    },
+    {
+      "b_AD": 0.1,
+      "b_CN": -0.1,
+      "b_SMCI": 0.0,
+      "fold": 7
+    },
+    {
+      "b_AD": -0.0,
+      "b_CN": 0.1,
+      "b_SMCI": 0.0,
+      "fold": 8
+    },
+    {
+      "b_AD": -0.1,
+      "b_CN": -0.0,
+      "b_SMCI": 0.0,
+      "fold": 9
+    }
+  ],
+  "selected_candidate": {
+    "acc": 0.9163879598662207,
+    "bacc": 0.9013186544732287,
+    "correct_count": 548,
+    "effective_n_estimators": 4,
+    "formal_dir": "experiments/tabpfn_bounded_tuning_v1/e4/formal",
+    "macro_auc": 0.9764191581686475,
+    "macro_f1": 0.9058959712564674,
+    "name": "e4",
+    "oof_path": "experiments/tabpfn_bounded_tuning_v1/e4/formal/oof_predictions.csv",
+    "oof_sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82",
+    "rank": 1,
+    "requested_n_estimators": 4,
+    "sorting_tuple": [
+      -0.9163879598662207,
+      -0.9013186544732287,
+      -0.9058959712564674,
+      -0.9764191581686475,
+      4
+    ],
+    "weighted_f1": 0.9163072846281483
+  },
+  "started_at_utc": "2026-08-05T07:14:41.754338+00:00",
+  "teacher_decision": "STOP",
+  "wall_seconds": 194.40045599988662
+}

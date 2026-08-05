@@ -1,0 +1,155 @@
+{
+  "alignment": {
+    "fold_assignments_equal": true,
+    "row_count": 598,
+    "subject_indices_equal": true,
+    "truths_equal": true,
+    "unique_subject_indices": 598
+  },
+  "broken_subject_indices": [
+    18,
+    26,
+    50,
+    58,
+    120,
+    133,
+    155,
+    173,
+    207,
+    222,
+    261,
+    264,
+    282,
+    284,
+    364,
+    377,
+    391,
+    397,
+    407,
+    428,
+    438,
+    480,
+    517,
+    528,
+    574,
+    583
+  ],
+  "by_true_class": {
+    "AD": {
+      "both_wrong": 7,
+      "calibrated_correct": 61,
+      "calibrated_only_correct": 3,
+      "seps_q_v1_correct": 62,
+      "seps_q_v1_only_correct": 4,
+      "support": 72
+    },
+    "CN": {
+      "both_wrong": 9,
+      "calibrated_correct": 192,
+      "calibrated_only_correct": 7,
+      "seps_q_v1_correct": 193,
+      "seps_q_v1_only_correct": 8,
+      "support": 209
+    },
+    "SMCI": {
+      "both_wrong": 9,
+      "calibrated_correct": 294,
+      "calibrated_only_correct": 10,
+      "seps_q_v1_correct": 298,
+      "seps_q_v1_only_correct": 14,
+      "support": 317
+    }
+  },
+  "corrected_subject_indices": [
+    47,
+    63,
+    68,
+    158,
+    186,
+    197,
+    226,
+    245,
+    272,
+    273,
+    317,
+    357,
+    378,
+    383,
+    393,
+    487,
+    502,
+    519,
+    523,
+    593
+  ],
+  "counts": {
+    "both_correct": 527,
+    "both_wrong": 25,
+    "calibrated_only_correct": 20,
+    "discordant": 46,
+    "seps_q_v1_only_correct": 26
+  },
+  "exact_mcnemar_two_sided_p": 0.4613911821367651,
+  "other_metrics_recomputed": {
+    "acc": 0.9247491638795987,
+    "bacc": 0.9082063928901053,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        193,
+        16
+      ],
+      [
+        7,
+        12,
+        298
+      ]
+    ],
+    "historical_adjusted_score_macro_auc": 0.9571291149332602,
+    "macro_auc": 0.9532899410556896,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9138656552532017,
+    "per_class": {
+      "AD": {
+        "f1": 0.8794326241134752,
+        "precision": 0.8985507246376812,
+        "recall": 0.8611111111111112,
+        "support": 72
+      },
+      "CN": {
+        "f1": 0.9323671497584541,
+        "precision": 0.9414634146341463,
+        "recall": 0.9234449760765551,
+        "support": 209
+      },
+      "SMCI": {
+        "f1": 0.9297971918876755,
+        "precision": 0.9197530864197531,
+        "recall": 0.9400630914826499,
+        "support": 317
+      }
+    },
+    "prediction_matches_probability_argmax": true,
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9942394495010376,
+      "maximum_absolute_row_sum_error": 1.3364478945732117e-07,
+      "minimum": 0.00040863873437047005,
+      "row_sum_maximum": 1.0000001336447895,
+      "row_sum_minimum": 0.9999998821876943,
+      "shape": [
+        598,
+        3
+      ]
+    },
+    "weighted_f1": 0.9246314265285625
+  },
+  "other_name": "seps_q_v1",
+  "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tabpfn_bounded_tuning_v1\\experiments\\query_pool_component_sharing_v1\\tenfold_seed0\\oof_predictions.csv",
+  "other_oof_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68"
+}

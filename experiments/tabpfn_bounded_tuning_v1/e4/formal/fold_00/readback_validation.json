@@ -1,0 +1,8 @@
+{
+  "integer_values_bit_exact": true,
+  "metrics_exactly_recomputed": true,
+  "passed": true,
+  "predictions_sha256": "8b034b8d5d9ca6ca12a502fc31f7c7a7e65d3e79397e1b20f822e3cc4f535b4d",
+  "probabilities_bit_exact_after_csv_roundtrip": true,
+  "row_count": 60
+}

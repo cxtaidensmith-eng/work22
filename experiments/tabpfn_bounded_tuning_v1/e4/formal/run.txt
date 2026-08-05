@@ -1,0 +1,33 @@
+2026-08-05T07:06:05.464468+00:00 start arm=e4 kind=formal requested=4 branch=experiment/tabpfn-bounded-tuning-v1 head=77f3943f4c5deb9193123ad8d6f0c933da5ecc0d
+2026-08-05T07:06:06.852726+00:00 fold=0 fresh_classifier_uuid=0f5cfa32-42ae-4064-9469-2cf5c88ddbd8 train=538 test=60
+2026-08-05T07:06:11.650351+00:00 fold=0 complete acc=0.916666667 macro_auc=0.980944987 n_estimators_=4 selected_features=360 seconds=4.749
+2026-08-05T07:06:11.884447+00:00 fold=0 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:11.995772+00:00 fold=1 fresh_classifier_uuid=982081d3-a76b-43d0-bc79-ac5910e3af36 train=538 test=60
+2026-08-05T07:06:14.196825+00:00 fold=1 complete acc=0.950000000 macro_auc=0.972337351 n_estimators_=4 selected_features=360 seconds=2.150
+2026-08-05T07:06:14.416461+00:00 fold=1 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:14.531119+00:00 fold=2 fresh_classifier_uuid=8e2bcb9c-5078-4428-a51c-2db4c5b8dd81 train=538 test=60
+2026-08-05T07:06:16.885048+00:00 fold=2 complete acc=0.950000000 macro_auc=0.997255927 n_estimators_=4 selected_features=360 seconds=2.305
+2026-08-05T07:06:17.097090+00:00 fold=2 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:17.209630+00:00 fold=3 fresh_classifier_uuid=b49d166d-7419-4eb4-8224-11cb89cf57f5 train=538 test=60
+2026-08-05T07:06:19.531728+00:00 fold=3 complete acc=0.916666667 macro_auc=0.975885226 n_estimators_=4 selected_features=360 seconds=2.271
+2026-08-05T07:06:19.743606+00:00 fold=3 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:19.854123+00:00 fold=4 fresh_classifier_uuid=54be3224-22d5-4103-9f0e-4cb7c0a1e9e1 train=538 test=60
+2026-08-05T07:06:22.111933+00:00 fold=4 complete acc=0.900000000 macro_auc=0.960758597 n_estimators_=4 selected_features=360 seconds=2.206
+2026-08-05T07:06:22.340921+00:00 fold=4 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:22.457261+00:00 fold=5 fresh_classifier_uuid=57a3e1c2-f213-4d17-9abd-2d03edfd1428 train=538 test=60
+2026-08-05T07:06:24.667648+00:00 fold=5 complete acc=0.900000000 macro_auc=0.982564496 n_estimators_=4 selected_features=360 seconds=2.159
+2026-08-05T07:06:24.889533+00:00 fold=5 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:24.999099+00:00 fold=6 fresh_classifier_uuid=97758497-5b7b-4461-9591-4b71c52812e4 train=538 test=60
+2026-08-05T07:06:27.120032+00:00 fold=6 complete acc=0.916666667 macro_auc=0.973196587 n_estimators_=4 selected_features=360 seconds=2.070
+2026-08-05T07:06:27.340942+00:00 fold=6 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:27.450773+00:00 fold=7 fresh_classifier_uuid=787af893-a0dc-44a2-b78e-376bdcb25e22 train=538 test=60
+2026-08-05T07:06:29.581243+00:00 fold=7 complete acc=0.916666667 macro_auc=0.967862866 n_estimators_=4 selected_features=360 seconds=2.076
+2026-08-05T07:06:29.799132+00:00 fold=7 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:29.908245+00:00 fold=8 fresh_classifier_uuid=682a8845-299d-4f09-8062-83ac87569073 train=539 test=59
+2026-08-05T07:06:32.082708+00:00 fold=8 complete acc=0.864406780 macro_auc=0.959729245 n_estimators_=4 selected_features=360 seconds=2.124
+2026-08-05T07:06:32.295975+00:00 fold=8 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:32.406235+00:00 fold=9 fresh_classifier_uuid=855122f6-e41c-4eee-b5fc-b1ec22a8fd46 train=539 test=59
+2026-08-05T07:06:34.627225+00:00 fold=9 complete acc=0.932203390 macro_auc=0.992897399 n_estimators_=4 selected_features=360 seconds=2.170
+2026-08-05T07:06:34.843209+00:00 fold=9 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:06:34.992348+00:00 formal_oof acc=0.916387960 bacc=0.901318654 macro_auc=0.976419158
+2026-08-05T07:06:34.995591+00:00 complete arm=e4 kind=formal wall_seconds=29.534

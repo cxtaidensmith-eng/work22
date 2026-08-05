@@ -1,0 +1,104 @@
+{
+  "candidates": [
+    {
+      "acc": 0.9163879598662207,
+      "bacc": 0.9013186544732287,
+      "correct_count": 548,
+      "effective_n_estimators": 4,
+      "formal_dir": "experiments/tabpfn_bounded_tuning_v1/e4/formal",
+      "macro_auc": 0.9764191581686475,
+      "macro_f1": 0.9058959712564674,
+      "name": "e4",
+      "oof_path": "experiments/tabpfn_bounded_tuning_v1/e4/formal/oof_predictions.csv",
+      "oof_sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82",
+      "rank": 1,
+      "requested_n_estimators": 4,
+      "sorting_tuple": [
+        -0.9163879598662207,
+        -0.9013186544732287,
+        -0.9058959712564674,
+        -0.9764191581686475,
+        4
+      ],
+      "weighted_f1": 0.9163072846281483
+    },
+    {
+      "acc": 0.9113712374581939,
+      "bacc": 0.8863430223425243,
+      "correct_count": 545,
+      "effective_n_estimators": 2,
+      "formal_dir": "experiments/tabpfn_full_feature_minimal_v1/formal",
+      "macro_auc": 0.976828823792558,
+      "macro_f1": 0.8962751307156939,
+      "name": "e2",
+      "oof_path": "experiments/tabpfn_full_feature_minimal_v1/formal/oof_predictions.csv",
+      "oof_sha256": "03732120ebebde721fd06c6336b751a8726b02fc93562c228bd64c3ab0086336",
+      "rank": 2,
+      "requested_n_estimators": 1,
+      "sorting_tuple": [
+        -0.9113712374581939,
+        -0.8863430223425243,
+        -0.8962751307156939,
+        -0.976828823792558,
+        1
+      ],
+      "weighted_f1": 0.9111080702928556
+    },
+    {
+      "acc": 0.9096989966555183,
+      "bacc": 0.8935344507111068,
+      "correct_count": 544,
+      "effective_n_estimators": 8,
+      "formal_dir": "experiments/tabpfn_bounded_tuning_v1/e8/formal",
+      "macro_auc": 0.978497690971076,
+      "macro_f1": 0.8975514419042434,
+      "name": "e8",
+      "oof_path": "experiments/tabpfn_bounded_tuning_v1/e8/formal/oof_predictions.csv",
+      "oof_sha256": "955853a9ef4df6bf3a61aa44f5abe60512ddd1289168fb4375b2e3f275aaf758",
+      "rank": 3,
+      "requested_n_estimators": 8,
+      "sorting_tuple": [
+        -0.9096989966555183,
+        -0.8935344507111068,
+        -0.8975514419042434,
+        -0.978497690971076,
+        8
+      ],
+      "weighted_f1": 0.9096120881636254
+    }
+  ],
+  "fixed_selection_order": [
+    "pooled OOF ACC descending",
+    "BACC descending",
+    "Macro-F1 descending",
+    "probability Macro-AUC descending",
+    "requested n_estimators ascending"
+  ],
+  "reason": "e4 ranked first under the immutable lexicographic candidate rule.",
+  "schema_version": 1,
+  "selected": {
+    "acc": 0.9163879598662207,
+    "bacc": 0.9013186544732287,
+    "correct_count": 548,
+    "effective_n_estimators": 4,
+    "formal_dir": "experiments/tabpfn_bounded_tuning_v1/e4/formal",
+    "macro_auc": 0.9764191581686475,
+    "macro_f1": 0.9058959712564674,
+    "name": "e4",
+    "oof_path": "experiments/tabpfn_bounded_tuning_v1/e4/formal/oof_predictions.csv",
+    "oof_sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82",
+    "rank": 1,
+    "requested_n_estimators": 4,
+    "sorting_tuple": [
+      -0.9163879598662207,
+      -0.9013186544732287,
+      -0.9058959712564674,
+      -0.9764191581686475,
+      4
+    ],
+    "weighted_f1": 0.9163072846281483
+  },
+  "selected_estimator_count_effective": 4,
+  "selected_estimator_count_requested": 4,
+  "selection_is_exploratory": true
+}

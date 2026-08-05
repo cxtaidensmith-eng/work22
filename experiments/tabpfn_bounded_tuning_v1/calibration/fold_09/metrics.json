@@ -1,0 +1,137 @@
+{
+  "bias_selected_independently_for_this_outer_fold": true,
+  "broken_count": 0,
+  "broken_subject_indices": [],
+  "calibrated": {
+    "acc": 0.9322033898305084,
+    "bacc": 0.9201612903225805,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        2,
+        0,
+        29
+      ]
+    ],
+    "macro_auc": 0.993665447982336,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9111240856971407,
+    "per_class": {
+      "AD": {
+        "f1": 0.8235294117647058,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "support": 8
+      },
+      "CN": {
+        "f1": 0.9743589743589743,
+        "precision": 1.0,
+        "recall": 0.95,
+        "support": 20
+      },
+      "SMCI": {
+        "f1": 0.9354838709677419,
+        "precision": 0.9354838709677419,
+        "recall": 0.9354838709677419,
+        "support": 31
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.996596743499907,
+      "maximum_absolute_row_sum_error": 2.220446049250313e-16,
+      "minimum": 1.1877590218723759e-05,
+      "row_sum_maximum": 1.0000000000000002,
+      "row_sum_minimum": 0.9999999999999999,
+      "shape": [
+        59,
+        3
+      ]
+    },
+    "weighted_f1": 0.9334816064626633
+  },
+  "corrected_count": 0,
+  "corrected_subject_indices": [],
+  "cuda_peak_memory_allocated_bytes": 712462336,
+  "fold": 9,
+  "outer_test_labels_used_for_bias_selection": false,
+  "raw": {
+    "acc": 0.9322033898305084,
+    "bacc": 0.9201612903225805,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        2,
+        0,
+        29
+      ]
+    ],
+    "macro_auc": 0.9928973988271901,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9111240856971407,
+    "per_class": {
+      "AD": {
+        "f1": 0.8235294117647058,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "support": 8
+      },
+      "CN": {
+        "f1": 0.9743589743589743,
+        "precision": 1.0,
+        "recall": 0.95,
+        "support": 20
+      },
+      "SMCI": {
+        "f1": 0.9354838709677419,
+        "precision": 0.9354838709677419,
+        "recall": 0.9354838709677419,
+        "support": 31
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9969196319580078,
+      "maximum_absolute_row_sum_error": 6.379559636116028e-08,
+      "minimum": 1.311205323872855e-05,
+      "row_sum_maximum": 1.0000000627187546,
+      "row_sum_minimum": 0.9999999362044036,
+      "shape": [
+        59,
+        3
+      ]
+    },
+    "weighted_f1": 0.9334816064626633
+  },
+  "runtime_seconds": {
+    "inner_fit_sum": 3.8091281997039914,
+    "inner_predict_sum": 7.57363020000048,
+    "total": 19.538547599921003
+  },
+  "selected_bias": {
+    "b_AD": -0.1,
+    "b_CN": -0.0,
+    "b_SMCI": 0.0
+  },
+  "split_sha256": "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12",
+  "test_size": 59,
+  "train_size": 539
+}

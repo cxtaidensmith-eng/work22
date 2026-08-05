@@ -1,0 +1,351 @@
+{
+  "all_folds_all_modalities_100_percent": true,
+  "all_folds_effective_n_estimators_exact": true,
+  "all_folds_uncovered_count_zero": true,
+  "all_folds_union_is_360": true,
+  "expected_effective_n_estimators": 4,
+  "fold_count": 10,
+  "folds": [
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 0,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 1,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 2,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 3,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 4,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 5,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 6,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 7,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 8,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    },
+    {
+      "all_member_intersection_count": 2,
+      "duplicate_coverage_feature_count": 360,
+      "effective_n_estimators": 4,
+      "feature_coverage_sha256": "1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809",
+      "fold": 9,
+      "internal_member_count": 4,
+      "member_feature_counts": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "modal_union_coverage_rates": {
+        "CSF": 1.0,
+        "Cognitive": 1.0,
+        "MRI": 1.0,
+        "PET": 1.0,
+        "ROI": 1.0,
+        "Risk": 1.0
+      },
+      "modal_union_feature_counts": {
+        "CSF": 3,
+        "Cognitive": 24,
+        "MRI": 138,
+        "PET": 150,
+        "ROI": 9,
+        "Risk": 36
+      },
+      "requested_n_estimators": 4,
+      "uncovered_count": 0,
+      "union_count": 360
+    }
+  ],
+  "modal_total_feature_counts": {
+    "CSF": 3,
+    "Cognitive": 24,
+    "MRI": 138,
+    "PET": 150,
+    "ROI": 9,
+    "Risk": 36
+  },
+  "passed": true,
+  "pooled_feature_coverage_csv_sha256": "bba42402b2a1b8760249c7544147af136953a1de0f853f96aa1ebc966f49c48a",
+  "pooled_feature_coverage_sha256": "5986d933778715536b617f26d8040d2e7f33932c03f6e10fe2619774f33750ff"
+}

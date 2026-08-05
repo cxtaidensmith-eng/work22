@@ -1,0 +1,5 @@
+2026-08-05T07:05:05.484833+00:00 start arm=e4 kind=smoke requested=4 branch=experiment/tabpfn-bounded-tuning-v1 head=77f3943f4c5deb9193123ad8d6f0c933da5ecc0d
+2026-08-05T07:05:07.048855+00:00 fold=0 fresh_classifier_uuid=c34f5b8e-a667-46e4-843e-9b6dc8fa94e1 train=538 test=60
+2026-08-05T07:05:12.088796+00:00 fold=0 complete acc=0.916666667 macro_auc=0.980944987 n_estimators_=4 selected_features=360 seconds=4.984
+2026-08-05T07:05:12.322966+00:00 fold=0 feature_coverage=360/360 internal_members=4 coverage_sha256=1d5b61ce7611a2b0eaff4399bf84546e1bd58182a264e227678643dac9a72809
+2026-08-05T07:05:12.328900+00:00 complete arm=e4 kind=smoke wall_seconds=6.846

@@ -1,0 +1,118 @@
+{
+  "alignment": {
+    "fold_assignments_equal": true,
+    "row_count": 598,
+    "subject_indices_equal": true,
+    "truths_equal": true,
+    "unique_subject_indices": 598
+  },
+  "broken_subject_indices": [
+    58,
+    185,
+    191,
+    369,
+    391,
+    569,
+    592
+  ],
+  "by_true_class": {
+    "AD": {
+      "both_wrong": 10,
+      "e4_correct": 62,
+      "e4_only_correct": 1,
+      "support": 72,
+      "tuned_correct": 61,
+      "tuned_only_correct": 0
+    },
+    "CN": {
+      "both_wrong": 17,
+      "e4_correct": 190,
+      "e4_only_correct": 2,
+      "support": 209,
+      "tuned_correct": 190,
+      "tuned_only_correct": 2
+    },
+    "SMCI": {
+      "both_wrong": 20,
+      "e4_correct": 296,
+      "e4_only_correct": 4,
+      "support": 317,
+      "tuned_correct": 293,
+      "tuned_only_correct": 1
+    }
+  },
+  "corrected_subject_indices": [
+    133,
+    270,
+    282
+  ],
+  "counts": {
+    "both_correct": 541,
+    "both_wrong": 47,
+    "discordant": 10,
+    "e4_only_correct": 7,
+    "tuned_only_correct": 3
+  },
+  "exact_mcnemar_two_sided_p": 0.34375,
+  "other_metrics_recomputed": {
+    "acc": 0.9163879598662207,
+    "bacc": 0.9013186544732287,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        190,
+        19
+      ],
+      [
+        8,
+        13,
+        296
+      ]
+    ],
+    "macro_auc": 0.9764191581686475,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9058959712564674,
+    "per_class": {
+      "AD": {
+        "f1": 0.8732394366197183,
+        "precision": 0.8857142857142857,
+        "recall": 0.8611111111111112,
+        "support": 72
+      },
+      "CN": {
+        "f1": 0.9223300970873787,
+        "precision": 0.9359605911330049,
+        "recall": 0.9090909090909091,
+        "support": 209
+      },
+      "SMCI": {
+        "f1": 0.9221183800623053,
+        "precision": 0.9107692307692308,
+        "recall": 0.9337539432176656,
+        "support": 317
+      }
+    },
+    "prediction_matches_probability_argmax": true,
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9985918998718262,
+      "maximum_absolute_row_sum_error": 8.274128049379215e-08,
+      "minimum": 1.3009064787183888e-05,
+      "row_sum_maximum": 1.0000000759946488,
+      "row_sum_minimum": 0.9999999172587195,
+      "shape": [
+        598,
+        3
+      ]
+    },
+    "weighted_f1": 0.9163072846281483
+  },
+  "other_name": "e4",
+  "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tabpfn_bounded_tuning_v1\\experiments\\tabpfn_bounded_tuning_v1\\e4\\formal\\oof_predictions.csv",
+  "other_oof_sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82"
+}

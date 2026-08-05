@@ -1,0 +1,137 @@
+{
+  "bias_selected_independently_for_this_outer_fold": true,
+  "broken_count": 0,
+  "broken_subject_indices": [],
+  "calibrated": {
+    "acc": 0.9166666666666666,
+    "bacc": 0.9370039682539683,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        1,
+        2,
+        29
+      ]
+    ],
+    "macro_auc": 0.9731965874359743,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9195767195767196,
+    "per_class": {
+      "AD": {
+        "f1": 0.9333333333333333,
+        "precision": 0.875,
+        "recall": 1.0,
+        "support": 7
+      },
+      "CN": {
+        "f1": 0.9047619047619048,
+        "precision": 0.9047619047619048,
+        "recall": 0.9047619047619048,
+        "support": 21
+      },
+      "SMCI": {
+        "f1": 0.9206349206349206,
+        "precision": 0.9354838709677419,
+        "recall": 0.90625,
+        "support": 32
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9985918641644843,
+      "maximum_absolute_row_sum_error": 2.220446049250313e-16,
+      "minimum": 1.3152599241427491e-05,
+      "row_sum_maximum": 1.0000000000000002,
+      "row_sum_minimum": 0.9999999999999998,
+      "shape": [
+        60,
+        3
+      ]
+    },
+    "weighted_f1": 0.9165608465608465
+  },
+  "corrected_count": 0,
+  "corrected_subject_indices": [],
+  "cuda_peak_memory_allocated_bytes": 712196096,
+  "fold": 6,
+  "outer_test_labels_used_for_bias_selection": false,
+  "raw": {
+    "acc": 0.9166666666666666,
+    "bacc": 0.9370039682539683,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        1,
+        2,
+        29
+      ]
+    ],
+    "macro_auc": 0.9731965874359743,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.9195767195767196,
+    "per_class": {
+      "AD": {
+        "f1": 0.9333333333333333,
+        "precision": 0.875,
+        "recall": 1.0,
+        "support": 7
+      },
+      "CN": {
+        "f1": 0.9047619047619048,
+        "precision": 0.9047619047619048,
+        "recall": 0.9047619047619048,
+        "support": 21
+      },
+      "SMCI": {
+        "f1": 0.9206349206349206,
+        "precision": 0.9354838709677419,
+        "recall": 0.90625,
+        "support": 32
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9985918998718262,
+      "maximum_absolute_row_sum_error": 5.823676474392414e-08,
+      "minimum": 1.3152598512533586e-05,
+      "row_sum_maximum": 1.0000000582367647,
+      "row_sum_minimum": 0.9999999445817593,
+      "shape": [
+        60,
+        3
+      ]
+    },
+    "weighted_f1": 0.9165608465608465
+  },
+  "runtime_seconds": {
+    "inner_fit_sum": 3.6765883998014033,
+    "inner_predict_sum": 7.585885300068185,
+    "total": 18.85544820013456
+  },
+  "selected_bias": {
+    "b_AD": -0.0,
+    "b_CN": -0.0,
+    "b_SMCI": 0.0
+  },
+  "split_sha256": "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+  "test_size": 60,
+  "train_size": 538
+}
