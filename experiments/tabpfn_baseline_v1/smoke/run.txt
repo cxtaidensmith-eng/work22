@@ -1,0 +1,5 @@
+2026-08-05T04:43:40.032630+00:00 start kind=smoke branch=experiment/tabpfn-baseline-v1 head=765720c1c0a3b2263502e9bf662fe33de7e45428
+2026-08-05T04:43:40.033835+00:00 checkpoint_sha256=d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988 cuda=NVIDIA GeForce RTX 3050 Ti Laptop GPU
+2026-08-05T04:43:41.517569+00:00 fold=0 fresh_classifier_uuid=114b3401-f1de-4b07-98b2-623bc23d61d8 train=538 test=60
+2026-08-05T04:43:45.626020+00:00 fold=0 complete acc=0.766666667 macro_auc=0.915273884 n_estimators_=1 selected_features=200 seconds=4.054
+2026-08-05T04:43:45.770830+00:00 complete kind=smoke wall_seconds=5.740

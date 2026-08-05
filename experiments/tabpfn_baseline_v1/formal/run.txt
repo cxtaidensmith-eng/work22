@@ -1,0 +1,24 @@
+2026-08-05T04:52:46.850667+00:00 start kind=formal branch=experiment/tabpfn-baseline-v1 head=765720c1c0a3b2263502e9bf662fe33de7e45428
+2026-08-05T04:52:46.851197+00:00 checkpoint_sha256=d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988 cuda=NVIDIA GeForce RTX 3050 Ti Laptop GPU
+2026-08-05T04:52:48.509453+00:00 fold=0 fresh_classifier_uuid=83c5844c-1699-42e9-adc8-76f8f3b0e1f8 train=538 test=60
+2026-08-05T04:52:52.628385+00:00 fold=0 complete acc=0.766666667 macro_auc=0.915273884 n_estimators_=1 selected_features=200 seconds=4.077
+2026-08-05T04:52:52.905116+00:00 fold=1 fresh_classifier_uuid=21156fd9-8064-4b05-956b-975827130156 train=538 test=60
+2026-08-05T04:52:54.251507+00:00 fold=1 complete acc=0.850000000 macro_auc=0.931364697 n_estimators_=1 selected_features=200 seconds=1.293
+2026-08-05T04:52:54.514723+00:00 fold=2 fresh_classifier_uuid=09d6166f-d2da-48f5-b444-6c51086ddcfd train=538 test=60
+2026-08-05T04:52:55.915464+00:00 fold=2 complete acc=0.750000000 macro_auc=0.876894886 n_estimators_=1 selected_features=200 seconds=1.350
+2026-08-05T04:52:56.176879+00:00 fold=3 fresh_classifier_uuid=f1f2acc2-ddd5-492b-bc65-7311214a0429 train=538 test=60
+2026-08-05T04:52:57.655770+00:00 fold=3 complete acc=0.716666667 macro_auc=0.882857016 n_estimators_=1 selected_features=200 seconds=1.414
+2026-08-05T04:52:57.932047+00:00 fold=4 fresh_classifier_uuid=0f3c4c0c-9a15-4a33-a5a9-dbc34606fef9 train=538 test=60
+2026-08-05T04:52:59.338260+00:00 fold=4 complete acc=0.683333333 macro_auc=0.880797956 n_estimators_=1 selected_features=200 seconds=1.346
+2026-08-05T04:52:59.619077+00:00 fold=5 fresh_classifier_uuid=36ac51bc-27e5-4a5c-81ac-8620c0a92fc7 train=538 test=60
+2026-08-05T04:53:01.057675+00:00 fold=5 complete acc=0.733333333 macro_auc=0.910470949 n_estimators_=1 selected_features=200 seconds=1.382
+2026-08-05T04:53:01.327700+00:00 fold=6 fresh_classifier_uuid=f222ff7e-c73d-4d3d-ad25-4fdac1ea1f64 train=538 test=60
+2026-08-05T04:53:02.752234+00:00 fold=6 complete acc=0.800000000 macro_auc=0.933556764 n_estimators_=1 selected_features=200 seconds=1.363
+2026-08-05T04:53:03.023006+00:00 fold=7 fresh_classifier_uuid=0da57258-dad8-4ed0-801e-1d3759c46dda train=538 test=60
+2026-08-05T04:53:04.400679+00:00 fold=7 complete acc=0.733333333 macro_auc=0.911427496 n_estimators_=1 selected_features=200 seconds=1.302
+2026-08-05T04:53:04.672142+00:00 fold=8 fresh_classifier_uuid=8edecc30-b1e8-49f5-8bf4-17d9f78a923d train=539 test=59
+2026-08-05T04:53:06.073116+00:00 fold=8 complete acc=0.745762712 macro_auc=0.911147285 n_estimators_=1 selected_features=200 seconds=1.344
+2026-08-05T04:53:06.367537+00:00 fold=9 fresh_classifier_uuid=445b6358-7a46-43ab-a97d-2a97a206c87e train=539 test=59
+2026-08-05T04:53:07.663128+00:00 fold=9 complete acc=0.864406780 macro_auc=0.979655733 n_estimators_=1 selected_features=200 seconds=1.240
+2026-08-05T04:53:07.937773+00:00 formal_oof acc=0.764214047 macro_auc=0.912003476
+2026-08-05T04:53:07.940394+00:00 complete kind=formal wall_seconds=21.095

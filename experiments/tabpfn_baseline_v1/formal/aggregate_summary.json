@@ -1,0 +1,613 @@
+{
+  "comparisons": {
+    "original_query": {
+      "alignment": {
+        "alignment_key": "subject_index",
+        "fold_assignments_equal": true,
+        "row_count": 598,
+        "subject_index_sets_equal": true,
+        "truths_equal": true,
+        "unique_subject_indices": 598
+      },
+      "broken_subject_indices": [
+        7,
+        11,
+        17,
+        21,
+        34,
+        49,
+        50,
+        58,
+        67,
+        69,
+        79,
+        80,
+        83,
+        85,
+        86,
+        88,
+        89,
+        91,
+        92,
+        93,
+        96,
+        110,
+        124,
+        125,
+        133,
+        145,
+        155,
+        158,
+        159,
+        165,
+        167,
+        169,
+        172,
+        175,
+        182,
+        183,
+        184,
+        186,
+        187,
+        188,
+        191,
+        207,
+        208,
+        212,
+        213,
+        220,
+        224,
+        230,
+        248,
+        260,
+        262,
+        264,
+        266,
+        268,
+        272,
+        273,
+        276,
+        278,
+        284,
+        289,
+        290,
+        296,
+        305,
+        311,
+        312,
+        316,
+        323,
+        326,
+        356,
+        359,
+        361,
+        372,
+        376,
+        377,
+        383,
+        386,
+        387,
+        388,
+        395,
+        403,
+        407,
+        415,
+        417,
+        426,
+        428,
+        435,
+        436,
+        446,
+        451,
+        463,
+        464,
+        468,
+        479,
+        480,
+        483,
+        485,
+        503,
+        517,
+        521,
+        524,
+        525,
+        536,
+        537,
+        539,
+        541,
+        543,
+        553,
+        559,
+        562,
+        568,
+        574,
+        583,
+        588,
+        590
+      ],
+      "by_true_class": {
+        "AD": {
+          "both_wrong": 7,
+          "original_query_correct": 62,
+          "original_query_only_correct": 10,
+          "support": 72,
+          "tabpfn_correct": 55,
+          "tabpfn_only_correct": 3
+        },
+        "CN": {
+          "both_wrong": 7,
+          "original_query_correct": 198,
+          "original_query_only_correct": 48,
+          "support": 209,
+          "tabpfn_correct": 154,
+          "tabpfn_only_correct": 4
+        },
+        "SMCI": {
+          "both_wrong": 13,
+          "original_query_correct": 296,
+          "original_query_only_correct": 56,
+          "support": 317,
+          "tabpfn_correct": 248,
+          "tabpfn_only_correct": 8
+        }
+      },
+      "corrected_subject_indices": [
+        4,
+        16,
+        33,
+        120,
+        203,
+        234,
+        270,
+        350,
+        378,
+        401,
+        433,
+        473,
+        492,
+        522,
+        538
+      ],
+      "counts": {
+        "both_correct": 442,
+        "both_wrong": 27,
+        "discordant": 129,
+        "original_query_only_correct": 114,
+        "tabpfn_only_correct": 15
+      },
+      "exact_mcnemar_two_sided_p": 5.046110811696225e-20,
+      "other_metrics_recomputed": {
+        "acc": 0.9297658862876255,
+        "bacc": 0.9140778251271361,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            198,
+            11
+          ],
+          [
+            10,
+            11,
+            296
+          ]
+        ],
+        "historical_adjusted_score_macro_auc": 0.9500701795923208,
+        "macro_auc": 0.9560490697782983,
+        "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+        "macro_f1": 0.9140778251271361,
+        "per_class": {
+          "AD": {
+            "f1": 0.8611111111111112,
+            "precision": 0.8611111111111112,
+            "recall": 0.8611111111111112,
+            "support": 72
+          },
+          "CN": {
+            "f1": 0.9473684210526315,
+            "precision": 0.9473684210526315,
+            "recall": 0.9473684210526315,
+            "support": 209
+          },
+          "SMCI": {
+            "f1": 0.9337539432176656,
+            "precision": 0.9337539432176656,
+            "recall": 0.9337539432176656,
+            "support": 317
+          }
+        },
+        "prediction_matches_probability_argmax": true,
+        "probability_validation": {
+          "finite": true,
+          "maximum": 0.9931174516677856,
+          "maximum_absolute_row_sum_error": 1.3085082173347473e-07,
+          "minimum": 0.0008466223953291774,
+          "row_sum_maximum": 1.0000001308508217,
+          "row_sum_minimum": 0.9999998805578798,
+          "shape": [
+            598,
+            3
+          ]
+        },
+        "weighted_f1": 0.9297658862876255
+      },
+      "other_name": "original_query",
+      "other_oof_expected_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565",
+      "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\oof_predictions.csv",
+      "other_oof_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565"
+    },
+    "seps_q_v1": {
+      "alignment": {
+        "alignment_key": "subject_index",
+        "fold_assignments_equal": true,
+        "row_count": 598,
+        "subject_index_sets_equal": true,
+        "truths_equal": true,
+        "unique_subject_indices": 598
+      },
+      "broken_subject_indices": [
+        11,
+        18,
+        21,
+        27,
+        34,
+        50,
+        53,
+        58,
+        67,
+        69,
+        79,
+        80,
+        83,
+        85,
+        86,
+        88,
+        91,
+        92,
+        93,
+        96,
+        110,
+        124,
+        125,
+        133,
+        145,
+        155,
+        159,
+        165,
+        167,
+        169,
+        172,
+        175,
+        182,
+        184,
+        185,
+        187,
+        188,
+        191,
+        196,
+        207,
+        208,
+        212,
+        213,
+        220,
+        224,
+        230,
+        260,
+        262,
+        264,
+        266,
+        268,
+        276,
+        278,
+        284,
+        289,
+        290,
+        296,
+        305,
+        311,
+        312,
+        316,
+        323,
+        326,
+        356,
+        359,
+        364,
+        369,
+        372,
+        376,
+        377,
+        386,
+        387,
+        388,
+        395,
+        397,
+        403,
+        407,
+        415,
+        417,
+        426,
+        428,
+        430,
+        435,
+        436,
+        438,
+        446,
+        463,
+        464,
+        468,
+        479,
+        480,
+        483,
+        485,
+        503,
+        517,
+        521,
+        524,
+        525,
+        536,
+        537,
+        539,
+        541,
+        543,
+        553,
+        559,
+        562,
+        568,
+        574,
+        583,
+        588,
+        590,
+        592
+      ],
+      "by_true_class": {
+        "AD": {
+          "both_wrong": 7,
+          "seps_q_v1_correct": 62,
+          "seps_q_v1_only_correct": 10,
+          "support": 72,
+          "tabpfn_correct": 55,
+          "tabpfn_only_correct": 3
+        },
+        "CN": {
+          "both_wrong": 12,
+          "seps_q_v1_correct": 193,
+          "seps_q_v1_only_correct": 43,
+          "support": 209,
+          "tabpfn_correct": 154,
+          "tabpfn_only_correct": 4
+        },
+        "SMCI": {
+          "both_wrong": 10,
+          "seps_q_v1_correct": 298,
+          "seps_q_v1_only_correct": 59,
+          "support": 317,
+          "tabpfn_correct": 248,
+          "tabpfn_only_correct": 9
+        }
+      },
+      "corrected_subject_indices": [
+        47,
+        63,
+        68,
+        226,
+        234,
+        245,
+        259,
+        317,
+        357,
+        378,
+        393,
+        487,
+        522,
+        523,
+        593,
+        594
+      ],
+      "counts": {
+        "both_correct": 441,
+        "both_wrong": 29,
+        "discordant": 128,
+        "seps_q_v1_only_correct": 112,
+        "tabpfn_only_correct": 16
+      },
+      "exact_mcnemar_two_sided_p": 6.379225013648829e-19,
+      "other_metrics_recomputed": {
+        "acc": 0.9247491638795987,
+        "bacc": 0.9082063928901053,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            193,
+            16
+          ],
+          [
+            7,
+            12,
+            298
+          ]
+        ],
+        "historical_adjusted_score_macro_auc": 0.9571291149332602,
+        "macro_auc": 0.9532899410556896,
+        "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+        "macro_f1": 0.9138656552532017,
+        "per_class": {
+          "AD": {
+            "f1": 0.8794326241134752,
+            "precision": 0.8985507246376812,
+            "recall": 0.8611111111111112,
+            "support": 72
+          },
+          "CN": {
+            "f1": 0.9323671497584541,
+            "precision": 0.9414634146341463,
+            "recall": 0.9234449760765551,
+            "support": 209
+          },
+          "SMCI": {
+            "f1": 0.9297971918876755,
+            "precision": 0.9197530864197531,
+            "recall": 0.9400630914826499,
+            "support": 317
+          }
+        },
+        "prediction_matches_probability_argmax": true,
+        "probability_validation": {
+          "finite": true,
+          "maximum": 0.9942394495010376,
+          "maximum_absolute_row_sum_error": 1.3364478945732117e-07,
+          "minimum": 0.00040863873437047005,
+          "row_sum_maximum": 1.0000001336447895,
+          "row_sum_minimum": 0.9999998821876943,
+          "shape": [
+            598,
+            3
+          ]
+        },
+        "weighted_f1": 0.9246314265285625
+      },
+      "other_name": "seps_q_v1",
+      "other_oof_expected_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68",
+      "other_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tabpfn_baseline_v1\\experiments\\query_pool_component_sharing_v1\\tenfold_seed0\\oof_predictions.csv",
+      "other_oof_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68"
+    }
+  },
+  "fold_metric_summary": [
+    {
+      "maximum": 0.864406779661017,
+      "mean": 0.7643502824858757,
+      "metric": "acc",
+      "minimum": 0.6833333333333333,
+      "pooled_oof": 0.7642140468227425,
+      "sample_std": 0.057673842191136554
+    },
+    {
+      "maximum": 0.8493165371214152,
+      "mean": 0.7650925351517088,
+      "metric": "macro_f1",
+      "minimum": 0.6558602337151451,
+      "pooled_oof": 0.7664825798136402,
+      "sample_std": 0.057856533562340225
+    },
+    {
+      "maximum": 0.8472222222222222,
+      "mean": 0.7626331285202254,
+      "metric": "bacc",
+      "minimum": 0.615079365079365,
+      "pooled_oof": 0.7610217930033637,
+      "sample_std": 0.06813119984956406
+    },
+    {
+      "maximum": 0.9796557332610464,
+      "mean": 0.9133446666153352,
+      "metric": "macro_auc",
+      "minimum": 0.8768948856655224,
+      "pooled_oof": 0.9120034762565993,
+      "sample_std": 0.030674390037793223
+    },
+    {
+      "maximum": 0.8647413024085637,
+      "mean": 0.7634154138820177,
+      "metric": "weighted_f1",
+      "minimum": 0.679996528982992,
+      "pooled_oof": 0.7642741002057829,
+      "sample_std": 0.057977563111736116
+    }
+  ],
+  "fresh_classifier_instances": {
+    "all_unique": true,
+    "count": 10,
+    "instance_uuids": [
+      "83c5844c-1699-42e9-adc8-76f8f3b0e1f8",
+      "21156fd9-8064-4b05-956b-975827130156",
+      "09d6166f-d2da-48f5-b444-6c51086ddcfd",
+      "f1f2acc2-ddd5-492b-bc65-7311214a0429",
+      "0f3c4c0c-9a15-4a33-a5a9-dbc34606fef9",
+      "36ac51bc-27e5-4a5c-81ac-8620c0a92fc7",
+      "f222ff7e-c73d-4d3d-ad25-4fdac1ea1f64",
+      "0da57258-dad8-4ed0-801e-1d3759c46dda",
+      "8edecc30-b1e8-49f5-8bf4-17d9f78a923d",
+      "445b6358-7a46-43ab-a97d-2a97a206c87e"
+    ],
+    "unique_count": 10
+  },
+  "oof_integrity": {
+    "all_ten_folds_present": true,
+    "each_source_row_predicted_once": true,
+    "identity_limitation": "subject_index is a source CSV row index, not a verified RID",
+    "row_count": 598,
+    "subject_index_set_is_0_to_597": true,
+    "unique_shuffled_positions": 598,
+    "unique_subject_indices": 598
+  },
+  "oof_metrics": {
+    "acc": 0.7642140468227425,
+    "bacc": 0.7610217930033637,
+    "confusion_matrix": [
+      [
+        55,
+        0,
+        17
+      ],
+      [
+        0,
+        154,
+        55
+      ],
+      [
+        13,
+        56,
+        248
+      ]
+    ],
+    "macro_auc": 0.9120034762565993,
+    "macro_auc_definition": "sklearn roc_auc_score; multiclass OVR; macro average; predicted probabilities; class order AD,CN,SMCI",
+    "macro_f1": 0.7664825798136402,
+    "per_class": {
+      "AD": {
+        "f1": 0.7857142857142857,
+        "precision": 0.8088235294117647,
+        "recall": 0.7638888888888888,
+        "support": 72
+      },
+      "CN": {
+        "f1": 0.7350835322195705,
+        "precision": 0.7333333333333333,
+        "recall": 0.7368421052631579,
+        "support": 209
+      },
+      "SMCI": {
+        "f1": 0.7786499215070644,
+        "precision": 0.775,
+        "recall": 0.7823343848580442,
+        "support": 317
+      }
+    },
+    "probability_validation": {
+      "finite": true,
+      "maximum": 0.9989187717437744,
+      "maximum_absolute_row_sum_error": 9.625728125683963e-08,
+      "minimum": 1.2995997167308815e-05,
+      "row_sum_maximum": 1.0000000803966032,
+      "row_sum_minimum": 0.9999999037427187,
+      "shape": [
+        598,
+        3
+      ]
+    },
+    "weighted_f1": 0.7642741002057829
+  },
+  "runtime_seconds": {
+    "fit_sum": 8.112725400365889,
+    "fold_total_sum": 16.111177900340408,
+    "predict_proba_sum": 7.9819449002388865
+  }
+}

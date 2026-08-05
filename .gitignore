@@ -29,3 +29,12 @@
 /OPT_Hyper
 # Generated experiment checkpoints
 /experiments/**/*.pt
+
+# Local model/authentication material (never commit)
+*.ckpt
+/.tabpfn/
+/.tabpfn_models/
+/.cache/tabpfn/
+/.venv/
+**/auth_token
+**/token.json
