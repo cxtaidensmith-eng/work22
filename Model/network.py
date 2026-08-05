@@ -195,20 +195,254 @@ class ComponentSharedLabelPool(nn.Module):
         self.last_attention_outputs = None
         self.last_outputs = None
 
-    def forward(self, modal_tokens):
+    def forward(self, modal_tokens, evidence_reader=None):
         batch_size = modal_tokens.size(0)
         kv = self.norm_kv(modal_tokens)
         attention_outputs = []
         pooled_outputs = []
-        for query, norm_out, ffn in zip(self.queries, self.norm_out, self.ffn):
+        if evidence_reader is not None:
+            evidence_reader.begin_forward()
+        for class_index, (query, norm_out, ffn) in enumerate(
+            zip(self.queries, self.norm_out, self.ffn)
+        ):
             q = query.expand(batch_size, -1, -1)
             pooled, _ = self.attn(q, kv, kv, need_weights=False)
             pooled = pooled.squeeze(1)
             attention_outputs.append(pooled)
+            if evidence_reader is not None:
+                pooled = pooled + evidence_reader.forward_class(
+                    modal_tokens, pooled, class_index
+                )
             pooled_outputs.append(pooled + ffn(norm_out(pooled)))
         self.last_attention_outputs = torch.stack(attention_outputs, dim=1).detach()
         self.last_outputs = torch.stack(pooled_outputs, dim=1).detach()
+        if evidence_reader is not None:
+            evidence_reader.end_forward()
         return pooled_outputs
+
+
+class ClassPrivateLowRankEvidenceReader(nn.Module):
+    """Class-private rank-constrained evidence readout over modal tokens."""
+
+    def __init__(self, hidden_size, class_count=3, rank=8):
+        super(ClassPrivateLowRankEvidenceReader, self).__init__()
+        if rank <= 0:
+            raise ValueError('rank must be positive')
+        self.hidden_size = int(hidden_size)
+        self.class_count = int(class_count)
+        self.rank = int(rank)
+        self.key_projections = nn.ModuleList([
+            nn.Linear(hidden_size, rank, bias=False) for _ in range(class_count)
+        ])
+        self.value_projections = nn.ModuleList([
+            nn.Linear(hidden_size, rank, bias=False) for _ in range(class_count)
+        ])
+        self.class_queries = nn.ParameterList([
+            nn.Parameter(torch.randn(rank) * 0.02) for _ in range(class_count)
+        ])
+        self.output_projections = nn.ModuleList([
+            nn.Linear(rank, hidden_size, bias=False) for _ in range(class_count)
+        ])
+        for projection in self.output_projections:
+            nn.init.zeros_(projection.weight)
+        self.last_modal_weights = None
+        self.last_residuals = None
+        self.last_shared_attention = None
+        self._forward_weights = None
+        self._forward_residuals = None
+        self._forward_shared_attention = None
+
+    def begin_forward(self):
+        self._forward_weights = []
+        self._forward_residuals = []
+        self._forward_shared_attention = []
+
+    def forward_class(self, modal_tokens, shared_attention, class_index):
+        key = self.key_projections[class_index](modal_tokens)
+        value = self.value_projections[class_index](modal_tokens)
+        score = torch.matmul(key, self.class_queries[class_index]) / (self.rank ** 0.5)
+        weight = torch.softmax(score, dim=1)
+        low_rank_evidence = torch.sum(weight.unsqueeze(-1) * value, dim=1)
+        residual = self.output_projections[class_index](low_rank_evidence)
+        if self._forward_weights is None:
+            self.begin_forward()
+        self._forward_weights.append(weight.detach())
+        self._forward_residuals.append(residual.detach())
+        self._forward_shared_attention.append(shared_attention.detach())
+        return residual
+
+    def end_forward(self):
+        if self._forward_weights is None or len(self._forward_weights) != self.class_count:
+            raise RuntimeError('incomplete class-private evidence forward')
+        self.last_modal_weights = torch.stack(self._forward_weights, dim=1)
+        self.last_residuals = torch.stack(self._forward_residuals, dim=1)
+        self.last_shared_attention = torch.stack(
+            self._forward_shared_attention, dim=1
+        )
+        self._forward_weights = None
+        self._forward_residuals = None
+        self._forward_shared_attention = None
+
+
+class ClassConditionedSparseEvidenceGraph(nn.Module):
+    """Dynamic class-conditioned mutual-kNN evidence graph with logit residuals."""
+
+    def __init__(self, hidden_size, class_count=3, top_k=8):
+        super(ClassConditionedSparseEvidenceGraph, self).__init__()
+        if top_k <= 0:
+            raise ValueError('top_k must be positive')
+        self.hidden_size = int(hidden_size)
+        self.class_count = int(class_count)
+        self.top_k = int(top_k)
+        self.graph_transform = nn.Linear(hidden_size, hidden_size, bias=False)
+        self.scorers = nn.ModuleList([
+            nn.Linear(hidden_size, 1) for _ in range(class_count)
+        ])
+        self.gamma = nn.Parameter(torch.zeros(class_count))
+        self.last_edge_masks = None
+        self.last_weighted_adjacencies = None
+        self.last_normalized_adjacencies = None
+        self.last_pre_graph = None
+        self.last_post_graph = None
+        self.last_delta_logits = None
+        self.last_graph_statistics = None
+        self.capture_diagnostics = False
+
+    def set_capture_diagnostics(self, active):
+        self.capture_diagnostics = bool(active)
+
+    def _build_graph(self, class_representation):
+        normalized = F.layer_norm(
+            class_representation, (self.hidden_size,), weight=None, bias=None
+        )
+        normalized = F.normalize(normalized, p=2, dim=-1, eps=1e-12)
+        similarity = normalized @ normalized.transpose(0, 1)
+        node_count = int(similarity.size(0))
+        neighbor_count = min(self.top_k, max(0, node_count - 1))
+        selection_similarity = similarity.detach().clone()
+        selection_similarity.fill_diagonal_(-torch.inf)
+        directed = torch.zeros(
+            (node_count, node_count), dtype=torch.bool, device=similarity.device
+        )
+        if neighbor_count > 0:
+            neighbor_index = torch.topk(
+                selection_similarity, k=neighbor_count, dim=1, largest=True
+            ).indices
+            directed.scatter_(1, neighbor_index, True)
+        mutual = directed & directed.transpose(0, 1)
+        edge_mask = mutual | mutual.transpose(0, 1)
+        edge_mask.fill_diagonal_(False)
+        retained_weight = ((similarity + 1.0) * 0.5).clamp_(0.0, 1.0)
+        edge_weight = torch.where(
+            edge_mask,
+            retained_weight,
+            torch.zeros_like(similarity),
+        )
+        weighted_adjacency = edge_weight + torch.eye(
+            node_count, device=similarity.device, dtype=similarity.dtype
+        )
+        degree = weighted_adjacency.sum(dim=1)
+        inv_sqrt_degree = degree.clamp_min(1e-12).pow(-0.5)
+        normalized_adjacency = (
+            inv_sqrt_degree[:, None]
+            * weighted_adjacency
+            * inv_sqrt_degree[None, :]
+        )
+        return edge_mask, weighted_adjacency, normalized_adjacency
+
+    def forward(self, class_representations):
+        if len(class_representations) != self.class_count:
+            raise ValueError('class representation count mismatch')
+        edge_masks = []
+        weighted_adjacencies = []
+        normalized_adjacencies = []
+        post_graph = []
+        delta_logits = []
+        graph_statistics = []
+        for class_index, representation in enumerate(class_representations):
+            edge_mask, weighted_adjacency, normalized_adjacency = self._build_graph(
+                representation
+            )
+            message = normalized_adjacency @ self.graph_transform(representation)
+            graph_representation = F.layer_norm(
+                representation + message,
+                (self.hidden_size,),
+                weight=None,
+                bias=None,
+            )
+            delta = self.scorers[class_index](graph_representation).squeeze(-1)
+            if self.capture_diagnostics:
+                node_count = int(representation.size(0))
+                undirected_edge_count = int(edge_mask.sum().item() // 2)
+                possible_edges = node_count * (node_count - 1) // 2
+                off_diagonal_degree = edge_mask.sum(dim=1)
+                nonedge_mask = ~edge_mask
+                nonedge_mask.fill_diagonal_(False)
+                nonedge_max = (
+                    float(weighted_adjacency[nonedge_mask].abs().max().detach().cpu())
+                    if bool(nonedge_mask.any())
+                    else 0.0
+                )
+                minimum_retained_edge_weight = (
+                    float(weighted_adjacency[edge_mask].min().detach().cpu())
+                    if bool(edge_mask.any())
+                    else 0.0
+                )
+                graph_statistics.append({
+                    'node_count': node_count,
+                    'top_k': self.top_k,
+                    'undirected_edge_count': undirected_edge_count,
+                    'density': (
+                        float(undirected_edge_count / possible_edges)
+                        if possible_edges > 0 else 0.0
+                    ),
+                    'average_degree': float(off_diagonal_degree.float().mean().detach().cpu()),
+                    'self_loop_only_nodes': int((off_diagonal_degree == 0).sum().item()),
+                    'symmetry_error': float(
+                        (weighted_adjacency - weighted_adjacency.transpose(0, 1))
+                        .abs().max().detach().cpu()
+                    ),
+                    'nonedge_max_abs': nonedge_max,
+                    'minimum_retained_edge_weight': minimum_retained_edge_weight,
+                    'minimum_self_loop': float(
+                        weighted_adjacency.diagonal().min().detach().cpu()
+                    ),
+                    'normalized_symmetry_error': float(
+                        (normalized_adjacency - normalized_adjacency.transpose(0, 1))
+                        .abs().max().detach().cpu()
+                    ),
+                    'all_finite': bool(
+                        torch.isfinite(weighted_adjacency).all()
+                        and torch.isfinite(normalized_adjacency).all()
+                        and torch.isfinite(graph_representation).all()
+                        and torch.isfinite(delta).all()
+                    ),
+                })
+                edge_masks.append(edge_mask.detach())
+                weighted_adjacencies.append(weighted_adjacency.detach())
+                normalized_adjacencies.append(normalized_adjacency.detach())
+            post_graph.append(graph_representation)
+            delta_logits.append(delta)
+        if self.capture_diagnostics:
+            self.last_edge_masks = torch.stack(edge_masks, dim=0)
+            self.last_weighted_adjacencies = torch.stack(weighted_adjacencies, dim=0)
+            self.last_normalized_adjacencies = torch.stack(
+                normalized_adjacencies, dim=0
+            )
+            self.last_pre_graph = torch.stack(
+                [representation.detach() for representation in class_representations], dim=1
+            )
+            self.last_post_graph = torch.stack(
+                [representation.detach() for representation in post_graph], dim=1
+            )
+            self.last_delta_logits = torch.stack(
+                [delta.detach() for delta in delta_logits], dim=1
+            )
+            self.last_graph_statistics = graph_statistics
+        return torch.stack([
+            self.gamma[class_index] * delta_logits[class_index]
+            for class_index in range(self.class_count)
+        ], dim=1)
 
 
 class LatentBranchPool(nn.Module):
@@ -340,7 +574,8 @@ class HeterGraph_Model_Kmeans(nn.Module):
                  latent_auxiliary_mode='multiclass',
                  category_branch_fusion='concat',
                  label_graph_alpha=0.0, label_graph_topk=0,
-                 label_graph_reg_lambda=0.0):
+                 label_graph_reg_lambda=0.0,
+                 low_rank_reader=False, class_graph=False):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -483,6 +718,12 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.label_graph_alpha = float(label_graph_alpha)
         self.label_graph_topk = int(label_graph_topk)
         self.label_graph_reg_lambda = float(label_graph_reg_lambda)
+        self.low_rank_reader_enabled = bool(low_rank_reader)
+        self.class_graph_enabled = bool(class_graph)
+        if (
+            self.low_rank_reader_enabled or self.class_graph_enabled
+        ) and self.query_pool_variant != 'component_shared':
+            raise ValueError('class-private evidence modules require component_shared query pooling')
         self.last_adj_base = None
         self.last_label_relation = None
 
@@ -669,6 +910,17 @@ class HeterGraph_Model_Kmeans(nn.Module):
                 'osfq_anchor_updates',
                 torch.tensor(0, dtype=torch.long),
                 persistent=True,
+            )
+
+        # Bounded evidence modules are appended after all legacy modules so
+        # enabling them cannot perturb any shared SEPS-Q initialization.
+        if self.low_rank_reader_enabled:
+            self.class_private_low_rank_reader = ClassPrivateLowRankEvidenceReader(
+                Hidden_size, class_count=self._Label_num, rank=8
+            )
+        if self.class_graph_enabled:
+            self.class_conditioned_sparse_evidence_graph = ClassConditionedSparseEvidenceGraph(
+                Hidden_size, class_count=self._Label_num, top_k=8
             )
 
         self.last_category_embedding = None
@@ -898,7 +1150,13 @@ class HeterGraph_Model_Kmeans(nn.Module):
             Label_embedding = []
             Auxi_classifier_output = []
             if self.query_pool_variant == 'component_shared':
-                Label_embedding = self.component_shared_pool(H)
+                evidence_reader = (
+                    self.class_private_low_rank_reader
+                    if self.low_rank_reader_enabled else None
+                )
+                Label_embedding = self.component_shared_pool(
+                    H, evidence_reader=evidence_reader
+                )
                 Auxi_classifier_output = [
                     self._Auxi_classifier[label_idx](branch_embedding)
                     for label_idx, branch_embedding in enumerate(Label_embedding)
@@ -990,5 +1248,7 @@ class HeterGraph_Model_Kmeans(nn.Module):
             if alpha > 0:
                 Adj = (1.0 - alpha) * Adj + alpha * R_label
         Y = self.GCN(self._fuse_semantic_branches(Y, Global_Embedding), Adj)
+        if self.class_graph_enabled:
+            Y = Y + self.class_conditioned_sparse_evidence_graph(Label_embedding)
 
         return Y, Label_embedding, Auxi_classifier_output

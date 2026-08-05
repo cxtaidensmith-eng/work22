@@ -1,0 +1,698 @@
+{
+  "experiment": "Class-Private Evidence Reader and Graph v1",
+  "phase": "RG CUDA smoke",
+  "fold": 0,
+  "seed": 0,
+  "epochs": 3,
+  "device": "cuda:0",
+  "parameter_count": 794697,
+  "lineage": {
+    "base_branch": "origin/experiment/query-pool-component-sharing-v1",
+    "base_commit_sha": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+    "branch": "experiment/class-private-evidence-graph-v1",
+    "head_commit_sha": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+    "worktree": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\class_private_evidence_graph_v1",
+    "feature_csv": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_processed_standard_data.csv",
+    "feature_csv_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042",
+    "modal_dictionary": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+    "modal_dictionary_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273",
+    "fold_manifest": "experiments/ovr_aligned_shared_query_v1/formal/reference_fold_manifest.json",
+    "fold_manifest_file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+    "fold_split_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+    "seps_q_oof_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68",
+    "fold_split_hashes": [
+      "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+      "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+      "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+      "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+      "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+      "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+      "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+      "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+      "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+      "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+    "python_executable": "D:\\Anaconda\\envs\\mmfl\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.1.1",
+    "torch_cuda_build": "11.8",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  },
+  "fold_split_hashes": [
+    "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+    "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+    "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+    "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+    "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+    "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+    "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+    "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+    "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12"
+  ],
+  "initialization_equivalence": {
+    "baseline_parameter_count": 778251,
+    "baseline_state_hash": "7f9581985309e2a497ad2b9f0308592ab1fa16d1fd46566c6ab313c1170a066a",
+    "arms": {
+      "R": {
+        "parameter_summary": {
+          "arm": "R",
+          "total_parameter_count": 785187,
+          "added_parameter_count": 6936,
+          "added_named_parameters": {
+            "class_private_low_rank_reader.key_projections.0.weight": 768,
+            "class_private_low_rank_reader.key_projections.1.weight": 768,
+            "class_private_low_rank_reader.key_projections.2.weight": 768,
+            "class_private_low_rank_reader.value_projections.0.weight": 768,
+            "class_private_low_rank_reader.value_projections.1.weight": 768,
+            "class_private_low_rank_reader.value_projections.2.weight": 768,
+            "class_private_low_rank_reader.class_queries.0": 8,
+            "class_private_low_rank_reader.class_queries.1": 8,
+            "class_private_low_rank_reader.class_queries.2": 8,
+            "class_private_low_rank_reader.output_projections.0.weight": 768,
+            "class_private_low_rank_reader.output_projections.1.weight": 768,
+            "class_private_low_rank_reader.output_projections.2.weight": 768
+          },
+          "below_original_query": true
+        },
+        "legacy_state_audit": {
+          "arm": "R",
+          "common_tensor_count": 148,
+          "new_tensor_count": 12,
+          "new_tensor_names": [
+            "class_private_low_rank_reader.class_queries.0",
+            "class_private_low_rank_reader.class_queries.1",
+            "class_private_low_rank_reader.class_queries.2",
+            "class_private_low_rank_reader.key_projections.0.weight",
+            "class_private_low_rank_reader.key_projections.1.weight",
+            "class_private_low_rank_reader.key_projections.2.weight",
+            "class_private_low_rank_reader.output_projections.0.weight",
+            "class_private_low_rank_reader.output_projections.1.weight",
+            "class_private_low_rank_reader.output_projections.2.weight",
+            "class_private_low_rank_reader.value_projections.0.weight",
+            "class_private_low_rank_reader.value_projections.1.weight",
+            "class_private_low_rank_reader.value_projections.2.weight"
+          ],
+          "max_abs_diff": 0.0,
+          "mismatch_names": [],
+          "passed": true
+        },
+        "missing_new_state_keys_after_base_load": [
+          "class_private_low_rank_reader.class_queries.0",
+          "class_private_low_rank_reader.class_queries.1",
+          "class_private_low_rank_reader.class_queries.2",
+          "class_private_low_rank_reader.key_projections.0.weight",
+          "class_private_low_rank_reader.key_projections.1.weight",
+          "class_private_low_rank_reader.key_projections.2.weight",
+          "class_private_low_rank_reader.output_projections.0.weight",
+          "class_private_low_rank_reader.output_projections.1.weight",
+          "class_private_low_rank_reader.output_projections.2.weight",
+          "class_private_low_rank_reader.value_projections.0.weight",
+          "class_private_low_rank_reader.value_projections.1.weight",
+          "class_private_low_rank_reader.value_projections.2.weight"
+        ],
+        "zero_gate_audit": {
+          "reader_B_weights_strictly_zero": [
+            true,
+            true,
+            true
+          ]
+        },
+        "raw_logits_max_abs_diff_vs_B": 0.0,
+        "passed": true
+      },
+      "G": {
+        "parameter_summary": {
+          "arm": "G",
+          "total_parameter_count": 787761,
+          "added_parameter_count": 9510,
+          "added_named_parameters": {
+            "class_conditioned_sparse_evidence_graph.gamma": 3,
+            "class_conditioned_sparse_evidence_graph.graph_transform.weight": 9216,
+            "class_conditioned_sparse_evidence_graph.scorers.0.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.0.bias": 1,
+            "class_conditioned_sparse_evidence_graph.scorers.1.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.1.bias": 1,
+            "class_conditioned_sparse_evidence_graph.scorers.2.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.2.bias": 1
+          },
+          "below_original_query": true
+        },
+        "legacy_state_audit": {
+          "arm": "G",
+          "common_tensor_count": 148,
+          "new_tensor_count": 8,
+          "new_tensor_names": [
+            "class_conditioned_sparse_evidence_graph.gamma",
+            "class_conditioned_sparse_evidence_graph.graph_transform.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.0.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.0.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.1.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.1.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.2.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.2.weight"
+          ],
+          "max_abs_diff": 0.0,
+          "mismatch_names": [],
+          "passed": true
+        },
+        "missing_new_state_keys_after_base_load": [
+          "class_conditioned_sparse_evidence_graph.gamma",
+          "class_conditioned_sparse_evidence_graph.graph_transform.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.0.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.0.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.1.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.1.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.2.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.2.weight"
+        ],
+        "zero_gate_audit": {
+          "gamma_strictly_zero": true
+        },
+        "raw_logits_max_abs_diff_vs_B": 0.0,
+        "passed": true
+      },
+      "RG": {
+        "parameter_summary": {
+          "arm": "RG",
+          "total_parameter_count": 794697,
+          "added_parameter_count": 16446,
+          "added_named_parameters": {
+            "class_private_low_rank_reader.key_projections.0.weight": 768,
+            "class_private_low_rank_reader.key_projections.1.weight": 768,
+            "class_private_low_rank_reader.key_projections.2.weight": 768,
+            "class_private_low_rank_reader.value_projections.0.weight": 768,
+            "class_private_low_rank_reader.value_projections.1.weight": 768,
+            "class_private_low_rank_reader.value_projections.2.weight": 768,
+            "class_private_low_rank_reader.class_queries.0": 8,
+            "class_private_low_rank_reader.class_queries.1": 8,
+            "class_private_low_rank_reader.class_queries.2": 8,
+            "class_private_low_rank_reader.output_projections.0.weight": 768,
+            "class_private_low_rank_reader.output_projections.1.weight": 768,
+            "class_private_low_rank_reader.output_projections.2.weight": 768,
+            "class_conditioned_sparse_evidence_graph.gamma": 3,
+            "class_conditioned_sparse_evidence_graph.graph_transform.weight": 9216,
+            "class_conditioned_sparse_evidence_graph.scorers.0.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.0.bias": 1,
+            "class_conditioned_sparse_evidence_graph.scorers.1.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.1.bias": 1,
+            "class_conditioned_sparse_evidence_graph.scorers.2.weight": 96,
+            "class_conditioned_sparse_evidence_graph.scorers.2.bias": 1
+          },
+          "below_original_query": true
+        },
+        "legacy_state_audit": {
+          "arm": "RG",
+          "common_tensor_count": 148,
+          "new_tensor_count": 20,
+          "new_tensor_names": [
+            "class_conditioned_sparse_evidence_graph.gamma",
+            "class_conditioned_sparse_evidence_graph.graph_transform.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.0.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.0.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.1.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.1.weight",
+            "class_conditioned_sparse_evidence_graph.scorers.2.bias",
+            "class_conditioned_sparse_evidence_graph.scorers.2.weight",
+            "class_private_low_rank_reader.class_queries.0",
+            "class_private_low_rank_reader.class_queries.1",
+            "class_private_low_rank_reader.class_queries.2",
+            "class_private_low_rank_reader.key_projections.0.weight",
+            "class_private_low_rank_reader.key_projections.1.weight",
+            "class_private_low_rank_reader.key_projections.2.weight",
+            "class_private_low_rank_reader.output_projections.0.weight",
+            "class_private_low_rank_reader.output_projections.1.weight",
+            "class_private_low_rank_reader.output_projections.2.weight",
+            "class_private_low_rank_reader.value_projections.0.weight",
+            "class_private_low_rank_reader.value_projections.1.weight",
+            "class_private_low_rank_reader.value_projections.2.weight"
+          ],
+          "max_abs_diff": 0.0,
+          "mismatch_names": [],
+          "passed": true
+        },
+        "missing_new_state_keys_after_base_load": [
+          "class_conditioned_sparse_evidence_graph.gamma",
+          "class_conditioned_sparse_evidence_graph.graph_transform.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.0.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.0.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.1.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.1.weight",
+          "class_conditioned_sparse_evidence_graph.scorers.2.bias",
+          "class_conditioned_sparse_evidence_graph.scorers.2.weight",
+          "class_private_low_rank_reader.class_queries.0",
+          "class_private_low_rank_reader.class_queries.1",
+          "class_private_low_rank_reader.class_queries.2",
+          "class_private_low_rank_reader.key_projections.0.weight",
+          "class_private_low_rank_reader.key_projections.1.weight",
+          "class_private_low_rank_reader.key_projections.2.weight",
+          "class_private_low_rank_reader.output_projections.0.weight",
+          "class_private_low_rank_reader.output_projections.1.weight",
+          "class_private_low_rank_reader.output_projections.2.weight",
+          "class_private_low_rank_reader.value_projections.0.weight",
+          "class_private_low_rank_reader.value_projections.1.weight",
+          "class_private_low_rank_reader.value_projections.2.weight"
+        ],
+        "zero_gate_audit": {
+          "reader_B_weights_strictly_zero": [
+            true,
+            true,
+            true
+          ],
+          "gamma_strictly_zero": true
+        },
+        "raw_logits_max_abs_diff_vs_B": 0.0,
+        "passed": true
+      }
+    },
+    "graph_structure": {
+      "G": {
+        "gamma": {
+          "AD": 0.0,
+          "CN": 0.0,
+          "SMCI": 0.0
+        },
+        "per_class_graph": {
+          "AD": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1307,
+            "density": 0.0073220057926197315,
+            "average_degree": 4.371237277984619,
+            "self_loop_only_nodes": 25,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.8114427328109741,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          },
+          "CN": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1255,
+            "density": 0.0070306941620028795,
+            "average_degree": 4.197324275970459,
+            "self_loop_only_nodes": 25,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.7878208160400391,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          },
+          "SMCI": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1244,
+            "density": 0.00696907054783393,
+            "average_degree": 4.160534858703613,
+            "self_loop_only_nodes": 21,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.8005654811859131,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          }
+        },
+        "edge_jaccard": {
+          "AD_vs_CN": {
+            "intersection_edges": 753,
+            "union_edges": 1809,
+            "edge_jaccard": 0.41625207296849087
+          },
+          "AD_vs_SMCI": {
+            "intersection_edges": 731,
+            "union_edges": 1820,
+            "edge_jaccard": 0.40164835164835166
+          },
+          "CN_vs_SMCI": {
+            "intersection_edges": 698,
+            "union_edges": 1801,
+            "edge_jaccard": 0.3875624652970572
+          }
+        },
+        "representation": [
+          {
+            "class": "AD",
+            "mean_pre_to_post_cosine": 0.8935527205467224,
+            "mean_offdiag_cosine_pre": 0.41715702414512634,
+            "mean_offdiag_cosine_post": 0.39192214608192444,
+            "offdiag_cosine_delta": -0.025234878063201904,
+            "obvious_oversmoothing": false
+          },
+          {
+            "class": "CN",
+            "mean_pre_to_post_cosine": 0.8802934288978577,
+            "mean_offdiag_cosine_pre": 0.46678289771080017,
+            "mean_offdiag_cosine_post": 0.48521947860717773,
+            "offdiag_cosine_delta": 0.018436580896377563,
+            "obvious_oversmoothing": false
+          },
+          {
+            "class": "SMCI",
+            "mean_pre_to_post_cosine": 0.8782483339309692,
+            "mean_offdiag_cosine_pre": 0.44170239567756653,
+            "mean_offdiag_cosine_post": 0.4469567835330963,
+            "offdiag_cosine_delta": 0.005254387855529785,
+            "obvious_oversmoothing": false
+          }
+        ],
+        "graphs_identical": {
+          "AD_vs_CN": false,
+          "AD_vs_SMCI": false,
+          "CN_vs_SMCI": false
+        },
+        "all_graphs_identical": false,
+        "obvious_oversmoothing": false
+      },
+      "RG": {
+        "gamma": {
+          "AD": 0.0,
+          "CN": 0.0,
+          "SMCI": 0.0
+        },
+        "per_class_graph": {
+          "AD": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1307,
+            "density": 0.0073220057926197315,
+            "average_degree": 4.371237277984619,
+            "self_loop_only_nodes": 25,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.8114427328109741,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          },
+          "CN": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1255,
+            "density": 0.0070306941620028795,
+            "average_degree": 4.197324275970459,
+            "self_loop_only_nodes": 25,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.7878208160400391,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          },
+          "SMCI": {
+            "node_count": 598,
+            "top_k": 8,
+            "undirected_edge_count": 1244,
+            "density": 0.00696907054783393,
+            "average_degree": 4.160534858703613,
+            "self_loop_only_nodes": 21,
+            "symmetry_error": 0.0,
+            "nonedge_max_abs": 0.0,
+            "minimum_retained_edge_weight": 0.8005654811859131,
+            "minimum_self_loop": 1.0,
+            "normalized_symmetry_error": 2.9802322387695312e-08,
+            "all_finite": true
+          }
+        },
+        "edge_jaccard": {
+          "AD_vs_CN": {
+            "intersection_edges": 753,
+            "union_edges": 1809,
+            "edge_jaccard": 0.41625207296849087
+          },
+          "AD_vs_SMCI": {
+            "intersection_edges": 731,
+            "union_edges": 1820,
+            "edge_jaccard": 0.40164835164835166
+          },
+          "CN_vs_SMCI": {
+            "intersection_edges": 698,
+            "union_edges": 1801,
+            "edge_jaccard": 0.3875624652970572
+          }
+        },
+        "representation": [
+          {
+            "class": "AD",
+            "mean_pre_to_post_cosine": 0.8814513683319092,
+            "mean_offdiag_cosine_pre": 0.41715702414512634,
+            "mean_offdiag_cosine_post": 0.43447616696357727,
+            "offdiag_cosine_delta": 0.017319142818450928,
+            "obvious_oversmoothing": false
+          },
+          {
+            "class": "CN",
+            "mean_pre_to_post_cosine": 0.8909901976585388,
+            "mean_offdiag_cosine_pre": 0.46678289771080017,
+            "mean_offdiag_cosine_post": 0.48492568731307983,
+            "offdiag_cosine_delta": 0.018142789602279663,
+            "obvious_oversmoothing": false
+          },
+          {
+            "class": "SMCI",
+            "mean_pre_to_post_cosine": 0.8773840665817261,
+            "mean_offdiag_cosine_pre": 0.44170239567756653,
+            "mean_offdiag_cosine_post": 0.4585757553577423,
+            "offdiag_cosine_delta": 0.01687335968017578,
+            "obvious_oversmoothing": false
+          }
+        ],
+        "graphs_identical": {
+          "AD_vs_CN": false,
+          "AD_vs_SMCI": false,
+          "CN_vs_SMCI": false
+        },
+        "all_graphs_identical": false,
+        "obvious_oversmoothing": false
+      }
+    },
+    "threshold": 1e-06,
+    "passed": true
+  },
+  "single_step_gradient_validation": {
+    "R": {
+      "arm": "R",
+      "passes": [
+        {
+          "pass": 1,
+          "loss": 3.2740120887756348,
+          "parameter_tensors": 12,
+          "all_have_gradient": true,
+          "all_finite": true,
+          "nonzero_gradient_tensors": 3,
+          "maximum_gradient_norm": 0.17149010300636292
+        },
+        {
+          "pass": 2,
+          "loss": 3.21567440032959,
+          "parameter_tensors": 12,
+          "all_have_gradient": true,
+          "all_finite": true,
+          "nonzero_gradient_tensors": 12,
+          "maximum_gradient_norm": 0.29832711815834045
+        }
+      ],
+      "gamma_after_update": null,
+      "all_model_gradients_finite": true,
+      "passed": true
+    },
+    "G": {
+      "arm": "G",
+      "passes": [
+        {
+          "pass": 1,
+          "loss": 3.2740120887756348,
+          "parameter_tensors": 8,
+          "all_have_gradient": true,
+          "all_finite": true,
+          "nonzero_gradient_tensors": 1,
+          "maximum_gradient_norm": 0.01836501993238926
+        },
+        {
+          "pass": 2,
+          "loss": 3.2185258865356445,
+          "parameter_tensors": 8,
+          "all_have_gradient": true,
+          "all_finite": true,
+          "nonzero_gradient_tensors": 8,
+          "maximum_gradient_norm": 0.3042055666446686
+        }
+      ],
+      "gamma_after_update": [
+        -0.01744522526860237,
+        0.019729694351553917,
+        -0.017529934644699097
+      ],
+      "all_model_gradients_finite": true,
+      "passed": true
+    }
+  },
+  "best": {
+    "epoch": 2,
+    "metrics": {
+      "acc": 0.35,
+      "macro_f1": 0.1728395061728395,
+      "bacc": 0.3333333333333333,
+      "probability_macro_auc": 0.46059949428275354,
+      "selection_macro_auc_adjusted": 0.7219172548705363,
+      "weighted_f1": 0.18148148148148147,
+      "confusion_matrix": [
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          31,
+          0
+        ]
+      ]
+    }
+  },
+  "graph_after_smoke": {
+    "gamma": {
+      "AD": 0.017913974821567535,
+      "CN": -0.01904609240591526,
+      "SMCI": 0.003396589308977127
+    },
+    "per_class_graph": {
+      "AD": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1546,
+        "density": 0.008660918864108726,
+        "average_degree": 5.170568466186523,
+        "self_loop_only_nodes": 6,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9882887601852417,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "CN": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1563,
+        "density": 0.008756155358733466,
+        "average_degree": 5.227424621582031,
+        "self_loop_only_nodes": 6,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9869335889816284,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "SMCI": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1561,
+        "density": 0.008744951065248203,
+        "average_degree": 5.220735549926758,
+        "self_loop_only_nodes": 8,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9879169464111328,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      }
+    },
+    "edge_jaccard": {
+      "AD_vs_CN": {
+        "intersection_edges": 1199,
+        "union_edges": 1910,
+        "edge_jaccard": 0.6277486910994764
+      },
+      "AD_vs_SMCI": {
+        "intersection_edges": 1228,
+        "union_edges": 1879,
+        "edge_jaccard": 0.6535391165513571
+      },
+      "CN_vs_SMCI": {
+        "intersection_edges": 1241,
+        "union_edges": 1883,
+        "edge_jaccard": 0.6590546999468933
+      }
+    },
+    "representation": [
+      {
+        "class": "AD",
+        "mean_pre_to_post_cosine": 0.9198786020278931,
+        "mean_offdiag_cosine_pre": 0.9370856285095215,
+        "mean_offdiag_cosine_post": 0.9360133409500122,
+        "offdiag_cosine_delta": -0.0010722875595092773,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "CN",
+        "mean_pre_to_post_cosine": 0.9195298552513123,
+        "mean_offdiag_cosine_pre": 0.8933184742927551,
+        "mean_offdiag_cosine_post": 0.894942045211792,
+        "offdiag_cosine_delta": 0.0016235709190368652,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "SMCI",
+        "mean_pre_to_post_cosine": 0.91675865650177,
+        "mean_offdiag_cosine_pre": 0.9093465805053711,
+        "mean_offdiag_cosine_post": 0.9144567847251892,
+        "offdiag_cosine_delta": 0.005110204219818115,
+        "obvious_oversmoothing": false
+      }
+    ],
+    "graphs_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_graphs_identical": false,
+    "obvious_oversmoothing": false
+  },
+  "checkpoint_audit": {
+    "path": "checkpoint_best.pt",
+    "sha256": "5726cb300895d5d8da52c5f594335da78f11b9c39d654ce62940e1b296d11882",
+    "state_tensor_count": 168,
+    "key_set_equal": true,
+    "tensor_values_equal": true,
+    "passed": true
+  },
+  "prediction_audit": {
+    "row_count": 60,
+    "metric_abs_delta": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "probability_macro_auc": 0.0,
+      "weighted_f1": 0.0,
+      "selection_macro_auc_adjusted": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "source_hashes": {
+    "Model/network.py": "81f7a93a4690fa29c189292a51917f75034b6f0bf4b6fafdea9c1f04ee06338e",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Loss/__init__.py": "f10e68cbf750708313b8c1f9465d211ae9249d17bd6144936a1f4e1c160cd459",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "scripts/run_query_pool_component_sharing_v1.py": "a92ecaacdbe8a17aab2f65770a98becfb8c168656d75d03918433113869d4267",
+    "scripts/run_class_private_evidence_graph_v1.py": "92044249d21a78387bd702076f8e14cae54d3367ebbc9ad7a313f6be709613c7"
+  },
+  "elapsed_seconds": 5.056610000086948,
+  "passed": true
+}

@@ -1,0 +1,204 @@
+{
+  "G": {
+    "gamma": {
+      "AD": 0.0,
+      "CN": 0.0,
+      "SMCI": 0.0
+    },
+    "per_class_graph": {
+      "AD": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1307,
+        "density": 0.0073220057926197315,
+        "average_degree": 4.371237277984619,
+        "self_loop_only_nodes": 25,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.8114427328109741,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "CN": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1255,
+        "density": 0.0070306941620028795,
+        "average_degree": 4.197324275970459,
+        "self_loop_only_nodes": 25,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.7878208160400391,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "SMCI": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1244,
+        "density": 0.00696907054783393,
+        "average_degree": 4.160534858703613,
+        "self_loop_only_nodes": 21,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.8005654811859131,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      }
+    },
+    "edge_jaccard": {
+      "AD_vs_CN": {
+        "intersection_edges": 753,
+        "union_edges": 1809,
+        "edge_jaccard": 0.41625207296849087
+      },
+      "AD_vs_SMCI": {
+        "intersection_edges": 731,
+        "union_edges": 1820,
+        "edge_jaccard": 0.40164835164835166
+      },
+      "CN_vs_SMCI": {
+        "intersection_edges": 698,
+        "union_edges": 1801,
+        "edge_jaccard": 0.3875624652970572
+      }
+    },
+    "representation": [
+      {
+        "class": "AD",
+        "mean_pre_to_post_cosine": 0.8935527205467224,
+        "mean_offdiag_cosine_pre": 0.41715702414512634,
+        "mean_offdiag_cosine_post": 0.39192214608192444,
+        "offdiag_cosine_delta": -0.025234878063201904,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "CN",
+        "mean_pre_to_post_cosine": 0.8802934288978577,
+        "mean_offdiag_cosine_pre": 0.46678289771080017,
+        "mean_offdiag_cosine_post": 0.48521947860717773,
+        "offdiag_cosine_delta": 0.018436580896377563,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "SMCI",
+        "mean_pre_to_post_cosine": 0.8782483339309692,
+        "mean_offdiag_cosine_pre": 0.44170239567756653,
+        "mean_offdiag_cosine_post": 0.4469567835330963,
+        "offdiag_cosine_delta": 0.005254387855529785,
+        "obvious_oversmoothing": false
+      }
+    ],
+    "graphs_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_graphs_identical": false,
+    "obvious_oversmoothing": false
+  },
+  "RG": {
+    "gamma": {
+      "AD": 0.0,
+      "CN": 0.0,
+      "SMCI": 0.0
+    },
+    "per_class_graph": {
+      "AD": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1307,
+        "density": 0.0073220057926197315,
+        "average_degree": 4.371237277984619,
+        "self_loop_only_nodes": 25,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.8114427328109741,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "CN": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1255,
+        "density": 0.0070306941620028795,
+        "average_degree": 4.197324275970459,
+        "self_loop_only_nodes": 25,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.7878208160400391,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "SMCI": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1244,
+        "density": 0.00696907054783393,
+        "average_degree": 4.160534858703613,
+        "self_loop_only_nodes": 21,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.8005654811859131,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      }
+    },
+    "edge_jaccard": {
+      "AD_vs_CN": {
+        "intersection_edges": 753,
+        "union_edges": 1809,
+        "edge_jaccard": 0.41625207296849087
+      },
+      "AD_vs_SMCI": {
+        "intersection_edges": 731,
+        "union_edges": 1820,
+        "edge_jaccard": 0.40164835164835166
+      },
+      "CN_vs_SMCI": {
+        "intersection_edges": 698,
+        "union_edges": 1801,
+        "edge_jaccard": 0.3875624652970572
+      }
+    },
+    "representation": [
+      {
+        "class": "AD",
+        "mean_pre_to_post_cosine": 0.8814513683319092,
+        "mean_offdiag_cosine_pre": 0.41715702414512634,
+        "mean_offdiag_cosine_post": 0.43447616696357727,
+        "offdiag_cosine_delta": 0.017319142818450928,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "CN",
+        "mean_pre_to_post_cosine": 0.8909901976585388,
+        "mean_offdiag_cosine_pre": 0.46678289771080017,
+        "mean_offdiag_cosine_post": 0.48492568731307983,
+        "offdiag_cosine_delta": 0.018142789602279663,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "SMCI",
+        "mean_pre_to_post_cosine": 0.8773840665817261,
+        "mean_offdiag_cosine_pre": 0.44170239567756653,
+        "mean_offdiag_cosine_post": 0.4585757553577423,
+        "offdiag_cosine_delta": 0.01687335968017578,
+        "obvious_oversmoothing": false
+      }
+    ],
+    "graphs_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_graphs_identical": false,
+    "obvious_oversmoothing": false
+  }
+}

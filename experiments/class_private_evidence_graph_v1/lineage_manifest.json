@@ -1,0 +1,68 @@
+{
+  "base_branch": "origin/experiment/query-pool-component-sharing-v1",
+  "base_commit_sha": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+  "branch": "experiment/class-private-evidence-graph-v1",
+  "head_commit_sha": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+  "worktree": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\class_private_evidence_graph_v1",
+  "feature_csv": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_processed_standard_data.csv",
+  "feature_csv_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042",
+  "modal_dictionary": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+  "modal_dictionary_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273",
+  "fold_manifest": "experiments/ovr_aligned_shared_query_v1/formal/reference_fold_manifest.json",
+  "fold_manifest_file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+  "fold_split_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+  "seps_q_oof_sha256": "1286231fd513d811e4828319ca1210b6c76635c029107f497356e7e577a94e68",
+  "fold_split_hashes": [
+    "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+    "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+    "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+    "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+    "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+    "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+    "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+    "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+    "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12"
+  ],
+  "environment": {
+    "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+    "python_executable": "D:\\Anaconda\\envs\\mmfl\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.1.1",
+    "torch_cuda_build": "11.8",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  },
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "optimizer": "Adam",
+    "scheduler": "CustomCosineAnnealingLR(T_max=400)",
+    "best_epoch_rule": [
+      "ACC",
+      "historical adjusted-score Macro-AUC",
+      "Macro-F1"
+    ],
+    "reported_auc": "probability Macro-AUC, multiclass OVR macro",
+    "old_graph_use_graph": false,
+    "old_adj_mode": "none"
+  }
+}

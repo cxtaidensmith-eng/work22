@@ -1,0 +1,58 @@
+{
+  "R": {
+    "arm": "R",
+    "passes": [
+      {
+        "pass": 1,
+        "loss": 3.2740120887756348,
+        "parameter_tensors": 12,
+        "all_have_gradient": true,
+        "all_finite": true,
+        "nonzero_gradient_tensors": 3,
+        "maximum_gradient_norm": 0.17149010300636292
+      },
+      {
+        "pass": 2,
+        "loss": 3.21567440032959,
+        "parameter_tensors": 12,
+        "all_have_gradient": true,
+        "all_finite": true,
+        "nonzero_gradient_tensors": 12,
+        "maximum_gradient_norm": 0.29832711815834045
+      }
+    ],
+    "gamma_after_update": null,
+    "all_model_gradients_finite": true,
+    "passed": true
+  },
+  "G": {
+    "arm": "G",
+    "passes": [
+      {
+        "pass": 1,
+        "loss": 3.2740120887756348,
+        "parameter_tensors": 8,
+        "all_have_gradient": true,
+        "all_finite": true,
+        "nonzero_gradient_tensors": 1,
+        "maximum_gradient_norm": 0.01836501993238926
+      },
+      {
+        "pass": 2,
+        "loss": 3.2185258865356445,
+        "parameter_tensors": 8,
+        "all_have_gradient": true,
+        "all_finite": true,
+        "nonzero_gradient_tensors": 8,
+        "maximum_gradient_norm": 0.3042055666446686
+      }
+    ],
+    "gamma_after_update": [
+      -0.01744522526860237,
+      0.019729694351553917,
+      -0.017529934644699097
+    ],
+    "all_model_gradients_finite": true,
+    "passed": true
+  }
+}

@@ -79,7 +79,15 @@ def named_parameter_count(model) -> int:
     return sum(1 for _ in model.named_parameters())
 
 
-def build_model(config, dataset_dict: dict, device: torch.device, variant: str):
+def build_model(
+    config,
+    dataset_dict: dict,
+    device: torch.device,
+    variant: str,
+    *,
+    low_rank_reader: bool = False,
+    class_graph: bool = False,
+):
     return HeterGraph_Model_Kmeans(
         dataset_dict,
         Herter_Graph=None,
@@ -111,6 +119,8 @@ def build_model(config, dataset_dict: dict, device: torch.device, variant: str):
         label_graph_alpha=0.0,
         label_graph_topk=0,
         label_graph_reg_lambda=0.0,
+        low_rank_reader=low_rank_reader,
+        class_graph=class_graph,
     ).to(device)
 
 
