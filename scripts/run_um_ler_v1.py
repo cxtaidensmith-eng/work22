@@ -920,7 +920,7 @@ def render_version_report(summary: dict) -> str:
             f"- Repairs / damages: {diagnostics['original_wrong_to_new_correct']} / {diagnostics['original_correct_to_new_wrong']}",
             f"- Gate active: {diagnostics['gate_active_count']}/{EXPECTED_SUBJECTS} ({diagnostics['gate_active_ratio']:.6f})",
             f"- Active mean/max g: {diagnostics['active_gate_mean']:.6f} / {diagnostics['active_gate_max']:.6f}",
-            f"- Runtime seconds: {summary['elapsed_seconds']:.3f}",
+            f"- Training seconds: {summary['elapsed_seconds']:.3f}",
             "",
         ]
     )
@@ -946,7 +946,6 @@ def run_version(
     else:
         output_root.mkdir(parents=True)
         write_json(output_root / "config.json", asdict(run_config))
-    started = time.perf_counter()
     fold_summaries = []
     oof_rows = []
     for fold in FOLDS:
@@ -1027,7 +1026,9 @@ def run_version(
         "nca_relative_decline": float((nca_start - nca_end) / max(nca_start, 1e-12)),
         "train_neighbor_agreement_weighted": agreement_weighted,
         "train_neighbor_agreement_unweighted": agreement_unweighted,
-        "elapsed_seconds": time.perf_counter() - started,
+        "elapsed_seconds": float(
+            sum(summary["elapsed_seconds"] for summary in fold_summaries)
+        ),
         "source_commit": git_value("rev-parse", "HEAD"),
     }
     write_csv(output_root / "oof_predictions.csv", oof_rows)
@@ -1103,30 +1104,20 @@ def choose_adjustment(history: list[dict], tried: set[tuple[str, float]]) -> tup
         if first_no_gain and second_no_gain:
             return None
 
-    over_aggressive = (
+    actually_over_aggressive = (
         diagnostics["original_correct_to_new_wrong"]
         >= diagnostics["original_wrong_to_new_correct"] + 2
         or diagnostics["gate_active_ratio"] > 0.20
-        or metrics["acc"] < ORIGINAL["acc"] - 0.005
     )
+    accuracy_drop = metrics["acc"] < ORIGINAL["acc"] - 0.005
     under_active = (
         diagnostics["gate_active_ratio"] < 0.02
         or diagnostics["changed_prediction_count"] < 3
         or diagnostics["original_wrong_to_new_correct"] == 0
     )
-    if over_aggressive:
-        for field, value, reason in (
-            ("gate_cap", 0.20, "over-aggressive: lower gate cap"),
-            (
-                "neighbor_confidence_threshold",
-                0.75,
-                "over-aggressive after cap: tighten neighbor confidence",
-            ),
-        ):
-            key = (field, float(value))
-            if key not in tried:
-                return candidate_from_current(current_config, field, value), reason
-        return None
+    # Prefer the direct gate diagnostics over the aggregate ACC signal.  A large
+    # ACC gap with almost no active gates cannot have been caused by aggressive
+    # refinement, so tightening that gate would move in the wrong direction.
     if under_active:
         for field, value, reason in (
             (
@@ -1135,6 +1126,19 @@ def choose_adjustment(history: list[dict], tried: set[tuple[str, float]]) -> tup
                 "under-active: lower neighbor confidence",
             ),
             ("gate_cap", 0.40, "under-active after confidence: raise gate cap"),
+        ):
+            key = (field, float(value))
+            if key not in tried:
+                return candidate_from_current(current_config, field, value), reason
+        return None
+    if actually_over_aggressive or accuracy_drop:
+        for field, value, reason in (
+            ("gate_cap", 0.20, "over-aggressive: lower gate cap"),
+            (
+                "neighbor_confidence_threshold",
+                0.75,
+                "over-aggressive after cap: tighten neighbor confidence",
+            ),
         ):
             key = (field, float(value))
             if key not in tried:
@@ -1209,7 +1213,8 @@ def render_final_report(payload: dict) -> str:
         f"- Branch: `{payload['branch']}`",
         f"- Source commit: `{payload['source_commit']}`",
         f"- Device: {payload['environment']['gpu']} ({payload['environment']['device']})",
-        f"- Total runtime: {payload['total_elapsed_seconds']:.3f} seconds",
+        f"- Total formal wall time: {payload['total_elapsed_seconds']:.3f} seconds",
+        f"- Completed-fold training time: {payload['total_training_seconds']:.3f} seconds",
         f"- Selected version: `{selected['version']}`",
         f"- Parameters: {selected['parameter_count']} (+{selected['additional_parameters']} vs Original)",
         f"- Correct: {metrics['correct']}/{EXPECTED_SUBJECTS}",
@@ -1260,6 +1265,47 @@ def run_formal_all() -> dict:
     run_config = DEFAULT
     for version_index in range(4):
         version_name = "um_ler_v1" if version_index == 0 else f"um_ler_v1_{version_index}"
+        completed_report = ROOT / "results" / version_name / "report.json"
+        if completed_report.exists():
+            stored = json.loads(completed_report.read_text(encoding="utf-8"))
+            stored_config = UMLERConfig(**stored["config"])
+            if version_index == 0:
+                require(
+                    stored_config == DEFAULT,
+                    "Completed default result does not use the default config",
+                )
+            else:
+                adjacent_change = config_delta(run_config, stored_config)
+                require(
+                    len(adjacent_change) == 1,
+                    "Completed adjustment is not single-variable relative to its predecessor",
+                )
+                field, values = next(iter(adjacent_change.items()))
+                tried.add((field, float(values["to"])))
+                tuning_log.append(
+                    {
+                        "after_version": history[-1]["version"],
+                        "reason": "resume previously completed adjustment",
+                        "next_single_change": adjacent_change,
+                    }
+                )
+            run_config = stored_config
+        elif version_index > 0:
+            adjustment = choose_adjustment(history, tried)
+            if adjustment is None:
+                break
+            next_config, reason = adjustment
+            adjacent_change = config_delta(run_config, next_config)
+            field, values = next(iter(adjacent_change.items()))
+            tried.add((field, float(values["to"])))
+            tuning_log.append(
+                {
+                    "after_version": history[-1]["version"],
+                    "reason": reason,
+                    "next_single_change": adjacent_change,
+                }
+            )
+            run_config = next_config
         result = run_version(
             version_name,
             run_config,
@@ -1272,21 +1318,6 @@ def run_formal_all() -> dict:
         history.append(result)
         if result["oof_metrics"]["correct"] >= 557:
             break
-        adjustment = choose_adjustment(history, tried)
-        if adjustment is None:
-            break
-        next_config, reason = adjustment
-        adjacent_change = config_delta(run_config, next_config)
-        field, values = next(iter(adjacent_change.items()))
-        tried.add((field, float(values["to"])))
-        tuning_log.append(
-            {
-                "after_version": version_name,
-                "reason": reason,
-                "next_single_change": adjacent_change,
-            }
-        )
-        run_config = next_config
 
     selected = max(
         history,
@@ -1297,6 +1328,10 @@ def run_formal_all() -> dict:
             result["oof_metrics"]["macro_f1"],
         ),
     )
+    suite_wall_seconds = time.perf_counter() - suite_started
+    total_training_seconds = float(
+        sum(result["elapsed_seconds"] for result in history)
+    )
     payload = {
         "model": MODEL_NAME,
         "decision": decision(selected["oof_metrics"]),
@@ -1306,7 +1341,8 @@ def run_formal_all() -> dict:
         "branch": branch,
         "source_commit": git_value("rev-parse", "HEAD"),
         "base_commit": BASE_COMMIT,
-        "total_elapsed_seconds": time.perf_counter() - suite_started,
+        "total_elapsed_seconds": suite_wall_seconds,
+        "total_training_seconds": total_training_seconds,
         "environment": {
             "python": sys.version,
             "platform": platform.platform(),

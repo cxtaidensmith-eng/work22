@@ -1,0 +1,52 @@
+{
+  "version": "um_ler_v1_2",
+  "fold": 9,
+  "best_epoch": 74,
+  "best_metrics": {
+    "correct": 56,
+    "acc": 0.9491525423728814,
+    "macro_f1": 0.933913308913309,
+    "bacc": 0.9309139784946238,
+    "macro_auc": 0.9912746488173433,
+    "weighted_f1": 0.9493387967964239,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        1,
+        0,
+        30
+      ]
+    ]
+  },
+  "train_size": 539,
+  "test_size": 59,
+  "split_hash": "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12",
+  "run_config": {
+    "top_k": 8,
+    "temperature": 0.2,
+    "margin_threshold": 0.3,
+    "neighbor_confidence_threshold": 0.65,
+    "gate_cap": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "parameter_count": 856524,
+  "original_parameter_count": 853131,
+  "local_parameter_count": 3393,
+  "first_epoch_nca_loss": 0.899860143661499,
+  "final_epoch_nca_loss": 0.0,
+  "best_train_neighbor_agreement_weighted": 0.9951447248458862,
+  "best_train_neighbor_agreement_unweighted": 0.9951298832893372,
+  "elapsed_seconds": 53.16216699988581,
+  "passed": true
+}

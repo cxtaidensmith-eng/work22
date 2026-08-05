@@ -1,0 +1,10 @@
+{
+  "top_k": 8,
+  "temperature": 0.2,
+  "margin_threshold": 0.3,
+  "neighbor_confidence_threshold": 0.65,
+  "gate_cap": 0.2,
+  "nca_weight": 0.2,
+  "refine_weight": 1.0,
+  "projection_size": 32
+}
