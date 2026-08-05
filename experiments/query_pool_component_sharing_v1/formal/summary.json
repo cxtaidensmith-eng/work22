@@ -1,0 +1,1292 @@
+{
+  "model": "Shared-Evidence Private-Semantic Query Pool v1 (SEPS-Q v1)",
+  "variant": "component_shared",
+  "phase": "formal",
+  "passed": true,
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 400,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "single_model": true,
+    "ensemble": false,
+    "semantic_fusion": "add",
+    "category_fusion": "concat",
+    "adj_mode": "none",
+    "graph_use_graph": false,
+    "optimizer": "Adam",
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "best_epoch_rule": [
+      "ACC",
+      "Macro-AUC",
+      "Macro-F1"
+    ],
+    "loss": "main weighted CE + AD-rest + CN-rest + SMCI-rest",
+    "orthogonality_loss": false,
+    "split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "train_size": 538,
+    "test_size": 60
+  },
+  "structure": {
+    "private_queries": 3,
+    "shared_norm_kv": 1,
+    "shared_multihead_attention": 1,
+    "private_norm_out": 3,
+    "private_ffn": 3,
+    "parameter_count": 778251,
+    "named_parameter_tensors": 143,
+    "state_tensors": 148
+  },
+  "initialization_audit": null,
+  "device_audit": {
+    "expected": "cuda:0",
+    "groups": {
+      "data": {
+        "Feature": "cuda:0",
+        "Label": "cuda:0",
+        "Adj": "cuda:0",
+        "Label_Weight": "cuda:0",
+        "train_mask": "cuda:0",
+        "test_mask": "cuda:0"
+      },
+      "model": [
+        "cuda:0"
+      ],
+      "criterion": {
+        "weight": "cuda:0",
+        "main_loss.weight": "cuda:0",
+        "aux_losses.0.weight": "cuda:0",
+        "aux_losses.1.weight": "cuda:0",
+        "aux_losses.2.weight": "cuda:0"
+      }
+    },
+    "passed": true
+  },
+  "first_forward_audit": {
+    "main_logits_shape": [
+      598,
+      3
+    ],
+    "representation_shapes": [
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ]
+    ],
+    "auxiliary_shapes": [
+      [
+        598,
+        2
+      ],
+      [
+        598,
+        2
+      ],
+      [
+        598,
+        2
+      ]
+    ],
+    "all_cuda": true,
+    "all_finite": true,
+    "devices": [
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0"
+    ],
+    "passed": true
+  },
+  "best": {
+    "epoch": 94,
+    "metrics": {
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9157240608853513,
+      "bacc": 0.8951612903225806,
+      "macro_auc": 0.9748634805642592,
+      "weighted_f1": 0.9317099567099568,
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          2
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          2,
+          29
+        ]
+      ]
+    }
+  },
+  "historical_original_query_baseline": {
+    "best_epoch": 111,
+    "acc": 0.9166666666666666,
+    "macro_f1": 0.8977763678660987,
+    "bacc": 0.9153225806451614,
+    "macro_auc": 0.9683234899447357,
+    "weighted_f1": 0.9167761865917399,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        2,
+        2,
+        27
+      ]
+    ]
+  },
+  "delta_candidate_minus_baseline": {
+    "acc": 0.01666666666666672,
+    "macro_f1": 0.017947693019252586,
+    "bacc": -0.02016129032258074,
+    "macro_auc": 0.006539990619523484,
+    "weighted_f1": 0.014933770118216949
+  },
+  "best_representation_diagnostics": {
+    "query_tokens": {
+      "norms": [
+        0.020106244832277298,
+        0.022783959284424782,
+        0.0168488509953022
+      ],
+      "cosine_matrix": [
+        [
+          0.9999999403953552,
+          -0.0771479457616806,
+          0.31193047761917114
+        ],
+        [
+          -0.0771479457616806,
+          1.0,
+          0.3917331397533417
+        ],
+        [
+          0.31193047761917114,
+          0.3917331397533417,
+          1.0000001192092896
+        ]
+      ],
+      "pairs": {
+        "AD_vs_CN": {
+          "cosine": -0.0771479457616806,
+          "l2": 0.03152860328555107
+        },
+        "AD_vs_SMCI": {
+          "cosine": 0.31193047761917114,
+          "l2": 0.021835779771208763
+        },
+        "CN_vs_SMCI": {
+          "cosine": 0.3917331397533417,
+          "l2": 0.022410551086068153
+        }
+      }
+    },
+    "attention_stage": {
+      "shape": [
+        598,
+        3,
+        96
+      ],
+      "mean_feature_norms": [
+        16.338481903076172,
+        16.338483810424805,
+        16.338483810424805
+      ],
+      "similarity": {
+        "matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "mean": 1.0,
+            "std": 6.119274331695124e-08
+          },
+          "AD_vs_SMCI": {
+            "mean": 1.0,
+            "std": 6.096852445125478e-08
+          },
+          "CN_vs_SMCI": {
+            "mean": 1.0,
+            "std": 5.8626348220514046e-08
+          }
+        },
+        "off_diagonal_mean": 1.0,
+        "off_diagonal_std": 5.7133707542789125e-08
+      }
+    },
+    "post_ffn_stage": {
+      "shape": [
+        598,
+        3,
+        96
+      ],
+      "mean_feature_norms": [
+        17.422901153564453,
+        16.7906436920166,
+        18.854887008666992
+      ],
+      "similarity": {
+        "matrix": [
+          [
+            1.0,
+            0.9258826971054077,
+            0.7939032912254333
+          ],
+          [
+            0.9258826971054077,
+            1.0,
+            0.8596044182777405
+          ],
+          [
+            0.7939032912254333,
+            0.8596044182777405,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "mean": 0.9258825778961182,
+            "std": 0.04132185876369476
+          },
+          "AD_vs_SMCI": {
+            "mean": 0.7939032316207886,
+            "std": 0.2256615310907364
+          },
+          "CN_vs_SMCI": {
+            "mean": 0.8596044182777405,
+            "std": 0.2522755563259125
+          }
+        },
+        "off_diagonal_mean": 0.8597968220710754,
+        "off_diagonal_std": 0.20411019027233124
+      }
+    },
+    "auxiliary_metrics": {
+      "query_1_AD_vs_rest": {
+        "acc": 0.9666666666666667,
+        "auc": 0.9302884615384616,
+        "positive_count": 8,
+        "negative_count": 52
+      },
+      "query_2_CN_vs_rest": {
+        "acc": 0.95,
+        "auc": 0.9914529914529914,
+        "positive_count": 21,
+        "negative_count": 39
+      },
+      "query_3_SMCI_vs_rest": {
+        "acc": 0.95,
+        "auc": 0.9454949944382648,
+        "positive_count": 31,
+        "negative_count": 29
+      }
+    }
+  },
+  "milestone_diagnostics": [
+    {
+      "epoch": 1,
+      "gradient": {
+        "private_query_grad_norms": [
+          0.01121107954531908,
+          0.005661212373524904,
+          0.005736581515520811
+        ],
+        "shared_norm_kv_grad_norm": 0.18048138916492462,
+        "shared_attention_grad_norm": 1.4039533138275146,
+        "private_norm_out_grad_norms": [
+          0.053910523653030396,
+          0.033447738736867905,
+          0.03491426631808281
+        ],
+        "private_ffn_grad_norms": [
+          0.952913224697113,
+          0.597598671913147,
+          0.572165310382843
+        ],
+        "auxiliary_head_grad_norms": [
+          1.104926347732544,
+          0.7036324739456177,
+          0.6734665036201477
+        ],
+        "all_finite_nonzero": true
+      },
+      "representation": {
+        "query_tokens": {
+          "norms": [
+            0.2076827585697174,
+            0.23542891442775726,
+            0.21876008808612823
+          ],
+          "cosine_matrix": [
+            [
+              1.0000001192092896,
+              -0.0031754113733768463,
+              -0.14569096267223358
+            ],
+            [
+              -0.0031754113733768463,
+              1.0,
+              0.010958632454276085
+            ],
+            [
+              -0.14569096267223358,
+              0.010958632454276085,
+              1.0000001192092896
+            ]
+          ],
+          "pairs": {
+            "AD_vs_CN": {
+              "cosine": -0.0031754113733768463,
+              "l2": 0.31443509459495544
+            },
+            "AD_vs_SMCI": {
+              "cosine": -0.14569096267223358,
+              "l2": 0.3228411078453064
+            },
+            "CN_vs_SMCI": {
+              "cosine": 0.010958632454276085,
+              "l2": 0.31961533427238464
+            }
+          }
+        },
+        "attention_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            6.515418529510498,
+            6.514986038208008,
+            6.514545440673828
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.9999994039535522,
+                0.9999994039535522
+              ],
+              [
+                0.9999994039535522,
+                1.0,
+                0.9999994039535522
+              ],
+              [
+                0.9999994039535522,
+                0.9999994039535522,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.9999994039535522,
+                "std": 3.234155769860081e-07
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.9999994039535522,
+                "std": 2.9109224897183594e-07
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.9999994039535522,
+                "std": 2.539684373914497e-07
+              }
+            },
+            "off_diagonal_mean": 0.999999463558197,
+            "off_diagonal_std": 2.9222354669400374e-07
+          }
+        },
+        "post_ffn_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            9.050419807434082,
+            7.141087055206299,
+            7.33682918548584
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.8301605582237244,
+                0.7650728821754456
+              ],
+              [
+                0.8301605582237244,
+                1.0,
+                0.8361061215400696
+              ],
+              [
+                0.7650728821754456,
+                0.8361061215400696,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.8301604986190796,
+                "std": 0.008672202005982399
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.7650729417800903,
+                "std": 0.013214154168963432
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.8361061215400696,
+                "std": 0.00843320693820715
+              }
+            },
+            "off_diagonal_mean": 0.8104466199874878,
+            "off_diagonal_std": 0.0337972566485405
+          }
+        },
+        "auxiliary_metrics": {
+          "query_1_AD_vs_rest": {
+            "acc": 0.8666666666666667,
+            "auc": 0.39182692307692313,
+            "positive_count": 8,
+            "negative_count": 52
+          },
+          "query_2_CN_vs_rest": {
+            "acc": 0.65,
+            "auc": 0.9304029304029303,
+            "positive_count": 21,
+            "negative_count": 39
+          },
+          "query_3_SMCI_vs_rest": {
+            "acc": 0.48333333333333334,
+            "auc": 0.4204671857619578,
+            "positive_count": 31,
+            "negative_count": 29
+          }
+        }
+      }
+    },
+    {
+      "epoch": 100,
+      "gradient": {
+        "private_query_grad_norms": [
+          1.7690681488602422e-06,
+          5.1107122089888435e-06,
+          1.0444949111843016e-05
+        ],
+        "shared_norm_kv_grad_norm": 0.06091219186782837,
+        "shared_attention_grad_norm": 0.19181062281131744,
+        "private_norm_out_grad_norms": [
+          0.006077930796891451,
+          0.0033363436814397573,
+          0.019326768815517426
+        ],
+        "private_ffn_grad_norms": [
+          0.019980644807219505,
+          0.016132550314068794,
+          0.044671572744846344
+        ],
+        "auxiliary_head_grad_norms": [
+          0.0765945166349411,
+          0.09484609961509705,
+          0.18015873432159424
+        ],
+        "all_finite_nonzero": true
+      },
+      "representation": {
+        "query_tokens": {
+          "norms": [
+            0.013680401258170605,
+            0.01466616615653038,
+            0.016691220924258232
+          ],
+          "cosine_matrix": [
+            [
+              0.9999998807907104,
+              0.07581868767738342,
+              0.44251489639282227
+            ],
+            [
+              0.07581868767738342,
+              1.0,
+              0.31342583894729614
+            ],
+            [
+              0.44251489639282227,
+              0.31342583894729614,
+              1.0
+            ]
+          ],
+          "pairs": {
+            "AD_vs_CN": {
+              "cosine": 0.07581868767738342,
+              "l2": 0.01928277499973774
+            },
+            "AD_vs_SMCI": {
+              "cosine": 0.44251489639282227,
+              "l2": 0.016237618401646614
+            },
+            "CN_vs_SMCI": {
+              "cosine": 0.31342583894729614,
+              "l2": 0.018445661291480064
+            }
+          }
+        },
+        "attention_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            15.250110626220703,
+            15.250110626220703,
+            15.250110626220703
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 1.0,
+                "std": 5.4327667697862125e-08
+              },
+              "AD_vs_SMCI": {
+                "mean": 1.0,
+                "std": 5.562348448506782e-08
+              },
+              "CN_vs_SMCI": {
+                "mean": 1.0,
+                "std": 5.207637343573879e-08
+              }
+            },
+            "off_diagonal_mean": 1.0,
+            "off_diagonal_std": 4.7437993089261e-08
+          }
+        },
+        "post_ffn_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            16.59645652770996,
+            15.65190315246582,
+            18.587818145751953
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.9094576835632324,
+                0.7713283896446228
+              ],
+              [
+                0.9094576835632324,
+                1.0,
+                0.8511829972267151
+              ],
+              [
+                0.7713283896446228,
+                0.8511829972267151,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.9094576239585876,
+                "std": 0.04962123557925224
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.7713283896446228,
+                "std": 0.22022223472595215
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.8511829972267151,
+                "std": 0.24618074297904968
+              }
+            },
+            "off_diagonal_mean": 0.8439896702766418,
+            "off_diagonal_std": 0.20098301768302917
+          }
+        },
+        "auxiliary_metrics": {
+          "query_1_AD_vs_rest": {
+            "acc": 0.95,
+            "auc": 0.985576923076923,
+            "positive_count": 8,
+            "negative_count": 52
+          },
+          "query_2_CN_vs_rest": {
+            "acc": 0.9333333333333333,
+            "auc": 0.9926739926739926,
+            "positive_count": 21,
+            "negative_count": 39
+          },
+          "query_3_SMCI_vs_rest": {
+            "acc": 0.9,
+            "auc": 0.9132369299221357,
+            "positive_count": 31,
+            "negative_count": 29
+          }
+        }
+      }
+    },
+    {
+      "epoch": 200,
+      "gradient": {
+        "private_query_grad_norms": [
+          1.8861814332638005e-09,
+          8.468456158539084e-09,
+          1.7034311738939323e-08
+        ],
+        "shared_norm_kv_grad_norm": 0.03165505453944206,
+        "shared_attention_grad_norm": 0.08391266316175461,
+        "private_norm_out_grad_norms": [
+          0.005132435820996761,
+          0.009455024264752865,
+          0.010016225278377533
+        ],
+        "private_ffn_grad_norms": [
+          0.014666891656816006,
+          0.018643595278263092,
+          0.024878256022930145
+        ],
+        "auxiliary_head_grad_norms": [
+          0.04468046501278877,
+          0.02797970548272133,
+          0.027618929743766785
+        ],
+        "all_finite_nonzero": true
+      },
+      "representation": {
+        "query_tokens": {
+          "norms": [
+            7.111915329005569e-05,
+            9.859401325229555e-05,
+            9.980691538657993e-05
+          ],
+          "cosine_matrix": [
+            [
+              0.9999999403953552,
+              0.10908246040344238,
+              -0.12758776545524597
+            ],
+            [
+              0.10908246040344238,
+              1.0,
+              0.0542943999171257
+            ],
+            [
+              -0.12758776545524597,
+              0.0542943999171257,
+              0.9999999403953552
+            ]
+          ],
+          "pairs": {
+            "AD_vs_CN": {
+              "cosine": 0.10908246040344238,
+              "l2": 0.0001151041142293252
+            },
+            "AD_vs_SMCI": {
+              "cosine": -0.12758776545524597,
+              "l2": 0.0001297329436056316
+            },
+            "CN_vs_SMCI": {
+              "cosine": 0.0542943999171257,
+              "l2": 0.0001364318304695189
+            }
+          }
+        },
+        "attention_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            8.197528839111328,
+            8.197528839111328,
+            8.197528839111328
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 1.0,
+                "std": 7.88953684605076e-08
+              },
+              "AD_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.891419073757788e-08
+              },
+              "CN_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.892046482993464e-08
+              }
+            },
+            "off_diagonal_mean": 1.0,
+            "off_diagonal_std": 7.529740031486654e-08
+          }
+        },
+        "post_ffn_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            10.44068717956543,
+            10.53208065032959,
+            11.988921165466309
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.796695351600647,
+                0.733934760093689
+              ],
+              [
+                0.796695351600647,
+                1.0,
+                0.8182165026664734
+              ],
+              [
+                0.733934760093689,
+                0.8182165026664734,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.7966954112052917,
+                "std": 0.06087648868560791
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.733934760093689,
+                "std": 0.12911702692508698
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.8182165026664734,
+                "std": 0.23072539269924164
+              }
+            },
+            "off_diagonal_mean": 0.782948911190033,
+            "off_diagonal_std": 0.16067203879356384
+          }
+        },
+        "auxiliary_metrics": {
+          "query_1_AD_vs_rest": {
+            "acc": 0.95,
+            "auc": 0.9831730769230769,
+            "positive_count": 8,
+            "negative_count": 52
+          },
+          "query_2_CN_vs_rest": {
+            "acc": 0.9166666666666666,
+            "auc": 0.927960927960928,
+            "positive_count": 21,
+            "negative_count": 39
+          },
+          "query_3_SMCI_vs_rest": {
+            "acc": 0.8666666666666667,
+            "auc": 0.8887652947719689,
+            "positive_count": 31,
+            "negative_count": 29
+          }
+        }
+      }
+    },
+    {
+      "epoch": 300,
+      "gradient": {
+        "private_query_grad_norms": [
+          3.219236129840125e-13,
+          6.582448345074376e-13,
+          1.2860596919003764e-12
+        ],
+        "shared_norm_kv_grad_norm": 0.005798616912215948,
+        "shared_attention_grad_norm": 0.01798657886683941,
+        "private_norm_out_grad_norms": [
+          0.002538722474128008,
+          0.0019320847932249308,
+          0.0036562923341989517
+        ],
+        "private_ffn_grad_norms": [
+          0.0051523554138839245,
+          0.0031348683405667543,
+          0.0055751255713403225
+        ],
+        "auxiliary_head_grad_norms": [
+          0.00869808904826641,
+          0.017019957304000854,
+          0.01213244628161192
+        ],
+        "all_finite_nonzero": true
+      },
+      "representation": {
+        "query_tokens": {
+          "norms": [
+            3.6364761513141275e-07,
+            4.406400648804265e-07,
+            4.578491825668607e-07
+          ],
+          "cosine_matrix": [
+            [
+              0.13223958015441895,
+              -0.013354700058698654,
+              -0.016226276755332947
+            ],
+            [
+              -0.013354700058698654,
+              0.19416366517543793,
+              -0.007040657103061676
+            ],
+            [
+              -0.016226276755332947,
+              -0.007040657103061676,
+              0.20962586998939514
+            ]
+          ],
+          "pairs": {
+            "AD_vs_CN": {
+              "cosine": -0.013354700058698654,
+              "l2": 5.942328016317333e-07
+            },
+            "AD_vs_SMCI": {
+              "cosine": -0.016226276755332947,
+              "l2": 6.118153237366641e-07
+            },
+            "CN_vs_SMCI": {
+              "cosine": -0.007040657103061676,
+              "l2": 6.464293278440891e-07
+            }
+          }
+        },
+        "attention_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            6.523829460144043,
+            6.523829460144043,
+            6.523829460144043
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 1.0,
+                "std": 7.164619830746233e-08
+              },
+              "AD_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.164619830746233e-08
+              },
+              "CN_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.164619830746233e-08
+              }
+            },
+            "off_diagonal_mean": 1.0,
+            "off_diagonal_std": 6.910616434652184e-08
+          }
+        },
+        "post_ffn_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            8.985954284667969,
+            9.100787162780762,
+            9.717374801635742
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.78741455078125,
+                0.7564336657524109
+              ],
+              [
+                0.78741455078125,
+                1.0,
+                0.7957323789596558
+              ],
+              [
+                0.7564336657524109,
+                0.7957323789596558,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.78741455078125,
+                "std": 0.06942218542098999
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.7564336657524109,
+                "std": 0.10362669825553894
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.7957323789596558,
+                "std": 0.1904812604188919
+              }
+            },
+            "off_diagonal_mean": 0.779860258102417,
+            "off_diagonal_std": 0.132537841796875
+          }
+        },
+        "auxiliary_metrics": {
+          "query_1_AD_vs_rest": {
+            "acc": 0.9333333333333333,
+            "auc": 0.985576923076923,
+            "positive_count": 8,
+            "negative_count": 52
+          },
+          "query_2_CN_vs_rest": {
+            "acc": 0.95,
+            "auc": 0.9841269841269842,
+            "positive_count": 21,
+            "negative_count": 39
+          },
+          "query_3_SMCI_vs_rest": {
+            "acc": 0.8833333333333333,
+            "auc": 0.9599555061179088,
+            "positive_count": 31,
+            "negative_count": 29
+          }
+        }
+      }
+    },
+    {
+      "epoch": 400,
+      "gradient": {
+        "private_query_grad_norms": [
+          1.60049670592426e-14,
+          6.266194736757966e-15,
+          8.750080738098576e-15
+        ],
+        "shared_norm_kv_grad_norm": 0.0009473918471485376,
+        "shared_attention_grad_norm": 0.004867030307650566,
+        "private_norm_out_grad_norms": [
+          0.000716724491212517,
+          0.0008398950449191034,
+          0.0008787630940787494
+        ],
+        "private_ffn_grad_norms": [
+          0.0022533682640641928,
+          0.0015573023119941354,
+          0.0031004948541522026
+        ],
+        "auxiliary_head_grad_norms": [
+          0.003808299545198679,
+          0.002815891755744815,
+          0.004692082293331623
+        ],
+        "all_finite_nonzero": true
+      },
+      "representation": {
+        "query_tokens": {
+          "norms": [
+            3.189903097222668e-08,
+            4.383613827485533e-08,
+            3.8607986141414585e-08
+          ],
+          "cosine_matrix": [
+            [
+              0.0010175483766943216,
+              -0.0002129147615050897,
+              -0.0003569505352061242
+            ],
+            [
+              -0.0002129147615050897,
+              0.001921607181429863,
+              0.00030266414978541434
+            ],
+            [
+              -0.0003569505352061242,
+              0.00030266414978541434,
+              0.0014905765419825912
+            ]
+          ],
+          "pairs": {
+            "AD_vs_CN": {
+              "cosine": -0.0002129147615050897,
+              "l2": 5.8008488679206494e-08
+            },
+            "AD_vs_SMCI": {
+              "cosine": -0.0003569505352061242,
+              "l2": 5.676289305256432e-08
+            },
+            "CN_vs_SMCI": {
+              "cosine": 0.00030266414978541434,
+              "l2": 5.2979764575411536e-08
+            }
+          }
+        },
+        "attention_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            6.123608589172363,
+            6.123608589172363,
+            6.123608589172363
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 1.0,
+                "std": 7.873244101119781e-08
+              },
+              "AD_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.873244101119781e-08
+              },
+              "CN_vs_SMCI": {
+                "mean": 1.0,
+                "std": 7.873244101119781e-08
+              }
+            },
+            "off_diagonal_mean": 1.0,
+            "off_diagonal_std": 7.222412534702016e-08
+          }
+        },
+        "post_ffn_stage": {
+          "shape": [
+            598,
+            3,
+            96
+          ],
+          "mean_feature_norms": [
+            8.55990219116211,
+            8.656643867492676,
+            9.359394073486328
+          ],
+          "similarity": {
+            "matrix": [
+              [
+                1.0,
+                0.769305944442749,
+                0.7300138473510742
+              ],
+              [
+                0.769305944442749,
+                1.0,
+                0.7769528031349182
+              ],
+              [
+                0.7300138473510742,
+                0.7769528031349182,
+                1.0
+              ]
+            ],
+            "pairs": {
+              "AD_vs_CN": {
+                "mean": 0.769305944442749,
+                "std": 0.0700346902012825
+              },
+              "AD_vs_SMCI": {
+                "mean": 0.730013906955719,
+                "std": 0.09535611420869827
+              },
+              "CN_vs_SMCI": {
+                "mean": 0.776952862739563,
+                "std": 0.18325799703598022
+              }
+            },
+            "off_diagonal_mean": 0.7587576508522034,
+            "off_diagonal_std": 0.12760575115680695
+          }
+        },
+        "auxiliary_metrics": {
+          "query_1_AD_vs_rest": {
+            "acc": 0.9333333333333333,
+            "auc": 0.985576923076923,
+            "positive_count": 8,
+            "negative_count": 52
+          },
+          "query_2_CN_vs_rest": {
+            "acc": 0.95,
+            "auc": 0.9816849816849818,
+            "positive_count": 21,
+            "negative_count": 39
+          },
+          "query_3_SMCI_vs_rest": {
+            "acc": 0.8833333333333333,
+            "auc": 0.9632925472747498,
+            "positive_count": 31,
+            "negative_count": 29
+          }
+        }
+      }
+    }
+  ],
+  "checkpoint_audit": {
+    "path": "checkpoint_best.pt",
+    "sha256": "b01dd8661649d52b380b14103faf8f6ceb6ebedc7f2f1e990b141ce188d77176",
+    "state_tensor_count": 148,
+    "key_set_equal": true,
+    "tensor_values_equal": true,
+    "passed": true
+  },
+  "prediction_audit": {
+    "row_count": 60,
+    "recomputed_metrics": {
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9157240608853513,
+      "bacc": 0.8951612903225806,
+      "macro_auc": 0.9748634805642592,
+      "weighted_f1": 0.9317099567099568,
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          2
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          2,
+          29
+        ]
+      ]
+    },
+    "metric_abs_deltas": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "macro_auc": 0.0,
+      "weighted_f1": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "source_hashes": {
+    "Model/network.py": "6dd42f334e6e30b8fe3ad9e623abe38d88b035c05e5c329508f750afe4f75fd5",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Loss/__init__.py": "f10e68cbf750708313b8c1f9465d211ae9249d17bd6144936a1f4e1c160cd459",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "scripts/run_query_pool_component_sharing_v1.py": "b8d7ab60f3792d0bdc81b13dda0c9ff9a2cf5c75a536d875793a31fb7b5ec50b"
+  },
+  "elapsed_seconds": 33.14171620015986
+}

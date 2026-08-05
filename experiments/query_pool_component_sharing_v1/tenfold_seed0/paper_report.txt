@@ -1,0 +1,22 @@
+Shared-Evidence Private-Semantic Query Pool v1 (SEPS-Q v1) - 10-Fold Single-Seed Report
+
+dataset=TADPOLE; task=AD_CN_SMCI; folds=0..9; seed=0; epochs=400
+parameter_count=778251
+
+Pooled OOF metrics:
+acc=0.9247491638795987
+macro_f1=0.9138656552532017
+bacc=0.9082063928901053
+macro_auc=0.9571291149332602
+weighted_f1=0.9246314265285625
+confusion_matrix=[[62, 0, 10], [0, 193, 16], [7, 12, 298]]
+
+Fold mean ± sample std:
+acc=0.9248022598870056 ± 0.028556948482667023
+macro_f1=0.9137414158262962 ± 0.03447601176139156
+bacc=0.9087765616999487 ± 0.035203632763032004
+macro_auc=0.9681174047897876 ± 0.02069159606342394
+weighted_f1=0.9243583916466859 ± 0.028215287665923492
+
+elapsed_seconds=311.63381210016087
+all_folds_passed=True

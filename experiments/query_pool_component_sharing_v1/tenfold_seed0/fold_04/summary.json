@@ -1,0 +1,72 @@
+{
+  "fold": 4,
+  "seed": 0,
+  "epochs": 400,
+  "split_hash": "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+  "train_size": 538,
+  "test_size": 60,
+  "best_epoch": 195,
+  "best_metrics": {
+    "acc": 0.8833333333333333,
+    "macro_f1": 0.8758331099794514,
+    "bacc": 0.8735119047619048,
+    "macro_auc": 0.9389945746077822,
+    "weighted_f1": 0.8832145090681676,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        18,
+        3
+      ],
+      [
+        1,
+        2,
+        29
+      ]
+    ]
+  },
+  "parameter_count": 778251,
+  "prediction_audit": {
+    "row_count": 60,
+    "recomputed_metrics": {
+      "acc": 0.8833333333333333,
+      "macro_f1": 0.8758331099794514,
+      "bacc": 0.8735119047619048,
+      "macro_auc": 0.9389945746077822,
+      "weighted_f1": 0.8832145090681676,
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          1
+        ],
+        [
+          0,
+          18,
+          3
+        ],
+        [
+          1,
+          2,
+          29
+        ]
+      ]
+    },
+    "metric_abs_deltas": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "macro_auc": 0.0,
+      "weighted_f1": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "formal_fold_passed": true,
+  "elapsed_seconds": 32.74013579986058
+}

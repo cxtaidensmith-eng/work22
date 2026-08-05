@@ -1,0 +1,135 @@
+Shared-Evidence Private-Semantic Query Pool v1
+10-Fold Single-Seed Final Report
+日期：2026-08-05
+
+一、实验状态
+
+branch=experiment/query-pool-component-sharing-v1
+dataset=TADPOLE
+task=AD_CN_SMCI
+folds=0..9
+seed per fold=0
+epochs per fold=400
+device=cuda:0
+single model=True
+ensemble=False
+
+每折均使用 fresh model、criterion、Adam optimizer 和 CustomCosineAnnealingLR scheduler，从 epoch1 开始训练。全部10折通过，598名受试者均获得唯一OOF预测。
+
+总运行时间：311.63秒，约5.19分钟。
+
+二、模型结构与参数量
+
+SEPS-Q v1：
+
+- private Query ×3
+- shared norm_kv/MHA ×1
+- private norm_out/FFN ×3
+- 原 OVR auxiliary supervision
+- 原 Message_MLP、Global_Message、DIFFormer和classifier
+
+Original Query参数量：853,131
+SEPS-Q参数量：778,251
+减少：74,880，约8.78%。
+
+三、SEPS-Q十折结果
+
+Pooled OOF：
+
+ACC=0.9247492
+Macro-F1=0.9138657
+BACC=0.9082064
+Macro-AUC=0.9571291
+Weighted-F1=0.9246314
+
+OOF confusion matrix：
+
+[[62,0,10],
+ [0,193,16],
+ [7,12,298]]
+
+十折均值 ± sample std：
+
+ACC=0.9248023 ± 0.0285569
+Macro-F1=0.9137414 ± 0.0344760
+BACC=0.9087766 ± 0.0352036
+Macro-AUC=0.9681174 ± 0.0206916
+Weighted-F1=0.9243584 ± 0.0282153
+
+各折ACC：
+
+fold0=0.9333
+fold1=0.9000
+fold2=0.9333
+fold3=0.9333
+fold4=0.8833
+fold5=0.9500
+fold6=0.9500
+fold7=0.8833
+fold8=0.9153
+fold9=0.9661
+
+四、与Original Query 10-fold比较
+
+Original Query pooled OOF：
+
+ACC=0.9297659
+Macro-F1=0.9140778
+BACC=0.9140778
+Macro-AUC=0.9500702
+Weighted-F1=0.9297659
+
+SEPS-Q - Original Query：
+
+ACC=-0.0050167（少正确3名受试者）
+Macro-F1=-0.0002122（基本相同）
+BACC=-0.0058714
+Macro-AUC=+0.0070589
+Weighted-F1=-0.0051345
+
+paired fold ACC：SEPS-Q胜3折、平3折、负4折。
+paired fold Macro-AUC：SEPS-Q胜6折、负4折。
+
+OOF硬分类的配对结果：
+
+Original独占正确=26
+SEPS-Q独占正确=23
+discordant subjects=49
+exact McNemar p=0.77545
+
+当前没有证据表明两者ACC存在可靠差异。
+
+五、错误模式变化
+
+Original Query OOF confusion matrix：
+
+[[62,0,10],
+ [0,198,11],
+ [10,11,296]]
+
+SEPS-Q保持AD正确数不变，并将sMCI→AD错误从10降到7、sMCI正确数从296提高到298；但CN→sMCI错误从11增加到16。
+
+因此SEPS-Q改善了部分sMCI/AD排序与识别，却削弱了CN和sMCI之间的硬分类边界。这与Macro-AUC提升、ACC/BACC小幅下降相一致。
+
+六、结论
+
+fold0的ACC提升没有在十折中稳定复现。以最终准确率为标准，Original Query仍是当前最强模型。
+
+SEPS-Q不是失败模型：它在减少8.78%参数的同时保持几乎相同的Macro-F1，并将OOF Macro-AUC提高约0.71个百分点。它证明三套独立MHA并非全部必要，private FFN可以承担主要类别语义分化。
+
+因此最准确的定位是：
+
+- Original Query：当前准确率基线。
+- SEPS-Q：更高参数效率和更高排序质量的创新候选，但不是ACC替代者。
+
+七、下一步建议
+
+如果继续追求“性能 + 创新性”，下一步不应回到完整三套private MHA，也不应继续压缩全部Attention。更合理的是在shared Attention上增加极小的class-private residual adapter，只恢复CN/sMCI边界所需的私有修正能力。
+
+候选形式：
+
+shared_attention_output + low-rank private residual_k
+
+保持private FFN和原OVR supervision，不新增attention类型、graph或复杂loss。该方向以SEPS-Q为共享证据主干，同时尝试恢复十折中损失的3个硬分类样本。
+
+本次完成10-fold后停止，没有自动实现下一模型。

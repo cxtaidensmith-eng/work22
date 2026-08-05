@@ -1,0 +1,24 @@
+Shared-Evidence Private-Semantic Query Pool v1 (SEPS-Q v1) - formal report
+
+fold=0; seed=0; epochs=400; device=cuda:0
+Structure: private Query x3 + shared norm_kv/MHA + private norm_out/FFN x3
+Parameters: 778251 (Original Query: 853131; delta=-74880)
+Loss: main weighted CE + AD-rest + CN-rest + SMCI-rest; orthogonality=False
+Best epoch: 94
+ACC: 0.9333333333333333
+Macro-F1: 0.9157240608853513
+BACC: 0.8951612903225806
+Macro-AUC: 0.9748634805642592
+Weighted-F1: 0.9317099567099568
+Confusion matrix: [[6, 0, 2], [0, 21, 0], [0, 2, 29]]
+
+Delta candidate - Original Query baseline:
+acc: +0.016667
+macro_f1: +0.017948
+bacc: -0.020161
+macro_auc: +0.006540
+weighted_f1: +0.014934
+
+Checkpoint roundtrip: True
+Prediction reproduction: True
+Elapsed seconds: 33.142

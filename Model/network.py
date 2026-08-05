@@ -166,6 +166,51 @@ class Per_Label_Pool(nn.Module):
         return pooled
 
 
+class ComponentSharedLabelPool(nn.Module):
+    """Factorized label pooling with private queries/FFNs and shared attention.
+
+    The module is assembled from fully initialized legacy label pools so the
+    random-number consumption, and therefore all downstream initialization,
+    remains identical to the independent-pool baseline under the same seed.
+    Only one ``norm_kv`` and one ``attn`` module are retained; query tokens,
+    output norms, and FFNs remain label-specific.
+    """
+
+    def __init__(self, initialized_label_pools):
+        super(ComponentSharedLabelPool, self).__init__()
+        if not initialized_label_pools:
+            raise ValueError('initialized_label_pools must not be empty')
+
+        self.queries = nn.ParameterList([
+            pool.query for pool in initialized_label_pools
+        ])
+        self.norm_kv = initialized_label_pools[0].norm_kv
+        self.attn = initialized_label_pools[0].attn
+        self.norm_out = nn.ModuleList([
+            pool.norm_out for pool in initialized_label_pools
+        ])
+        self.ffn = nn.ModuleList([
+            pool.ffn for pool in initialized_label_pools
+        ])
+        self.last_attention_outputs = None
+        self.last_outputs = None
+
+    def forward(self, modal_tokens):
+        batch_size = modal_tokens.size(0)
+        kv = self.norm_kv(modal_tokens)
+        attention_outputs = []
+        pooled_outputs = []
+        for query, norm_out, ffn in zip(self.queries, self.norm_out, self.ffn):
+            q = query.expand(batch_size, -1, -1)
+            pooled, _ = self.attn(q, kv, kv, need_weights=False)
+            pooled = pooled.squeeze(1)
+            attention_outputs.append(pooled)
+            pooled_outputs.append(pooled + ffn(norm_out(pooled)))
+        self.last_attention_outputs = torch.stack(attention_outputs, dim=1).detach()
+        self.last_outputs = torch.stack(pooled_outputs, dim=1).detach()
+        return pooled_outputs
+
+
 class LatentBranchPool(nn.Module):
     """Query-free semantic branch over the shared modal tokens.
 
@@ -358,6 +403,11 @@ class HeterGraph_Model_Kmeans(nn.Module):
             'shared': 'shared',
             'osfq': 'shared',
             'ovr_aligned_shared_query': 'shared',
+            'component_shared': 'component_shared',
+            'component_sharing': 'component_shared',
+            'component-sharing': 'component_shared',
+            'shared_attention': 'component_shared',
+            'query_pool_component_sharing': 'component_shared',
         }
         self.query_pool_variant = query_pool_alias.get(
             str(query_pool_variant).lower(), str(query_pool_variant).lower()
@@ -410,15 +460,15 @@ class HeterGraph_Model_Kmeans(nn.Module):
             raise ValueError(f'{self.semantic_fusion} fusion requires semantic_branch=both')
         if self.category_branch_variant not in {'original', 'query_free_multibranch'}:
             raise ValueError(f'Unknown category_branch_variant: {category_branch_variant}')
-        if self.query_pool_variant not in {'independent', 'shared'}:
+        if self.query_pool_variant not in {'independent', 'shared', 'component_shared'}:
             raise ValueError(f'Unknown query_pool_variant: {query_pool_variant}')
         if self.osfq_anchor_mode not in {'none', 'correct', 'cyclic_mismatch'}:
             raise ValueError(f'Unknown osfq_anchor_mode: {osfq_anchor_mode}')
         if not 0.0 <= self.osfq_ema_decay < 1.0:
             raise ValueError('osfq_ema_decay must be in [0, 1)')
-        if self.query_pool_variant == 'shared' and self.category_branch_variant != 'original':
-            raise ValueError('shared query pool requires category_branch_variant=original')
-        if self.query_pool_variant == 'independent' and self.osfq_anchor_mode != 'none':
+        if self.query_pool_variant in {'shared', 'component_shared'} and self.category_branch_variant != 'original':
+            raise ValueError('shared query-pool variants require category_branch_variant=original')
+        if self.query_pool_variant != 'shared' and self.osfq_anchor_mode != 'none':
             raise ValueError('OVR anchors require query_pool_variant=shared')
         if self.latent_auxiliary_mode not in {'multiclass', 'one_vs_rest'}:
             raise ValueError(f'Unknown latent_auxiliary_mode: {latent_auxiliary_mode}')
@@ -501,6 +551,10 @@ class HeterGraph_Model_Kmeans(nn.Module):
             # downstream baseline module under the same seed.
             if self.query_pool_variant == 'shared':
                 self.label_pools = nn.ModuleList([constructed_label_pools[0]])
+            elif self.query_pool_variant == 'component_shared':
+                self.component_shared_pool = ComponentSharedLabelPool(
+                    constructed_label_pools
+                )
             else:
                 self.label_pools = nn.ModuleList(constructed_label_pools)
             self._Auxi_classifier = nn.ModuleList([
@@ -843,7 +897,14 @@ class HeterGraph_Model_Kmeans(nn.Module):
 
             Label_embedding = []
             Auxi_classifier_output = []
-            if (
+            if self.query_pool_variant == 'component_shared':
+                Label_embedding = self.component_shared_pool(H)
+                Auxi_classifier_output = [
+                    self._Auxi_classifier[label_idx](branch_embedding)
+                    for label_idx, branch_embedding in enumerate(Label_embedding)
+                ]
+                branch_items = None
+            elif (
                 self.category_branch_variant == 'original'
                 and self.query_pool_variant == 'shared'
             ):
@@ -867,14 +928,15 @@ class HeterGraph_Model_Kmeans(nn.Module):
                     for name in self.latent_branches
                 )
 
-            for branch_pool, aux_classifier, query_override in branch_items:
-                if query_override is None:
-                    branch_emb = branch_pool(H)
-                else:
-                    branch_emb = branch_pool(H, query_override=query_override)
-                aux_out = aux_classifier(branch_emb)
-                Label_embedding.append(branch_emb)
-                Auxi_classifier_output.append(aux_out)
+            if branch_items is not None:
+                for branch_pool, aux_classifier, query_override in branch_items:
+                    if query_override is None:
+                        branch_emb = branch_pool(H)
+                    else:
+                        branch_emb = branch_pool(H, query_override=query_override)
+                    aux_out = aux_classifier(branch_emb)
+                    Label_embedding.append(branch_emb)
+                    Auxi_classifier_output.append(aux_out)
 
             self.last_branch_outputs = Label_embedding
             branch_embeddings = Label_embedding

@@ -1,0 +1,115 @@
+Shared-Evidence Private-Semantic Query Pool v1（SEPS-Q v1）
+Fold0 Formal Experiment Report
+日期：2026-08-05
+
+一、实验状态
+
+分支：experiment/query-pool-component-sharing-v1
+独立 worktree：tmp/query_pool_component_sharing_v1
+
+已完成模型实现、CUDA 3 epoch smoke，以及 fold0 / seed0 / 400 epoch 正式实验。checkpoint 保存回读、best predictions 和指标复算均通过。未运行其他消融、multi-seed、ensemble 或 10-fold。
+
+二、模型创新
+
+Original Query Pool：private Query ×3 + private norm_kv/MHA ×3 + private norm_out/FFN ×3。
+
+SEPS-Q v1：private Query ×3 + shared norm_kv/MHA ×1 + private norm_out/FFN ×3。
+
+三个分支先用同一套 Attention 读取共享多模态证据，再由独立 FFN 形成类别语义。Modal Encoder、shared Modal Transformer、OVR auxiliary、concat + Message_MLP、Global_Message add、DIFFormer 和 classifier 均保持不变。没有新增 attention、graph、router、loss 或 ensemble。
+
+三、参数量
+
+Original Query：853,131
+SEPS-Q v1：778,251
+减少：74,880，约 8.78%。
+
+三个 private Query、共享 Attention 和三个 private FFN 均获得有效梯度；无 NaN/Inf。
+
+四、实验协议
+
+dataset=TADPOLE
+task=AD_CN_SMCI
+fold=0
+seed=0
+epochs=400
+device=cuda:0
+single model=True
+ensemble=False
+loss=L_main + L_AD_rest + L_CN_rest + L_SMCI_rest
+orthogonality=False
+optimizer=Adam
+scheduler=CustomCosineAnnealingLR(T_max=400)
+best epoch rule=ACC > Macro-AUC > Macro-F1
+
+五、正式结果
+
+Original Query baseline fold0：
+Best epoch=111
+ACC=0.9166667
+Macro-F1=0.8977764
+BACC=0.9153226
+Macro-AUC=0.9683235
+Weighted-F1=0.9167762
+
+SEPS-Q v1：
+Best epoch=94
+ACC=0.9333333
+Macro-F1=0.9157241
+BACC=0.8951613
+Macro-AUC=0.9748635
+Weighted-F1=0.9317100
+
+变化（SEPS-Q - Original）：
+ACC=+0.0166667（多正确 1 个受试者）
+Macro-F1=+0.0179477
+BACC=-0.0201613
+Macro-AUC=+0.0065400
+Weighted-F1=+0.0149338
+
+SEPS-Q confusion matrix：
+[[6,0,2],[0,21,0],[0,2,29]]
+
+Original Query confusion matrix：
+[[7,0,1],[0,21,0],[2,2,27]]
+
+SEPS-Q 多正确识别了 2 个原先被判为 AD 的 sMCI，但多错分了 1 个 AD 为 sMCI。因此总 ACC、Macro-F1、AUC 提升，而小样本 AD recall 下降导致 BACC 降低。
+
+六、机制诊断
+
+Best epoch 的 Attention-stage 三分支输出：
+- mean norm=16.3385 / 16.3385 / 16.3385
+- pairwise cosine 均约 1.0000
+
+三个 private Query 通过共享 MHA 后得到几乎相同的证据表示；类别差异没有主要形成在 Attention readout。
+
+经过三个 private FFN 后：
+- mean norm=17.4229 / 16.7906 / 18.8549
+- AD-CN cosine=0.9259
+- AD-sMCI cosine=0.7939
+- CN-sMCI cosine=0.8596
+- off-diagonal cosine=0.8598
+
+独立 FFN 将共享证据转换成了明显不同的类别语义表示，没有发生 branch collapse。
+
+Query gradient 随训练快速趋近于零，而 shared Attention 和 private FFN 在训练后期仍保持非零梯度。这支持：当前性能主要依赖共享证据编码与 private semantic transformation，而不是三个 Query token 的模态选择。
+
+Best epoch OVR auxiliary：
+- AD-vs-rest：ACC=0.9667，AUC=0.9303
+- CN-vs-rest：ACC=0.9500，AUC=0.9915
+- sMCI-vs-rest：ACC=0.9500，AUC=0.9455
+
+七、结论
+
+SEPS-Q v1 在 fold0 同时实现：ACC 提升 1.67 个百分点；Macro-F1、Macro-AUC、Weighted-F1 提升；参数量减少约 8.78%；获得更清晰的“共享证据读取 + 私有类别语义变换”解释。
+
+因此它同时满足当前阶段的性能与创新性目标，并优于此前完整共享 Query Pool 的 S0。
+
+但 BACC 下降说明 AD 少数类仍是风险点。当前结果来自单个 fold0，并沿用历史 test-fold best-epoch 探索协议，不能直接宣称十折泛化提升。
+
+八、下一步建议
+
+优先将 SEPS-Q v1 作为唯一候选进入 10-fold single-seed 验证，与已有 Original Query 10-fold OOF 直接比较。
+
+暂不继续堆叠新模块。若十折仍保持 ACC/Macro-F1/AUC 优势，再补一个 fold0 镜像机制消融（private Attention + shared FFN）用于论文归因。
+
+当前实验完成后停止，没有自动实现其他模型。
