@@ -1,0 +1,37 @@
+{
+  "model": "Original Query + Global Ordinal Auxiliary",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed": 0,
+  "epochs": 400,
+  "optimizer": "Adam",
+  "scheduler": "CustomCosineAnnealingLR",
+  "scheduler_T_max": 400,
+  "lambda_ordinal": 0.2,
+  "ordinal_order": [
+    "CN",
+    "sMCI",
+    "AD"
+  ],
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "best_rule": [
+    "ACC",
+    "historical adjusted-score Macro-AUC",
+    "Macro-F1"
+  ],
+  "graph_enabled": false
+}

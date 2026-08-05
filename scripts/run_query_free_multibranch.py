@@ -101,7 +101,13 @@ def git_info() -> dict:
         return {"branch": "unknown", "commit": "unknown", "dirty": None}
 
 
-def build_model(config: Config_, dataset_dict: dict, variant: str, device: torch.device):
+def build_model(
+    config: Config_,
+    dataset_dict: dict,
+    variant: str,
+    device: torch.device,
+    global_ordinal_aux: bool = False,
+):
     if variant not in {"original", VARIANT}:
         raise ValueError(f"Unsupported variant: {variant}")
     return HeterGraph_Model_Kmeans(
@@ -132,6 +138,7 @@ def build_model(config: Config_, dataset_dict: dict, variant: str, device: torch
         label_graph_alpha=0.0,
         label_graph_topk=0,
         label_graph_reg_lambda=0.0,
+        global_ordinal_aux=global_ordinal_aux,
     ).to(device)
 
 

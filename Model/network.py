@@ -340,7 +340,8 @@ class HeterGraph_Model_Kmeans(nn.Module):
                  latent_auxiliary_mode='multiclass',
                  category_branch_fusion='concat',
                  label_graph_alpha=0.0, label_graph_topk=0,
-                 label_graph_reg_lambda=0.0):
+                 label_graph_reg_lambda=0.0,
+                 global_ordinal_aux=False):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -483,6 +484,16 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.label_graph_alpha = float(label_graph_alpha)
         self.label_graph_topk = int(label_graph_topk)
         self.label_graph_reg_lambda = float(label_graph_reg_lambda)
+        self.global_ordinal_aux_enabled = bool(global_ordinal_aux)
+        if self.global_ordinal_aux_enabled and (
+            self.semantic_branch != 'both'
+            or self.category_branch_variant != 'original'
+            or self.query_pool_variant != 'independent'
+        ):
+            raise ValueError(
+                'global ordinal auxiliary requires the Original Query model '
+                'with independent pools and the Global branch enabled'
+            )
         self.last_adj_base = None
         self.last_label_relation = None
 
@@ -671,6 +682,16 @@ class HeterGraph_Model_Kmeans(nn.Module):
                 persistent=True,
             )
 
+        # Appended after every legacy module so the Original Query parameter
+        # initialization is unchanged. These outputs supervise only the
+        # pre-fusion Global representation and never alter inference logits.
+        if self.global_ordinal_aux_enabled:
+            self.global_ordinal_severity_head = nn.Linear(Hidden_size, 1)
+            self.global_ordinal_threshold_1 = nn.Parameter(torch.tensor(-0.5))
+            self.global_ordinal_threshold_gap = nn.Parameter(
+                torch.tensor(0.54132485)
+            )
+
         self.last_category_embedding = None
         self.last_global_embedding = None
         self.last_global_residual = None
@@ -687,6 +708,17 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.last_osfq_centered_directions = None
         self.last_osfq_effective_queries = None
         self.last_osfq_anchor_contribution_norm = None
+        self.last_global_ordinal_severity = None
+        self.last_global_ordinal_logits = None
+        self.last_global_ordinal_tau1 = None
+        self.last_global_ordinal_tau2 = None
+
+    def global_ordinal_thresholds(self):
+        if not self.global_ordinal_aux_enabled:
+            raise RuntimeError('global ordinal auxiliary is disabled')
+        tau1 = self.global_ordinal_threshold_1
+        tau2 = tau1 + F.softplus(self.global_ordinal_threshold_gap) + 1e-4
+        return tau1, tau2
 
     @torch.no_grad()
     def _current_ovr_directions(self):
@@ -974,6 +1006,23 @@ class HeterGraph_Model_Kmeans(nn.Module):
             Global_Embedding = X_raw.new_zeros((X_raw.size(0), self.Hidden_size))
         elif Global_Embedding is None:
             Global_Embedding = self.Global_Message(X_gated)
+
+        if self.global_ordinal_aux_enabled:
+            severity = self.global_ordinal_severity_head(
+                Global_Embedding
+            ).squeeze(-1)
+            tau1, tau2 = self.global_ordinal_thresholds()
+            self.last_global_ordinal_severity = severity
+            self.last_global_ordinal_logits = torch.stack(
+                [severity - tau1, severity - tau2], dim=-1
+            )
+            self.last_global_ordinal_tau1 = tau1
+            self.last_global_ordinal_tau2 = tau2
+        else:
+            self.last_global_ordinal_severity = None
+            self.last_global_ordinal_logits = None
+            self.last_global_ordinal_tau1 = None
+            self.last_global_ordinal_tau2 = None
 
         if self.adj_mode == 'learned':
             Adj = self.Adj_Learning(X_gated)

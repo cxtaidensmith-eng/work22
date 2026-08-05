@@ -1,0 +1,114 @@
+{
+  "schema_version": "global-ordinal-aux-10fold-seed0-v1",
+  "branch": "experiment/global-ordinal-aux-v1",
+  "base_commit": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+  "run_source_commit": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+  "command": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe scripts\\run_global_ordinal_aux_v1.py",
+  "config": {
+    "model": "Original Query + Global Ordinal Auxiliary",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "optimizer": "Adam",
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_T_max": 400,
+    "lambda_ordinal": 0.2,
+    "ordinal_order": [
+      "CN",
+      "sMCI",
+      "AD"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "best_rule": [
+      "ACC",
+      "historical adjusted-score Macro-AUC",
+      "Macro-F1"
+    ],
+    "graph_enabled": false
+  },
+  "class_mapping": {
+    "dataset_class_names": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "ordinal_order": [
+      "CN",
+      "sMCI",
+      "AD"
+    ],
+    "label_by_stage": {
+      "CN": 1,
+      "sMCI": 2,
+      "AD": 0
+    },
+    "rank_by_label": {
+      "1": 0,
+      "2": 1,
+      "0": 2
+    }
+  },
+  "minimal_cuda_check": {
+    "passed": true,
+    "fold": 0,
+    "device": "cuda:0",
+    "base_parameter_count": 853131,
+    "ordinal_parameter_count": 853230,
+    "loss_original": 3.3026833534240723,
+    "loss_ordinal": 0.881916880607605,
+    "loss_ord_1": 0.49774181842803955,
+    "loss_ord_2": 1.2660919427871704,
+    "loss_total": 3.479066848754883,
+    "ordinal_head_gradient_norm": 0.04217476770281792,
+    "tau1": -0.5,
+    "tau2": 0.5001000165939331,
+    "pos_weights": {
+      "target_1": {
+        "positive_count": 350,
+        "negative_count": 188,
+        "pos_weight": 0.5371428728103638
+      },
+      "target_2": {
+        "positive_count": 64,
+        "negative_count": 474,
+        "pos_weight": 7.40625
+      }
+    },
+    "all_gradients_finite": true
+  },
+  "environment": {
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.5.1+cu121",
+    "sklearn": "1.9.0",
+    "cuda_runtime": "12.1",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "device": "cuda:0"
+  },
+  "source_hashes": {
+    "Model/network.py": "c80a65dfd6fb1c46fe87a68c83eece8b93454b3fb0cf88597f124bc6d42b6c17",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Model/layers.py": "76fb3b36f7ad493631f8f219d24ab5d96626d12d6d3d4a0943099138f4018f99",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "scripts/run_query_free_multibranch.py": "cfc0d8befbcb94bc01677c71bc09390f2616df7a69ed2c957b753373d407a181",
+    "scripts/run_global_ordinal_aux_v1.py": "c732ae1e2e7672988e48a1cda1f53b2fb89b99238bacb4a75c008f6153cd4ed2"
+  }
+}

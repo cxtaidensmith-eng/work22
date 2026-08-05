@@ -1,0 +1,68 @@
+{
+  "schema_version": "global-ordinal-aux-10fold-seed0-v1",
+  "model": "Original Query + Global Ordinal Auxiliary",
+  "fold": 9,
+  "formal_fold_passed": true,
+  "seed": 0,
+  "epochs": 400,
+  "split_hash": "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12",
+  "train_size": 539,
+  "test_size": 59,
+  "best_epoch": 157,
+  "best_metrics": {
+    "acc": 0.9322033898305084,
+    "macro_f1": 0.9201612903225805,
+    "bacc": 0.9201612903225805,
+    "macro_auc": 0.975711980408375,
+    "weighted_f1": 0.9322033898305084,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        1,
+        1,
+        29
+      ]
+    ]
+  },
+  "best_tau1": -0.47434359788894653,
+  "best_tau2": 1.4834693670272827,
+  "best_selection_macro_auc_adjusted_score": 0.9795204268638805,
+  "final_tau1": -0.4656813144683838,
+  "final_tau2": 2.131253719329834,
+  "ordinal_pos_weights": {
+    "target_1": {
+      "positive_count": 350,
+      "negative_count": 189,
+      "pos_weight": 0.5400000214576721
+    },
+    "target_2": {
+      "positive_count": 64,
+      "negative_count": 475,
+      "pos_weight": 7.421875
+    }
+  },
+  "lambda_ordinal": 0.2,
+  "parameter_count": 853230,
+  "elapsed_seconds": 49.765431800158694,
+  "source_hashes": {
+    "Model/network.py": "c80a65dfd6fb1c46fe87a68c83eece8b93454b3fb0cf88597f124bc6d42b6c17",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Model/layers.py": "76fb3b36f7ad493631f8f219d24ab5d96626d12d6d3d4a0943099138f4018f99",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "scripts/run_query_free_multibranch.py": "cfc0d8befbcb94bc01677c71bc09390f2616df7a69ed2c957b753373d407a181",
+    "scripts/run_global_ordinal_aux_v1.py": "c732ae1e2e7672988e48a1cda1f53b2fb89b99238bacb4a75c008f6153cd4ed2"
+  },
+  "checkpoint_sha256": "b3e4b72d63d400e4771c3b4a8ca82c6eda575523bad5b6561c4cc12f6acafcbb"
+}
