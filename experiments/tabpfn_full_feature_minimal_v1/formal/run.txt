@@ -1,0 +1,33 @@
+2026-08-05T06:29:27.841548+00:00 start kind=formal branch=experiment/tabpfn-full-feature-minimal-v1 head=57ecc323edf9d24d32d8be7c0eb1b612e4cca74a
+2026-08-05T06:29:29.219918+00:00 fold=0 fresh_classifier_uuid=1235e6a4-eeb7-4c3c-80f2-096fcc8f5af1 train=538 test=60
+2026-08-05T06:29:33.273249+00:00 fold=0 complete acc=0.900000000 macro_auc=0.971327905 n_estimators_=2 selected_features=360 seconds=4.013
+2026-08-05T06:29:33.462085+00:00 fold=0 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:33.572252+00:00 fold=1 fresh_classifier_uuid=7ec4e4c1-8ca5-4a07-92dc-938adebb64cd train=538 test=60
+2026-08-05T06:29:35.148733+00:00 fold=1 complete acc=0.950000000 macro_auc=0.977924488 n_estimators_=2 selected_features=360 seconds=1.527
+2026-08-05T06:29:35.341248+00:00 fold=1 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:35.451369+00:00 fold=2 fresh_classifier_uuid=6ef2ad19-19ad-406d-95b8-825720f2e8ab train=538 test=60
+2026-08-05T06:29:37.091338+00:00 fold=2 complete acc=0.966666667 macro_auc=0.997697904 n_estimators_=2 selected_features=360 seconds=1.591
+2026-08-05T06:29:37.278394+00:00 fold=2 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:37.389162+00:00 fold=3 fresh_classifier_uuid=0367daac-3681-4ac0-8151-f598255a0ebf train=538 test=60
+2026-08-05T06:29:38.984943+00:00 fold=3 complete acc=0.900000000 macro_auc=0.981745396 n_estimators_=2 selected_features=360 seconds=1.547
+2026-08-05T06:29:39.182572+00:00 fold=3 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:39.293375+00:00 fold=4 fresh_classifier_uuid=eda97b2a-dba6-4d4d-babf-5d2dc06430ce train=538 test=60
+2026-08-05T06:29:40.901511+00:00 fold=4 complete acc=0.900000000 macro_auc=0.963769764 n_estimators_=2 selected_features=360 seconds=1.560
+2026-08-05T06:29:41.093518+00:00 fold=4 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:41.206899+00:00 fold=5 fresh_classifier_uuid=5273dd34-c8bb-4161-876a-5ce29f4fbcfd train=538 test=60
+2026-08-05T06:29:42.766403+00:00 fold=5 complete acc=0.900000000 macro_auc=0.981820449 n_estimators_=2 selected_features=360 seconds=1.509
+2026-08-05T06:29:42.965641+00:00 fold=5 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:43.075244+00:00 fold=6 fresh_classifier_uuid=91773b60-ef98-419d-a1c4-310356ebd649 train=538 test=60
+2026-08-05T06:29:44.693234+00:00 fold=6 complete acc=0.900000000 macro_auc=0.979765828 n_estimators_=2 selected_features=360 seconds=1.568
+2026-08-05T06:29:44.883911+00:00 fold=6 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:44.992523+00:00 fold=7 fresh_classifier_uuid=6c9534a0-1425-4fbd-88c8-096d600ae570 train=538 test=60
+2026-08-05T06:29:46.589418+00:00 fold=7 complete acc=0.900000000 macro_auc=0.968199914 n_estimators_=2 selected_features=360 seconds=1.547
+2026-08-05T06:29:46.778166+00:00 fold=7 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:46.885311+00:00 fold=8 fresh_classifier_uuid=82a7b2b8-629d-4385-83ab-508054a02332 train=539 test=59
+2026-08-05T06:29:48.496218+00:00 fold=8 complete acc=0.864406780 macro_auc=0.959716288 n_estimators_=2 selected_features=360 seconds=1.561
+2026-08-05T06:29:48.687160+00:00 fold=8 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:48.800726+00:00 fold=9 fresh_classifier_uuid=5c2acd7a-6991-4dca-b1b7-ab1d5c507554 train=539 test=59
+2026-08-05T06:29:50.352700+00:00 fold=9 complete acc=0.932203390 macro_auc=0.993714392 n_estimators_=2 selected_features=360 seconds=1.503
+2026-08-05T06:29:50.550755+00:00 fold=9 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:29:50.712221+00:00 formal_oof acc=0.911371237 macro_auc=0.976828824
+2026-08-05T06:29:50.714880+00:00 complete kind=formal wall_seconds=22.877

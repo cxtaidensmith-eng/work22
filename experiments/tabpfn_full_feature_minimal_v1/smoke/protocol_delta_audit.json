@@ -1,0 +1,26 @@
+{
+  "allowed_non_model_differences": [
+    "experiment/branch/result/report names",
+    "two-member feature coverage audit",
+    "comparison with locked single-estimator OOF"
+  ],
+  "baseline_runner": "scripts/run_tabpfn_baseline_v1.py",
+  "baseline_runner_sha256": "86e0666add6dbe99863d59496d94dec80c6098896d2f63ed480e5962593b3a3f",
+  "constructor_differences": {
+    "auto_scale_n_estimators": {
+      "baseline": false,
+      "full_feature": true
+    }
+  },
+  "inherited_without_reimplementation": [
+    "load_protocol",
+    "checkpoint_audit",
+    "environment_audit",
+    "metric_bundle",
+    "validate_fold_readback",
+    "fold_metric_table",
+    "fold_metric_summary",
+    "recompute_historical_metrics"
+  ],
+  "passed": true
+}

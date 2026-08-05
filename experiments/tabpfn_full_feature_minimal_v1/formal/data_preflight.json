@@ -1,0 +1,282 @@
+{
+  "class_counts": {
+    "AD": 72,
+    "CN": 209,
+    "SMCI": 317
+  },
+  "class_mapping": {
+    "AD": 0,
+    "CN": 1,
+    "SMCI": 2
+  },
+  "dataset_path": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_processed_standard_data.csv",
+  "dataset_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042",
+  "duplicate_feature_row_count": 0,
+  "each_source_row_test_once": true,
+  "each_source_row_train_nine_times": true,
+  "fold_manifest_canonical_sha256": "be020ede2a03d59dbd5e8bbf715cb4d097f8398f9824c122521c3240e00b6515",
+  "fold_manifest_file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+  "fold_manifest_path": "experiments/ovr_aligned_shared_query_v1/formal/reference_fold_manifest.json",
+  "folds": [
+    {
+      "fold": 0,
+      "split_sha256": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+      "test_class_count": {
+        "AD": 8,
+        "CN": 21,
+        "SMCI": 31
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 64,
+        "CN": 188,
+        "SMCI": 286
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 1,
+      "split_sha256": "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 2,
+      "split_sha256": "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 3,
+      "split_sha256": "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 4,
+      "split_sha256": "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 5,
+      "split_sha256": "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 6,
+      "split_sha256": "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 7,
+      "split_sha256": "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 32
+      },
+      "test_size": 60,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 285
+      },
+      "train_constant_feature_count": 4,
+      "train_constant_feature_indices": [
+        299,
+        305,
+        318,
+        326
+      ],
+      "train_size": 538
+    },
+    {
+      "fold": 8,
+      "split_sha256": "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+      "test_class_count": {
+        "AD": 7,
+        "CN": 21,
+        "SMCI": 31
+      },
+      "test_size": 59,
+      "train_class_count": {
+        "AD": 65,
+        "CN": 188,
+        "SMCI": 286
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 539
+    },
+    {
+      "fold": 9,
+      "split_sha256": "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12",
+      "test_class_count": {
+        "AD": 8,
+        "CN": 20,
+        "SMCI": 31
+      },
+      "test_size": 59,
+      "train_class_count": {
+        "AD": 64,
+        "CN": 189,
+        "SMCI": 286
+      },
+      "train_constant_feature_count": 3,
+      "train_constant_feature_indices": [
+        299,
+        318,
+        326
+      ],
+      "train_size": 539
+    }
+  ],
+  "global_constant_feature_count": 3,
+  "global_constant_feature_indices": [
+    299,
+    318,
+    326
+  ],
+  "global_constant_feature_names": [
+    "PTEDUCAT_[4, 6)",
+    "AGE_[90.4, 92.4)",
+    "PTEDUCAT_[6, 8)"
+  ],
+  "identity_kind": "source CSV row index; not a verified patient/RID identifier",
+  "identity_limitation": "The committed protocol proves 598 unique source CSV rows; no RID column is present, so person-level uniqueness is not independently verifiable.",
+  "input_dtype": "float64",
+  "label_order_sha256": "40aa3114eeb832ce1b80a8706b47e50f99da7a48030d40560ef56164e109662a",
+  "label_shape": [
+    598
+  ],
+  "modal_dictionary_path": "DATASET/TADPOLE/AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+  "modal_dictionary_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273",
+  "modalities": {
+    "COGNITIVE_TEST": 24,
+    "RISK_FACTOR": 36,
+    "ROI_AVERAGE": 9,
+    "UCBERKELEYAV45": 150,
+    "UCSFFSX": 138,
+    "UPENNBIOMK9": 3
+  },
+  "nan_count": 0,
+  "negative_inf_count": 0,
+  "positive_inf_count": 0,
+  "sample_order_sha256": "7ef70c38282cd3c3fa2fa95f41d5d7dfd3ee456d7ac58a25f80e2d7c378df668",
+  "shape": [
+    598,
+    360
+  ],
+  "test_fold_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+  "test_sets_pairwise_disjoint": true,
+  "test_union_count": 598
+}

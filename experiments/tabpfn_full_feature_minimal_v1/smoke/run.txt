@@ -1,0 +1,5 @@
+2026-08-05T06:27:18.082135+00:00 start kind=smoke branch=experiment/tabpfn-full-feature-minimal-v1 head=57ecc323edf9d24d32d8be7c0eb1b612e4cca74a
+2026-08-05T06:27:19.492108+00:00 fold=0 fresh_classifier_uuid=71eb254c-ef01-4c1a-93a6-8e51da50bd04 train=538 test=60
+2026-08-05T06:27:23.617247+00:00 fold=0 complete acc=0.900000000 macro_auc=0.971327905 n_estimators_=2 selected_features=360 seconds=4.072
+2026-08-05T06:27:23.802555+00:00 fold=0 feature_coverage=360/360 internal_members=2 coverage_sha256=a85a5b961e4d3b816bd82b264691cdf73dc202d2006629eea44ed08e2b5bafc2
+2026-08-05T06:27:23.807079+00:00 complete kind=smoke wall_seconds=5.729
