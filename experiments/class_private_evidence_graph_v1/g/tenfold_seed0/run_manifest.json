@@ -1,0 +1,14 @@
+{
+  "command": "D:\\Anaconda\\envs\\mmfl\\python.exe scripts/run_class_private_evidence_graph_v1.py formal --arm G",
+  "environment": {
+    "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+    "python_executable": "D:\\Anaconda\\envs\\mmfl\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.1.1",
+    "torch_cuda_build": "11.8",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  },
+  "head_commit_sha": "0f776c12dd7c3b7777fcc51227af189b3fe95d78"
+}

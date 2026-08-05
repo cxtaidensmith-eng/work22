@@ -1,0 +1,104 @@
+{
+  "arm": "G",
+  "graph": {
+    "gamma": {
+      "AD": -0.07975108176469803,
+      "CN": 0.1825132817029953,
+      "SMCI": -0.17608124017715454
+    },
+    "per_class_graph": {
+      "AD": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1786,
+        "density": 0.010005434082340352,
+        "average_degree": 5.9732441902160645,
+        "self_loop_only_nodes": 2,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9792612791061401,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "CN": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1808,
+        "density": 0.010128681310678253,
+        "average_degree": 6.046822547912598,
+        "self_loop_only_nodes": 3,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9815076589584351,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "SMCI": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1770,
+        "density": 0.009915799734458244,
+        "average_degree": 5.919732570648193,
+        "self_loop_only_nodes": 5,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9529248476028442,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      }
+    },
+    "edge_jaccard": {
+      "AD_vs_CN": {
+        "intersection_edges": 1594,
+        "union_edges": 2000,
+        "edge_jaccard": 0.797
+      },
+      "AD_vs_SMCI": {
+        "intersection_edges": 1538,
+        "union_edges": 2018,
+        "edge_jaccard": 0.7621407333994054
+      },
+      "CN_vs_SMCI": {
+        "intersection_edges": 1621,
+        "union_edges": 1957,
+        "edge_jaccard": 0.828308635666837
+      }
+    },
+    "representation": [
+      {
+        "class": "AD",
+        "mean_pre_to_post_cosine": 0.7220678329467773,
+        "mean_offdiag_cosine_pre": 0.4296830892562866,
+        "mean_offdiag_cosine_post": 0.22700417041778564,
+        "offdiag_cosine_delta": -0.20267891883850098,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "CN",
+        "mean_pre_to_post_cosine": 0.714869499206543,
+        "mean_offdiag_cosine_pre": 0.31484153866767883,
+        "mean_offdiag_cosine_post": 0.13496416807174683,
+        "offdiag_cosine_delta": -0.179877370595932,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "SMCI",
+        "mean_pre_to_post_cosine": 0.7217323184013367,
+        "mean_offdiag_cosine_pre": 0.26310327649116516,
+        "mean_offdiag_cosine_post": 0.059417616575956345,
+        "offdiag_cosine_delta": -0.20368565991520882,
+        "obvious_oversmoothing": false
+      }
+    ],
+    "graphs_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_graphs_identical": false,
+    "obvious_oversmoothing": false
+  }
+}

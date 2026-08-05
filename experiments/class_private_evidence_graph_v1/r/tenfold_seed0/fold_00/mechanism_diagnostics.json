@@ -1,0 +1,67 @@
+{
+  "arm": "R",
+  "reader": {
+    "rank": 8,
+    "class": {
+      "AD": {
+        "mean_residual_norm": 6.524177074432373,
+        "mean_residual_to_shared_norm_ratio": 0.38158872723579407,
+        "mean_modality_weights": [
+          0.2288227379322052,
+          0.19710145890712738,
+          0.110527902841568,
+          0.20282411575317383,
+          0.1203346848487854,
+          0.140389084815979
+        ]
+      },
+      "CN": {
+        "mean_residual_norm": 19.806156158447266,
+        "mean_residual_to_shared_norm_ratio": 1.197391390800476,
+        "mean_modality_weights": [
+          0.09778828918933868,
+          0.12582090497016907,
+          0.24112100899219513,
+          0.1140953078866005,
+          0.23797732591629028,
+          0.18319712579250336
+        ]
+      },
+      "SMCI": {
+        "mean_residual_norm": 4.988036155700684,
+        "mean_residual_to_shared_norm_ratio": 0.298297256231308,
+        "mean_modality_weights": [
+          0.10616571456193924,
+          0.13079528510570526,
+          0.22981902956962585,
+          0.12096258252859116,
+          0.23110675811767578,
+          0.18115060031414032
+        ]
+      }
+    },
+    "pairwise_weight_difference": {
+      "AD_vs_CN": {
+        "mean_absolute_difference": 0.10917150229215622,
+        "mean_l1_difference": 0.6550289988517761,
+        "maximum_absolute_difference": 0.350109338760376
+      },
+      "AD_vs_SMCI": {
+        "mean_absolute_difference": 0.10148970782756805,
+        "mean_l1_difference": 0.6089382171630859,
+        "maximum_absolute_difference": 0.327883780002594
+      },
+      "CN_vs_SMCI": {
+        "mean_absolute_difference": 0.007931390777230263,
+        "mean_l1_difference": 0.04758834093809128,
+        "maximum_absolute_difference": 0.04620197415351868
+      }
+    },
+    "weights_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_class_readers_identical": false
+  }
+}

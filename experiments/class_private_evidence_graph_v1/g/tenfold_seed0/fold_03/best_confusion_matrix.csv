@@ -1,0 +1,4 @@
+﻿actual,predicted_AD,predicted_CN,predicted_SMCI
+AD,7,0,0
+CN,0,20,1
+SMCI,1,3,28

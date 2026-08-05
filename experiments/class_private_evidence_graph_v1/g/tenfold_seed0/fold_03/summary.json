@@ -1,0 +1,106 @@
+{
+  "arm": "G",
+  "fold": 3,
+  "seed": 0,
+  "epochs": 400,
+  "split_hash": "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+  "train_size": 538,
+  "test_size": 60,
+  "best_epoch": 60,
+  "best_epoch_rule": [
+    "ACC",
+    "historical adjusted-score Macro-AUC",
+    "Macro-F1"
+  ],
+  "best_metrics": {
+    "acc": 0.9166666666666666,
+    "macro_f1": 0.9201523431031627,
+    "bacc": 0.9424603174603176,
+    "probability_macro_auc": 0.9902301904070772,
+    "selection_macro_auc_adjusted": 0.9853521249452853,
+    "weighted_f1": 0.9166881934095049,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        1,
+        3,
+        28
+      ]
+    ]
+  },
+  "parameter_summary": {
+    "arm": "G",
+    "total_parameter_count": 787761,
+    "added_parameter_count": 9510,
+    "added_named_parameters": {
+      "class_conditioned_sparse_evidence_graph.gamma": 3,
+      "class_conditioned_sparse_evidence_graph.graph_transform.weight": 9216,
+      "class_conditioned_sparse_evidence_graph.scorers.0.weight": 96,
+      "class_conditioned_sparse_evidence_graph.scorers.0.bias": 1,
+      "class_conditioned_sparse_evidence_graph.scorers.1.weight": 96,
+      "class_conditioned_sparse_evidence_graph.scorers.1.bias": 1,
+      "class_conditioned_sparse_evidence_graph.scorers.2.weight": 96,
+      "class_conditioned_sparse_evidence_graph.scorers.2.bias": 1
+    },
+    "below_original_query": true
+  },
+  "legacy_initialization_audit": {
+    "arm": "G",
+    "common_tensor_count": 148,
+    "new_tensor_count": 8,
+    "new_tensor_names": [
+      "class_conditioned_sparse_evidence_graph.gamma",
+      "class_conditioned_sparse_evidence_graph.graph_transform.weight",
+      "class_conditioned_sparse_evidence_graph.scorers.0.bias",
+      "class_conditioned_sparse_evidence_graph.scorers.0.weight",
+      "class_conditioned_sparse_evidence_graph.scorers.1.bias",
+      "class_conditioned_sparse_evidence_graph.scorers.1.weight",
+      "class_conditioned_sparse_evidence_graph.scorers.2.bias",
+      "class_conditioned_sparse_evidence_graph.scorers.2.weight"
+    ],
+    "max_abs_diff": 0.0,
+    "mismatch_names": [],
+    "passed": true
+  },
+  "checkpoint_audit": {
+    "path": "checkpoint_best.pt",
+    "sha256": "a5860c3369de420acb9576f18eb9f50febad8eb79b30f7cb8fbd9b5308d80ee4",
+    "state_tensor_count": 156,
+    "key_set_equal": true,
+    "tensor_values_equal": true,
+    "passed": true
+  },
+  "prediction_audit": {
+    "row_count": 60,
+    "metric_abs_delta": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "probability_macro_auc": 0.0,
+      "weighted_f1": 0.0,
+      "selection_macro_auc_adjusted": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "mechanism_diagnostics": null,
+  "source_hashes": {
+    "Model/network.py": "81f7a93a4690fa29c189292a51917f75034b6f0bf4b6fafdea9c1f04ee06338e",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Loss/__init__.py": "f10e68cbf750708313b8c1f9465d211ae9249d17bd6144936a1f4e1c160cd459",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "scripts/run_query_pool_component_sharing_v1.py": "a92ecaacdbe8a17aab2f65770a98becfb8c168656d75d03918433113869d4267",
+    "scripts/run_class_private_evidence_graph_v1.py": "92044249d21a78387bd702076f8e14cae54d3367ebbc9ad7a313f6be709613c7"
+  },
+  "elapsed_seconds": 50.849331400124356,
+  "formal_fold_passed": true
+}

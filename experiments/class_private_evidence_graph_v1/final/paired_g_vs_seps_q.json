@@ -1,0 +1,11 @@
+{
+  "model": "G",
+  "other": "SEPS-Q",
+  "both_correct": 530,
+  "model_only_correct": 15,
+  "other_only_correct": 23,
+  "both_wrong": 30,
+  "discordant_subjects": 38,
+  "exact_mcnemar_two_sided_p": 0.2558750795433298,
+  "passed": true
+}

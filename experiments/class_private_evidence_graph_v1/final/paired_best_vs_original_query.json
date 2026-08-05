@@ -1,0 +1,11 @@
+{
+  "model": "R",
+  "other": "Original Query",
+  "both_correct": 535,
+  "model_only_correct": 19,
+  "other_only_correct": 21,
+  "both_wrong": 23,
+  "discordant_subjects": 40,
+  "exact_mcnemar_two_sided_p": 0.8746293123804207,
+  "passed": true
+}

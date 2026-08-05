@@ -1,0 +1,168 @@
+{
+  "arm": "RG",
+  "reader": {
+    "rank": 8,
+    "class": {
+      "AD": {
+        "mean_residual_norm": 9.455065727233887,
+        "mean_residual_to_shared_norm_ratio": 1.1642111539840698,
+        "mean_modality_weights": [
+          0.2042713463306427,
+          0.20812977850437164,
+          0.11857329308986664,
+          0.16152417659759521,
+          0.13914191722869873,
+          0.16835950314998627
+        ]
+      },
+      "CN": {
+        "mean_residual_norm": 26.35803985595703,
+        "mean_residual_to_shared_norm_ratio": 3.098822593688965,
+        "mean_modality_weights": [
+          0.17858953773975372,
+          0.17737741768360138,
+          0.15111298859119415,
+          0.1676560640335083,
+          0.15726478397846222,
+          0.16799919307231903
+        ]
+      },
+      "SMCI": {
+        "mean_residual_norm": 8.182731628417969,
+        "mean_residual_to_shared_norm_ratio": 0.9859378337860107,
+        "mean_modality_weights": [
+          0.1946694552898407,
+          0.1983424425125122,
+          0.131779283285141,
+          0.16210508346557617,
+          0.14889048039913177,
+          0.16421321034431458
+        ]
+      }
+    },
+    "pairwise_weight_difference": {
+      "AD_vs_CN": {
+        "mean_absolute_difference": 0.031810179352760315,
+        "mean_l1_difference": 0.1908610463142395,
+        "maximum_absolute_difference": 0.19275152683258057
+      },
+      "AD_vs_SMCI": {
+        "mean_absolute_difference": 0.011054079048335552,
+        "mean_l1_difference": 0.06632446497678757,
+        "maximum_absolute_difference": 0.05711144208908081
+      },
+      "CN_vs_SMCI": {
+        "mean_absolute_difference": 0.02214420959353447,
+        "mean_l1_difference": 0.13286523520946503,
+        "maximum_absolute_difference": 0.13564008474349976
+      }
+    },
+    "weights_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_class_readers_identical": false
+  },
+  "graph": {
+    "gamma": {
+      "AD": 0.21931429207324982,
+      "CN": -0.22960016131401062,
+      "SMCI": 0.18645957112312317
+    },
+    "per_class_graph": {
+      "AD": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1627,
+        "density": 0.0091146927502619,
+        "average_degree": 5.441471576690674,
+        "self_loop_only_nodes": 12,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9569880366325378,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "CN": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1662,
+        "density": 0.009310767886254012,
+        "average_degree": 5.558528423309326,
+        "self_loop_only_nodes": 8,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9909219145774841,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      },
+      "SMCI": {
+        "node_count": 598,
+        "top_k": 8,
+        "undirected_edge_count": 1621,
+        "density": 0.00908107986980611,
+        "average_degree": 5.421404838562012,
+        "self_loop_only_nodes": 9,
+        "symmetry_error": 0.0,
+        "nonedge_max_abs": 0.0,
+        "minimum_retained_edge_weight": 0.9432969093322754,
+        "minimum_self_loop": 1.0,
+        "normalized_symmetry_error": 2.9802322387695312e-08,
+        "all_finite": true
+      }
+    },
+    "edge_jaccard": {
+      "AD_vs_CN": {
+        "intersection_edges": 422,
+        "union_edges": 2867,
+        "edge_jaccard": 0.14719218695500524
+      },
+      "AD_vs_SMCI": {
+        "intersection_edges": 833,
+        "union_edges": 2415,
+        "edge_jaccard": 0.34492753623188405
+      },
+      "CN_vs_SMCI": {
+        "intersection_edges": 574,
+        "union_edges": 2709,
+        "edge_jaccard": 0.21188630490956073
+      }
+    },
+    "representation": [
+      {
+        "class": "AD",
+        "mean_pre_to_post_cosine": 0.9539943933486938,
+        "mean_offdiag_cosine_pre": 0.4885885715484619,
+        "mean_offdiag_cosine_post": 0.48764193058013916,
+        "offdiag_cosine_delta": -0.0009466409683227539,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "CN",
+        "mean_pre_to_post_cosine": 0.9352898597717285,
+        "mean_offdiag_cosine_pre": 0.09135802835226059,
+        "mean_offdiag_cosine_post": 0.08961418271064758,
+        "offdiag_cosine_delta": -0.0017438456416130066,
+        "obvious_oversmoothing": false
+      },
+      {
+        "class": "SMCI",
+        "mean_pre_to_post_cosine": 0.9297066926956177,
+        "mean_offdiag_cosine_pre": 0.11547883599996567,
+        "mean_offdiag_cosine_post": 0.10174596309661865,
+        "offdiag_cosine_delta": -0.013732872903347015,
+        "obvious_oversmoothing": false
+      }
+    ],
+    "graphs_identical": {
+      "AD_vs_CN": false,
+      "AD_vs_SMCI": false,
+      "CN_vs_SMCI": false
+    },
+    "all_graphs_identical": false,
+    "obvious_oversmoothing": false
+  }
+}
