@@ -1,0 +1,68 @@
+{
+  "experiment": "Norm-Capped Reader v1",
+  "arm": "RCAP",
+  "scope": {
+    "branch": "experiment/norm-capped-reader-v1",
+    "execution_source_commit_sha": "af2957a68cbcc926a84d34de020b83b42417ddda",
+    "worktree": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\class_private_evidence_graph_v1",
+    "source_hashes": {
+      "Model/network.py": "0ee206da48d3eb22e67420878e431475415bf3fd2b330896e453cb872c9d53f8",
+      "scripts/run_query_pool_component_sharing_v1.py": "22d51b52e8e8c719c79ef784c4e9ec00e1f9136d73cb23014df47f86d8284fcc",
+      "scripts/run_norm_capped_reader_v1.py": "94f6c9a3b77a21650c861122cdb407b4c6f3eae178c54c1fe62e32c285e5ee66"
+    }
+  },
+  "fold": 0,
+  "seed": 0,
+  "device": "cuda:0",
+  "parameter_count": 785187,
+  "initial_raw_logits_max_abs_diff_vs_seps_q": 0.0,
+  "initialization_threshold": 1e-06,
+  "common_initialization_max_abs_diff": 0.0,
+  "loss": 3.2740120887756348,
+  "reader_gradient_tensors": 12,
+  "all_reader_gradients_finite": true,
+  "all_model_gradients_finite": true,
+  "cap_diagnostics": {
+    "reader_norm_cap": 0.5,
+    "classes": {
+      "AD": {
+        "mean_uncapped_residual_to_shared_ratio": 0.0,
+        "mean_capped_residual_to_shared_ratio": 0.0,
+        "maximum_capped_residual_to_shared_ratio": 0.0,
+        "capped_subject_fraction": 0.0
+      },
+      "CN": {
+        "mean_uncapped_residual_to_shared_ratio": 0.0,
+        "mean_capped_residual_to_shared_ratio": 0.0,
+        "maximum_capped_residual_to_shared_ratio": 0.0,
+        "capped_subject_fraction": 0.0
+      },
+      "SMCI": {
+        "mean_uncapped_residual_to_shared_ratio": 0.0,
+        "mean_capped_residual_to_shared_ratio": 0.0,
+        "maximum_capped_residual_to_shared_ratio": 0.0,
+        "capped_subject_fraction": 0.0
+      }
+    },
+    "maximum_capped_ratio": 0.0
+  },
+  "fold_split_hashes": [
+    "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "529f52f8102c68c35ce93fe397fd1e8be83edc6ddf1ae9c2981b099e5e4b638e",
+    "45901ce4e5beb6a5c30ca6e7dd63f69f3bef8cf9cd26bd9ad13c805a834d98a1",
+    "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+    "f927bc45ad33595185b6ace11d1b1deb0fbbb43f2fe4239056b3b4c1097ef7a0",
+    "7b18387f37130eb297c904390f0a762788d3ec34d59820dff40e5126e2cddf49",
+    "7edb8fbd66273445117ecbf87b01106f796bcf571452e0335d2fef069155d4a4",
+    "cc05b052a3c49b11ffc913a2d2a548dd400265e1cb8088c37e5378eee7767aa6",
+    "b50979aea7b950e281ec0e4147d698a508f32c0f1314b39a2132117755234795",
+    "f1395a882a4f6c518e17eeac3d37500a94d855534d5b8966eaa8421c3162ff12"
+  ],
+  "source_hashes": {
+    "Model/network.py": "0ee206da48d3eb22e67420878e431475415bf3fd2b330896e453cb872c9d53f8",
+    "scripts/run_query_pool_component_sharing_v1.py": "22d51b52e8e8c719c79ef784c4e9ec00e1f9136d73cb23014df47f86d8284fcc",
+    "scripts/run_norm_capped_reader_v1.py": "94f6c9a3b77a21650c861122cdb407b4c6f3eae178c54c1fe62e32c285e5ee66"
+  },
+  "elapsed_seconds": 0.5684473000001162,
+  "passed": true
+}

@@ -1,0 +1,73 @@
+{
+  "experiment": "Norm-Capped Reader v1",
+  "arm": "RCAP",
+  "fold": 3,
+  "seed": 0,
+  "epochs": 400,
+  "split_hash": "af1cd9f0c1c662e18e4827e01525e573ca7755e762858c9423f36c467c9ad727",
+  "train_size": 538,
+  "test_size": 60,
+  "best_epoch": 165,
+  "best_epoch_rule": [
+    "ACC",
+    "historical adjusted-score Macro-AUC",
+    "Macro-F1"
+  ],
+  "best_metrics": {
+    "acc": 0.95,
+    "macro_f1": 0.9431013431013432,
+    "bacc": 0.9260912698412698,
+    "probability_macro_auc": 0.977218896145783,
+    "selection_macro_auc_adjusted": 0.9793238513757382,
+    "weighted_f1": 0.9497435897435896,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        1,
+        31
+      ]
+    ]
+  },
+  "parameter_count": 785187,
+  "checkpoint_sha256": "4bfc2df6bc2b3da71af2e9c84608ab76b60f7e4b3ff5d196065e5bec8f0e6469",
+  "checkpoint_audit": {
+    "path": "checkpoint_best.pt",
+    "sha256": "4bfc2df6bc2b3da71af2e9c84608ab76b60f7e4b3ff5d196065e5bec8f0e6469",
+    "state_tensor_count": 160,
+    "key_set_equal": true,
+    "tensor_values_equal": true,
+    "passed": true
+  },
+  "prediction_audit": {
+    "row_count": 60,
+    "metric_abs_delta": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "probability_macro_auc": 0.0,
+      "weighted_f1": 0.0,
+      "selection_macro_auc_adjusted": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "cap_mechanism": null,
+  "training_elapsed_seconds": 46.08269269997254,
+  "fold_elapsed_seconds": 46.28356000012718,
+  "source_hashes": {
+    "Model/network.py": "0ee206da48d3eb22e67420878e431475415bf3fd2b330896e453cb872c9d53f8",
+    "scripts/run_query_pool_component_sharing_v1.py": "22d51b52e8e8c719c79ef784c4e9ec00e1f9136d73cb23014df47f86d8284fcc",
+    "scripts/run_norm_capped_reader_v1.py": "94f6c9a3b77a21650c861122cdb407b4c6f3eae178c54c1fe62e32c285e5ee66"
+  },
+  "formal_fold_passed": true
+}

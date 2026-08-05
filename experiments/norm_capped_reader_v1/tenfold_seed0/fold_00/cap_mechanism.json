@@ -1,0 +1,24 @@
+{
+  "reader_norm_cap": 0.5,
+  "classes": {
+    "AD": {
+      "mean_uncapped_residual_to_shared_ratio": 9.084585189819336,
+      "mean_capped_residual_to_shared_ratio": 0.5,
+      "maximum_capped_residual_to_shared_ratio": 0.5000000596046448,
+      "capped_subject_fraction": 1.0
+    },
+    "CN": {
+      "mean_uncapped_residual_to_shared_ratio": 19.11554527282715,
+      "mean_capped_residual_to_shared_ratio": 0.5,
+      "maximum_capped_residual_to_shared_ratio": 0.5000000596046448,
+      "capped_subject_fraction": 1.0
+    },
+    "SMCI": {
+      "mean_uncapped_residual_to_shared_ratio": 11.768207550048828,
+      "mean_capped_residual_to_shared_ratio": 0.5,
+      "maximum_capped_residual_to_shared_ratio": 0.5000000596046448,
+      "capped_subject_fraction": 1.0
+    }
+  },
+  "maximum_capped_ratio": 0.5000000596046448
+}

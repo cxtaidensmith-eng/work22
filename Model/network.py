@@ -224,13 +224,16 @@ class ComponentSharedLabelPool(nn.Module):
 class ClassPrivateLowRankEvidenceReader(nn.Module):
     """Class-private rank-constrained evidence readout over modal tokens."""
 
-    def __init__(self, hidden_size, class_count=3, rank=8):
+    def __init__(self, hidden_size, class_count=3, rank=8, norm_cap=None):
         super(ClassPrivateLowRankEvidenceReader, self).__init__()
         if rank <= 0:
             raise ValueError('rank must be positive')
         self.hidden_size = int(hidden_size)
         self.class_count = int(class_count)
         self.rank = int(rank)
+        self.norm_cap = None if norm_cap is None else float(norm_cap)
+        if self.norm_cap is not None and self.norm_cap <= 0:
+            raise ValueError('norm_cap must be positive when enabled')
         self.key_projections = nn.ModuleList([
             nn.Linear(hidden_size, rank, bias=False) for _ in range(class_count)
         ])
@@ -247,14 +250,20 @@ class ClassPrivateLowRankEvidenceReader(nn.Module):
             nn.init.zeros_(projection.weight)
         self.last_modal_weights = None
         self.last_residuals = None
+        self.last_uncapped_residuals = None
+        self.last_cap_scales = None
         self.last_shared_attention = None
         self._forward_weights = None
         self._forward_residuals = None
+        self._forward_uncapped_residuals = None
+        self._forward_cap_scales = None
         self._forward_shared_attention = None
 
     def begin_forward(self):
         self._forward_weights = []
         self._forward_residuals = []
+        self._forward_uncapped_residuals = []
+        self._forward_cap_scales = []
         self._forward_shared_attention = []
 
     def forward_class(self, modal_tokens, shared_attention, class_index):
@@ -264,10 +273,23 @@ class ClassPrivateLowRankEvidenceReader(nn.Module):
         weight = torch.softmax(score, dim=1)
         low_rank_evidence = torch.sum(weight.unsqueeze(-1) * value, dim=1)
         residual = self.output_projections[class_index](low_rank_evidence)
+        uncapped_residual = residual
+        if self.norm_cap is not None:
+            shared_norm = shared_attention.detach().norm(dim=-1, keepdim=True)
+            residual_norm = residual.detach().norm(dim=-1, keepdim=True)
+            scale = torch.clamp(
+                self.norm_cap * shared_norm / (residual_norm + 1e-8),
+                max=1.0,
+            )
+            residual = residual * scale
+        else:
+            scale = torch.ones_like(residual[..., :1])
         if self._forward_weights is None:
             self.begin_forward()
         self._forward_weights.append(weight.detach())
         self._forward_residuals.append(residual.detach())
+        self._forward_uncapped_residuals.append(uncapped_residual.detach())
+        self._forward_cap_scales.append(scale.detach())
         self._forward_shared_attention.append(shared_attention.detach())
         return residual
 
@@ -276,11 +298,17 @@ class ClassPrivateLowRankEvidenceReader(nn.Module):
             raise RuntimeError('incomplete class-private evidence forward')
         self.last_modal_weights = torch.stack(self._forward_weights, dim=1)
         self.last_residuals = torch.stack(self._forward_residuals, dim=1)
+        self.last_uncapped_residuals = torch.stack(
+            self._forward_uncapped_residuals, dim=1
+        )
+        self.last_cap_scales = torch.stack(self._forward_cap_scales, dim=1)
         self.last_shared_attention = torch.stack(
             self._forward_shared_attention, dim=1
         )
         self._forward_weights = None
         self._forward_residuals = None
+        self._forward_uncapped_residuals = None
+        self._forward_cap_scales = None
         self._forward_shared_attention = None
 
 
@@ -575,7 +603,8 @@ class HeterGraph_Model_Kmeans(nn.Module):
                  category_branch_fusion='concat',
                  label_graph_alpha=0.0, label_graph_topk=0,
                  label_graph_reg_lambda=0.0,
-                 low_rank_reader=False, class_graph=False):
+                 low_rank_reader=False, class_graph=False,
+                 reader_norm_cap=None):
         super(HeterGraph_Model_Kmeans, self).__init__()
 
         self.Hidden_size = Hidden_size
@@ -720,6 +749,9 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.label_graph_reg_lambda = float(label_graph_reg_lambda)
         self.low_rank_reader_enabled = bool(low_rank_reader)
         self.class_graph_enabled = bool(class_graph)
+        self.reader_norm_cap = None if reader_norm_cap is None else float(reader_norm_cap)
+        if self.reader_norm_cap is not None and not self.low_rank_reader_enabled:
+            raise ValueError('reader_norm_cap requires low_rank_reader=True')
         if (
             self.low_rank_reader_enabled or self.class_graph_enabled
         ) and self.query_pool_variant != 'component_shared':
@@ -916,7 +948,10 @@ class HeterGraph_Model_Kmeans(nn.Module):
         # enabling them cannot perturb any shared SEPS-Q initialization.
         if self.low_rank_reader_enabled:
             self.class_private_low_rank_reader = ClassPrivateLowRankEvidenceReader(
-                Hidden_size, class_count=self._Label_num, rank=8
+                Hidden_size,
+                class_count=self._Label_num,
+                rank=8,
+                norm_cap=self.reader_norm_cap,
             )
         if self.class_graph_enabled:
             self.class_conditioned_sparse_evidence_graph = ClassConditionedSparseEvidenceGraph(

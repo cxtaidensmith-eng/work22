@@ -1,0 +1,14 @@
+{
+  "command": "D:\\Anaconda\\envs\\mmfl\\python.exe scripts/run_norm_capped_reader_v1.py formal",
+  "branch": "experiment/norm-capped-reader-v1",
+  "execution_source_commit_sha": "af2957a68cbcc926a84d34de020b83b42417ddda",
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+  "torch": "2.1.1",
+  "torch_cuda_build": "11.8",
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "source_hashes": {
+    "Model/network.py": "0ee206da48d3eb22e67420878e431475415bf3fd2b330896e453cb872c9d53f8",
+    "scripts/run_query_pool_component_sharing_v1.py": "22d51b52e8e8c719c79ef784c4e9ec00e1f9136d73cb23014df47f86d8284fcc",
+    "scripts/run_norm_capped_reader_v1.py": "94f6c9a3b77a21650c861122cdb407b4c6f3eae178c54c1fe62e32c285e5ee66"
+  }
+}

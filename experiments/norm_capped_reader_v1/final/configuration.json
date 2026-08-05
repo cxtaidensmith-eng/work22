@@ -1,0 +1,37 @@
+{
+  "low_rank_reader": true,
+  "class_graph": false,
+  "reader_rank": 8,
+  "reader_norm_cap": 0.5,
+  "old_graph_use_graph": false,
+  "old_adj_mode": "none",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed": 0,
+  "epochs": 400,
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "loss": "historical unchanged",
+  "optimizer": "Adam",
+  "scheduler": "CustomCosineAnnealingLR(T_max=400)",
+  "best_epoch_rule": [
+    "ACC",
+    "historical adjusted-score Macro-AUC",
+    "Macro-F1"
+  ],
+  "execution_source_commit_sha": "af2957a68cbcc926a84d34de020b83b42417ddda",
+  "run_command": "D:\\Anaconda\\envs\\mmfl\\python.exe scripts/run_norm_capped_reader_v1.py formal"
+}

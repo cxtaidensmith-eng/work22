@@ -1,0 +1,11 @@
+{
+  "model": "RCAP",
+  "other": "Original Query",
+  "both_correct": 524,
+  "model_only_correct": 24,
+  "other_only_correct": 32,
+  "both_wrong": 18,
+  "discordant_subjects": 56,
+  "exact_mcnemar_two_sided_p": 0.3496819529836849,
+  "passed": true
+}

@@ -87,6 +87,7 @@ def build_model(
     *,
     low_rank_reader: bool = False,
     class_graph: bool = False,
+    reader_norm_cap: float | None = None,
 ):
     return HeterGraph_Model_Kmeans(
         dataset_dict,
@@ -121,6 +122,7 @@ def build_model(
         label_graph_reg_lambda=0.0,
         low_rank_reader=low_rank_reader,
         class_graph=class_graph,
+        reader_norm_cap=reader_norm_cap,
     ).to(device)
 
 
