@@ -29,3 +29,5 @@
 /OPT_Hyper
 # Generated experiment checkpoints
 /experiments/**/*.pt
+# Generated UM-LER best checkpoints remain local.
+/results/um_ler_v1*/**/*.pt

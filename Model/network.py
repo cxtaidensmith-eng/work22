@@ -687,6 +687,9 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.last_osfq_centered_directions = None
         self.last_osfq_effective_queries = None
         self.last_osfq_anchor_contribution_norm = None
+        # Read-only bridge for detached auxiliary modules such as UM-LER.
+        # It is not part of the Original Query forward output or loss graph.
+        self.last_modal_tokens = None
 
     @torch.no_grad()
     def _current_ovr_directions(self):
@@ -863,6 +866,7 @@ class HeterGraph_Model_Kmeans(nn.Module):
         return F.mse_loss(adj * off_diag, relation * off_diag)
 
     def forward(self, X_raw):
+        self.last_modal_tokens = None
         X = self.Feature_Modal(X_raw)
         if self.training:
             per_feature_noise_std = self._modal_noise_std[self.feature_to_modal]
@@ -894,6 +898,10 @@ class HeterGraph_Model_Kmeans(nn.Module):
 
             for blk in self.shared_transformer:
                 H = blk(H)
+
+            # Cache only the detached transformer output so downstream local
+            # evidence modules cannot alter the Original Query backbone.
+            self.last_modal_tokens = H.detach()
 
             Label_embedding = []
             Auxi_classifier_output = []

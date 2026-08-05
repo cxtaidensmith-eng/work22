@@ -1,0 +1,75 @@
+{
+  "model": "Uncertainty-Guided Multimodal Local Evidence Refinement v1",
+  "branch": "experiment/um-ler-v1",
+  "base_commit": "765720c1c0a3b2263502e9bf662fe33de7e45428",
+  "fold": 0,
+  "seed": 0,
+  "epochs": 2,
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "original_parameters": 853131,
+  "local_parameters": 3393,
+  "total_parameters": 856524,
+  "config": {
+    "top_k": 8,
+    "temperature": 0.2,
+    "margin_threshold": 0.3,
+    "neighbor_confidence_threshold": 0.7,
+    "gate_cap": 0.3,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "gradient_isolation": {
+    "refinement_gradients_on_original": 0,
+    "original_gradients_on_refiner": 0,
+    "local_gradient_norms": {
+      "modal_norm.weight": 0.0027549152728170156,
+      "modal_norm.bias": 0.001637631794437766,
+      "modal_projector.weight": 0.03329309821128845,
+      "modal_projector.bias": 0.0024525239132344723,
+      "modal_reliability.weight": 0.024415815249085426,
+      "modal_reliability.bias": 5.820766091346741e-11
+    },
+    "reliability_bias_zero_is_expected": true,
+    "passed": true
+  },
+  "neighbor_checks": {
+    "all_memory_from_train": true,
+    "no_train_self_neighbor": true,
+    "test_neighbors_from_train": true,
+    "train_label_library_size": 538,
+    "test_label_library_entries": 0,
+    "passed": true
+  },
+  "probability_checks": {
+    "probability_sum_max_abs_error": {
+      "p": 1.1920928955078125e-07,
+      "q": 1.1920928955078125e-07,
+      "p_final": 1.1920928955078125e-07
+    },
+    "modal_weight_sum_max_abs_error": 1.1920928955078125e-07,
+    "retrieval_norm_max_abs_error": 1.1920928955078125e-07,
+    "gate_min": 0.0,
+    "gate_max": 0.30000001192092896,
+    "passed": true
+  },
+  "epoch_metrics": [
+    {
+      "epoch": 1,
+      "loss_original": 3.3026833534240723,
+      "loss_nca": 0.9916189908981323,
+      "loss_refine": 1.1954268217086792,
+      "loss_total": 4.696434020996094
+    },
+    {
+      "epoch": 2,
+      "loss_original": 2.898306131362915,
+      "loss_nca": 0.8201841711997986,
+      "loss_refine": 1.3906874656677246,
+      "loss_total": 4.453030586242676
+    }
+  ],
+  "elapsed_seconds": 1.1439260998740792,
+  "passed": true
+}
