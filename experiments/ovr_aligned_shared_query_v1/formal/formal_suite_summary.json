@@ -1,0 +1,151 @@
+{
+  "schema_version": "ovr-aligned-shared-query-pool-v1-formal",
+  "formal_suite_passed": true,
+  "protocol_manifest_final_sha256": "61f248e125d917d27d632eb2f759aa3cf8836dcd90d3b2e00c984fc835a946ed",
+  "completed_arms": [
+    "s0",
+    "s1",
+    "s2"
+  ],
+  "arm_summaries": {
+    "s0": {
+      "path": "experiments/ovr_aligned_shared_query_v1/formal/no_anchor/summary.json",
+      "best_epoch": 111,
+      "best_metrics": {
+        "acc": 0.9,
+        "macro_f1": 0.8898198575617929,
+        "bacc": 0.8685355862775217,
+        "macro_auc": 0.9570231734441969,
+        "weighted_f1": 0.8991341991341991,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            3,
+            28
+          ]
+        ]
+      },
+      "best_anchor_active": false,
+      "artifacts_complete": true
+    },
+    "s1": {
+      "path": "experiments/ovr_aligned_shared_query_v1/formal/wrong_anchor/summary.json",
+      "best_epoch": 49,
+      "best_metrics": {
+        "acc": 0.9333333333333333,
+        "macro_f1": 0.9325542005420054,
+        "bacc": 0.9158346134152585,
+        "macro_auc": 0.9574450713563616,
+        "weighted_f1": 0.9332096883468834,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            1,
+            30
+          ]
+        ]
+      },
+      "best_anchor_active": true,
+      "artifacts_complete": true
+    },
+    "s2": {
+      "path": "experiments/ovr_aligned_shared_query_v1/formal/correct_anchor/summary.json",
+      "best_epoch": 142,
+      "best_metrics": {
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9026701119724375,
+        "bacc": 0.8792882744495647,
+        "macro_auc": 0.948469741851277,
+        "weighted_f1": 0.9155284852959272,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            2,
+            29
+          ]
+        ]
+      },
+      "best_anchor_active": true,
+      "artifacts_complete": true
+    }
+  },
+  "preactivation_fairness": {
+    "all_hashes_equal": true,
+    "unique_hashes": {
+      "model_state_hash": "492c9f992062a4e496b868d3776507dea483661f17cb4c927e0ec48acb2e5f5f",
+      "logits_hash": "55e592f3a94cd835019f98f671a4b2a9440d58ceb736010534e42616926aaf2a",
+      "ema_hash": "06f88e0116fb5f897cce2fe306c5ad7558e1db413637b9323351dc5d7a909387",
+      "optimizer_state_hash": "dd60cadc0d1736bb1101de5179f40e8a039d96b9c82841632da04e75c1c705f4",
+      "scheduler_state_hash": "e57bbf51f6fed8eca0732f5531d5ec4c24ceb1aef4b8f28902faf81d8bba9b7d"
+    }
+  },
+  "historical_baseline": {
+    "summary_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_00\\summary.json",
+    "summary_sha256": "97adf77295f9baa53f02a1260c050020e09437df71f7ac12c92c113627a932cd",
+    "best_epoch": 111,
+    "best_metrics": {
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8977763678660987,
+      "bacc": 0.9153225806451614,
+      "macro_auc": 0.9683234899447357,
+      "weighted_f1": 0.9167761865917399,
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          1
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          2,
+          2,
+          27
+        ]
+      ]
+    }
+  },
+  "interpretation": {
+    "correct_ovr_alignment_supported": false,
+    "shared_pool_capacity_loss_observed": true,
+    "mismatched_anchor_outperformed_correct_anchor": true,
+    "signed_alpha_direction_ambiguity_observed": true,
+    "recommendation": "Stop expanding OSFQ-ID after this exploratory fold0 result; do not launch 10-fold without a newly approved identifiability redesign."
+  },
+  "report": "reports/osfq_id_v1_fold0_formal_20260805.txt",
+  "report_sha256": "b83a2b6b805120475303ca997908720fcb521cc28c388cbb1fadef1e3cc65c64",
+  "completed_utc": "2026-08-05T00:46:52.747123+00:00"
+}

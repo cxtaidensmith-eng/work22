@@ -145,14 +145,63 @@ class Per_Label_Pool(nn.Module):
             nn.Linear(hidden_size * 2, hidden_size),
         )
 
-    def forward(self, modal_tokens):
+    def forward(self, modal_tokens, query_override=None):
         B = modal_tokens.size(0)
-        q = self.query.expand(B, -1, -1)
+        query = self.query if query_override is None else query_override
+        if query.dim() == 2:
+            query = query.unsqueeze(0)
+        if query.dim() != 3 or query.size(1) != 1 or query.size(2) != self.query.size(2):
+            raise ValueError(
+                'query_override must have shape [1, 1, H], [1, H], or [B, 1, H]'
+            )
+        if query.size(0) not in {1, B}:
+            raise ValueError(
+                f'query_override batch dimension must be 1 or {B}, got {query.size(0)}'
+            )
+        q = query.expand(B, -1, -1)
         kv = self.norm_kv(modal_tokens)
         pooled, _ = self.attn(q, kv, kv, need_weights=False)
         pooled = pooled.squeeze(1)
         pooled = pooled + self.ffn(self.norm_out(pooled))
         return pooled
+
+
+class LatentBranchPool(nn.Module):
+    """Query-free semantic branch over the shared modal tokens.
+
+    The branch owns an independent value projection and FFN.  It deliberately
+    contains no learnable query, attention layer, or class-specific logits.
+    """
+
+    def __init__(self, hidden_size, dropout=0.3):
+        super(LatentBranchPool, self).__init__()
+        self.value_projection = nn.Linear(hidden_size, hidden_size)
+        self.ffn = nn.Sequential(
+            nn.Linear(hidden_size, hidden_size * 2),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_size * 2, hidden_size),
+        )
+        self.output_norm = nn.LayerNorm(hidden_size)
+
+    def forward(self, modal_tokens):
+        value = self.value_projection(modal_tokens).mean(dim=1)
+        return self.output_norm(value + self.ffn(value))
+
+
+class PatientBoundaryRouter(nn.Module):
+    """Minimal patient-specific router over the existing global representation."""
+
+    def __init__(self, hidden_size, router_hidden=16, branch_count=3):
+        super(PatientBoundaryRouter, self).__init__()
+        self.input_layer = nn.Linear(hidden_size, router_hidden)
+        self.activation = nn.GELU()
+        self.output_layer = nn.Linear(router_hidden, branch_count)
+        nn.init.zeros_(self.output_layer.weight)
+        nn.init.zeros_(self.output_layer.bias)
+
+    def forward(self, global_repr):
+        return self.output_layer(self.activation(self.input_layer(global_repr)))
 
 
 class _Global_Message_Model(nn.Module):
@@ -238,6 +287,13 @@ class HeterGraph_Model_Kmeans(nn.Module):
                  graph_alpha=0.5, graph_kernel='simple', graph_use_graph=True,
                  graph_dropout=None, graph_hidden=None,
                  semantic_branch='both', adj_mode='learned',
+                 semantic_fusion='add',
+                 category_branch_variant='original',
+                 query_pool_variant='independent',
+                 osfq_anchor_mode='none',
+                 osfq_ema_decay=0.9,
+                 latent_auxiliary_mode='multiclass',
+                 category_branch_fusion='concat',
                  label_graph_alpha=0.0, label_graph_topk=0,
                  label_graph_reg_lambda=0.0):
         super(HeterGraph_Model_Kmeans, self).__init__()
@@ -273,9 +329,105 @@ class HeterGraph_Model_Kmeans(nn.Module):
             'identity': 'none',
         }
         self.semantic_branch = branch_alias.get(str(semantic_branch).lower(), str(semantic_branch).lower())
+        fusion_alias = {
+            'add': 'add',
+            'sum': 'add',
+            'legacy': 'add',
+            'safe_residual': 'safe_residual',
+            'gated_residual': 'safe_residual',
+            'zero_init_residual': 'safe_residual',
+            'norm_matched_residual': 'norm_matched_residual',
+            'safe_residual_v2': 'norm_matched_residual',
+        }
+        self.semantic_fusion = fusion_alias.get(str(semantic_fusion).lower(), str(semantic_fusion).lower())
+        category_branch_alias = {
+            'original': 'original',
+            'query': 'original',
+            'query_pool': 'original',
+            'legacy_query': 'original',
+            'query_free_multibranch': 'query_free_multibranch',
+            'query-free-multibranch': 'query_free_multibranch',
+            'latent_multibranch': 'query_free_multibranch',
+        }
+        self.category_branch_variant = category_branch_alias.get(
+            str(category_branch_variant).lower(), str(category_branch_variant).lower()
+        )
+        query_pool_alias = {
+            'independent': 'independent',
+            'original': 'independent',
+            'shared': 'shared',
+            'osfq': 'shared',
+            'ovr_aligned_shared_query': 'shared',
+        }
+        self.query_pool_variant = query_pool_alias.get(
+            str(query_pool_variant).lower(), str(query_pool_variant).lower()
+        )
+        anchor_mode_alias = {
+            'none': 'none',
+            'no_anchor': 'none',
+            'correct': 'correct',
+            'correct_anchor': 'correct',
+            'cyclic_mismatch': 'cyclic_mismatch',
+            'wrong': 'cyclic_mismatch',
+            'wrong_anchor': 'cyclic_mismatch',
+        }
+        self.osfq_anchor_mode = anchor_mode_alias.get(
+            str(osfq_anchor_mode).lower(), str(osfq_anchor_mode).lower()
+        )
+        self.osfq_ema_decay = float(osfq_ema_decay)
+        self.osfq_anchor_active = False
+        latent_auxiliary_alias = {
+            'multiclass': 'multiclass',
+            'three_class': 'multiclass',
+            'full': 'multiclass',
+            'one_vs_rest': 'one_vs_rest',
+            'one-vs-rest': 'one_vs_rest',
+            'ovr': 'one_vs_rest',
+            'binary': 'one_vs_rest',
+        }
+        self.latent_auxiliary_mode = latent_auxiliary_alias.get(
+            str(latent_auxiliary_mode).lower(), str(latent_auxiliary_mode).lower()
+        )
+        category_branch_fusion_alias = {
+            'concat': 'concat',
+            'standard': 'concat',
+            'global_weight': 'global_weight',
+            'global_weighted': 'global_weight',
+            'boundary_global_weight': 'global_weight',
+            'patient_router': 'patient_router',
+            'patient_routing': 'patient_router',
+            'patient_boundary_router': 'patient_router',
+        }
+        self.category_branch_fusion = category_branch_fusion_alias.get(
+            str(category_branch_fusion).lower(), str(category_branch_fusion).lower()
+        )
         self.adj_mode = adj_alias.get(str(adj_mode).lower(), str(adj_mode).lower())
         if self.semantic_branch not in {'both', 'per_label', 'global'}:
             raise ValueError(f'Unknown semantic_branch: {semantic_branch}')
+        if self.semantic_fusion not in {'add', 'safe_residual', 'norm_matched_residual'}:
+            raise ValueError(f'Unknown semantic_fusion: {semantic_fusion}')
+        if self.semantic_fusion in {'safe_residual', 'norm_matched_residual'} and self.semantic_branch != 'both':
+            raise ValueError(f'{self.semantic_fusion} fusion requires semantic_branch=both')
+        if self.category_branch_variant not in {'original', 'query_free_multibranch'}:
+            raise ValueError(f'Unknown category_branch_variant: {category_branch_variant}')
+        if self.query_pool_variant not in {'independent', 'shared'}:
+            raise ValueError(f'Unknown query_pool_variant: {query_pool_variant}')
+        if self.osfq_anchor_mode not in {'none', 'correct', 'cyclic_mismatch'}:
+            raise ValueError(f'Unknown osfq_anchor_mode: {osfq_anchor_mode}')
+        if not 0.0 <= self.osfq_ema_decay < 1.0:
+            raise ValueError('osfq_ema_decay must be in [0, 1)')
+        if self.query_pool_variant == 'shared' and self.category_branch_variant != 'original':
+            raise ValueError('shared query pool requires category_branch_variant=original')
+        if self.query_pool_variant == 'independent' and self.osfq_anchor_mode != 'none':
+            raise ValueError('OVR anchors require query_pool_variant=shared')
+        if self.latent_auxiliary_mode not in {'multiclass', 'one_vs_rest'}:
+            raise ValueError(f'Unknown latent_auxiliary_mode: {latent_auxiliary_mode}')
+        if self.category_branch_fusion not in {'concat', 'global_weight', 'patient_router'}:
+            raise ValueError(f'Unknown category_branch_fusion: {category_branch_fusion}')
+        if self.category_branch_fusion in {'global_weight', 'patient_router'} and self.category_branch_variant != 'query_free_multibranch':
+            raise ValueError(f'{self.category_branch_fusion} category fusion requires query_free_multibranch')
+        if self.category_branch_fusion == 'patient_router' and self.semantic_branch != 'both':
+            raise ValueError('patient_router category fusion requires semantic_branch=both')
         if self.adj_mode not in {'learned', 'fixed', 'none'}:
             raise ValueError(f'Unknown adj_mode: {adj_mode}')
         self.label_graph_alpha = float(label_graph_alpha)
@@ -338,13 +490,38 @@ class HeterGraph_Model_Kmeans(nn.Module):
             for _ in range(num_layers)
         ])
 
-        self.label_pools = nn.ModuleList([
-            Per_Label_Pool(Hidden_size, num_heads, dropout=attn_dropout)
-            for _ in range(self._Label_num)
-        ])
-        self._Auxi_classifier = nn.ModuleList([
-            nn.Linear(Hidden_size, 2) for _ in range(self._Label_num)
-        ])
+        if self.category_branch_variant == 'original':
+            constructed_label_pools = [
+                Per_Label_Pool(Hidden_size, num_heads, dropout=attn_dropout)
+                for _ in range(self._Label_num)
+            ]
+            # The shared-pool variant deliberately constructs all three legacy
+            # pools before retaining the first. This preserves the exact random
+            # number consumption and therefore the initialization of every
+            # downstream baseline module under the same seed.
+            if self.query_pool_variant == 'shared':
+                self.label_pools = nn.ModuleList([constructed_label_pools[0]])
+            else:
+                self.label_pools = nn.ModuleList(constructed_label_pools)
+            self._Auxi_classifier = nn.ModuleList([
+                nn.Linear(Hidden_size, 2) for _ in range(self._Label_num)
+            ])
+        else:
+            self.latent_branches = nn.ModuleDict({
+                f'latent_branch_{idx + 1}': LatentBranchPool(Hidden_size, dropout=attn_dropout)
+                for idx in range(self._Label_num)
+            })
+            latent_auxiliary_classes = (
+                self._Label_num if self.latent_auxiliary_mode == 'multiclass' else 2
+            )
+            self.latent_aux_classifiers = nn.ModuleDict({
+                f'latent_branch_{idx + 1}': nn.Linear(Hidden_size, latent_auxiliary_classes)
+                for idx in range(self._Label_num)
+            })
+            if self.category_branch_fusion == 'global_weight':
+                self.global_boundary_fusion_weights = nn.Parameter(
+                    torch.ones(self._Label_num)
+                )
 
         global_word_emb = Hidden_size if global_word_emb is None else global_word_emb
         self.Global_Message = _Global_Message_Model(
@@ -388,6 +565,210 @@ class HeterGraph_Model_Kmeans(nn.Module):
             nn.Linear((self._Label_num * Hidden_size) // 2, Hidden_size),
             nn.ReLU(),
         )
+
+        # Optional safe global branch. It is intentionally created after all
+        # legacy modules so enabling it cannot change their random
+        # initialization. The zero-initialized projection makes the initial
+        # fused representation exactly equal to the category-only pathway.
+        if self.semantic_fusion == 'safe_residual':
+            self.global_residual_norm = nn.LayerNorm(Hidden_size, elementwise_affine=False)
+            self.global_residual_projection = nn.Linear(Hidden_size, Hidden_size)
+            nn.init.zeros_(self.global_residual_projection.weight)
+            nn.init.zeros_(self.global_residual_projection.bias)
+            # Start almost closed (sigmoid(-4) ~= 0.018). Together with the
+            # zero projection this preserves the category-only output exactly
+            # at initialization and prevents a one-step residual-scale jump.
+            self.global_residual_gate_logit = nn.Parameter(torch.tensor(-4.0))
+        elif self.semantic_fusion == 'norm_matched_residual':
+            self.global_residual_norm = nn.LayerNorm(Hidden_size, elementwise_affine=False)
+            self.global_residual_projection = nn.Linear(Hidden_size, Hidden_size)
+            # tanh(0)=0 preserves the category-only representation exactly,
+            # while the scalar receives a gradient on the first update. The
+            # projected global direction is L2-normalized and then matched to
+            # the category representation norm, making the scalar the actual
+            # residual-to-category ratio.
+            self.global_residual_scale = nn.Parameter(torch.zeros(()))
+
+        # Created after every legacy module so adding the router cannot shift
+        # their seed-dependent initialization. Its zero-initialized output
+        # layer gives alpha=1/3 and the applied gain 3*alpha=1 at startup.
+        if self.category_branch_fusion == 'patient_router':
+            self.patient_boundary_router = PatientBoundaryRouter(
+                Hidden_size, router_hidden=16, branch_count=self._Label_num,
+            )
+
+        # OVR-aligned shared-query state is appended after every legacy module,
+        # so enabling it cannot perturb any common parameter initialization.
+        if self.query_pool_variant == 'shared':
+            self.osfq_alpha = nn.Parameter(torch.zeros(()))
+            self.register_buffer(
+                'osfq_anchor_ema',
+                torch.zeros(self._Label_num, Hidden_size),
+                persistent=True,
+            )
+            self.register_buffer(
+                'osfq_anchor_initialized',
+                torch.tensor(False, dtype=torch.bool),
+                persistent=True,
+            )
+            self.register_buffer(
+                'osfq_anchor_updates',
+                torch.tensor(0, dtype=torch.long),
+                persistent=True,
+            )
+
+        self.last_category_embedding = None
+        self.last_global_embedding = None
+        self.last_global_residual = None
+        self.last_global_gate = None
+        self.last_branch_outputs = None
+        self.last_boundary_fusion_alpha = None
+        self.last_patient_router_input = None
+        self.last_patient_router_logits = None
+        self.last_patient_routing_alpha = None
+        self.last_patient_routing_gain = None
+        self.last_routed_branch_concat = None
+        self.last_osfq_raw_directions = None
+        self.last_osfq_ema_directions = None
+        self.last_osfq_centered_directions = None
+        self.last_osfq_effective_queries = None
+        self.last_osfq_anchor_contribution_norm = None
+
+    @torch.no_grad()
+    def _current_ovr_directions(self):
+        """Return normalized OVR classifier normals (positive minus rest)."""
+        if self.category_branch_variant != 'original':
+            raise RuntimeError('OVR directions require the original binary auxiliary heads')
+        directions = torch.stack([
+            classifier.weight[1] - classifier.weight[0]
+            for classifier in self._Auxi_classifier
+        ])
+        return F.normalize(directions, dim=-1, eps=1e-6)
+
+    @torch.no_grad()
+    def update_osfq_anchor_ema(self):
+        """Update the detached EMA anchors after an optimizer step."""
+        if self.query_pool_variant != 'shared':
+            raise RuntimeError('OVR anchor EMA is available only for the shared query pool')
+        directions = self._current_ovr_directions()
+        if not bool(self.osfq_anchor_initialized.item()):
+            self.osfq_anchor_ema.copy_(directions)
+            self.osfq_anchor_initialized.fill_(True)
+        else:
+            self.osfq_anchor_ema.mul_(self.osfq_ema_decay).add_(
+                directions, alpha=1.0 - self.osfq_ema_decay
+            )
+            self.osfq_anchor_ema.copy_(
+                F.normalize(self.osfq_anchor_ema, dim=-1, eps=1e-6)
+            )
+        self.osfq_anchor_updates.add_(1)
+        return self.osfq_anchor_ema
+
+    def set_osfq_anchor_active(self, active):
+        """Enable anchors only after warm-up; S0 remains anchor-free."""
+        requested = bool(active)
+        self.osfq_anchor_active = bool(
+            requested
+            and self.query_pool_variant == 'shared'
+            and self.osfq_anchor_mode != 'none'
+            and bool(self.osfq_anchor_initialized.item())
+        )
+
+    def _osfq_centered_directions(self):
+        if not self.osfq_anchor_active:
+            return self.osfq_anchor_ema.new_zeros(self.osfq_anchor_ema.shape)
+        direction = F.normalize(self.osfq_anchor_ema.detach(), dim=-1, eps=1e-6)
+        direction = direction - direction.mean(dim=0, keepdim=True)
+        rms = torch.sqrt(direction.pow(2).sum(dim=-1).mean() + 1e-6)
+        direction = direction / rms
+        if self.osfq_anchor_mode == 'cyclic_mismatch':
+            direction = direction[[1, 2, 0]]
+        return direction
+
+    def _osfq_effective_queries(self):
+        if self.query_pool_variant != 'shared':
+            raise RuntimeError('Effective OVR queries require the shared query pool')
+        base_query = self.label_pools[0].query
+        directions = self._osfq_centered_directions()
+        effective = base_query.expand(self._Label_num, -1, -1) + (
+            self.osfq_alpha * directions[:, None, :]
+        )
+        self.last_osfq_raw_directions = self._current_ovr_directions().detach().clone()
+        self.last_osfq_ema_directions = self.osfq_anchor_ema.detach().clone()
+        self.last_osfq_centered_directions = directions.detach().clone()
+        self.last_osfq_effective_queries = effective.detach().clone()
+        self.last_osfq_anchor_contribution_norm = (
+            self.osfq_alpha.detach().abs() * directions.detach().norm(dim=-1)
+        )
+        return effective
+
+    @torch.no_grad()
+    def osfq_anchor_snapshot(self):
+        if self.query_pool_variant != 'shared':
+            return None
+        directions = self._osfq_centered_directions()
+        effective = self._osfq_effective_queries()
+        current = self._current_ovr_directions()
+        ema = self.osfq_anchor_ema.detach()
+        raw_to_ema_cosine = F.cosine_similarity(current, ema, dim=-1, eps=1e-6)
+        mapping = [0, 1, 2]
+        if self.osfq_anchor_mode == 'cyclic_mismatch':
+            mapping = [1, 2, 0]
+        return {
+            'mode': self.osfq_anchor_mode,
+            'active': bool(self.osfq_anchor_active),
+            'initialized': bool(self.osfq_anchor_initialized.item()),
+            'updates': int(self.osfq_anchor_updates.item()),
+            'ema_decay': float(self.osfq_ema_decay),
+            'alpha': float(self.osfq_alpha.item()),
+            'source_mapping': mapping,
+            'current_ovr_direction_norms': current.norm(dim=-1).detach().cpu().tolist(),
+            'ema_direction_norms': ema.norm(dim=-1).detach().cpu().tolist(),
+            'current_to_ema_cosine': raw_to_ema_cosine.detach().cpu().tolist(),
+            'direction_norms': directions.norm(dim=-1).detach().cpu().tolist(),
+            'centered_direction_zero_sum_error': float(
+                directions.sum(dim=0).norm().detach().cpu().item()
+            ),
+            'centered_direction_global_rms': float(
+                torch.sqrt(directions.pow(2).sum(dim=-1).mean()).detach().cpu().item()
+            ),
+            'anchor_contribution_norms': (
+                self.osfq_alpha.abs() * directions.norm(dim=-1)
+            ).detach().cpu().tolist(),
+            'effective_query_norms': effective[:, 0].norm(dim=-1).detach().cpu().tolist(),
+        }
+
+    def _fuse_semantic_branches(self, category_embedding, global_embedding):
+        self.last_category_embedding = category_embedding
+        self.last_global_embedding = global_embedding
+        if self.semantic_branch == 'per_label':
+            self.last_global_residual = torch.zeros_like(category_embedding)
+            self.last_global_gate = category_embedding.new_zeros(())
+            return category_embedding
+        if self.semantic_branch == 'global':
+            self.last_global_residual = global_embedding
+            self.last_global_gate = global_embedding.new_ones(())
+            return global_embedding
+        if self.semantic_fusion == 'safe_residual':
+            gate = torch.sigmoid(self.global_residual_gate_logit)
+            residual = gate * self.global_residual_projection(self.global_residual_norm(global_embedding))
+            self.last_global_residual = residual
+            self.last_global_gate = gate
+            return category_embedding + residual
+        if self.semantic_fusion == 'norm_matched_residual':
+            scale = torch.tanh(self.global_residual_scale)
+            direction = F.normalize(
+                self.global_residual_projection(self.global_residual_norm(global_embedding)),
+                dim=-1,
+            )
+            category_scale = category_embedding.norm(dim=-1, keepdim=True).detach()
+            residual = scale * category_scale * direction
+            self.last_global_residual = residual
+            self.last_global_gate = scale
+            return category_embedding + residual
+        self.last_global_residual = global_embedding
+        self.last_global_gate = global_embedding.new_ones(())
+        return category_embedding + global_embedding
 
     def gate_sparsity_loss(self):
         """L1 push-to-0 penalty on noise-modal gates only.
@@ -434,6 +815,14 @@ class HeterGraph_Model_Kmeans(nn.Module):
             X = X + torch.randn_like(X) * (per_feature_noise_std * self.noise_scale).view(1, -1)
 
         modal_gate = torch.sigmoid(self.modal_gate_logit)
+        feature_gate = modal_gate[self.feature_to_modal]
+        X_gated = X * feature_gate.view(1, -1)
+        Global_Embedding = None
+        self.last_patient_router_input = None
+        self.last_patient_router_logits = None
+        self.last_patient_routing_alpha = None
+        self.last_patient_routing_gain = None
+        self.last_routed_branch_concat = None
 
         if self.semantic_branch == 'global':
             Label_embedding = [
@@ -454,20 +843,74 @@ class HeterGraph_Model_Kmeans(nn.Module):
 
             Label_embedding = []
             Auxi_classifier_output = []
-            for label_idx in range(self._Label_num):
-                label_emb = self.label_pools[label_idx](H)
-                aux_out = self._Auxi_classifier[label_idx](label_emb)
-                Label_embedding.append(label_emb)
+            if (
+                self.category_branch_variant == 'original'
+                and self.query_pool_variant == 'shared'
+            ):
+                effective_queries = self._osfq_effective_queries()
+                branch_items = (
+                    (
+                        self.label_pools[0],
+                        self._Auxi_classifier[label_idx],
+                        effective_queries[label_idx:label_idx + 1],
+                    )
+                    for label_idx in range(self._Label_num)
+                )
+            elif self.category_branch_variant == 'original':
+                branch_items = (
+                    (self.label_pools[label_idx], self._Auxi_classifier[label_idx], None)
+                    for label_idx in range(self._Label_num)
+                )
+            else:
+                branch_items = (
+                    (self.latent_branches[name], self.latent_aux_classifiers[name], None)
+                    for name in self.latent_branches
+                )
+
+            for branch_pool, aux_classifier, query_override in branch_items:
+                if query_override is None:
+                    branch_emb = branch_pool(H)
+                else:
+                    branch_emb = branch_pool(H, query_override=query_override)
+                aux_out = aux_classifier(branch_emb)
+                Label_embedding.append(branch_emb)
                 Auxi_classifier_output.append(aux_out)
 
-            Y = self.Message_MLP(torch.cat(Label_embedding, dim=-1))
-
-        feature_gate = modal_gate[self.feature_to_modal]
-        X_gated = X * feature_gate.view(1, -1)
+            self.last_branch_outputs = Label_embedding
+            branch_embeddings = Label_embedding
+            if self.category_branch_fusion == 'global_weight':
+                fusion_alpha = torch.softmax(
+                    self.global_boundary_fusion_weights, dim=0
+                )
+                branch_embeddings = [
+                    fusion_alpha[idx] * branch_embedding
+                    for idx, branch_embedding in enumerate(Label_embedding)
+                ]
+                self.last_boundary_fusion_alpha = fusion_alpha
+            elif self.category_branch_fusion == 'patient_router':
+                Global_Embedding = self.Global_Message(X_gated)
+                router_input = Global_Embedding.detach()
+                router_logits = self.patient_boundary_router(router_input)
+                routing_alpha = torch.softmax(router_logits, dim=-1)
+                routing_gain = self._Label_num * routing_alpha
+                branch_embeddings = [
+                    routing_gain[:, idx:idx + 1] * branch_embedding
+                    for idx, branch_embedding in enumerate(Label_embedding)
+                ]
+                self.last_boundary_fusion_alpha = None
+                self.last_patient_router_input = router_input
+                self.last_patient_router_logits = router_logits
+                self.last_patient_routing_alpha = routing_alpha
+                self.last_patient_routing_gain = routing_gain
+            else:
+                self.last_boundary_fusion_alpha = None
+            routed_branch_concat = torch.cat(branch_embeddings, dim=-1)
+            self.last_routed_branch_concat = routed_branch_concat
+            Y = self.Message_MLP(routed_branch_concat)
 
         if self.semantic_branch == 'per_label':
             Global_Embedding = X_raw.new_zeros((X_raw.size(0), self.Hidden_size))
-        else:
+        elif Global_Embedding is None:
             Global_Embedding = self.Global_Message(X_gated)
 
         if self.adj_mode == 'learned':
@@ -484,6 +927,6 @@ class HeterGraph_Model_Kmeans(nn.Module):
             alpha = max(0.0, min(1.0, self.label_graph_alpha))
             if alpha > 0:
                 Adj = (1.0 - alpha) * Adj + alpha * R_label
-        Y = self.GCN(Y + Global_Embedding, Adj)
+        Y = self.GCN(self._fuse_semantic_branches(Y, Global_Embedding), Adj)
 
         return Y, Label_embedding, Auxi_classifier_output

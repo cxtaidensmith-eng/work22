@@ -341,6 +341,7 @@ class Config_(object):
         self.graph_hidden = config.getint('Modal', 'graph_hidden', fallback=max(1, self.Hidden_size // 2))
         self.global_word_emb = config.getint('Modal', 'global_word_emb', fallback=self.Hidden_size)
         self.semantic_branch = config.get('Modal', 'semantic_branch', fallback='both')
+        self.semantic_fusion = config.get('Modal', 'semantic_fusion', fallback='add')
         self.adj_mode = config.get('Modal', 'adj_mode', fallback='learned')
         self.label_graph_alpha = config.getfloat('Modal', 'label_graph_alpha', fallback=0.0)
         self.label_graph_topk = config.getint('Modal', 'label_graph_topk', fallback=0)

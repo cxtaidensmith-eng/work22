@@ -1,0 +1,7 @@
+{
+  "authorized": true,
+  "received_utc": "2026-08-05T00:41:06.603282+00:00",
+  "authorization_text": "已经改进完了是吧，开始正式实验",
+  "scope": "S0 then S1 then S2; fold0 seed0 400 epochs each; no ensemble or other model",
+  "protocol_manifest_sha256": "61f248e125d917d27d632eb2f759aa3cf8836dcd90d3b2e00c984fc835a946ed"
+}

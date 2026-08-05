@@ -1,0 +1,73 @@
+{
+  "required_count": 18,
+  "artifacts": {
+    "summary.json": {
+      "size_bytes": 15095,
+      "sha256": "a7186abda89963e7231dcc3ca6da47c8cf9d3f59a6d11c5104d2669ddf4314cd"
+    },
+    "protocol_manifest.json": {
+      "size_bytes": 11144,
+      "sha256": "9d8f39117c410a52fd4df0e508a2c6c13454e873799b29500928dae2a2bbfec9"
+    },
+    "config.ini": {
+      "size_bytes": 1021,
+      "sha256": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2"
+    },
+    "initialization_audit.json": {
+      "size_bytes": 2657,
+      "sha256": "20a535722982f890fab12916f08b87eaf05a194c63606fb01fe95d7d803a2461"
+    },
+    "epoch_metrics.csv": {
+      "size_bytes": 346405,
+      "sha256": "5fb460a3c2536425b460e8043845ffce8bce1481e805ee52182884e690f69e67"
+    },
+    "best_predictions.csv": {
+      "size_bytes": 11460,
+      "sha256": "7388f58b719eff76bc1e5cc422aae4d7104de980231e3ac2f0e5f6895b835d3a"
+    },
+    "final_predictions.csv": {
+      "size_bytes": 11431,
+      "sha256": "054af6b73251d389d4961f6b7348bca41c78d72caf62aebc5042a6d231fe5883"
+    },
+    "best_confusion_matrix.csv": {
+      "size_bytes": 86,
+      "sha256": "0971d31085e405b6a6409825aef1c1326341336cd0a7d05d4d5d0e5a3c0d9186"
+    },
+    "final_confusion_matrix.csv": {
+      "size_bytes": 86,
+      "sha256": "ed308526ad9d2e3f3e97bfff64599a784288e1c89799aa643862f88deb7e3d67"
+    },
+    "auxiliary_metrics.json": {
+      "size_bytes": 453021,
+      "sha256": "4e2fd5f253a77ed70331e407d9e7508d1fddb491827fdae4de6ab9277e0d1532"
+    },
+    "query_pool_diagnostics.json": {
+      "size_bytes": 901076,
+      "sha256": "6f974ee7642aec7d98cd40de3c4e645e6c2d7af1c36447cc8984675385352968"
+    },
+    "anchor_diagnostics.json": {
+      "size_bytes": 1255613,
+      "sha256": "4311b54af279138d113578a749c38679c84ea17d27d6354c10461b63b999a627"
+    },
+    "warmup_boundary_audit.json": {
+      "size_bytes": 926,
+      "sha256": "fc91e2371903ed7f961d27863fc2be3458a3da75e2bd68f955a3d44312eebce3"
+    },
+    "checkpoint_best.pt": {
+      "size_bytes": 4304212,
+      "sha256": "b81108c33193649a70eb4074d7478ca74e8273b03779cf58368ce19a8765ff12"
+    },
+    "checkpoint_epoch400.pt": {
+      "size_bytes": 4304784,
+      "sha256": "7eaa6422f379c79d2064351b4b1f83740ffa13d279b0d24c04b22ee30abb3f94"
+    },
+    "checkpoint_audit.json": {
+      "size_bytes": 1301,
+      "sha256": "85e38f13d1cae0ae87f6d5c67af2b60bfbab3bf91222f3e586cb6b525b1c4b48"
+    },
+    "structure_audit_report.txt": {
+      "size_bytes": 1544,
+      "sha256": "cd1aaf20cfdb7bca0e48e899d0c54c8f257ee3215eeebd5a14c1f9c68f756643"
+    }
+  }
+}

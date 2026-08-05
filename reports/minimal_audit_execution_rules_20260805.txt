@@ -1,0 +1,121 @@
+项目最小审计执行规则
+日期：2026-08-05
+
+纠正：当前需要压缩的是反复审计时间，不是模型训练时间。以后正常候选仍按既定 epoch 完整训练，不默认进行性能早停。
+
+一、核心原则
+
+1. 一个实验家族只做一次完整基线审计。
+2. 后续版本只审计相对已确认版本的代码差异。
+3. smoke 同时承担结构、初始化、device、梯度和 checkpoint 检查，不再拆成多轮独立审计。
+4. 用户确认正式实验后，只做最小启动检查并立即训练，不重新阅读和解释全部历史代码。
+5. 每个阶段只生成一个汇总 TXT，不生成内容重复的多份审计文件。
+
+二、一次完整审计包含什么
+
+仅在新实验家族开始时执行一次：
+
+- 当前分支/worktree 和输出隔离；
+- 数据、split、核心配置；
+- baseline 调用链；
+- 参数量和公共初始化；
+- CUDA device；
+- forward、loss、梯度；
+- checkpoint 保存/回读；
+- 3 epoch smoke。
+
+完成后将结果视为该实验家族的已确认基线。
+
+三、后续版本只做差异审计
+
+若只修改一个模块，只检查：
+
+- 该模块的代码 diff；
+- 该模块的参数/梯度/输出；
+- 未修改公共模块的一个汇总 hash；
+- 总参数量；
+- 一次 checkpoint 回读。
+
+不再重复：
+
+- 全仓库历史审计；
+- 完整调用链说明；
+- 所有历史实验结果整理；
+- 每个公共模块逐项 hash 表；
+- 数据和 split 的多次重复计算；
+- 多份 structure/preflight/fairness/checkpoint 报告；
+- smoke 后再次执行相同的正式训练前审计。
+
+四、正式实验启动前的最小检查
+
+用户确认开始训练后，只检查以下项目：
+
+1. 当前分支正确；
+2. 目标 runner 与通过 smoke 的版本一致；
+3. 配置中的 fold、seed、epochs 和 device 正确；
+4. 输出目录不存在，避免覆盖；
+5. CUDA 可用。
+
+通过后直接启动训练。除非其中一项失败，否则不暂停、不重新请求确认、不重新生成 manifest。
+
+五、保留与取消的产物
+
+探索/单折实验保留：
+
+- config
+- epoch_metrics.csv
+- summary.json
+- best_predictions.csv
+- confusion_matrix.csv
+- checkpoint_best.pt
+- 必要机制 diagnostics
+- 一个最终 TXT
+
+默认取消：
+
+- authorization receipt
+- 多层 protocol manifest
+- 重复的 structure audit
+- 单独的 initialization fairness report
+- 单独的 checkpoint audit report
+- 每个阶段内容相同的 summary/report
+- 每个产物再次生成一份 hash 清单
+
+Git commit 或论文最终十折归档前，才进行一次完整产物审计。
+
+六、确认次数
+
+默认每个候选最多两次人工节点：
+
+1. 设计确认后允许实现和 smoke；
+2. smoke 通过后允许正式训练。
+
+正式训练获准后，不在 prepare、preflight、每个 fold 或 report 阶段重复等待确认，除非出现代码变化、运行失败或输出覆盖风险。
+
+七、下一阶段的具体执行
+
+Query Pool Component-Sharing 下一阶段采用：
+
+1. 新隔离分支/worktree；
+2. 实现主候选 A；
+3. 一次 3 epoch smoke，同时完成全部必要审计；
+4. 输出一个 smoke TXT；
+5. 人工确认一次后，最小检查并直接运行 fold0 400 epoch；
+6. 输出一个正式结果 TXT；
+7. 根据结果决定是否实现镜像对照。
+
+不再单独安排“结构审计、初始化审计、device审计、checkpoint审计、formal preflight、authorization receipt”六个重复阶段。
+
+八、停止或升级审计的条件
+
+只有出现以下情况才扩大审计：
+
+- 模型公共模块被意外修改；
+- Loss、split、optimizer 或 scheduler 发生变化；
+- CUDA/device 异常；
+- checkpoint 无法一致回读；
+- 输出目录可能覆盖历史结果；
+- 指标或梯度出现 NaN/Inf；
+- 用户明确要求论文级严格归档。
+
+默认承诺：思考可以全面，但审计只验证本次真正发生变化的部分；已经确认且未变化的事实不重复证明。

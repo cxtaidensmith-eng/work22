@@ -1,0 +1,67 @@
+OVR-Aligned Shared-Query Pool v1 — S0 3-Epoch Smoke Report
+
+状态：smoke test 完成；没有运行 400 epoch 正式实验。
+
+1. 隔离与协议
+branch=experiment/ovr-aligned-shared-query-v1
+output=experiments/ovr_aligned_shared_query_v1/smoke/no_anchor
+dataset=TADPOLE
+task=AD_CN_SMCI
+fold=0
+seed=0
+device=cuda:0
+epochs=3
+smoke_warmup_epochs=1
+formal_warmup_epochs_locked_for_future=20
+split_hash=1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04
+best epoch rule=ACC > Macro-AUC > Macro-F1（沿用历史协议）
+
+2. 结构
+arm=s0 (S0 shared Query Pool without OVR anchor)
+shared Query Pool count=1
+learnable Query count=1
+OVR auxiliary heads=3
+anchor_mode=none
+parameter_count=703372
+parameter_delta_vs_baseline=-149759
+state_tensor_count=138
+Global_Message=_Global_Message_Model (unchanged)
+DIFFormer=DIFFormer_GraphHead (unchanged, graph disabled)
+fusion=add + concat into Message_MLP (unchanged)
+
+3. 初始化公平性
+baseline_initial_hash=7d5450724928805a255dccf80c4772e2672cbd80c7a14e2fbd8eb73b68671bdc
+candidate_initial_hash=5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2
+common_tensor_count=134
+baseline_common_hash=ce26424e6d3c46b25b2167e5abdd4855b3267a589c043cc2ab0983c877b93943
+candidate_common_hash=ce26424e6d3c46b25b2167e5abdd4855b3267a589c043cc2ab0983c877b93943
+max_abs_diff=0.0
+mismatch_names=[]
+state_copy_used=False
+
+4. Smoke 结果（只用于链路验证，不用于论文性能结论）
+best_epoch=1
+best_ACC=0.35
+best_Macro-F1=0.1728395061728395
+best_BACC=0.3333333333333333
+best_Macro-AUC=0.7819766247533212
+best_Weighted-F1=0.18148148148148147
+epoch3_ACC=0.31666666666666665
+epoch3_Macro-AUC=0.7281779137313064
+
+5. Smoke 门禁
+forward_shapes_and_cuda=True
+loss_formula_exact=True
+all_losses_and_metrics_finite=True
+shared_pool_gradient_nonzero=True
+all_auxiliary_head_gradients_nonzero=True
+all_readout_output_gradients_nonzero=True
+alpha_gradient_matches_arm=True
+effective_query_separation_matches_arm=True
+ema_initialized=True
+ema_update_count_three=True
+anchor_activation_schedule=True
+forced_path_audit=True
+
+结论：forward/loss/backward/EMA/anchor/checkpoint/prediction 链路均已按该 arm 定义检查。
+3 epoch 指标不能用于判断正确 anchor 是否优于错误 anchor；需人工确认后才能进入 fold0 400 epoch。

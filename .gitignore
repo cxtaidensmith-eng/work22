@@ -27,3 +27,5 @@
 /Result
 /logs_work
 /OPT_Hyper
+# Generated experiment checkpoints
+/experiments/**/*.pt

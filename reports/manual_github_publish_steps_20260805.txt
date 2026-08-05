@@ -1,0 +1,176 @@
+手动提交并推送 GitHub 步骤
+日期：2026-08-05
+
+目标仓库：
+https://github.com/cxtaidensmith-eng/work22.git
+
+目标分支：
+experiment/ovr-aligned-shared-query-v1
+
+重要说明：
+
+- 请在独立 worktree 中操作，不要在主工作区提交。
+- 当前 experiments 约 58.1 MB，其中 12 个 .pt checkpoint 共约 49.2 MB。
+- 推荐提交代码、runner、报告和轻量结果；不要提交 checkpoint、pyc 或 __pycache__。
+- Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini 当前显示 modified，但 git diff 为空，属于换行符/文件状态噪声，本次不要显式 stage。
+- 禁止使用 git add -A 或 git add .，以免误收 checkpoint。
+
+==================================================
+步骤 1：进入正确 worktree
+==================================================
+
+在 PowerShell 中运行：
+
+Set-Location -LiteralPath 'D:\Work\WORK2 final\WORK2 final26.7,21\tmp\ovr_aligned_shared_query_v1'
+
+确认分支：
+
+git branch --show-current
+
+预期输出：
+
+experiment/ovr-aligned-shared-query-v1
+
+确认远程：
+
+git remote -v
+
+预期 origin 指向：
+
+https://github.com/cxtaidensmith-eng/work22.git
+
+==================================================
+步骤 2：让 Git 永久忽略实验 checkpoint
+==================================================
+
+先检查 .gitignore 是否已有该规则：
+
+Select-String -LiteralPath '.gitignore' -Pattern '^/experiments/\*\*/\*\.pt$'
+
+如果没有任何输出，执行一次：
+
+Add-Content -LiteralPath '.gitignore' -Value "`n# Generated experiment checkpoints`n/experiments/**/*.pt"
+
+不要重复执行 Add-Content。
+
+==================================================
+步骤 3：只 stage 明确需要提交的代码
+==================================================
+
+git add -- .gitignore Loss/__init__.py Loss/loss_fn.py Model/network.py Utils/utils.py
+
+stage Python runners：
+
+git add -- ':(glob)scripts/*.py'
+
+stage TXT 报告：
+
+git add -- ':(glob)reports/*.txt'
+
+stage轻量实验结果，不包含 .pt：
+
+git add -- ':(glob)experiments/**/*.json' ':(glob)experiments/**/*.csv' ':(glob)experiments/**/*.ini' ':(glob)experiments/**/*.txt'
+
+不要运行：
+
+git add -A
+git add .
+
+==================================================
+步骤 4：提交前检查
+==================================================
+
+查看 staged 文件：
+
+git diff --cached --name-only
+
+确认没有 checkpoint、缓存：
+
+git diff --cached --name-only | Select-String -Pattern '\.pt$|\.pyc$|__pycache__'
+
+预期：没有输出。
+
+查看提交规模：
+
+git diff --cached --stat
+
+检查空白或冲突标记：
+
+git diff --cached --check
+
+预期：没有错误输出。
+
+最后查看状态：
+
+git status --short
+
+说明：
+
+- staged 文件左侧会显示 M 或 A。
+- .pt 文件不应出现。
+- Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini 可能仍显示未暂存 M，但其 git diff 为空，本次可忽略。
+
+如果误 stage 了某个文件，用以下命令仅取消暂存，不删除文件：
+
+git restore --staged -- '文件路径'
+
+==================================================
+步骤 5：创建 commit
+==================================================
+
+推荐提交信息：
+
+git commit -m "Add query experiment variants and OSFQ results"
+
+提交后检查：
+
+git log -1 --oneline
+
+==================================================
+步骤 6：推送到 GitHub
+==================================================
+
+git push -u origin experiment/ovr-aligned-shared-query-v1
+
+如果系统弹出 GitHub 登录窗口，按提示登录。
+
+如果提示 non-fast-forward：
+
+- 不要使用 --force；
+- 不要使用 --force-with-lease；
+- 先停止，将完整错误信息发给 Codex 处理。
+
+==================================================
+步骤 7：网页确认
+==================================================
+
+打开：
+
+https://github.com/cxtaidensmith-eng/work22/tree/experiment/ovr-aligned-shared-query-v1
+
+确认最新 commit 和文件存在。
+
+如需合并到默认分支，可在 GitHub 页面点击 Compare & pull request 创建 PR；如果目前只需要远程归档，推送分支后即可停止，不必立即合并。
+
+==================================================
+推荐提交范围摘要
+==================================================
+
+提交：
+
+- .gitignore
+- Loss/__init__.py
+- Loss/loss_fn.py
+- Model/network.py
+- Utils/utils.py
+- scripts/*.py
+- reports/*.txt
+- experiments 下的 JSON、CSV、INI、TXT
+
+不提交：
+
+- experiments/**/*.pt
+- scripts/__pycache__/
+- *.pyc
+- 日志、缓存和临时目录
+

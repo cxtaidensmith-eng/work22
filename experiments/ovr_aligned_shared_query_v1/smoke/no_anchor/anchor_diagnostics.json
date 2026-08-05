@@ -1,0 +1,391 @@
+{
+  "definition": "stop-gradient EMA of normalized (positive-row minus rest-row) OVR head normals",
+  "centering": "subtract three-class mean",
+  "normalization": "global RMS across three centered direction norms",
+  "effective_query": "q_shared + alpha * centered_ema_direction",
+  "arm_mapping": {
+    "s0": "zero anchor contribution",
+    "s1": "cyclic mapping [1,2,0]",
+    "s2": "correct mapping [0,1,2]"
+  },
+  "smoke_warmup_epochs": 1,
+  "formal_warmup_epochs_for_future": 20,
+  "ema_decay": 0.9,
+  "epochs": [
+    {
+      "epoch": 1,
+      "requested": false,
+      "snapshot": {
+        "mode": "none",
+        "active": false,
+        "initialized": true,
+        "updates": 1,
+        "ema_decay": 0.9,
+        "alpha": 0.0,
+        "source_mapping": [
+          0,
+          1,
+          2
+        ],
+        "current_ovr_direction_norms": [
+          1.0,
+          1.0,
+          0.9999999403953552
+        ],
+        "ema_direction_norms": [
+          1.0,
+          1.0,
+          0.9999999403953552
+        ],
+        "current_to_ema_cosine": [
+          1.0,
+          1.0,
+          1.0000001192092896
+        ],
+        "direction_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "centered_direction_zero_sum_error": 0.0,
+        "centered_direction_global_rms": 0.0,
+        "anchor_contribution_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_query_norms": [
+          0.20341265201568604,
+          0.20341265201568604,
+          0.20341265201568604
+        ]
+      },
+      "centered_direction_stats": {
+        "norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cosine_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "raw_ema_direction_stats": {
+        "norms": [
+          1.0,
+          1.0,
+          0.9999999403953552
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            0.0023827888071537018,
+            -0.06371992826461792
+          ],
+          [
+            0.0023827888071537018,
+            1.0,
+            0.08592051267623901
+          ],
+          [
+            -0.06371992826461792,
+            0.08592051267623901,
+            1.0000001192092896
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.0023827888071537018,
+            "l2": 1.4125275611877441
+          },
+          "AD_vs_SMCI": {
+            "cosine": -0.06371992826461792,
+            "l2": 1.458574652671814
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.08592051267623901,
+            "l2": 1.352094292640686
+          }
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "requested": false,
+      "snapshot": {
+        "mode": "none",
+        "active": false,
+        "initialized": true,
+        "updates": 2,
+        "ema_decay": 0.9,
+        "alpha": 0.0,
+        "source_mapping": [
+          0,
+          1,
+          2
+        ],
+        "current_ovr_direction_norms": [
+          0.9999999403953552,
+          0.9999999403953552,
+          1.0
+        ],
+        "ema_direction_norms": [
+          1.0,
+          0.9999999403953552,
+          1.0
+        ],
+        "current_to_ema_cosine": [
+          0.9883109331130981,
+          0.9880243539810181,
+          0.9861629605293274
+        ],
+        "direction_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "centered_direction_zero_sum_error": 0.0,
+        "centered_direction_global_rms": 0.0,
+        "anchor_contribution_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_query_norms": [
+          0.22944611310958862,
+          0.22944611310958862,
+          0.22944611310958862
+        ]
+      },
+      "centered_direction_stats": {
+        "norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cosine_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "raw_ema_direction_stats": {
+        "norms": [
+          1.0,
+          0.9999999403953552,
+          1.0
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            -0.007961423136293888,
+            -0.07572314143180847
+          ],
+          [
+            -0.007961423136293888,
+            1.0000001192092896,
+            0.08055751025676727
+          ],
+          [
+            -0.07572314143180847,
+            0.08055751025676727,
+            0.9999998807907104
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": -0.007961423136293888,
+            "l2": 1.4198319911956787
+          },
+          "AD_vs_SMCI": {
+            "cosine": -0.07572314143180847,
+            "l2": 1.4667809009552002
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.08055751025676727,
+            "l2": 1.3560549020767212
+          }
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "requested": false,
+      "snapshot": {
+        "mode": "none",
+        "active": false,
+        "initialized": true,
+        "updates": 3,
+        "ema_decay": 0.9,
+        "alpha": 0.0,
+        "source_mapping": [
+          0,
+          1,
+          2
+        ],
+        "current_ovr_direction_norms": [
+          0.9999999403953552,
+          1.0,
+          1.0
+        ],
+        "ema_direction_norms": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "current_to_ema_cosine": [
+          0.9636932611465454,
+          0.9656652808189392,
+          0.9600624442100525
+        ],
+        "direction_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "centered_direction_zero_sum_error": 0.0,
+        "centered_direction_global_rms": 0.0,
+        "anchor_contribution_norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_query_norms": [
+          0.24588575959205627,
+          0.24588575959205627,
+          0.24588575959205627
+        ]
+      },
+      "centered_direction_stats": {
+        "norms": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cosine_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "raw_ema_direction_stats": {
+        "norms": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "cosine_matrix": [
+          [
+            0.9999998211860657,
+            -0.026338785886764526,
+            -0.09460638463497162
+          ],
+          [
+            -0.026338785886764526,
+            1.0,
+            0.06325072050094604
+          ],
+          [
+            -0.09460638463497162,
+            0.06325072050094604,
+            1.0000001192092896
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": -0.026338785886764526,
+            "l2": 1.4327168464660645
+          },
+          "AD_vs_SMCI": {
+            "cosine": -0.09460638463497162,
+            "l2": 1.479598879814148
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.06325072050094604,
+            "l2": 1.368757963180542
+          }
+        }
+      }
+    }
+  ]
+}

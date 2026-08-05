@@ -1,0 +1,143 @@
+{
+  "schema_version": "ovr-aligned-shared-query-pool-v1-smoke",
+  "created_utc": "2026-08-05T00:14:36.018594+00:00",
+  "git": {
+    "branch": "experiment/ovr-aligned-shared-query-v1",
+    "commit": "4227309eabfac9ed6deee3a16714d1ee4d2a49c3",
+    "dirty": true
+  },
+  "arm": "s2",
+  "arm_definition": {
+    "directory": "correct_anchor",
+    "anchor_mode": "correct",
+    "label": "S2 shared Query Pool with correctly aligned OVR anchors"
+  },
+  "phase": "smoke",
+  "no_formal_authorization_required_or_used": true,
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 3,
+    "anchor_warmup_epochs": 1,
+    "formal_anchor_warmup_epochs_for_future": 20,
+    "ema_decay": 0.9,
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "semantic_fusion": "add",
+    "category_fusion": "concat",
+    "adj_mode": "none",
+    "graph_use_graph": false,
+    "optimizer": "Adam",
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "best_epoch_rule": [
+      "ACC",
+      "Macro-AUC",
+      "Macro-F1"
+    ],
+    "loss": "weighted main CE + AD-vs-rest CE + CN-vs-rest CE + SMCI-vs-rest CE",
+    "label_smoothing": 0.05,
+    "orthogonality_loss": false,
+    "split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "train_size": 538,
+    "test_size": 60
+  },
+  "historical_baseline_reference": {
+    "manifest_file_sha256": "78114ce1b9cdff40d2c00c9546cb92b79d446d6212b19c0567c989c43a17327d",
+    "manifest_canonical_sha256": "930288891ead11b143c3485424c5f141cbcd69a3ec7e4a5d72bd7d8076398926",
+    "initial_state_hash": "7d5450724928805a255dccf80c4772e2672cbd80c7a14e2fbd8eb73b68671bdc",
+    "parameter_count": 853131,
+    "state_tensor_count": 160
+  },
+  "environment": {
+    "python_executable": "D:\\Anaconda\\envs\\mmfl\\python.exe",
+    "python_version": "3.10.20",
+    "torch_version": "2.1.1",
+    "torch_cuda_version": "11.8",
+    "sklearn_version": "1.5.2",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  },
+  "source_hashes": {
+    "Model/__init__.py": "8fc73c1f497ca54f67a136f7679ad4e89dc2323863cb7ccefb33d5eb37eb3ef7",
+    "Model/network.py": "46a5051290a130ed7ac40733fdd31b9659fe82fbb7f6b626a21240f3eb50e36d",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Model/layers.py": "76fb3b36f7ad493631f8f219d24ab5d96626d12d6d3d4a0943099138f4018f99",
+    "Loss/__init__.py": "93c6271e87060b56c2444c077947dc3b628dc4c69205260c38330da0a18891e6",
+    "Loss/loss_fn.py": "6044df95772c2a90c4ab6b9e74534dcb72553ca27f4a2006643563a284a3fc5a",
+    "Utils/__init__.py": "7955dd9ab3298d8e621c1597234d95c866b547732561ca7804e07456f5690993",
+    "Utils/utils.py": "c00cd037c74f4ece627846c24cf07d637dfb926031d1f54728374e5c8029d35d",
+    "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2",
+    "scripts/run_query_free_multibranch.py": "98eccad569894f99480dd3f37dd442d889fd63c425ccb92e082e370cf275c8c0",
+    "scripts/run_selective_boundary_fixed_10fold.py": "0ade4ac38fd0fff82cb8a31320db0d28114219d3c03ffc340f857273b60ceddd",
+    "scripts/run_query_baseline_gpu_10fold.py": "9f6423535b09fa83aaafbc1952c685a05fe941296efe1a3948eab4bcfb139e5e",
+    "scripts/run_osfq_id_v1.py": "3f1eb59009d75aa483781906d10c0b2ec65b1569b0d4bee01d7e3ac68681b0c9"
+  },
+  "structure_audit": {
+    "arm": "s2",
+    "arm_label": "S2 shared Query Pool with correctly aligned OVR anchors",
+    "parameter_count": 703372,
+    "parameter_delta_vs_baseline": -149759,
+    "named_parameter_tensor_count": 130,
+    "state_tensor_count": 138,
+    "initial_state_hash": "5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2",
+    "query_pool_variant": "shared",
+    "registered_query_pool_count": 1,
+    "shared_pool_parameter_count": 74880,
+    "pool_contains_mha": true,
+    "pool_contains_ffn": true,
+    "learnable_query_count": 1,
+    "auxiliary_head_count": 3,
+    "auxiliary_output_sizes": [
+      2,
+      2,
+      2
+    ],
+    "auxiliary_parameters_independent": true,
+    "anchor_mode": "correct",
+    "anchor_ema_decay": 0.9,
+    "alpha_shape": [],
+    "alpha_initial": 0.0,
+    "anchor_buffer_shape": [
+      3,
+      96
+    ],
+    "semantic_branch": "both",
+    "semantic_fusion": "add",
+    "category_branch_fusion": "concat",
+    "message_mlp_input_features": 288,
+    "adj_mode": "none",
+    "difformer_class": "DIFFormer_GraphHead",
+    "difformer_graph_use_flags": [
+      false,
+      false
+    ],
+    "global_branch_class": "_Global_Message_Model",
+    "orthogonality_loss": false,
+    "auxiliary_supervision": "original three one-vs-rest binary heads",
+    "new_adapter_present": false,
+    "gates": {
+      "one_shared_pool": true,
+      "one_learnable_query": true,
+      "shared_mha_retained": true,
+      "shared_ffn_retained": true,
+      "three_binary_ovr_heads": true,
+      "auxiliary_heads_independent": true,
+      "no_adapter": true,
+      "concat_288": true,
+      "global_add_unchanged": true,
+      "adjacency_none": true,
+      "difformer_graph_disabled": true,
+      "no_orthogonality": true,
+      "correct_arm_mode": true
+    },
+    "passed": true
+  },
+  "initialization_audit_sha256": "20a535722982f890fab12916f08b87eaf05a194c63606fb01fe95d7d803a2461"
+}

@@ -1,0 +1,243 @@
+{
+  "baseline_manifest": {
+    "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\protocol_manifest.json",
+    "file_sha256": "78114ce1b9cdff40d2c00c9546cb92b79d446d6212b19c0567c989c43a17327d",
+    "canonical_sha256": "930288891ead11b143c3485424c5f141cbcd69a3ec7e4a5d72bd7d8076398926"
+  },
+  "fold_manifest": {
+    "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\boundary_selective_fixed_mapping_10fold_seed0_v2\\formal\\fold_manifest.json",
+    "file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+    "canonical_sha256": "be020ede2a03d59dbd5e8bbf715cb4d097f8398f9824c122521c3240e00b6515",
+    "assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9"
+  },
+  "feature_csv": {
+    "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\ovr_aligned_shared_query_v1\\DATASET\\TADPOLE\\AD_CN_SMCI_ADNI_processed_standard_data.csv",
+    "file_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042"
+  },
+  "modal_dict": {
+    "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\ovr_aligned_shared_query_v1\\DATASET\\TADPOLE\\AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+    "file_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273"
+  },
+  "historical_protocol": {
+    "gates": {
+      "dataset": true,
+      "task": true,
+      "fold0_present": true,
+      "seed": true,
+      "epochs": true,
+      "single_model": true,
+      "no_ensemble": true,
+      "no_search": true,
+      "cuda": true,
+      "transductive": true,
+      "semantic_branch": true,
+      "semantic_fusion": true,
+      "category_fusion": true,
+      "adj_none": true,
+      "graph_disabled": true,
+      "optimizer": true,
+      "lr": true,
+      "weight_decay": true,
+      "scheduler": true,
+      "scheduler_t_max": true,
+      "scheduler_eta_min": true,
+      "logit_adjust_tau": true,
+      "best_epoch_rule": true,
+      "ovr_loss": true,
+      "label_smoothing": true,
+      "no_orthogonality": true
+    },
+    "passed": true
+  },
+  "generated_fold_identity": {
+    "sample_count": 598,
+    "sample_order_sha256": "7ef70c38282cd3c3fa2fa95f41d5d7dfd3ee456d7ac58a25f80e2d7c378df668",
+    "label_order_sha256": "40aa3114eeb832ce1b80a8706b47e50f99da7a48030d40560ef56164e109662a",
+    "test_fold_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+    "fold_checks": [
+      {
+        "fold": 0,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 1,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 2,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 3,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 4,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 5,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 6,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 7,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 8,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      },
+      {
+        "fold": 9,
+        "gates": {
+          "fold": true,
+          "train_size": true,
+          "test_size": true,
+          "train_positions": true,
+          "test_positions": true,
+          "train_indices": true,
+          "test_indices": true,
+          "split_hash": true,
+          "train_mask_sha256": true,
+          "test_mask_sha256": true,
+          "disjoint": true,
+          "complementary": true
+        },
+        "passed": true
+      }
+    ],
+    "fold0_split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "passed": true
+  },
+  "passed": true
+}

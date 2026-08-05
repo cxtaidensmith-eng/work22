@@ -1,0 +1,306 @@
+{
+  "schema_version": "query-baseline-gpu-10fold-seed0-v1",
+  "created_utc": "2026-08-04T09:52:46.128157+00:00",
+  "model": "Original Query Baseline (Q-noOrth)",
+  "git": {
+    "branch": "experiment/selective-boundary-fixed-10fold-seed0",
+    "commit": "4227309eabfac9ed6deee3a16714d1ee4d2a49c3",
+    "dirty": true
+  },
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "fresh_seed_per_fold": 0,
+    "epochs_per_fold": 400,
+    "single_model": true,
+    "ensemble": false,
+    "hyperparameter_search": false,
+    "device": "cuda:0",
+    "transductive_full_batch": true,
+    "semantic_branch": "both",
+    "semantic_fusion": "add",
+    "category_branch_fusion": "concat",
+    "adj_mode": "none",
+    "graph_use_graph": false,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "scheduler_eta_min": 0.0001,
+    "logit_adjust_tau": 0.75,
+    "best_epoch_rule": [
+      "ACC",
+      "Macro-AUC",
+      "Macro-F1"
+    ],
+    "loss": "main weighted CE + three original one-vs-rest auxiliary CE",
+    "label_smoothing": 0.05,
+    "orthogonality_loss": false
+  },
+  "environment": {
+    "python_executable": "D:\\Anaconda\\envs\\mmfl\\python.exe",
+    "python_version": "3.10.20",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch_version": "2.1.1",
+    "torch_cuda_version": "11.8",
+    "cudnn_version": 8700,
+    "numpy_version": "1.26.4",
+    "pandas_version": "2.2.3",
+    "sklearn_version": "1.5.2",
+    "cuda_is_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_index": 0,
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpu_capability": [
+      8,
+      6
+    ]
+  },
+  "config": {
+    "path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+    "sha256": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2"
+  },
+  "data": {
+    "feature_csv": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\DATASET/TADPOLE/AD_CN_SMCI_ADNI_processed_standard_data.csv",
+    "feature_csv_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042",
+    "modal_dict": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\DATASET/TADPOLE/AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+    "modal_dict_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273",
+    "sample_count": 598,
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ]
+  },
+  "fold_fairness": {
+    "reference_manifest": "experiments/boundary_selective_fixed_mapping_10fold_seed0_v2/formal/fold_manifest.json",
+    "reference_manifest_file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+    "payload_exactly_equal": true,
+    "canonical_sha256": "be020ede2a03d59dbd5e8bbf715cb4d097f8398f9824c122521c3240e00b6515",
+    "assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9"
+  },
+  "source_integrity": {
+    "files": {
+      "Model/__init__.py": "8fc73c1f497ca54f67a136f7679ad4e89dc2323863cb7ccefb33d5eb37eb3ef7",
+      "Model/network.py": "f0b30c12396d2caf5b7262bb7098bf72bc7b8470fc4f9273b82534cee65aaf31",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Model/layers.py": "76fb3b36f7ad493631f8f219d24ab5d96626d12d6d3d4a0943099138f4018f99",
+      "Loss/__init__.py": "93c6271e87060b56c2444c077947dc3b628dc4c69205260c38330da0a18891e6",
+      "Loss/loss_fn.py": "6044df95772c2a90c4ab6b9e74534dcb72553ca27f4a2006643563a284a3fc5a",
+      "Utils/__init__.py": "7955dd9ab3298d8e621c1597234d95c866b547732561ca7804e07456f5690993",
+      "Utils/utils.py": "c00cd037c74f4ece627846c24cf07d637dfb926031d1f54728374e5c8029d35d",
+      "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+      "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+      "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2",
+      "scripts/run_query_free_multibranch.py": "98eccad569894f99480dd3f37dd442d889fd63c425ccb92e082e370cf275c8c0",
+      "scripts/run_selective_boundary_fixed_10fold.py": "0ade4ac38fd0fff82cb8a31320db0d28114219d3c03ffc340f857273b60ceddd",
+      "scripts/run_query_baseline_gpu_10fold.py": "9f6423535b09fa83aaafbc1952c685a05fe941296efe1a3948eab4bcfb139e5e"
+    },
+    "canonical_sha256": "a46f629d9ed35a45334702723e4fce2b46b987b435c0eeb8e22dfd512b0eb64a"
+  },
+  "gpu_preflight": {
+    "passed": true,
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "torch_cuda_available": true,
+    "config_device": "cuda:0",
+    "dataset_device_audit": {
+      "expected_device": "cuda:0",
+      "tensor_devices": {
+        "Feature": "cuda:0",
+        "Label": "cuda:0",
+        "Adj": "cuda:0",
+        "Label_Weight": "cuda:0",
+        "fold_00_train_mask": "cuda:0",
+        "fold_00_test_mask": "cuda:0",
+        "fold_01_train_mask": "cuda:0",
+        "fold_01_test_mask": "cuda:0",
+        "fold_02_train_mask": "cuda:0",
+        "fold_02_test_mask": "cuda:0",
+        "fold_03_train_mask": "cuda:0",
+        "fold_03_test_mask": "cuda:0",
+        "fold_04_train_mask": "cuda:0",
+        "fold_04_test_mask": "cuda:0",
+        "fold_05_train_mask": "cuda:0",
+        "fold_05_test_mask": "cuda:0",
+        "fold_06_train_mask": "cuda:0",
+        "fold_06_test_mask": "cuda:0",
+        "fold_07_train_mask": "cuda:0",
+        "fold_07_test_mask": "cuda:0",
+        "fold_08_train_mask": "cuda:0",
+        "fold_08_test_mask": "cuda:0",
+        "fold_09_train_mask": "cuda:0",
+        "fold_09_test_mask": "cuda:0"
+      },
+      "all_cuda": true
+    },
+    "model_device_audit": {
+      "expected_device": "cuda:0",
+      "parameter_count_tensors": 155,
+      "buffer_count_tensors": 5,
+      "unique_parameter_devices": [
+        "cuda:0"
+      ],
+      "unique_buffer_devices": [
+        "cuda:0"
+      ],
+      "all_parameters_and_buffers_cuda": true
+    },
+    "criterion_device_audit": {
+      "expected_device": "cuda:0",
+      "tensor_devices": {
+        "criterion.weight": "cuda:0",
+        "criterion.main_loss.weight": "cuda:0",
+        "criterion.aux_losses.1.weight": "cuda:0",
+        "criterion.aux_losses.2.weight": "cuda:0",
+        "criterion.aux_losses.3.weight": "cuda:0"
+      },
+      "all_cuda": true
+    },
+    "forward_output_audit": {
+      "main_logits_shape": [
+        598,
+        3
+      ],
+      "representation_shapes": [
+        [
+          598,
+          96
+        ],
+        [
+          598,
+          96
+        ],
+        [
+          598,
+          96
+        ]
+      ],
+      "auxiliary_shapes": [
+        [
+          598,
+          2
+        ],
+        [
+          598,
+          2
+        ],
+        [
+          598,
+          2
+        ]
+      ],
+      "tensor_devices": [
+        "cuda:0",
+        "cuda:0",
+        "cuda:0",
+        "cuda:0",
+        "cuda:0",
+        "cuda:0",
+        "cuda:0"
+      ],
+      "main_logits_ok": true,
+      "representations_ok": true,
+      "auxiliary_ok": true,
+      "all_cuda": true,
+      "all_finite": true,
+      "passed": true
+    },
+    "criterion_loss_device": "cuda:0",
+    "criterion_loss_finite": true,
+    "criterion_formula_delta": 0.0,
+    "criterion_components": {
+      "main": 1.252999186515808,
+      "query_1_aux": 0.7105842232704163,
+      "query_2_aux": 0.733661949634552,
+      "query_3_aux": 0.680436372756958,
+      "auxiliary_sum": 2.1246824264526367,
+      "total": 3.3776817321777344
+    },
+    "structure_audit": {
+      "variant": "baseline_q_noorth",
+      "parameter_count": 853131,
+      "query_pool_count": 3,
+      "query_pool_parameters_independent": true,
+      "auxiliary_head_parameters_independent": true,
+      "semantic_fusion": "add",
+      "semantic_branch": "both",
+      "adj_mode": "none",
+      "difformer_class": "DIFFormer_GraphHead",
+      "difformer_graph_use_flags": [
+        false,
+        false
+      ],
+      "orthogonality_loss": false,
+      "auxiliary_supervision": "original three independent one-vs-rest binary heads",
+      "query_pools": {
+        "query_pool_1": {
+          "pool_parameter_count": 74880,
+          "auxiliary_head_parameter_count": 194,
+          "auxiliary_output_classes": 2,
+          "contains_multihead_attention": true,
+          "contains_learnable_query": true
+        },
+        "query_pool_2": {
+          "pool_parameter_count": 74880,
+          "auxiliary_head_parameter_count": 194,
+          "auxiliary_output_classes": 2,
+          "contains_multihead_attention": true,
+          "contains_learnable_query": true
+        },
+        "query_pool_3": {
+          "pool_parameter_count": 74880,
+          "auxiliary_head_parameter_count": 194,
+          "auxiliary_output_classes": 2,
+          "contains_multihead_attention": true,
+          "contains_learnable_query": true
+        }
+      },
+      "category_branch_variant": "original",
+      "category_branch_fusion": "concat",
+      "message_mlp_input_features": 288,
+      "state_tensor_count": 160,
+      "initial_state_hash": "7d5450724928805a255dccf80c4772e2672cbd80c7a14e2fbd8eb73b68671bdc",
+      "latent_branches_present": false,
+      "patient_router_present": false,
+      "global_weight_parameter_present": false,
+      "all_parameters_trainable": true,
+      "gates": {
+        "parameter_count": true,
+        "state_tensor_count": true,
+        "initial_state_hash": true,
+        "original_variant": true,
+        "three_query_pools": true,
+        "query_pool_parameters_independent": true,
+        "auxiliary_parameters_independent": true,
+        "all_pools_have_attention": true,
+        "all_pools_have_learnable_query": true,
+        "all_auxiliary_heads_binary": true,
+        "no_latent_branch": true,
+        "no_patient_router": true,
+        "no_global_weight_fusion": true,
+        "concat_category_fusion": true,
+        "message_mlp_input_288": true,
+        "semantic_branch_both": true,
+        "semantic_fusion_add": true,
+        "adjacency_none": true,
+        "difformer_graph_disabled": true,
+        "orthogonality_disabled": true,
+        "all_parameters_trainable": true
+      }
+    }
+  },
+  "canonical_sha256": "930288891ead11b143c3485424c5f141cbcd69a3ec7e4a5d72bd7d8076398926"
+}

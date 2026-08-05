@@ -1,0 +1,103 @@
+{
+  "schema_version": "ovr-aligned-shared-query-pool-v1-smoke",
+  "smoke_suite_passed": true,
+  "arms": {
+    "s0": {
+      "summary": "experiments/ovr_aligned_shared_query_v1/smoke/no_anchor/summary.json",
+      "best_epoch": 1,
+      "best_metrics": {
+        "acc": 0.35,
+        "macro_f1": 0.1728395061728395,
+        "bacc": 0.3333333333333333,
+        "macro_auc": 0.7819766247533212,
+        "weighted_f1": 0.18148148148148147,
+        "confusion_matrix": [
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            31,
+            0
+          ]
+        ]
+      },
+      "artifacts_complete": true
+    },
+    "s1": {
+      "summary": "experiments/ovr_aligned_shared_query_v1/smoke/wrong_anchor/summary.json",
+      "best_epoch": 1,
+      "best_metrics": {
+        "acc": 0.35,
+        "macro_f1": 0.1728395061728395,
+        "bacc": 0.3333333333333333,
+        "macro_auc": 0.7819766247533212,
+        "weighted_f1": 0.18148148148148147,
+        "confusion_matrix": [
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            31,
+            0
+          ]
+        ]
+      },
+      "artifacts_complete": true
+    },
+    "s2": {
+      "summary": "experiments/ovr_aligned_shared_query_v1/smoke/correct_anchor/summary.json",
+      "best_epoch": 1,
+      "best_metrics": {
+        "acc": 0.35,
+        "macro_f1": 0.1728395061728395,
+        "bacc": 0.3333333333333333,
+        "macro_auc": 0.7819766247533212,
+        "weighted_f1": 0.18148148148148147,
+        "confusion_matrix": [
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            31,
+            0
+          ]
+        ]
+      },
+      "artifacts_complete": true
+    }
+  },
+  "fairness": {
+    "candidate_initial_hash_same": true,
+    "split_hash_same": true,
+    "parameter_count_same": true,
+    "same_loss": true
+  },
+  "formal_400_epoch_run": false,
+  "formal_status": "HOLD pending self-describing checkpoint restore and verified historical data lineage",
+  "report": "reports/osfq_id_v1_implementation_smoke_20260805.txt",
+  "report_sha256": "c18e3b35b1bd5e3d6f04fbb47850f79dc6693d3e4e2ba2edfe25f0638c7735ee"
+}

@@ -1,0 +1,257 @@
+Query Pool Component-Sharing v1 下一阶段实验计划
+日期：2026-08-05
+
+状态：仅完成实验设计；本阶段尚未修改模型、创建新分支或运行训练。
+
+==================================================
+一、为什么下一步不继续修改 OVR anchor
+==================================================
+
+已有 fold0 / seed0 / 400 epoch 结果：
+
+Original Query baseline：
+ACC=0.9167，Macro-F1=0.8978，BACC=0.9153，Macro-AUC=0.9683。
+
+S0（完整共享 Query Pool，无 anchor）：
+ACC=0.9000，Macro-F1=0.8898，BACC=0.8685，Macro-AUC=0.9570。
+
+S1（循环错配 OVR anchor）：
+ACC=0.9333，Macro-F1=0.9326，BACC=0.9158，Macro-AUC=0.9574。
+
+S2（正确 OVR anchor）：
+ACC=0.9167，Macro-F1=0.9027，BACC=0.8793，Macro-AUC=0.9485。
+
+正确 anchor 没有优于错配 anchor，而且 S2 最佳点的 alpha 为负。
+因此现有结果不能证明“OVR 方向正确绑定了 Query 语义”。继续微调 anchor 会扩大不可辨识性，不是当前最优路线。
+
+S0 又表明：把整个 Query Pool 完全共享会损失性能。因此目前最关键、尚未回答的问题是：
+
+Original Query 的三个独立 Pool 中，真正需要保持独立的是注意力阶段，还是输出 FFN 语义变换阶段？
+
+==================================================
+二、核心研究问题
+==================================================
+
+将 Per_Label_Pool 分成三个可解释部分：
+
+固定部分：Private Query Bank
+- 三个 learnable query token 始终独立
+
+因子一：Attention Stage
+- LayerNorm(K/V)
+- MultiHeadAttention
+
+因子二：Semantic FFN Stage
+- LayerNorm(output)
+- FFN
+- residual
+
+所有新 arm 都保留三个 private query，只改变 Attention Stage 和 Semantic FFN Stage 是否共享。这样不会把“query token 共享”混入“MHA 共享”的效应。其他训练协议保持 Original Query baseline。
+
+==================================================
+三、2×2 最小因子对照
+==================================================
+
+固定三个 private query token、关闭全部 anchor，形成以下四个角：
+
+P-Attn + P-FFN：Original Query baseline（历史参照，不重复实现）。
+S-Attn + P-FFN：实验 A，主候选。
+P-Attn + S-FFN：实验 B，机制对照。
+S-Attn + S-FFN：实验 C，完整共享组件控制，但仍保留三个 private query。
+
+实验 A（主候选）：Private Queries + Shared Attention + Private Semantic FFN
+
+modal tokens
+  -> 三个独立 query token
+  -> 一个共享 Attention Stage
+  -> 三个独立 Semantic FFN Stage
+  -> z_AD、z_CN、z_sMCI
+  -> 原 OVR auxiliary heads
+  -> 原 concat + Message_MLP
+  -> 原 Global add
+  -> 原 DIFFormer
+  -> 原 classifier
+
+解释：共享模态读取过程，但保留三个独立的非线性语义空间。若它接近或超过 Original Query，说明类别差异主要由私有 FFN 与 OVR 监督形成，而不是三套独立 MHA。
+
+实验 B（机制对照）：Private Queries + Private Attention + Shared Semantic FFN
+
+modal tokens
+  -> 三个独立 query token
+  -> 三个独立 Attention Stage
+  -> 一个共享 Semantic FFN Stage
+  -> z_AD、z_CN、z_sMCI
+  -> 后续结构完全同上
+
+解释：保留独立模态读取，只共享输出变换。若 B 明显优于 A，说明即使平均 attention 看起来接近均匀，独立 Q/K/V/O projection 仍包含关键差异。
+
+实验 C（因子控制）：Private Queries + Shared Attention + Shared Semantic FFN
+
+解释：它与历史 S0 不同。历史 S0 同时共享 query、MHA 和 FFN；C 保留三个 private query，只共享 MHA/FFN，因此可单独观察 query token 差异能否挽救完整组件共享。C 也是计算 Attention×FFN 交互效应所需的第四个角。
+
+不新增：anchor、attention 类型、projection、router、graph、loss 或 ensemble。
+
+==================================================
+四、参数量预估（hidden size=96）
+==================================================
+
+单个原 Per_Label_Pool：74,880 参数。
+
+三个 private query 固定为：3 × 96 = 288。
+
+单个 Attention Stage：
+norm_kv 192 + MHA 37,248 = 37,440。
+
+Semantic FFN Stage：
+norm_out 192 + FFN 37,152 = 37,344。
+
+Original Query 三个 Pool：224,640。
+
+实验 A：
+288 + 1 × 37,440 + 3 × 37,344 = 149,760。
+预计全模型参数量：778,251（比 Original 853,131 少 74,880）。
+
+实验 B：
+288 + 3 × 37,440 + 1 × 37,344 = 149,952。
+预计全模型参数量：778,443（比 Original 少 74,688）。
+
+实验 C：
+288 + 1 × 37,440 + 1 × 37,344 = 75,072。
+预计全模型参数量：703,563（比 Original 少 149,568）。
+
+A 与 B 相差 192 参数，这是 LayerNorm 数量造成的自然差异；不添加无意义参数进行表面匹配。比较时同时报告性能和参数效率。
+
+==================================================
+五、必须保持不变的部分
+==================================================
+
+- TADPOLE，AD_CN_SMCI。
+- transductive full-batch 设置。
+- fold=0，seed=0，single model。
+- 原 Modal Encoder 与 shared Modal Transformer。
+- 原 OVR auxiliary supervision：AD-rest、CN-rest、sMCI-rest。
+- auxiliary weight=1.0，label smoothing=0.05，orthogonality=False。
+- 原 Message_MLP。
+- semantic_fusion=add。
+- 原 Global_Message。
+- 原 DIFFormer 与 classifier。
+- Adam、CustomCosineAnnealingLR 及历史配置。
+- 历史探索性 best epoch 规则：ACC > Macro-AUC > Macro-F1。
+- 不进行 ensemble、multi-seed 或超参数搜索。
+
+==================================================
+六、实验隔离
+==================================================
+
+建议新建独立 worktree 和分支：
+
+branch：experiment/query-pool-component-sharing-v1
+worktree：tmp/query_pool_component_sharing_v1
+
+新结果只写入：
+
+experiments/query_pool_component_sharing_v1/
+  smoke/shared_attention_private_ffn/
+  smoke/private_attention_shared_ffn/
+  smoke/shared_attention_shared_ffn/
+  formal/shared_attention_private_ffn/
+  formal/private_attention_shared_ffn/
+  formal/shared_attention_shared_ffn/
+
+不得覆盖 Original Query、OSFQ、Boundary、Routing 或 Norm-matched Fusion 的代码与结果目录。
+
+==================================================
+七、初始化公平性
+==================================================
+
+1. 每个 arm 使用 fresh seed=0、fresh model、fresh criterion、fresh optimizer、fresh scheduler。
+2. 不从 best checkpoint 或 epoch400 checkpoint 开始训练。
+3. 以 fresh Original Query reference 作为初始化审计基准。
+4. 所有 arm 固定创建三个 private query；按原三个 Per_Label_Pool 的构造顺序生成完整 reference 组件，再按设计选择共享/私有组件，避免下游模块因 RNG 消耗变化而改变初始化。
+5. 未改公共模块必须满足 max_abs_diff=0，并输出 common tensor hash 与 mismatch_names。
+6. 三个 OVR heads、Message_MLP、Global_Message、DIFFormer、classifier 的初始化必须与 reference 完全一致。
+7. A、B、C 的完整 state hash 不要求相同，因为拓扑不同；只比较可一一映射的公共张量。
+8. 记录 split hash、配置快照、源码 hash、参数量和 state tensor 数。
+
+==================================================
+八、诊断指标
+==================================================
+
+除 ACC、Macro-F1、BACC、Macro-AUC、Weighted-F1、confusion matrix、best epoch 外，记录：
+
+- 三个 attention 分布、entropy 与六模态均值。
+- attention-stage 输出的 pairwise cosine / L2 / norm。
+- FFN-stage 最终 branch 输出的 pairwise cosine / L2 / norm。
+- shared stage 与 private stage 的梯度范数。
+- 各阶段参数相对初始值的 update norm。
+- 三个 OVR auxiliary loss、ACC、AUC。
+- Message_MLP 输入与输出的 norm。
+- 无 NaN/Inf、checkpoint 保存/回读一致性。
+
+关键判别不是只看 attention 平均值，而是比较“进入 FFN 前”和“经过 FFN 后”的分支差异在哪里形成。
+
+==================================================
+九、执行顺序
+==================================================
+
+阶段 1：只读与结构审计
+- 确认 Per_Label_Pool 拆分不改变原始数学路径。
+- 复核参数量、公共模块映射和历史配置。
+
+阶段 2：实现与 3 epoch CUDA smoke
+- 按 A、B、C 串行运行。
+- 检查 forward、loss、梯度、shape、参数量、初始化 hash、checkpoint 回读和数值稳定性。
+- smoke 完成后停止，等待人工确认。
+
+阶段 3：fold0 正式实验
+- 人工确认后，A、B、C 各运行一次 fold0 / seed0 / 400 epoch。
+- 不同时运行，不做自动重试，不做 10-fold。
+
+阶段 4：结果判定
+- 与 Original Query baseline、历史 S0 以及 A/B/C 的完整 2×2 结果对照。
+- 分别报告 Attention sharing 主效应、FFN sharing 主效应及二者交互；不只按单个最高 ACC 讲故事。
+- 当前阶段只用于结构筛选；由于沿用历史 test-fold best-epoch 规则，不能把 fold0 提升表述为无偏泛化结论。
+
+==================================================
+十、预注册判断标准
+==================================================
+
+进入后续验证的最低门槛：
+
+- ACC 不低于 Original Query baseline（0.9167）；
+- Macro-AUC 相对 baseline（0.9683）下降不超过 0.01；
+- Macro-F1/BACC 不出现明显类别失衡；
+- branch 输出和梯度均不塌缩；
+- 最佳表现不是只发生在最初几个 epoch 的偶然点。
+
+结果解释：
+
+情况 A：实验 A 接近或超过 baseline，且优于 B。
+结论：私有 Semantic FFN 是类别语义分化的主要来源，三套独立 MHA 可以压缩。
+下一候选：Shared-Attention Private-Semantic Query Pool；确认后才考虑 10-fold。
+
+情况 B：实验 B 明显优于 A。
+结论：独立 Query/MHA projection 才是主要贡献，即使平均 attention 接近均匀，也不能据此判定注意力无效。
+下一步保留私有 attention，停止共享注意力方向。
+
+情况 C：A、B 都明显低于 Original Query。
+结论：两个阶段的独立性及其耦合共同重要；停止结构压缩，回到 Original Query，不继续堆模块。
+
+情况 D：A、B 都接近 Original Query。
+结论：完整共享 S0 的下降来自两个阶段同时共享后的交互/优化效应。
+后续可另立实验研究低秩 shared-private residual，但本轮不实现。
+
+情况 E：实验 C 接近 Original Query，但历史 S0 较低。
+结论：即使 query token 单独作用较弱，保留三个 private query 对共享组件仍可能是必要条件；后续只讨论 query identity，不再声称 MHA/FFN 必须独立。
+
+==================================================
+十一、当前明确不做
+==================================================
+
+- 不继续 OSFQ anchor 微调。
+- 不运行 OSFQ 10-fold。
+- 不做随机/错配 anchor 多种子搜索。
+- 不加入 prototype、contrastive、margin、routing、new graph 或 ensemble。
+- 不在本轮直接运行 400 epoch。
+
+最终推荐：先实施保留三个 private query 的 A/B/C 2×2 组件共享实现和 3 epoch smoke。该计划能分别估计 Attention sharing、FFN sharing 及其交互，是当前定位 Original Query 有效容量来源时信息增益最高、风险最低的下一步。

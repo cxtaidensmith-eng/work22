@@ -1,0 +1,155 @@
+{
+  "definition": "unchanged three-class-indexed one-vs-rest binary auxiliary supervision",
+  "best_epoch": 1,
+  "best_test": {
+    "query_1_AD_vs_rest": {
+      "acc": 0.8666666666666667,
+      "auc": 0.5120192307692308,
+      "positive_count": 8,
+      "negative_count": 52
+    },
+    "query_2_CN_vs_rest": {
+      "acc": 0.65,
+      "auc": 0.8913308913308913,
+      "positive_count": 21,
+      "negative_count": 39
+    },
+    "query_3_SMCI_vs_rest": {
+      "acc": 0.48333333333333334,
+      "auc": 0.4382647385984427,
+      "positive_count": 31,
+      "negative_count": 29
+    }
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.8810408921933085,
+          "auc": 0.798259493670886,
+          "positive_count": 64,
+          "negative_count": 474
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.6505576208178439,
+          "auc": 0.7991489361702127,
+          "positive_count": 188,
+          "negative_count": 350
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.4684014869888476,
+          "auc": 0.5339660339660339,
+          "positive_count": 286,
+          "negative_count": 252
+        }
+      },
+      "test": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.8666666666666667,
+          "auc": 0.5120192307692308,
+          "positive_count": 8,
+          "negative_count": 52
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.65,
+          "auc": 0.8913308913308913,
+          "positive_count": 21,
+          "negative_count": 39
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.48333333333333334,
+          "auc": 0.4382647385984427,
+          "positive_count": 31,
+          "negative_count": 29
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.9052044609665427,
+          "auc": 0.96904667721519,
+          "positive_count": 64,
+          "negative_count": 474
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.35315985130111527,
+          "auc": 0.8134802431610942,
+          "positive_count": 188,
+          "negative_count": 350
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.5315985130111525,
+          "auc": 0.7501248751248752,
+          "positive_count": 286,
+          "negative_count": 252
+        }
+      },
+      "test": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.8833333333333333,
+          "auc": 0.9230769230769231,
+          "positive_count": 8,
+          "negative_count": 52
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.35,
+          "auc": 0.9133089133089132,
+          "positive_count": 21,
+          "negative_count": 39
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.5166666666666667,
+          "auc": 0.6596218020022246,
+          "positive_count": 31,
+          "negative_count": 29
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.7732342007434945,
+          "auc": 0.9610034282700421,
+          "positive_count": 64,
+          "negative_count": 474
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.6635687732342007,
+          "auc": 0.8621428571428572,
+          "positive_count": 188,
+          "negative_count": 350
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.4349442379182156,
+          "auc": 0.6045482295482295,
+          "positive_count": 286,
+          "negative_count": 252
+        }
+      },
+      "test": {
+        "query_1_AD_vs_rest": {
+          "acc": 0.7333333333333333,
+          "auc": 0.9230769230769231,
+          "positive_count": 8,
+          "negative_count": 52
+        },
+        "query_2_CN_vs_rest": {
+          "acc": 0.6666666666666666,
+          "auc": 0.8852258852258852,
+          "positive_count": 21,
+          "negative_count": 39
+        },
+        "query_3_SMCI_vs_rest": {
+          "acc": 0.45,
+          "auc": 0.6629588431590656,
+          "positive_count": 31,
+          "negative_count": 29
+        }
+      }
+    }
+  ]
+}

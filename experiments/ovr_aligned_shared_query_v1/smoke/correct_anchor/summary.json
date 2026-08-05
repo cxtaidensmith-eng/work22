@@ -1,0 +1,606 @@
+{
+  "schema_version": "ovr-aligned-shared-query-pool-v1-smoke",
+  "model": "OVR-Aligned Shared-Query Pool v1",
+  "arm": "s2",
+  "arm_label": "S2 shared Query Pool with correctly aligned OVR anchors",
+  "smoke_passed": true,
+  "formal_400_epoch_run": false,
+  "git": {
+    "branch": "experiment/ovr-aligned-shared-query-v1",
+    "commit": "4227309eabfac9ed6deee3a16714d1ee4d2a49c3",
+    "dirty": true
+  },
+  "output_directory": "experiments/ovr_aligned_shared_query_v1/smoke/correct_anchor",
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 3,
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "anchor_warmup_epochs": 1,
+    "formal_anchor_warmup_epochs": 20,
+    "ema_decay": 0.9,
+    "split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+    "train_size": 538,
+    "test_size": 60,
+    "semantic_fusion": "add",
+    "category_fusion": "concat",
+    "adj_mode": "none",
+    "graph_use_graph": false,
+    "optimizer": "Adam",
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "best_epoch_rule": [
+      "ACC",
+      "Macro-AUC",
+      "Macro-F1"
+    ],
+    "orthogonality_loss": false
+  },
+  "structure_audit": {
+    "arm": "s2",
+    "arm_label": "S2 shared Query Pool with correctly aligned OVR anchors",
+    "parameter_count": 703372,
+    "parameter_delta_vs_baseline": -149759,
+    "named_parameter_tensor_count": 130,
+    "state_tensor_count": 138,
+    "initial_state_hash": "5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2",
+    "query_pool_variant": "shared",
+    "registered_query_pool_count": 1,
+    "shared_pool_parameter_count": 74880,
+    "pool_contains_mha": true,
+    "pool_contains_ffn": true,
+    "learnable_query_count": 1,
+    "auxiliary_head_count": 3,
+    "auxiliary_output_sizes": [
+      2,
+      2,
+      2
+    ],
+    "auxiliary_parameters_independent": true,
+    "anchor_mode": "correct",
+    "anchor_ema_decay": 0.9,
+    "alpha_shape": [],
+    "alpha_initial": 0.0,
+    "anchor_buffer_shape": [
+      3,
+      96
+    ],
+    "semantic_branch": "both",
+    "semantic_fusion": "add",
+    "category_branch_fusion": "concat",
+    "message_mlp_input_features": 288,
+    "adj_mode": "none",
+    "difformer_class": "DIFFormer_GraphHead",
+    "difformer_graph_use_flags": [
+      false,
+      false
+    ],
+    "global_branch_class": "_Global_Message_Model",
+    "orthogonality_loss": false,
+    "auxiliary_supervision": "original three one-vs-rest binary heads",
+    "new_adapter_present": false,
+    "gates": {
+      "one_shared_pool": true,
+      "one_learnable_query": true,
+      "shared_mha_retained": true,
+      "shared_ffn_retained": true,
+      "three_binary_ovr_heads": true,
+      "auxiliary_heads_independent": true,
+      "no_adapter": true,
+      "concat_288": true,
+      "global_add_unchanged": true,
+      "adjacency_none": true,
+      "difformer_graph_disabled": true,
+      "no_orthogonality": true,
+      "correct_arm_mode": true
+    },
+    "passed": true
+  },
+  "initialization_audit": {
+    "fresh_seed": 0,
+    "state_copy_used": false,
+    "checkpoint_loaded": false,
+    "baseline_parameter_count": 853131,
+    "baseline_named_parameter_tensors": 155,
+    "baseline_state_tensor_count": 160,
+    "baseline_full_state_hash": "7d5450724928805a255dccf80c4772e2672cbd80c7a14e2fbd8eb73b68671bdc",
+    "candidate_parameter_count": 703372,
+    "candidate_named_parameter_tensors": 130,
+    "candidate_state_tensor_count": 138,
+    "candidate_full_state_hash": "5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2",
+    "common_tensor_count": 134,
+    "baseline_common_hash": "ce26424e6d3c46b25b2167e5abdd4855b3267a589c043cc2ab0983c877b93943",
+    "candidate_common_hash": "ce26424e6d3c46b25b2167e5abdd4855b3267a589c043cc2ab0983c877b93943",
+    "max_abs_diff": 0.0,
+    "mismatch_names": [],
+    "candidate_only_names": [
+      "osfq_alpha",
+      "osfq_anchor_ema",
+      "osfq_anchor_initialized",
+      "osfq_anchor_updates"
+    ],
+    "baseline_only_names": [
+      "label_pools.1.attn.in_proj_bias",
+      "label_pools.1.attn.in_proj_weight",
+      "label_pools.1.attn.out_proj.bias",
+      "label_pools.1.attn.out_proj.weight",
+      "label_pools.1.ffn.0.bias",
+      "label_pools.1.ffn.0.weight",
+      "label_pools.1.ffn.3.bias",
+      "label_pools.1.ffn.3.weight",
+      "label_pools.1.norm_kv.bias",
+      "label_pools.1.norm_kv.weight",
+      "label_pools.1.norm_out.bias",
+      "label_pools.1.norm_out.weight",
+      "label_pools.1.query",
+      "label_pools.2.attn.in_proj_bias",
+      "label_pools.2.attn.in_proj_weight",
+      "label_pools.2.attn.out_proj.bias",
+      "label_pools.2.attn.out_proj.weight",
+      "label_pools.2.ffn.0.bias",
+      "label_pools.2.ffn.0.weight",
+      "label_pools.2.ffn.3.bias",
+      "label_pools.2.ffn.3.weight",
+      "label_pools.2.norm_kv.bias",
+      "label_pools.2.norm_kv.weight",
+      "label_pools.2.norm_out.bias",
+      "label_pools.2.norm_out.weight",
+      "label_pools.2.query"
+    ],
+    "new_parameter_values": {
+      "osfq_alpha": 0.0
+    },
+    "new_buffer_values": {
+      "osfq_anchor_initialized": false,
+      "osfq_anchor_updates": 0,
+      "osfq_anchor_ema_abs_max": 0.0
+    },
+    "gates": {
+      "baseline_parameter_count": true,
+      "baseline_state_tensor_count": true,
+      "baseline_initial_hash": true,
+      "candidate_parameter_count": true,
+      "candidate_named_parameters": true,
+      "candidate_state_tensors": true,
+      "candidate_initial_hash": true,
+      "common_tensor_count": true,
+      "common_hash_equal": true,
+      "max_abs_diff_zero": true,
+      "mismatch_names_empty": true,
+      "candidate_only_exact": true,
+      "fresh_zero_alpha": true,
+      "fresh_zero_ema": true
+    },
+    "passed": true
+  },
+  "device_audit": {
+    "expected": "cuda:0",
+    "groups": {
+      "data": {
+        "Feature": "cuda:0",
+        "Label": "cuda:0",
+        "Adj": "cuda:0",
+        "Label_Weight": "cuda:0",
+        "train_mask": "cuda:0",
+        "test_mask": "cuda:0"
+      },
+      "model": [
+        "cuda:0"
+      ],
+      "criterion": {
+        "weight": "cuda:0",
+        "main_loss.weight": "cuda:0",
+        "aux_losses.0.weight": "cuda:0",
+        "aux_losses.1.weight": "cuda:0",
+        "aux_losses.2.weight": "cuda:0"
+      }
+    },
+    "passed": true
+  },
+  "first_forward_audit": {
+    "main_logits_shape": [
+      598,
+      3
+    ],
+    "representation_shapes": [
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ]
+    ],
+    "auxiliary_shapes": [
+      [
+        598,
+        2
+      ],
+      [
+        598,
+        2
+      ],
+      [
+        598,
+        2
+      ]
+    ],
+    "all_cuda": true,
+    "all_finite": true,
+    "devices": [
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0"
+    ],
+    "passed": true
+  },
+  "smoke_gates": {
+    "forward_shapes_and_cuda": true,
+    "loss_formula_exact": true,
+    "all_losses_and_metrics_finite": true,
+    "shared_pool_gradient_nonzero": true,
+    "all_auxiliary_head_gradients_nonzero": true,
+    "all_readout_output_gradients_nonzero": true,
+    "alpha_gradient_matches_arm": true,
+    "effective_query_separation_matches_arm": true,
+    "ema_initialized": true,
+    "ema_update_count_three": true,
+    "anchor_activation_schedule": true,
+    "forced_path_audit": true
+  },
+  "result": {
+    "best_epoch": 1,
+    "best_selection_tuple": [
+      0.35,
+      0.7819766247533212,
+      0.1728395061728395
+    ],
+    "best_main_metrics": {
+      "acc": 0.35,
+      "macro_f1": 0.1728395061728395,
+      "bacc": 0.3333333333333333,
+      "macro_auc": 0.7819766247533212,
+      "weighted_f1": 0.18148148148148147,
+      "confusion_matrix": [
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          31,
+          0
+        ]
+      ]
+    },
+    "best_loss_components": {
+      "main": 1.763306736946106,
+      "AD_vs_rest": 0.5515188574790955,
+      "CN_vs_rest": 0.5867720246315002,
+      "SMCI_vs_rest": 0.6283471584320068,
+      "auxiliary_sum": 1.7666380405426025,
+      "total": 3.529944896697998
+    },
+    "best_anchor_snapshot": {
+      "mode": "correct",
+      "active": false,
+      "initialized": true,
+      "updates": 1,
+      "ema_decay": 0.9,
+      "alpha": 0.0,
+      "source_mapping": [
+        0,
+        1,
+        2
+      ],
+      "current_ovr_direction_norms": [
+        1.0,
+        1.0,
+        0.9999999403953552
+      ],
+      "ema_direction_norms": [
+        1.0,
+        1.0,
+        0.9999999403953552
+      ],
+      "current_to_ema_cosine": [
+        1.0,
+        1.0,
+        1.0000001192092896
+      ],
+      "direction_norms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "centered_direction_zero_sum_error": 0.0,
+      "centered_direction_global_rms": 0.0,
+      "anchor_contribution_norms": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "effective_query_norms": [
+        0.20341265201568604,
+        0.20341265201568604,
+        0.20341265201568604
+      ]
+    },
+    "best_anchor_active": false,
+    "epoch3_main_metrics": {
+      "acc": 0.31666666666666665,
+      "macro_f1": 0.1784037558685446,
+      "bacc": 0.20430107526881722,
+      "macro_auc": 0.7281779137313064,
+      "weighted_f1": 0.2765258215962441,
+      "confusion_matrix": [
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          0,
+          12,
+          19
+        ]
+      ]
+    }
+  },
+  "checkpoint_audit": {
+    "state_roundtrip": {
+      "best": {
+        "path": "checkpoint_best.pt",
+        "sha256": "a97ba46fe313227f36c63e104f778dfb9d00e9d2461572b36aa2a8ee32f46c24",
+        "state_tensor_count": 138,
+        "key_set_equal": true,
+        "tensor_values_equal": true,
+        "passed": true
+      },
+      "epoch3": {
+        "path": "checkpoint_epoch3.pt",
+        "sha256": "c3e66075ad6c7860f17b35255eae3691eade57cd96194a88b15cf195bf1fcf7b",
+        "state_tensor_count": 138,
+        "key_set_equal": true,
+        "tensor_values_equal": true,
+        "passed": true
+      }
+    },
+    "functional_roundtrip": {
+      "best": {
+        "checkpoint_epoch": 1,
+        "expected_anchor_active": false,
+        "restored_anchor_active": false,
+        "max_abs_logit_diff": 0.0,
+        "forward_audit": {
+          "main_logits_shape": [
+            598,
+            3
+          ],
+          "representation_shapes": [
+            [
+              598,
+              96
+            ],
+            [
+              598,
+              96
+            ],
+            [
+              598,
+              96
+            ]
+          ],
+          "auxiliary_shapes": [
+            [
+              598,
+              2
+            ],
+            [
+              598,
+              2
+            ],
+            [
+              598,
+              2
+            ]
+          ],
+          "all_cuda": true,
+          "all_finite": true,
+          "devices": [
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0"
+          ],
+          "passed": true
+        },
+        "passed": true
+      },
+      "epoch3": {
+        "checkpoint_epoch": 3,
+        "expected_anchor_active": true,
+        "restored_anchor_active": true,
+        "max_abs_logit_diff": 0.0,
+        "forward_audit": {
+          "main_logits_shape": [
+            598,
+            3
+          ],
+          "representation_shapes": [
+            [
+              598,
+              96
+            ],
+            [
+              598,
+              96
+            ],
+            [
+              598,
+              96
+            ]
+          ],
+          "auxiliary_shapes": [
+            [
+              598,
+              2
+            ],
+            [
+              598,
+              2
+            ],
+            [
+              598,
+              2
+            ]
+          ],
+          "all_cuda": true,
+          "all_finite": true,
+          "devices": [
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0",
+            "cuda:0"
+          ],
+          "passed": true
+        },
+        "passed": true
+      }
+    }
+  },
+  "prediction_audit": {
+    "best": {
+      "row_count": 60,
+      "recomputed_metrics": {
+        "acc": 0.35,
+        "macro_f1": 0.1728395061728395,
+        "bacc": 0.3333333333333333,
+        "macro_auc": 0.7819766247533212,
+        "weighted_f1": 0.18148148148148147,
+        "confusion_matrix": [
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            31,
+            0
+          ]
+        ]
+      },
+      "metric_abs_deltas": {
+        "acc": 0.0,
+        "macro_f1": 0.0,
+        "bacc": 0.0,
+        "macro_auc": 0.0,
+        "weighted_f1": 0.0
+      },
+      "confusion_matrix_equal": true,
+      "passed": true
+    },
+    "epoch3": {
+      "row_count": 60,
+      "recomputed_metrics": {
+        "acc": 0.31666666666666665,
+        "macro_f1": 0.1784037558685446,
+        "bacc": 0.20430107526881722,
+        "macro_auc": 0.7281779137313064,
+        "weighted_f1": 0.2765258215962441,
+        "confusion_matrix": [
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ],
+          [
+            0,
+            12,
+            19
+          ]
+        ]
+      },
+      "metric_abs_deltas": {
+        "acc": 0.0,
+        "macro_f1": 0.0,
+        "bacc": 0.0,
+        "macro_auc": 0.0,
+        "weighted_f1": 0.0
+      },
+      "confusion_matrix_equal": true,
+      "passed": true
+    },
+    "row_count": 60
+  },
+  "runtime": {
+    "elapsed_seconds": 1.8468704000115395,
+    "completed_utc": "2026-08-05T00:14:38.116163+00:00"
+  },
+  "source_integrity_after_smoke": true,
+  "artifact_integrity": {
+    "required_count": 15,
+    "present_count": 15,
+    "missing": [],
+    "all_present": true,
+    "sha256": {
+      "protocol_manifest.json": "f01660e45e476f07d693eaee6e23ea5fbeb79de84b81e0284f0f143220b185e2",
+      "config.ini": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2",
+      "initialization_audit.json": "20a535722982f890fab12916f08b87eaf05a194c63606fb01fe95d7d803a2461",
+      "epoch_metrics.csv": "3ce9c9a74699b9509b7d5a0bed0a4325e6a57bce42e0b5f91bd909bb8da54586",
+      "best_predictions.csv": "ffa4a7a818c42c8ff31204e81c01870aaca19c47220f47cfcc4b45b42ff8cfe5",
+      "final_predictions.csv": "f9b1f33c710c659db5d850d8a614a573f2033ce5234ad296ef98b2bb4972d2c5",
+      "best_confusion_matrix.csv": "5979060638fcced66ffee433084087c9368079a5c92d980ae73abcc4971c6172",
+      "final_confusion_matrix.csv": "12d8057b07b4c4477100be0ead38ffbd6b45fa1bf50c1ff379ba07c4200b63df",
+      "checkpoint_best.pt": "a97ba46fe313227f36c63e104f778dfb9d00e9d2461572b36aa2a8ee32f46c24",
+      "checkpoint_epoch3.pt": "c3e66075ad6c7860f17b35255eae3691eade57cd96194a88b15cf195bf1fcf7b",
+      "auxiliary_metrics.json": "5e07ea29a1204cb7a27b5f578ff0267a13ab9d2d5189b0f2ba811bd060be0523",
+      "query_pool_diagnostics.json": "1c41a12c83b9d22ff9f27f063e712b049a4e2b8591d77e5e9b1580284e1ca408",
+      "anchor_diagnostics.json": "68a4e030856c31cf18ef79fa61b781ac0eacb71a353aa9b6781d5e51e52fd129",
+      "structure_audit_report.txt": "198af6c3a83e67a2cd198c1445b6384229205c433548544523d550aeaed32d53"
+    }
+  }
+}

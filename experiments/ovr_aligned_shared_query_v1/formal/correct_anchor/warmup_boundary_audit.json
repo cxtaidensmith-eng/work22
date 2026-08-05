@@ -1,0 +1,25 @@
+{
+  "observed": {
+    "epoch": 20,
+    "arm": "s2",
+    "anchor_active": false,
+    "anchor_initialized": true,
+    "anchor_updates": 1,
+    "model_state_hash": "492c9f992062a4e496b868d3776507dea483661f17cb4c927e0ec48acb2e5f5f",
+    "logits_hash": "55e592f3a94cd835019f98f671a4b2a9440d58ceb736010534e42616926aaf2a",
+    "ema_hash": "06f88e0116fb5f897cce2fe306c5ad7558e1db413637b9323351dc5d7a909387",
+    "optimizer_state_hash": "dd60cadc0d1736bb1101de5179f40e8a039d96b9c82841632da04e75c1c705f4",
+    "scheduler_state_hash": "e57bbf51f6fed8eca0732f5531d5ec4c24ceb1aef4b8f28902faf81d8bba9b7d"
+  },
+  "gates": {
+    "inactive": true,
+    "initialized": true,
+    "one_update": true,
+    "matches_s0_model_state_hash": true,
+    "matches_s0_logits_hash": true,
+    "matches_s0_ema_hash": true,
+    "matches_s0_optimizer_state_hash": true,
+    "matches_s0_scheduler_state_hash": true
+  },
+  "passed": true
+}

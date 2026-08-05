@@ -1,0 +1,53 @@
+OVR-Aligned Shared-Query Pool v1 — Fold0 Formal 400 Epoch Report
+日期：2026-08-05
+
+状态：S0、S1、S2 均完成 fold0 / seed0 / CUDA / 400 epoch 正式实验。
+
+一、固定实验条件
+dataset=TADPOLE; task=AD_CN_SMCI; fold=0; seed=0; epochs=400
+transductive full batch=True; single model=True; ensemble=False; hyperparameter search=False
+loss=main weighted CE + AD-rest + CN-rest + sMCI-rest; orthogonality=False
+fusion=concat category representation + unchanged Global add; DIFFormer unchanged; graph disabled
+optimizer=Adam; scheduler=CustomCosineAnnealingLR(T_max=400)
+best epoch=ACC > Macro-AUC > Macro-F1（历史探索性协议）
+EMA: epoch20首次更新，epoch21首次激活，epoch400 updates=381。
+
+二、lineage 与公平性
+baseline manifest SHA=78114ce1b9cdff40d2c00c9546cb92b79d446d6212b19c0567c989c43a17327d
+feature CSV SHA=2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042
+modal dict SHA=5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273
+fold manifest SHA=0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106
+fold0 split SHA=1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04
+candidate initial hash=5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2
+三个 arm 参数量、初始化、loss、数据、优化器与调度器完全相同。
+epoch20 model/logits/EMA/optimizer/scheduler hash 跨 arm 完全一致。
+
+三、正式结果
+Original Query baseline: best_epoch=111; ACC=0.9166666666666666; Macro-F1=0.8977763678660987; BACC=0.9153225806451614; Macro-AUC=0.9683234899447357; Weighted-F1=0.9167761865917399
+S0 S0 shared Query Pool without OVR anchor: best_epoch=111; ACC=0.9; Macro-F1=0.8898198575617929; BACC=0.8685355862775217; Macro-AUC=0.9570231734441969; Weighted-F1=0.8991341991341991; best_anchor_active=False; alpha=0.0
+S1 S1 shared Query Pool with cyclicly mismatched OVR anchors: best_epoch=49; ACC=0.9333333333333333; Macro-F1=0.9325542005420054; BACC=0.9158346134152585; Macro-AUC=0.9574450713563616; Weighted-F1=0.9332096883468834; best_anchor_active=True; alpha=0.008577508851885796
+S2 S2 shared Query Pool with correctly aligned OVR anchors: best_epoch=142; ACC=0.9166666666666666; Macro-F1=0.9026701119724375; BACC=0.8792882744495647; Macro-AUC=0.948469741851277; Weighted-F1=0.9155284852959272; best_anchor_active=True; alpha=-0.01172043476253748
+
+四、对照解释
+Original Query vs S0（共享池影响）: ΔACC(S0-Original)=-0.016667; ΔMacro-F1=-0.007957; ΔBACC=-0.046787; ΔMacro-AUC=-0.011300
+S0 vs S1（任意错配anchor影响）: ΔACC(S1-S0)=+0.033333; ΔMacro-F1=+0.042734; ΔBACC=+0.047299; ΔMacro-AUC=+0.000422
+S1 vs S2（正确类别对齐贡献）: ΔACC(S2-S1)=-0.016667; ΔMacro-F1=-0.029884; ΔBACC=-0.036546; ΔMacro-AUC=-0.008975
+S0 vs S2（完整OSFQ净变化）: ΔACC(S2-S0)=+0.016667; ΔMacro-F1=+0.012850; ΔBACC=+0.010753; ΔMacro-AUC=-0.008553
+
+五、机制判断边界
+correct alignment support under primary ACC criterion=False
+只有 S2 优于参数匹配 S1，且最佳点在激活后并有非零 anchor contribution，才支持正确 OVR 对齐贡献。
+若 Original Query 优于 S0/S2，说明共享整个 Query Pool 的容量损失仍然重要。
+本结果使用 test-fold best epoch，按既定历史协议仅作为探索性 fold0 证据，不是无偏泛化估计。
+
+六、完整性
+三个 arm 均18/18产物；两个自描述checkpoint均由唯一恢复函数复算，logits max_abs_diff=0。
+没有运行10-fold、多seed、ensemble或其他模型。
+
+七、最终研究判断
+1. 共享整个 Query Pool 的 S0 比 Original Query 低 1.67 个 ACC 百分点，并且 BACC、Macro-AUC 同时下降；三个独立 Query Pool 的表示容量仍有贡献，不能只把 baseline 优势归因于三个 query token。
+2. S1 错配 anchor 取得最高 ACC/Macro-F1，S2 正确 anchor 反而比 S1 低 1.67 个 ACC 百分点、2.99 个 Macro-F1 百分点和 0.90 个 Macro-AUC 百分点。因此本实验不支持“正确 OVR 判别方向形成了有效类别语义绑定”。
+3. S1 相对 S0 的提升说明 class-dependent query perturbation 可能具有优化或正则化作用；由于错配映射同样甚至更有效，该提升不能解释为类别对应关系正确。
+4. S2 最佳 alpha=-0.011720，表示最佳点使用了定义方向的反向；这进一步削弱“正确方向被模型采用”的机制解释。共享的有符号 alpha 仍存在方向翻转歧义。
+5. S1 虽在 ACC、Macro-F1 和 Weighted-F1 上超过 Original Query，但 Macro-AUC 仍低约 0.0109；且结果仅来自历史 test-fold best-epoch 的单个 fold0，不能据此替代十折 baseline 或宣称泛化提升。
+6. 建议当前 OSFQ-ID 路线停止扩展，不立即运行10-fold。若以后继续，首先需要解决可辨识性，例如预注册非负 alpha 并增加参数匹配的随机方向对照；这属于新实验，当前未实现。

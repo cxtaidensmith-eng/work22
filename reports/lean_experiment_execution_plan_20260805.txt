@@ -1,0 +1,271 @@
+当前项目实验提速方案：思考完整，执行精简
+日期：2026-08-05
+
+状态：只完成流程分析；没有修改模型、Loss 或实验代码，也没有启动训练。
+
+==================================================
+一、为什么过去感觉很慢
+==================================================
+
+当前主要问题不是 GPU 训练速度，而是把探索性实验按最终论文归档的强度执行了。
+
+项目内已有实测：
+
+- OSFQ 3 epoch smoke：每个 arm 约 1.82–2.02 秒。
+- OSFQ 400 epoch：三个 arm 分别约 62.52、66.15、73.16 秒，总训练循环约 201.83 秒。
+- Query baseline 十折：约 60.27–62.81 秒/折，总训练约 10.3 分钟。
+- 较重的 Selective Boundary 实验：约 105–116 秒/折。
+
+因此耗时主要来自：
+
+1. 每个候选一开始就同时实现多个对照，并全部跑满 400 epoch。
+2. 每个实验重复执行相同的 CUDA、数据、split、初始化和 checkpoint 审计。
+3. 每个 epoch 都计算训练集和测试集完整指标、auxiliary 指标、branch/query 相似度、多个梯度范数和全参数 finite 检查。
+4. 每个 epoch 多次把 GPU 标量或张量同步到 CPU；小模型训练时，这类同步的相对开销会很明显。
+5. 每个 epoch 都构造 prediction rows 和大型诊断对象，但最终真正使用的通常只有 best epoch。
+6. 同一信息重复保存在 summary、manifest、audit、diagnostics、report 等多个文件。
+7. smoke test 也生成接近 formal run 的完整产物。
+8. 每一折、每一阶段都停下来等待人工确认，造成大量流程往返。
+9. 过去的 120 秒外部命令时限会终止本来正常的长批次，之后还要归档残缺目录、重新分折启动。
+
+==================================================
+二、以后采用“轻量探索 + 完整验证”两级制度
+==================================================
+
+原则：研究问题要在训练前想完整，但不是每个想法都立即获得论文级审计和十折结果。
+
+A级：轻量探索，用于判断方向是否值得继续。
+
+- 一个主候选先行。
+- 3 epoch smoke。
+- 通过后只跑 fold0 / seed0 / 400 epoch。
+- 使用历史 baseline，不重复训练已有 baseline。
+- 只生成核心产物和一次最终 TXT。
+- 对照实验按结果触发，不提前全部运行。
+
+B级：完整验证，只用于已经通过 fold0 门禁的最终候选。
+
+- 补齐论文需要的关键消融。
+- 只让一个胜者进入 10-fold single-seed。
+- 最终生成 OOF、聚合指标和论文报告。
+- 不再让所有探索版本都跑十折。
+
+==================================================
+三、哪些内容绝对不能压缩
+==================================================
+
+为保持历史可比性，以下内容保留：
+
+- TADPOLE / AD_CN_SMCI。
+- transductive full-batch 范式。
+- CUDA。
+- fold0、seed0、400 epoch 的候选门禁。
+- fresh model、criterion、optimizer、scheduler。
+- 原数据划分、Loss、optimizer、scheduler。
+- 历史 best epoch 规则：ACC > Macro-AUC > Macro-F1。
+- 每 epoch 计算 best 选择所需的测试集核心指标。
+- best checkpoint、best predictions、confusion matrix。
+- 新结构第一次使用时的参数量、初始化和梯度检查。
+- 最终胜者的十折验证。
+
+不采用 AMP、torch.compile、降低 epoch 数或改变 scheduler 来制造表面提速，因为这些会改变历史比较条件，且对当前小型 full-batch 模型未必有净收益。
+
+==================================================
+四、哪些内容可以安全压缩
+==================================================
+
+1. 一次性检查，不再每个 arm 重复
+
+同一实验家族、同一代码版本下，只在 suite 开始时检查一次：
+
+- 数据文件和 split hash；
+- CUDA、模型、输入和 criterion device；
+- 公共模块初始化 hash；
+- checkpoint 保存/回读与 logits 一致性；
+- runner 输出目录结构；
+- 公共模块完整梯度路径。
+
+只有模型、Loss、split 或 checkpoint 实现发生相关变化时才重做对应检查。
+
+2. 每 epoch 只保留轻量内容
+
+每个 epoch 只执行和记录：
+
+- train forward/backward/update；
+- eval forward；
+- test ACC、Macro-F1、BACC、Macro-AUC、Weighted-F1；
+- train/test loss、learning rate；
+- loss/logits 是否 finite。
+
+只把 logits 一次性搬到 CPU，再统一计算指标，避免多次 GPU→CPU 同步。
+
+3. 重诊断改为稀疏采样
+
+attention、branch similarity、auxiliary ACC/AUC、梯度范数、参数 update norm 等，只在以下位置记录：
+
+- epoch 1；
+- epoch 100；
+- epoch 200；
+- epoch 300；
+- epoch 400；
+- 训练结束后重新载入 best checkpoint，再做一次完整诊断。
+
+不再每 epoch 保存完整 query/branch/anchor 诊断。
+
+4. 精简 best 处理
+
+- 每 epoch 仍按历史规则选择 best。
+- 只有 score 真正改善时更新 best state。
+- prediction CSV 只在训练结束时由 best checkpoint 生成一次。
+- 不在每 epoch 构造 prediction rows。
+
+5. 精简 hash 和完整性检查
+
+- source/config/split hash 只在训练开始和结束各检查一次。
+- 不再每 25 epoch 重算全部源码 hash。
+- 每个 arm 只做一次 best checkpoint 回读验证。
+- 探索阶段不需要 authorization receipt、多层 manifest、自描述 checkpoint 双重审计或 18/18 产物门禁。
+
+6. 精简输出文件
+
+fold0 探索实验默认只保存：
+
+- config.ini 或 config.json
+- summary.json
+- epoch_metrics.csv
+- best_predictions.csv
+- best_confusion_matrix.csv
+- checkpoint_best.pt
+- best_diagnostics.json
+- final_report.txt
+
+默认不保存：
+
+- epoch400 checkpoint；
+- final_predictions.csv；
+- final_confusion_matrix.csv；
+- 每 epoch 大型 diagnostics JSON；
+- 内容重复的 structure、checkpoint、manifest 和 receipt 报告。
+
+如果某个研究问题明确依赖 epoch400 状态，再单独保留相应文件。
+
+==================================================
+五、精简后的执行漏斗
+==================================================
+
+第 0 层：训练前思考
+
+每个想法先回答：
+
+- 唯一研究变量是什么？
+- 现有结果是否已经回答？
+- 成功和失败是否都有清晰解释？
+- 最少需要哪个对照？
+- 什么结果会立即停止该方向？
+
+只生成一个计划 TXT，不生成多份重复审计。
+
+第 1 层：3 epoch smoke
+
+只检查：
+
+- forward/shape；
+- loss finite；
+- 新改模块和必要公共模块有梯度；
+- 参数量；
+- CUDA device；
+- checkpoint 一次保存/回读；
+- 无 NaN/Inf。
+
+Smoke 不用于判断性能，不生成完整预测和逐 epoch 机制报告。
+
+第 2 层：fold0 / seed0 / 400 epoch
+
+- 只运行主候选。
+- 不重跑已有 baseline。
+- 一次命令完成训练、聚合和 TXT。
+- 不在 arm 之间反复人工确认。
+
+晋级条件：
+
+- ACC 至少处于 baseline 一个测试样本以内；
+- 且 Macro-F1、BACC 或 Macro-AUC 有合理补偿；
+- 没有类别塌缩、梯度异常或只出现在极早 epoch 的偶然峰值；
+- 改善与研究假设一致。
+
+若 ACC 至少下降一个样本且所有次要指标都没有补偿改善，立即停止该候选。
+
+第 3 层：触发式机制对照
+
+- 主候选成功：只补论文解释所必需的一个对照。
+- 主候选失败但结果指向镜像机制：再运行镜像对照。
+- 主候选明确失败且没有机制线索：停止，不继续补全所有组合。
+- 只有结果仍不可辨识时才补第四个因子控制。
+
+第 4 层：10-fold
+
+- 只运行一个最终胜者。
+- 复用现有 Query baseline 10-fold，不重新训练 baseline。
+- fold0 可保留完整机制诊断；fold1–9 只保留性能、预测、best epoch 和必要 checkpoint。
+- 10 folds 完成后聚合一次，不生成 partial aggregate。
+- 外层控制器自动按折运行；任一折失败则停止，但不要求每折人工确认。
+- 每折仍从 epoch1 fresh 训练，不做折内 resume。
+
+==================================================
+六、下一阶段 Query Pool 实验如何具体精简
+==================================================
+
+原完整计划是同时实现并正式运行 A、B、C 三个新 arm。为节省时间，改为触发式顺序：
+
+第一优先，只运行主候选 A：
+
+Private Query ×3 + Shared Attention + Private FFN ×3。
+
+原因：已有审计显示 attention 平均分布接近均匀，而 OVR auxiliary 直接监督最终 branch 输出，因此类别特化更可能主要形成在 private FFN。
+
+执行：
+
+1. 独立分支/worktree。
+2. A 的一次结构与初始化审计。
+3. A 的 3 epoch smoke。
+4. 人工确认一次。
+5. A 的 fold0 / seed0 / 400 epoch。
+
+结果触发：
+
+- A 接近或超过 Original：再运行 B（Private Attention + Shared FFN），用于定位机制；C 只在 A/B 仍无法解释时运行。
+- A 明显下降：运行 B，检查 private Attention 是否关键。
+- A、B 都明显下降：停止组件共享路线，不再运行 C。
+- A/B 都接近 Original：再运行 C，确认三个 private Query 是否足以支撑共享 body。
+
+这样第一轮只付出一个新模型约 1–2 分钟的 GPU 正式训练，而不是预先支付三个 arm 的全部时间。完整 2×2 仍保留为科学解释框架，但按结果逐步触发。
+
+==================================================
+七、预期收益
+==================================================
+
+近期 OSFQ 三个正式 arm 的训练循环约 3.36 分钟。采用新流程后：
+
+- 单个 3 epoch smoke 仍约 2 秒；
+- 第一轮只跑一个 fold0 候选，GPU 训练预计约 1–2 分钟；
+- 去掉逐 epoch 重诊断后，墙钟时间预计进一步下降，但需以一次实际 profile 为准，不预先承诺固定百分比；
+- 最大收益来自少跑无效 arm、少做重复审计，以及避免外部 120 秒终止后的返工；
+- 只有最终胜者承担约 10–20 分钟级别的十折验证。
+
+==================================================
+八、今后的默认工作方式
+==================================================
+
+除非用户明确要求严格归档，以后默认：
+
+1. 思考完整，报告简洁。
+2. 一个主候选先行，对照按结果触发。
+3. 初始化/结构审计每个实验家族做一次。
+4. smoke 只验证可训练性。
+5. fold0 只保存核心产物。
+6. 重诊断稀疏采样并在 best checkpoint 集中计算。
+7. 不重复训练已有 baseline。
+8. 只让最终胜者进入十折。
+9. 每次交付一个 TXT，避免多份重复报告。
+
+该方案不会牺牲主要实验协议和历史可比性，压缩的是重复检查、无效候选、逐 epoch 重诊断与冗余文件。

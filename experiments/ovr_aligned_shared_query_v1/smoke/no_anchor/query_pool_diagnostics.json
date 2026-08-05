@@ -1,0 +1,409 @@
+{
+  "definition": "one shared Per_Label_Pool called three times; OVR heads remain independent",
+  "forced_path_audit": {
+    "no_anchor": {
+      "effective_query_hash": "157535e2c4262eed33ea0a58ace27c7099830dea7a769c7b495b5ca9eda1cc43",
+      "pairwise": {
+        "norms": [
+          0.1899642050266266,
+          0.1899642050266266,
+          0.1899642050266266
+        ],
+        "cosine_matrix": [
+          [
+            0.9999999403953552,
+            0.9999999403953552,
+            0.9999999403953552
+          ],
+          [
+            0.9999999403953552,
+            0.9999999403953552,
+            0.9999999403953552
+          ],
+          [
+            0.9999999403953552,
+            0.9999999403953552,
+            0.9999999403953552
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.9999999403953552,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.9999999403953552,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.9999999403953552,
+            "l2": 0.0
+          }
+        }
+      },
+      "anchor_active": false
+    },
+    "wrong_anchor": {
+      "effective_query_hash": "e4946c0558660ff06dbd621482bfc8868271580e18586e65eebd4a671e08f22a",
+      "pairwise": {
+        "norms": [
+          0.22451011836528778,
+          0.2022525817155838,
+          0.21667544543743134
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            0.6973129510879517,
+            0.6877673864364624
+          ],
+          [
+            0.6973129510879517,
+            1.0,
+            0.6420984864234924
+          ],
+          [
+            0.6877673864364624,
+            0.6420984864234924,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.6973129510879517,
+            "l2": 0.16728442907333374
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.6877673864364624,
+            "l2": 0.1744677871465683
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.6420984864234924,
+            "l2": 0.17769855260849
+          }
+        }
+      },
+      "anchor_active": true
+    },
+    "correct_anchor": {
+      "effective_query_hash": "08be6dde83dade113b2b1481fefc3389a38a8bf753eed3988c7dbfd92b14ce6a",
+      "pairwise": {
+        "norms": [
+          0.21667544543743134,
+          0.22451011836528778,
+          0.2022525817155838
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            0.6877673864364624,
+            0.6420984864234924
+          ],
+          [
+            0.6877673864364624,
+            1.0,
+            0.6973129510879517
+          ],
+          [
+            0.6420984864234924,
+            0.6973129510879517,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 0.6877673864364624,
+            "l2": 0.1744677871465683
+          },
+          "AD_vs_SMCI": {
+            "cosine": 0.6420984864234924,
+            "l2": 0.17769855260849
+          },
+          "CN_vs_SMCI": {
+            "cosine": 0.6973129510879517,
+            "l2": 0.16728442907333374
+          }
+        }
+      },
+      "anchor_active": true
+    },
+    "gates": {
+      "no_anchor_queries_identical": true,
+      "wrong_differs_from_correct": true,
+      "no_differs_from_wrong": true,
+      "no_differs_from_correct": true,
+      "state_restored": true
+    },
+    "passed": true
+  },
+  "best_epoch": 1,
+  "epochs": [
+    {
+      "epoch": 1,
+      "shared_pool_gradient_norm": 1.9219424724578857,
+      "shared_query_gradient_norm": 0.011871255934238434,
+      "alpha_gradient": 0.0,
+      "auxiliary_head_gradient_norms": {
+        "AD": 1.104926347732544,
+        "CN": 0.6240825057029724,
+        "SMCI": 0.6466667056083679
+      },
+      "readout_output_gradient_norms": {
+        "AD": 0.024073615670204163,
+        "CN": 0.02276313491165638,
+        "SMCI": 0.025000479072332382
+      },
+      "effective_queries": {
+        "norms": [
+          0.20341265201568604,
+          0.20341265201568604,
+          0.20341265201568604
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "readout_representation_similarity": {
+        "matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "mean": 1.0,
+            "std": 7.663897605425518e-08
+          },
+          "AD_vs_SMCI": {
+            "mean": 1.0,
+            "std": 7.663897605425518e-08
+          },
+          "CN_vs_SMCI": {
+            "mean": 1.0,
+            "std": 7.663897605425518e-08
+          }
+        },
+        "off_diagonal_mean": 1.0,
+        "off_diagonal_std": 7.330181972520222e-08
+      }
+    },
+    {
+      "epoch": 2,
+      "shared_pool_gradient_norm": 2.9543991088867188,
+      "shared_query_gradient_norm": 0.0034237627405673265,
+      "alpha_gradient": 0.0,
+      "auxiliary_head_gradient_norms": {
+        "AD": 1.2355290651321411,
+        "CN": 1.7528102397918701,
+        "SMCI": 1.4960534572601318
+      },
+      "readout_output_gradient_norms": {
+        "AD": 0.009011702612042427,
+        "CN": 0.01068906206637621,
+        "SMCI": 0.010456353425979614
+      },
+      "effective_queries": {
+        "norms": [
+          0.22944611310958862,
+          0.22944611310958862,
+          0.22944611310958862
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "readout_representation_similarity": {
+        "matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "mean": 1.0,
+            "std": 7.657855150000614e-08
+          },
+          "AD_vs_SMCI": {
+            "mean": 1.0,
+            "std": 7.657855150000614e-08
+          },
+          "CN_vs_SMCI": {
+            "mean": 1.0,
+            "std": 7.657855150000614e-08
+          }
+        },
+        "off_diagonal_mean": 1.0,
+        "off_diagonal_std": 7.26855802213322e-08
+      }
+    },
+    {
+      "epoch": 3,
+      "shared_pool_gradient_norm": 10.527491569519043,
+      "shared_query_gradient_norm": 0.007822765968739986,
+      "alpha_gradient": 0.0,
+      "auxiliary_head_gradient_norms": {
+        "AD": 2.5053203105926514,
+        "CN": 8.274398803710938,
+        "SMCI": 6.448637008666992
+      },
+      "readout_output_gradient_norms": {
+        "AD": 0.009802587330341339,
+        "CN": 0.030014242976903915,
+        "SMCI": 0.026587743312120438
+      },
+      "effective_queries": {
+        "norms": [
+          0.24588575959205627,
+          0.24588575959205627,
+          0.24588575959205627
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "AD_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          },
+          "CN_vs_SMCI": {
+            "cosine": 1.0,
+            "l2": 0.0
+          }
+        }
+      },
+      "readout_representation_similarity": {
+        "matrix": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "pairs": {
+          "AD_vs_CN": {
+            "mean": 1.0,
+            "std": 6.971419708179383e-08
+          },
+          "AD_vs_SMCI": {
+            "mean": 1.0,
+            "std": 6.971419708179383e-08
+          },
+          "CN_vs_SMCI": {
+            "mean": 1.0,
+            "std": 6.971419708179383e-08
+          }
+        },
+        "off_diagonal_mean": 1.0,
+        "off_diagonal_std": 6.86265764215932e-08
+      }
+    }
+  ]
+}

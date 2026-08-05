@@ -1,0 +1,45 @@
+{
+  "unique_restore_function": "restore_and_validate_formal_checkpoint",
+  "best": {
+    "path": "checkpoint_best.pt",
+    "checkpoint_sha256": "5dd6aca691282d23752e064a585cdd9aa1471da15568bbe9960df934f05efd02",
+    "arm": "s1",
+    "epoch": 49,
+    "metadata_driven_restore": true,
+    "restored_anchor_active": true,
+    "restored_anchor_initialized": true,
+    "restored_anchor_updates": 30,
+    "state_hash_equal": true,
+    "max_abs_logit_diff": 0.0,
+    "metric_abs_deltas": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "macro_auc": 0.0,
+      "weighted_f1": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  },
+  "epoch400": {
+    "path": "checkpoint_epoch400.pt",
+    "checkpoint_sha256": "931b7b87ba9041ff7438371c64fe166b66787d7160a3d2b2259357d5cbc83bbe",
+    "arm": "s1",
+    "epoch": 400,
+    "metadata_driven_restore": true,
+    "restored_anchor_active": true,
+    "restored_anchor_initialized": true,
+    "restored_anchor_updates": 381,
+    "state_hash_equal": true,
+    "max_abs_logit_diff": 0.0,
+    "metric_abs_deltas": {
+      "acc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "macro_auc": 0.0,
+      "weighted_f1": 0.0
+    },
+    "confusion_matrix_equal": true,
+    "passed": true
+  }
+}

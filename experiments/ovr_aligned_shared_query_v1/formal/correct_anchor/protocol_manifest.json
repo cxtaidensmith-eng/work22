@@ -1,0 +1,311 @@
+{
+  "protocol_manifest_final_sha256": "61f248e125d917d27d632eb2f759aa3cf8836dcd90d3b2e00c984fc835a946ed",
+  "arm": "s2",
+  "definition": {
+    "directory": "correct_anchor",
+    "anchor_mode": "correct",
+    "label": "S2 shared Query Pool with correctly aligned OVR anchors"
+  },
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 400,
+    "single_model": true,
+    "ensemble": false,
+    "hyperparameter_search": false,
+    "transductive_full_batch": true,
+    "device": "cuda:0",
+    "semantic_branch": "both",
+    "semantic_fusion": "add",
+    "category_branch_fusion": "concat",
+    "adj_mode": "none",
+    "graph_use_graph": false,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "scheduler_eta_min": 0.0001,
+    "best_epoch_rule": [
+      "ACC",
+      "Macro-AUC",
+      "Macro-F1"
+    ],
+    "loss": "main weighted CE + AD-vs-rest CE + CN-vs-rest CE + SMCI-vs-rest CE",
+    "label_smoothing": 0.05,
+    "orthogonality_loss": false,
+    "ema_decay": 0.9,
+    "ema_first_update_epoch": 20,
+    "anchor_first_active_epoch": 21,
+    "expected_epoch400_ema_updates": 381,
+    "arm_order": [
+      "s0",
+      "s1",
+      "s2"
+    ],
+    "split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04"
+  },
+  "source_hashes": {
+    "Model/__init__.py": "8fc73c1f497ca54f67a136f7679ad4e89dc2323863cb7ccefb33d5eb37eb3ef7",
+    "Model/network.py": "46a5051290a130ed7ac40733fdd31b9659fe82fbb7f6b626a21240f3eb50e36d",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Model/layers.py": "76fb3b36f7ad493631f8f219d24ab5d96626d12d6d3d4a0943099138f4018f99",
+    "Loss/__init__.py": "93c6271e87060b56c2444c077947dc3b628dc4c69205260c38330da0a18891e6",
+    "Loss/loss_fn.py": "6044df95772c2a90c4ab6b9e74534dcb72553ca27f4a2006643563a284a3fc5a",
+    "Utils/__init__.py": "7955dd9ab3298d8e621c1597234d95c866b547732561ca7804e07456f5690993",
+    "Utils/utils.py": "c00cd037c74f4ece627846c24cf07d637dfb926031d1f54728374e5c8029d35d",
+    "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2",
+    "scripts/run_query_free_multibranch.py": "98eccad569894f99480dd3f37dd442d889fd63c425ccb92e082e370cf275c8c0",
+    "scripts/run_selective_boundary_fixed_10fold.py": "0ade4ac38fd0fff82cb8a31320db0d28114219d3c03ffc340f857273b60ceddd",
+    "scripts/run_query_baseline_gpu_10fold.py": "9f6423535b09fa83aaafbc1952c685a05fe941296efe1a3948eab4bcfb139e5e",
+    "scripts/run_osfq_id_v1.py": "3f1eb59009d75aa483781906d10c0b2ec65b1569b0d4bee01d7e3ac68681b0c9",
+    "scripts/run_osfq_id_v1_formal.py": "a2a9ba6c2e5f6b00efb9c3e2b471bacdf96a89d61207951e791e54e1fa4adc0e"
+  },
+  "lineage": {
+    "baseline_manifest": {
+      "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\protocol_manifest.json",
+      "file_sha256": "78114ce1b9cdff40d2c00c9546cb92b79d446d6212b19c0567c989c43a17327d",
+      "canonical_sha256": "930288891ead11b143c3485424c5f141cbcd69a3ec7e4a5d72bd7d8076398926"
+    },
+    "fold_manifest": {
+      "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\boundary_selective_fixed_mapping_10fold_seed0_v2\\formal\\fold_manifest.json",
+      "file_sha256": "0f8964a2009a3660d76c99fa9446f9147a51630083a79d11437a31544438c106",
+      "canonical_sha256": "be020ede2a03d59dbd5e8bbf715cb4d097f8398f9824c122521c3240e00b6515",
+      "assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9"
+    },
+    "feature_csv": {
+      "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\ovr_aligned_shared_query_v1\\DATASET\\TADPOLE\\AD_CN_SMCI_ADNI_processed_standard_data.csv",
+      "file_sha256": "2f8efe85c2154d785dc361bc60553c9d983ac1990cee13e38b935b4623787042"
+    },
+    "modal_dict": {
+      "absolute_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\ovr_aligned_shared_query_v1\\DATASET\\TADPOLE\\AD_CN_SMCI_ADNI_modal_feat_dict.npy",
+      "file_sha256": "5e72aa0b9268b54e3f447059a728eed96696c97f5783184ffb0c615102f90273"
+    },
+    "historical_protocol": {
+      "gates": {
+        "dataset": true,
+        "task": true,
+        "fold0_present": true,
+        "seed": true,
+        "epochs": true,
+        "single_model": true,
+        "no_ensemble": true,
+        "no_search": true,
+        "cuda": true,
+        "transductive": true,
+        "semantic_branch": true,
+        "semantic_fusion": true,
+        "category_fusion": true,
+        "adj_none": true,
+        "graph_disabled": true,
+        "optimizer": true,
+        "lr": true,
+        "weight_decay": true,
+        "scheduler": true,
+        "scheduler_t_max": true,
+        "scheduler_eta_min": true,
+        "logit_adjust_tau": true,
+        "best_epoch_rule": true,
+        "ovr_loss": true,
+        "label_smoothing": true,
+        "no_orthogonality": true
+      },
+      "passed": true
+    },
+    "generated_fold_identity": {
+      "sample_count": 598,
+      "sample_order_sha256": "7ef70c38282cd3c3fa2fa95f41d5d7dfd3ee456d7ac58a25f80e2d7c378df668",
+      "label_order_sha256": "40aa3114eeb832ce1b80a8706b47e50f99da7a48030d40560ef56164e109662a",
+      "test_fold_assignment_sha256": "8b9d2d49ac6f7100c08a9ca213fa62cb65eb4e725131112b17b7ae4baa16b4e9",
+      "fold_checks": [
+        {
+          "fold": 0,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 1,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 2,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 3,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 4,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 5,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 6,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 7,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 8,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        },
+        {
+          "fold": 9,
+          "gates": {
+            "fold": true,
+            "train_size": true,
+            "test_size": true,
+            "train_positions": true,
+            "test_positions": true,
+            "train_indices": true,
+            "test_indices": true,
+            "split_hash": true,
+            "train_mask_sha256": true,
+            "test_mask_sha256": true,
+            "disjoint": true,
+            "complementary": true
+          },
+          "passed": true
+        }
+      ],
+      "fold0_split_hash": "1adda8298733c24259acfa957378b356f52db9545ae9c40ef8889ee97bf3ff04",
+      "passed": true
+    },
+    "passed": true
+  }
+}

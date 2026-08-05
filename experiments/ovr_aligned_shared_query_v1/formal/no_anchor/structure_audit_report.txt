@@ -1,0 +1,23 @@
+OVR-Aligned Shared-Query Pool v1 — S0 Fold0 Formal 400 Epoch
+
+formal_passed=True
+arm=s0: S0 shared Query Pool without OVR anchor
+device=cuda:0; gpu=NVIDIA GeForce RTX 3050 Ti Laptop GPU
+parameters=703372; state_tensors=138
+initial_state_hash=5fe4022cbb7af16d2e0b54aa664528ab42710798014b4dd46a6932cdf75696a2
+common_tensor_count=134
+max_abs_diff=0.0
+loss=L_main + L_AD-rest + L_CN-rest + L_sMCI-rest
+EMA first update epoch=20
+anchor first active epoch=21
+epoch400 EMA updates=381
+best_epoch=111
+best_metrics={'acc': 0.9, 'macro_f1': 0.8898198575617929, 'bacc': 0.8685355862775217, 'macro_auc': 0.9570231734441969, 'weighted_f1': 0.8991341991341991, 'confusion_matrix': [[6, 0, 2], [0, 20, 1], [0, 3, 28]]}
+best_anchor_active=False
+best_post_activation_epoch=111
+best_post_activation_metrics={'acc': 0.9, 'macro_f1': 0.8898198575617929, 'bacc': 0.8685355862775217, 'macro_auc': 0.9570231734441969, 'weighted_f1': 0.8991341991341991, 'confusion_matrix': [[6, 0, 2], [0, 20, 1], [0, 3, 28]]}
+epoch400_metrics={'acc': 0.8333333333333334, 'macro_f1': 0.8167300238521169, 'bacc': 0.7843701996927804, 'macro_auc': 0.8867905194031446, 'weighted_f1': 0.8315248583780561, 'confusion_matrix': [[5, 0, 3], [0, 18, 3], [0, 4, 27]]}
+final_alpha=0.0
+final_anchor_contribution_norms=[0.0, 0.0, 0.0]
+checkpoint restore=self-described metadata; logits max_abs_diff=0
+No resume, ensemble, multi-seed, or hyperparameter search.
