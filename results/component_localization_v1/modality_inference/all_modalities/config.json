@@ -1,0 +1,5 @@
+{
+  "stage": "A",
+  "setting": "all_modalities",
+  "zero_is_standardized_mean": true
+}

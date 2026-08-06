@@ -1,0 +1,7 @@
+{
+  "stage": "D2",
+  "name": "Current Multimodal Encoder + best Stage B head",
+  "status": "reused_original",
+  "reason": "No Stage B frozen head exceeded Original",
+  "best_frozen_head": "residual_mlp"
+}

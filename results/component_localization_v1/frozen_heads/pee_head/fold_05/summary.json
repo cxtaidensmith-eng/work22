@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "name": "pee_head",
+  "fold": 5,
+  "best_epoch": 1,
+  "best_metrics": {
+    "correct": 56,
+    "acc": 0.9333333333333333,
+    "macro_f1": 0.9081699346405229,
+    "bacc": 0.873015873015873,
+    "macro_auc": 0.9704217973675521,
+    "weighted_f1": 0.9316830065359477,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        0,
+        0,
+        32
+      ]
+    ]
+  },
+  "parameter_count": 10040,
+  "elapsed_seconds": 14.637087099952623,
+  "train_size": 538,
+  "test_size": 60,
+  "config": {
+    "name": "pee_head",
+    "fold": 5,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  },
+  "member_diagnostics": {
+    "pairwise_prediction_disagreement": 0.008333333767950535,
+    "pairwise_probability_cosine": 0.9998762607574463,
+    "pairwise_symmetric_kl": 0.0002564977912697941
+  }
+}

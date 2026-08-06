@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "name": "sparse_residual_gcn",
+  "fold": 2,
+  "best_epoch": 22,
+  "best_metrics": {
+    "correct": 57,
+    "acc": 0.95,
+    "macro_f1": 0.9608711701734958,
+    "bacc": 0.9632936507936508,
+    "macro_auc": 0.9937678062678064,
+    "weighted_f1": 0.9501845699520117,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        2,
+        30
+      ]
+    ]
+  },
+  "parameter_count": 7348,
+  "elapsed_seconds": 11.10743479989469,
+  "train_size": 538,
+  "test_size": 60,
+  "config": {
+    "name": "sparse_residual_gcn",
+    "fold": 2,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  },
+  "gamma": 0.0,
+  "gamma_parameter": 0.0
+}

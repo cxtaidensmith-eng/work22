@@ -1,0 +1,639 @@
+{
+  "config": {
+    "stage": "B",
+    "name": "linear_probe",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "train_mask_only": true,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ]
+  },
+  "parameter_count": 291,
+  "elapsed_seconds": 81.83284789999016,
+  "metrics": {
+    "correct": 549,
+    "acc": 0.9180602006688964,
+    "macro_f1": 0.9035925350476232,
+    "bacc": 0.905087037288598,
+    "macro_auc": 0.9545046894382104,
+    "weighted_f1": 0.9181165705882021,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        195,
+        14
+      ],
+      [
+        11,
+        14,
+        292
+      ]
+    ]
+  },
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.8845873233014135,
+      "bacc": 0.8994495647721453,
+      "macro_auc": 0.9763750750958758,
+      "weighted_f1": 0.9003853169174647
+    },
+    {
+      "fold": 1,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9652613993710691,
+      "weighted_f1": 0.9512698412698413
+    },
+    {
+      "fold": 2,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9608711701734958,
+      "bacc": 0.9632936507936508,
+      "macro_auc": 0.9895006613756614,
+      "weighted_f1": 0.9501845699520117
+    },
+    {
+      "fold": 3,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9161500191350939,
+      "bacc": 0.8943452380952381,
+      "macro_auc": 0.978550766581427,
+      "weighted_f1": 0.9162246460007655
+    },
+    {
+      "fold": 4,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8558831856975285,
+      "bacc": 0.8308531746031745,
+      "macro_auc": 0.8721595763164158,
+      "weighted_f1": 0.9127735307203818
+    },
+    {
+      "fold": 5,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8815346345197091,
+      "bacc": 0.8625992063492064,
+      "macro_auc": 0.9722324212300627,
+      "weighted_f1": 0.9157759280520474
+    },
+    {
+      "fold": 6,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.9231884057971014,
+      "bacc": 0.9320436507936508,
+      "macro_auc": 0.9742922008547009,
+      "weighted_f1": 0.9010144927536231
+    },
+    {
+      "fold": 7,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.8946969696969697,
+      "bacc": 0.9320436507936508,
+      "macro_auc": 0.9752947633254236,
+      "weighted_f1": 0.9002651515151515
+    },
+    {
+      "fold": 8,
+      "correct": 51,
+      "acc": 0.864406779661017,
+      "macro_f1": 0.8403225806451613,
+      "bacc": 0.8617511520737327,
+      "macro_auc": 0.9515330924499006,
+      "weighted_f1": 0.8669491525423729
+    },
+    {
+      "fold": 9,
+      "correct": 57,
+      "acc": 0.9661016949152542,
+      "macro_f1": 0.9588141025641025,
+      "bacc": 0.9416666666666668,
+      "macro_auc": 0.9972139393391766,
+      "weighted_f1": 0.9658490873533245
+    }
+  ],
+  "fold_best_epochs": [
+    5,
+    62,
+    3,
+    44,
+    5,
+    20,
+    369,
+    77,
+    5,
+    101
+  ],
+  "fold_summaries": [
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 0,
+      "best_epoch": 5,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.8845873233014135,
+        "bacc": 0.8994495647721453,
+        "macro_auc": 0.9763750750958758,
+        "weighted_f1": 0.9003853169174647,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            2,
+            2,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 8.435539799975231,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 0,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 1,
+      "best_epoch": 62,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9174603174603174,
+        "bacc": 0.9315476190476191,
+        "macro_auc": 0.9652613993710691,
+        "weighted_f1": 0.9512698412698413,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            2,
+            0,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.948844800004736,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 1,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 2,
+      "best_epoch": 3,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9608711701734958,
+        "bacc": 0.9632936507936508,
+        "macro_auc": 0.9895006613756614,
+        "weighted_f1": 0.9501845699520117,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            2,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 8.268467099871486,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 2,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 3,
+      "best_epoch": 44,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9161500191350939,
+        "bacc": 0.8943452380952381,
+        "macro_auc": 0.978550766581427,
+        "weighted_f1": 0.9162246460007655,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.91335629997775,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 3,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 4,
+      "best_epoch": 5,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.8558831856975285,
+        "bacc": 0.8308531746031745,
+        "macro_auc": 0.8721595763164158,
+        "weighted_f1": 0.9127735307203818,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            3
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            0,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 8.05560990003869,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 4,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 5,
+      "best_epoch": 20,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.8815346345197091,
+        "bacc": 0.8625992063492064,
+        "macro_auc": 0.9722324212300627,
+        "weighted_f1": 0.9157759280520474,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            1,
+            0,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.781967699993402,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 5,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 6,
+      "best_epoch": 369,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.9231884057971014,
+        "bacc": 0.9320436507936508,
+        "macro_auc": 0.9742922008547009,
+        "weighted_f1": 0.9010144927536231,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            5,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.853157399920747,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 6,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 7,
+      "best_epoch": 77,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.8946969696969697,
+        "bacc": 0.9320436507936508,
+        "macro_auc": 0.9752947633254236,
+        "weighted_f1": 0.9002651515151515,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            2,
+            3,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.697108400054276,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "linear_probe",
+        "fold": 7,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 8,
+      "best_epoch": 5,
+      "best_metrics": {
+        "correct": 51,
+        "acc": 0.864406779661017,
+        "macro_f1": 0.8403225806451613,
+        "bacc": 0.8617511520737327,
+        "macro_auc": 0.9515330924499006,
+        "weighted_f1": 0.8669491525423729,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            3,
+            1,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.435762600041926,
+      "train_size": 539,
+      "test_size": 59,
+      "config": {
+        "name": "linear_probe",
+        "fold": 8,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "linear_probe",
+      "fold": 9,
+      "best_epoch": 101,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.9661016949152542,
+        "macro_f1": 0.9588141025641025,
+        "bacc": 0.9416666666666668,
+        "macro_auc": 0.9972139393391766,
+        "weighted_f1": 0.9658490873533245,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            1
+          ],
+          [
+            0,
+            0,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 291,
+      "elapsed_seconds": 7.556893200147897,
+      "train_size": 539,
+      "test_size": 59,
+      "config": {
+        "name": "linear_probe",
+        "fold": 9,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    }
+  ]
+}

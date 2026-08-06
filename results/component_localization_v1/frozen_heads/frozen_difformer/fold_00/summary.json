@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "name": "frozen_difformer",
+  "fold": 0,
+  "best_epoch": 144,
+  "best_metrics": {
+    "correct": 55,
+    "acc": 0.9166666666666666,
+    "macro_f1": 0.8908594138102335,
+    "bacc": 0.8844086021505376,
+    "macro_auc": 0.9459201746117764,
+    "weighted_f1": 0.9150745156482861,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        2
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        1,
+        2,
+        28
+      ]
+    ]
+  },
+  "parameter_count": 19203,
+  "elapsed_seconds": 13.656386699993163,
+  "train_size": 538,
+  "test_size": 60,
+  "config": {
+    "name": "frozen_difformer",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  }
+}

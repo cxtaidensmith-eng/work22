@@ -1,0 +1,5 @@
+{
+  "stage": "A",
+  "setting": "without_COG",
+  "zero_is_standardized_mean": true
+}

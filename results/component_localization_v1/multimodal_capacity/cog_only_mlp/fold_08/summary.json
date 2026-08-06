@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "name": "raw_mlp",
+  "fold": 8,
+  "best_epoch": 209,
+  "best_metrics": {
+    "correct": 52,
+    "acc": 0.8813559322033898,
+    "macro_f1": 0.8351851851851851,
+    "bacc": 0.840757808499744,
+    "macro_auc": 0.9749627376961841,
+    "weighted_f1": 0.8842749529190206,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        3,
+        0,
+        28
+      ]
+    ]
+  },
+  "parameter_count": 7395,
+  "elapsed_seconds": 8.714364899788052,
+  "train_size": 539,
+  "test_size": 59,
+  "config": {
+    "name": "raw_mlp",
+    "fold": 8,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  }
+}

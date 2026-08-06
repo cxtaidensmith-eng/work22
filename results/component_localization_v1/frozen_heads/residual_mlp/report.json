@@ -1,0 +1,639 @@
+{
+  "config": {
+    "stage": "B",
+    "name": "residual_mlp",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "train_mask_only": true,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ]
+  },
+  "parameter_count": 14451,
+  "elapsed_seconds": 102.89804730005562,
+  "metrics": {
+    "correct": 554,
+    "acc": 0.9264214046822743,
+    "macro_f1": 0.9108704805065937,
+    "bacc": 0.9083966707866757,
+    "macro_auc": 0.9470486491521594,
+    "weighted_f1": 0.9262814344259537,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        9,
+        13,
+        295
+      ]
+    ]
+  },
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.8681818181818182,
+      "bacc": 0.8736559139784946,
+      "macro_auc": 0.9700471864682099,
+      "weighted_f1": 0.8990909090909092
+    },
+    {
+      "fold": 1,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9560590745732255,
+      "weighted_f1": 0.9512698412698413
+    },
+    {
+      "fold": 2,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9608711701734958,
+      "bacc": 0.9632936507936508,
+      "macro_auc": 0.9877804487179488,
+      "weighted_f1": 0.9501845699520117
+    },
+    {
+      "fold": 3,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9161500191350939,
+      "bacc": 0.8943452380952381,
+      "macro_auc": 0.9749082209282681,
+      "weighted_f1": 0.9162246460007655
+    },
+    {
+      "fold": 4,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.8813529846528412,
+      "bacc": 0.8412698412698413,
+      "macro_auc": 0.9451458362130533,
+      "weighted_f1": 0.9282726837963566
+    },
+    {
+      "fold": 5,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9081699346405229,
+      "bacc": 0.873015873015873,
+      "macro_auc": 0.9348702758195683,
+      "weighted_f1": 0.9316830065359477
+    },
+    {
+      "fold": 6,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.9222873900293256,
+      "bacc": 0.9265873015873015,
+      "macro_auc": 0.9825593966218967,
+      "weighted_f1": 0.9006598240469208
+    },
+    {
+      "fold": 7,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.8946969696969697,
+      "bacc": 0.9320436507936508,
+      "macro_auc": 0.9585000571144439,
+      "weighted_f1": 0.9002651515151515
+    },
+    {
+      "fold": 8,
+      "correct": 54,
+      "acc": 0.9152542372881356,
+      "macro_f1": 0.8806661411115492,
+      "bacc": 0.9093701996927804,
+      "macro_auc": 0.9553489803914254,
+      "weighted_f1": 0.9175340553035415
+    },
+    {
+      "fold": 9,
+      "correct": 57,
+      "acc": 0.9661016949152542,
+      "macro_f1": 0.9588141025641025,
+      "bacc": 0.9416666666666668,
+      "macro_auc": 0.9984149573808018,
+      "weighted_f1": 0.9658490873533245
+    }
+  ],
+  "fold_best_epochs": [
+    1,
+    1,
+    322,
+    10,
+    105,
+    1,
+    12,
+    7,
+    23,
+    15
+  ],
+  "fold_summaries": [
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 0,
+      "best_epoch": 1,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.8681818181818182,
+        "bacc": 0.8736559139784946,
+        "macro_auc": 0.9700471864682099,
+        "weighted_f1": 0.8990909090909092,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            2,
+            2,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.171150399837643,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 0,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 1,
+      "best_epoch": 1,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9174603174603174,
+        "bacc": 0.9315476190476191,
+        "macro_auc": 0.9560590745732255,
+        "weighted_f1": 0.9512698412698413,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            2,
+            0,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 9.760037199826911,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 1,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 2,
+      "best_epoch": 322,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9608711701734958,
+        "bacc": 0.9632936507936508,
+        "macro_auc": 0.9877804487179488,
+        "weighted_f1": 0.9501845699520117,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            2,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 9.953938600141555,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 2,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 3,
+      "best_epoch": 10,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9161500191350939,
+        "bacc": 0.8943452380952381,
+        "macro_auc": 0.9749082209282681,
+        "weighted_f1": 0.9162246460007655,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 9.65591589990072,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 3,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 4,
+      "best_epoch": 105,
+      "best_metrics": {
+        "correct": 56,
+        "acc": 0.9333333333333333,
+        "macro_f1": 0.8813529846528412,
+        "bacc": 0.8412698412698413,
+        "macro_auc": 0.9451458362130533,
+        "weighted_f1": 0.9282726837963566,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            3
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.660370199941099,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 4,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 5,
+      "best_epoch": 1,
+      "best_metrics": {
+        "correct": 56,
+        "acc": 0.9333333333333333,
+        "macro_f1": 0.9081699346405229,
+        "bacc": 0.873015873015873,
+        "macro_auc": 0.9348702758195683,
+        "weighted_f1": 0.9316830065359477,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            0,
+            32
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 9.95303210010752,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 5,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 6,
+      "best_epoch": 12,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.9222873900293256,
+        "bacc": 0.9265873015873015,
+        "macro_auc": 0.9825593966218967,
+        "weighted_f1": 0.9006598240469208,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            4,
+            28
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.675934999948367,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 6,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 7,
+      "best_epoch": 7,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9,
+        "macro_f1": 0.8946969696969697,
+        "bacc": 0.9320436507936508,
+        "macro_auc": 0.9585000571144439,
+        "weighted_f1": 0.9002651515151515,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            2,
+            3,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.520989400101826,
+      "train_size": 538,
+      "test_size": 60,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 7,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 8,
+      "best_epoch": 23,
+      "best_metrics": {
+        "correct": 54,
+        "acc": 0.9152542372881356,
+        "macro_f1": 0.8806661411115492,
+        "bacc": 0.9093701996927804,
+        "macro_auc": 0.9553489803914254,
+        "weighted_f1": 0.9175340553035415,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            3,
+            1,
+            27
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.674012399977073,
+      "train_size": 539,
+      "test_size": 59,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 8,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    },
+    {
+      "passed": true,
+      "name": "residual_mlp",
+      "fold": 9,
+      "best_epoch": 15,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.9661016949152542,
+        "macro_f1": 0.9588141025641025,
+        "bacc": 0.9416666666666668,
+        "macro_auc": 0.9984149573808018,
+        "weighted_f1": 0.9658490873533245,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            1
+          ],
+          [
+            0,
+            0,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 14451,
+      "elapsed_seconds": 10.571948199998587,
+      "train_size": 539,
+      "test_size": 59,
+      "config": {
+        "name": "residual_mlp",
+        "fold": 9,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "label_smoothing": 0.05,
+        "logit_adjust_tau": 0.75
+      }
+    }
+  ]
+}

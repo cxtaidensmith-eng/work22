@@ -1,0 +1,132 @@
+{
+  "config": {
+    "stage": "D2",
+    "name": "Current Multimodal Encoder + best Stage B head",
+    "status": "reused_original",
+    "reason": "No Stage B frozen head exceeded Original",
+    "best_frozen_head": "residual_mlp"
+  },
+  "parameter_count": 853131,
+  "elapsed_seconds": 0.0,
+  "metrics": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9560490697782983,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8977763678660987,
+      "bacc": 0.9153225806451614,
+      "macro_auc": 0.9657238965150534,
+      "weighted_f1": 0.9167761865917399
+    },
+    {
+      "fold": 1,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9718595575022463,
+      "weighted_f1": 0.9512698412698413
+    },
+    {
+      "fold": 2,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9608711701734958,
+      "bacc": 0.9632936507936508,
+      "macro_auc": 0.9926867114367114,
+      "weighted_f1": 0.9501845699520117
+    },
+    {
+      "fold": 3,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9291101055806937,
+      "bacc": 0.9047619047619048,
+      "macro_auc": 0.9574998344161081,
+      "weighted_f1": 0.9327300150829563
+    },
+    {
+      "fold": 4,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.8813529846528412,
+      "bacc": 0.8412698412698413,
+      "macro_auc": 0.9401831789803489,
+      "weighted_f1": 0.9282726837963566
+    },
+    {
+      "fold": 5,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8815346345197091,
+      "bacc": 0.8625992063492064,
+      "macro_auc": 0.9748578858248669,
+      "weighted_f1": 0.9157759280520474
+    },
+    {
+      "fold": 6,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9347852836224929,
+      "bacc": 0.9370039682539683,
+      "macro_auc": 0.986791564916565,
+      "weighted_f1": 0.916974283253353
+    },
+    {
+      "fold": 7,
+      "correct": 54,
+      "acc": 0.9,
+      "macro_f1": 0.8946969696969697,
+      "bacc": 0.9320436507936508,
+      "macro_auc": 0.9496151614370953,
+      "weighted_f1": 0.9002651515151515
+    },
+    {
+      "fold": 8,
+      "correct": 54,
+      "acc": 0.9152542372881356,
+      "macro_f1": 0.8806661411115492,
+      "bacc": 0.9093701996927804,
+      "macro_auc": 0.9323329000748357,
+      "weighted_f1": 0.9175340553035415
+    },
+    {
+      "fold": 9,
+      "correct": 57,
+      "acc": 0.9661016949152542,
+      "macro_f1": 0.9588141025641025,
+      "bacc": 0.9416666666666668,
+      "macro_auc": 0.9934226378723533,
+      "weighted_f1": 0.9658490873533245
+    }
+  ],
+  "status": "reused_original",
+  "reason": "No Stage B frozen head exceeded Original",
+  "best_head": "residual_mlp",
+  "encoder_retrained": false
+}

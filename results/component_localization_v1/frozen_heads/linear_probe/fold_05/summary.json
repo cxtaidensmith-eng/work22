@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "name": "linear_probe",
+  "fold": 5,
+  "best_epoch": 20,
+  "best_metrics": {
+    "correct": 55,
+    "acc": 0.9166666666666666,
+    "macro_f1": 0.8815346345197091,
+    "bacc": 0.8625992063492064,
+    "macro_auc": 0.9722324212300627,
+    "weighted_f1": 0.9157759280520474,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        1,
+        0,
+        31
+      ]
+    ]
+  },
+  "parameter_count": 291,
+  "elapsed_seconds": 7.781967699993402,
+  "train_size": 538,
+  "test_size": 60,
+  "config": {
+    "name": "linear_probe",
+    "fold": 5,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  }
+}

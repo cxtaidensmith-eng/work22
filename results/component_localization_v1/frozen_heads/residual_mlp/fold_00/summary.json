@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "name": "residual_mlp",
+  "fold": 0,
+  "best_epoch": 1,
+  "best_metrics": {
+    "correct": 54,
+    "acc": 0.9,
+    "macro_f1": 0.8681818181818182,
+    "bacc": 0.8736559139784946,
+    "macro_auc": 0.9700471864682099,
+    "weighted_f1": 0.8990909090909092,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        2
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        2,
+        2,
+        27
+      ]
+    ]
+  },
+  "parameter_count": 14451,
+  "elapsed_seconds": 10.171150399837643,
+  "train_size": 538,
+  "test_size": 60,
+  "config": {
+    "name": "residual_mlp",
+    "fold": 0,
+    "seed": 0,
+    "epochs": 400,
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75
+  }
+}

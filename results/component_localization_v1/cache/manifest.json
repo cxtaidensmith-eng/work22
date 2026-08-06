@@ -1,0 +1,44 @@
+{
+  "schema_version": "component-localization-cache-manifest-v1",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "sample_count": 598,
+  "H_fused_shape": [
+    598,
+    96
+  ],
+  "contents": [
+    "H_fused",
+    "raw_logits",
+    "adjusted_logits",
+    "original_probability",
+    "labels",
+    "train_mask",
+    "test_mask",
+    "subject_indices",
+    "fold"
+  ],
+  "files": [
+    "results/component_localization_v1/cache/fold_00.pt",
+    "results/component_localization_v1/cache/fold_01.pt",
+    "results/component_localization_v1/cache/fold_02.pt",
+    "results/component_localization_v1/cache/fold_03.pt",
+    "results/component_localization_v1/cache/fold_04.pt",
+    "results/component_localization_v1/cache/fold_05.pt",
+    "results/component_localization_v1/cache/fold_06.pt",
+    "results/component_localization_v1/cache/fold_07.pt",
+    "results/component_localization_v1/cache/fold_08.pt",
+    "results/component_localization_v1/cache/fold_09.pt"
+  ],
+  "original_encoder_forwarded_once_per_fold_for_full_input": true
+}
