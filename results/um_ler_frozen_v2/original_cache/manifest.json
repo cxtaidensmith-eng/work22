@@ -1,0 +1,207 @@
+{
+  "schema_version": "frozen-original-anchor-manifest-v2",
+  "model": "Original Query Baseline (Q-noOrth)",
+  "anchor_reproduced": true,
+  "source_root": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0",
+  "source_oof_sha256": "86055aeb17db0620465350862469bf4342bcddd54fc81c5e1b1d6ba3fe738565",
+  "source_config_sha256": "5f741494141e478a49c0aa6af13e332a2cb98f15a5f29d90d0c057c7804e0cc2",
+  "base_commit": "b1fc0f4b34e57874feacde8805fd1e5251f45118",
+  "cache_creation_commit": "b1fc0f4b34e57874feacde8805fd1e5251f45118",
+  "branch": "experiment/um-ler-frozen-v2",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "sample_count": 598,
+  "parameter_count": 853131,
+  "modal_token_shape": [
+    598,
+    6,
+    96
+  ],
+  "oof_metrics": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9560490697782983,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "historical_prompt_probability_macro_auc": 0.9560491,
+  "artifact_probability_macro_auc": 0.9560490697782983,
+  "auc_note": "The checkpoint softmax probabilities reproduce probability OVR Macro-AUC 0.9560491. The legacy oof_metrics.json value 0.9500702 was computed from adjusted scores rather than probability columns.",
+  "max_abs_differences": {
+    "raw_logits": 2.5033950805664062e-06,
+    "adjusted_scores": 2.5033950805664062e-06,
+    "probabilities": 4.76837158203125e-07,
+    "cache_reload_logits": 0.0
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "best_epoch": 111,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_00\\checkpoint_best.pt",
+      "checkpoint_sha256": "3465ba96dc0840c8c1a7c3c737eb5a221364eadafb7c48071388e090b16cd65e",
+      "cache_file": "fold_00.pt",
+      "cache_sha256": "9cfe9d01db37b2598edd28896498f4b0c7a59172ce489b9c0e12052d53ff9a26",
+      "max_abs_differences": {
+        "raw_logits": 1.0728836059570312e-06,
+        "adjusted_scores": 1.1920928955078125e-06,
+        "probabilities": 4.76837158203125e-07
+      }
+    },
+    {
+      "fold": 1,
+      "best_epoch": 83,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_01\\checkpoint_best.pt",
+      "checkpoint_sha256": "2d2b1bfdec8867d78954e831d83d4e7ecadc498d99dfba8e039434965f986273",
+      "cache_file": "fold_01.pt",
+      "cache_sha256": "15750b5eaddd8392b82186bba3225dec8cc2568b573bb8aa11fa394810962de7",
+      "max_abs_differences": {
+        "raw_logits": 9.5367431640625e-07,
+        "adjusted_scores": 9.5367431640625e-07,
+        "probabilities": 1.4901161193847656e-07
+      }
+    },
+    {
+      "fold": 2,
+      "best_epoch": 161,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_02\\checkpoint_best.pt",
+      "checkpoint_sha256": "df92ff8ebd681e3a69c7e80fb06d1023865c39f8cfec2ae565fc2dd9694e345b",
+      "cache_file": "fold_02.pt",
+      "cache_sha256": "45d1063dfe1be51d6035029b46035604d4994364435015b7ff38af0feee21a2d",
+      "max_abs_differences": {
+        "raw_logits": 9.5367431640625e-07,
+        "adjusted_scores": 9.5367431640625e-07,
+        "probabilities": 1.7881393432617188e-07
+      }
+    },
+    {
+      "fold": 3,
+      "best_epoch": 51,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_03\\checkpoint_best.pt",
+      "checkpoint_sha256": "98e0705526d59449a748233db1966d96255e855a7e6056a032abfa2c55883377",
+      "cache_file": "fold_03.pt",
+      "cache_sha256": "332613649d436c7ff0b076859c96cf4d61e84296557e2c76f4c403de973a94c1",
+      "max_abs_differences": {
+        "raw_logits": 7.152557373046875e-07,
+        "adjusted_scores": 7.152557373046875e-07,
+        "probabilities": 1.1920928955078125e-07
+      }
+    },
+    {
+      "fold": 4,
+      "best_epoch": 206,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_04\\checkpoint_best.pt",
+      "checkpoint_sha256": "66fca74b82dcba0d7c795bb3876b140f4f4e3b9389628cfa349ef3942dfcf590",
+      "cache_file": "fold_04.pt",
+      "cache_sha256": "775e3d3cfeedfed0b6b326ccef120c151478d2444f63d4c50db1ca704d09da39",
+      "max_abs_differences": {
+        "raw_logits": 7.152557373046875e-07,
+        "adjusted_scores": 7.152557373046875e-07,
+        "probabilities": 1.1920928955078125e-07
+      }
+    },
+    {
+      "fold": 5,
+      "best_epoch": 98,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_05\\checkpoint_best.pt",
+      "checkpoint_sha256": "210a0a9ead15481249bae3f119ea23e7673072f6c2361fa978f7f26a38649e58",
+      "cache_file": "fold_05.pt",
+      "cache_sha256": "64bc48bbe456dd969bf7f0d96c255cf35a57c920d17ff87b541d93fe69f64b8c",
+      "max_abs_differences": {
+        "raw_logits": 1.6689300537109375e-06,
+        "adjusted_scores": 1.6689300537109375e-06,
+        "probabilities": 2.60770320892334e-07
+      }
+    },
+    {
+      "fold": 6,
+      "best_epoch": 55,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_06\\checkpoint_best.pt",
+      "checkpoint_sha256": "69196066272339799d052fea9b896aa5a92cf4b0edcb4abcc10fd690393df217",
+      "cache_file": "fold_06.pt",
+      "cache_sha256": "cf45ce5c0cbad36ba0b20b2028ca68c087ea6da971cba3e08cc98c13053a9006",
+      "max_abs_differences": {
+        "raw_logits": 7.152557373046875e-07,
+        "adjusted_scores": 7.152557373046875e-07,
+        "probabilities": 1.7881393432617188e-07
+      }
+    },
+    {
+      "fold": 7,
+      "best_epoch": 195,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_07\\checkpoint_best.pt",
+      "checkpoint_sha256": "f1832fce5a9ccd3d9262fc807b178be7c05c333ebd29fd628a5f5211d960d63f",
+      "cache_file": "fold_07.pt",
+      "cache_sha256": "9e2d8a93e840bcf212d9bc1e74d77b5af21bc5f0c93beb5b393246577ceb9994",
+      "max_abs_differences": {
+        "raw_logits": 9.5367431640625e-07,
+        "adjusted_scores": 9.5367431640625e-07,
+        "probabilities": 2.384185791015625e-07
+      }
+    },
+    {
+      "fold": 8,
+      "best_epoch": 134,
+      "train_size": 539,
+      "test_size": 59,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_08\\checkpoint_best.pt",
+      "checkpoint_sha256": "284fcda9c18e89d1c0329060667112692232d3b9ac724c159576219c20f2204e",
+      "cache_file": "fold_08.pt",
+      "cache_sha256": "a1bbc4bc79590f49f81b004997c062a6d3334ea278cda56c9e1a32c4d79a1fed",
+      "max_abs_differences": {
+        "raw_logits": 7.152557373046875e-07,
+        "adjusted_scores": 7.152557373046875e-07,
+        "probabilities": 2.682209014892578e-07
+      }
+    },
+    {
+      "fold": 9,
+      "best_epoch": 116,
+      "train_size": 539,
+      "test_size": 59,
+      "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0\\fold_09\\checkpoint_best.pt",
+      "checkpoint_sha256": "e1b94b5e761b8b88ed6c47c6ca768e0e85eed3d8cceb91b48ea3ec829c0f8345",
+      "cache_file": "fold_09.pt",
+      "cache_sha256": "14269cd792e7ddc5a082aaa9fbf469c4b119f911a5bc0406eae84a7ca2b6bd78",
+      "max_abs_differences": {
+        "raw_logits": 2.5033950805664062e-06,
+        "adjusted_scores": 2.5033950805664062e-06,
+        "probabilities": 3.5762786865234375e-07
+      }
+    }
+  ],
+  "original_forward_passes_after_cache": 0
+}

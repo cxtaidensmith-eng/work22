@@ -1,0 +1,55 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "passed": true,
+  "fold": 0,
+  "epochs": 2,
+  "branch": "experiment/um-ler-frozen-v2",
+  "source_commit": "b1fc0f4b34e57874feacde8805fd1e5251f45118",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "anchor_correct": 556,
+  "cache_readable": true,
+  "cache_unchanged": true,
+  "cache_sha256": "9cfe9d01db37b2598edd28896498f4b0c7a59172ce489b9c0e12052d53ff9a26",
+  "checks": {
+    "passed": true,
+    "neighbors_train_only": true,
+    "train_without_self": true,
+    "probability_sum_error": 1.1920928955078125e-07,
+    "original_probability_unchanged": true,
+    "all_finite": true,
+    "gate_max": 0.30000001192092896,
+    "active_is_eligible": true
+  },
+  "epochs_detail": [
+    {
+      "epoch": 1,
+      "loss_nca": 0.00017213601677212864,
+      "loss_refine": 0.014543603174388409,
+      "loss_total": 0.014578030444681644,
+      "gradient_norm": 0.00023045002025708195,
+      "margin_threshold": 0.9751509428024292,
+      "neighbor_confidence_threshold": 1.0
+    },
+    {
+      "epoch": 2,
+      "loss_nca": 0.0,
+      "loss_refine": 0.014543603174388409,
+      "loss_total": 0.014543603174388409,
+      "gradient_norm": 2.5277729957504192e-17,
+      "margin_threshold": 0.9751509428024292,
+      "neighbor_confidence_threshold": 1.0
+    }
+  ],
+  "refiner_parameters": 3393,
+  "run_config": {
+    "uncertain_quantile": 0.25,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.3,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  }
+}

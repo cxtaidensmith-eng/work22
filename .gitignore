@@ -31,3 +31,6 @@
 /experiments/**/*.pt
 # Generated UM-LER best checkpoints remain local.
 /results/um_ler_v1*/**/*.pt
+# Frozen Original caches and refiner checkpoints remain local.
+/results/um_ler_frozen_v2*/**/*.pt
+/results/um_ler_frozen_v2*/**/*.npz
