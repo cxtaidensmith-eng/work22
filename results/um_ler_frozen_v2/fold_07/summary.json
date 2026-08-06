@@ -1,0 +1,93 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2",
+  "fold": 7,
+  "best_epoch": 1,
+  "selection_tuple": [
+    0.9,
+    0.9496151614370953,
+    0.8946969696969697
+  ],
+  "run_config": {
+    "uncertain_quantile": 0.25,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.3,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "train_size": 538,
+  "test_size": 60,
+  "frozen_original_best_epoch": 195,
+  "frozen_metrics": {
+    "correct": 54,
+    "acc": 0.9,
+    "macro_f1": 0.8946969696969697,
+    "bacc": 0.9320436507936508,
+    "macro_auc": 0.9496151614370953,
+    "weighted_f1": 0.9002651515151515,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        2,
+        3,
+        27
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 54,
+    "acc": 0.9,
+    "macro_f1": 0.8946969696969697,
+    "bacc": 0.9320436507936508,
+    "macro_auc": 0.9496151614370953,
+    "weighted_f1": 0.9002651515151515,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        2,
+        3,
+        27
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 13,
+    "gate_active_ratio": 0.21666666666666667,
+    "active_gate_mean": 0.0026502859204461295,
+    "active_gate_max": 0.014565156772732735,
+    "mean_normalized_neighbor_entropy": 0.010478360028544204
+  },
+  "best_margin_threshold": 0.9769693613052368,
+  "best_neighbor_confidence_threshold": 1.0,
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 14.143037699861452,
+  "passed": true
+}

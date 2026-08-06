@@ -1,0 +1,93 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2_1",
+  "fold": 2,
+  "best_epoch": 1,
+  "selection_tuple": [
+    0.95,
+    0.9926867114367114,
+    0.9608711701734958
+  ],
+  "run_config": {
+    "uncertain_quantile": 0.25,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.2,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "train_size": 538,
+  "test_size": 60,
+  "frozen_original_best_epoch": 161,
+  "frozen_metrics": {
+    "correct": 57,
+    "acc": 0.95,
+    "macro_f1": 0.9608711701734958,
+    "bacc": 0.9632936507936508,
+    "macro_auc": 0.9926867114367114,
+    "weighted_f1": 0.9501845699520117,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        2,
+        30
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 57,
+    "acc": 0.95,
+    "macro_f1": 0.9608711701734958,
+    "bacc": 0.9632936507936508,
+    "macro_auc": 0.9926867114367114,
+    "weighted_f1": 0.9501845699520117,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        2,
+        30
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 17,
+    "gate_active_ratio": 0.2833333333333333,
+    "active_gate_mean": 0.0005729386229016681,
+    "active_gate_max": 0.002622093539685011,
+    "mean_normalized_neighbor_entropy": 0.01825210356914345
+  },
+  "best_margin_threshold": 0.9733712673187256,
+  "best_neighbor_confidence_threshold": 1.0,
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 14.230913700070232,
+  "passed": true
+}

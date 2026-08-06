@@ -1,0 +1,93 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2_2",
+  "fold": 9,
+  "best_epoch": 1,
+  "selection_tuple": [
+    0.9661016949152542,
+    0.9938066624499262,
+    0.9588141025641025
+  ],
+  "run_config": {
+    "uncertain_quantile": 0.35,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.2,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "train_size": 539,
+  "test_size": 59,
+  "frozen_original_best_epoch": 116,
+  "frozen_metrics": {
+    "correct": 57,
+    "acc": 0.9661016949152542,
+    "macro_f1": 0.9588141025641025,
+    "bacc": 0.9416666666666668,
+    "macro_auc": 0.9934226378723533,
+    "weighted_f1": 0.9658490873533245,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        0,
+        0,
+        31
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 57,
+    "acc": 0.9661016949152542,
+    "macro_f1": 0.9588141025641025,
+    "bacc": 0.9416666666666668,
+    "macro_auc": 0.9938066624499262,
+    "weighted_f1": 0.9658490873533245,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        0,
+        0,
+        31
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 25,
+    "gate_active_ratio": 0.423728813559322,
+    "active_gate_mean": 0.005142188778909258,
+    "active_gate_max": 0.04922547936439514,
+    "mean_normalized_neighbor_entropy": 0.034746049444775634
+  },
+  "best_margin_threshold": 0.9736536145210266,
+  "best_neighbor_confidence_threshold": 1.0,
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 15.029713500058278,
+  "passed": true
+}

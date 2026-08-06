@@ -1,0 +1,93 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2",
+  "fold": 3,
+  "best_epoch": 1,
+  "selection_tuple": [
+    0.9333333333333333,
+    0.9574998344161081,
+    0.9291101055806937
+  ],
+  "run_config": {
+    "uncertain_quantile": 0.25,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.3,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "train_size": 538,
+  "test_size": 60,
+  "frozen_original_best_epoch": 51,
+  "frozen_metrics": {
+    "correct": 56,
+    "acc": 0.9333333333333333,
+    "macro_f1": 0.9291101055806937,
+    "bacc": 0.9047619047619048,
+    "macro_auc": 0.9574998344161081,
+    "weighted_f1": 0.9327300150829563,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        18,
+        3
+      ],
+      [
+        0,
+        0,
+        32
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 56,
+    "acc": 0.9333333333333333,
+    "macro_f1": 0.9291101055806937,
+    "bacc": 0.9047619047619048,
+    "macro_auc": 0.9574998344161081,
+    "weighted_f1": 0.9327300150829563,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        18,
+        3
+      ],
+      [
+        0,
+        0,
+        32
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 6,
+    "gate_active_ratio": 0.1,
+    "active_gate_mean": 0.03270537677841882,
+    "active_gate_max": 0.07259614020586014,
+    "mean_normalized_neighbor_entropy": 0.2022149747085155
+  },
+  "best_margin_threshold": 0.9672769904136658,
+  "best_neighbor_confidence_threshold": 1.0,
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 14.041672699851915,
+  "passed": true
+}

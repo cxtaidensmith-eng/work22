@@ -1,0 +1,93 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2_2",
+  "fold": 1,
+  "best_epoch": 1,
+  "selection_tuple": [
+    0.95,
+    0.9718595575022463,
+    0.9174603174603174
+  ],
+  "run_config": {
+    "uncertain_quantile": 0.35,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.2,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "train_size": 538,
+  "test_size": 60,
+  "frozen_original_best_epoch": 83,
+  "frozen_metrics": {
+    "correct": 57,
+    "acc": 0.95,
+    "macro_f1": 0.9174603174603174,
+    "bacc": 0.9315476190476191,
+    "macro_auc": 0.9718595575022463,
+    "weighted_f1": 0.9512698412698413,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        2,
+        0,
+        30
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 57,
+    "acc": 0.95,
+    "macro_f1": 0.9174603174603174,
+    "bacc": 0.9315476190476191,
+    "macro_auc": 0.9718595575022463,
+    "weighted_f1": 0.9512698412698413,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        2,
+        0,
+        30
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 24,
+    "gate_active_ratio": 0.4,
+    "active_gate_mean": 0.019474009050099994,
+    "active_gate_max": 0.20000000298023224,
+    "mean_normalized_neighbor_entropy": 0.02793819334305211
+  },
+  "best_margin_threshold": 0.9726513624191284,
+  "best_neighbor_confidence_threshold": 1.0,
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 15.673906899988651,
+  "passed": true
+}

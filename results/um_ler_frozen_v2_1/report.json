@@ -1,0 +1,231 @@
+{
+  "model": "Frozen Uncertainty-Guided Multimodal Local Evidence Refinement v2",
+  "version": "um_ler_frozen_v2_1",
+  "config": {
+    "uncertain_quantile": 0.25,
+    "neighbor_confidence_quantile": 0.6,
+    "gate_cap": 0.2,
+    "top_k": 8,
+    "temperature": 0.2,
+    "nca_weight": 0.2,
+    "refine_weight": 1.0,
+    "projection_size": 32
+  },
+  "frozen_metrics": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9560490697782983,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "refined_metrics": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9559198575964593,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "delta_vs_frozen": {
+    "correct": 0,
+    "acc": 0.0,
+    "macro_f1": 0.0,
+    "bacc": 0.0,
+    "macro_auc": -0.0001292121818390335,
+    "weighted_f1": 0.0
+  },
+  "diagnostics": {
+    "changed_prediction_count": 0,
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_subject_indices": [],
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "gate_active_count": 167,
+    "gate_active_ratio": 0.2792642140468227,
+    "active_gate_mean": 0.021740986840345096,
+    "active_gate_max": 0.20000000298023224,
+    "mean_normalized_neighbor_entropy": 0.05009016498335597
+  },
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "best_epoch": 1,
+      "frozen_correct": 55,
+      "refined_correct": 55,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8977763678660987,
+      "bacc": 0.9153225806451614,
+      "macro_auc": 0.9657238965150534,
+      "weighted_f1": 0.9167761865917399,
+      "elapsed_seconds": 14.494456900050864
+    },
+    {
+      "fold": 1,
+      "best_epoch": 1,
+      "frozen_correct": 57,
+      "refined_correct": 57,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9718595575022463,
+      "weighted_f1": 0.9512698412698413,
+      "elapsed_seconds": 14.266668000025675
+    },
+    {
+      "fold": 2,
+      "best_epoch": 1,
+      "frozen_correct": 57,
+      "refined_correct": 57,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.95,
+      "macro_f1": 0.9608711701734958,
+      "bacc": 0.9632936507936508,
+      "macro_auc": 0.9926867114367114,
+      "weighted_f1": 0.9501845699520117,
+      "elapsed_seconds": 14.230913700070232
+    },
+    {
+      "fold": 3,
+      "best_epoch": 1,
+      "frozen_correct": 56,
+      "refined_correct": 56,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9291101055806937,
+      "bacc": 0.9047619047619048,
+      "macro_auc": 0.9574998344161081,
+      "weighted_f1": 0.9327300150829563,
+      "elapsed_seconds": 15.252717799972743
+    },
+    {
+      "fold": 4,
+      "best_epoch": 1,
+      "frozen_correct": 56,
+      "refined_correct": 56,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.8813529846528412,
+      "bacc": 0.8412698412698413,
+      "macro_auc": 0.9401831789803489,
+      "weighted_f1": 0.9282726837963566,
+      "elapsed_seconds": 15.62797089992091
+    },
+    {
+      "fold": 5,
+      "best_epoch": 6,
+      "frozen_correct": 55,
+      "refined_correct": 55,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8815346345197091,
+      "bacc": 0.8625992063492064,
+      "macro_auc": 0.9748578858248669,
+      "weighted_f1": 0.9157759280520474,
+      "elapsed_seconds": 16.107687700074166
+    },
+    {
+      "fold": 6,
+      "best_epoch": 132,
+      "frozen_correct": 55,
+      "refined_correct": 55,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9347852836224929,
+      "bacc": 0.9370039682539683,
+      "macro_auc": 0.9875705891330891,
+      "weighted_f1": 0.916974283253353,
+      "elapsed_seconds": 15.620698800077662
+    },
+    {
+      "fold": 7,
+      "best_epoch": 1,
+      "frozen_correct": 54,
+      "refined_correct": 54,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9,
+      "macro_f1": 0.8946969696969697,
+      "bacc": 0.9320436507936508,
+      "macro_auc": 0.9496151614370953,
+      "weighted_f1": 0.9002651515151515,
+      "elapsed_seconds": 15.357729000039399
+    },
+    {
+      "fold": 8,
+      "best_epoch": 1,
+      "frozen_correct": 54,
+      "refined_correct": 54,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9152542372881356,
+      "macro_f1": 0.8806661411115492,
+      "bacc": 0.9093701996927804,
+      "macro_auc": 0.9323329000748357,
+      "weighted_f1": 0.9175340553035415,
+      "elapsed_seconds": 15.21902780001983
+    },
+    {
+      "fold": 9,
+      "best_epoch": 1,
+      "frozen_correct": 57,
+      "refined_correct": 57,
+      "repairs": 0,
+      "damages": 0,
+      "acc": 0.9661016949152542,
+      "macro_f1": 0.9588141025641025,
+      "bacc": 0.9416666666666668,
+      "macro_auc": 0.9934226378723533,
+      "weighted_f1": 0.9658490873533245,
+      "elapsed_seconds": 13.935746799921617
+    }
+  ],
+  "refiner_parameters": 3393,
+  "elapsed_seconds": 150.1136174001731,
+  "source_commit": "583e98e2486ed0cea32773b0599785f27dd3bfa7"
+}

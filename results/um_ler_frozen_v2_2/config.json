@@ -1,0 +1,10 @@
+{
+  "uncertain_quantile": 0.35,
+  "neighbor_confidence_quantile": 0.6,
+  "gate_cap": 0.2,
+  "top_k": 8,
+  "temperature": 0.2,
+  "nca_weight": 0.2,
+  "refine_weight": 1.0,
+  "projection_size": 32
+}
