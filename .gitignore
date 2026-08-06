@@ -34,3 +34,6 @@
 # Frozen Original caches and refiner checkpoints remain local.
 /results/um_ler_frozen_v2*/**/*.pt
 /results/um_ler_frozen_v2*/**/*.npz
+# Component-localization feature caches and best checkpoints remain local.
+/results/component_localization_v1/**/*.pt
+/results/component_localization_v1/**/*.npz

@@ -865,9 +865,10 @@ class HeterGraph_Model_Kmeans(nn.Module):
         off_diag = 1.0 - torch.eye(adj.size(0), device=adj.device, dtype=adj.dtype)
         return F.mse_loss(adj * off_diag, relation * off_diag)
 
-    def forward(self, X_raw):
+    def forward(self, X_raw, return_intermediates=False):
         self.last_modal_tokens = None
-        X = self.Feature_Modal(X_raw)
+        feature_modal_output = self.Feature_Modal(X_raw)
+        X = feature_modal_output
         if self.training:
             per_feature_noise_std = self._modal_noise_std[self.feature_to_modal]
             X = X + torch.randn_like(X) * (per_feature_noise_std * self.noise_scale).view(1, -1)
@@ -881,6 +882,8 @@ class HeterGraph_Model_Kmeans(nn.Module):
         self.last_patient_routing_alpha = None
         self.last_patient_routing_gain = None
         self.last_routed_branch_concat = None
+        modal_tokens_pre_transformer = None
+        modal_tokens_post_transformer = None
 
         if self.semantic_branch == 'global':
             Label_embedding = [
@@ -895,9 +898,13 @@ class HeterGraph_Model_Kmeans(nn.Module):
         else:
             H = self.modal_token_encoder(X)
             H = H * modal_gate.view(1, -1, 1)
+            if return_intermediates:
+                modal_tokens_pre_transformer = H
 
             for blk in self.shared_transformer:
                 H = blk(H)
+            if return_intermediates:
+                modal_tokens_post_transformer = H
 
             # Cache only the detached transformer output so downstream local
             # evidence modules cannot alter the Original Query backbone.
@@ -997,6 +1004,29 @@ class HeterGraph_Model_Kmeans(nn.Module):
             alpha = max(0.0, min(1.0, self.label_graph_alpha))
             if alpha > 0:
                 Adj = (1.0 - alpha) * Adj + alpha * R_label
-        Y = self.GCN(self._fuse_semantic_branches(Y, Global_Embedding), Adj)
+        category_embedding = Y
+        fused_embedding = self._fuse_semantic_branches(category_embedding, Global_Embedding)
+        raw_logits = self.GCN(fused_embedding, Adj)
 
-        return Y, Label_embedding, Auxi_classifier_output
+        if return_intermediates:
+            # In Original Query, semantic_fusion='add', so this is exactly Y + G.
+            # Keep the explicit sum for non-Original configurations as well so
+            # callers never have to infer the requested representation.
+            h_fused = (
+                fused_embedding
+                if self.semantic_branch == 'both' and self.semantic_fusion == 'add'
+                else category_embedding + Global_Embedding
+            )
+            intermediates = {
+                'feature_modal_output': feature_modal_output,
+                'modal_tokens_pre_transformer': modal_tokens_pre_transformer,
+                'modal_tokens_post_transformer': modal_tokens_post_transformer,
+                'label_embeddings': Label_embedding,
+                'Y': category_embedding,
+                'G': Global_Embedding,
+                'H_fused': h_fused,
+                'raw_logits': raw_logits,
+            }
+            return raw_logits, Label_embedding, Auxi_classifier_output, intermediates
+
+        return raw_logits, Label_embedding, Auxi_classifier_output

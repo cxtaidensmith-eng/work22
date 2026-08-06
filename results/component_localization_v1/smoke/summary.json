@@ -1,0 +1,170 @@
+{
+  "model": "Multimodal / Graph / Classifier Component Localization v1",
+  "passed": true,
+  "fold": 0,
+  "epochs_per_head": 2,
+  "anchor": {
+    "status": "Original anchor reproduced",
+    "metrics": {
+      "correct": 556,
+      "acc": 0.9297658862876255,
+      "macro_f1": 0.9140778251271361,
+      "bacc": 0.9140778251271361,
+      "macro_auc": 0.9560490697782983,
+      "weighted_f1": 0.9297658862876255,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          198,
+          11
+        ],
+        [
+          10,
+          11,
+          296
+        ]
+      ]
+    },
+    "source": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\experiments\\query_baseline_gpu_10fold_seed0",
+    "oof_order": "historical Frozen UM-LER v2 order"
+  },
+  "default_extended_logits_max_abs_diff": 0.0,
+  "intermediate_shapes": {
+    "feature_modal_output": [
+      598,
+      360
+    ],
+    "modal_tokens_pre_transformer": [
+      598,
+      6,
+      96
+    ],
+    "modal_tokens_post_transformer": [
+      598,
+      6,
+      96
+    ],
+    "label_embeddings": [
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ],
+      [
+        598,
+        96
+      ]
+    ],
+    "Y": [
+      598,
+      96
+    ],
+    "G": [
+      598,
+      96
+    ],
+    "H_fused": [
+      598,
+      96
+    ],
+    "raw_logits": [
+      598,
+      3
+    ]
+  },
+  "cached_sample_indices_exact": true,
+  "graph_symmetric": true,
+  "graph_uses_labels": false,
+  "test_labels_in_training_loss": false,
+  "head_checks": {
+    "linear_probe": {
+      "losses": [
+        8.75106430053711,
+        3.3149774074554443
+      ],
+      "parameter_count": 291,
+      "passed": true
+    },
+    "residual_mlp": {
+      "losses": [
+        1.6089706420898438,
+        0.35111722350120544
+      ],
+      "parameter_count": 14451,
+      "passed": true
+    },
+    "frozen_difformer": {
+      "losses": [
+        0.9500716924667358,
+        0.3903661370277405
+      ],
+      "parameter_count": 19203,
+      "passed": true
+    },
+    "pee_head": {
+      "losses": [
+        1.0541367530822754,
+        0.5792137384414673
+      ],
+      "parameter_count": 10040,
+      "passed": true
+    },
+    "sparse_residual_gcn": {
+      "losses": [
+        1.595082402229309,
+        0.35821443796157837
+      ],
+      "parameter_count": 7348,
+      "passed": true
+    },
+    "cog_only_mlp": {
+      "losses": [
+        1.1180858612060547,
+        0.9350774884223938
+      ],
+      "parameter_count": 7395,
+      "passed": true
+    },
+    "raw_all_mlp": {
+      "losses": [
+        1.140928864479065,
+        0.9941075444221497
+      ],
+      "parameter_count": 39651,
+      "passed": true
+    },
+    "D2_current_multimodal_pee_head": {
+      "passed": true,
+      "head": "pee_head",
+      "epochs": 2,
+      "losses": [
+        3.2393269538879395,
+        2.5547590255737305
+      ],
+      "old_difformer_removed": true,
+      "replaced_difformer_parameters": 19203,
+      "active_backbone_parameters": 833928,
+      "replacement_head_parameters": 10040,
+      "original_ovr_loss_preserved": true,
+      "test_labels_in_training_loss": false
+    }
+  },
+  "environment": {
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.5.1+cu121",
+    "sklearn": "1.9.0",
+    "cuda_runtime": "12.1",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  }
+}
