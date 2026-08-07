@@ -1,0 +1,3635 @@
+{
+  "experiment": "SG-HFT-C1 v2 Gate Parameter Update Check",
+  "decision": "BUG_FIXED_BUT_BRANCH_INACTIVE",
+  "branch": "experiment/sg-hft-c1-v2-gatecheck",
+  "run_commit": "b380b49d98856b94b10533d1093b0566ded2cafd",
+  "device": "cuda:0",
+  "runtime_seconds": 7.167350000003353,
+  "check_A_registration_optimizer": {
+    "sg_parameter_tensor_count": 60,
+    "sg_parameter_count": 12351,
+    "optimizer_coverage_fraction": 1.0,
+    "optimizer_coverage_percent": 100.0,
+    "optimizer_state_is_lazy_and_empty_before_first_step": true,
+    "sg_branches_is_ModuleDict": true,
+    "group_encoders_are_ModuleList": true,
+    "optimizer_constructed_from_complete_model_parameters": true,
+    "no_sg_parameter_filter": true,
+    "parameters": [
+      {
+        "name": "sg_branches.MRI.group_encoders.0.weight",
+        "shape": [
+          8,
+          49
+        ],
+        "numel": 392,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.1.weight",
+        "shape": [
+          8,
+          40
+        ],
+        "numel": 320,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.1.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.2.weight",
+        "shape": [
+          8,
+          42
+        ],
+        "numel": 336,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.2.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.3.weight",
+        "shape": [
+          8,
+          7
+        ],
+        "numel": 56,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.3.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.shared_group_output.weight",
+        "shape": [
+          96,
+          8
+        ],
+        "numel": 768,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.shared_group_output.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.gate.0.weight",
+        "shape": [
+          8,
+          192
+        ],
+        "numel": 1536,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.gate.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.gate.2.weight",
+        "shape": [
+          1,
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.gate.2.bias",
+        "shape": [
+          1
+        ],
+        "numel": 1,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.adapter.0.weight",
+        "shape": [
+          4,
+          96
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.adapter.0.bias",
+        "shape": [
+          4
+        ],
+        "numel": 4,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.adapter.2.weight",
+        "shape": [
+          96,
+          4
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.MRI.adapter.2.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.0.weight",
+        "shape": [
+          8,
+          31
+        ],
+        "numel": 248,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.1.weight",
+        "shape": [
+          8,
+          10
+        ],
+        "numel": 80,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.1.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.2.weight",
+        "shape": [
+          8,
+          32
+        ],
+        "numel": 256,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.2.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.3.weight",
+        "shape": [
+          8,
+          14
+        ],
+        "numel": 112,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.3.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.4.weight",
+        "shape": [
+          8,
+          39
+        ],
+        "numel": 312,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.4.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.5.weight",
+        "shape": [
+          8,
+          24
+        ],
+        "numel": 192,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.5.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.shared_group_output.weight",
+        "shape": [
+          96,
+          8
+        ],
+        "numel": 768,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.shared_group_output.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.gate.0.weight",
+        "shape": [
+          8,
+          192
+        ],
+        "numel": 1536,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.gate.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.gate.2.weight",
+        "shape": [
+          1,
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.gate.2.bias",
+        "shape": [
+          1
+        ],
+        "numel": 1,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.adapter.0.weight",
+        "shape": [
+          4,
+          96
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.adapter.0.bias",
+        "shape": [
+          4
+        ],
+        "numel": 4,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.adapter.2.weight",
+        "shape": [
+          96,
+          4
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.PET.adapter.2.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.0.weight",
+        "shape": [
+          8,
+          4
+        ],
+        "numel": 32,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.1.weight",
+        "shape": [
+          8,
+          2
+        ],
+        "numel": 16,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.1.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.2.weight",
+        "shape": [
+          8,
+          1
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.2.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.3.weight",
+        "shape": [
+          8,
+          1
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.3.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.4.weight",
+        "shape": [
+          8,
+          1
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.4.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.shared_group_output.weight",
+        "shape": [
+          96,
+          8
+        ],
+        "numel": 768,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.shared_group_output.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.gate.0.weight",
+        "shape": [
+          8,
+          192
+        ],
+        "numel": 1536,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.gate.0.bias",
+        "shape": [
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.gate.2.weight",
+        "shape": [
+          1,
+          8
+        ],
+        "numel": 8,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.gate.2.bias",
+        "shape": [
+          1
+        ],
+        "numel": 1,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.adapter.0.weight",
+        "shape": [
+          4,
+          96
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.adapter.0.bias",
+        "shape": [
+          4
+        ],
+        "numel": 4,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.adapter.2.weight",
+        "shape": [
+          96,
+          4
+        ],
+        "numel": 384,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      },
+      {
+        "name": "sg_branches.ROI.adapter.2.bias",
+        "shape": [
+          96
+        ],
+        "numel": 96,
+        "requires_grad": true,
+        "in_model_named_parameters": true,
+        "in_optimizer_param_groups": true,
+        "optimizer_state_before_step": false,
+        "optimizer_state_after_step": true
+      }
+    ]
+  },
+  "check_B_checkpoint": {
+    "checkpoint_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\sg_hft_c1_v2\\experiments\\sg_hft_c1_v2\\screen\\fold_04\\checkpoint_best.pt",
+    "checkpoint_sha256": "a08a3296abe20bcac93a47c6640af982146f5df301234085b6b6d07f92ae5371",
+    "checkpoint_best_epoch": 214,
+    "checkpoint_payload_keys": [
+      "best_epoch",
+      "group_manifest",
+      "model_state"
+    ],
+    "checkpoint_contains_optimizer_state": false,
+    "checkpoint_optimizer_state_note": "Formal checkpoint intentionally stores model state only.",
+    "sg_state_key_count_in_checkpoint_including_buffers": 75,
+    "missing_sg_named_parameters": [],
+    "sg_checkpoint_key_coverage_fraction": 1.0,
+    "strict_state_dict_readback": true,
+    "parameter_delta": [
+      {
+        "name": "sg_branches.MRI.group_encoders.0.weight",
+        "max_abs_delta": 0.14275501668453217,
+        "l2_delta": 1.6283036470413208,
+        "relative_l2_delta": 0.9999994143139336
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.0.bias",
+        "max_abs_delta": 0.13715645670890808,
+        "l2_delta": 0.2413686066865921,
+        "relative_l2_delta": 0.9999959254285591
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.1.weight",
+        "max_abs_delta": 0.15773235261440277,
+        "l2_delta": 1.7052879333496094,
+        "relative_l2_delta": 0.9999986018880384
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.1.bias",
+        "max_abs_delta": 0.15590742230415344,
+        "l2_delta": 0.299867182970047,
+        "relative_l2_delta": 0.9999998012265553
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.2.weight",
+        "max_abs_delta": 0.15410663187503815,
+        "l2_delta": 1.6173895597457886,
+        "relative_l2_delta": 0.9999985259065992
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.2.bias",
+        "max_abs_delta": 0.15041501820087433,
+        "l2_delta": 0.33797240257263184,
+        "relative_l2_delta": 0.9999948855976261
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.3.weight",
+        "max_abs_delta": 0.3572329580783844,
+        "l2_delta": 1.6183820962905884,
+        "relative_l2_delta": 0.999995285810698
+      },
+      {
+        "name": "sg_branches.MRI.group_encoders.3.bias",
+        "max_abs_delta": 0.3543652892112732,
+        "l2_delta": 0.6506094336509705,
+        "relative_l2_delta": 0.999990105832146
+      },
+      {
+        "name": "sg_branches.MRI.shared_group_output.weight",
+        "max_abs_delta": 0.35352426767349243,
+        "l2_delta": 5.730826377868652,
+        "relative_l2_delta": 0.999999251149498
+      },
+      {
+        "name": "sg_branches.MRI.shared_group_output.bias",
+        "max_abs_delta": 0.3519063889980316,
+        "l2_delta": 2.0498316287994385,
+        "relative_l2_delta": 0.999997557468203
+      },
+      {
+        "name": "sg_branches.MRI.gate.0.weight",
+        "max_abs_delta": 0.07209134846925735,
+        "l2_delta": 1.6371594667434692,
+        "relative_l2_delta": 1.0000002184435628
+      },
+      {
+        "name": "sg_branches.MRI.gate.0.bias",
+        "max_abs_delta": 1.5652921092623728e-07,
+        "l2_delta": 2.9087922825965506e-07,
+        "relative_l2_delta": 290879.22825965506
+      },
+      {
+        "name": "sg_branches.MRI.gate.2.weight",
+        "max_abs_delta": 0.3317083716392517,
+        "l2_delta": 0.6810476779937744,
+        "relative_l2_delta": 1.0000008751897829
+      },
+      {
+        "name": "sg_branches.MRI.gate.2.bias",
+        "max_abs_delta": 1.079891447375303e-07,
+        "l2_delta": 1.079891447375303e-07,
+        "relative_l2_delta": 107989.1447375303
+      },
+      {
+        "name": "sg_branches.MRI.adapter.0.weight",
+        "max_abs_delta": 0.10177352279424667,
+        "l2_delta": 1.1705785989761353,
+        "relative_l2_delta": 1.0000005091890043
+      },
+      {
+        "name": "sg_branches.MRI.adapter.0.bias",
+        "max_abs_delta": 0.032907404005527496,
+        "l2_delta": 0.0541045144200325,
+        "relative_l2_delta": 1.0100783403991667
+      },
+      {
+        "name": "sg_branches.MRI.adapter.2.weight",
+        "max_abs_delta": 0.013879909180104733,
+        "l2_delta": 0.14040537178516388,
+        "relative_l2_delta": 1.0076035075962766
+      },
+      {
+        "name": "sg_branches.MRI.adapter.2.bias",
+        "max_abs_delta": 0.061062853783369064,
+        "l2_delta": 0.188261017203331,
+        "relative_l2_delta": 188261017203.331
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.0.weight",
+        "max_abs_delta": 0.17883923649787903,
+        "l2_delta": 1.6590726375579834,
+        "relative_l2_delta": 0.9999997125876164
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.0.bias",
+        "max_abs_delta": 0.14492399990558624,
+        "l2_delta": 0.24658556282520294,
+        "relative_l2_delta": 0.9999956490561507
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.1.weight",
+        "max_abs_delta": 0.3160383105278015,
+        "l2_delta": 1.769524335861206,
+        "relative_l2_delta": 1.0000047831492738
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.1.bias",
+        "max_abs_delta": 0.310184508562088,
+        "l2_delta": 0.5920267701148987,
+        "relative_l2_delta": 1.0000093632300877
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.2.weight",
+        "max_abs_delta": 0.17671702802181244,
+        "l2_delta": 1.5994873046875,
+        "relative_l2_delta": 1.0000008198266133
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.2.bias",
+        "max_abs_delta": 0.17505072057247162,
+        "l2_delta": 0.31593236327171326,
+        "relative_l2_delta": 1.0000000943281813
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.3.weight",
+        "max_abs_delta": 0.2671852707862854,
+        "l2_delta": 1.6835874319076538,
+        "relative_l2_delta": 0.9999978758025736
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.3.bias",
+        "max_abs_delta": 0.2425600290298462,
+        "l2_delta": 0.38576751947402954,
+        "relative_l2_delta": 0.999992815369545
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.4.weight",
+        "max_abs_delta": 0.15928779542446136,
+        "l2_delta": 1.664177417755127,
+        "relative_l2_delta": 0.9999996418367249
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.4.bias",
+        "max_abs_delta": 0.13531430065631866,
+        "l2_delta": 0.18507207930088043,
+        "relative_l2_delta": 0.9999975040219693
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.5.weight",
+        "max_abs_delta": 0.20372824370861053,
+        "l2_delta": 1.6750068664550781,
+        "relative_l2_delta": 0.9999977937518365
+      },
+      {
+        "name": "sg_branches.PET.group_encoders.5.bias",
+        "max_abs_delta": 0.20064468681812286,
+        "l2_delta": 0.3282924294471741,
+        "relative_l2_delta": 0.9999984567426683
+      },
+      {
+        "name": "sg_branches.PET.shared_group_output.weight",
+        "max_abs_delta": 0.353488564491272,
+        "l2_delta": 5.679811477661133,
+        "relative_l2_delta": 0.9999995802350483
+      },
+      {
+        "name": "sg_branches.PET.shared_group_output.bias",
+        "max_abs_delta": 0.3523064851760864,
+        "l2_delta": 2.094705820083618,
+        "relative_l2_delta": 1.000001252016693
+      },
+      {
+        "name": "sg_branches.PET.gate.0.weight",
+        "max_abs_delta": 0.07216239720582962,
+        "l2_delta": 1.6042481660842896,
+        "relative_l2_delta": 1.0000000743078914
+      },
+      {
+        "name": "sg_branches.PET.gate.0.bias",
+        "max_abs_delta": 2.1359244328778004e-07,
+        "l2_delta": 3.795428256125888e-07,
+        "relative_l2_delta": 379542.8256125888
+      },
+      {
+        "name": "sg_branches.PET.gate.2.weight",
+        "max_abs_delta": 0.33397114276885986,
+        "l2_delta": 0.5289906859397888,
+        "relative_l2_delta": 0.9999968450752864
+      },
+      {
+        "name": "sg_branches.PET.gate.2.bias",
+        "max_abs_delta": 8.755024083484386e-08,
+        "l2_delta": 8.755024083484386e-08,
+        "relative_l2_delta": 87550.24083484386
+      },
+      {
+        "name": "sg_branches.PET.adapter.0.weight",
+        "max_abs_delta": 0.10184037685394287,
+        "l2_delta": 1.1655128002166748,
+        "relative_l2_delta": 1.0000008182442068
+      },
+      {
+        "name": "sg_branches.PET.adapter.0.bias",
+        "max_abs_delta": 0.0520998015999794,
+        "l2_delta": 0.053826432675123215,
+        "relative_l2_delta": 0.9963191365821977
+      },
+      {
+        "name": "sg_branches.PET.adapter.2.weight",
+        "max_abs_delta": 0.012710652314126492,
+        "l2_delta": 0.13867895305156708,
+        "relative_l2_delta": 1.002949602313718
+      },
+      {
+        "name": "sg_branches.PET.adapter.2.bias",
+        "max_abs_delta": 0.03899158909916878,
+        "l2_delta": 0.14177574217319489,
+        "relative_l2_delta": 141775742173.1949
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.0.weight",
+        "max_abs_delta": 0.4747313857078552,
+        "l2_delta": 1.6211243867874146,
+        "relative_l2_delta": 1.0000048533291828
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.0.bias",
+        "max_abs_delta": 0.42439043521881104,
+        "l2_delta": 0.7707692384719849,
+        "relative_l2_delta": 1.0000109811744926
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.1.weight",
+        "max_abs_delta": 0.6867018342018127,
+        "l2_delta": 1.4619139432907104,
+        "relative_l2_delta": 0.999803193209857
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.1.bias",
+        "max_abs_delta": 0.6098577380180359,
+        "l2_delta": 1.1234204769134521,
+        "relative_l2_delta": 1.000015704939778
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.2.weight",
+        "max_abs_delta": 0.8142419457435608,
+        "l2_delta": 1.7930505275726318,
+        "relative_l2_delta": 0.9972313123189519
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.2.bias",
+        "max_abs_delta": 0.8791027069091797,
+        "l2_delta": 1.4096320867538452,
+        "relative_l2_delta": 0.9936596572365984
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.3.weight",
+        "max_abs_delta": 0.9553569555282593,
+        "l2_delta": 1.663657307624817,
+        "relative_l2_delta": 0.9886445675392428
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.3.bias",
+        "max_abs_delta": 0.8311264514923096,
+        "l2_delta": 1.1172914505004883,
+        "relative_l2_delta": 0.994836837022314
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.4.weight",
+        "max_abs_delta": 0.8729863166809082,
+        "l2_delta": 1.7143913507461548,
+        "relative_l2_delta": 0.9932927981941505
+      },
+      {
+        "name": "sg_branches.ROI.group_encoders.4.bias",
+        "max_abs_delta": 0.9458842277526855,
+        "l2_delta": 2.125013828277588,
+        "relative_l2_delta": 0.9828512360463877
+      },
+      {
+        "name": "sg_branches.ROI.shared_group_output.weight",
+        "max_abs_delta": 0.3533976674079895,
+        "l2_delta": 5.7172393798828125,
+        "relative_l2_delta": 0.9999985821441683
+      },
+      {
+        "name": "sg_branches.ROI.shared_group_output.bias",
+        "max_abs_delta": 0.34836453199386597,
+        "l2_delta": 1.8028053045272827,
+        "relative_l2_delta": 1.0000000661237778
+      },
+      {
+        "name": "sg_branches.ROI.gate.0.weight",
+        "max_abs_delta": 0.07216036319732666,
+        "l2_delta": 1.6268082857131958,
+        "relative_l2_delta": 0.9999997801653746
+      },
+      {
+        "name": "sg_branches.ROI.gate.0.bias",
+        "max_abs_delta": 1.8882198560277175e-07,
+        "l2_delta": 3.510273529627739e-07,
+        "relative_l2_delta": 351027.3529627739
+      },
+      {
+        "name": "sg_branches.ROI.gate.2.weight",
+        "max_abs_delta": 0.25262412428855896,
+        "l2_delta": 0.5097233653068542,
+        "relative_l2_delta": 0.9999982459719051
+      },
+      {
+        "name": "sg_branches.ROI.gate.2.bias",
+        "max_abs_delta": 7.564372594970337e-08,
+        "l2_delta": 7.564372594970337e-08,
+        "relative_l2_delta": 75643.72594970337
+      },
+      {
+        "name": "sg_branches.ROI.adapter.0.weight",
+        "max_abs_delta": 0.10149041563272476,
+        "l2_delta": 1.1706475019454956,
+        "relative_l2_delta": 1.0000011201515842
+      },
+      {
+        "name": "sg_branches.ROI.adapter.0.bias",
+        "max_abs_delta": 0.08939529210329056,
+        "l2_delta": 0.12091963738203049,
+        "relative_l2_delta": 1.0000226751823784
+      },
+      {
+        "name": "sg_branches.ROI.adapter.2.weight",
+        "max_abs_delta": 0.012123148888349533,
+        "l2_delta": 0.14199112355709076,
+        "relative_l2_delta": 1.0000304347705462
+      },
+      {
+        "name": "sg_branches.ROI.adapter.2.bias",
+        "max_abs_delta": 0.07106471061706543,
+        "l2_delta": 0.21398676931858063,
+        "relative_l2_delta": 213986769318.58063
+      }
+    ],
+    "family_parameter_delta": {
+      "MRI": {
+        "group_encoder": {
+          "parameter_count": 2000,
+          "tensor_count": 10,
+          "max_abs_delta": 0.3572329580783844,
+          "l2_delta": 6.965942859649658,
+          "relative_l2_delta": 0.9999986994014443
+        },
+        "gate": {
+          "parameter_count": 1553,
+          "tensor_count": 4,
+          "max_abs_delta": 0.3317083716392517,
+          "l2_delta": 1.7731658220291138,
+          "relative_l2_delta": 1.0000003361477199
+        },
+        "adapter": {
+          "parameter_count": 868,
+          "tensor_count": 4,
+          "max_abs_delta": 0.10177352279424667,
+          "l2_delta": 1.195130705833435,
+          "relative_l2_delta": 1.0127720310986854
+        }
+      },
+      "PET": {
+        "group_encoder": {
+          "parameter_count": 2112,
+          "tensor_count": 14,
+          "max_abs_delta": 0.353488564491272,
+          "l2_delta": 7.368968486785889,
+          "relative_l2_delta": 0.9999998705822674
+        },
+        "gate": {
+          "parameter_count": 1553,
+          "tensor_count": 4,
+          "max_abs_delta": 0.33397114276885986,
+          "l2_delta": 1.6892139911651611,
+          "relative_l2_delta": 0.9999999294285496
+        },
+        "adapter": {
+          "parameter_count": 868,
+          "tensor_count": 4,
+          "max_abs_delta": 0.10184037685394287,
+          "l2_delta": 1.1834903955459595,
+          "relative_l2_delta": 1.0072876346504873
+        }
+      },
+      "ROI": {
+        "group_encoder": {
+          "parameter_count": 976,
+          "tensor_count": 12,
+          "max_abs_delta": 0.9553569555282593,
+          "l2_delta": 7.696190357208252,
+          "relative_l2_delta": 0.9973106731972624
+        },
+        "gate": {
+          "parameter_count": 1553,
+          "tensor_count": 4,
+          "max_abs_delta": 0.25262412428855896,
+          "l2_delta": 1.7047940492630005,
+          "relative_l2_delta": 0.9999995804440791
+        },
+        "adapter": {
+          "parameter_count": 868,
+          "tensor_count": 4,
+          "max_abs_delta": 0.10149041563272476,
+          "l2_delta": 1.204569935798645,
+          "relative_l2_delta": 1.0161642344782906
+        }
+      }
+    },
+    "initial_gate_outputs": {
+      "MRI": {
+        "groups": [
+          {
+            "group_name": "cortical_volume_CV",
+            "raw_gate_logit": -0.08435168862342834,
+            "sigmoid_gate": 0.47899097204208374
+          },
+          {
+            "group_name": "surface_area_SA",
+            "raw_gate_logit": -0.0758616179227829,
+            "sigmoid_gate": 0.4811002314090729
+          },
+          {
+            "group_name": "cortical_thickness_TA_TS",
+            "raw_gate_logit": -0.06892292201519012,
+            "sigmoid_gate": 0.4828301668167114
+          },
+          {
+            "group_name": "subcortical_volume_SV",
+            "raw_gate_logit": -0.07103254646062851,
+            "sigmoid_gate": 0.4822949171066284
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.005934243556112051,
+        "sigmoid_gate_between_group_std_population": 0.001475012395530939,
+        "maximum_gate_deviation_from_0_5": 0.02100902795791626
+      },
+      "PET": {
+        "groups": [
+          {
+            "group_name": "cortical_left_uptake",
+            "raw_gate_logit": -0.019704442471265793,
+            "sigmoid_gate": 0.49507689476013184
+          },
+          {
+            "group_name": "cortical_left_size",
+            "raw_gate_logit": -0.03581976518034935,
+            "sigmoid_gate": 0.49104973673820496
+          },
+          {
+            "group_name": "cortical_right_uptake",
+            "raw_gate_logit": -0.023100897669792175,
+            "sigmoid_gate": 0.49422600865364075
+          },
+          {
+            "group_name": "cortical_right_size",
+            "raw_gate_logit": -0.029145218431949615,
+            "sigmoid_gate": 0.4927174150943756
+          },
+          {
+            "group_name": "noncortical_aggregate_uptake",
+            "raw_gate_logit": -0.03146091476082802,
+            "sigmoid_gate": 0.4921395182609558
+          },
+          {
+            "group_name": "noncortical_aggregate_size",
+            "raw_gate_logit": -0.024907825514674187,
+            "sigmoid_gate": 0.4937764108181
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.005390311125665903,
+        "sigmoid_gate_between_group_std_population": 0.0013466739328578115,
+        "maximum_gate_deviation_from_0_5": 0.008950263261795044
+      },
+      "ROI": {
+        "groups": [
+          {
+            "group_name": "medial_temporal_structure",
+            "raw_gate_logit": -0.08012643456459045,
+            "sigmoid_gate": 0.4800611138343811
+          },
+          {
+            "group_name": "global_structure",
+            "raw_gate_logit": -0.09291795641183853,
+            "sigmoid_gate": 0.47688567638397217
+          },
+          {
+            "group_name": "ventricular_structure",
+            "raw_gate_logit": -0.08349408209323883,
+            "sigmoid_gate": 0.4792141914367676
+          },
+          {
+            "group_name": "amyloid_AV45",
+            "raw_gate_logit": -0.0993146225810051,
+            "sigmoid_gate": 0.47530099749565125
+          },
+          {
+            "group_name": "glucose_metabolism_FDG",
+            "raw_gate_logit": -0.06984836608171463,
+            "sigmoid_gate": 0.4825945496559143
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.010228347964584827,
+        "sigmoid_gate_between_group_std_population": 0.0025324863381683826,
+        "maximum_gate_deviation_from_0_5": 0.024699002504348755
+      }
+    },
+    "checkpoint_gate_outputs": {
+      "MRI": {
+        "groups": [
+          {
+            "group_name": "cortical_volume_CV",
+            "raw_gate_logit": 2.384185791015625e-07,
+            "sigmoid_gate": 0.5000000596046448,
+            "raw_gate_logit_change_from_initial": 0.08435192704200745,
+            "sigmoid_gate_change_from_initial": 0.021009087562561035
+          },
+          {
+            "group_name": "surface_area_SA",
+            "raw_gate_logit": 2.384185791015625e-07,
+            "sigmoid_gate": 0.5000000596046448,
+            "raw_gate_logit_change_from_initial": 0.075861856341362,
+            "sigmoid_gate_change_from_initial": 0.0188998281955719
+          },
+          {
+            "group_name": "cortical_thickness_TA_TS",
+            "raw_gate_logit": 2.384185791015625e-07,
+            "sigmoid_gate": 0.5000000596046448,
+            "raw_gate_logit_change_from_initial": 0.06892316043376923,
+            "sigmoid_gate_change_from_initial": 0.01716989278793335
+          },
+          {
+            "group_name": "subcortical_volume_SV",
+            "raw_gate_logit": 2.384185791015625e-07,
+            "sigmoid_gate": 0.5000000596046448,
+            "raw_gate_logit_change_from_initial": 0.07103278487920761,
+            "sigmoid_gate_change_from_initial": 0.017705142498016357
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.0,
+        "sigmoid_gate_between_group_std_population": 0.0,
+        "maximum_gate_deviation_from_0_5": 5.960464477539063e-08
+      },
+      "PET": {
+        "groups": [
+          {
+            "group_name": "cortical_left_uptake",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.019704442471265793,
+            "sigmoid_gate_change_from_initial": 0.004923105239868164
+          },
+          {
+            "group_name": "cortical_left_size",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.03581976518034935,
+            "sigmoid_gate_change_from_initial": 0.008950263261795044
+          },
+          {
+            "group_name": "cortical_right_uptake",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.023100897669792175,
+            "sigmoid_gate_change_from_initial": 0.005773991346359253
+          },
+          {
+            "group_name": "cortical_right_size",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.029145218431949615,
+            "sigmoid_gate_change_from_initial": 0.00728258490562439
+          },
+          {
+            "group_name": "noncortical_aggregate_uptake",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.03146091476082802,
+            "sigmoid_gate_change_from_initial": 0.00786048173904419
+          },
+          {
+            "group_name": "noncortical_aggregate_size",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.024907825514674187,
+            "sigmoid_gate_change_from_initial": 0.006223589181900024
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.0,
+        "sigmoid_gate_between_group_std_population": 0.0,
+        "maximum_gate_deviation_from_0_5": 0.0
+      },
+      "ROI": {
+        "groups": [
+          {
+            "group_name": "medial_temporal_structure",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.08012643456459045,
+            "sigmoid_gate_change_from_initial": 0.019938886165618896
+          },
+          {
+            "group_name": "global_structure",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.09291795641183853,
+            "sigmoid_gate_change_from_initial": 0.023114323616027832
+          },
+          {
+            "group_name": "ventricular_structure",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.08349408209323883,
+            "sigmoid_gate_change_from_initial": 0.020785808563232422
+          },
+          {
+            "group_name": "amyloid_AV45",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.0993146225810051,
+            "sigmoid_gate_change_from_initial": 0.024699002504348755
+          },
+          {
+            "group_name": "glucose_metabolism_FDG",
+            "raw_gate_logit": 0.0,
+            "sigmoid_gate": 0.5,
+            "raw_gate_logit_change_from_initial": 0.06984836608171463,
+            "sigmoid_gate_change_from_initial": 0.017405450344085693
+          }
+        ],
+        "raw_gate_logit_between_group_std_population": 0.0,
+        "sigmoid_gate_between_group_std_population": 0.0,
+        "maximum_gate_deviation_from_0_5": 0.0
+      }
+    },
+    "checkpoint_mechanism": {
+      "MRI": {
+        "mean_residual_shared_ratio": 0.006842236500233412,
+        "maximum_residual_shared_ratio": 0.015075214207172394
+      },
+      "PET": {
+        "mean_residual_shared_ratio": 0.004879281390458345,
+        "maximum_residual_shared_ratio": 0.009451259858906269
+      },
+      "ROI": {
+        "mean_residual_shared_ratio": 0.007113366387784481,
+        "maximum_residual_shared_ratio": 0.012198840267956257
+      }
+    },
+    "report_runner_checkpoint_path_matches": true
+  },
+  "check_C_active_step": {
+    "activation_epoch": 41,
+    "alpha": 1.0,
+    "loss": 3.2998170852661133,
+    "loss_finite": true,
+    "families": {
+      "MRI": {
+        "group_encoder": {
+          "tensor_count": 10,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 3.3088399504777044e-05,
+          "max_abs_parameter_delta": 0.009999454021453857,
+          "relative_l2_parameter_delta": 0.0641390235312387,
+          "prestep_parameter_l2": 6.965951919555664,
+          "coupled_weight_decay_term_l2_estimate": 0.003482975959777832,
+          "decay_to_task_gradient_norm_ratio": 105.26274787066201
+        },
+        "gate": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 1.2886247304777498e-06,
+          "max_abs_parameter_delta": 0.009999394416809082,
+          "relative_l2_parameter_delta": 0.22133747620393815,
+          "prestep_parameter_l2": 1.773165225982666,
+          "coupled_weight_decay_term_l2_estimate": 0.0008865826129913331,
+          "decay_to_task_gradient_norm_ratio": 688.0062938543359
+        },
+        "adapter": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 0.010584600269794464,
+          "max_abs_parameter_delta": 0.009999969974160194,
+          "relative_l2_parameter_delta": 0.24929225546021058,
+          "prestep_parameter_l2": 1.1800589561462402,
+          "coupled_weight_decay_term_l2_estimate": 0.0005900294780731201,
+          "decay_to_task_gradient_norm_ratio": 0.055744143659459455
+        }
+      },
+      "PET": {
+        "group_encoder": {
+          "tensor_count": 14,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 7.582458783872426e-05,
+          "max_abs_parameter_delta": 0.00999942421913147,
+          "relative_l2_parameter_delta": 0.06232191329809611,
+          "prestep_parameter_l2": 7.368969440460205,
+          "coupled_weight_decay_term_l2_estimate": 0.0036844847202301026,
+          "decay_to_task_gradient_norm_ratio": 48.59221496165114
+        },
+        "gate": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 1.614618781786703e-06,
+          "max_abs_parameter_delta": 0.009999394416809082,
+          "relative_l2_parameter_delta": 0.23230587456510188,
+          "prestep_parameter_l2": 1.6892141103744507,
+          "coupled_weight_decay_term_l2_estimate": 0.0008446070551872254,
+          "decay_to_task_gradient_norm_ratio": 523.0996577117379
+        },
+        "adapter": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 0.011377920396625996,
+          "max_abs_parameter_delta": 0.009999971836805344,
+          "relative_l2_parameter_delta": 0.25022750078357275,
+          "prestep_parameter_l2": 1.1749279499053955,
+          "coupled_weight_decay_term_l2_estimate": 0.0005874639749526978,
+          "decay_to_task_gradient_norm_ratio": 0.0516319287200561
+        }
+      },
+      "ROI": {
+        "group_encoder": {
+          "tensor_count": 12,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 4.8589725338388234e-05,
+          "max_abs_parameter_delta": 0.00999981164932251,
+          "relative_l2_parameter_delta": 0.04046984451052529,
+          "prestep_parameter_l2": 7.716943740844727,
+          "coupled_weight_decay_term_l2_estimate": 0.0038584718704223636,
+          "decay_to_task_gradient_norm_ratio": 79.4092118064469
+        },
+        "gate": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 1.3947105799161363e-06,
+          "max_abs_parameter_delta": 0.009999200701713562,
+          "relative_l2_parameter_delta": 0.23005844755422455,
+          "prestep_parameter_l2": 1.7047947645187378,
+          "coupled_weight_decay_term_l2_estimate": 0.0008523973822593689,
+          "decay_to_task_gradient_norm_ratio": 611.1639098247275
+        },
+        "adapter": {
+          "tensor_count": 4,
+          "gradient_none_count": 0,
+          "gradient_finite": true,
+          "gradient_norm": 0.007178118452429771,
+          "max_abs_parameter_delta": 0.009999951347708702,
+          "relative_l2_parameter_delta": 0.2480436052990643,
+          "prestep_parameter_l2": 1.1854087114334106,
+          "coupled_weight_decay_term_l2_estimate": 0.0005927043557167053,
+          "decay_to_task_gradient_norm_ratio": 0.08257099120919434
+        }
+      }
+    },
+    "output_tensor_gradient": {
+      "MRI": {
+        "participates_in_final_logits": true,
+        "gradient_norm": 0.0073172287084162235,
+        "gradient_finite": true
+      },
+      "PET": {
+        "participates_in_final_logits": true,
+        "gradient_norm": 0.007972470484673977,
+        "gradient_finite": true
+      },
+      "ROI": {
+        "participates_in_final_logits": true,
+        "gradient_norm": 0.004680132493376732,
+        "gradient_finite": true
+      }
+    },
+    "optimizer_state_coverage_after_step": 1.0,
+    "optimizer": "Adam with coupled L2 weight decay",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0005,
+    "zero_alpha_warmup_epochs": [
+      1,
+      20
+    ],
+    "historical_zero_alpha_forward_constructed_sg_graph": true,
+    "historical_zero_times_raw_delta_yielded_zero_but_non_None_sg_gradients": true,
+    "forward_has_no_post_gate_detach_item_new_tensor_or_no_grad": true
+  },
+  "check_D_manual_perturbation": {
+    "modality": "PET",
+    "group_index": 0,
+    "group_name": "cortical_left_uptake",
+    "raw_gate_logit_perturbation": 0.1,
+    "injected_into_actual_gate_scorer_output": true,
+    "temporary_hook_removed": true,
+    "selected_raw_gate_logit_max_abs_diff": 0.10000000149011612,
+    "selected_sigmoid_gate_max_abs_diff": 0.024979114532470703,
+    "normalized_gate_weight_max_abs_diff": 0.006881341338157654,
+    "checkpoint_pet_group_token_abs_max": 6.413689334294759e-06,
+    "checkpoint_pet_group_token_cross_group_max_deviation": 7.457856554538012e-11,
+    "pooled_local_evidence_max_abs_diff": 9.094947017729282e-13,
+    "delta_max_abs_diff": 0.0,
+    "final_logits_max_abs_diff": 0.0,
+    "pooled_feature_changed": false,
+    "final_logits_changed": false,
+    "checkpoint_probe": {
+      "modality": "PET",
+      "group_index": 0,
+      "group_name": "cortical_left_uptake",
+      "raw_gate_logit_perturbation": 0.1,
+      "selected_raw_gate_logit_max_abs_diff": 0.10000000149011612,
+      "selected_sigmoid_gate_max_abs_diff": 0.024979114532470703,
+      "all_sigmoid_gates_max_abs_diff": 0.024979114532470703,
+      "normalized_gate_weight_max_abs_diff": 0.006881341338157654,
+      "pet_group_token_abs_max": 6.413689334294759e-06,
+      "pet_group_token_cross_group_max_deviation": 7.457856554538012e-11,
+      "pet_group_token_pairwise_max_abs_diff": 1.211901690112427e-10,
+      "pooled_local_evidence_max_abs_diff": 9.094947017729282e-13,
+      "delta_max_abs_diff": 0.0,
+      "final_logits_max_abs_diff": 0.0,
+      "pooled_feature_changed": false,
+      "final_logits_changed": false,
+      "hook_changed_selected_raw_logit": true,
+      "temporary_hooks_removed": true
+    },
+    "fresh_initialization_control": {
+      "modality": "PET",
+      "group_index": 0,
+      "group_name": "cortical_left_uptake",
+      "raw_gate_logit_perturbation": 0.1,
+      "selected_raw_gate_logit_max_abs_diff": 0.10000000894069672,
+      "selected_sigmoid_gate_max_abs_diff": 0.02499479055404663,
+      "all_sigmoid_gates_max_abs_diff": 0.02499479055404663,
+      "normalized_gate_weight_max_abs_diff": 0.00735945999622345,
+      "pet_group_token_abs_max": 2.002519130706787,
+      "pet_group_token_cross_group_max_deviation": 1.3349134922027588,
+      "pet_group_token_pairwise_max_abs_diff": 1.911390781402588,
+      "pooled_local_evidence_max_abs_diff": 0.007695287466049194,
+      "delta_max_abs_diff": 4.007830284535885e-05,
+      "final_logits_max_abs_diff": 3.933906555175781e-06,
+      "pooled_feature_changed": true,
+      "final_logits_changed": true,
+      "hook_changed_selected_raw_logit": true,
+      "temporary_hooks_removed": true
+    },
+    "formula_uses_group_specific_gate_values": true,
+    "formula_only_cancels_a_common_scale_not_group_specific_changes": true
+  },
+  "bug_fix_validation": {
+    "modified_files": [
+      "Model/sg_hft_c1_v2.py",
+      "scripts/run_sg_hft_gate_update_check.py"
+    ],
+    "repair_applied": true,
+    "repair": "when alpha=0, compute SG diagnostics without attaching SG parameters to the loss graph, so Adam coupled weight decay cannot update them",
+    "diagnostic_confirmation_before_micro_training": {
+      "A_to_C_no_independent_faults": true,
+      "A_to_C_bug_reasons": [],
+      "optimizer_driven_branch_collapse_confirmed": true,
+      "warmup_fix_passed": true,
+      "bug_reasons": [],
+      "micro_training_authorized": true
+    },
+    "warmup_epoch1": {
+      "epoch": 1,
+      "alpha": 0.0,
+      "loss_finite": true,
+      "sg_parameter_tensor_count": 60,
+      "sg_gradient_none_count": 60,
+      "expected_gradient_none_count": 60,
+      "sg_parameter_bitwise_unchanged_count": 60,
+      "expected_bitwise_unchanged_count": 60,
+      "sg_optimizer_state_count_after_step": 0,
+      "passed": true
+    },
+    "micro_training": {
+      "fold": 4,
+      "seed": 0,
+      "fixed_activation_epoch": 41,
+      "fixed_alpha": 1.0,
+      "steps_requested": 20,
+      "steps_executed": 20,
+      "skipped": false,
+      "fresh_model": true,
+      "fresh_criterion": true,
+      "fresh_optimizer": true,
+      "fresh_scheduler": true,
+      "optimizer_coverage_fraction": 1.0,
+      "all_steps_all_nine_gradients_finite_nonzero": false,
+      "all_steps_and_parameters_finite": true,
+      "post_forward_finite": true,
+      "per_step": [
+        {
+          "step": 1,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 3.2998170852661133,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00016342272283509374,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.364482942444738e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.052277058362960815,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00037449554656632245,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.974558684509248e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.05619524419307709,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0002399833465460688,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.888438292662613e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.03545253351330757,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 2,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.9071719646453857,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00024768206640146673,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.6839687709289137e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.02987104468047619,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00021231932623777539,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.391489710542373e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.028909288346767426,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0002107484033331275,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 8.083943612291478e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.023080533370375633,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 3,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 5.7340593338012695,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00631111953407526,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 8.414260082645342e-05,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.1269150823354721,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.006453776732087135,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00010388821101514623,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.13154271245002747,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004482639953494072,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.8804259323515e-05,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.10196281969547272,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 4,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 4.192840099334717,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00041601870907470584,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.6240202259941725e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.05842664837837219,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0006005033501423895,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.128292741574114e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.05479305237531662,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00037565920501947403,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.788088739995146e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.05166316404938698,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 5,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 6.1955084800720215,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0029435039032250643,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.65718323236797e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.046952731907367706,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0016125707188621163,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.6579171945923e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.046601973474025726,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.001851604669354856,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.5690826078061946e-05,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.04518795385956764,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 6,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 5.143667221069336,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00024307241255883127,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.643753292541078e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.013453271239995956,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00019189655722584575,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.404916916835646e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.01362459547817707,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00013661228877026588,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.98549241758883e-06,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.013744886964559555,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 7,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 3.503955602645874,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.956740692956373e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.896117561907886e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.009390292689204216,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.7664795197779313e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.32032051537135e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.008980209939181805,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.928715209942311e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.978778468332166e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.009290485642850399,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 8,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 8.098053932189941,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00017450432642363012,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.216382253867778e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.026776090264320374,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0001256117393495515,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.910056480232015e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.02557196654379368,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.912828393978998e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.76085585130204e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.026385271921753883,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 9,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 5.827694416046143,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00018369992903899401,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.4098101764357125e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0206350926309824,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.313874135026708e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.587151719055328e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.018990155309438705,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.8647816331358626e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.426545494126913e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.01957293041050434,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 10,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.7132835388183594,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.117403245298192e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.697392044927255e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004150058142840862,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.746808579307981e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.546919913333113e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004215687047690153,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.8486119845183566e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.788198685266252e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.003801327431574464,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 11,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.965040683746338,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.287142655812204e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.068229143034841e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004481622017920017,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.6314237402402796e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.289124136557803e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0043079243041574955,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.129290260199923e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.8763338377757464e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0040593515150249004,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 12,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.8203885555267334,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": true,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.00012221511860843748,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.2348198197287275e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.007457943167537451,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.02505668514641e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.843231155542526e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004507372621446848,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.80693049414549e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.084856411485816e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.006137486081570387,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 13,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.4646475315093994,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.2485432307585143e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.720584373922975e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0015897901030257344,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.084091637603706e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.372108897143789e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0014768107794225216,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.06570623756852e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.0311492815162637e-07,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0016259682597592473,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 14,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.6528573036193848,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.9880141887115315e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.061570197360197e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0046052937395870686,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.027675145654939e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.0526486872779515e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004440873861312866,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.473227505106479e-05,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.8471744779353685e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.004646077286452055,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 15,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.670398712158203,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 8.43041834741598e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.535084943834704e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0022523109801113605,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.962321433296893e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.000207777186347e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.002203897340223193,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.816436664143112e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.7019791798134065e-08,
+                "gradient_effective": true
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0023207697086036205,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 16,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.3401105403900146,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.744675839494448e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.531304721387073e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.001571962726302445,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 3.5261825814814074e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.547831083418941e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0015417521353811026,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.115373030799674e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.490475629699176e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0016237826785072684,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 17,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.46444034576416,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.140771008882439e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.35048816153028e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0006721218232996762,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.107398348831339e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 6.05113958940251e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0013465234078466892,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.0888514882244635e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.76887227087974e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0008009739103727043,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 18,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.51362681388855,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.418674961925717e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.900770734726166e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0020617456175386906,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.8019180717819836e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.3490056294251929e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0019805352203547955,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.931709448399488e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.1954284229176437e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0019519430352374911,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 19,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.3427958488464355,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 7.367162879745592e-07,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.060523858961389e-11,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.000997065333649516,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.294465957675129e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 9.669878786588981e-11,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0010167411528527737,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.6245650158452918e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.948339598660368e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.001021180534735322,
+                "gradient_effective": true
+              }
+            }
+          }
+        },
+        {
+          "step": 20,
+          "activation_epoch": 41,
+          "alpha": 1.0,
+          "loss": 2.337952136993408,
+          "loss_finite": true,
+          "learning_rate_after_step": 0.01,
+          "all_nine_modality_family_gradients_finite_nonzero": false,
+          "model_parameters_finite_after_step": true,
+          "families": {
+            "MRI": {
+              "group_encoder": {
+                "tensor_count": 10,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.722895715123741e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.5591118673885518e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.001773222116753459,
+                "gradient_effective": true
+              }
+            },
+            "PET": {
+              "group_encoder": {
+                "tensor_count": 14,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 5.515400061995024e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 2.1360578583706769e-10,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.001640504808165133,
+                "gradient_effective": true
+              }
+            },
+            "ROI": {
+              "group_encoder": {
+                "tensor_count": 12,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 4.448249455890618e-06,
+                "gradient_effective": true
+              },
+              "gate": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 1.1495777663128592e-09,
+                "gradient_effective": false
+              },
+              "adapter": {
+                "tensor_count": 4,
+                "gradient_none_count": 0,
+                "all_gradients_present": true,
+                "gradient_finite": true,
+                "gradient_norm": 0.0017565620364621282,
+                "gradient_effective": true
+              }
+            }
+          }
+        }
+      ],
+      "post_step_20_mechanism": {
+        "MRI": {
+          "group_mean_gates": [
+            0.4993380308151245,
+            0.4993346333503723,
+            0.499340295791626,
+            0.4993249177932739
+          ],
+          "gate_max_deviation_from_0_5": 0.0006750822067260742,
+          "gate_between_group_std_population": 5.87134127272293e-06,
+          "gate_any_subject_group_max_deviation_from_0_5": 0.001003265380859375,
+          "mean_residual_shared_ratio": 0.003012400818988681,
+          "maximum_residual_shared_ratio": 0.0035575074143707752,
+          "finite": true
+        },
+        "PET": {
+          "group_mean_gates": [
+            0.5008035898208618,
+            0.5008153915405273,
+            0.5008067488670349,
+            0.5008015632629395,
+            0.5008063912391663,
+            0.5008063316345215
+          ],
+          "gate_max_deviation_from_0_5": 0.0008153915405273438,
+          "gate_between_group_std_population": 4.30757836511475e-06,
+          "gate_any_subject_group_max_deviation_from_0_5": 0.0009350180625915527,
+          "mean_residual_shared_ratio": 0.002840608824044466,
+          "maximum_residual_shared_ratio": 0.00330547709017992,
+          "finite": true
+        },
+        "ROI": {
+          "group_mean_gates": [
+            0.5000519752502441,
+            0.5000542402267456,
+            0.5000320076942444,
+            0.5000277757644653,
+            0.49998944997787476
+          ],
+          "gate_max_deviation_from_0_5": 5.424022674560547e-05,
+          "gate_between_group_std_population": 2.3308242816710845e-05,
+          "gate_any_subject_group_max_deviation_from_0_5": 0.00052681565284729,
+          "mean_residual_shared_ratio": 0.0029375716112554073,
+          "maximum_residual_shared_ratio": 0.0033887652680277824,
+          "finite": true
+        }
+      },
+      "gate_deviation_modality_count_gt_0_001": 0,
+      "gate_std_modality_count_gt_0_001": 0,
+      "ratio_modality_count_ge_0_015": 0,
+      "pet_manual_perturbation": {
+        "modality": "PET",
+        "group_index": 0,
+        "group_name": "cortical_left_uptake",
+        "raw_gate_logit_perturbation": 0.1,
+        "selected_raw_gate_logit_max_abs_diff": 0.10000000894069672,
+        "selected_sigmoid_gate_max_abs_diff": 0.024977266788482666,
+        "all_sigmoid_gates_max_abs_diff": 0.024977266788482666,
+        "normalized_gate_weight_max_abs_diff": 0.006870552897453308,
+        "pet_group_token_abs_max": 0.22894468903541565,
+        "pet_group_token_cross_group_max_deviation": 0.08670838922262192,
+        "pet_group_token_pairwise_max_abs_diff": 0.1166817918419838,
+        "pooled_local_evidence_max_abs_diff": 0.0005641281604766846,
+        "delta_max_abs_diff": 4.209578037261963e-07,
+        "final_logits_max_abs_diff": 4.76837158203125e-07,
+        "pooled_feature_changed": true,
+        "final_logits_changed": true,
+        "hook_changed_selected_raw_logit": true,
+        "temporary_hooks_removed": true
+      },
+      "passed": false,
+      "checkpoint_saved": false,
+      "screen_or_400_epoch_started": false
+    }
+  },
+  "decision_evidence": {
+    "confirmed_bug_reason": "optimizer-driven branch collapse from zero-alpha warmup plus coupled L2 decay",
+    "other_fault_reasons": [],
+    "A_to_C_no_independent_faults": true,
+    "diagnostic_prerequisites_passed": true,
+    "maximum_checkpoint_gate_group_std": 0.0,
+    "maximum_checkpoint_gate_deviation_from_0_5": 5.960464477539063e-08,
+    "maximum_checkpoint_mean_residual_shared_ratio": 0.007113366387784481,
+    "checkpoint_uniform_low_ratio_collapse": true,
+    "diagnostic_hook_effective": true,
+    "checkpoint_pet_group_tokens_collapsed": true,
+    "fresh_initialization_same_hook_effective": true,
+    "optimizer_driven_branch_collapse_confirmed": true,
+    "warmup_fix_passed": true,
+    "micro_training_passed": false
+  },
+  "root_cause": "optimizer-driven branch collapse from zero-alpha warmup plus coupled L2 decay",
+  "root_cause_detail": {
+    "attribution_confirmed": true,
+    "zero_alpha_epochs": [
+      1,
+      20
+    ],
+    "original_zero_alpha_multiplication_produced_zero_but_non_None_gradients": true,
+    "adam_uses_coupled_l2_weight_decay": true,
+    "weight_decay": 0.0005,
+    "effect": "SG group encoders and gate scorer are updated toward zero while the branch is disabled; their later task gradients are too weak to recover",
+    "not_a_hook_error": true,
+    "not_group_gate_normalization_cancellation": true
+  },
+  "repair_boundary": {
+    "applied_change": "detach the disabled SG computation graph only while alpha=0 so SG grads remain None and Adam cannot apply coupled decay",
+    "activation_alpha_schedule_changed": false,
+    "optimizer_type_or_configuration_changed": false,
+    "loss_scheduler_rank_cap_or_group_count_changed": false,
+    "repair_applied": true
+  },
+  "modified_files": [
+    "Model/sg_hft_c1_v2.py",
+    "scripts/run_sg_hft_gate_update_check.py"
+  ],
+  "modified_model_files": [
+    "Model/sg_hft_c1_v2.py"
+  ],
+  "modified_diagnostic_files": [
+    "scripts/run_sg_hft_gate_update_check.py"
+  ],
+  "modified_runner_files": [],
+  "micro_training_20_steps_run": true,
+  "micro_training_steps_executed": 20,
+  "fixed_screen_run": false,
+  "formal_training_run": false,
+  "action": "minimal fix passed but micro-training gate failed; stopped before screen"
+}

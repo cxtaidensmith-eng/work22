@@ -498,16 +498,24 @@ class SGHFTC1V2Model(HFTC1LiteModel):
 
         sg_outputs: dict[str, dict[str, torch.Tensor]] = {}
         if self.sg_enabled:
-            for modality, branch in self.sg_branches.items():
-                modal_index = self.modal_index_by_name[modality]
-                sg_outputs[modality] = branch(
-                    X,
-                    H[:, modal_index],
-                    c1_category_tokens[:, modal_index],
-                    alpha=alpha,
-                    cap=self.cap,
-                    eps=self.eps,
-                )
+            # During the preregistered inactive warmup, the SG contribution is
+            # exactly zero.  Keep computing the diagnostic tensors, but do not
+            # attach the SG parameters to the loss graph: a zero-valued gradient
+            # would still make Adam apply coupled weight decay and collapse the
+            # branch before its epoch-21 activation.  Respect an outer no-grad
+            # context during evaluation as well.
+            track_sg_grad = torch.is_grad_enabled() and alpha != 0.0
+            with torch.set_grad_enabled(track_sg_grad):
+                for modality, branch in self.sg_branches.items():
+                    modal_index = self.modal_index_by_name[modality]
+                    sg_outputs[modality] = branch(
+                        X,
+                        H[:, modal_index],
+                        c1_category_tokens[:, modal_index],
+                        alpha=alpha,
+                        cap=self.cap,
+                        eps=self.eps,
+                    )
 
         category_token_items = []
         for modal_index, canonical_name in enumerate(self.canonical_modal_names):
