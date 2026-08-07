@@ -1,0 +1,904 @@
+{
+  "decision": "BRANCH_COMPLEMENTARITY_GO",
+  "stage": "A_category_global_fusibility_check",
+  "pc_bbf_implemented": false,
+  "c1_retrained": false,
+  "base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "source": {
+    "worktree": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1",
+    "head": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "model_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\Model\\cme_dual_branch.py",
+    "model_sha256": "58126ec1ebba811f2f61715d61b9bd586ced0f558667467882048a35bad6a598",
+    "network_sha256": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+    "formal_oof_path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\oof_predictions.csv",
+    "formal_oof_sha256": "bac14e3347cacbe1f1e566be182a32df6848650c8b0e1a4c2a52d2bb3214e654",
+    "checkpoint_sha256": {
+      "fold_00": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+      "fold_01": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+      "fold_02": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+      "fold_03": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+      "fold_04": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+      "fold_05": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+      "fold_06": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+      "fold_07": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+      "fold_08": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+      "fold_09": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c"
+    }
+  },
+  "protocol": {
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "seed": 0,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "probe": {
+      "scaler": "StandardScaler fitted on fold train representation only",
+      "classifier": "LogisticRegression",
+      "C": 1.0,
+      "max_iter": 2000,
+      "random_state": 0,
+      "class_weight": null
+    }
+  },
+  "representation_contract": {
+    "Y": "Category representation (Message_MLP output) before historical add",
+    "G": "Global representation (Global_Message output) before historical add",
+    "historical_fusion": "H_fused = Y + G",
+    "max_abs_diff_h_fused_vs_y_plus_g": 0.0,
+    "dimension_Y": 96,
+    "dimension_G": 96
+  },
+  "checkpoint_replay": {
+    "strict_load_all_folds": true,
+    "prediction_match_all_598": true,
+    "max_abs_raw_logit_diff": 0.0,
+    "max_abs_probability_diff": 0.0
+  },
+  "metrics": {
+    "c1_formal_replayed": {
+      "correct": 560,
+      "acc": 0.9364548494983278,
+      "macro_f1": 0.9175457174222448,
+      "bacc": 0.9163359339143832,
+      "macro_auc": 0.9585607750856947,
+      "weighted_f1": 0.936365986325677,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "category_probe": {
+      "correct": 534,
+      "acc": 0.8929765886287625,
+      "macro_f1": 0.868168065913669,
+      "bacc": 0.8574290975502996,
+      "macro_auc": 0.9384635025911222,
+      "weighted_f1": 0.8923774028852737,
+      "confusion_matrix": [
+        [
+          54,
+          0,
+          18
+        ],
+        [
+          0,
+          189,
+          20
+        ],
+        [
+          11,
+          15,
+          291
+        ]
+      ]
+    },
+    "global_probe": {
+      "correct": 497,
+      "acc": 0.8311036789297659,
+      "macro_f1": 0.8170408447458164,
+      "bacc": 0.8254533966596062,
+      "macro_auc": 0.9211896536703815,
+      "weighted_f1": 0.8312349335219129,
+      "confusion_matrix": [
+        [
+          57,
+          0,
+          15
+        ],
+        [
+          0,
+          182,
+          27
+        ],
+        [
+          19,
+          40,
+          258
+        ]
+      ]
+    }
+  },
+  "complementarity": {
+    "category_only_correct_global_wrong": 69,
+    "global_only_correct_category_wrong": 32,
+    "category_only_subjects": [
+      9,
+      16,
+      47,
+      50,
+      62,
+      67,
+      79,
+      99,
+      110,
+      120,
+      125,
+      160,
+      167,
+      185,
+      191,
+      213,
+      224,
+      230,
+      248,
+      262,
+      264,
+      273,
+      276,
+      277,
+      281,
+      284,
+      289,
+      292,
+      310,
+      319,
+      332,
+      350,
+      356,
+      359,
+      369,
+      374,
+      377,
+      378,
+      383,
+      387,
+      388,
+      395,
+      401,
+      412,
+      414,
+      417,
+      428,
+      429,
+      430,
+      431,
+      432,
+      439,
+      475,
+      494,
+      500,
+      505,
+      518,
+      524,
+      526,
+      530,
+      536,
+      541,
+      543,
+      562,
+      568,
+      580,
+      581,
+      586,
+      594
+    ],
+    "global_only_subjects": [
+      8,
+      10,
+      21,
+      33,
+      49,
+      55,
+      66,
+      68,
+      69,
+      85,
+      124,
+      127,
+      135,
+      155,
+      168,
+      207,
+      227,
+      234,
+      242,
+      270,
+      301,
+      305,
+      361,
+      372,
+      421,
+      436,
+      480,
+      501,
+      528,
+      538,
+      575,
+      587
+    ],
+    "c1_errors_fixed_by_category": 3,
+    "c1_errors_fixed_by_global": 11,
+    "c1_errors_fixed_by_either": 14,
+    "c1_error_subjects_fixed_by_either": [
+      33,
+      49,
+      55,
+      168,
+      207,
+      227,
+      234,
+      305,
+      350,
+      361,
+      378,
+      428,
+      501,
+      538
+    ],
+    "oracle_c1_category_global_correct": 574,
+    "category_global_disagreement_count": 101,
+    "category_global_disagreement_fraction": 0.1688963210702341
+  },
+  "decision_criteria": {
+    "oracle_at_least_565": true,
+    "category_has_at_least_3_exclusive_correct": true,
+    "global_has_at_least_3_exclusive_correct": true,
+    "at_least_5_c1_errors_fixed_by_either": true
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_00\\checkpoint_best.pt",
+      "checkpoint_sha256": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9023496828374876,
+        "bacc": 0.8741679467485919,
+        "macro_auc": 0.9240033271943728,
+        "weighted_f1": 0.9155990351112303,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            1,
+            30
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 50,
+        "acc": 0.8333333333333334,
+        "macro_f1": 0.8318533543685672,
+        "bacc": 0.8513184843830004,
+        "macro_auc": 0.9442230049849627,
+        "weighted_f1": 0.8329456840207347,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            2,
+            5,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 1,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_01\\checkpoint_best.pt",
+      "checkpoint_sha256": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.8815628815628817,
+        "bacc": 0.8680555555555555,
+        "macro_auc": 0.9076649623524622,
+        "weighted_f1": 0.9153846153846155,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 51,
+        "acc": 0.85,
+        "macro_f1": 0.8095238095238094,
+        "bacc": 0.8209325396825397,
+        "macro_auc": 0.9094677269795194,
+        "weighted_f1": 0.8515873015873014,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            3,
+            2,
+            27
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 2,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_02\\checkpoint_best.pt",
+      "checkpoint_sha256": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 52,
+        "acc": 0.8666666666666667,
+        "macro_f1": 0.8605336871590742,
+        "bacc": 0.8521825396825397,
+        "macro_auc": 0.9875560705454572,
+        "weighted_f1": 0.8653250773993808,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            16,
+            5
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 43,
+        "acc": 0.7166666666666667,
+        "macro_f1": 0.7247863247863249,
+        "bacc": 0.7103174603174603,
+        "macro_auc": 0.896349523118391,
+        "weighted_f1": 0.716923076923077,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            14,
+            7
+          ],
+          [
+            1,
+            7,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 3,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_03\\checkpoint_best.pt",
+      "checkpoint_sha256": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9161500191350939,
+        "bacc": 0.8943452380952381,
+        "macro_auc": 0.9162018918799578,
+        "weighted_f1": 0.9162246460007655,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 53,
+        "acc": 0.8833333333333333,
+        "macro_f1": 0.8918673918673918,
+        "bacc": 0.878968253968254,
+        "macro_auc": 0.9464462097127191,
+        "weighted_f1": 0.8840391090391091,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            4,
+            28
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 4,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_04\\checkpoint_best.pt",
+      "checkpoint_sha256": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 53,
+        "acc": 0.8833333333333333,
+        "macro_f1": 0.8549177190968237,
+        "bacc": 0.8363095238095237,
+        "macro_auc": 0.9140362225562697,
+        "weighted_f1": 0.8823555300420973,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 45,
+        "acc": 0.75,
+        "macro_f1": 0.7070490485124631,
+        "bacc": 0.704861111111111,
+        "macro_auc": 0.8218426511468965,
+        "weighted_f1": 0.750093808630394,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            3
+          ],
+          [
+            0,
+            16,
+            5
+          ],
+          [
+            3,
+            4,
+            25
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 5,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_05\\checkpoint_best.pt",
+      "checkpoint_sha256": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.8624338624338623,
+        "bacc": 0.8735119047619048,
+        "macro_auc": 0.9631836814914646,
+        "weighted_f1": 0.9187830687830688,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            3,
+            0,
+            29
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 51,
+        "acc": 0.85,
+        "macro_f1": 0.8448744675065711,
+        "bacc": 0.8953373015873015,
+        "macro_auc": 0.9478359145222353,
+        "weighted_f1": 0.8503285597752198,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            3,
+            4,
+            25
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 6,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_06\\checkpoint_best.pt",
+      "checkpoint_sha256": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9026701119724375,
+        "bacc": 0.9052579365079364,
+        "macro_auc": 0.95577221247917,
+        "weighted_f1": 0.9165866863541282,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            2,
+            29
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9602251407129456,
+        "bacc": 0.9578373015873015,
+        "macro_auc": 0.9813034188034188,
+        "weighted_f1": 0.9497748592870544,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 7,
+      "train_size": 538,
+      "test_size": 60,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_07\\checkpoint_best.pt",
+      "checkpoint_sha256": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 51,
+        "acc": 0.85,
+        "macro_f1": 0.8518881046829118,
+        "bacc": 0.8635912698412698,
+        "macro_auc": 0.9603866935824482,
+        "weighted_f1": 0.8498497415554754,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            6,
+            25
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 47,
+        "acc": 0.7833333333333333,
+        "macro_f1": 0.7674857898442463,
+        "bacc": 0.779265873015873,
+        "macro_auc": 0.9255113062601271,
+        "weighted_f1": 0.7821312657771368,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            19,
+            2
+          ],
+          [
+            2,
+            7,
+            23
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 8,
+      "train_size": 539,
+      "test_size": 59,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_08\\checkpoint_best.pt",
+      "checkpoint_sha256": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 49,
+        "acc": 0.8305084745762712,
+        "macro_f1": 0.7790611319574734,
+        "bacc": 0.7665130568356374,
+        "macro_auc": 0.9203472908905846,
+        "weighted_f1": 0.8288638423379018,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            3
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            2,
+            2,
+            27
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 52,
+        "acc": 0.8813559322033898,
+        "macro_f1": 0.8111395530381423,
+        "bacc": 0.8141321044546851,
+        "macro_auc": 0.9126999674537876,
+        "weighted_f1": 0.8805805230134984,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            3
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            3,
+            1,
+            27
+          ]
+        ]
+      }
+    },
+    {
+      "fold": 9,
+      "train_size": 539,
+      "test_size": 59,
+      "checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_09\\checkpoint_best.pt",
+      "checkpoint_sha256": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c",
+      "strict_load": true,
+      "h_fused_equals_y_plus_g_max_abs_diff": 0.0,
+      "replay_raw_logit_max_abs_diff": 0.0,
+      "replay_probability_max_abs_diff": 0.0,
+      "category_probe": {
+        "correct": 54,
+        "acc": 0.9152542372881356,
+        "macro_f1": 0.8705738705738706,
+        "bacc": 0.8475806451612904,
+        "macro_auc": 0.9538304569139484,
+        "weighted_f1": 0.9121499968957596,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            3
+          ],
+          [
+            0,
+            19,
+            1
+          ],
+          [
+            1,
+            0,
+            30
+          ]
+        ]
+      },
+      "global_probe": {
+        "correct": 48,
+        "acc": 0.8135593220338984,
+        "macro_f1": 0.8155375144408046,
+        "bacc": 0.8330645161290322,
+        "macro_auc": 0.9254473915289854,
+        "weighted_f1": 0.813543228265164,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            17,
+            3
+          ],
+          [
+            2,
+            5,
+            24
+          ]
+        ]
+      }
+    }
+  ],
+  "convergence_warnings": [],
+  "artifacts": {
+    "probe_oof": "experiments\\pc_bbf_c1_v1\\branch_probe_oof.csv",
+    "representations_oof": "experiments\\pc_bbf_c1_v1\\branch_representations_oof.npz"
+  },
+  "elapsed_seconds": 1.80090510006994
+}
