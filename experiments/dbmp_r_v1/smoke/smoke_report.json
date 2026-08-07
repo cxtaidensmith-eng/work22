@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "fold": 0,
+  "epochs": 3,
+  "smoke_warmup_epochs": 1,
+  "formal_warmup_epochs_restored": 20,
+  "parameter_count": 862973,
+  "initial_c1_dbmp_logit_max_abs_diff": 0.0,
+  "prototype_train_only": true,
+  "test_label_invariance": true,
+  "epoch1_residual_disabled": true,
+  "epoch2_residual_activated": true,
+  "gamma_gradient_max": 0.0022586448933900284,
+  "gamma_CN_gradient_max": 0.0005589448264800012,
+  "gamma_AD_gradient_max": 0.0021883915178477764,
+  "final_representation_gradient_max": 0.020410040393471718,
+  "all_finite": true
+}

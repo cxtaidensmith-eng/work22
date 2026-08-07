@@ -1,0 +1,48 @@
+{
+  "experiment": "Dual-Boundary sMCI Multi-Prototype Residual v1",
+  "fold": 2,
+  "seed": 0,
+  "epochs": 400,
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "subjects": 598,
+  "features": 360,
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "class_index_by_name": {
+    "AD": 0,
+    "CN": 1,
+    "SMCI": 2
+  },
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph_enabled": false,
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "weight_decay": 0.0005,
+  "scheduler": "CustomCosineAnnealingLR",
+  "T_max": 400,
+  "eta_min": 0.0001,
+  "loss": "historical weighted main CE on final logits + three unchanged C1 OVR losses + active 0.05 prototype loss",
+  "label_smoothing": 0.05,
+  "orthogonality": false,
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "C1_private_adapter_rank": 8,
+  "prototype_space": "DIFFormer output / original classifier input h only",
+  "tau_assignment": 0.25,
+  "tau_prototype": 0.25,
+  "gamma_initial": 0.05,
+  "gamma_cap": 0.5,
+  "lambda_prototype": 0.05,
+  "warmup_epochs": 20,
+  "parameter_count": 862973,
+  "prototype_statement": "boundary-conditioned sMCI prototypes; no clinical subtype or longitudinal progression claim"
+}

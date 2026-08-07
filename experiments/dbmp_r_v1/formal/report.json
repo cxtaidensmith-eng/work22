@@ -1,0 +1,302 @@
+{
+  "experiment": "Dual-Boundary sMCI Multi-Prototype Residual v1",
+  "decision": "DBMP_STOP",
+  "next_recommendation": "Boundary-Conditioned Disentangled Gradient Learning; not implemented.",
+  "mechanism_conclusion": "The two boundary-conditioned sMCI prototypes remained nearly collinear; the bounded residual changed no same-checkpoint held-out argmax, while the altered training trajectory was net harmful relative to C1.",
+  "branch": "experiment/dbmp-r-v1",
+  "source_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "run_command": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe scripts/run_dbmp_r_v1.py --run-all",
+  "device": {
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "python": "3.11.15",
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "sklearn": "1.9.0"
+  },
+  "parameter_count": 862973,
+  "added_parameters_vs_original": 9842,
+  "added_parameters_vs_c1": 2,
+  "metrics": {
+    "correct": 557,
+    "acc": 0.931438127090301,
+    "macro_f1": 0.915962306936852,
+    "bacc": 0.9082910151937215,
+    "macro_auc": 0.9687963400133625,
+    "weighted_f1": 0.9313487542523041,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        192,
+        17
+      ],
+      [
+        8,
+        5,
+        304
+      ]
+    ]
+  },
+  "metric_delta_vs_c1": {
+    "correct": -3,
+    "acc": -0.0050167224080267525,
+    "macro_f1": -0.0015834104853927888,
+    "bacc": -0.008044918720661709,
+    "macro_auc": 0.01023556492766775,
+    "weighted_f1": -0.0050172320733729014
+  },
+  "comparison_vs_c1": {
+    "repairs": 15,
+    "damages": 18,
+    "net_repairs": -3,
+    "changed_predictions": 33,
+    "repair_subject_indices": [
+      18,
+      24,
+      207,
+      272,
+      305,
+      361,
+      391,
+      393,
+      407,
+      428,
+      501,
+      538,
+      569,
+      583,
+      585
+    ],
+    "damage_subject_indices": [
+      47,
+      56,
+      85,
+      102,
+      120,
+      125,
+      183,
+      245,
+      246,
+      248,
+      259,
+      264,
+      270,
+      284,
+      344,
+      413,
+      470,
+      475
+    ],
+    "changed_subject_indices": [
+      18,
+      24,
+      47,
+      56,
+      85,
+      102,
+      120,
+      125,
+      183,
+      207,
+      245,
+      246,
+      248,
+      259,
+      264,
+      270,
+      272,
+      284,
+      305,
+      344,
+      361,
+      391,
+      393,
+      407,
+      413,
+      428,
+      470,
+      475,
+      501,
+      538,
+      569,
+      583,
+      585
+    ]
+  },
+  "ad_smci_errors": 19,
+  "cn_smci_errors": 22,
+  "fold_acc_mean": 0.9314971751412429,
+  "fold_acc_sample_sd": 0.026497600104741253,
+  "fold_results": [
+    {
+      "fold": 0,
+      "best_epoch": 92,
+      "acc": 0.95,
+      "macro_f1": 0.9287559985234403,
+      "bacc": 0.9059139784946236,
+      "macro_auc": 0.9758626886338232,
+      "elapsed_seconds": 50.70583000010811
+    },
+    {
+      "fold": 1,
+      "best_epoch": 160,
+      "acc": 0.95,
+      "macro_f1": 0.9287559985234403,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9595060392525016,
+      "elapsed_seconds": 49.577472999924794
+    },
+    {
+      "fold": 2,
+      "best_epoch": 198,
+      "acc": 0.95,
+      "macro_f1": 0.9602251407129456,
+      "bacc": 0.9578373015873015,
+      "macro_auc": 0.9708040801790802,
+      "elapsed_seconds": 49.09043350000866
+    },
+    {
+      "fold": 3,
+      "best_epoch": 86,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8946488294314382,
+      "bacc": 0.8571428571428571,
+      "macro_auc": 0.9802709792391395,
+      "elapsed_seconds": 48.541922400007024
+    },
+    {
+      "fold": 4,
+      "best_epoch": 196,
+      "acc": 0.9,
+      "macro_f1": 0.8773892773892774,
+      "bacc": 0.8839285714285715,
+      "macro_auc": 0.9397368224019168,
+      "elapsed_seconds": 51.53477709996514
+    },
+    {
+      "fold": 5,
+      "best_epoch": 94,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9026701119724375,
+      "bacc": 0.9052579365079364,
+      "macro_auc": 0.9734473630405235,
+      "elapsed_seconds": 49.947071800008416
+    },
+    {
+      "fold": 6,
+      "best_epoch": 143,
+      "acc": 0.95,
+      "macro_f1": 0.9594336012246459,
+      "bacc": 0.9523809523809524,
+      "macro_auc": 0.9778152981277981,
+      "elapsed_seconds": 50.222815700108185
+    },
+    {
+      "fold": 7,
+      "best_epoch": 135,
+      "acc": 0.8833333333333333,
+      "macro_f1": 0.8541727786579045,
+      "bacc": 0.8308531746031745,
+      "macro_auc": 0.9663739311439784,
+      "elapsed_seconds": 50.166831500129774
+    },
+    {
+      "fold": 8,
+      "best_epoch": 82,
+      "acc": 0.9322033898305084,
+      "macro_f1": 0.8944444444444445,
+      "bacc": 0.9201228878648234,
+      "macro_auc": 0.9602386860451376,
+      "elapsed_seconds": 49.1419929000549
+    },
+    {
+      "fold": 9,
+      "best_epoch": 87,
+      "acc": 0.9661016949152542,
+      "macro_f1": 0.9588141025641025,
+      "bacc": 0.9416666666666668,
+      "macro_auc": 0.9940117651692605,
+      "elapsed_seconds": 49.7170309999492
+    }
+  ],
+  "training_seconds": 498.6461789002642,
+  "total_runtime_seconds": 503.8160476000048,
+  "prototype_diagnostics": {
+    "gamma_CN": 0.10182180181145668,
+    "gamma_AD": 0.10523919612169266,
+    "prototype_cosine": 0.9996613740921021,
+    "sum_w_CN": 117.85354232788086,
+    "sum_w_AD": 167.4464584350586,
+    "mean_w_CN": 0.41311500072479246,
+    "mean_w_AD": 0.5868850111961365,
+    "postwarmup_prototype_cosine_above_0_98_fraction": 0.9142105263157895,
+    "gamma_CN_gradient_mean_active_epochs": 0.0003579723466938662,
+    "gamma_AD_gradient_mean_active_epochs": 0.00026326269597179035,
+    "CN_boundary_residual_mean_abs": 0.09768237095453891,
+    "CN_boundary_residual_max_abs": 0.13315404951572418,
+    "AD_boundary_residual_mean_abs": 0.09959638796989685,
+    "AD_boundary_residual_max_abs": 0.14183202385902405,
+    "prototype_effectively_differentiated": false,
+    "long_term_undifferentiated": true,
+    "residual_changed_predictions_same_checkpoint": 0,
+    "diagnostic_scope": "fold means at each selected best checkpoint; residual magnitudes pooled over 598 held-out OOF subjects"
+  },
+  "smoke": {
+    "passed": true,
+    "fold": 0,
+    "epochs": 3,
+    "smoke_warmup_epochs": 1,
+    "formal_warmup_epochs_restored": 20,
+    "parameter_count": 862973,
+    "initial_c1_dbmp_logit_max_abs_diff": 0.0,
+    "prototype_train_only": true,
+    "test_label_invariance": true,
+    "epoch1_residual_disabled": true,
+    "epoch2_residual_activated": true,
+    "gamma_gradient_max": 0.0022586448933900284,
+    "gamma_CN_gradient_max": 0.0005589448264800012,
+    "gamma_AD_gradient_max": 0.0021883915178477764,
+    "final_representation_gradient_max": 0.020410040393471718,
+    "all_finite": true
+  },
+  "integrity": {
+    "oof_rows": 598,
+    "unique_subjects": 598,
+    "confusion_matrix_sum": 598,
+    "metrics_recomputed_from_saved_probabilities": true,
+    "c1_not_used_by_training_or_selection": true,
+    "prototype_sources_exactly_fold_train": true,
+    "no_test_labels_in_prototype_construction": true
+  },
+  "c1_anchor": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9175457174222448,
+    "bacc": 0.9163359339143832,
+    "macro_auc": 0.9585607750856947,
+    "weighted_f1": 0.936365986325677,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ],
+    "ad_smci_errors": 21,
+    "cn_smci_errors": 17
+  }
+}

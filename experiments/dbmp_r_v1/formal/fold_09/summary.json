@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "fold": 9,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 539,
+  "test_size": 59,
+  "best_epoch": 87,
+  "best_residual_enabled": true,
+  "best_metrics": {
+    "correct": 57,
+    "acc": 0.9661016949152542,
+    "macro_f1": 0.9588141025641025,
+    "bacc": 0.9416666666666668,
+    "macro_auc": 0.9940117651692605,
+    "weighted_f1": 0.9658490873533245,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        0,
+        0,
+        31
+      ]
+    ]
+  },
+  "parameter_count": 862973,
+  "added_parameters_vs_c1": 2,
+  "elapsed_seconds": 49.7170309999492,
+  "config": {
+    "experiment": "Dual-Boundary sMCI Multi-Prototype Residual v1",
+    "fold": 9,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "class_index_by_name": {
+      "AD": 0,
+      "CN": 1,
+      "SMCI": 2
+    },
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE on final logits + three unchanged C1 OVR losses + active 0.05 prototype loss",
+    "label_smoothing": 0.05,
+    "orthogonality": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "C1_private_adapter_rank": 8,
+    "prototype_space": "DIFFormer output / original classifier input h only",
+    "tau_assignment": 0.25,
+    "tau_prototype": 0.25,
+    "gamma_initial": 0.05,
+    "gamma_cap": 0.5,
+    "lambda_prototype": 0.05,
+    "warmup_epochs": 20,
+    "parameter_count": 862973,
+    "prototype_statement": "boundary-conditioned sMCI prototypes; no clinical subtype or longitudinal progression claim"
+  },
+  "prototype_diagnostics": {
+    "gamma_CN": 0.08152133226394653,
+    "gamma_AD": 0.08358734846115112,
+    "prototype_cosine": 0.9999021291732788,
+    "sum_w_CN": 104.65409088134766,
+    "sum_w_AD": 181.3459014892578,
+    "mean_w_CN": 0.3659234046936035,
+    "mean_w_AD": 0.6340765953063965,
+    "CN_boundary_residual_mean_abs": 0.07859364151954651,
+    "CN_boundary_residual_max_abs": 0.08152072876691818,
+    "AD_boundary_residual_mean_abs": 0.07649208605289459,
+    "AD_boundary_residual_max_abs": 0.08358559757471085,
+    "postwarmup_prototype_cosine_above_0_98_fraction": 0.95,
+    "postwarmup_prototype_cosine_observations": 380,
+    "gamma_CN_gradient_mean_active_epochs": 0.00029915379579961157,
+    "gamma_AD_gradient_mean_active_epochs": 0.0002213857020149733,
+    "prototypes_differentiated_at_best": false
+  }
+}
