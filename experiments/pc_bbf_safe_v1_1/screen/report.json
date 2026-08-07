@@ -1,0 +1,323 @@
+{
+  "stage": "screen",
+  "decision": "SCREEN_STOP",
+  "decision_failures": [
+    "four_fold_correct_at_least_227",
+    "fold2_fold3_correct_at_least_114",
+    "repairs_exceed_damages_vs_pc_bbf_v1",
+    "cn_smci_errors_reduced_vs_pc_bbf_v1",
+    "macro_f1_no_drop_over_0p005",
+    "bacc_no_drop_over_0p005"
+  ],
+  "decision_checks": {
+    "four_fold_correct_at_least_227": false,
+    "fold5_fold6_correct_at_least_111": true,
+    "fold2_fold3_correct_at_least_114": false,
+    "repairs_exceed_damages_vs_pc_bbf_v1": false,
+    "cn_smci_errors_reduced_vs_pc_bbf_v1": false,
+    "ad_smci_errors_increase_at_most_1_vs_pc_bbf_v1": true,
+    "no_ad_cn_errors": true,
+    "macro_f1_no_drop_over_0p005": false,
+    "bacc_no_drop_over_0p005": false,
+    "safe_loss_active": true
+  },
+  "fold_ids": [
+    2,
+    3,
+    5,
+    6
+  ],
+  "subject_count": 240,
+  "metrics": {
+    "correct": 222,
+    "acc": 0.925,
+    "macro_f1": 0.9125112152049574,
+    "bacc": 0.9104662698412698,
+    "macro_auc": 0.9667884758170725,
+    "weighted_f1": 0.9248416196779229,
+    "confusion_matrix": [
+      [
+        24,
+        0,
+        4
+      ],
+      [
+        0,
+        80,
+        4
+      ],
+      [
+        3,
+        7,
+        118
+      ]
+    ]
+  },
+  "reference_metrics_same_subjects": {
+    "c1": {
+      "correct": 227,
+      "acc": 0.9458333333333333,
+      "macro_f1": 0.9369627346281041,
+      "bacc": 0.9327876984126985,
+      "macro_auc": 0.9684064659189954,
+      "weighted_f1": 0.9457493220139135,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          3
+        ],
+        [
+          0,
+          80,
+          4
+        ],
+        [
+          2,
+          4,
+          122
+        ]
+      ]
+    },
+    "pc_bbf_v1": {
+      "correct": 224,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9235335583752508,
+      "bacc": 0.9222470238095238,
+      "macro_auc": 0.9748453995395328,
+      "weighted_f1": 0.9333407272500857,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          3
+        ],
+        [
+          0,
+          78,
+          6
+        ],
+        [
+          3,
+          4,
+          121
+        ]
+      ]
+    }
+  },
+  "comparisons": {
+    "c1": {
+      "repairs": 5,
+      "damages": 10,
+      "net_repairs": -5,
+      "changed_predictions": 15,
+      "repair_subject_indices": [
+        24,
+        89,
+        407,
+        501,
+        538
+      ],
+      "damage_subject_indices": [
+        43,
+        58,
+        273,
+        289,
+        372,
+        388,
+        413,
+        522,
+        530,
+        592
+      ],
+      "changed_subject_indices": [
+        24,
+        43,
+        58,
+        89,
+        273,
+        289,
+        372,
+        388,
+        407,
+        413,
+        501,
+        522,
+        530,
+        538,
+        592
+      ]
+    },
+    "pc_bbf_v1": {
+      "repairs": 7,
+      "damages": 9,
+      "net_repairs": -2,
+      "changed_predictions": 16,
+      "repair_subject_indices": [
+        16,
+        185,
+        197,
+        260,
+        270,
+        284,
+        538
+      ],
+      "damage_subject_indices": [
+        43,
+        58,
+        234,
+        273,
+        289,
+        388,
+        393,
+        522,
+        530
+      ],
+      "changed_subject_indices": [
+        16,
+        43,
+        58,
+        185,
+        197,
+        234,
+        260,
+        270,
+        273,
+        284,
+        289,
+        388,
+        393,
+        522,
+        530,
+        538
+      ]
+    }
+  },
+  "boundary_errors": {
+    "candidate": {
+      "AD_SMCI": 7,
+      "CN_SMCI": 11,
+      "AD_CN": 0
+    },
+    "c1": {
+      "AD_SMCI": 5,
+      "CN_SMCI": 8,
+      "AD_CN": 0
+    },
+    "pc_bbf_v1": {
+      "AD_SMCI": 6,
+      "CN_SMCI": 10,
+      "AD_CN": 0
+    }
+  },
+  "formal_inference_safe_path_only": true,
+  "parameter_count": 866924,
+  "added_parameters_vs_c1": 3953,
+  "training_seconds": 193.50309450016357,
+  "mechanism": {
+    "gate_mean": 0.8081294745206833,
+    "gate_std": 0.16456056909339972,
+    "gate_min": 0.14560534060001373,
+    "gate_max": 0.9789384603500366,
+    "gate_saturation_fraction": 0.09583333879709244,
+    "residual_shared_ratio_mean": 0.09439028985798359,
+    "residual_shared_ratio_max": 0.10000001639127731,
+    "applied_residual_shared_ratio_mean": 0.07727218233048916,
+    "applied_residual_shared_ratio_max": 0.0978938490152359,
+    "cap_saturation_fraction": 0.7791666984558105,
+    "residual_raw_max_abs": 6.257938385009766
+  },
+  "safety_loss": {
+    "epoch_mean": 0.0010269757185278649,
+    "epoch_min": 0.0,
+    "epoch_max": 0.0666404664516449,
+    "nonzero_sample_fraction_mean": 0.4580483218841255,
+    "nonzero_sample_fraction_max": 0.7286245226860046,
+    "lambda_safe": 0.05,
+    "weighted_contribution_mean": 5.1348785926393244e-05
+  },
+  "pc_bbf_gradient_max": {
+    "input_projection": 0.07121157646179199,
+    "residual_output": 0.28146669268608093,
+    "gate_output": 0.07642611116170883
+  },
+  "folds": [
+    {
+      "fold": 2,
+      "best_epoch": 166,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 3,
+      "best_epoch": 168,
+      "correct": 54,
+      "acc": 0.9
+    },
+    {
+      "fold": 5,
+      "best_epoch": 137,
+      "correct": 53,
+      "acc": 0.8833333333333333
+    },
+    {
+      "fold": 6,
+      "best_epoch": 105,
+      "correct": 58,
+      "acc": 0.9666666666666667
+    }
+  ],
+  "fold_acc_mean": 0.925,
+  "fold_acc_sample_std": 0.03967460238079361,
+  "run_command": "python -u -B scripts/run_pc_bbf_safe_v1_1.py screen --device cuda:0",
+  "base_commit": "c3a2c6ce13241522cc598f58705417106ce7721c",
+  "run_head": "f687768a6fa7eaadcdde13364698199ee3d4f292",
+  "config": {
+    "experiment": "pc_bbf_safe_v1_1",
+    "base_commit": "c3a2c6ce13241522cc598f58705417106ce7721c",
+    "fold": -1,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "historical_weight_decay": 0.0005,
+    "pc_bbf_output_gate_weight_decay": 0.0,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "original_loss": "historical weighted main CE + three C1 OVR losses",
+    "safe_loss": "mean(relu(weighted_CE_i(safe)-stopgrad(weighted_CE_i(base))))",
+    "lambda_safe": 0.05,
+    "label_smoothing": 0.05,
+    "safe_loss_mask": "train_only",
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "fusion_rank": 8,
+    "cap_value": 0.1,
+    "inference": "unchanged PC-BBF v1 safe path only",
+    "parameter_count": 866924
+  },
+  "screen_reference_correct_by_fold": {
+    "c1": {
+      "2": 57,
+      "3": 55,
+      "5": 57,
+      "6": 58
+    },
+    "pc_bbf_v1": {
+      "2": 58,
+      "3": 57,
+      "5": 53,
+      "6": 56
+    }
+  }
+}
