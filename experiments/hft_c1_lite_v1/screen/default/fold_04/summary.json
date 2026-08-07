@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "scope": "screen_default",
+  "fold": 4,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 538,
+  "test_size": 60,
+  "fresh_model": true,
+  "fresh_criterion": true,
+  "fresh_optimizer": true,
+  "fresh_scheduler": true,
+  "best_epoch": 155,
+  "best_metrics": {
+    "correct": 54,
+    "acc": 0.9,
+    "macro_f1": 0.8683836488714537,
+    "bacc": 0.8521825396825397,
+    "macro_auc": 0.9506218635051183,
+    "weighted_f1": 0.8989823184945135,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        1,
+        1,
+        30
+      ]
+    ]
+  },
+  "boundary_counts": {
+    "ad_smci_errors": 3,
+    "cn_smci_errors": 3,
+    "ad_cn_errors": 0,
+    "boundary_errors": 6
+  },
+  "training_parameters": 942747,
+  "inference_parameters": 942747,
+  "added_parameters": 79776,
+  "output_projection_gradient_nonzero": {
+    "MRI": true,
+    "PET": true,
+    "CSF": true,
+    "Risk": true,
+    "ROI": true
+  },
+  "feature_token_upstream_gradient_nonzero": {
+    "MRI": true,
+    "PET": true,
+    "CSF": true,
+    "Risk": true,
+    "ROI": true
+  },
+  "post_warmup_saturation_epoch_fraction_ge_0_50": {
+    "MRI": 0.0,
+    "PET": 0.0,
+    "CSF": 0.0,
+    "Risk": 0.0,
+    "ROI": 0.0
+  },
+  "elapsed_seconds": 56.09426250006072,
+  "config": {
+    "experiment": "Hierarchical Fine-Grained Modality Token Residual v1",
+    "scope": "screen_default",
+    "fold": 4,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "modality_order": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "HFT_modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "ROI"
+    ],
+    "COG_branch_added": false,
+    "cap": 0.15,
+    "eps": 1e-08,
+    "attention_temperature": 1.0,
+    "single_head_attention": true,
+    "query_detached": true,
+    "output_projection_zero_initialized": true,
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "orthogonality": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "complete historical C1 weighted CE plus three OVR auxiliary losses; no HFT auxiliary loss",
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "training_parameters": 942747,
+    "inference_parameters": 942747,
+    "added_HFT_parameters": 79776,
+    "feature_counts": {
+      "MRI": 138,
+      "PET": 150,
+      "CSF": 3,
+      "Risk": 36,
+      "COG": 24,
+      "ROI": 9
+    },
+    "labels_used_only_by_historical_C1_loss_on_train_mask": true
+  }
+}

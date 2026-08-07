@@ -1,0 +1,164 @@
+{
+  "MRI": {
+    "mean_residual_shared_ratio": 0.0033271900435399744,
+    "maximum_ratio": 0.010991486720740795,
+    "cap_saturation_fraction": 0.0,
+    "normalized_attention_entropy": 0.9999861690585173,
+    "top5_features": [
+      {
+        "feature_name": "ST54SA_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+        "local_feature_index": 47,
+        "mean_attention_weight": 0.0072662582277585675
+      },
+      {
+        "feature_name": "ST127SV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+        "local_feature_index": 8,
+        "mean_attention_weight": 0.007265060973567003
+      },
+      {
+        "feature_name": "ST30SV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+        "local_feature_index": 114,
+        "mean_attention_weight": 0.0072640898174413755
+      },
+      {
+        "feature_name": "ST39SA_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+        "local_feature_index": 3,
+        "mean_attention_weight": 0.007263003447868305
+      },
+      {
+        "feature_name": "ST34SA_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+        "local_feature_index": 40,
+        "mean_attention_weight": 0.007262247734229658
+      }
+    ]
+  },
+  "PET": {
+    "mean_residual_shared_ratio": 0.003886708167678151,
+    "maximum_ratio": 0.015082520432770252,
+    "cap_saturation_fraction": 0.0,
+    "normalized_attention_entropy": 0.999983931386937,
+    "top5_features": [
+      {
+        "feature_name": "NON_WM_HYPOINTENSITIES_SIZE_UCBERKELEYAV45_10_17_16",
+        "local_feature_index": 47,
+        "mean_attention_weight": 0.00668432675926379
+      },
+      {
+        "feature_name": "RIGHT_LATERAL_VENTRICLE_SIZE_UCBERKELEYAV45_10_17_16",
+        "local_feature_index": 116,
+        "mean_attention_weight": 0.0066828103371838615
+      },
+      {
+        "feature_name": "RIGHT_INF_LAT_VENT_SIZE_UCBERKELEYAV45_10_17_16",
+        "local_feature_index": 40,
+        "mean_attention_weight": 0.0066826123765061024
+      },
+      {
+        "feature_name": "LEFT_LATERAL_VENTRICLE_SIZE_UCBERKELEYAV45_10_17_16",
+        "local_feature_index": 26,
+        "mean_attention_weight": 0.006681971543328056
+      },
+      {
+        "feature_name": "RIGHT_CHOROID_PLEXUS_SIZE_UCBERKELEYAV45_10_17_16",
+        "local_feature_index": 146,
+        "mean_attention_weight": 0.0066800738513136705
+      }
+    ]
+  },
+  "CSF": {
+    "mean_residual_shared_ratio": 0.004576197632864201,
+    "maximum_ratio": 0.01521195936948061,
+    "cap_saturation_fraction": 0.0,
+    "normalized_attention_entropy": 0.99991379636626,
+    "top5_features": [
+      {
+        "feature_name": "ABETA_UPENNBIOMK9_04_19_17",
+        "local_feature_index": 1,
+        "mean_attention_weight": 0.3337850517400816
+      },
+      {
+        "feature_name": "PTAU_UPENNBIOMK9_04_19_17",
+        "local_feature_index": 2,
+        "mean_attention_weight": 0.33311853462091373
+      },
+      {
+        "feature_name": "TAU_UPENNBIOMK9_04_19_17",
+        "local_feature_index": 0,
+        "mean_attention_weight": 0.33309642429458364
+      }
+    ]
+  },
+  "Risk": {
+    "mean_residual_shared_ratio": 0.0037705303903398566,
+    "maximum_ratio": 0.011705080978572369,
+    "cap_saturation_fraction": 0.0,
+    "normalized_attention_entropy": 0.9999878739511501,
+    "top5_features": [
+      {
+        "feature_name": "AGE_[60.4, 62.4)",
+        "local_feature_index": 17,
+        "mean_attention_weight": 0.027837169902950692
+      },
+      {
+        "feature_name": "AGE_[78.4, 80.4)",
+        "local_feature_index": 18,
+        "mean_attention_weight": 0.027806230763483313
+      },
+      {
+        "feature_name": "AGE_[80.4, 82.4)",
+        "local_feature_index": 1,
+        "mean_attention_weight": 0.027802511300454594
+      },
+      {
+        "feature_name": "PTEDUCAT_[16, 18)",
+        "local_feature_index": 15,
+        "mean_attention_weight": 0.02780060128792704
+      },
+      {
+        "feature_name": "PTEDUCAT_[12, 14)",
+        "local_feature_index": 34,
+        "mean_attention_weight": 0.027799377894268354
+      }
+    ]
+  },
+  "ROI": {
+    "mean_residual_shared_ratio": 0.006419585653523493,
+    "maximum_ratio": 0.03402773290872574,
+    "cap_saturation_fraction": 0.0,
+    "normalized_attention_entropy": 0.9982754584797268,
+    "top5_features": [
+      {
+        "feature_name": "Hippocampus",
+        "local_feature_index": 4,
+        "mean_attention_weight": 0.11264019971453278
+      },
+      {
+        "feature_name": "FDG",
+        "local_feature_index": 5,
+        "mean_attention_weight": 0.11237073610614798
+      },
+      {
+        "feature_name": "Fusiform",
+        "local_feature_index": 3,
+        "mean_attention_weight": 0.1121753500826532
+      },
+      {
+        "feature_name": "Entorhinal",
+        "local_feature_index": 8,
+        "mean_attention_weight": 0.11155467592804126
+      },
+      {
+        "feature_name": "MidTemp",
+        "local_feature_index": 0,
+        "mean_attention_weight": 0.1108021496394493
+      }
+    ]
+  },
+  "overall": {
+    "five_modality_mean_ratio": 0.004396042377589135,
+    "five_modality_mean_saturation": 0.0,
+    "five_modality_mean_entropy": 0.9996294458485183,
+    "modalities_ratio_at_least_0_05": 0,
+    "all_branches_near_zero": true
+  }
+}

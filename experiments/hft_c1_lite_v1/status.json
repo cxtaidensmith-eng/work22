@@ -1,9 +1,9 @@
 {
-  "stage": "smoke",
-  "decision": "SMOKE_PASS",
+  "stage": "screen",
+  "decision": "SCREEN_STOP",
   "completed": true,
   "branch": "experiment/hft-c1-lite-v1",
   "base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
-  "run_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
-  "stage_runtime_seconds": 4.743703000014648
+  "run_commit": "0dd9161bdec9c91bb99f67325766f9361cba9b91",
+  "stage_runtime_seconds": 169.81689579994418
 }
