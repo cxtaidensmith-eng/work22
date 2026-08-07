@@ -748,7 +748,24 @@ def formal_decision(payload: dict) -> str:
 
 def write_report_markdown(path: Path, report: dict) -> None:
     metrics_payload = report["metrics"]
+    baseline = report["baseline_metrics_same_subjects"]
     comparison = report["comparison_vs_c1"]
+    mechanism = report["mechanism"]
+    gradients = report["pc_bbf_gradient_max"]
+    decision_basis = (
+        "screen thresholds"
+        if report["stage"] == "screen"
+        else (
+            "formal target reached"
+            if report["decision"] == "PC_BBF_TARGET"
+            else "formal GO thresholds reached"
+            if report["decision"] == "PC_BBF_GO"
+            else (
+                "formal STOP: the 563-subject target was not reached and BACC "
+                f"changed by {metrics_payload['bacc'] - baseline['bacc']:+.7f} versus C1"
+            )
+        )
+    )
     lines = [
         f"# PC-BBF C1 v1 {report['stage'].title()} Report",
         "",
@@ -769,6 +786,21 @@ def write_report_markdown(path: Path, report: dict) -> None:
         f"{report['boundary_errors']['candidate']['AD_CN']}",
         f"- Parameters: {report['parameter_count']} (+{report['added_parameters_vs_c1']} vs C1)",
         f"- Training time: {report['training_seconds']:.3f} s",
+        f"- Versus C1: Correct {metrics_payload['correct'] - baseline['correct']:+d}, "
+        f"ACC {metrics_payload['acc'] - baseline['acc']:+.7f}, "
+        f"Macro-F1 {metrics_payload['macro_f1'] - baseline['macro_f1']:+.7f}, "
+        f"BACC {metrics_payload['bacc'] - baseline['bacc']:+.7f}, "
+        f"Macro-AUC {metrics_payload['macro_auc'] - baseline['macro_auc']:+.7f}",
+        f"- Gate mean/std/min/max: {mechanism['gate_mean']:.7f} / {mechanism['gate_std']:.7f} / "
+        f"{mechanism['gate_min']:.7f} / {mechanism['gate_max']:.7f}",
+        f"- Residual/shared mean/max: {mechanism['residual_shared_ratio_mean']:.7f} / "
+        f"{mechanism['residual_shared_ratio_max']:.7f}; cap saturation "
+        f"{mechanism['cap_saturation_fraction']:.7f}",
+        f"- New-module max gradients (input/residual/gate): "
+        f"{gradients['input_projection']:.7g} / {gradients['residual_output']:.7g} / "
+        f"{gradients['gate_output']:.7g}",
+        f"- Decision basis: {decision_basis}",
+        f"- Reproduction: `{report['run_command']}`",
         "",
         "## Folds",
         "",

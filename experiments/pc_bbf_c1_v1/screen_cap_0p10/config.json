@@ -1,0 +1,28 @@
+{
+  "experiment": "pc_bbf_c1_v1",
+  "fold": -1,
+  "seed": 0,
+  "epochs": 400,
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph_enabled": false,
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "historical_weight_decay": 0.0005,
+  "pc_bbf_output_gate_weight_decay": 0.0,
+  "scheduler": "CustomCosineAnnealingLR",
+  "T_max": 400,
+  "eta_min": 0.0001,
+  "loss": "historical weighted main CE + three C1 OVR auxiliary losses",
+  "label_smoothing": 0.05,
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "fusion_rank": 8,
+  "cap_value": 0.1
+}

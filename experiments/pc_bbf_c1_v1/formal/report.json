@@ -1,0 +1,282 @@
+{
+  "stage": "formal",
+  "decision": "PC_BBF_STOP",
+  "decision_failures": [],
+  "cap_value": 0.1,
+  "fold_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "subject_count": 598,
+  "metrics": {
+    "correct": 561,
+    "acc": 0.9381270903010034,
+    "macro_f1": 0.9266945217489257,
+    "bacc": 0.915213972141583,
+    "macro_auc": 0.9701189477695239,
+    "weighted_f1": 0.9378308464264465,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        197,
+        12
+      ],
+      [
+        4,
+        10,
+        303
+      ]
+    ]
+  },
+  "baseline_metrics_same_subjects": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9175457174222448,
+    "bacc": 0.9163359339143832,
+    "macro_auc": 0.9585607750856947,
+    "weighted_f1": 0.936365986325677,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ]
+  },
+  "comparison_vs_c1": {
+    "repairs": 18,
+    "damages": 17,
+    "net_repairs": 1,
+    "changed_predictions": 35,
+    "repair_subject_indices": [
+      24,
+      34,
+      49,
+      89,
+      234,
+      272,
+      305,
+      350,
+      361,
+      391,
+      393,
+      407,
+      428,
+      501,
+      519,
+      564,
+      583,
+      589
+    ],
+    "damage_subject_indices": [
+      16,
+      21,
+      68,
+      120,
+      183,
+      185,
+      197,
+      248,
+      260,
+      270,
+      284,
+      372,
+      413,
+      438,
+      439,
+      562,
+      592
+    ],
+    "changed_subject_indices": [
+      16,
+      21,
+      24,
+      34,
+      49,
+      68,
+      89,
+      120,
+      183,
+      185,
+      197,
+      234,
+      248,
+      260,
+      270,
+      272,
+      284,
+      305,
+      350,
+      361,
+      372,
+      391,
+      393,
+      407,
+      413,
+      428,
+      438,
+      439,
+      501,
+      519,
+      562,
+      564,
+      583,
+      589,
+      592
+    ]
+  },
+  "ad_cn_errors": {
+    "candidate": 0,
+    "c1": 0
+  },
+  "boundary_errors": {
+    "candidate": {
+      "AD_SMCI": 15,
+      "CN_SMCI": 22,
+      "AD_CN": 0
+    },
+    "c1": {
+      "AD_SMCI": 21,
+      "CN_SMCI": 17,
+      "AD_CN": 0
+    }
+  },
+  "parameter_count": 866924,
+  "added_parameters_vs_c1": 3953,
+  "training_seconds": 459.15325919981115,
+  "mechanism": {
+    "gate_mean": 0.609751502805729,
+    "gate_std": 0.2288230306287461,
+    "gate_min": 0.04962081462144852,
+    "gate_max": 0.9881379008293152,
+    "gate_saturation_fraction": 0.08862876742579864,
+    "residual_shared_ratio_mean": 0.05974636813096179,
+    "residual_shared_ratio_max": 0.10000001639127731,
+    "applied_residual_shared_ratio_mean": 0.040260989231409444,
+    "applied_residual_shared_ratio_max": 0.09881378710269928,
+    "cap_saturation_fraction": 0.3110368043857075,
+    "residual_raw_max_abs": 5.4776105880737305
+  },
+  "pc_bbf_gradient_max": {
+    "input_projection": 0.08285906165838242,
+    "residual_output": 0.2865528464317322,
+    "gate_output": 0.06953000277280807
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "best_epoch": 84,
+      "acc": 0.9333333333333333,
+      "correct": 56
+    },
+    {
+      "fold": 1,
+      "best_epoch": 279,
+      "acc": 0.95,
+      "correct": 57
+    },
+    {
+      "fold": 2,
+      "best_epoch": 87,
+      "acc": 0.9666666666666667,
+      "correct": 58
+    },
+    {
+      "fold": 3,
+      "best_epoch": 73,
+      "acc": 0.95,
+      "correct": 57
+    },
+    {
+      "fold": 4,
+      "best_epoch": 127,
+      "acc": 0.9166666666666666,
+      "correct": 55
+    },
+    {
+      "fold": 5,
+      "best_epoch": 116,
+      "acc": 0.8833333333333333,
+      "correct": 53
+    },
+    {
+      "fold": 6,
+      "best_epoch": 118,
+      "acc": 0.9333333333333333,
+      "correct": 56
+    },
+    {
+      "fold": 7,
+      "best_epoch": 104,
+      "acc": 0.95,
+      "correct": 57
+    },
+    {
+      "fold": 8,
+      "best_epoch": 125,
+      "acc": 0.9491525423728814,
+      "correct": 56
+    },
+    {
+      "fold": 9,
+      "best_epoch": 60,
+      "acc": 0.9491525423728814,
+      "correct": 56
+    }
+  ],
+  "fold_acc_mean": 0.9381638418079093,
+  "fold_acc_sample_std": 0.02354517844076345,
+  "run_command": "python -u -B scripts/run_pc_bbf_c1_v1.py formal --device cuda:0",
+  "run_head": "ebc16cdf7b74cce02b4d61c2ec6abbd7b877bfa5",
+  "config": {
+    "experiment": "pc_bbf_c1_v1",
+    "fold": -1,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "historical_weight_decay": 0.0005,
+    "pc_bbf_output_gate_weight_decay": 0.0,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three C1 OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "fusion_rank": 8,
+    "cap_value": 0.1
+  }
+}

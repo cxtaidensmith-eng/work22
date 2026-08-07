@@ -1,0 +1,187 @@
+{
+  "stage": "screen",
+  "decision": "SCREEN_GO",
+  "decision_failures": [],
+  "cap_value": 0.1,
+  "fold_ids": [
+    4,
+    7,
+    8
+  ],
+  "subject_count": 179,
+  "metrics": {
+    "correct": 168,
+    "acc": 0.9385474860335196,
+    "macro_f1": 0.9274421952316688,
+    "bacc": 0.9048175995544416,
+    "macro_auc": 0.9568329925643441,
+    "weighted_f1": 0.938002789526459,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        59,
+        4
+      ],
+      [
+        0,
+        3,
+        92
+      ]
+    ]
+  },
+  "baseline_metrics_same_subjects": {
+    "correct": 166,
+    "acc": 0.9273743016759777,
+    "macro_f1": 0.896722857963168,
+    "bacc": 0.901364522417154,
+    "macro_auc": 0.9432606323024206,
+    "weighted_f1": 0.9277668135664757,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        61,
+        2
+      ],
+      [
+        5,
+        2,
+        88
+      ]
+    ]
+  },
+  "comparison_vs_c1": {
+    "repairs": 7,
+    "damages": 5,
+    "net_repairs": 2,
+    "changed_predictions": 12,
+    "repair_subject_indices": [
+      34,
+      305,
+      350,
+      391,
+      519,
+      564,
+      589
+    ],
+    "damage_subject_indices": [
+      68,
+      183,
+      248,
+      438,
+      562
+    ],
+    "changed_subject_indices": [
+      34,
+      68,
+      183,
+      248,
+      305,
+      350,
+      391,
+      438,
+      519,
+      562,
+      564,
+      589
+    ]
+  },
+  "ad_cn_errors": {
+    "candidate": 0,
+    "c1": 0
+  },
+  "boundary_errors": {
+    "candidate": {
+      "AD_SMCI": 4,
+      "CN_SMCI": 7,
+      "AD_CN": 0
+    },
+    "c1": {
+      "AD_SMCI": 9,
+      "CN_SMCI": 4,
+      "AD_CN": 0
+    }
+  },
+  "parameter_count": 866924,
+  "added_parameters_vs_c1": 3953,
+  "training_seconds": 136.33517259988002,
+  "mechanism": {
+    "gate_mean": 0.5927197553592021,
+    "gate_std": 0.2119228751101861,
+    "gate_min": 0.3284679651260376,
+    "gate_max": 0.9733830094337463,
+    "gate_saturation_fraction": 0.09497207636273773,
+    "residual_shared_ratio_mean": 0.05255998473343902,
+    "residual_shared_ratio_max": 0.10000000894069672,
+    "applied_residual_shared_ratio_mean": 0.03612114283042913,
+    "applied_residual_shared_ratio_max": 0.09733829647302628,
+    "cap_saturation_fraction": 0.26256984018580204,
+    "residual_raw_max_abs": 3.991574764251709
+  },
+  "pc_bbf_gradient_max": {
+    "input_projection": 0.07143620401620865,
+    "residual_output": 0.2865528464317322,
+    "gate_output": 0.03634693846106529
+  },
+  "folds": [
+    {
+      "fold": 4,
+      "best_epoch": 127,
+      "acc": 0.9166666666666666,
+      "correct": 55
+    },
+    {
+      "fold": 7,
+      "best_epoch": 104,
+      "acc": 0.95,
+      "correct": 57
+    },
+    {
+      "fold": 8,
+      "best_epoch": 125,
+      "acc": 0.9491525423728814,
+      "correct": 56
+    }
+  ],
+  "fold_acc_mean": 0.9386064030131828,
+  "fold_acc_sample_std": 0.01900509324690141,
+  "run_command": "python -u -B scripts/run_pc_bbf_c1_v1.py screen --device cuda:0",
+  "run_head": "ebc16cdf7b74cce02b4d61c2ec6abbd7b877bfa5",
+  "config": {
+    "experiment": "pc_bbf_c1_v1",
+    "fold": -1,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "historical_weight_decay": 0.0005,
+    "pc_bbf_output_gate_weight_decay": 0.0,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three C1 OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "fusion_rank": 8,
+    "cap_value": 0.1
+  }
+}
