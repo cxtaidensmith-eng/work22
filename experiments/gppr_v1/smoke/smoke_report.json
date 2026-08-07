@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "fold": 0,
+  "epochs": 3,
+  "parameter_count": 862977,
+  "initial_c1_gppr_logit_max_abs_diff": 0.0,
+  "initial_private_residual_max_abs": 0.0,
+  "beta_bounds_observed": [
+    0.9928277730941772,
+    1.003714680671692
+  ],
+  "non_cog_adapter_max_gradient": {
+    "MRI": 0.1656176745891571,
+    "PET": 0.18108294904232025,
+    "CSF": 0.19933494925498962,
+    "Risk": 0.17981994152069092,
+    "ROI": 0.14713063836097717
+  },
+  "probabilities_sum_to_one": true,
+  "all_finite": true
+}

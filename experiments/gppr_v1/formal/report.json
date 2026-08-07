@@ -1,0 +1,350 @@
+{
+  "experiment": "Gate-Protected Private Residual v1",
+  "decision": "GPPR_STOP",
+  "next_recommendation": "Next route: dual-boundary sMCI multi-prototype; not implemented.",
+  "branch": "experiment/gate-protected-private-residual-v1",
+  "source_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "run_command": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe scripts/run_gppr_v1.py --run-all",
+  "device": {
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "python": "3.11.15",
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "sklearn": "1.9.0"
+  },
+  "parameter_count": 862977,
+  "added_parameters_vs_original": 9846,
+  "added_parameters_vs_c1": 6,
+  "metrics": {
+    "correct": 551,
+    "acc": 0.9214046822742475,
+    "macro_f1": 0.9042587555986209,
+    "bacc": 0.8942822854702316,
+    "macro_auc": 0.9610283078333982,
+    "weighted_f1": 0.9211485250914275,
+    "confusion_matrix": [
+      [
+        59,
+        0,
+        13
+      ],
+      [
+        0,
+        191,
+        18
+      ],
+      [
+        8,
+        8,
+        301
+      ]
+    ]
+  },
+  "metric_delta_vs_c1": {
+    "correct": -9,
+    "acc": -0.015050167224080258,
+    "macro_f1": -0.013286961823623877,
+    "bacc": -0.022053648444151586,
+    "macro_auc": 0.0024675327477035047,
+    "weighted_f1": -0.015217461234249496
+  },
+  "comparison_vs_c1": {
+    "repairs": 15,
+    "damages": 24,
+    "net_repairs": -9,
+    "changed_predictions": 39,
+    "repair_subject_indices": [
+      18,
+      24,
+      272,
+      282,
+      305,
+      350,
+      364,
+      378,
+      393,
+      407,
+      428,
+      501,
+      538,
+      583,
+      585
+    ],
+    "damage_subject_indices": [
+      14,
+      43,
+      46,
+      47,
+      80,
+      85,
+      124,
+      169,
+      183,
+      185,
+      187,
+      213,
+      245,
+      248,
+      270,
+      284,
+      359,
+      433,
+      438,
+      439,
+      505,
+      524,
+      535,
+      592
+    ],
+    "changed_subject_indices": [
+      14,
+      18,
+      24,
+      43,
+      46,
+      47,
+      80,
+      85,
+      124,
+      169,
+      183,
+      185,
+      187,
+      213,
+      245,
+      248,
+      270,
+      272,
+      282,
+      284,
+      305,
+      350,
+      359,
+      364,
+      378,
+      393,
+      407,
+      428,
+      433,
+      438,
+      439,
+      501,
+      505,
+      524,
+      535,
+      538,
+      583,
+      585,
+      592
+    ],
+    "exact_mcnemar_p_value": 0.19959086691960698
+  },
+  "ad_smci_errors": 21,
+  "cn_smci_errors": 26,
+  "fold_acc_mean": 0.9213559322033898,
+  "fold_acc_sample_sd": 0.01625989180426632,
+  "fold_results": [
+    {
+      "fold": 0,
+      "best_epoch": 81,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9023496828374876,
+      "bacc": 0.8741679467485919,
+      "macro_auc": 0.9616726664140457,
+      "elapsed_seconds": 49.12691010022536
+    },
+    {
+      "fold": 1,
+      "best_epoch": 233,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.908459595959596,
+      "bacc": 0.8839285714285715,
+      "macro_auc": 0.9692349328257347,
+      "elapsed_seconds": 48.9930738999974
+    },
+    {
+      "fold": 2,
+      "best_epoch": 44,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9325542005420054,
+      "bacc": 0.9474206349206349,
+      "macro_auc": 0.9832539490558357,
+      "elapsed_seconds": 51.61075260001235
+    },
+    {
+      "fold": 3,
+      "best_epoch": 268,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9161500191350939,
+      "bacc": 0.8943452380952381,
+      "macro_auc": 0.9781728033496901,
+      "elapsed_seconds": 44.695547400042415
+    },
+    {
+      "fold": 4,
+      "best_epoch": 217,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8910256410256411,
+      "bacc": 0.8998015873015873,
+      "macro_auc": 0.9336078786255673,
+      "elapsed_seconds": 45.65712000010535
+    },
+    {
+      "fold": 5,
+      "best_epoch": 91,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.8944916517590936,
+      "bacc": 0.8839285714285715,
+      "macro_auc": 0.9772589722471797,
+      "elapsed_seconds": 45.209448399953544
+    },
+    {
+      "fold": 6,
+      "best_epoch": 203,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9464646464646465,
+      "bacc": 0.9419642857142857,
+      "macro_auc": 0.9841524216524217,
+      "elapsed_seconds": 44.115646300138906
+    },
+    {
+      "fold": 7,
+      "best_epoch": 178,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8815346345197091,
+      "bacc": 0.8625992063492064,
+      "macro_auc": 0.9707392264880473,
+      "elapsed_seconds": 42.664417600026354
+    },
+    {
+      "fold": 8,
+      "best_epoch": 136,
+      "acc": 0.8813559322033898,
+      "macro_f1": 0.8433346238224287,
+      "bacc": 0.840757808499744,
+      "macro_auc": 0.9491076740652292,
+      "elapsed_seconds": 46.08884490001947
+    },
+    {
+      "fold": 9,
+      "best_epoch": 160,
+      "acc": 0.9322033898305084,
+      "macro_f1": 0.9199561403508771,
+      "bacc": 0.9142473118279569,
+      "macro_auc": 0.97763210329624,
+      "elapsed_seconds": 42.33847580011934
+    }
+  ],
+  "training_seconds": 460.5002370006405,
+  "total_runtime_seconds": 465.181974099949,
+  "diagnostics": {
+    "beta_by_modality": {
+      "MRI": 1.0238260567188262,
+      "PET": 0.9833742141723633,
+      "CSF": 0.9883606970310211,
+      "Risk": 1.0114591062068938,
+      "COG": 1.2113306760787963,
+      "ROI": 0.9941345453262329
+    },
+    "effective_residual_mean_norm_by_modality": {
+      "MRI": 0.8622350223362446,
+      "PET": 0.17188429161906243,
+      "CSF": 0.15102288648486137,
+      "Risk": 0.5714918151497841,
+      "COG": 11.78942301273346,
+      "ROI": 0.167826559394598
+    },
+    "private_shared_ratio_by_modality": {
+      "MRI": 0.0297941793454811,
+      "PET": 0.004991410719230771,
+      "CSF": 0.004409097833558917,
+      "Risk": 0.017797979060560465,
+      "COG": 0.33568371683359144,
+      "ROI": 0.00444486434571445
+    },
+    "ratio_delta_vs_c1": {
+      "MRI": -0.0458621321045189,
+      "PET": -0.06310142758076923,
+      "CSF": -0.04914448563644108,
+      "Risk": -0.056001070049439536,
+      "COG": 0.056138070673591445,
+      "ROI": -0.07192471181428554
+    },
+    "adapter_gradient_mean_by_modality": {
+      "MRI": 0.004136977855451277,
+      "PET": 0.0031679448522130547,
+      "CSF": 0.0026848117299948624,
+      "Risk": 0.0035737058567926845,
+      "COG": 0.011199961699380766,
+      "ROI": 0.002467102549892047
+    },
+    "non_cog_adapter_gradient_mean": 0.0032061085688687855,
+    "category_global_cosine_mean": 0.5465131551027298,
+    "cog_effective_residual_share": 0.8377456903457642,
+    "private_collapse": false,
+    "collapse_rule": "all residuals near zero or mean fold COG share >= 90%"
+  },
+  "smoke": {
+    "passed": true,
+    "fold": 0,
+    "epochs": 3,
+    "parameter_count": 862977,
+    "initial_c1_gppr_logit_max_abs_diff": 0.0,
+    "initial_private_residual_max_abs": 0.0,
+    "beta_bounds_observed": [
+      0.9928277730941772,
+      1.003714680671692
+    ],
+    "non_cog_adapter_max_gradient": {
+      "MRI": 0.1656176745891571,
+      "PET": 0.18108294904232025,
+      "CSF": 0.19933494925498962,
+      "Risk": 0.17981994152069092,
+      "ROI": 0.14713063836097717
+    },
+    "probabilities_sum_to_one": true,
+    "all_finite": true
+  },
+  "integrity": {
+    "oof_rows": 598,
+    "unique_subjects": 598,
+    "confusion_matrix_sum": 598,
+    "metrics_recomputed_from_saved_probabilities": true,
+    "c1_not_used_by_training_or_selection": true
+  },
+  "c1_anchor": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9175457174222448,
+    "bacc": 0.9163359339143832,
+    "macro_auc": 0.9585607750856947,
+    "weighted_f1": 0.936365986325677,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ],
+    "ad_smci_errors": 21,
+    "cn_smci_errors": 17,
+    "private_shared_ratio": {
+      "MRI": 0.07565631145,
+      "PET": 0.0680928383,
+      "CSF": 0.05355358347,
+      "Risk": 0.07379904911,
+      "COG": 0.27954564616,
+      "ROI": 0.07636957616
+    }
+  }
+}

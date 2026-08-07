@@ -1,0 +1,46 @@
+{
+  "experiment": "Gate-Protected Private Residual v1",
+  "fold": 5,
+  "seed": 0,
+  "epochs": 400,
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "subjects": 598,
+  "features": 360,
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "modality_order": [
+    "MRI",
+    "PET",
+    "CSF",
+    "Risk",
+    "COG",
+    "ROI"
+  ],
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph_enabled": false,
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "weight_decay": 0.0005,
+  "scheduler": "CustomCosineAnnealingLR",
+  "T_max": 400,
+  "eta_min": 0.0001,
+  "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+  "label_smoothing": 0.05,
+  "orthogonality": false,
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "adapter_rank": 8,
+  "private_input": "clean Modal Encoder token before directional noise and original modal gate",
+  "beta": "1 + 0.5*tanh(a_m), six independent a_m initialized at zero",
+  "shared_global_path": "historical C1 path unchanged",
+  "parameter_count": 862977
+}

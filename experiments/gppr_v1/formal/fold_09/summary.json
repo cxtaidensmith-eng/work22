@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "fold": 9,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 539,
+  "test_size": 59,
+  "best_epoch": 160,
+  "best_metrics": {
+    "correct": 55,
+    "acc": 0.9322033898305084,
+    "macro_f1": 0.9199561403508771,
+    "bacc": 0.9142473118279569,
+    "macro_auc": 0.97763210329624,
+    "weighted_f1": 0.9323706512042819,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        18,
+        2
+      ],
+      [
+        1,
+        0,
+        30
+      ]
+    ]
+  },
+  "parameter_count": 862977,
+  "added_parameters_vs_c1": 6,
+  "elapsed_seconds": 42.33847580011934,
+  "config": {
+    "experiment": "Gate-Protected Private Residual v1",
+    "fold": 9,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "modality_order": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "orthogonality": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "adapter_rank": 8,
+    "private_input": "clean Modal Encoder token before directional noise and original modal gate",
+    "beta": "1 + 0.5*tanh(a_m), six independent a_m initialized at zero",
+    "shared_global_path": "historical C1 path unchanged",
+    "parameter_count": 862977
+  },
+  "diagnostics": {
+    "beta_by_modality": {
+      "MRI": 1.0482220649719238,
+      "PET": 0.9674946069717407,
+      "CSF": 0.9857581257820129,
+      "Risk": 1.0585412979125977,
+      "COG": 1.2612494230270386,
+      "ROI": 0.9939201474189758
+    },
+    "effective_residual_mean_norm_by_modality": {
+      "MRI": 0.7154039144515991,
+      "PET": 0.14668914675712585,
+      "CSF": 0.12633231282234192,
+      "Risk": 1.517297625541687,
+      "COG": 13.727151870727539,
+      "ROI": 0.1395040899515152
+    },
+    "private_shared_ratio_by_modality": {
+      "MRI": 0.020706605166196823,
+      "PET": 0.0038830118719488382,
+      "CSF": 0.0033328046556562185,
+      "Risk": 0.04306310787796974,
+      "COG": 0.39067891240119934,
+      "ROI": 0.0035171357449144125
+    },
+    "adapter_gradient_mean_by_modality": {
+      "MRI": 0.003697532740045517,
+      "PET": 0.0029899123875577515,
+      "CSF": 0.002694380078685299,
+      "Risk": 0.004165352555357913,
+      "COG": 0.011102079676848007,
+      "ROI": 0.002390883777671888
+    },
+    "non_cog_adapter_gradient_mean": 0.0031876123078636736,
+    "category_global_cosine_mean": 0.44444540143013,
+    "cog_effective_residual_share": 0.838433563709259,
+    "private_collapse": false,
+    "collapse_rule": "all residuals near zero or COG >= 90% of total effective residual norm"
+  }
+}
