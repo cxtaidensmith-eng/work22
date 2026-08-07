@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "fold": 4,
+  "activation_epochs": [
+    21,
+    22,
+    23
+  ],
+  "epoch1_max_abs_logit_diff_vs_C1": 0.0,
+  "epoch1_train_mode_rng_logit_diff": 0.0,
+  "epoch1_global_max_abs_diff_vs_C1": 0.0,
+  "gradient_nonzero": {
+    "MRI": {
+      "group_encoder": true,
+      "gate": true,
+      "adapter": true
+    },
+    "PET": {
+      "group_encoder": true,
+      "gate": true,
+      "adapter": true
+    },
+    "ROI": {
+      "group_encoder": true,
+      "gate": true,
+      "adapter": true
+    }
+  },
+  "group_gates_nonconstant": {
+    "MRI": true,
+    "PET": true,
+    "ROI": true
+  },
+  "finite": true,
+  "cap_respected": true,
+  "parameters": {
+    "C1": 862971,
+    "added_SG": 12351,
+    "total": 875322
+  },
+  "checkpoint_path": "experiments\\sg_hft_c1_v2\\smoke\\checkpoint_roundtrip.pt",
+  "checkpoint_manifest_restored": true,
+  "checkpoint_readback_max_abs_logit_diff": 0.0,
+  "final_mechanism": {
+    "MRI": {
+      "mean_residual_shared_ratio": 0.001579868048429489,
+      "maximum_ratio": 0.0024542028550058603,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 0.9999931335449219,
+      "mean_group_gates": [
+        {
+          "group_name": "cortical_volume_CV",
+          "mean_gate": 0.4881667455037435
+        },
+        {
+          "group_name": "surface_area_SA",
+          "mean_gate": 0.48835296630859376
+        },
+        {
+          "group_name": "cortical_thickness_TA_TS",
+          "mean_gate": 0.48914508819580077
+        },
+        {
+          "group_name": "subcortical_volume_SV",
+          "mean_gate": 0.48928559621175133
+        }
+      ],
+      "gate_range_maximum": 0.07609298825263977,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "PET": {
+      "mean_residual_shared_ratio": 0.0016297906637191772,
+      "maximum_ratio": 0.0027541497256606817,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 0.999990717569987,
+      "mean_group_gates": [
+        {
+          "group_name": "cortical_left_uptake",
+          "mean_gate": 0.5442942937215169
+        },
+        {
+          "group_name": "cortical_left_size",
+          "mean_gate": 0.5412621180216471
+        },
+        {
+          "group_name": "cortical_right_uptake",
+          "mean_gate": 0.5434236526489258
+        },
+        {
+          "group_name": "cortical_right_size",
+          "mean_gate": 0.542152468363444
+        },
+        {
+          "group_name": "noncortical_aggregate_uptake",
+          "mean_gate": 0.5420612970987956
+        },
+        {
+          "group_name": "noncortical_aggregate_size",
+          "mean_gate": 0.543565050760905
+        }
+      ],
+      "gate_range_maximum": 0.08532416820526123,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "ROI": {
+      "mean_residual_shared_ratio": 0.0013106706241766612,
+      "maximum_ratio": 0.0019071085844188929,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 0.9999941507975261,
+      "mean_group_gates": [
+        {
+          "group_name": "medial_temporal_structure",
+          "mean_gate": 0.5005235989888509
+        },
+        {
+          "group_name": "global_structure",
+          "mean_gate": 0.4996805508931478
+        },
+        {
+          "group_name": "ventricular_structure",
+          "mean_gate": 0.5007833480834961
+        },
+        {
+          "group_name": "amyloid_AV45",
+          "mean_gate": 0.49941685994466145
+        },
+        {
+          "group_name": "glucose_metabolism_FDG",
+          "mean_gate": 0.500776449839274
+        }
+      ],
+      "gate_range_maximum": 0.046542078256607056,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "overall": {
+      "modalities_ratio_at_least_0_01": 0,
+      "modalities_entropy_below_0_98": 0,
+      "all_three_branches_near_zero": true,
+      "all_three_gate_entropies_near_one": true,
+      "all_three_gates_constant": false
+    }
+  },
+  "elapsed_seconds": 0.9485764999408275,
+  "run_commit": "0dd9161bdec9c91bb99f67325766f9361cba9b91"
+}

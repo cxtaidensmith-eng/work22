@@ -1,0 +1,123 @@
+{
+  "experiment": "Structured Group HFT-C1 v2",
+  "base_commit": "0dd9161bdec9c91bb99f67325766f9361cba9b91",
+  "c1_anchor_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "c1_source_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "c1_oof_path": "experiments/cme_dual_branch_v1/c1_shared_private_control_2/oof_predictions.csv",
+  "c1_oof_blob_sha256": "6f4ef505641f75236b01ae128f2836bf2f126ced43158f9c4ee21cc090898018",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "screen_folds": [
+    4,
+    7,
+    8
+  ],
+  "formal_folds_are_fresh": true,
+  "seed": 0,
+  "epochs": 400,
+  "smoke_activation_epochs": [
+    21,
+    22,
+    23
+  ],
+  "device": "cuda:0",
+  "cap": 0.08,
+  "feature_counts": {
+    "MRI": 138,
+    "PET": 150,
+    "CSF": 3,
+    "Risk": 36,
+    "COG": 24,
+    "ROI": 9
+  },
+  "C1_parameters": 862971,
+  "added_parameters": 12351,
+  "training_parameters": 875322,
+  "inference_parameters": 875322,
+  "screen_C1_anchor": {
+    "subjects": 179,
+    "correct": 166,
+    "acc": 0.9273743016759777,
+    "macro_f1": 0.896722857963168,
+    "bacc": 0.901364522417154,
+    "macro_auc": 0.9432606323024206,
+    "weighted_f1": 0.9277668135664757,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        61,
+        2
+      ],
+      [
+        5,
+        2,
+        88
+      ]
+    ],
+    "ad_smci_errors": 9,
+    "cn_smci_errors": 4,
+    "boundary_errors": 13,
+    "ad_cn_errors": 0,
+    "fold_correct": {
+      "4": 55,
+      "7": 56,
+      "8": 55
+    }
+  },
+  "formal_C1_anchor": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9175457174222448,
+    "bacc": 0.9163359339143832,
+    "macro_auc": 0.9585607750856947,
+    "weighted_f1": 0.936365986325677,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ],
+    "ad_smci_errors": 21,
+    "cn_smci_errors": 17,
+    "ad_cn_errors": 0
+  },
+  "screen_rules": {
+    "SG_HFT_GO": "correct>=167, repairs>damages, no AD-CN, boundaries<=C1, F1/BACC within .005, >=2 ratio>=.01, >=2 entropy<.98",
+    "SG_HFT_NEAR": "correct=166, repairs>=damages, no AD-CN, boundaries<=C1, >=2 ratio>=.01, >=2 entropy<.98",
+    "SG_HFT_STOP": "any preregistered stop condition",
+    "adjustments": 0
+  },
+  "formal_rules": {
+    "FORMAL_GO": "correct>=561, F1/BACC within .003, no AD-CN",
+    "FORMAL_NEUTRAL": "correct=560 and AUC or BACC improves",
+    "FORMAL_STOP": "correct<560 or material F1/BACC damage"
+  }
+}
