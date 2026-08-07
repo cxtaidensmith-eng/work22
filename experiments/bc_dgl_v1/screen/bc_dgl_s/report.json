@@ -1,0 +1,226 @@
+{
+  "arm": "BC-DGL-S",
+  "arm_key": "s",
+  "rho": 0.0,
+  "training_parameters": 865299,
+  "inference_parameters": 862971,
+  "metrics": {
+    "correct": 158,
+    "acc": 0.88268156424581,
+    "macro_f1": 0.8546523726419014,
+    "bacc": 0.8538011695906432,
+    "macro_auc": 0.9357672395256534,
+    "weighted_f1": 0.882742870513908,
+    "confusion_matrix": [
+      [
+        16,
+        0,
+        5
+      ],
+      [
+        0,
+        57,
+        6
+      ],
+      [
+        5,
+        5,
+        85
+      ]
+    ]
+  },
+  "ad_smci_errors": 10,
+  "cn_smci_errors": 11,
+  "ad_cn_errors": 0,
+  "boundary_errors": 21,
+  "fold_acc_mean": 0.8828625235404898,
+  "fold_acc_sample_sd": 0.02805204697757502,
+  "fold_results": [
+    {
+      "fold": 4,
+      "best_epoch": 50,
+      "correct": 52,
+      "acc": 0.8666666666666667,
+      "macro_f1": 0.8167388167388167,
+      "bacc": 0.7941468253968255,
+      "macro_auc": 0.9177236438439268,
+      "elapsed_seconds": 55.497650400036946,
+      "reused_from_screen": false
+    },
+    {
+      "fold": 7,
+      "best_epoch": 163,
+      "correct": 52,
+      "acc": 0.8666666666666667,
+      "macro_f1": 0.8515628907226808,
+      "bacc": 0.8685515873015873,
+      "macro_auc": 0.9585682104844842,
+      "elapsed_seconds": 58.58733409992419,
+      "reused_from_screen": false
+    },
+    {
+      "fold": 8,
+      "best_epoch": 239,
+      "correct": 54,
+      "acc": 0.9152542372881356,
+      "macro_f1": 0.8902116402116401,
+      "bacc": 0.8991295442908346,
+      "macro_auc": 0.953239177347836,
+      "elapsed_seconds": 58.035373399965465,
+      "reused_from_screen": false
+    }
+  ],
+  "training_seconds": 172.1203578999266,
+  "auxiliary_auc": {
+    "MRI": {
+      "AD_SMCI": 0.7483709273182958,
+      "CN_SMCI": 0.613700918964077
+    },
+    "PET": {
+      "AD_SMCI": 0.7583959899749374,
+      "CN_SMCI": 0.6095238095238095
+    },
+    "CSF": {
+      "AD_SMCI": 0.818546365914787,
+      "CN_SMCI": 0.6121971595655806
+    },
+    "Risk": {
+      "AD_SMCI": 0.6220551378446115,
+      "CN_SMCI": 0.6533834586466165
+    },
+    "COG": {
+      "AD_SMCI": 0.9518796992481203,
+      "CN_SMCI": 0.9373433583959899
+    },
+    "ROI": {
+      "AD_SMCI": 0.8345864661654135,
+      "CN_SMCI": 0.6596491228070175
+    }
+  },
+  "boundary_head_gradient_nonzero": {
+    "MRI": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "PET": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "CSF": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "Risk": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "COG": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "ROI": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    }
+  },
+  "modality_boundary_evidence": {
+    "by_modality": {
+      "MRI": {
+        "AD_SMCI_AUC": 0.7483709273182958,
+        "CN_SMCI_AUC": 0.613700918964077,
+        "mean_AUC": 0.6810359231411864,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      },
+      "PET": {
+        "AD_SMCI_AUC": 0.7583959899749374,
+        "CN_SMCI_AUC": 0.6095238095238095,
+        "mean_AUC": 0.6839598997493734,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      },
+      "CSF": {
+        "AD_SMCI_AUC": 0.818546365914787,
+        "CN_SMCI_AUC": 0.6121971595655806,
+        "mean_AUC": 0.7153717627401839,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      },
+      "Risk": {
+        "AD_SMCI_AUC": 0.6220551378446115,
+        "CN_SMCI_AUC": 0.6533834586466165,
+        "mean_AUC": 0.637719298245614,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      },
+      "COG": {
+        "AD_SMCI_AUC": 0.9518796992481203,
+        "CN_SMCI_AUC": 0.9373433583959899,
+        "mean_AUC": 0.9446115288220551,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      },
+      "ROI": {
+        "AD_SMCI_AUC": 0.8345864661654135,
+        "CN_SMCI_AUC": 0.6596491228070175,
+        "mean_AUC": 0.7471177944862155,
+        "effective_above_random": true,
+        "boundary_head_gradient_nonzero": true
+      }
+    },
+    "COG_mean_AUC": 0.9446115288220551,
+    "non_COG_mean_AUC": 0.6930409356725147,
+    "COG_minus_non_COG_AUC_gap": 0.25157059314954044,
+    "effective_non_COG_modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "ROI"
+    ],
+    "effective_non_COG_count": 5,
+    "COG_only": false,
+    "effectiveness_rule": "both boundary AUCs >0.50 and their mean >0.55"
+  },
+  "passes_screen": false,
+  "c1_screen_anchor": {
+    "correct": 166,
+    "subjects": 179,
+    "acc": 0.9273743016759777,
+    "macro_f1": 0.896722857963168,
+    "bacc": 0.901364522417154,
+    "macro_auc": 0.9432606323024206,
+    "weighted_f1": 0.9277668135664757,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        61,
+        2
+      ],
+      [
+        5,
+        2,
+        88
+      ]
+    ],
+    "ad_smci_errors": 9,
+    "cn_smci_errors": 4,
+    "boundary_errors": 13,
+    "ad_cn_errors": 0,
+    "fold_correct": {
+      "4": 55,
+      "7": 56,
+      "8": 55
+    },
+    "fold_best_epoch": {
+      "4": 103,
+      "7": 181,
+      "8": 90
+    }
+  }
+}

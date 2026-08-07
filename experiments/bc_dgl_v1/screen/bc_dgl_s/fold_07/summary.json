@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "scope": "screen",
+  "arm": "BC-DGL-S",
+  "arm_key": "s",
+  "rho": 0.0,
+  "fold": 7,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 538,
+  "test_size": 60,
+  "fresh_model": true,
+  "best_epoch": 163,
+  "best_metrics": {
+    "correct": 52,
+    "acc": 0.8666666666666667,
+    "macro_f1": 0.8515628907226808,
+    "bacc": 0.8685515873015873,
+    "macro_auc": 0.9585682104844842,
+    "weighted_f1": 0.8671517879469868,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        2,
+        3,
+        27
+      ]
+    ]
+  },
+  "boundary_counts": {
+    "ad_smci_errors": 3,
+    "cn_smci_errors": 5,
+    "ad_cn_errors": 0,
+    "boundary_errors": 8
+  },
+  "training_parameters": 865299,
+  "inference_parameters": 862971,
+  "boundary_head_parameters": 2328,
+  "boundary_head_gradient_nonzero": {
+    "MRI": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "PET": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "CSF": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "Risk": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "COG": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    },
+    "ROI": {
+      "AD_SMCI": true,
+      "CN_SMCI": true
+    }
+  },
+  "auxiliary_auc": {
+    "MRI": {
+      "AD_SMCI": 0.8437499999999999,
+      "CN_SMCI": 0.5744047619047619
+    },
+    "PET": {
+      "AD_SMCI": 0.8258928571428571,
+      "CN_SMCI": 0.5595238095238095
+    },
+    "CSF": {
+      "AD_SMCI": 0.84375,
+      "CN_SMCI": 0.5758928571428571
+    },
+    "Risk": {
+      "AD_SMCI": 0.7232142857142856,
+      "CN_SMCI": 0.5907738095238095
+    },
+    "COG": {
+      "AD_SMCI": 0.96875,
+      "CN_SMCI": 0.9523809523809523
+    },
+    "ROI": {
+      "AD_SMCI": 0.8973214285714286,
+      "CN_SMCI": 0.6800595238095238
+    }
+  },
+  "elapsed_seconds": 58.58733409992419,
+  "config": {
+    "experiment": "Boundary-Conditioned Disentangled Gradient Learning v1",
+    "scope": "screen",
+    "arm": "BC-DGL-S",
+    "rho": 0.0,
+    "lambda_boundary": 0.25,
+    "fold": 7,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "modality_order": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "orthogonality": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "c1_loss": "historical weighted main CE + three OVR auxiliary losses",
+    "boundary_loss": "six-modality balanced AD-sMCI/CN-sMCI auxiliary CE",
+    "historical_noise_order": "Feature_Modal -> feature-space directional noise -> Modal Encoder",
+    "boundary_clean_path": "a separate clean Modal Encoder pass before noise and modal gate",
+    "boundary_clean_feature_input_detached": true,
+    "fusion_gradient_bridge": "u_noisy.detach() + rho * (u_noisy - u_noisy.detach())",
+    "training_parameters": 865299,
+    "inference_parameters": 862971,
+    "auxiliary_heads_used_at_inference": false
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN_SCREEN_STOP",
+  "reason": "Neither preregistered arm passed the fixed hard-fold screen gate.",
+  "selected_arm": null,
+  "trained_folds": []
+}

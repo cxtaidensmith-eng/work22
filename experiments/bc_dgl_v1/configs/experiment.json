@@ -1,0 +1,26 @@
+{
+  "branch": "experiment/bc-dgl-v1",
+  "source_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "run_command": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe scripts/run_bc_dgl_v1.py --run-all",
+  "C1_reference": {
+    "git_ref": "refs/remotes/origin/experiment/cme-dual-branch-v1",
+    "oof_path": "experiments/cme_dual_branch_v1/c1_shared_private_control_2/oof_predictions.csv",
+    "report_path": "experiments/cme_dual_branch_v1/c1_shared_private_control_2/report.json",
+    "rerun": false
+  },
+  "screen_folds": [
+    4,
+    7,
+    8
+  ],
+  "formal_new_folds": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6,
+    9
+  ],
+  "non_COG_effectiveness_rule": "both ADS/CNS AUC >0.50 and mean >0.55"
+}

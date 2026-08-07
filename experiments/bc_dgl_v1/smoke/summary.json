@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "epochs_per_arm": 3,
+  "strict_logit_diff_vs_c1": 0.0,
+  "mild_logit_diff_vs_c1": 0.0,
+  "strict_fusion_forward_error": 0.0,
+  "mild_fusion_forward_error": 0.0,
+  "test_label_invariance": true,
+  "class_indices_from_names": {
+    "AD": 0,
+    "CN": 1,
+    "SMCI": 2
+  },
+  "strict_mild_c1_initialization_identical": true,
+  "strict_mild_boundary_head_initialization_identical": true,
+  "isolated_gradients": {
+    "main_s": {
+      "loss": 3.3026833534240723,
+      "modal_encoder_gradient": 0.0,
+      "noisy_token_gradient": 0.0,
+      "fusion_token_gradient": 0.01599595509469509,
+      "observed_rho_ratio": 0.0,
+      "downstream_gradients": {
+        "modal_transformer": 1.8252267837524414,
+        "private_residual": 0.12911731004714966,
+        "query": 2.0687735080718994,
+        "global": 2.9029572010040283,
+        "difformer": 2.17537784576416,
+        "classifier": 1.250161051750183
+      }
+    },
+    "main_m": {
+      "loss": 3.3026833534240723,
+      "modal_encoder_gradient": 0.20942677557468414,
+      "noisy_token_gradient": 0.003998988773673773,
+      "fusion_token_gradient": 0.01599595509469509,
+      "observed_rho_ratio": 0.25,
+      "downstream_gradients": {
+        "modal_transformer": 1.8252267837524414,
+        "private_residual": 0.12911731004714966,
+        "query": 2.0687735080718994,
+        "global": 2.9029572010040283,
+        "difformer": 2.17537784576416,
+        "classifier": 1.250161051750183
+      }
+    },
+    "boundary": {
+      "loss": 0.724676787853241,
+      "encoder_modal_gradients": {
+        "MRI": 0.18135914206504822,
+        "PET": 0.3084834814071655,
+        "CSF": 0.06543554365634918,
+        "Risk": 0.1904417723417282,
+        "COG": 0.13223862648010254,
+        "ROI": 0.1100798100233078
+      },
+      "ads_head_gradients": {
+        "MRI": 0.12059598416090012,
+        "PET": 0.17295482754707336,
+        "CSF": 0.12397046387195587,
+        "Risk": 0.10342832654714584,
+        "COG": 0.14966954290866852,
+        "ROI": 0.13853883743286133
+      },
+      "cns_head_gradients": {
+        "MRI": 0.05359688401222229,
+        "PET": 0.0900377407670021,
+        "CSF": 0.11473966389894485,
+        "Risk": 0.18355439603328705,
+        "COG": 0.11127756536006927,
+        "ROI": 0.09834639728069305
+      },
+      "forbidden_downstream_gradients": {
+        "modal_gate": 0.0,
+        "modal_transformer": 0.0,
+        "private_residual": 0.0,
+        "query": 0.0,
+        "global": 0.0,
+        "difformer": 0.0,
+        "classifier": 0.0
+      }
+    }
+  },
+  "finite": true
+}
