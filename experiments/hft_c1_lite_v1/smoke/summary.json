@@ -1,0 +1,198 @@
+{
+  "passed": true,
+  "fold": 4,
+  "epochs": 3,
+  "device": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "epoch0_max_abs_logit_diff_vs_C1": 0.0,
+  "epoch0_global_max_abs_diff_vs_C1": 0.0,
+  "epoch0_max_abs_delta": 0.0,
+  "parameter_count": 942747,
+  "added_parameters": 79776,
+  "inference_parameters": 942747,
+  "COG_has_HFT_branch": false,
+  "output_projection_gradient_nonzero": {
+    "MRI": true,
+    "PET": true,
+    "CSF": true,
+    "Risk": true,
+    "ROI": true
+  },
+  "feature_token_upstream_gradient_nonzero": {
+    "MRI": true,
+    "PET": true,
+    "CSF": true,
+    "Risk": true,
+    "ROI": true
+  },
+  "at_least_one_feature_token_branch_gradient": true,
+  "finite": true,
+  "cap_respected": true,
+  "checkpoint_path": "experiments\\hft_c1_lite_v1\\smoke\\checkpoint_roundtrip.pt",
+  "checkpoint_readback_max_abs_logit_diff": 0.0,
+  "final_mechanism": {
+    "MRI": {
+      "mean_residual_shared_ratio": 0.14310816129048665,
+      "maximum_ratio": 0.15000000596046448,
+      "cap_saturation_fraction": 0.31666666666666665,
+      "normalized_attention_entropy": 0.9998174031575521,
+      "top5_features": [
+        {
+          "feature_name": "ST32CV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+          "local_feature_index": 118,
+          "mean_attention_weight": 0.007368144889672597
+        },
+        {
+          "feature_name": "ST40CV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+          "local_feature_index": 109,
+          "mean_attention_weight": 0.007362208267052969
+        },
+        {
+          "feature_name": "ST31CV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+          "local_feature_index": 9,
+          "mean_attention_weight": 0.007359322905540466
+        },
+        {
+          "feature_name": "ST29SV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+          "local_feature_index": 73,
+          "mean_attention_weight": 0.007356534401575725
+        },
+        {
+          "feature_name": "ST99CV_UCSFFSX_11_02_15_UCSFFSX51_08_01_16",
+          "local_feature_index": 57,
+          "mean_attention_weight": 0.007355388502279917
+        }
+      ]
+    },
+    "PET": {
+      "mean_residual_shared_ratio": 0.06706569989522299,
+      "maximum_ratio": 0.07875661551952362,
+      "cap_saturation_fraction": 0.0,
+      "normalized_attention_entropy": 0.9996692657470703,
+      "top5_features": [
+        {
+          "feature_name": "CTX_LH_UNKNOWN_SIZE_UCBERKELEYAV45_10_17_16",
+          "local_feature_index": 7,
+          "mean_attention_weight": 0.00685674101114273
+        },
+        {
+          "feature_name": "CTX_RH_PARSTRIANGULARIS_SIZE_UCBERKELEYAV45_10_17_16",
+          "local_feature_index": 44,
+          "mean_attention_weight": 0.006813067694505056
+        },
+        {
+          "feature_name": "CTX_LH_PARAHIPPOCAMPAL_SIZE_UCBERKELEYAV45_10_17_16",
+          "local_feature_index": 73,
+          "mean_attention_weight": 0.0067870845397313435
+        },
+        {
+          "feature_name": "CTX_RH_INFERIORPARIETAL_SIZE_UCBERKELEYAV45_10_17_16",
+          "local_feature_index": 107,
+          "mean_attention_weight": 0.006772736708323161
+        },
+        {
+          "feature_name": "NON_WM_HYPOINTENSITIES_UCBERKELEYAV45_10_17_16",
+          "local_feature_index": 63,
+          "mean_attention_weight": 0.006750861803690593
+        }
+      ]
+    },
+    "CSF": {
+      "mean_residual_shared_ratio": 0.07407435576121012,
+      "maximum_ratio": 0.08587487787008286,
+      "cap_saturation_fraction": 0.0,
+      "normalized_attention_entropy": 0.9993825912475586,
+      "top5_features": [
+        {
+          "feature_name": "ABETA_UPENNBIOMK9_04_19_17",
+          "local_feature_index": 1,
+          "mean_attention_weight": 0.3336973190307617
+        },
+        {
+          "feature_name": "PTAU_UPENNBIOMK9_04_19_17",
+          "local_feature_index": 2,
+          "mean_attention_weight": 0.33322858810424805
+        },
+        {
+          "feature_name": "TAU_UPENNBIOMK9_04_19_17",
+          "local_feature_index": 0,
+          "mean_attention_weight": 0.33307409286499023
+        }
+      ]
+    },
+    "Risk": {
+      "mean_residual_shared_ratio": 0.0738249937693278,
+      "maximum_ratio": 0.08159603178501129,
+      "cap_saturation_fraction": 0.0,
+      "normalized_attention_entropy": 0.9999270757039388,
+      "top5_features": [
+        {
+          "feature_name": "PTEDUCAT_[14, 16)",
+          "local_feature_index": 11,
+          "mean_attention_weight": 0.02801064650217692
+        },
+        {
+          "feature_name": "PTMARRY_Never married",
+          "local_feature_index": 7,
+          "mean_attention_weight": 0.027943364779154458
+        },
+        {
+          "feature_name": "AGE_[66.4, 68.4)",
+          "local_feature_index": 31,
+          "mean_attention_weight": 0.027940287192662557
+        },
+        {
+          "feature_name": "AGE_[60.4, 62.4)",
+          "local_feature_index": 17,
+          "mean_attention_weight": 0.027917675177256265
+        },
+        {
+          "feature_name": "APOE4_2.0",
+          "local_feature_index": 4,
+          "mean_attention_weight": 0.02791433930397034
+        }
+      ]
+    },
+    "ROI": {
+      "mean_residual_shared_ratio": 0.15,
+      "maximum_ratio": 0.15000002086162567,
+      "cap_saturation_fraction": 1.0,
+      "normalized_attention_entropy": 0.9929697036743164,
+      "top5_features": [
+        {
+          "feature_name": "ICV",
+          "local_feature_index": 2,
+          "mean_attention_weight": 0.1207755168279012
+        },
+        {
+          "feature_name": "WholeBrain",
+          "local_feature_index": 7,
+          "mean_attention_weight": 0.11884379386901855
+        },
+        {
+          "feature_name": "Fusiform",
+          "local_feature_index": 3,
+          "mean_attention_weight": 0.11618760426839193
+        },
+        {
+          "feature_name": "Ventricles",
+          "local_feature_index": 6,
+          "mean_attention_weight": 0.11424234708150229
+        },
+        {
+          "feature_name": "Entorhinal",
+          "local_feature_index": 8,
+          "mean_attention_weight": 0.10896724065144857
+        }
+      ]
+    },
+    "overall": {
+      "five_modality_mean_ratio": 0.10161464214324951,
+      "five_modality_mean_saturation": 0.2633333333333333,
+      "five_modality_mean_entropy": 0.9983532079060872,
+      "modalities_ratio_at_least_0_05": 5,
+      "all_branches_near_zero": false
+    }
+  },
+  "elapsed_seconds": 1.1135060000233352,
+  "run_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840"
+}

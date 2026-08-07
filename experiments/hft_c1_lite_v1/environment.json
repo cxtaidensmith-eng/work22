@@ -1,0 +1,12 @@
+{
+  "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cu121",
+  "torch_cuda": "12.1",
+  "cuda_available": true,
+  "device": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "sklearn": "1.9.0",
+  "branch": "experiment/hft-c1-lite-v1",
+  "run_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840"
+}

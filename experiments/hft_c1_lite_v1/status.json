@@ -1,0 +1,9 @@
+{
+  "stage": "smoke",
+  "decision": "SMOKE_PASS",
+  "completed": true,
+  "branch": "experiment/hft-c1-lite-v1",
+  "base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "run_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "stage_runtime_seconds": 4.743703000014648
+}

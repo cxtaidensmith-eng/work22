@@ -1,0 +1,143 @@
+{
+  "experiment": "Hierarchical Fine-Grained Modality Token Residual v1",
+  "short_name": "HFT-C1-Lite",
+  "base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+  "c1_git_ref": "refs/remotes/origin/experiment/cme-dual-branch-v1",
+  "c1_oof_path": "experiments/cme_dual_branch_v1/c1_shared_private_control_2/oof_predictions.csv",
+  "c1_oof_blob_sha256": "6f4ef505641f75236b01ae128f2836bf2f126ced43158f9c4ee21cc090898018",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "screen_folds": [
+    4,
+    7,
+    8
+  ],
+  "formal_folds_are_fresh": true,
+  "seed": 0,
+  "epochs": 400,
+  "smoke_epochs": 3,
+  "device": "cuda:0",
+  "default_cap": 0.15,
+  "default_attention_temperature": 1.0,
+  "adjustment_A": {
+    "cap": 0.25,
+    "attention_temperature": 1.0
+  },
+  "adjustment_B": {
+    "cap": 0.15,
+    "attention_temperature": 0.5
+  },
+  "feature_counts": {
+    "MRI": 138,
+    "PET": 150,
+    "CSF": 3,
+    "Risk": 36,
+    "COG": 24,
+    "ROI": 9
+  },
+  "c1_parameters": 862971,
+  "added_parameters": 79776,
+  "training_parameters": 942747,
+  "inference_parameters": 942747,
+  "screen_C1_anchor": {
+    "subjects": 179,
+    "correct": 166,
+    "acc": 0.9273743016759777,
+    "macro_f1": 0.896722857963168,
+    "bacc": 0.901364522417154,
+    "macro_auc": 0.9432606323024206,
+    "weighted_f1": 0.9277668135664757,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        61,
+        2
+      ],
+      [
+        5,
+        2,
+        88
+      ]
+    ],
+    "ad_smci_errors": 9,
+    "cn_smci_errors": 4,
+    "boundary_errors": 13,
+    "ad_cn_errors": 0,
+    "fold_correct": {
+      "4": 55,
+      "7": 56,
+      "8": 55
+    }
+  },
+  "screen_rules": {
+    "SCREEN_GO": {
+      "correct_minimum": 167,
+      "new_AD_CN_errors": 0,
+      "adjacent_boundary_errors_maximum": 13,
+      "macro_f1_drop_maximum": 0.005,
+      "bacc_drop_maximum": 0.005
+    },
+    "SCREEN_NEAR": {
+      "correct_exact": 166,
+      "new_AD_CN_errors": 0,
+      "adjacent_boundary_errors_maximum": 13,
+      "requires_bacc_or_auc_improvement": true,
+      "modalities_ratio_at_least_0_05_minimum": 2
+    },
+    "SCREEN_STOP_vetoes": {
+      "correct_maximum": 165,
+      "AD_SMCI_errors_minimum": 11,
+      "CN_SMCI_errors_minimum": 6,
+      "new_AD_CN_errors": true,
+      "clearly_fewer_repairs_margin": 2,
+      "all_branch_ratio_below": 0.01,
+      "widespread_saturation_fraction": 0.5
+    },
+    "single_adjustment_after_SCREEN_NEAR_only": {
+      "maximum_adjustments": 1,
+      "A_priority": true,
+      "A_condition": "five-modality mean ratio <0.05 and mean cap saturation <0.05",
+      "A_change_only": "cap 0.15 -> 0.25",
+      "B_condition": "mean normalized entropy >0.95, mean ratio >=0.01, correct >=166",
+      "B_change_only": "attention temperature 1.0 -> 0.5",
+      "formal_requires_adjusted_SCREEN_GO_and_correct_minimum": 167
+    }
+  },
+  "formal_rules": {
+    "HFT_GO": {
+      "correct_minimum": 561,
+      "macro_f1_minimum": 0.9145457174222448,
+      "bacc_minimum": 0.9133359339143832,
+      "AD_CN_errors": 0
+    },
+    "HFT_NEUTRAL": {
+      "correct_exact": 560,
+      "requires_auc_or_bacc_improvement": true
+    }
+  },
+  "optimizer": "Adam",
+  "scheduler": "CustomCosineAnnealingLR(T_max=400)",
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "loss": "complete historical C1 loss only"
+}
