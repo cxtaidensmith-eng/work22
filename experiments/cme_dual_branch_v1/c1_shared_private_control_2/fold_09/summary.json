@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "arm": "c1",
+  "name": "c1_shared_private_control",
+  "fold": 9,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 539,
+  "test_size": 59,
+  "best_epoch": 181,
+  "best_metrics": {
+    "correct": 56,
+    "acc": 0.9491525423728814,
+    "macro_f1": 0.9247830279652844,
+    "bacc": 0.9368279569892474,
+    "macro_auc": 0.9753508930453902,
+    "weighted_f1": 0.9502312733929359,
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        0,
+        20,
+        0
+      ],
+      [
+        2,
+        0,
+        29
+      ]
+    ]
+  },
+  "parameter_count": 862971,
+  "added_parameters_vs_original": 9840,
+  "elapsed_seconds": 47.75207300018519,
+  "utility_refresh_epochs": [],
+  "gradient_summary": {
+    "adapter_mean": 0.025743098818984435,
+    "adapter_max": 0.5701642632484436,
+    "router_mean": 0.0,
+    "router_max": 0.0,
+    "global_mean": 0.06332490586122731
+  },
+  "config": {
+    "experiment": "c1_shared_private_control",
+    "arm": "c1",
+    "fold": 9,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "orthogonality": false,
+    "graph_enabled": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "adapter_rank": 8,
+    "private_adapter_count": 6,
+    "utility_probability": "not applicable",
+    "utility_warmup_epochs": 40,
+    "utility_refresh_interval": 10,
+    "utility_weight": 0.0,
+    "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+  },
+  "diagnostics": {
+    "private": {
+      "residual_mean_norm_by_modality": {
+        "MRI": 4.904666900634766,
+        "PET": 2.9557223320007324,
+        "CSF": 2.318594217300415,
+        "Risk": 3.01210355758667,
+        "COG": 16.294321060180664,
+        "ROI": 5.5923895835876465
+      },
+      "private_shared_ratio_by_modality": {
+        "MRI": 0.1160745844244957,
+        "PET": 0.06791849434375763,
+        "CSF": 0.05579138919711113,
+        "Risk": 0.06499024480581284,
+        "COG": 0.3896164000034332,
+        "ROI": 0.12290429323911667
+      },
+      "adapter_gradient_mean": 0.025743098818984435,
+      "category_global_cosine_mean": 0.4819771647453308,
+      "private_collapse": false
+    }
+  }
+}

@@ -1,0 +1,1515 @@
+{
+  "arm": "c1",
+  "name": "c1_shared_private_control",
+  "output_directory": "experiments/cme_dual_branch_v1/c1_shared_private_control_2",
+  "parameter_count": 862971,
+  "added_parameters_vs_original": 9840,
+  "metrics": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9175457174222448,
+    "bacc": 0.9163359339143832,
+    "macro_auc": 0.9585607750856947,
+    "weighted_f1": 0.936365986325677,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ]
+  },
+  "fold_acc_mean": 0.9364689265536722,
+  "fold_acc_sample_std": 0.017169756027911855,
+  "fold_best_epochs": [
+    116,
+    153,
+    105,
+    159,
+    103,
+    180,
+    332,
+    181,
+    90,
+    181
+  ],
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "best_epoch": 116,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9026701119724375,
+      "bacc": 0.8792882744495647,
+      "macro_auc": 0.9776273285380627,
+      "elapsed_seconds": 48.42011730000377
+    },
+    {
+      "fold": 1,
+      "best_epoch": 153,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9156746031746031,
+      "bacc": 0.9156746031746031,
+      "macro_auc": 0.9493232898303653,
+      "elapsed_seconds": 50.86177400010638
+    },
+    {
+      "fold": 2,
+      "best_epoch": 105,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9433344433344434,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9571844450971808,
+      "elapsed_seconds": 49.33253620006144
+    },
+    {
+      "fold": 3,
+      "best_epoch": 159,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9161500191350939,
+      "bacc": 0.8943452380952381,
+      "macro_auc": 0.980419464794465,
+      "elapsed_seconds": 47.54182939999737
+    },
+    {
+      "fold": 4,
+      "best_epoch": 103,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.8815628815628817,
+      "bacc": 0.8680555555555555,
+      "macro_auc": 0.9439963480352631,
+      "elapsed_seconds": 54.270377800101414
+    },
+    {
+      "fold": 5,
+      "best_epoch": 180,
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9825499775381852,
+      "elapsed_seconds": 48.618795699905604
+    },
+    {
+      "fold": 6,
+      "best_epoch": 332,
+      "correct": 58,
+      "acc": 0.9666666666666667,
+      "macro_f1": 0.9737103174603176,
+      "bacc": 0.9737103174603176,
+      "macro_auc": 0.995732855107855,
+      "elapsed_seconds": 46.74385809991509
+    },
+    {
+      "fold": 7,
+      "best_epoch": 181,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "macro_f1": 0.9156746031746031,
+      "bacc": 0.9156746031746031,
+      "macro_auc": 0.9628150173551117,
+      "elapsed_seconds": 45.5770917001646
+    },
+    {
+      "fold": 8,
+      "best_epoch": 90,
+      "correct": 55,
+      "acc": 0.9322033898305084,
+      "macro_f1": 0.8944444444444445,
+      "bacc": 0.9201228878648234,
+      "macro_auc": 0.95822994210091,
+      "elapsed_seconds": 46.39894340001047
+    },
+    {
+      "fold": 9,
+      "best_epoch": 181,
+      "correct": 56,
+      "acc": 0.9491525423728814,
+      "macro_f1": 0.9247830279652844,
+      "bacc": 0.9368279569892474,
+      "macro_auc": 0.9753508930453902,
+      "elapsed_seconds": 47.75207300018519
+    }
+  ],
+  "training_seconds": 485.5173966004513,
+  "wall_seconds": 488.1679255000781,
+  "paired_vs_original": {
+    "repairs": 23,
+    "damages": 19,
+    "net_repairs": 4,
+    "changed_predictions": 42,
+    "both_correct": 537,
+    "repair_subject_indices": [
+      4,
+      16,
+      27,
+      43,
+      53,
+      120,
+      185,
+      196,
+      197,
+      203,
+      270,
+      369,
+      397,
+      401,
+      430,
+      433,
+      438,
+      439,
+      473,
+      492,
+      502,
+      522,
+      592
+    ],
+    "damage_subject_indices": [
+      7,
+      17,
+      24,
+      34,
+      49,
+      55,
+      89,
+      207,
+      272,
+      282,
+      305,
+      361,
+      391,
+      393,
+      407,
+      428,
+      451,
+      501,
+      583
+    ],
+    "changed_subject_indices": [
+      4,
+      7,
+      16,
+      17,
+      24,
+      27,
+      34,
+      43,
+      49,
+      53,
+      55,
+      89,
+      120,
+      185,
+      196,
+      197,
+      203,
+      207,
+      270,
+      272,
+      282,
+      305,
+      361,
+      369,
+      391,
+      393,
+      397,
+      401,
+      407,
+      428,
+      430,
+      433,
+      438,
+      439,
+      451,
+      473,
+      492,
+      501,
+      502,
+      522,
+      583,
+      592
+    ],
+    "exact_mcnemar_p_value": 0.6439689563703723
+  },
+  "diagnostics": {
+    "private": {
+      "residual_mean_norm_by_modality": {
+        "MRI": 3.2676491029560566,
+        "PET": 3.060744285583496,
+        "CSF": 2.1156939208507537,
+        "Risk": 3.0490732371807097,
+        "COG": 10.676523685455322,
+        "ROI": 3.2241727113723755
+      },
+      "private_shared_ratio_by_modality": {
+        "MRI": 0.07565631144680082,
+        "PET": 0.06809283830225468,
+        "CSF": 0.053553583472967146,
+        "Risk": 0.0737990491092205,
+        "COG": 0.279545646160841,
+        "ROI": 0.07636957615613937
+      },
+      "adapter_gradient_mean": 0.027756392879120545,
+      "category_global_cosine_mean": 0.581282702088356,
+      "private_collapse": false
+    },
+    "router_oof": {},
+    "utility_train_observations": {},
+    "repair_damage_router_weights": {}
+  },
+  "config": {
+    "experiment": "c1_shared_private_control",
+    "arm": "c1",
+    "fold": -1,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "orthogonality": false,
+    "graph_enabled": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "adapter_rank": 8,
+    "private_adapter_count": 6,
+    "utility_probability": "not applicable",
+    "utility_warmup_epochs": 40,
+    "utility_refresh_interval": 10,
+    "utility_weight": 0.0,
+    "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+  },
+  "fold_summaries": [
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 0,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 116,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9026701119724375,
+        "bacc": 0.8792882744495647,
+        "macro_auc": 0.9776273285380627,
+        "weighted_f1": 0.9155284852959272,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            2,
+            29
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 48.42011730000377,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.029686007233249257,
+        "adapter_max": 0.6884250640869141,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.08452128789154813
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 0,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 4.853247165679932,
+            "PET": 4.988070964813232,
+            "CSF": 2.300640344619751,
+            "Risk": 0.22681406140327454,
+            "COG": 5.255398273468018,
+            "ROI": 4.683005332946777
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.11750317364931107,
+            "PET": 0.10589230060577393,
+            "CSF": 0.057632844895124435,
+            "Risk": 0.005338338203728199,
+            "COG": 0.11142200231552124,
+            "ROI": 0.10971762984991074
+          },
+          "adapter_gradient_mean": 0.029686007233249257,
+          "category_global_cosine_mean": 0.6726007461547852,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 1,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 153,
+      "best_metrics": {
+        "correct": 56,
+        "acc": 0.9333333333333333,
+        "macro_f1": 0.9156746031746031,
+        "bacc": 0.9156746031746031,
+        "macro_auc": 0.9493232898303653,
+        "weighted_f1": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 50.86177400010638,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.024060139767389046,
+        "adapter_max": 0.5661966800689697,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.08880424196162494
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 1,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 2.2540876865386963,
+            "PET": 0.9600234031677246,
+            "CSF": 3.143115997314453,
+            "Risk": 3.987114191055298,
+            "COG": 16.59785270690918,
+            "ROI": 3.4920403957366943
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.054960303008556366,
+            "PET": 0.022760918363928795,
+            "CSF": 0.06832148134708405,
+            "Risk": 0.09405514597892761,
+            "COG": 0.3972080647945404,
+            "ROI": 0.08415297418832779
+          },
+          "adapter_gradient_mean": 0.024060139767389046,
+          "category_global_cosine_mean": 0.7021238207817078,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 2,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 105,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9433344433344434,
+        "bacc": 0.9315476190476191,
+        "macro_auc": 0.9571844450971808,
+        "weighted_f1": 0.9497197247197247,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            2,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 49.33253620006144,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.02297657626280852,
+        "adapter_max": 0.6098656058311462,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.06493158214958385
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 2,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 3.5782103538513184,
+            "PET": 2.377992868423462,
+            "CSF": 1.5729999542236328,
+            "Risk": 2.926572322845459,
+            "COG": 5.003235340118408,
+            "ROI": 1.541813611984253
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.07240984588861465,
+            "PET": 0.04539448767900467,
+            "CSF": 0.02949770912528038,
+            "Risk": 0.055088356137275696,
+            "COG": 0.11392031610012054,
+            "ROI": 0.03548695519566536
+          },
+          "adapter_gradient_mean": 0.02297657626280852,
+          "category_global_cosine_mean": 0.47300711274147034,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 3,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 159,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.9161500191350939,
+        "bacc": 0.8943452380952381,
+        "macro_auc": 0.980419464794465,
+        "weighted_f1": 0.9162246460007655,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            18,
+            3
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 47.54182939999737,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.033359085235533714,
+        "adapter_max": 1.2614142894744873,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.10519512194645358
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 3,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 8.543147087097168,
+            "PET": 1.8274530172348022,
+            "CSF": 4.3182525634765625,
+            "Risk": 10.918763160705566,
+            "COG": 10.173481941223145,
+            "ROI": 2.9597601890563965
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.20229685306549072,
+            "PET": 0.04241497069597244,
+            "CSF": 0.12944680452346802,
+            "Risk": 0.26863521337509155,
+            "COG": 0.3421020805835724,
+            "ROI": 0.0647280141711235
+          },
+          "adapter_gradient_mean": 0.033359085235533714,
+          "category_global_cosine_mean": 0.6571630835533142,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 4,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 103,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9166666666666666,
+        "macro_f1": 0.8815628815628817,
+        "bacc": 0.8680555555555555,
+        "macro_auc": 0.9439963480352631,
+        "weighted_f1": 0.9153846153846155,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 54.270377800101414,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.03160627964145533,
+        "adapter_max": 1.3487977981567383,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.10242115568828013
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 4,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 2.238804817199707,
+            "PET": 3.5961062908172607,
+            "CSF": 1.7128551006317139,
+            "Risk": 2.784741163253784,
+            "COG": 4.903872966766357,
+            "ROI": 2.170865297317505
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.04923486337065697,
+            "PET": 0.08169922232627869,
+            "CSF": 0.038457758724689484,
+            "Risk": 0.0620151087641716,
+            "COG": 0.09701640158891678,
+            "ROI": 0.04548928141593933
+          },
+          "adapter_gradient_mean": 0.03160627964145533,
+          "category_global_cosine_mean": 0.5747532844543457,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 5,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 180,
+      "best_metrics": {
+        "correct": 57,
+        "acc": 0.95,
+        "macro_f1": 0.9174603174603174,
+        "bacc": 0.9315476190476191,
+        "macro_auc": 0.9825499775381852,
+        "weighted_f1": 0.9512698412698413,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            2,
+            0,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 48.618795699905604,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.02692407350285066,
+        "adapter_max": 0.6112986207008362,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.089874083649338
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 5,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 2.6006665229797363,
+            "PET": 6.462531089782715,
+            "CSF": 3.812058210372925,
+            "Risk": 1.390082836151123,
+            "COG": 15.976605415344238,
+            "ROI": 2.8931326866149902
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.05661759898066521,
+            "PET": 0.15990284085273743,
+            "CSF": 0.10316113382577896,
+            "Risk": 0.03533109650015831,
+            "COG": 0.45311951637268066,
+            "ROI": 0.07457422465085983
+          },
+          "adapter_gradient_mean": 0.02692407350285066,
+          "category_global_cosine_mean": 0.5081211924552917,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 6,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 332,
+      "best_metrics": {
+        "correct": 58,
+        "acc": 0.9666666666666667,
+        "macro_f1": 0.9737103174603176,
+        "bacc": 0.9737103174603176,
+        "macro_auc": 0.995732855107855,
+        "weighted_f1": 0.9666666666666667,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            0,
+            1,
+            31
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 46.74385809991509,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.029475893653725507,
+        "adapter_max": 0.8660988211631775,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.07235842120062444
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 6,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 0.08736801892518997,
+            "PET": 0.3681824207305908,
+            "CSF": 0.843127965927124,
+            "Risk": 2.4660775661468506,
+            "COG": 14.053011894226074,
+            "ROI": 3.1538820266723633
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.0038748146034777164,
+            "PET": 0.013586172834038734,
+            "CSF": 0.030718209221959114,
+            "Risk": 0.09592023491859436,
+            "COG": 0.5131900310516357,
+            "ROI": 0.10761838406324387
+          },
+          "adapter_gradient_mean": 0.029475893653725507,
+          "category_global_cosine_mean": 0.5916545987129211,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 7,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 538,
+      "test_size": 60,
+      "best_epoch": 181,
+      "best_metrics": {
+        "correct": 56,
+        "acc": 0.9333333333333333,
+        "macro_f1": 0.9156746031746031,
+        "bacc": 0.9156746031746031,
+        "macro_auc": 0.9628150173551117,
+        "weighted_f1": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            1
+          ],
+          [
+            1,
+            1,
+            30
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 45.5770917001646,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.02726278464142524,
+        "adapter_max": 0.6485913395881653,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.07547828482856858
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 7,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 2.0311710834503174,
+            "PET": 1.8034099340438843,
+            "CSF": 0.4366720914840698,
+            "Risk": 0.3363601267337799,
+            "COG": 11.920092582702637,
+            "ROI": 3.524164915084839
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.05395469069480896,
+            "PET": 0.04615900292992592,
+            "CSF": 0.011450259946286678,
+            "Risk": 0.009161966852843761,
+            "COG": 0.28768378496170044,
+            "ROI": 0.087736576795578
+          },
+          "adapter_gradient_mean": 0.02726278464142524,
+          "category_global_cosine_mean": 0.5176905989646912,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 8,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 539,
+      "test_size": 59,
+      "best_epoch": 90,
+      "best_metrics": {
+        "correct": 55,
+        "acc": 0.9322033898305084,
+        "macro_f1": 0.8944444444444445,
+        "bacc": 0.9201228878648234,
+        "macro_auc": 0.95822994210091,
+        "weighted_f1": 0.935310734463277,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            3,
+            0,
+            28
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 46.39894340001047,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.026469990033783686,
+        "adapter_max": 0.618120014667511,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.11334285763732624
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 8,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 1.5851213932037354,
+            "PET": 5.267950534820557,
+            "CSF": 0.6986227631568909,
+            "Risk": 2.442103385925293,
+            "COG": 6.587364673614502,
+            "ROI": 2.23067307472229
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.029636386781930923,
+            "PET": 0.09519997239112854,
+            "CSF": 0.011058243922889233,
+            "Risk": 0.04745478555560112,
+            "COG": 0.09017786383628845,
+            "ROI": 0.03128742799162865
+          },
+          "adapter_gradient_mean": 0.026469990033783686,
+          "category_global_cosine_mean": 0.6337354183197021,
+          "private_collapse": false
+        }
+      }
+    },
+    {
+      "passed": true,
+      "arm": "c1",
+      "name": "c1_shared_private_control",
+      "fold": 9,
+      "seed": 0,
+      "epochs": 400,
+      "train_size": 539,
+      "test_size": 59,
+      "best_epoch": 181,
+      "best_metrics": {
+        "correct": 56,
+        "acc": 0.9491525423728814,
+        "macro_f1": 0.9247830279652844,
+        "bacc": 0.9368279569892474,
+        "macro_auc": 0.9753508930453902,
+        "weighted_f1": 0.9502312733929359,
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            20,
+            0
+          ],
+          [
+            2,
+            0,
+            29
+          ]
+        ]
+      },
+      "parameter_count": 862971,
+      "added_parameters_vs_original": 9840,
+      "elapsed_seconds": 47.75207300018519,
+      "utility_refresh_epochs": [],
+      "gradient_summary": {
+        "adapter_mean": 0.025743098818984435,
+        "adapter_max": 0.5701642632484436,
+        "router_mean": 0.0,
+        "router_max": 0.0,
+        "global_mean": 0.06332490586122731
+      },
+      "config": {
+        "experiment": "c1_shared_private_control",
+        "arm": "c1",
+        "fold": 9,
+        "seed": 0,
+        "epochs": 400,
+        "dataset": "TADPOLE",
+        "task": "AD_CN_SMCI",
+        "subjects": 598,
+        "features": 360,
+        "modalities": [
+          "MRI",
+          "PET",
+          "CSF",
+          "Risk",
+          "COG",
+          "ROI"
+        ],
+        "class_order": [
+          "AD",
+          "CN",
+          "SMCI"
+        ],
+        "transductive_full_batch": true,
+        "single_model": true,
+        "ensemble": false,
+        "optimizer": "Adam",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "scheduler": "CustomCosineAnnealingLR",
+        "T_max": 400,
+        "eta_min": 0.0001,
+        "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+        "label_smoothing": 0.05,
+        "orthogonality": false,
+        "graph_enabled": false,
+        "best_epoch_rule": [
+          "ACC",
+          "Probability Macro-AUC",
+          "Macro-F1"
+        ],
+        "adapter_rank": 8,
+        "private_adapter_count": 6,
+        "utility_probability": "not applicable",
+        "utility_warmup_epochs": 40,
+        "utility_refresh_interval": 10,
+        "utility_weight": 0.0,
+        "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+      },
+      "diagnostics": {
+        "private": {
+          "residual_mean_norm_by_modality": {
+            "MRI": 4.904666900634766,
+            "PET": 2.9557223320007324,
+            "CSF": 2.318594217300415,
+            "Risk": 3.01210355758667,
+            "COG": 16.294321060180664,
+            "ROI": 5.5923895835876465
+          },
+          "private_shared_ratio_by_modality": {
+            "MRI": 0.1160745844244957,
+            "PET": 0.06791849434375763,
+            "CSF": 0.05579138919711113,
+            "Risk": 0.06499024480581284,
+            "COG": 0.3896164000034332,
+            "ROI": 0.12290429323911667
+          },
+          "adapter_gradient_mean": 0.025743098818984435,
+          "category_global_cosine_mean": 0.4819771647453308,
+          "private_collapse": false
+        }
+      }
+    }
+  ]
+}

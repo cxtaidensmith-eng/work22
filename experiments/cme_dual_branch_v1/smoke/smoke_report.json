@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "fold": 0,
+  "epochs": 3,
+  "initial_equivalence": {
+    "private_residual_max_abs": 0.0,
+    "c1_vs_original_logit_max_abs_diff": 0.0
+  },
+  "arms": {
+    "c1": {
+      "epochs": 3,
+      "finite_loss_and_gradients": true,
+      "maximum_gradient_norms": {
+        "adapter": 0.5784263610839844,
+        "router": 0.0,
+        "global": 2.902956962585449
+      },
+      "utility_loss": 0.0,
+      "probability_sum_max_abs_error": 1.1920928955078125e-07
+    },
+    "c2": {
+      "epochs": 3,
+      "finite_loss_and_gradients": true,
+      "maximum_gradient_norms": {
+        "adapter": 0.5799030661582947,
+        "router": 0.04102858901023865,
+        "global": 2.902956962585449
+      },
+      "utility_loss": 0.9623145461082458,
+      "probability_sum_max_abs_error": 1.1920928955078125e-07
+    },
+    "c3": {
+      "single_forward_backward": true,
+      "weighted_utility_loss": 0.09931991994380951,
+      "valid_count_ad_smci": 348,
+      "valid_count_cn_smci": 462
+    }
+  },
+  "counterfactual_checks": {
+    "train_only_deletion": true,
+    "test_label_invariance": true,
+    "target_has_no_gradient": true
+  },
+  "checkpoint_roundtrip": {
+    "logit_max_abs_diff": 0.0,
+    "router_max_abs_diff": 0.0
+  }
+}

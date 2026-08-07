@@ -1,0 +1,49 @@
+{
+  "experiment": "c1_shared_private_control",
+  "arm": "c1",
+  "fold": -1,
+  "seed": 0,
+  "epochs": 400,
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "subjects": 598,
+  "features": 360,
+  "modalities": [
+    "MRI",
+    "PET",
+    "CSF",
+    "Risk",
+    "COG",
+    "ROI"
+  ],
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "weight_decay": 0.0005,
+  "scheduler": "CustomCosineAnnealingLR",
+  "T_max": 400,
+  "eta_min": 0.0001,
+  "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+  "label_smoothing": 0.05,
+  "orthogonality": false,
+  "graph_enabled": false,
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "adapter_rank": 8,
+  "private_adapter_count": 6,
+  "utility_probability": "not applicable",
+  "utility_warmup_epochs": 40,
+  "utility_refresh_interval": 10,
+  "utility_weight": 0.0,
+  "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+}

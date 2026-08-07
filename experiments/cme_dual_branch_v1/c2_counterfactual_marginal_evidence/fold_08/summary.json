@@ -1,0 +1,244 @@
+{
+  "passed": true,
+  "arm": "c2",
+  "name": "c2_counterfactual_marginal_evidence",
+  "fold": 8,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 539,
+  "test_size": 59,
+  "best_epoch": 166,
+  "best_metrics": {
+    "correct": 54,
+    "acc": 0.9152542372881356,
+    "macro_f1": 0.8675768675768675,
+    "bacc": 0.8305171530977983,
+    "macro_auc": 0.9684016700145732,
+    "weighted_f1": 0.9102761645134526,
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        3
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        0,
+        1,
+        30
+      ]
+    ]
+  },
+  "parameter_count": 866444,
+  "added_parameters_vs_original": 13313,
+  "elapsed_seconds": 49.77143560000695,
+  "utility_refresh_epochs": [
+    41,
+    51,
+    61,
+    71,
+    81,
+    91,
+    101,
+    111,
+    121,
+    131,
+    141,
+    151,
+    161,
+    171,
+    181,
+    191,
+    201,
+    211,
+    221,
+    231,
+    241,
+    251,
+    261,
+    271,
+    281,
+    291,
+    301,
+    311,
+    321,
+    331,
+    341,
+    351,
+    361,
+    371,
+    381,
+    391
+  ],
+  "gradient_summary": {
+    "adapter_mean": 0.03408634859064477,
+    "adapter_max": 0.6104787588119507,
+    "router_mean": 0.03142498117485957,
+    "router_max": 0.15449689328670502,
+    "global_mean": 0.10758115965109027
+  },
+  "config": {
+    "experiment": "c2_counterfactual_marginal_evidence",
+    "arm": "c2",
+    "fold": 8,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "subjects": 598,
+    "features": 360,
+    "modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "Risk",
+      "COG",
+      "ROI"
+    ],
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0.0005,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three Original OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "orthogonality": false,
+    "graph_enabled": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "adapter_rank": 8,
+    "private_adapter_count": 6,
+    "utility_probability": "historical logit-adjusted three-class softmax",
+    "utility_warmup_epochs": 40,
+    "utility_refresh_interval": 10,
+    "utility_weight": 0.1,
+    "global_path_note": "Historical Original Global_Message(X_gated) is unchanged; private evidence enters Category only."
+  },
+  "diagnostics": {
+    "private": {
+      "residual_mean_norm_by_modality": {
+        "MRI": 1.3777670860290527,
+        "PET": 0.5071623921394348,
+        "CSF": 0.048417478799819946,
+        "Risk": 0.20348651707172394,
+        "COG": 6.692850589752197,
+        "ROI": 0.36350175738334656
+      },
+      "private_shared_ratio_by_modality": {
+        "MRI": 0.043976981192827225,
+        "PET": 0.015291109681129456,
+        "CSF": 0.001909836893901229,
+        "Risk": 0.006375822704285383,
+        "COG": 0.2852673828601837,
+        "ROI": 0.011567150242626667
+      },
+      "adapter_gradient_mean": 0.03408634859064477,
+      "category_global_cosine_mean": 0.7002912759780884,
+      "private_collapse": false
+    },
+    "router_and_utility": {
+      "all": {
+        "router_mean_by_modality": {
+          "MRI": 0.05010391026735306,
+          "PET": 0.015925124287605286,
+          "CSF": 0.020319825038313866,
+          "Risk": 0.030258838087320328,
+          "COG": 0.871623158454895,
+          "ROI": 0.0117690684273839
+        },
+        "router_mean_by_true_class": {
+          "AD": {
+            "MRI": 0.07613986730575562,
+            "PET": 0.02941673994064331,
+            "CSF": 0.038037464022636414,
+            "Risk": 0.05038509890437126,
+            "COG": 0.7802685499191284,
+            "ROI": 0.02575232833623886
+          },
+          "CN": {
+            "MRI": 0.04127915948629379,
+            "PET": 0.0130416015163064,
+            "CSF": 0.015496445819735527,
+            "Risk": 0.02450285665690899,
+            "COG": 0.897152304649353,
+            "ROI": 0.008527609519660473
+          },
+          "SMCI": {
+            "MRI": 0.050202883780002594,
+            "PET": 0.014831984415650368,
+            "CSF": 0.019586514681577682,
+            "Risk": 0.02961341291666031,
+            "COG": 0.8749577403068542,
+            "ROI": 0.010807384736835957
+          }
+        },
+        "utility_mean_by_modality": {
+          "MRI": 0.07230821996927261,
+          "PET": 0.01741817593574524,
+          "CSF": 0.0071535976603627205,
+          "Risk": 0.0662294328212738,
+          "COG": 1.0904507637023926,
+          "ROI": 0.006154373288154602
+        },
+        "deletion_loss_change_mean_by_modality": {
+          "MRI": 0.07230598479509354,
+          "PET": 0.017409587278962135,
+          "CSF": 0.007145078387111425,
+          "Risk": 0.06621511280536652,
+          "COG": 1.0904498100280762,
+          "ROI": 0.006150230299681425
+        },
+        "positive_utility_sample_proportion": 1.0,
+        "router_entropy_mean": 0.5631028413772583,
+        "router_normalized_entropy_mean": 0.3142736852169037,
+        "router_max_weight_mean": 0.8716232180595398,
+        "router_top_modality_frequency": {
+          "MRI": 0.0,
+          "PET": 0.0,
+          "CSF": 0.0,
+          "Risk": 0.0,
+          "COG": 1.0,
+          "ROI": 0.0
+        },
+        "utility_kl_mean": 0.3439271152019501,
+        "router_collapse": true,
+        "valid_utility_count": 539
+      }
+    },
+    "utility_observation_scope": "fold-train observations; folds overlap and these are not 598 unique OOF subjects",
+    "deletion_check": {
+      "train_deleted_max_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "test_unchanged_max_abs_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}
