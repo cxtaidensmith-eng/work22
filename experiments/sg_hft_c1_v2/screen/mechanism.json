@@ -1,0 +1,99 @@
+{
+  "MRI": {
+    "mean_residual_shared_ratio": 0.006326019597453112,
+    "maximum_ratio": 0.017119836062192917,
+    "cap_saturation_fraction": 0.0,
+    "normalized_group_gate_entropy": 1.0,
+    "mean_group_gates": [
+      {
+        "group_name": "cortical_volume_CV",
+        "mean_gate": 0.5000012573583166
+      },
+      {
+        "group_name": "surface_area_SA",
+        "mean_gate": 0.5000012573583166
+      },
+      {
+        "group_name": "cortical_thickness_TA_TS",
+        "mean_gate": 0.5000012573583166
+      },
+      {
+        "group_name": "subcortical_volume_SV",
+        "mean_gate": 0.5000012573583166
+      }
+    ],
+    "gate_range_maximum": 5.960464477539063e-08,
+    "selection_interpretation": "group gate did not form reliable selection"
+  },
+  "PET": {
+    "mean_residual_shared_ratio": 0.005324448120660622,
+    "maximum_ratio": 0.017048310488462448,
+    "cap_saturation_fraction": 0.0,
+    "normalized_group_gate_entropy": 1.0,
+    "mean_group_gates": [
+      {
+        "group_name": "cortical_left_uptake",
+        "mean_gate": 0.4999991901759995
+      },
+      {
+        "group_name": "cortical_left_size",
+        "mean_gate": 0.4999991901759995
+      },
+      {
+        "group_name": "cortical_right_uptake",
+        "mean_gate": 0.4999991901759995
+      },
+      {
+        "group_name": "cortical_right_size",
+        "mean_gate": 0.4999991901759995
+      },
+      {
+        "group_name": "noncortical_aggregate_uptake",
+        "mean_gate": 0.4999991901759995
+      },
+      {
+        "group_name": "noncortical_aggregate_size",
+        "mean_gate": 0.4999991901759995
+      }
+    ],
+    "gate_range_maximum": 0.0,
+    "selection_interpretation": "group gate did not form reliable selection"
+  },
+  "ROI": {
+    "mean_residual_shared_ratio": 0.00470584406200068,
+    "maximum_ratio": 0.012198840267956257,
+    "cap_saturation_fraction": 0.0,
+    "normalized_group_gate_entropy": 1.0,
+    "mean_group_gates": [
+      {
+        "group_name": "medial_temporal_structure",
+        "mean_gate": 0.49999889181978874
+      },
+      {
+        "group_name": "global_structure",
+        "mean_gate": 0.49999889181978874
+      },
+      {
+        "group_name": "ventricular_structure",
+        "mean_gate": 0.49999889181978874
+      },
+      {
+        "group_name": "amyloid_AV45",
+        "mean_gate": 0.49999889181978874
+      },
+      {
+        "group_name": "glucose_metabolism_FDG",
+        "mean_gate": 0.49999889181978874
+      }
+    ],
+    "gate_range_maximum": 0.0,
+    "selection_interpretation": "group gate did not form reliable selection"
+  },
+  "overall": {
+    "modalities_ratio_at_least_0_01": 0,
+    "modalities_entropy_below_0_98": 0,
+    "all_three_branches_near_zero": true,
+    "all_three_gate_entropies_near_one": true,
+    "all_three_gates_constant": false
+  }
+}

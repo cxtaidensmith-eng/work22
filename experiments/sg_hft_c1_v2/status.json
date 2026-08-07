@@ -1,10 +1,10 @@
 {
-  "stage": "smoke",
-  "decision": "SMOKE_PASS",
+  "stage": "screen",
+  "decision": "SG_HFT_STOP",
   "completed": true,
   "branch": "experiment/sg-hft-c1-v2",
   "base_commit": "0dd9161bdec9c91bb99f67325766f9361cba9b91",
   "c1_anchor_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
-  "run_commit": "0dd9161bdec9c91bb99f67325766f9361cba9b91",
-  "stage_runtime_seconds": 3.931893900036812
+  "run_commit": "b380b49d98856b94b10533d1093b0566ded2cafd",
+  "stage_runtime_seconds": 183.82294079987332
 }

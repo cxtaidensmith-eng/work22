@@ -1,0 +1,72 @@
+{
+  "experiment": "Structured Group HFT-C1 v2",
+  "short_name": "SG-HFT-C1 v2",
+  "scope": "screen",
+  "fold": 7,
+  "seed": 0,
+  "epochs": 400,
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "subjects": 598,
+  "features": 360,
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "modality_order": [
+    "MRI",
+    "PET",
+    "CSF",
+    "Risk",
+    "COG",
+    "ROI"
+  ],
+  "SG_modalities": [
+    "MRI",
+    "PET",
+    "ROI"
+  ],
+  "group_counts": {
+    "MRI": 4,
+    "PET": 6,
+    "ROI": 5
+  },
+  "group_construction": "deterministic_feature_name_semantics",
+  "grouping_uses_labels": false,
+  "grouping_uses_feature_values": false,
+  "group_encoder": "Linear(group_width,8)->GELU->shared-per-modality Linear(8,hidden_dim)",
+  "gate": "shared-per-modality Linear(2*hidden_dim,8)->GELU->Linear(8,1); sigmoid gated mean",
+  "gate_context_detached": true,
+  "adapter_rank": 4,
+  "adapter_final_initialization": "Xavier gain=0.05; bias=0",
+  "activation_schedule": {
+    "epochs_1_20": 0.0,
+    "epochs_21_40": "linear 0->1",
+    "epochs_41_400": 1.0
+  },
+  "cap": 0.08,
+  "cap_learnable": false,
+  "transductive_full_batch": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph_enabled": false,
+  "orthogonality": false,
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "weight_decay": 0.0005,
+  "scheduler": "CustomCosineAnnealingLR",
+  "T_max": 400,
+  "eta_min": 0.0001,
+  "loss": "complete historical C1 weighted CE plus three OVR auxiliary losses; no SG auxiliary loss",
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "parameters": {
+    "C1": 862971,
+    "added_SG": 12351,
+    "total": 875322
+  }
+}

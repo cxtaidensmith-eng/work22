@@ -1,0 +1,74 @@
+{
+  "MRI": {
+    "count": 60,
+    "ratio_sum": 0.36494243144989014,
+    "ratio_max": 0.009366760030388832,
+    "cap_saturation_count": 0,
+    "entropy_sum": 60.0,
+    "gate_sum": [
+      29.999942779541016,
+      29.999942779541016,
+      29.999942779541016,
+      29.999942779541016
+    ],
+    "gate_range": 0.0,
+    "shared_norm_mean": 41.45328903198242,
+    "delta_norm_mean": 0.24165557324886322,
+    "group_names": [
+      "cortical_volume_CV",
+      "surface_area_SA",
+      "cortical_thickness_TA_TS",
+      "subcortical_volume_SV"
+    ]
+  },
+  "PET": {
+    "count": 60,
+    "ratio_sum": 0.2749301791191101,
+    "ratio_max": 0.008736032992601395,
+    "cap_saturation_count": 0,
+    "entropy_sum": 60.0,
+    "gate_sum": [
+      30.00005531311035,
+      30.00005531311035,
+      30.00005531311035,
+      30.00005531311035,
+      30.00005531311035,
+      30.00005531311035
+    ],
+    "gate_range": 0.0,
+    "shared_norm_mean": 50.37393569946289,
+    "delta_norm_mean": 0.22255493700504303,
+    "group_names": [
+      "cortical_left_uptake",
+      "cortical_left_size",
+      "cortical_right_uptake",
+      "cortical_right_size",
+      "noncortical_aggregate_uptake",
+      "noncortical_aggregate_size"
+    ]
+  },
+  "ROI": {
+    "count": 60,
+    "ratio_sum": 0.17333272099494934,
+    "ratio_max": 0.005699165631085634,
+    "cap_saturation_count": 0,
+    "entropy_sum": 60.0,
+    "gate_sum": [
+      30.000001907348633,
+      30.000001907348633,
+      30.000001907348633,
+      30.000001907348633,
+      30.000001907348633
+    ],
+    "gate_range": 0.0,
+    "shared_norm_mean": 52.02289962768555,
+    "delta_norm_mean": 0.14561480283737183,
+    "group_names": [
+      "medial_temporal_structure",
+      "global_structure",
+      "ventricular_structure",
+      "amyloid_AV45",
+      "glucose_metabolism_FDG"
+    ]
+  }
+}

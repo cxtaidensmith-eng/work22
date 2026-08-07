@@ -1,0 +1,266 @@
+{
+  "metrics": {
+    "correct": 161,
+    "acc": 0.8994413407821229,
+    "macro_f1": 0.8782576970848054,
+    "bacc": 0.8749094959621275,
+    "macro_auc": 0.937908845298172,
+    "weighted_f1": 0.8995621932071496,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        56,
+        7
+      ],
+      [
+        4,
+        3,
+        88
+      ]
+    ]
+  },
+  "ad_smci_errors": 8,
+  "cn_smci_errors": 10,
+  "ad_cn_errors": 0,
+  "boundary_errors": 18,
+  "fold_acc_mean": 0.8994350282485876,
+  "fold_acc_sample_sd": 0.016695369328573104,
+  "fold_results": [
+    {
+      "fold": 4,
+      "best_epoch": 214,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "macro_f1": 0.9023496828374876,
+      "bacc": 0.8998015873015873,
+      "macro_auc": 0.9104593705124365,
+      "elapsed_seconds": 60.62550349999219,
+      "fresh_run": true
+    },
+    {
+      "fold": 7,
+      "best_epoch": 151,
+      "correct": 53,
+      "acc": 0.8833333333333333,
+      "macro_f1": 0.8758331099794514,
+      "bacc": 0.8735119047619048,
+      "macro_auc": 0.95789093636971,
+      "elapsed_seconds": 60.54194359993562,
+      "fresh_run": true
+    },
+    {
+      "fold": 8,
+      "best_epoch": 130,
+      "correct": 53,
+      "acc": 0.8983050847457628,
+      "macro_f1": 0.856845238095238,
+      "bacc": 0.851510496671787,
+      "macro_auc": 0.9755493987242714,
+      "elapsed_seconds": 59.901704699965194,
+      "fresh_run": true
+    }
+  ],
+  "training_seconds": 181.069151799893,
+  "training_parameters": 875322,
+  "inference_parameters": 875322,
+  "added_parameters": 12351,
+  "mechanism": {
+    "MRI": {
+      "mean_residual_shared_ratio": 0.006326019597453112,
+      "maximum_ratio": 0.017119836062192917,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 1.0,
+      "mean_group_gates": [
+        {
+          "group_name": "cortical_volume_CV",
+          "mean_gate": 0.5000012573583166
+        },
+        {
+          "group_name": "surface_area_SA",
+          "mean_gate": 0.5000012573583166
+        },
+        {
+          "group_name": "cortical_thickness_TA_TS",
+          "mean_gate": 0.5000012573583166
+        },
+        {
+          "group_name": "subcortical_volume_SV",
+          "mean_gate": 0.5000012573583166
+        }
+      ],
+      "gate_range_maximum": 5.960464477539063e-08,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "PET": {
+      "mean_residual_shared_ratio": 0.005324448120660622,
+      "maximum_ratio": 0.017048310488462448,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 1.0,
+      "mean_group_gates": [
+        {
+          "group_name": "cortical_left_uptake",
+          "mean_gate": 0.4999991901759995
+        },
+        {
+          "group_name": "cortical_left_size",
+          "mean_gate": 0.4999991901759995
+        },
+        {
+          "group_name": "cortical_right_uptake",
+          "mean_gate": 0.4999991901759995
+        },
+        {
+          "group_name": "cortical_right_size",
+          "mean_gate": 0.4999991901759995
+        },
+        {
+          "group_name": "noncortical_aggregate_uptake",
+          "mean_gate": 0.4999991901759995
+        },
+        {
+          "group_name": "noncortical_aggregate_size",
+          "mean_gate": 0.4999991901759995
+        }
+      ],
+      "gate_range_maximum": 0.0,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "ROI": {
+      "mean_residual_shared_ratio": 0.00470584406200068,
+      "maximum_ratio": 0.012198840267956257,
+      "cap_saturation_fraction": 0.0,
+      "normalized_group_gate_entropy": 1.0,
+      "mean_group_gates": [
+        {
+          "group_name": "medial_temporal_structure",
+          "mean_gate": 0.49999889181978874
+        },
+        {
+          "group_name": "global_structure",
+          "mean_gate": 0.49999889181978874
+        },
+        {
+          "group_name": "ventricular_structure",
+          "mean_gate": 0.49999889181978874
+        },
+        {
+          "group_name": "amyloid_AV45",
+          "mean_gate": 0.49999889181978874
+        },
+        {
+          "group_name": "glucose_metabolism_FDG",
+          "mean_gate": 0.49999889181978874
+        }
+      ],
+      "gate_range_maximum": 0.0,
+      "selection_interpretation": "group gate did not form reliable selection"
+    },
+    "overall": {
+      "modalities_ratio_at_least_0_01": 0,
+      "modalities_entropy_below_0_98": 0,
+      "all_three_branches_near_zero": true,
+      "all_three_gate_entropies_near_one": true,
+      "all_three_gates_constant": false
+    }
+  },
+  "paired_vs_C1": {
+    "repairs": 3,
+    "damages": 8,
+    "net_repairs": -5,
+    "changed_predictions": 11,
+    "repair_subject_indices": [
+      18,
+      305,
+      564
+    ],
+    "damage_subject_indices": [
+      68,
+      155,
+      183,
+      188,
+      242,
+      248,
+      342,
+      431
+    ],
+    "changed_subject_indices": [
+      18,
+      68,
+      155,
+      183,
+      188,
+      242,
+      248,
+      305,
+      342,
+      431,
+      564
+    ]
+  },
+  "post_activation_saturation_epoch_fraction_ge_0_50": {
+    "MRI": 0.0,
+    "PET": 0.0,
+    "ROI": 0.0
+  },
+  "C1_anchor": {
+    "subjects": 179,
+    "correct": 166,
+    "acc": 0.9273743016759777,
+    "macro_f1": 0.896722857963168,
+    "bacc": 0.901364522417154,
+    "macro_auc": 0.9432606323024206,
+    "weighted_f1": 0.9277668135664757,
+    "confusion_matrix": [
+      [
+        17,
+        0,
+        4
+      ],
+      [
+        0,
+        61,
+        2
+      ],
+      [
+        5,
+        2,
+        88
+      ]
+    ],
+    "ad_smci_errors": 9,
+    "cn_smci_errors": 4,
+    "boundary_errors": 13,
+    "ad_cn_errors": 0,
+    "fold_correct": {
+      "4": 55,
+      "7": 56,
+      "8": 55
+    }
+  },
+  "metric_delta_vs_C1": {
+    "correct": -5,
+    "acc": -0.027932960893854775,
+    "macro_f1": -0.018465160878362585,
+    "bacc": -0.02645502645502651,
+    "macro_auc": -0.005351787004248654,
+    "weighted_f1": -0.028204620359326138
+  },
+  "decision": "SG_HFT_STOP",
+  "decision_reasons": [
+    "correct_at_most_165",
+    "repairs_less_than_damages",
+    "CN_SMCI_errors_increased_by_at_least_2",
+    "all_three_SG_branches_near_zero",
+    "all_three_group_gate_entropies_near_one"
+  ],
+  "checkpoint_readback": {
+    "passed": true,
+    "fold": 4,
+    "maximum_probability_difference": 0.0
+  }
+}
