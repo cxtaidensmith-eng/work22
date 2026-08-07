@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "outer_fold": 0,
+  "inner_fold": 0,
+  "outer_train_size": 538,
+  "inner_train_size": 358,
+  "inner_validation_size": 180,
+  "outer_test_overlap_count": 0,
+  "original": {
+    "epochs": 3,
+    "best_epoch": 3,
+    "best_selection_tuple": [
+      0.43333333333333335,
+      0.7038951964878907,
+      0.22033898305084745
+    ],
+    "first_train_loss": 3.3117709159851074,
+    "runtime_seconds": 1.3760371999815106,
+    "parameter_count": 853131,
+    "historical_selection_uses_adjusted_logits": true,
+    "saved_probability_is_softmax_of_selected_adjusted_logits": true,
+    "train_size": 358,
+    "validation_size": 180
+  },
+  "tabpfn": {
+    "instance_uuid": "307b643d-fbb5-4352-bbdf-88c9f2f19acd",
+    "requested_n_estimators": 4,
+    "effective_n_estimators": 4,
+    "effective_classes": [
+      0,
+      1,
+      2
+    ],
+    "feature_union_count": 360,
+    "uncovered_feature_count": 0,
+    "loaded_checkpoint_model_count": 1,
+    "fit_seconds": 0.8559876999352127,
+    "predict_seconds": 1.7099146998953074,
+    "train_size": 358,
+    "validation_size": 180
+  },
+  "gate": {
+    "cap": 0.2,
+    "loss": 0.7844422459602356,
+    "all_gradients_finite": true,
+    "probability_shape": [
+      180,
+      3
+    ],
+    "probability_rows_sum_to_one": true,
+    "cuda": true,
+    "continuous_feature_mean": [
+      0.8646747549208196,
+      0.4259355429573151,
+      0.1500803045100636,
+      0.6287074008917747,
+      0.12880534527922832
+    ],
+    "continuous_feature_std": [
+      0.07664713925261513,
+      0.19595291641188875,
+      0.03619769361029275,
+      0.2736539461343815,
+      0.10404730977222164
+    ]
+  }
+}

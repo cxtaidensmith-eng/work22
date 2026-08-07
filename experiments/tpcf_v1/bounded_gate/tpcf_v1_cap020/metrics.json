@@ -1,0 +1,183 @@
+{
+  "arm": "tpcf_v1_cap020",
+  "gate_cap": 0.2,
+  "metrics": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9668304002008151,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "diagnostics": {
+    "changed_predictions": 0,
+    "repairs": 0,
+    "damages": 0,
+    "original_only_correct": 0,
+    "candidate_only_correct": 0,
+    "by_true_class": {
+      "AD": {
+        "repairs": 0,
+        "damages": 0
+      },
+      "CN": {
+        "repairs": 0,
+        "damages": 0
+      },
+      "SMCI": {
+        "repairs": 0,
+        "damages": 0
+      }
+    },
+    "exact_mcnemar_p_value": 1.0,
+    "mean_gate": 0.19405037316066964,
+    "maximum_gate": 0.19999714195728302,
+    "gate_gt_0_05_proportion": 0.9983277591973244,
+    "agree_mean_gate": 0.1937222303310921,
+    "disagree_mean_gate": 0.19749587287123388,
+    "mean_gate_by_true_class": {
+      "AD": 0.19657668471336365,
+      "CN": 0.19359900000277888,
+      "SMCI": 0.19377416671967657
+    },
+    "tabpfn_only_correct_mean_gate": 0.19990862905979156,
+    "original_only_correct_mean_gate": 0.19572651833295823,
+    "boundary_repairs_damages": {
+      "AD_SMCI": {
+        "repairs": 0,
+        "damages": 0,
+        "net": 0
+      },
+      "CN_SMCI": {
+        "repairs": 0,
+        "damages": 0,
+        "net": 0
+      },
+      "other": {
+        "repairs": 0,
+        "damages": 0
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "epoch": 400,
+      "correct": 55,
+      "ACC": 0.9166666666666666,
+      "Macro-F1": 0.8977763678660987,
+      "BACC": 0.9153225806451614,
+      "Probability Macro-AUC": 0.9748440982450993,
+      "Weighted-F1": 0.9167761865917399
+    },
+    {
+      "fold": 1,
+      "epoch": 400,
+      "correct": 57,
+      "ACC": 0.95,
+      "Macro-F1": 0.9174603174603174,
+      "BACC": 0.9315476190476191,
+      "Probability Macro-AUC": 0.9791736859838275,
+      "Weighted-F1": 0.9512698412698413
+    },
+    {
+      "fold": 2,
+      "epoch": 400,
+      "correct": 57,
+      "ACC": 0.95,
+      "Macro-F1": 0.9608711701734958,
+      "BACC": 0.9632936507936508,
+      "Probability Macro-AUC": 0.9931286884411885,
+      "Weighted-F1": 0.9501845699520117
+    },
+    {
+      "fold": 3,
+      "epoch": 400,
+      "correct": 56,
+      "ACC": 0.9333333333333333,
+      "Macro-F1": 0.9291101055806937,
+      "BACC": 0.9047619047619048,
+      "Probability Macro-AUC": 0.9631646633415502,
+      "Weighted-F1": 0.9327300150829563
+    },
+    {
+      "fold": 4,
+      "epoch": 400,
+      "correct": 56,
+      "ACC": 0.9333333333333333,
+      "Macro-F1": 0.8813529846528412,
+      "BACC": 0.8412698412698413,
+      "Probability Macro-AUC": 0.9601177997404413,
+      "Weighted-F1": 0.9282726837963566
+    },
+    {
+      "fold": 5,
+      "epoch": 400,
+      "correct": 55,
+      "ACC": 0.9166666666666666,
+      "Macro-F1": 0.8815346345197091,
+      "BACC": 0.8625992063492064,
+      "Probability Macro-AUC": 0.9771949584744396,
+      "Weighted-F1": 0.9157759280520474
+    },
+    {
+      "fold": 6,
+      "epoch": 400,
+      "correct": 55,
+      "ACC": 0.9166666666666666,
+      "Macro-F1": 0.9347852836224929,
+      "BACC": 0.9370039682539683,
+      "Probability Macro-AUC": 0.9875705891330891,
+      "Weighted-F1": 0.916974283253353
+    },
+    {
+      "fold": 7,
+      "epoch": 400,
+      "correct": 54,
+      "ACC": 0.9,
+      "Macro-F1": 0.8946969696969697,
+      "BACC": 0.9320436507936508,
+      "Probability Macro-AUC": 0.9679183009076877,
+      "Weighted-F1": 0.9002651515151515
+    },
+    {
+      "fold": 8,
+      "epoch": 400,
+      "correct": 54,
+      "ACC": 0.9152542372881356,
+      "Macro-F1": 0.8806661411115492,
+      "BACC": 0.9093701996927804,
+      "Probability Macro-AUC": 0.9521534398444415,
+      "Weighted-F1": 0.9175340553035415
+    },
+    {
+      "fold": 9,
+      "epoch": 400,
+      "correct": 57,
+      "ACC": 0.9661016949152542,
+      "Macro-F1": 0.9588141025641025,
+      "BACC": 0.9416666666666668,
+      "Probability Macro-AUC": 0.9922705641396344,
+      "Weighted-F1": 0.9658490873533245
+    }
+  ],
+  "gate_training_runtime_seconds": 12.585097000235692,
+  "probability_recomputed_from_saved_oof": true
+}

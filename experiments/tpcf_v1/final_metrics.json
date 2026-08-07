@@ -1,0 +1,809 @@
+{
+  "schema_version": "tpcf-v1-final-v1",
+  "experiment": "TabPFN–Deep Conservative Fusion v1",
+  "branch": "experiment/tpcf-v1",
+  "run_source_commit": "2315ba96d31fb76ba9a97e776739e94787cd11c6",
+  "environment": {
+    "python_executable": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe",
+    "python_version": "3.11.15",
+    "torch_version": "2.5.1+cu121",
+    "torch_cuda_version": "12.1",
+    "tabpfn_version": "8.2.0",
+    "numpy_version": "2.4.6",
+    "pandas_version": "3.0.5",
+    "sklearn_version": "1.9.0",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+  },
+  "input_provenance": {
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "alignment_key": "subject_index",
+    "rows": 598,
+    "unique_subjects": 598,
+    "fold_truth_aligned": true,
+    "original_source": {
+      "kind": "git_object",
+      "spec": "refs/remotes/origin/experiment/um-ler-frozen-v2:results/um_ler_frozen_v2/original_cache/original_oof_predictions.csv",
+      "sha256": "caac5caa49c2440cdb49933330c33145a974eeeac2227b6f84698895193bb314"
+    },
+    "tabpfn_source": {
+      "kind": "file",
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tpcf_v1\\experiments\\tabpfn_bounded_tuning_v1\\e4\\formal\\oof_predictions.csv",
+      "sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82"
+    },
+    "original_metrics": {
+      "correct": 556,
+      "acc": 0.9297658862876255,
+      "macro_f1": 0.9140778251271361,
+      "bacc": 0.9140778251271361,
+      "macro_auc": 0.9560490697782983,
+      "weighted_f1": 0.9297658862876255,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          198,
+          11
+        ],
+        [
+          10,
+          11,
+          296
+        ]
+      ]
+    },
+    "tabpfn_metrics": {
+      "correct": 548,
+      "acc": 0.9163879598662207,
+      "macro_f1": 0.9058959712564674,
+      "bacc": 0.9013186544732287,
+      "macro_auc": 0.9764191581686475,
+      "weighted_f1": 0.9163072846281483,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          190,
+          19
+        ],
+        [
+          8,
+          13,
+          296
+        ]
+      ]
+    }
+  },
+  "checkpoint": {
+    "path": "C:\\Users\\cxt10\\AppData\\Roaming\\tabpfn\\tabpfn-v3-classifier-v3_default.ckpt",
+    "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "size_bytes": 212804803
+  },
+  "comparison": [
+    {
+      "model": "Original Query",
+      "correct": 556,
+      "ACC": 0.9297658862876255,
+      "Macro-F1": 0.9140778251271361,
+      "BACC": 0.9140778251271361,
+      "Probability Macro-AUC": 0.9560490697782983,
+      "Weighted-F1": 0.9297658862876255,
+      "confusion_matrix": "[[62,0,10],[0,198,11],[10,11,296]]"
+    },
+    {
+      "model": "TabPFN E4",
+      "correct": 548,
+      "ACC": 0.9163879598662207,
+      "Macro-F1": 0.9058959712564674,
+      "BACC": 0.9013186544732287,
+      "Probability Macro-AUC": 0.9764191581686475,
+      "Weighted-F1": 0.9163072846281483,
+      "confusion_matrix": "[[62,0,10],[0,190,19],[8,13,296]]"
+    },
+    {
+      "model": "arithmetic_alpha_0.30",
+      "correct": 556,
+      "ACC": 0.9297658862876255,
+      "Macro-F1": 0.9140778251271361,
+      "BACC": 0.9140778251271361,
+      "Probability Macro-AUC": 0.9827181375006354,
+      "Weighted-F1": 0.9297658862876255,
+      "confusion_matrix": "[[62,0,10],[0,198,11],[10,11,296]]"
+    },
+    {
+      "model": "tpcf_v1_cap020",
+      "correct": 556,
+      "ACC": 0.9297658862876255,
+      "Macro-F1": 0.9140778251271361,
+      "BACC": 0.9140778251271361,
+      "Probability Macro-AUC": 0.9668304002008151,
+      "Weighted-F1": 0.9297658862876255,
+      "confusion_matrix": "[[62,0,10],[0,198,11],[10,11,296]]"
+    },
+    {
+      "model": "tpcf_v2_cap035",
+      "correct": 556,
+      "ACC": 0.9297658862876255,
+      "Macro-F1": 0.9140778251271361,
+      "BACC": 0.9140778251271361,
+      "Probability Macro-AUC": 0.97052107495311,
+      "Weighted-F1": 0.9297658862876255,
+      "confusion_matrix": "[[62,0,10],[0,198,11],[10,11,296]]"
+    }
+  ],
+  "best_fixed_fusion": {
+    "name": "arithmetic_alpha_0.30",
+    "family": "arithmetic",
+    "alpha": 0.3,
+    "threshold": null,
+    "active_samples": 598,
+    "metrics": {
+      "correct": 556,
+      "acc": 0.9297658862876255,
+      "macro_f1": 0.9140778251271361,
+      "bacc": 0.9140778251271361,
+      "macro_auc": 0.9827181375006354,
+      "weighted_f1": 0.9297658862876255,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          198,
+          11
+        ],
+        [
+          10,
+          11,
+          296
+        ]
+      ]
+    },
+    "comparison": {
+      "changed_predictions": 0,
+      "repairs": 0,
+      "damages": 0,
+      "original_only_correct": 0,
+      "candidate_only_correct": 0,
+      "by_true_class": {
+        "AD": {
+          "repairs": 0,
+          "damages": 0
+        },
+        "CN": {
+          "repairs": 0,
+          "damages": 0
+        },
+        "SMCI": {
+          "repairs": 0,
+          "damages": 0
+        }
+      }
+    }
+  },
+  "best_gate": "tpcf_v2_cap035",
+  "best_gate_cap": 0.35,
+  "best_gate_result": {
+    "arm": "tpcf_v2_cap035",
+    "gate_cap": 0.35,
+    "metrics": {
+      "correct": 556,
+      "acc": 0.9297658862876255,
+      "macro_f1": 0.9140778251271361,
+      "bacc": 0.9140778251271361,
+      "macro_auc": 0.97052107495311,
+      "weighted_f1": 0.9297658862876255,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          198,
+          11
+        ],
+        [
+          10,
+          11,
+          296
+        ]
+      ]
+    },
+    "diagnostics": {
+      "changed_predictions": 0,
+      "repairs": 0,
+      "damages": 0,
+      "original_only_correct": 0,
+      "candidate_only_correct": 0,
+      "by_true_class": {
+        "AD": {
+          "repairs": 0,
+          "damages": 0
+        },
+        "CN": {
+          "repairs": 0,
+          "damages": 0
+        },
+        "SMCI": {
+          "repairs": 0,
+          "damages": 0
+        }
+      },
+      "exact_mcnemar_p_value": 1.0,
+      "mean_gate": 0.332287041200979,
+      "maximum_gate": 0.34999996423721313,
+      "gate_gt_0_05_proportion": 0.9949832775919732,
+      "agree_mean_gate": 0.33128811650817375,
+      "disagree_mean_gate": 0.3427757504754342,
+      "mean_gate_by_true_class": {
+        "AD": 0.3402441197799312,
+        "CN": 0.33155344840156975,
+        "SMCI": 0.33096341734417134
+      },
+      "tabpfn_only_correct_mean_gate": 0.3499064269390973,
+      "original_only_correct_mean_gate": 0.3375465877354145,
+      "boundary_repairs_damages": {
+        "AD_SMCI": {
+          "repairs": 0,
+          "damages": 0,
+          "net": 0
+        },
+        "CN_SMCI": {
+          "repairs": 0,
+          "damages": 0,
+          "net": 0
+        },
+        "other": {
+          "repairs": 0,
+          "damages": 0
+        }
+      }
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "epoch": 400,
+        "correct": 55,
+        "ACC": 0.9166666666666666,
+        "Macro-F1": 0.8977763678660987,
+        "BACC": 0.9153225806451614,
+        "Probability Macro-AUC": 0.9778465751074205,
+        "Weighted-F1": 0.9167761865917399
+      },
+      {
+        "fold": 1,
+        "epoch": 400,
+        "correct": 57,
+        "ACC": 0.95,
+        "Macro-F1": 0.9174603174603174,
+        "BACC": 0.9315476190476191,
+        "Probability Macro-AUC": 0.9788016621743036,
+        "Weighted-F1": 0.9512698412698413
+      },
+      {
+        "fold": 2,
+        "epoch": 400,
+        "correct": 57,
+        "ACC": 0.95,
+        "Macro-F1": 0.9608711701734958,
+        "BACC": 0.9632936507936508,
+        "Probability Macro-AUC": 0.9950237840862841,
+        "Weighted-F1": 0.9501845699520117
+      },
+      {
+        "fold": 3,
+        "epoch": 400,
+        "correct": 56,
+        "ACC": 0.9333333333333333,
+        "Macro-F1": 0.9291101055806937,
+        "BACC": 0.9047619047619048,
+        "Probability Macro-AUC": 0.9665128776272645,
+        "Weighted-F1": 0.9327300150829563
+      },
+      {
+        "fold": 4,
+        "epoch": 400,
+        "correct": 56,
+        "ACC": 0.9333333333333333,
+        "Macro-F1": 0.8813529846528412,
+        "BACC": 0.8412698412698413,
+        "Probability Macro-AUC": 0.9644489584053263,
+        "Weighted-F1": 0.9282726837963566
+      },
+      {
+        "fold": 5,
+        "epoch": 400,
+        "correct": 55,
+        "ACC": 0.9166666666666666,
+        "Macro-F1": 0.8815346345197091,
+        "BACC": 0.8625992063492064,
+        "Probability Macro-AUC": 0.9787180303100115,
+        "Weighted-F1": 0.9157759280520474
+      },
+      {
+        "fold": 6,
+        "epoch": 400,
+        "correct": 55,
+        "ACC": 0.9166666666666666,
+        "Macro-F1": 0.9347852836224929,
+        "BACC": 0.9370039682539683,
+        "Probability Macro-AUC": 0.9879775895400895,
+        "Weighted-F1": 0.916974283253353
+      },
+      {
+        "fold": 7,
+        "epoch": 400,
+        "correct": 54,
+        "ACC": 0.9,
+        "Macro-F1": 0.8946969696969697,
+        "BACC": 0.9320436507936508,
+        "Probability Macro-AUC": 0.9697784199553068,
+        "Weighted-F1": 0.9002651515151515
+      },
+      {
+        "fold": 8,
+        "epoch": 400,
+        "correct": 54,
+        "ACC": 0.9152542372881356,
+        "Macro-F1": 0.8806661411115492,
+        "BACC": 0.9093701996927804,
+        "Probability Macro-AUC": 0.9549893136480573,
+        "Weighted-F1": 0.9175340553035415
+      },
+      {
+        "fold": 9,
+        "epoch": 400,
+        "correct": 57,
+        "ACC": 0.9661016949152542,
+        "Macro-F1": 0.9588141025641025,
+        "BACC": 0.9416666666666668,
+        "Probability Macro-AUC": 0.9930386132947803,
+        "Weighted-F1": 0.9658490873533245
+      }
+    ],
+    "gate_training_runtime_seconds": 14.356423699762672,
+    "probability_recomputed_from_saved_oof": true
+  },
+  "gate_results": {
+    "tpcf_v1_cap020": {
+      "arm": "tpcf_v1_cap020",
+      "gate_cap": 0.2,
+      "metrics": {
+        "correct": 556,
+        "acc": 0.9297658862876255,
+        "macro_f1": 0.9140778251271361,
+        "bacc": 0.9140778251271361,
+        "macro_auc": 0.9668304002008151,
+        "weighted_f1": 0.9297658862876255,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            198,
+            11
+          ],
+          [
+            10,
+            11,
+            296
+          ]
+        ]
+      },
+      "diagnostics": {
+        "changed_predictions": 0,
+        "repairs": 0,
+        "damages": 0,
+        "original_only_correct": 0,
+        "candidate_only_correct": 0,
+        "by_true_class": {
+          "AD": {
+            "repairs": 0,
+            "damages": 0
+          },
+          "CN": {
+            "repairs": 0,
+            "damages": 0
+          },
+          "SMCI": {
+            "repairs": 0,
+            "damages": 0
+          }
+        },
+        "exact_mcnemar_p_value": 1.0,
+        "mean_gate": 0.19405037316066964,
+        "maximum_gate": 0.19999714195728302,
+        "gate_gt_0_05_proportion": 0.9983277591973244,
+        "agree_mean_gate": 0.1937222303310921,
+        "disagree_mean_gate": 0.19749587287123388,
+        "mean_gate_by_true_class": {
+          "AD": 0.19657668471336365,
+          "CN": 0.19359900000277888,
+          "SMCI": 0.19377416671967657
+        },
+        "tabpfn_only_correct_mean_gate": 0.19990862905979156,
+        "original_only_correct_mean_gate": 0.19572651833295823,
+        "boundary_repairs_damages": {
+          "AD_SMCI": {
+            "repairs": 0,
+            "damages": 0,
+            "net": 0
+          },
+          "CN_SMCI": {
+            "repairs": 0,
+            "damages": 0,
+            "net": 0
+          },
+          "other": {
+            "repairs": 0,
+            "damages": 0
+          }
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.8977763678660987,
+          "BACC": 0.9153225806451614,
+          "Probability Macro-AUC": 0.9748440982450993,
+          "Weighted-F1": 0.9167761865917399
+        },
+        {
+          "fold": 1,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.95,
+          "Macro-F1": 0.9174603174603174,
+          "BACC": 0.9315476190476191,
+          "Probability Macro-AUC": 0.9791736859838275,
+          "Weighted-F1": 0.9512698412698413
+        },
+        {
+          "fold": 2,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.95,
+          "Macro-F1": 0.9608711701734958,
+          "BACC": 0.9632936507936508,
+          "Probability Macro-AUC": 0.9931286884411885,
+          "Weighted-F1": 0.9501845699520117
+        },
+        {
+          "fold": 3,
+          "epoch": 400,
+          "correct": 56,
+          "ACC": 0.9333333333333333,
+          "Macro-F1": 0.9291101055806937,
+          "BACC": 0.9047619047619048,
+          "Probability Macro-AUC": 0.9631646633415502,
+          "Weighted-F1": 0.9327300150829563
+        },
+        {
+          "fold": 4,
+          "epoch": 400,
+          "correct": 56,
+          "ACC": 0.9333333333333333,
+          "Macro-F1": 0.8813529846528412,
+          "BACC": 0.8412698412698413,
+          "Probability Macro-AUC": 0.9601177997404413,
+          "Weighted-F1": 0.9282726837963566
+        },
+        {
+          "fold": 5,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.8815346345197091,
+          "BACC": 0.8625992063492064,
+          "Probability Macro-AUC": 0.9771949584744396,
+          "Weighted-F1": 0.9157759280520474
+        },
+        {
+          "fold": 6,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.9347852836224929,
+          "BACC": 0.9370039682539683,
+          "Probability Macro-AUC": 0.9875705891330891,
+          "Weighted-F1": 0.916974283253353
+        },
+        {
+          "fold": 7,
+          "epoch": 400,
+          "correct": 54,
+          "ACC": 0.9,
+          "Macro-F1": 0.8946969696969697,
+          "BACC": 0.9320436507936508,
+          "Probability Macro-AUC": 0.9679183009076877,
+          "Weighted-F1": 0.9002651515151515
+        },
+        {
+          "fold": 8,
+          "epoch": 400,
+          "correct": 54,
+          "ACC": 0.9152542372881356,
+          "Macro-F1": 0.8806661411115492,
+          "BACC": 0.9093701996927804,
+          "Probability Macro-AUC": 0.9521534398444415,
+          "Weighted-F1": 0.9175340553035415
+        },
+        {
+          "fold": 9,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.9661016949152542,
+          "Macro-F1": 0.9588141025641025,
+          "BACC": 0.9416666666666668,
+          "Probability Macro-AUC": 0.9922705641396344,
+          "Weighted-F1": 0.9658490873533245
+        }
+      ],
+      "gate_training_runtime_seconds": 12.585097000235692,
+      "probability_recomputed_from_saved_oof": true
+    },
+    "tpcf_v2_cap035": {
+      "arm": "tpcf_v2_cap035",
+      "gate_cap": 0.35,
+      "metrics": {
+        "correct": 556,
+        "acc": 0.9297658862876255,
+        "macro_f1": 0.9140778251271361,
+        "bacc": 0.9140778251271361,
+        "macro_auc": 0.97052107495311,
+        "weighted_f1": 0.9297658862876255,
+        "confusion_matrix": [
+          [
+            62,
+            0,
+            10
+          ],
+          [
+            0,
+            198,
+            11
+          ],
+          [
+            10,
+            11,
+            296
+          ]
+        ]
+      },
+      "diagnostics": {
+        "changed_predictions": 0,
+        "repairs": 0,
+        "damages": 0,
+        "original_only_correct": 0,
+        "candidate_only_correct": 0,
+        "by_true_class": {
+          "AD": {
+            "repairs": 0,
+            "damages": 0
+          },
+          "CN": {
+            "repairs": 0,
+            "damages": 0
+          },
+          "SMCI": {
+            "repairs": 0,
+            "damages": 0
+          }
+        },
+        "exact_mcnemar_p_value": 1.0,
+        "mean_gate": 0.332287041200979,
+        "maximum_gate": 0.34999996423721313,
+        "gate_gt_0_05_proportion": 0.9949832775919732,
+        "agree_mean_gate": 0.33128811650817375,
+        "disagree_mean_gate": 0.3427757504754342,
+        "mean_gate_by_true_class": {
+          "AD": 0.3402441197799312,
+          "CN": 0.33155344840156975,
+          "SMCI": 0.33096341734417134
+        },
+        "tabpfn_only_correct_mean_gate": 0.3499064269390973,
+        "original_only_correct_mean_gate": 0.3375465877354145,
+        "boundary_repairs_damages": {
+          "AD_SMCI": {
+            "repairs": 0,
+            "damages": 0,
+            "net": 0
+          },
+          "CN_SMCI": {
+            "repairs": 0,
+            "damages": 0,
+            "net": 0
+          },
+          "other": {
+            "repairs": 0,
+            "damages": 0
+          }
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.8977763678660987,
+          "BACC": 0.9153225806451614,
+          "Probability Macro-AUC": 0.9778465751074205,
+          "Weighted-F1": 0.9167761865917399
+        },
+        {
+          "fold": 1,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.95,
+          "Macro-F1": 0.9174603174603174,
+          "BACC": 0.9315476190476191,
+          "Probability Macro-AUC": 0.9788016621743036,
+          "Weighted-F1": 0.9512698412698413
+        },
+        {
+          "fold": 2,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.95,
+          "Macro-F1": 0.9608711701734958,
+          "BACC": 0.9632936507936508,
+          "Probability Macro-AUC": 0.9950237840862841,
+          "Weighted-F1": 0.9501845699520117
+        },
+        {
+          "fold": 3,
+          "epoch": 400,
+          "correct": 56,
+          "ACC": 0.9333333333333333,
+          "Macro-F1": 0.9291101055806937,
+          "BACC": 0.9047619047619048,
+          "Probability Macro-AUC": 0.9665128776272645,
+          "Weighted-F1": 0.9327300150829563
+        },
+        {
+          "fold": 4,
+          "epoch": 400,
+          "correct": 56,
+          "ACC": 0.9333333333333333,
+          "Macro-F1": 0.8813529846528412,
+          "BACC": 0.8412698412698413,
+          "Probability Macro-AUC": 0.9644489584053263,
+          "Weighted-F1": 0.9282726837963566
+        },
+        {
+          "fold": 5,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.8815346345197091,
+          "BACC": 0.8625992063492064,
+          "Probability Macro-AUC": 0.9787180303100115,
+          "Weighted-F1": 0.9157759280520474
+        },
+        {
+          "fold": 6,
+          "epoch": 400,
+          "correct": 55,
+          "ACC": 0.9166666666666666,
+          "Macro-F1": 0.9347852836224929,
+          "BACC": 0.9370039682539683,
+          "Probability Macro-AUC": 0.9879775895400895,
+          "Weighted-F1": 0.916974283253353
+        },
+        {
+          "fold": 7,
+          "epoch": 400,
+          "correct": 54,
+          "ACC": 0.9,
+          "Macro-F1": 0.8946969696969697,
+          "BACC": 0.9320436507936508,
+          "Probability Macro-AUC": 0.9697784199553068,
+          "Weighted-F1": 0.9002651515151515
+        },
+        {
+          "fold": 8,
+          "epoch": 400,
+          "correct": 54,
+          "ACC": 0.9152542372881356,
+          "Macro-F1": 0.8806661411115492,
+          "BACC": 0.9093701996927804,
+          "Probability Macro-AUC": 0.9549893136480573,
+          "Weighted-F1": 0.9175340553035415
+        },
+        {
+          "fold": 9,
+          "epoch": 400,
+          "correct": 57,
+          "ACC": 0.9661016949152542,
+          "Macro-F1": 0.9588141025641025,
+          "BACC": 0.9416666666666668,
+          "Probability Macro-AUC": 0.9930386132947803,
+          "Weighted-F1": 0.9658490873533245
+        }
+      ],
+      "gate_training_runtime_seconds": 14.356423699762672,
+      "probability_recomputed_from_saved_oof": true
+    }
+  },
+  "best_overall_by_fixed_ranking": "arithmetic_alpha_0.30",
+  "selected_model_metrics_recomputed_from_final_oof": {
+    "correct": 556,
+    "acc": 0.9297658862876255,
+    "macro_f1": 0.9140778251271361,
+    "bacc": 0.9140778251271361,
+    "macro_auc": 0.9827181375006354,
+    "weighted_f1": 0.9297658862876255,
+    "confusion_matrix": [
+      [
+        62,
+        0,
+        10
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        10,
+        11,
+        296
+      ]
+    ]
+  },
+  "final_oof_predictions_sha256": "a8fc2c1d3d6c80d7a3ab82ef43a585cb808869fe1f8b1a2bb36dd992042a2959",
+  "decision": "NO_NET_IMPROVEMENT",
+  "confidence_pattern": {
+    "tabpfn_only_correct": {
+      "count": 22,
+      "tabpfn_max_probability_mean": 0.6996963105418466,
+      "tabpfn_margin_mean": 0.4006734840910543,
+      "tabpfn_entropy_mean": 0.5445387308062147,
+      "original_margin_mean": 0.9476592646784742
+    },
+    "original_only_correct": {
+      "count": 30,
+      "tabpfn_max_probability_mean": 0.6522504448890686,
+      "tabpfn_margin_mean": 0.30561042328675586,
+      "tabpfn_entropy_mean": 0.6251675539019522,
+      "original_margin_mean": 0.8356226809633275
+    }
+  },
+  "runtime_seconds": {
+    "inner_expert_cache_sum": 1249.684007100528,
+    "gate_training_sum": 26.941520699998364,
+    "formal_training_sum": 1276.6255278005265,
+    "current_aggregation_invocation": 1.2369907000102103
+  },
+  "integrity": {
+    "inner_expert_cache_shared_by_both_gate_caps": true,
+    "gate_caps_trained_independently_from_same_seed": true,
+    "outer_test_labels_used_only_after_predictions": true,
+    "final_oof_metrics_recomputed_from_readback": true
+  }
+}

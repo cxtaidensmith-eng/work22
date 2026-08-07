@@ -1,0 +1,116 @@
+{
+  "experiment": "TabPFN–Deep Conservative Fusion v1",
+  "outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "inner_folds": 3,
+  "inner_splitter": "StratifiedKFold(shuffle=True, random_state=0)",
+  "original_epochs": 400,
+  "original_selection_rule": [
+    "ACC",
+    "adjusted-logit Macro-AUC",
+    "Macro-F1"
+  ],
+  "tabpfn": {
+    "arm": "E4 uncalibrated",
+    "n_estimators": 4,
+    "checkpoint": "C:\\Users\\cxt10\\AppData\\Roaming\\tabpfn\\tabpfn-v3-classifier-v3_default.ckpt",
+    "checkpoint_sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988"
+  },
+  "gate": {
+    "architecture": "Linear(6,8)-ReLU-Linear(8,1)-Sigmoid",
+    "caps": [
+      0.2,
+      0.35
+    ],
+    "epochs": 400,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0001,
+    "penalty": "0.01*mean(capped_gate)"
+  },
+  "gate_class_weight_formula": "(N_outer_train - n_c) / N_outer_train",
+  "continuous_standardization": "outer-train inner-OOF mean/std(ddof=0); zero std replaced by one",
+  "disagreement_standardized": false,
+  "outer_test_labels_used_only_after_predictions": true,
+  "input_provenance": {
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "alignment_key": "subject_index",
+    "rows": 598,
+    "unique_subjects": 598,
+    "fold_truth_aligned": true,
+    "original_source": {
+      "kind": "git_object",
+      "spec": "refs/remotes/origin/experiment/um-ler-frozen-v2:results/um_ler_frozen_v2/original_cache/original_oof_predictions.csv",
+      "sha256": "caac5caa49c2440cdb49933330c33145a974eeeac2227b6f84698895193bb314"
+    },
+    "tabpfn_source": {
+      "kind": "file",
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\tpcf_v1\\experiments\\tabpfn_bounded_tuning_v1\\e4\\formal\\oof_predictions.csv",
+      "sha256": "d02f93e6ee3eab0eebf7aa5cb24308cf4d48501024faa5b2ce5ddb23a4a19f82"
+    },
+    "original_metrics": {
+      "correct": 556,
+      "acc": 0.9297658862876255,
+      "macro_f1": 0.9140778251271361,
+      "bacc": 0.9140778251271361,
+      "macro_auc": 0.9560490697782983,
+      "weighted_f1": 0.9297658862876255,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          198,
+          11
+        ],
+        [
+          10,
+          11,
+          296
+        ]
+      ]
+    },
+    "tabpfn_metrics": {
+      "correct": 548,
+      "acc": 0.9163879598662207,
+      "macro_f1": 0.9058959712564674,
+      "bacc": 0.9013186544732287,
+      "macro_auc": 0.9764191581686475,
+      "weighted_f1": 0.9163072846281483,
+      "confusion_matrix": [
+        [
+          62,
+          0,
+          10
+        ],
+        [
+          0,
+          190,
+          19
+        ],
+        [
+          8,
+          13,
+          296
+        ]
+      ]
+    }
+  }
+}

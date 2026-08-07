@@ -1,0 +1,37 @@
+{
+  "both_correct": 526,
+  "original_only_correct": 30,
+  "tabpfn_only_correct": 22,
+  "both_wrong": 20,
+  "oracle_union_correct": 578,
+  "by_true_class": {
+    "AD": {
+      "support": 72,
+      "both_correct": 57,
+      "original_only_correct": 5,
+      "tabpfn_only_correct": 5,
+      "both_wrong": 5,
+      "repairs_available": 5,
+      "damages_at_risk": 5
+    },
+    "CN": {
+      "support": 209,
+      "both_correct": 186,
+      "original_only_correct": 12,
+      "tabpfn_only_correct": 4,
+      "both_wrong": 7,
+      "repairs_available": 4,
+      "damages_at_risk": 12
+    },
+    "SMCI": {
+      "support": 317,
+      "both_correct": 283,
+      "original_only_correct": 13,
+      "tabpfn_only_correct": 13,
+      "both_wrong": 8,
+      "repairs_available": 13,
+      "damages_at_risk": 13
+    }
+  },
+  "run_gate": true
+}
