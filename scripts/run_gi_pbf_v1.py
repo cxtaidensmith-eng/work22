@@ -473,7 +473,7 @@ def config_payload(context: dict, stage: str, folds) -> dict:
         "epochs_per_fold": EPOCHS,
         "device": "cuda:0",
         "python_executable": str(Path(sys.executable).resolve()),
-        "torch_version": torch.__version__,
+        "torch_version": str(torch.__version__),
         "cuda_device_name": torch.cuda.get_device_name(0),
         "full_batch_transductive": True,
         "single_model": True,

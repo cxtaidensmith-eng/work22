@@ -1,0 +1,16 @@
+{
+  "repairs": 1,
+  "damages": 1,
+  "net_repairs": 0,
+  "changed_predictions": 2,
+  "repair_subject_indices": [
+    305
+  ],
+  "damage_subject_indices": [
+    183
+  ],
+  "changed_subject_indices": [
+    183,
+    305
+  ]
+}

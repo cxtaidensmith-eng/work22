@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "fold": 5,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 538,
+  "test_size": 60,
+  "parameter_count": 866069,
+  "base_best": {
+    "epoch": 180,
+    "correct": 57,
+    "metrics": {
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9825499775381852,
+      "weighted_f1": 0.9512698412698413,
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          1
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          2,
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  "corrected_best": {
+    "epoch": 180,
+    "correct": 57,
+    "metrics": {
+      "correct": 57,
+      "acc": 0.95,
+      "macro_f1": 0.9174603174603174,
+      "bacc": 0.9315476190476191,
+      "macro_auc": 0.9825499775381852,
+      "weighted_f1": 0.9512698412698413,
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          1
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          2,
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  "correction_gradient_max": {
+    "input_projection": 0.04317687451839447,
+    "output_ad_smci": 0.02634246274828911,
+    "output_cn_smci": 0.07361166179180145
+  },
+  "diagnostics": {
+    "ad_smci": {
+      "raw_delta_mean": 0.8842668533325195,
+      "raw_delta_abs_mean": 3.0700743198394775,
+      "raw_delta_abs_max": 5.667404651641846,
+      "raw_delta_std": 3.214780807495117,
+      "delta_mean": -0.004694822244346142,
+      "delta_abs_mean": 0.013168937526643276,
+      "delta_abs_max": 0.07486153393983841,
+      "delta_std": 0.01671312190592289,
+      "uncertainty_mean": 0.042321812361478806,
+      "uncertainty_min": 0.008806470781564713,
+      "uncertainty_max": 0.5389769077301025,
+      "tanh_saturation_fraction": 0.5666666666666667
+    },
+    "cn_smci": {
+      "raw_delta_mean": -0.8838897347450256,
+      "raw_delta_abs_mean": 2.636363983154297,
+      "raw_delta_abs_max": 4.592418670654297,
+      "raw_delta_std": 2.6776154041290283,
+      "delta_mean": -0.0017312091076746583,
+      "delta_abs_mean": 0.00807255320250988,
+      "delta_abs_max": 0.05008349567651749,
+      "delta_std": 0.009968500584363937,
+      "uncertainty_mean": 0.02128041349351406,
+      "uncertainty_min": 0.005818298552185297,
+      "uncertainty_max": 0.15675805509090424,
+      "tanh_saturation_fraction": 0.45
+    }
+  },
+  "comparison_vs_c1": {
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_predictions": 0,
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "changed_subject_indices": []
+  },
+  "boundary_errors": {
+    "AD_SMCI": 3,
+    "CN_SMCI": 0,
+    "AD_CN": 0
+  },
+  "c1_boundary_errors": {
+    "AD_SMCI": 3,
+    "CN_SMCI": 0,
+    "AD_CN": 0
+  },
+  "elapsed_seconds": 49.100370900006965,
+  "config": {
+    "experiment": "gi_pbf_v1",
+    "stage": "fold",
+    "requested_base_commit": "7fb0a9aec28c1a0cfa68aed8bc5470b57ff3a840",
+    "actual_c1_formal_base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      5
+    ],
+    "seed_per_fold": 0,
+    "epochs_per_fold": 400,
+    "device": "cuda:0",
+    "python_executable": "D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe",
+    "torch_version": "2.5.1+cu121",
+    "cuda_device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "full_batch_transductive": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "orthogonality": false,
+    "base_loss": "historical weighted main CE plus three C1 OVR losses",
+    "correction_loss": "0.5 * (balanced AD-sMCI CE + balanced CN-sMCI CE)",
+    "base_optimizer": {
+      "name": "Adam",
+      "lr": 0.01,
+      "weight_decay": 0.0005
+    },
+    "correction_optimizer": {
+      "name": "Adam",
+      "lr": 0.01,
+      "weight_decay": 0.0
+    },
+    "base_scheduler": "CustomCosineAnnealingLR(T_max=400)",
+    "correction_scheduler": "CustomCosineAnnealingLR(T_max=400)",
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+    "historical_config_sha256": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "pair_rank": 8,
+    "cap_coefficient": 0.1,
+    "class_mapping": {
+      "AD": 0,
+      "CN": 1,
+      "sMCI": 2
+    },
+    "uncertainty_probability": "softmax(raw base logits.detach())",
+    "final_probability": "historical logit-adjusted softmax",
+    "screen_nonconstant_std_threshold": 1e-08,
+    "screen_tanh_saturation_threshold": 0.99,
+    "screen_max_saturation_fraction": 0.95,
+    "adjacent_boundary_degradation_definition": "any count above the corresponding C1 count",
+    "parameter_count": 866069
+  }
+}
