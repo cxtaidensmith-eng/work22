@@ -1,0 +1,192 @@
+{
+  "passed": true,
+  "epochs": 3,
+  "parameter_count": 873723,
+  "graph_parameter_count": 10752,
+  "equivalence": {
+    "passed": true,
+    "initial_c1_parameter_max_abs_diff": 0.0,
+    "initial_logit_max_abs_diff": 0.0,
+    "initial_r_graph_max_abs": 0.0,
+    "first_step_base_gradient_max_abs_diff": 0.0,
+    "first_step_base_update_max_abs_diff": 0.0,
+    "first_step_w_out_gradient_norm": 0.0794982761144638,
+    "cpu_cuda_rng_preserved": true
+  },
+  "graph_audit": {
+    "built_once": true,
+    "uses_labels": false,
+    "k": 8,
+    "per_modality": {
+      "MRI": {
+        "undirected_edge_count": 4215,
+        "nonzero_degree_mean": 14.096989631652832,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.8963578343391418
+      },
+      "PET": {
+        "undirected_edge_count": 4005,
+        "nonzero_degree_mean": 13.394648551940918,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9524332284927368
+      },
+      "CSF": {
+        "undirected_edge_count": 3026,
+        "nonzero_degree_mean": 10.120401382446289,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9910581707954407
+      },
+      "Risk": {
+        "undirected_edge_count": 3063,
+        "nonzero_degree_mean": 10.244147300720215,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.98813796043396
+      },
+      "COG": {
+        "undirected_edge_count": 3773,
+        "nonzero_degree_mean": 12.618728637695312,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.974890947341919
+      },
+      "ROI": {
+        "undirected_edge_count": 3335,
+        "nonzero_degree_mean": 11.15384578704834,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9881846904754639
+      }
+    },
+    "edge_jaccard": {
+      "mean": 0.026779437304274692,
+      "min": 0.010454696315964155,
+      "max": 0.0919369235346623,
+      "pair_count": 15
+    }
+  },
+  "optimizer_and_ema": {
+    "coverage": 1.0,
+    "base_parameter_count": 862971,
+    "graph_parameter_count": 10752,
+    "total_parameter_count": 873723,
+    "base_lr": 0.01,
+    "base_weight_decay": 0.0005,
+    "graph_lr": 0.01,
+    "graph_weight_decay": 0.0,
+    "historical_ema_enabled": false,
+    "ema_shadow_tracked_for_checkpoint": true,
+    "ema_decay": 0.99,
+    "graph_parameter_names": [
+      "mr_lhgr.high_projections.0.weight",
+      "mr_lhgr.high_projections.1.weight",
+      "mr_lhgr.high_projections.2.weight",
+      "mr_lhgr.high_projections.3.weight",
+      "mr_lhgr.high_projections.4.weight",
+      "mr_lhgr.high_projections.5.weight",
+      "mr_lhgr.low_projections.0.weight",
+      "mr_lhgr.low_projections.1.weight",
+      "mr_lhgr.low_projections.2.weight",
+      "mr_lhgr.low_projections.3.weight",
+      "mr_lhgr.low_projections.4.weight",
+      "mr_lhgr.low_projections.5.weight",
+      "mr_lhgr.output_projection.weight"
+    ]
+  },
+  "losses": [
+    3.3026833534240723,
+    2.8991518020629883,
+    6.004833221435547
+  ],
+  "graph_gradient_max": {
+    "low": [
+      0.00010506960097700357,
+      8.99377919267863e-05,
+      0.00012185599916847423,
+      0.00015536726277787238,
+      6.13916345173493e-05,
+      7.152215403039008e-05
+    ],
+    "high": [
+      0.00012095276906620711,
+      8.4073340985924e-05,
+      9.357108501717448e-05,
+      0.00015009526396170259,
+      5.5585176596650854e-05,
+      6.636260513914749e-05
+    ],
+    "output": 0.0794982761144638
+  },
+  "low_parameter_max_abs_delta": [
+    0.01601560041308403,
+    0.015997588634490967,
+    0.015988938510417938,
+    0.016009896993637085,
+    0.016004320234060287,
+    0.01597227156162262
+  ],
+  "high_parameter_max_abs_delta": [
+    0.016000745818018913,
+    0.0159832164645195,
+    0.01598701998591423,
+    0.01599378138780594,
+    0.015981126576662064,
+    0.01598505862057209
+  ],
+  "w_out_parameter_max_abs_delta": 0.03002425655722618,
+  "mechanism": {
+    "per_modality": {
+      "MRI": {
+        "low_relation_increment_rms": 0.18238693475723267,
+        "high_relation_increment_rms": 0.18238693475723267,
+        "delta_low_norm_mean": 0.10578370839357376,
+        "delta_high_norm_mean": 0.151942178606987,
+        "wl_gradient_max": 0.00010506960097700357,
+        "wh_gradient_max": 0.00012095276906620711
+      },
+      "PET": {
+        "low_relation_increment_rms": 0.15657910704612732,
+        "high_relation_increment_rms": 0.15657910704612732,
+        "delta_low_norm_mean": 0.13303878903388977,
+        "delta_high_norm_mean": 0.12785416841506958,
+        "wl_gradient_max": 8.99377919267863e-05,
+        "wh_gradient_max": 8.4073340985924e-05
+      },
+      "CSF": {
+        "low_relation_increment_rms": 0.14655601978302002,
+        "high_relation_increment_rms": 0.14655601978302002,
+        "delta_low_norm_mean": 0.11246029287576675,
+        "delta_high_norm_mean": 0.12326392531394958,
+        "wl_gradient_max": 0.00012185599916847423,
+        "wh_gradient_max": 9.357108501717448e-05
+      },
+      "Risk": {
+        "low_relation_increment_rms": 0.19937026500701904,
+        "high_relation_increment_rms": 0.19937027990818024,
+        "delta_low_norm_mean": 0.21644961833953857,
+        "delta_high_norm_mean": 0.1709621250629425,
+        "wl_gradient_max": 0.00015536726277787238,
+        "wh_gradient_max": 0.00015009526396170259
+      },
+      "COG": {
+        "low_relation_increment_rms": 0.15714311599731445,
+        "high_relation_increment_rms": 0.15714311599731445,
+        "delta_low_norm_mean": 0.13704437017440796,
+        "delta_high_norm_mean": 0.11199162900447845,
+        "wl_gradient_max": 6.13916345173493e-05,
+        "wh_gradient_max": 5.5585176596650854e-05
+      },
+      "ROI": {
+        "low_relation_increment_rms": 0.11377537250518799,
+        "high_relation_increment_rms": 0.11377537250518799,
+        "delta_low_norm_mean": 0.11742211878299713,
+        "delta_high_norm_mean": 0.08002408593893051,
+        "wl_gradient_max": 7.152215403039008e-05,
+        "wh_gradient_max": 6.636260513914749e-05
+      }
+    },
+    "r_graph_h0_ratio_mean": 0.0006004380993545055,
+    "r_graph_h0_ratio_max": 0.0014126923633739352,
+    "cap_saturation_fraction": 0.0,
+    "w_out_gradient_max": 0.0794982761144638
+  },
+  "checkpoint_roundtrip_logit_max_abs_diff": 0.0,
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_mr_lhgr_c1_v1.py smoke --device cuda:0"
+}

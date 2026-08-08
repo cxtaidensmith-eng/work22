@@ -1,0 +1,93 @@
+{
+  "experiment": "mr_lhgr_c1_v1",
+  "version": "smoke",
+  "source_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "folds": [
+    0
+  ],
+  "seed_per_fold": 0,
+  "epochs_per_fold": 400,
+  "device": "cuda:0",
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "multi_seed": false,
+  "orthogonality": false,
+  "graph_k": 8,
+  "relation_rank": 8,
+  "graph_residual_cap": 0.1,
+  "fixed_unlabeled_modality_graphs": true,
+  "old_graph_enabled": false,
+  "loss": "historical C1 weighted main CE plus three OVR auxiliary losses; no new loss",
+  "optimizer": "separate Adam for C1 and graph parameters",
+  "scheduler": "separate synchronized CustomCosineAnnealingLR(T_max=400)",
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "historical_ema_enabled": false,
+  "ema_shadow_checkpoint_audit_only": true,
+  "parameter_count": 873723,
+  "graph_parameter_count": 10752,
+  "v1_1_relation_dependence_ratio_threshold": 0.99,
+  "v1_1_identity_residual_max_abs_threshold": 1e-07,
+  "v1_1_relation_logit_max_abs_diff_threshold": 1e-08,
+  "v1_1_relation_probability_mean_abs_diff_threshold": 1e-10,
+  "v1_1_low_high_increment_nonzero_threshold": 1e-08,
+  "v1_1_edge_jaccard_max_threshold": 0.99,
+  "v1_1_cap_saturation_threshold": 0.7,
+  "obvious_bacc_decline_threshold": 0.003,
+  "graph_audit": {
+    "built_once": true,
+    "uses_labels": false,
+    "k": 8,
+    "per_modality": {
+      "MRI": {
+        "undirected_edge_count": 4215,
+        "nonzero_degree_mean": 14.096989631652832,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.8963578343391418
+      },
+      "PET": {
+        "undirected_edge_count": 4005,
+        "nonzero_degree_mean": 13.394648551940918,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9524332284927368
+      },
+      "CSF": {
+        "undirected_edge_count": 3026,
+        "nonzero_degree_mean": 10.120401382446289,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9910581707954407
+      },
+      "Risk": {
+        "undirected_edge_count": 3063,
+        "nonzero_degree_mean": 10.244147300720215,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.98813796043396
+      },
+      "COG": {
+        "undirected_edge_count": 3773,
+        "nonzero_degree_mean": 12.618728637695312,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.974890947341919
+      },
+      "ROI": {
+        "undirected_edge_count": 3335,
+        "nonzero_degree_mean": 11.15384578704834,
+        "nonzero_degree_min": 8,
+        "normalized_weighted_degree_mean": 0.9881846904754639
+      }
+    },
+    "edge_jaccard": {
+      "mean": 0.026779437304274692,
+      "min": 0.010454696315964155,
+      "max": 0.0919369235346623,
+      "pair_count": 15
+    }
+  }
+}

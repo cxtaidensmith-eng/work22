@@ -1,0 +1,49 @@
+{
+  "built_once": true,
+  "uses_labels": false,
+  "k": 8,
+  "per_modality": {
+    "MRI": {
+      "undirected_edge_count": 4215,
+      "nonzero_degree_mean": 14.096989631652832,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.8963578343391418
+    },
+    "PET": {
+      "undirected_edge_count": 4005,
+      "nonzero_degree_mean": 13.394648551940918,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9524332284927368
+    },
+    "CSF": {
+      "undirected_edge_count": 3026,
+      "nonzero_degree_mean": 10.120401382446289,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9910581707954407
+    },
+    "Risk": {
+      "undirected_edge_count": 3063,
+      "nonzero_degree_mean": 10.244147300720215,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.98813796043396
+    },
+    "COG": {
+      "undirected_edge_count": 3773,
+      "nonzero_degree_mean": 12.618728637695312,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.974890947341919
+    },
+    "ROI": {
+      "undirected_edge_count": 3335,
+      "nonzero_degree_mean": 11.15384578704834,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9881846904754639
+    }
+  },
+  "edge_jaccard": {
+    "mean": 0.026779437304274692,
+    "min": 0.010454696315964155,
+    "max": 0.0919369235346623,
+    "pair_count": 15
+  }
+}
