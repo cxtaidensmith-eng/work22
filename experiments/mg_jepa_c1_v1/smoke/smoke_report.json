@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "pretrain": {
+    "fold": 0,
+    "epochs": 20,
+    "train_subject_count": 538,
+    "uses_test_subjects": false,
+    "uses_labels": false,
+    "pretrain_backbone_parameter_count": 224400,
+    "pretrain_trainable_parameter_count": 300240,
+    "pretrain_wrapper_parameter_count": 525024,
+    "masked_modality_counts": {
+      "MRI": 4,
+      "PET": 4,
+      "CSF": 3,
+      "Risk": 3,
+      "COG": 3,
+      "ROI": 3
+    },
+    "final_loss": 1.241217851638794,
+    "final_loss_shared": 0.7720848917961121,
+    "final_loss_private": 0.9382659792900085,
+    "first5_loss_mean": 1.4467922687530517,
+    "last5_loss_mean": 1.250521731376648,
+    "last20_first10_loss_mean": 1.3955745935440063,
+    "last20_last10_loss_mean": 1.2650664567947387,
+    "last20_relative_decline": 0.09351570124091131,
+    "gradient_max": {
+      "encoder": 0.2133149951696396,
+      "transformer": 0.5999736189842224,
+      "private": 0.015394684858620167,
+      "shared_predictor": 0.7868861556053162,
+      "private_predictor": 0.5039472579956055
+    },
+    "teacher_parameter_max_abs_delta": 0.00014203062164597213,
+    "diagnostics": {
+      "teacher_student_shared_cosine_by_modality": {
+        "MRI": 0.9021227359771729,
+        "PET": 0.858069658279419,
+        "CSF": 0.8838185667991638,
+        "Risk": 0.870164155960083,
+        "COG": 0.9816465377807617,
+        "ROI": 0.9773136377334595
+      },
+      "teacher_student_private_cosine_by_modality": {
+        "MRI": 0.9019137620925903,
+        "PET": 0.8578512668609619,
+        "CSF": 0.88373863697052,
+        "Risk": 0.8699899315834045,
+        "COG": 0.9815753102302551,
+        "ROI": 0.97719407081604
+      },
+      "shared_latent_batch_std_by_modality": {
+        "MRI": 0.3608629107475281,
+        "PET": 0.2796729803085327,
+        "CSF": 0.24757741391658783,
+        "Risk": 0.26924166083335876,
+        "COG": 0.7710117101669312,
+        "ROI": 0.7053734660148621
+      },
+      "private_latent_batch_std_by_modality": {
+        "MRI": 0.3608623147010803,
+        "PET": 0.27967435121536255,
+        "CSF": 0.24758750200271606,
+        "Risk": 0.26923853158950806,
+        "COG": 0.7709667682647705,
+        "ROI": 0.7053337097167969
+      },
+      "shared_latent_batch_std_mean": 0.43895667791366577,
+      "private_latent_batch_std_mean": 0.43894386291503906,
+      "collapse": false,
+      "collapse_threshold": 0.0001
+    },
+    "elapsed_seconds": 2.218331600073725
+  },
+  "supervised_smoke_epochs": 3,
+  "supervised_losses": [
+    3.302931547164917,
+    3.0900301933288574,
+    4.43862247467041
+  ],
+  "inference_parameter_count": 862971,
+  "formal_output_shape": [
+    598,
+    3
+  ],
+  "checkpoint_contains": [
+    "model_state",
+    "pretrained_backbone_state",
+    "supervised_optimizer_state",
+    "supervised_scheduler_state",
+    "supervised_ema_shadow"
+  ],
+  "checkpoint_roundtrip_logit_max_abs_diff": 0.0,
+  "source_content_sha256": {
+    "model": "0ec98152873ca77d5a5f65047026f826b3c9d70f70d5d63fc4ad582ae80e0c94",
+    "runner": "6156800991191c2b6e131cb5b98aa41987b4f8f69b77d489f5bb35869050b3b9",
+    "historical_config": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c"
+  },
+  "device": "cuda:0",
+  "wall_seconds": 5.590405700029805,
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_mg_jepa_c1_v1.py smoke --device cuda:0"
+}
