@@ -6,16 +6,7 @@
   "dataset": "TADPOLE",
   "task": "AD_CN_SMCI",
   "folds": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
+    1
   ],
   "seed_per_fold": 0,
   "pretrain_random_seed": 0,

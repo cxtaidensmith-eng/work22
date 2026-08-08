@@ -1,0 +1,218 @@
+{
+  "passed": true,
+  "version": "v1",
+  "fold": 8,
+  "seed": 0,
+  "train_size": 539,
+  "test_size": 59,
+  "pretrain": {
+    "fold": 8,
+    "epochs": 200,
+    "train_subject_count": 539,
+    "uses_test_subjects": false,
+    "uses_labels": false,
+    "pretrain_backbone_parameter_count": 224400,
+    "pretrain_trainable_parameter_count": 300240,
+    "pretrain_wrapper_parameter_count": 525024,
+    "masked_modality_counts": {
+      "MRI": 34,
+      "PET": 34,
+      "CSF": 33,
+      "Risk": 33,
+      "COG": 33,
+      "ROI": 33
+    },
+    "final_loss": 0.26347994804382324,
+    "final_loss_shared": 0.15705063939094543,
+    "final_loss_private": 0.2128586322069168,
+    "first5_loss_mean": 1.4448061466217041,
+    "last5_loss_mean": 0.2690040409564972,
+    "last20_first10_loss_mean": 0.2640358120203018,
+    "last20_last10_loss_mean": 0.2687497794628143,
+    "last20_relative_decline": -0.017853515424453306,
+    "gradient_max": {
+      "encoder": 0.2143581062555313,
+      "transformer": 0.5950250625610352,
+      "private": 0.015379389747977257,
+      "shared_predictor": 0.7865668535232544,
+      "private_predictor": 0.500419557094574
+    },
+    "teacher_parameter_max_abs_delta": 0.009429281577467918,
+    "diagnostics": {
+      "teacher_student_shared_cosine_by_modality": {
+        "MRI": 0.9868307113647461,
+        "PET": 0.9879929423332214,
+        "CSF": 0.98567134141922,
+        "Risk": 0.9887409806251526,
+        "COG": 0.9912669062614441,
+        "ROI": 0.9903856515884399
+      },
+      "teacher_student_private_cosine_by_modality": {
+        "MRI": 0.9868220686912537,
+        "PET": 0.9875010251998901,
+        "CSF": 0.9850707650184631,
+        "Risk": 0.9883233904838562,
+        "COG": 0.9908583164215088,
+        "ROI": 0.9902503490447998
+      },
+      "shared_latent_batch_std_by_modality": {
+        "MRI": 0.3325139880180359,
+        "PET": 0.23066139221191406,
+        "CSF": 0.19822899997234344,
+        "Risk": 0.20499739050865173,
+        "COG": 0.7768442034721375,
+        "ROI": 0.6982972621917725
+      },
+      "private_latent_batch_std_by_modality": {
+        "MRI": 0.3325843811035156,
+        "PET": 0.23081469535827637,
+        "CSF": 0.1982840597629547,
+        "Risk": 0.2050456702709198,
+        "COG": 0.7768527865409851,
+        "ROI": 0.6983944773674011
+      },
+      "shared_latent_batch_std_mean": 0.4069238603115082,
+      "private_latent_batch_std_mean": 0.4069960117340088,
+      "collapse": false,
+      "collapse_threshold": 0.0001
+    },
+    "elapsed_seconds": 16.37575830006972
+  },
+  "best_epoch": 273,
+  "best_used_supervised_ema": true,
+  "best_metrics": {
+    "correct": 48,
+    "acc": 0.8135593220338984,
+    "macro_f1": 0.7806878306878305,
+    "bacc": 0.7875064004096263,
+    "macro_auc": 0.9284926542991059,
+    "weighted_f1": 0.8153214958299703,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        17,
+        4
+      ],
+      [
+        3,
+        2,
+        26
+      ]
+    ]
+  },
+  "comparison_vs_c1": {
+    "repairs": 0,
+    "damages": 7,
+    "net_repairs": -7,
+    "changed_predictions": 7,
+    "repair_subject_indices": [],
+    "damage_subject_indices": [
+      50,
+      415,
+      137,
+      517,
+      267,
+      109,
+      201
+    ],
+    "changed_subject_indices": [
+      50,
+      415,
+      137,
+      517,
+      267,
+      109,
+      201
+    ]
+  },
+  "boundary_errors": {
+    "AD_SMCI": 5,
+    "CN_SMCI": 6,
+    "AD_CN": 0
+  },
+  "inference_parameter_count": 862971,
+  "supervised_ema_first_update_epoch": 20,
+  "supervised_ema_first_selection_epoch": 21,
+  "supervised_ema_update_count": 381,
+  "pretrain_seconds": 16.37575830006972,
+  "supervised_seconds": 53.23190849996172,
+  "wall_seconds": 69.75035530002788,
+  "config": {
+    "experiment": "mg_jepa_c1_v1",
+    "version": "v1",
+    "source_commit": "4cceb63d1bea8c6cf89a730d8723b9365625e373",
+    "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      8
+    ],
+    "seed_per_fold": 0,
+    "pretrain_random_seed": 0,
+    "pretrain_epochs": 200,
+    "pretrain_optimizer": "AdamW",
+    "pretrain_lr": 0.0001,
+    "pretrain_weight_decay": 0.0001,
+    "pretrain_scheduler": "CosineAnnealingLR(T_max=200)",
+    "teacher_ema_decay": 0.99,
+    "visible_feature_mask_rate": 0.15,
+    "masked_modality_schedule": "zero-based pretrain_step % 6",
+    "reg_token_count": 4,
+    "pretrain_train_fold_only": true,
+    "supervised_epochs": 400,
+    "full_batch_transductive_supervised": true,
+    "single_model": true,
+    "ensemble": false,
+    "multi_seed": false,
+    "orthogonality": false,
+    "graph_enabled": false,
+    "loss": "historical C1 weighted main CE plus three OVR auxiliary losses",
+    "supervised_optimizer": "historical C1 Adam",
+    "supervised_scheduler": "CustomCosineAnnealingLR(T_max=400)",
+    "supervised_lr": 0.01,
+    "supervised_weight_decay": 0.0005,
+    "supervised_lr_min": 0.0001,
+    "supervised_grad_clip": 1.0,
+    "supervised_label_smoothing": 0.05,
+    "hidden_size": 96,
+    "drop_rate": 0.67,
+    "num_layers": 2,
+    "num_heads": 4,
+    "input_noise_std": 0.05,
+    "drop_path": 0.05,
+    "logit_adjust_tau": 0.75,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "base_c1_runner_use_ema": false,
+    "task_locked_supervised_ema_first_update_epoch": 20,
+    "task_locked_supervised_ema_first_selection_epoch": 21,
+    "task_locked_supervised_ema_decay": 0.99,
+    "pretrain_backbone_parameter_count": 224400,
+    "pretrain_trainable_parameter_count": 300240,
+    "pretrain_wrapper_parameter_count": 525024,
+    "inference_parameter_count": 862971,
+    "collapse_rule": "shared global mean batch std <=1e-4 OR private global mean batch std <=1e-4",
+    "collapse_batch_std_threshold": 0.0001,
+    "v1_1_last20_relative_decline_threshold": 0.02,
+    "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+    "locked_source_sha256": {
+      "model": "0ec98152873ca77d5a5f65047026f826b3c9d70f70d5d63fc4ad582ae80e0c94",
+      "runner": "6156800991191c2b6e131cb5b98aa41987b4f8f69b77d489f5bb35869050b3b9",
+      "historical_config": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c"
+    },
+    "environment": {
+      "torch_version": "2.5.1+cu121",
+      "torch_cuda_version": "12.1",
+      "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+    }
+  },
+  "restarted_matching_incomplete_fold": false
+}

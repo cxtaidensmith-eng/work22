@@ -1,0 +1,809 @@
+{
+  "decision": "MG_JEPA_NO_GAIN",
+  "selected_version": "v1",
+  "selected_report": {
+    "version": "v1",
+    "pretrain_epochs": 200,
+    "decision": "MG_JEPA_NO_GAIN",
+    "decision_checks": {
+      "no_gain": {
+        "correct_at_most_560": true,
+        "repairs_not_above_damages": true,
+        "ad_cn_error_present": false,
+        "latent_collapse": false,
+        "bacc_drop_over_0p005": true
+      },
+      "strong": {
+        "correct_at_least_563": false,
+        "no_ad_cn_error": true,
+        "bacc_drop_at_most_0p003": false
+      },
+      "positive": {
+        "correct_equals_562": false,
+        "repairs_above_damages": false,
+        "no_ad_cn_error": true,
+        "adjacent_errors_at_most_c1_38": false,
+        "bacc_drop_at_most_0p003": false
+      },
+      "mechanism_only": {
+        "correct_equals_561": false,
+        "repairs_above_damages": false,
+        "macro_f1_or_auc_above_c1": false
+      }
+    },
+    "metrics": {
+      "correct": 529,
+      "acc": 0.8846153846153846,
+      "macro_f1": 0.8740037437834366,
+      "bacc": 0.8594200625995413,
+      "macro_auc": 0.927871746281005,
+      "weighted_f1": 0.8841008442535043,
+      "confusion_matrix": [
+        [
+          58,
+          0,
+          14
+        ],
+        [
+          0,
+          176,
+          33
+        ],
+        [
+          7,
+          15,
+          295
+        ]
+      ]
+    },
+    "ten_fold_acc_mean": 0.8844915254237288,
+    "ten_fold_acc_sample_std": 0.03868680479895346,
+    "comparison_vs_c1": {
+      "repairs": 9,
+      "damages": 40,
+      "net_repairs": -31,
+      "changed_predictions": 49,
+      "repair_subject_indices": [
+        24,
+        89,
+        282,
+        305,
+        361,
+        393,
+        407,
+        501,
+        538
+      ],
+      "damage_subject_indices": [
+        29,
+        43,
+        50,
+        58,
+        72,
+        99,
+        100,
+        109,
+        113,
+        125,
+        127,
+        137,
+        138,
+        158,
+        164,
+        169,
+        182,
+        186,
+        191,
+        193,
+        196,
+        201,
+        214,
+        257,
+        260,
+        264,
+        267,
+        270,
+        273,
+        278,
+        289,
+        383,
+        395,
+        397,
+        415,
+        437,
+        517,
+        522,
+        524,
+        526
+      ],
+      "changed_subject_indices": [
+        24,
+        29,
+        43,
+        50,
+        58,
+        72,
+        89,
+        99,
+        100,
+        109,
+        113,
+        125,
+        127,
+        137,
+        138,
+        158,
+        164,
+        169,
+        182,
+        186,
+        191,
+        193,
+        196,
+        201,
+        214,
+        257,
+        260,
+        264,
+        267,
+        270,
+        273,
+        278,
+        282,
+        289,
+        305,
+        361,
+        383,
+        393,
+        395,
+        397,
+        407,
+        415,
+        437,
+        501,
+        517,
+        522,
+        524,
+        526,
+        538
+      ]
+    },
+    "boundary_errors": {
+      "AD_SMCI": 21,
+      "CN_SMCI": 48,
+      "AD_CN": 0
+    },
+    "predicted_class_counts": {
+      "AD": 65,
+      "CN": 191,
+      "SMCI": 342
+    },
+    "mechanism": {
+      "final_loss_mean": 0.26353518105005075,
+      "final_loss_shared_mean": 0.15723021809096144,
+      "final_loss_private_mean": 0.21260992591817862,
+      "teacher_student_shared_cosine_by_modality": {
+        "MRI": 0.9868709962414968,
+        "PET": 0.9880467440970367,
+        "CSF": 0.9857154660112395,
+        "Risk": 0.9887908686496475,
+        "COG": 0.9912588849624973,
+        "ROI": 0.9904209419348478
+      },
+      "teacher_student_private_cosine_by_modality": {
+        "MRI": 0.9868633911561806,
+        "PET": 0.9875479840248856,
+        "CSF": 0.9851250067292335,
+        "Risk": 0.988376258386196,
+        "COG": 0.9908601947652058,
+        "ROI": 0.9902899969315183
+      },
+      "shared_latent_batch_std_by_modality": {
+        "MRI": 0.33140662365112994,
+        "PET": 0.2284353258872466,
+        "CSF": 0.1963411966433582,
+        "Risk": 0.2039398179288825,
+        "COG": 0.7754680837830926,
+        "ROI": 0.6958600849699504
+      },
+      "private_latent_batch_std_by_modality": {
+        "MRI": 0.3314931619869471,
+        "PET": 0.22858423811934864,
+        "CSF": 0.19639687261165895,
+        "Risk": 0.20399782706684716,
+        "COG": 0.7754911956557641,
+        "ROI": 0.6959517472896023
+      },
+      "collapse": false,
+      "collapse_fold_count": 0,
+      "last20_first10_loss_mean": 0.2636827006781026,
+      "last20_last10_loss_mean": 0.2680170454137479,
+      "last20_relative_decline": -0.016437728847963063
+    },
+    "metric_deltas": {
+      "vs_c1": {
+        "correct": -31,
+        "acc": -0.05183946488294322,
+        "macro_f1": -0.043541973638808185,
+        "bacc": -0.05691587131484188,
+        "macro_auc": -0.03068902880468971
+      },
+      "vs_pc_bbf_v1": {
+        "correct": -32,
+        "acc": -0.053511705685618804,
+        "macro_f1": -0.052690777965489155,
+        "bacc": -0.055793909542041664,
+        "macro_auc": -0.042247201488518904
+      }
+    },
+    "inference_parameter_count": 862971,
+    "pretrain_seconds": 163.12552330014296,
+    "supervised_seconds": 536.3940486002248,
+    "fold_wall_seconds": 703.135888500372,
+    "folds": [
+      {
+        "fold": 0,
+        "best_epoch": 149,
+        "best_used_supervised_ema": true,
+        "correct": 53,
+        "acc": 0.8833333333333333
+      },
+      {
+        "fold": 1,
+        "best_epoch": 341,
+        "best_used_supervised_ema": true,
+        "correct": 53,
+        "acc": 0.8833333333333333
+      },
+      {
+        "fold": 2,
+        "best_epoch": 219,
+        "best_used_supervised_ema": true,
+        "correct": 56,
+        "acc": 0.9333333333333333
+      },
+      {
+        "fold": 3,
+        "best_epoch": 317,
+        "best_used_supervised_ema": true,
+        "correct": 51,
+        "acc": 0.85
+      },
+      {
+        "fold": 4,
+        "best_epoch": 379,
+        "best_used_supervised_ema": true,
+        "correct": 51,
+        "acc": 0.85
+      },
+      {
+        "fold": 5,
+        "best_epoch": 225,
+        "best_used_supervised_ema": true,
+        "correct": 56,
+        "acc": 0.9333333333333333
+      },
+      {
+        "fold": 6,
+        "best_epoch": 255,
+        "best_used_supervised_ema": true,
+        "correct": 54,
+        "acc": 0.9
+      },
+      {
+        "fold": 7,
+        "best_epoch": 129,
+        "best_used_supervised_ema": true,
+        "correct": 55,
+        "acc": 0.9166666666666666
+      },
+      {
+        "fold": 8,
+        "best_epoch": 273,
+        "best_used_supervised_ema": true,
+        "correct": 48,
+        "acc": 0.8135593220338984
+      },
+      {
+        "fold": 9,
+        "best_epoch": 197,
+        "best_used_supervised_ema": true,
+        "correct": 52,
+        "acc": 0.8813559322033898
+      }
+    ],
+    "config": {
+      "experiment": "mg_jepa_c1_v1",
+      "version": "v1",
+      "source_commit": "4cceb63d1bea8c6cf89a730d8723b9365625e373",
+      "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+      "dataset": "TADPOLE",
+      "task": "AD_CN_SMCI",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "pretrain_random_seed": 0,
+      "pretrain_epochs": 200,
+      "pretrain_optimizer": "AdamW",
+      "pretrain_lr": 0.0001,
+      "pretrain_weight_decay": 0.0001,
+      "pretrain_scheduler": "CosineAnnealingLR(T_max=200)",
+      "teacher_ema_decay": 0.99,
+      "visible_feature_mask_rate": 0.15,
+      "masked_modality_schedule": "zero-based pretrain_step % 6",
+      "reg_token_count": 4,
+      "pretrain_train_fold_only": true,
+      "supervised_epochs": 400,
+      "full_batch_transductive_supervised": true,
+      "single_model": true,
+      "ensemble": false,
+      "multi_seed": false,
+      "orthogonality": false,
+      "graph_enabled": false,
+      "loss": "historical C1 weighted main CE plus three OVR auxiliary losses",
+      "supervised_optimizer": "historical C1 Adam",
+      "supervised_scheduler": "CustomCosineAnnealingLR(T_max=400)",
+      "supervised_lr": 0.01,
+      "supervised_weight_decay": 0.0005,
+      "supervised_lr_min": 0.0001,
+      "supervised_grad_clip": 1.0,
+      "supervised_label_smoothing": 0.05,
+      "hidden_size": 96,
+      "drop_rate": 0.67,
+      "num_layers": 2,
+      "num_heads": 4,
+      "input_noise_std": 0.05,
+      "drop_path": 0.05,
+      "logit_adjust_tau": 0.75,
+      "best_epoch_rule": [
+        "ACC",
+        "Probability Macro-AUC",
+        "Macro-F1"
+      ],
+      "base_c1_runner_use_ema": false,
+      "task_locked_supervised_ema_first_update_epoch": 20,
+      "task_locked_supervised_ema_first_selection_epoch": 21,
+      "task_locked_supervised_ema_decay": 0.99,
+      "pretrain_backbone_parameter_count": 224400,
+      "pretrain_trainable_parameter_count": 300240,
+      "pretrain_wrapper_parameter_count": 525024,
+      "inference_parameter_count": 862971,
+      "collapse_rule": "shared global mean batch std <=1e-4 OR private global mean batch std <=1e-4",
+      "collapse_batch_std_threshold": 0.0001,
+      "v1_1_last20_relative_decline_threshold": 0.02,
+      "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+      "locked_source_sha256": {
+        "model": "0ec98152873ca77d5a5f65047026f826b3c9d70f70d5d63fc4ad582ae80e0c94",
+        "runner": "6156800991191c2b6e131cb5b98aa41987b4f8f69b77d489f5bb35869050b3b9",
+        "historical_config": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c"
+      },
+      "environment": {
+        "torch_version": "2.5.1+cu121",
+        "torch_cuda_version": "12.1",
+        "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+      }
+    }
+  },
+  "v1_report": {
+    "version": "v1",
+    "pretrain_epochs": 200,
+    "decision": "MG_JEPA_NO_GAIN",
+    "decision_checks": {
+      "no_gain": {
+        "correct_at_most_560": true,
+        "repairs_not_above_damages": true,
+        "ad_cn_error_present": false,
+        "latent_collapse": false,
+        "bacc_drop_over_0p005": true
+      },
+      "strong": {
+        "correct_at_least_563": false,
+        "no_ad_cn_error": true,
+        "bacc_drop_at_most_0p003": false
+      },
+      "positive": {
+        "correct_equals_562": false,
+        "repairs_above_damages": false,
+        "no_ad_cn_error": true,
+        "adjacent_errors_at_most_c1_38": false,
+        "bacc_drop_at_most_0p003": false
+      },
+      "mechanism_only": {
+        "correct_equals_561": false,
+        "repairs_above_damages": false,
+        "macro_f1_or_auc_above_c1": false
+      }
+    },
+    "metrics": {
+      "correct": 529,
+      "acc": 0.8846153846153846,
+      "macro_f1": 0.8740037437834366,
+      "bacc": 0.8594200625995413,
+      "macro_auc": 0.927871746281005,
+      "weighted_f1": 0.8841008442535043,
+      "confusion_matrix": [
+        [
+          58,
+          0,
+          14
+        ],
+        [
+          0,
+          176,
+          33
+        ],
+        [
+          7,
+          15,
+          295
+        ]
+      ]
+    },
+    "ten_fold_acc_mean": 0.8844915254237288,
+    "ten_fold_acc_sample_std": 0.03868680479895346,
+    "comparison_vs_c1": {
+      "repairs": 9,
+      "damages": 40,
+      "net_repairs": -31,
+      "changed_predictions": 49,
+      "repair_subject_indices": [
+        24,
+        89,
+        282,
+        305,
+        361,
+        393,
+        407,
+        501,
+        538
+      ],
+      "damage_subject_indices": [
+        29,
+        43,
+        50,
+        58,
+        72,
+        99,
+        100,
+        109,
+        113,
+        125,
+        127,
+        137,
+        138,
+        158,
+        164,
+        169,
+        182,
+        186,
+        191,
+        193,
+        196,
+        201,
+        214,
+        257,
+        260,
+        264,
+        267,
+        270,
+        273,
+        278,
+        289,
+        383,
+        395,
+        397,
+        415,
+        437,
+        517,
+        522,
+        524,
+        526
+      ],
+      "changed_subject_indices": [
+        24,
+        29,
+        43,
+        50,
+        58,
+        72,
+        89,
+        99,
+        100,
+        109,
+        113,
+        125,
+        127,
+        137,
+        138,
+        158,
+        164,
+        169,
+        182,
+        186,
+        191,
+        193,
+        196,
+        201,
+        214,
+        257,
+        260,
+        264,
+        267,
+        270,
+        273,
+        278,
+        282,
+        289,
+        305,
+        361,
+        383,
+        393,
+        395,
+        397,
+        407,
+        415,
+        437,
+        501,
+        517,
+        522,
+        524,
+        526,
+        538
+      ]
+    },
+    "boundary_errors": {
+      "AD_SMCI": 21,
+      "CN_SMCI": 48,
+      "AD_CN": 0
+    },
+    "predicted_class_counts": {
+      "AD": 65,
+      "CN": 191,
+      "SMCI": 342
+    },
+    "mechanism": {
+      "final_loss_mean": 0.26353518105005075,
+      "final_loss_shared_mean": 0.15723021809096144,
+      "final_loss_private_mean": 0.21260992591817862,
+      "teacher_student_shared_cosine_by_modality": {
+        "MRI": 0.9868709962414968,
+        "PET": 0.9880467440970367,
+        "CSF": 0.9857154660112395,
+        "Risk": 0.9887908686496475,
+        "COG": 0.9912588849624973,
+        "ROI": 0.9904209419348478
+      },
+      "teacher_student_private_cosine_by_modality": {
+        "MRI": 0.9868633911561806,
+        "PET": 0.9875479840248856,
+        "CSF": 0.9851250067292335,
+        "Risk": 0.988376258386196,
+        "COG": 0.9908601947652058,
+        "ROI": 0.9902899969315183
+      },
+      "shared_latent_batch_std_by_modality": {
+        "MRI": 0.33140662365112994,
+        "PET": 0.2284353258872466,
+        "CSF": 0.1963411966433582,
+        "Risk": 0.2039398179288825,
+        "COG": 0.7754680837830926,
+        "ROI": 0.6958600849699504
+      },
+      "private_latent_batch_std_by_modality": {
+        "MRI": 0.3314931619869471,
+        "PET": 0.22858423811934864,
+        "CSF": 0.19639687261165895,
+        "Risk": 0.20399782706684716,
+        "COG": 0.7754911956557641,
+        "ROI": 0.6959517472896023
+      },
+      "collapse": false,
+      "collapse_fold_count": 0,
+      "last20_first10_loss_mean": 0.2636827006781026,
+      "last20_last10_loss_mean": 0.2680170454137479,
+      "last20_relative_decline": -0.016437728847963063
+    },
+    "metric_deltas": {
+      "vs_c1": {
+        "correct": -31,
+        "acc": -0.05183946488294322,
+        "macro_f1": -0.043541973638808185,
+        "bacc": -0.05691587131484188,
+        "macro_auc": -0.03068902880468971
+      },
+      "vs_pc_bbf_v1": {
+        "correct": -32,
+        "acc": -0.053511705685618804,
+        "macro_f1": -0.052690777965489155,
+        "bacc": -0.055793909542041664,
+        "macro_auc": -0.042247201488518904
+      }
+    },
+    "inference_parameter_count": 862971,
+    "pretrain_seconds": 163.12552330014296,
+    "supervised_seconds": 536.3940486002248,
+    "fold_wall_seconds": 703.135888500372,
+    "folds": [
+      {
+        "fold": 0,
+        "best_epoch": 149,
+        "best_used_supervised_ema": true,
+        "correct": 53,
+        "acc": 0.8833333333333333
+      },
+      {
+        "fold": 1,
+        "best_epoch": 341,
+        "best_used_supervised_ema": true,
+        "correct": 53,
+        "acc": 0.8833333333333333
+      },
+      {
+        "fold": 2,
+        "best_epoch": 219,
+        "best_used_supervised_ema": true,
+        "correct": 56,
+        "acc": 0.9333333333333333
+      },
+      {
+        "fold": 3,
+        "best_epoch": 317,
+        "best_used_supervised_ema": true,
+        "correct": 51,
+        "acc": 0.85
+      },
+      {
+        "fold": 4,
+        "best_epoch": 379,
+        "best_used_supervised_ema": true,
+        "correct": 51,
+        "acc": 0.85
+      },
+      {
+        "fold": 5,
+        "best_epoch": 225,
+        "best_used_supervised_ema": true,
+        "correct": 56,
+        "acc": 0.9333333333333333
+      },
+      {
+        "fold": 6,
+        "best_epoch": 255,
+        "best_used_supervised_ema": true,
+        "correct": 54,
+        "acc": 0.9
+      },
+      {
+        "fold": 7,
+        "best_epoch": 129,
+        "best_used_supervised_ema": true,
+        "correct": 55,
+        "acc": 0.9166666666666666
+      },
+      {
+        "fold": 8,
+        "best_epoch": 273,
+        "best_used_supervised_ema": true,
+        "correct": 48,
+        "acc": 0.8135593220338984
+      },
+      {
+        "fold": 9,
+        "best_epoch": 197,
+        "best_used_supervised_ema": true,
+        "correct": 52,
+        "acc": 0.8813559322033898
+      }
+    ],
+    "config": {
+      "experiment": "mg_jepa_c1_v1",
+      "version": "v1",
+      "source_commit": "4cceb63d1bea8c6cf89a730d8723b9365625e373",
+      "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+      "dataset": "TADPOLE",
+      "task": "AD_CN_SMCI",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "pretrain_random_seed": 0,
+      "pretrain_epochs": 200,
+      "pretrain_optimizer": "AdamW",
+      "pretrain_lr": 0.0001,
+      "pretrain_weight_decay": 0.0001,
+      "pretrain_scheduler": "CosineAnnealingLR(T_max=200)",
+      "teacher_ema_decay": 0.99,
+      "visible_feature_mask_rate": 0.15,
+      "masked_modality_schedule": "zero-based pretrain_step % 6",
+      "reg_token_count": 4,
+      "pretrain_train_fold_only": true,
+      "supervised_epochs": 400,
+      "full_batch_transductive_supervised": true,
+      "single_model": true,
+      "ensemble": false,
+      "multi_seed": false,
+      "orthogonality": false,
+      "graph_enabled": false,
+      "loss": "historical C1 weighted main CE plus three OVR auxiliary losses",
+      "supervised_optimizer": "historical C1 Adam",
+      "supervised_scheduler": "CustomCosineAnnealingLR(T_max=400)",
+      "supervised_lr": 0.01,
+      "supervised_weight_decay": 0.0005,
+      "supervised_lr_min": 0.0001,
+      "supervised_grad_clip": 1.0,
+      "supervised_label_smoothing": 0.05,
+      "hidden_size": 96,
+      "drop_rate": 0.67,
+      "num_layers": 2,
+      "num_heads": 4,
+      "input_noise_std": 0.05,
+      "drop_path": 0.05,
+      "logit_adjust_tau": 0.75,
+      "best_epoch_rule": [
+        "ACC",
+        "Probability Macro-AUC",
+        "Macro-F1"
+      ],
+      "base_c1_runner_use_ema": false,
+      "task_locked_supervised_ema_first_update_epoch": 20,
+      "task_locked_supervised_ema_first_selection_epoch": 21,
+      "task_locked_supervised_ema_decay": 0.99,
+      "pretrain_backbone_parameter_count": 224400,
+      "pretrain_trainable_parameter_count": 300240,
+      "pretrain_wrapper_parameter_count": 525024,
+      "inference_parameter_count": 862971,
+      "collapse_rule": "shared global mean batch std <=1e-4 OR private global mean batch std <=1e-4",
+      "collapse_batch_std_threshold": 0.0001,
+      "v1_1_last20_relative_decline_threshold": 0.02,
+      "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+      "locked_source_sha256": {
+        "model": "0ec98152873ca77d5a5f65047026f826b3c9d70f70d5d63fc4ad582ae80e0c94",
+        "runner": "6156800991191c2b6e131cb5b98aa41987b4f8f69b77d489f5bb35869050b3b9",
+        "historical_config": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c"
+      },
+      "environment": {
+        "torch_version": "2.5.1+cu121",
+        "torch_cuda_version": "12.1",
+        "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+      }
+    }
+  },
+  "v1_1_ran": false,
+  "v1_1_trigger_checks": {
+    "correct_is_561_or_562": false,
+    "repairs_above_damages": false,
+    "no_ad_cn_error": true,
+    "bacc_drop_at_most_0p003": false,
+    "no_collapse": true,
+    "last20_relative_decline_at_least_2_percent": false
+  },
+  "v1_1_report": null,
+  "v1_1_selection_rule": "if triggered, v1.1 is the final pre-registered version; v1 remains reported separately",
+  "source_commit": "4cceb63d1bea8c6cf89a730d8723b9365625e373",
+  "device": "cuda:0",
+  "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "pretrain_seconds_all_versions": 163.12552330014296,
+  "supervised_seconds_all_versions": 536.3940486002248,
+  "total_wall_seconds": 705.0931687999982,
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_mg_jepa_c1_v1.py formal --device cuda:0",
+  "next_conclusion": "Stop after the registered result; do not tune another MG-JEPA setting."
+}
