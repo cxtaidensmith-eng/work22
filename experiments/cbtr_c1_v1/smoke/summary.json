@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "source_commit": "983ecd05b507085fce86c5bd52122d095694a36b",
+  "run_head_at_start": "983ecd05b507085fce86c5bd52122d095694a36b",
+  "device": "cuda:0",
+  "epochs": 3,
+  "losses": [
+    3.3026833534240723,
+    2.898298740386963,
+    6.003823757171631
+  ],
+  "equivalence": {
+    "passed": true,
+    "initial_c1_parameter_max_abs_diff": 0.0,
+    "initial_logit_max_abs_diff": 0.0,
+    "initial_residual_max_abs": 0.0,
+    "first_step_base_gradient_max_abs_diff": 0.0,
+    "first_step_base_parameter_max_abs_diff": 0.0,
+    "first_step_w_out_gradient_norm": 0.23974376916885376,
+    "cpu_cuda_rng_preserved": true,
+    "base_only_historical_gradient_clip": true
+  },
+  "train_only_memory_audit": {
+    "candidate_counts_per_query": [
+      4,
+      4,
+      4
+    ],
+    "candidate_count_total_per_query": 12,
+    "all_candidates_in_train_mask": true,
+    "train_self_hit_count": 0,
+    "test_candidate_count": 0,
+    "memory_size": 538
+  },
+  "optimizer_audit": {
+    "base_parameter_count": 862971,
+    "retrieval_parameter_count": 3376,
+    "total_parameter_count": 866347,
+    "optimizer_disjoint": true,
+    "optimizer_union_complete": true,
+    "base_lr": 0.01,
+    "base_weight_decay": 0.0005,
+    "retrieval_lr": 0.01,
+    "retrieval_weight_decay": 0.0,
+    "historical_ema_enabled": false,
+    "ema_shadow_checkpoint_audit_only": true,
+    "ema_decay": 0.99,
+    "cbtr_parameter_names": [
+      "cbtr.diff_projection.weight",
+      "cbtr.key_projection.weight",
+      "cbtr.label_embedding.weight",
+      "cbtr.output_projection.weight"
+    ]
+  },
+  "gradient_max": {
+    "w_out": 0.23974376916885376,
+    "w_key": 0.005417731590569019,
+    "w_diff": 0.00010591634782031178,
+    "label_embedding": 0.0007687452016398311
+  },
+  "parameter_change_max_abs": {
+    "w_out": 0.030030515044927597,
+    "w_key": 0.016035594046115875,
+    "w_diff": 0.015992969274520874,
+    "label_embedding": 0.016020650044083595
+  },
+  "retrieval_residual_max_abs": 0.10222543030977249,
+  "retrieval_residual_h0_ratio_max": 0.021840767934918404,
+  "checkpoint_strict_roundtrip": true,
+  "checkpoint_logit_max_abs_diff": 0.0
+}

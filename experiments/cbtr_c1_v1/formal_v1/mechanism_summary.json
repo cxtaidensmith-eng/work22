@@ -1,0 +1,33 @@
+{
+  "candidate_attention_mass_mean": {
+    "AD": 0.14155262194499513,
+    "CN": 0.33127355494409044,
+    "SMCI": 0.5271738223415366
+  },
+  "attention_entropy_mean": 1.6548363498620764,
+  "effective_neighbor_count_mean": 5.4701495936084354,
+  "retrieval_class_mass_argmax_accuracy": 0.9080267558528428,
+  "c1_repairs_true_class_attention": {
+    "count": 14,
+    "true_class_attention_mass_mean": 0.8068689640079226
+  },
+  "c1_damages_true_class_attention": {
+    "count": 27,
+    "true_class_attention_mass_mean": 0.11634448488917702
+  },
+  "retrieval_residual_h0_ratio_mean": 0.0810124095557351,
+  "retrieval_residual_h0_ratio_max": 0.10000001639127731,
+  "cap_saturation_fraction": 0.5585284280936454,
+  "same_checkpoint_r_on_vs_off": {
+    "logit_max_abs_difference": 0.7394070625305176,
+    "probability_max_abs_difference": 0.27275004982948303,
+    "argmax_changed": 2,
+    "direct_repairs": 2,
+    "direct_damages": 0,
+    "direct_changed_subject_indices": [
+      27,
+      564
+    ]
+  },
+  "test_labels_used_offline_after_complete_oof_only": true
+}

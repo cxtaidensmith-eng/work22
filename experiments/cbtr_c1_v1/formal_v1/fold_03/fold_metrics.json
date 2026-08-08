@@ -1,0 +1,67 @@
+{
+  "fold": 3,
+  "source_commit": "983ecd05b507085fce86c5bd52122d095694a36b",
+  "cap": 0.1,
+  "best_epoch": 98,
+  "best_metrics": {
+    "correct": 53,
+    "acc": 0.8833333333333333,
+    "macro_f1": 0.8678929765886289,
+    "bacc": 0.8308531746031745,
+    "macro_auc": 0.9656938972976709,
+    "weighted_f1": 0.881577480490524,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        17,
+        4
+      ],
+      [
+        0,
+        1,
+        31
+      ]
+    ]
+  },
+  "selection_tuple": [
+    0.8833333333333333,
+    0.9656938972976709,
+    0.8678929765886289
+  ],
+  "parameter_count": 866347,
+  "added_parameter_count": 3376,
+  "retrieval_gradient_max": {
+    "w_out": 0.23654048144817352,
+    "w_key": 0.03380843624472618,
+    "w_diff": 0.001451767748221755,
+    "label_embedding": 0.008164958097040653
+  },
+  "optimizer_audit": {
+    "base_parameter_count": 862971,
+    "retrieval_parameter_count": 3376,
+    "total_parameter_count": 866347,
+    "optimizer_disjoint": true,
+    "optimizer_union_complete": true,
+    "base_lr": 0.01,
+    "base_weight_decay": 0.0005,
+    "retrieval_lr": 0.01,
+    "retrieval_weight_decay": 0.0,
+    "historical_ema_enabled": false,
+    "ema_shadow_checkpoint_audit_only": true,
+    "ema_decay": 0.99,
+    "cbtr_parameter_names": [
+      "cbtr.diff_projection.weight",
+      "cbtr.key_projection.weight",
+      "cbtr.label_embedding.weight",
+      "cbtr.output_projection.weight"
+    ]
+  },
+  "train_memory_size": 538,
+  "test_size": 60,
+  "elapsed_seconds": 56.189067899947986
+}
