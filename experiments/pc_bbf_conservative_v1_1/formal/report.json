@@ -1,0 +1,531 @@
+{
+  "stage": "formal",
+  "experiment": "pc_bbf_conservative_v1_1",
+  "decision": "PC_BBF_CONSERVATIVE_NO_GAIN",
+  "decision_checks": {
+    "target": {
+      "correct_at_least_563": false,
+      "acc_at_least_0p94147": false,
+      "macro_f1_not_below_c1": false,
+      "bacc_drop_vs_c1_at_most_0p002": false
+    },
+    "positive": {
+      "correct_equals_562": false,
+      "macro_f1_within_0p003_of_pc_bbf_v1": false,
+      "bacc_within_0p002_of_c1": false
+    },
+    "stable": {
+      "correct_equals_561": false,
+      "damages_vs_c1_below_pc_bbf_v1_17": false,
+      "cn_smci_errors_below_pc_bbf_v1_22": false,
+      "macro_f1_within_0p003_of_pc_bbf_v1": false,
+      "bacc_not_below_pc_bbf_v1": false
+    },
+    "no_gain": {
+      "correct_below_561": true,
+      "repairs_not_above_damages": true,
+      "ad_smci_improvement_mostly_lost": true,
+      "all_key_metrics_below_pc_bbf_v1": true
+    }
+  },
+  "pc_bbf_cap": 0.075,
+  "safe_loss": false,
+  "pc_bbf_v1_base_commit_sha": "c3a2c6ce13241522cc598f58705417106ce7721c",
+  "run_head": "4572ebb4e8802a2a4b749e37ba6b0935b630531e",
+  "device": "cuda:0",
+  "subject_count": 598,
+  "metrics": {
+    "correct": 555,
+    "acc": 0.9280936454849499,
+    "macro_f1": 0.9076023391812864,
+    "bacc": 0.8915576709035119,
+    "macro_auc": 0.9652186340814706,
+    "weighted_f1": 0.927254591327818,
+    "confusion_matrix": [
+      [
+        56,
+        0,
+        16
+      ],
+      [
+        0,
+        198,
+        11
+      ],
+      [
+        5,
+        11,
+        301
+      ]
+    ]
+  },
+  "prediction_counts": {
+    "AD": 61,
+    "CN": 209,
+    "SMCI": 328
+  },
+  "truth_counts": {
+    "AD": 72,
+    "CN": 209,
+    "SMCI": 317
+  },
+  "comparison_vs_c1": {
+    "repairs": 18,
+    "damages": 23,
+    "net_repairs": -5,
+    "changed_predictions": 41,
+    "repair_subject_indices": [
+      18,
+      24,
+      55,
+      89,
+      111,
+      207,
+      234,
+      282,
+      305,
+      350,
+      391,
+      407,
+      428,
+      501,
+      564,
+      569,
+      583,
+      585
+    ],
+    "damage_subject_indices": [
+      10,
+      14,
+      27,
+      43,
+      46,
+      47,
+      68,
+      69,
+      85,
+      155,
+      169,
+      183,
+      188,
+      197,
+      270,
+      289,
+      415,
+      522,
+      524,
+      528,
+      530,
+      574,
+      592
+    ],
+    "changed_subject_indices": [
+      10,
+      14,
+      18,
+      24,
+      27,
+      43,
+      46,
+      47,
+      55,
+      68,
+      69,
+      85,
+      89,
+      111,
+      155,
+      169,
+      183,
+      188,
+      197,
+      207,
+      234,
+      270,
+      282,
+      289,
+      305,
+      350,
+      391,
+      407,
+      415,
+      428,
+      501,
+      522,
+      524,
+      528,
+      530,
+      564,
+      569,
+      574,
+      583,
+      585,
+      592
+    ]
+  },
+  "comparison_vs_pc_bbf_v1": {
+    "repairs": 19,
+    "damages": 25,
+    "net_repairs": -6,
+    "changed_predictions": 44,
+    "repair_subject_indices": [
+      16,
+      18,
+      21,
+      55,
+      111,
+      120,
+      185,
+      207,
+      248,
+      260,
+      282,
+      284,
+      372,
+      413,
+      438,
+      439,
+      562,
+      569,
+      585
+    ],
+    "damage_subject_indices": [
+      10,
+      14,
+      27,
+      34,
+      43,
+      46,
+      47,
+      49,
+      69,
+      85,
+      155,
+      169,
+      188,
+      272,
+      289,
+      361,
+      393,
+      415,
+      519,
+      522,
+      524,
+      528,
+      530,
+      574,
+      589
+    ],
+    "changed_subject_indices": [
+      10,
+      14,
+      16,
+      18,
+      21,
+      27,
+      34,
+      43,
+      46,
+      47,
+      49,
+      55,
+      69,
+      85,
+      111,
+      120,
+      155,
+      169,
+      185,
+      188,
+      207,
+      248,
+      260,
+      272,
+      282,
+      284,
+      289,
+      361,
+      372,
+      393,
+      413,
+      415,
+      438,
+      439,
+      519,
+      522,
+      524,
+      528,
+      530,
+      562,
+      569,
+      574,
+      585,
+      589
+    ]
+  },
+  "metric_deltas": {
+    "vs_c1": {
+      "correct": -5,
+      "acc": -0.00836120401337792,
+      "macro_f1": -0.009943378240958367,
+      "bacc": -0.02477826301087127,
+      "macro_auc": 0.006657858995775867,
+      "weighted_f1": -0.009111394997859068
+    },
+    "vs_pc_bbf_v1": {
+      "correct": -6,
+      "acc": -0.010033444816053505,
+      "macro_f1": -0.019092182567639338,
+      "bacc": -0.023656301238071054,
+      "macro_auc": -0.004900313688053326,
+      "weighted_f1": -0.010576255098628584
+    }
+  },
+  "reference_metrics": {
+    "c1": {
+      "correct": 560,
+      "acc": 0.9364548494983278,
+      "macro_f1": 0.9175457174222448,
+      "bacc": 0.9163359339143832,
+      "macro_auc": 0.9585607750856947,
+      "weighted_f1": 0.936365986325677,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "pc_bbf_v1": {
+      "correct": 561,
+      "acc": 0.9381270903010034,
+      "macro_f1": 0.9266945217489257,
+      "bacc": 0.915213972141583,
+      "macro_auc": 0.9701189477695239,
+      "weighted_f1": 0.9378308464264465,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          197,
+          12
+        ],
+        [
+          4,
+          10,
+          303
+        ]
+      ],
+      "parameters": 866924,
+      "gate_mean": 0.609751502805729,
+      "residual_shared_ratio_mean": 0.05974636813096179,
+      "cap_saturation_fraction": 0.3110368043857075,
+      "repairs_vs_c1": 18,
+      "damages_vs_c1": 17,
+      "ad_smci_errors": 15,
+      "cn_smci_errors": 22,
+      "predicted_smci": 326
+    }
+  },
+  "boundary_errors": {
+    "candidate": {
+      "AD_SMCI": 21,
+      "CN_SMCI": 22,
+      "AD_CN": 0
+    },
+    "c1": {
+      "AD_SMCI": 21,
+      "CN_SMCI": 17,
+      "AD_CN": 0
+    },
+    "pc_bbf_v1": {
+      "AD_SMCI": 15,
+      "CN_SMCI": 22,
+      "AD_CN": 0
+    }
+  },
+  "directional_errors": {
+    "candidate": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 16,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 11,
+      "SMCI_to_AD": 5,
+      "SMCI_to_CN": 11
+    },
+    "c1": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 11,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 8,
+      "SMCI_to_AD": 10,
+      "SMCI_to_CN": 9
+    },
+    "pc_bbf_v1": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 11,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 12,
+      "SMCI_to_AD": 4,
+      "SMCI_to_CN": 10
+    }
+  },
+  "mechanism": {
+    "gate_mean": 0.6443949728506465,
+    "gate_std": 0.2808312080915624,
+    "gate_min": 0.01713692396879196,
+    "gate_max": 0.9963833093643188,
+    "gate_saturation_fraction": 0.1739130502062099,
+    "residual_shared_ratio_mean": 0.06227517002153157,
+    "residual_shared_ratio_max": 0.07500001043081284,
+    "applied_residual_shared_ratio_mean": 0.04051869872172541,
+    "applied_residual_shared_ratio_max": 0.07472874969244003,
+    "cap_saturation_fraction": 0.5785953376604164,
+    "residual_raw_max_abs": 7.076077938079834
+  },
+  "pc_bbf_gradient_max": {
+    "input_projection": 0.10321202129125595,
+    "residual_output": 0.2865528464317322,
+    "gate_output": 0.0793764591217041
+  },
+  "new_module_max_gradient": 0.2865528464317322,
+  "parameter_count": 866924,
+  "added_parameters_vs_c1": 3953,
+  "fold_acc_mean": 0.9280508474576271,
+  "fold_acc_sample_std": 0.02397417831424658,
+  "folds": [
+    {
+      "fold": 0,
+      "best_epoch": 163,
+      "correct": 56,
+      "acc": 0.9333333333333333
+    },
+    {
+      "fold": 1,
+      "best_epoch": 183,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 2,
+      "best_epoch": 100,
+      "correct": 58,
+      "acc": 0.9666666666666667
+    },
+    {
+      "fold": 3,
+      "best_epoch": 201,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 4,
+      "best_epoch": 98,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 5,
+      "best_epoch": 115,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 6,
+      "best_epoch": 160,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 7,
+      "best_epoch": 63,
+      "correct": 56,
+      "acc": 0.9333333333333333
+    },
+    {
+      "fold": 8,
+      "best_epoch": 129,
+      "correct": 52,
+      "acc": 0.8813559322033898
+    },
+    {
+      "fold": 9,
+      "best_epoch": 56,
+      "correct": 56,
+      "acc": 0.9491525423728814
+    }
+  ],
+  "training_seconds": 455.8413841999136,
+  "required_answers": {
+    "smci_prediction_moved_toward_truth": false,
+    "cn_to_smci_below_12": true,
+    "smci_to_ad_clearly_below_10": true,
+    "repairs_exceed_damages": false,
+    "reached_563": false
+  },
+  "run_command": "python -u -B scripts/run_pc_bbf_conservative_v1_1.py formal --device cuda:0",
+  "next_recommendation_if_target_not_reached": "Gradient-Isolated Pairwise Boundary Fusion (GI-PBF)",
+  "next_experiment_implemented_or_run": false,
+  "config": {
+    "experiment": "pc_bbf_conservative_v1_1",
+    "fold": -1,
+    "seed": 0,
+    "epochs": 400,
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "transductive_full_batch": true,
+    "single_model": true,
+    "ensemble": false,
+    "graph_enabled": false,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "historical_weight_decay": 0.0005,
+    "pc_bbf_output_gate_weight_decay": 0.0,
+    "scheduler": "CustomCosineAnnealingLR",
+    "T_max": 400,
+    "eta_min": 0.0001,
+    "loss": "historical weighted main CE + three C1 OVR auxiliary losses",
+    "label_smoothing": 0.05,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "fusion_rank": 8,
+    "cap_value": 0.075,
+    "pc_bbf_cap": 0.075,
+    "safe_loss": false,
+    "orthogonality": false,
+    "device": "cuda:0",
+    "pc_bbf_v1_base_commit_sha": "c3a2c6ce13241522cc598f58705417106ce7721c",
+    "model_change_vs_pc_bbf_v1": "residual_norm_cap: 0.10 -> 0.075",
+    "formal_folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "resume_completed_folds": true
+  }
+}
