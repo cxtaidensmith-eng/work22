@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "class_mapping": {
+    "AD": 0,
+    "CN": 1,
+    "sMCI": 2
+  },
+  "c1_parameter_count": 862971,
+  "correction_parameter_count": 3098,
+  "total_parameter_count": 866069,
+  "initial_c1_parameter_max_abs_diff": 0.0,
+  "epoch0_c1_vs_base_logit_max_abs_diff": 0.0,
+  "epoch0_corrected_vs_base_logit_max_abs_diff": 0.0,
+  "cpu_rng_equal_after_construction": true,
+  "cuda_rng_equal_after_construction": true,
+  "correction_loss_to_c1_isolated": true,
+  "base_loss_to_correction_isolated": true,
+  "correction_output_row_gradient_norms": [
+    0.006148159969598055,
+    0.004908454138785601
+  ],
+  "pair_counts": {
+    "ad_smci": {
+      "first": 64,
+      "smci": 286,
+      "total": 350,
+      "weights": [
+        2.734375,
+        0.6118881106376648
+      ]
+    },
+    "cn_smci": {
+      "first": 188,
+      "smci": 286,
+      "total": 474,
+      "weights": [
+        1.2606383562088013,
+        0.8286713361740112
+      ]
+    }
+  },
+  "base_one_step_loss_abs_diff": 0.0,
+  "base_one_step_common_parameter_max_abs_diff": 0.0
+}

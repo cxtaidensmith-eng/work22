@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "epochs": 3,
+  "parameter_count": 866069,
+  "class_mapping": {
+    "AD": 0,
+    "CN": 1,
+    "sMCI": 2
+  },
+  "epoch0_corrected_base_max_abs_diff": 0.0,
+  "losses": [
+    {
+      "epoch": 1,
+      "base_loss": 3.3026833534240723,
+      "correction_loss": 0.8229676485061646
+    },
+    {
+      "epoch": 2,
+      "base_loss": 2.899155378341675,
+      "correction_loss": 0.9129984378814697
+    },
+    {
+      "epoch": 3,
+      "base_loss": 6.004568099975586,
+      "correction_loss": 0.6500124931335449
+    }
+  ],
+  "correction_gradient_max": {
+    "input_projection": 0.003993410617113113,
+    "output_ad_smci": 0.006148159969598055,
+    "output_cn_smci": 0.011432248167693615
+  },
+  "delta_ad_smci_abs_max": 0.0018989478703588247,
+  "delta_cn_smci_abs_max": 0.00873017217963934,
+  "uncertainty_ad_smci_min_max": [
+    0.09391535073518753,
+    0.6358921527862549
+  ],
+  "uncertainty_cn_smci_min_max": [
+    0.3041395843029022,
+    0.9716405868530273
+  ],
+  "checkpoint_base_logit_max_abs_diff": 0.0,
+  "checkpoint_corrected_logit_max_abs_diff": 0.0,
+  "ordinary_inference_is_corrected_max_abs_diff": 0.0,
+  "base_logits_saved_for_comparison": true,
+  "base_logits_file": "smoke/base_logits_and_predictions.csv",
+  "corrected_logits_file": "smoke/corrected_logits_and_predictions.csv",
+  "gradient_isolation_check": {
+    "passed": true,
+    "class_mapping": {
+      "AD": 0,
+      "CN": 1,
+      "sMCI": 2
+    },
+    "c1_parameter_count": 862971,
+    "correction_parameter_count": 3098,
+    "total_parameter_count": 866069,
+    "initial_c1_parameter_max_abs_diff": 0.0,
+    "epoch0_c1_vs_base_logit_max_abs_diff": 0.0,
+    "epoch0_corrected_vs_base_logit_max_abs_diff": 0.0,
+    "cpu_rng_equal_after_construction": true,
+    "cuda_rng_equal_after_construction": true,
+    "correction_loss_to_c1_isolated": true,
+    "base_loss_to_correction_isolated": true,
+    "correction_output_row_gradient_norms": [
+      0.006148159969598055,
+      0.004908454138785601
+    ],
+    "pair_counts": {
+      "ad_smci": {
+        "first": 64,
+        "smci": 286,
+        "total": 350,
+        "weights": [
+          2.734375,
+          0.6118881106376648
+        ]
+      },
+      "cn_smci": {
+        "first": 188,
+        "smci": 286,
+        "total": 474,
+        "weights": [
+          1.2606383562088013,
+          0.8286713361740112
+        ]
+      }
+    },
+    "base_one_step_loss_abs_diff": 0.0,
+    "base_one_step_common_parameter_max_abs_diff": 0.0
+  },
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_gi_pbf_v1.py smoke --device cuda:0"
+}
