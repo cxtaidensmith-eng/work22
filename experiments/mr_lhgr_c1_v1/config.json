@@ -1,12 +1,21 @@
 {
   "experiment": "mr_lhgr_c1_v1",
-  "version": "smoke",
-  "source_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "version": "v1",
+  "source_commit": "1d811643173abc406de2df10cfc25a210e88081f",
   "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
   "dataset": "TADPOLE",
   "task": "AD_CN_SMCI",
   "folds": [
-    0
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
   ],
   "seed_per_fold": 0,
   "epochs_per_fold": 400,

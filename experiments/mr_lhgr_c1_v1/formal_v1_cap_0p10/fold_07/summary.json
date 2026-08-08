@@ -1,0 +1,262 @@
+{
+  "passed": true,
+  "version": "v1",
+  "cap": 0.1,
+  "fold": 7,
+  "seed": 0,
+  "epochs": 400,
+  "train_size": 538,
+  "test_size": 60,
+  "best_epoch": 126,
+  "best_metrics": {
+    "correct": 56,
+    "acc": 0.9333333333333333,
+    "macro_f1": 0.9156746031746031,
+    "bacc": 0.9156746031746031,
+    "macro_auc": 0.9700591926417398,
+    "weighted_f1": 0.9333333333333333,
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        0,
+        20,
+        1
+      ],
+      [
+        1,
+        1,
+        30
+      ]
+    ]
+  },
+  "parameter_count": 873723,
+  "graph_parameter_count": 10752,
+  "optimizer_and_ema": {
+    "coverage": 1.0,
+    "base_parameter_count": 862971,
+    "graph_parameter_count": 10752,
+    "total_parameter_count": 873723,
+    "base_lr": 0.01,
+    "base_weight_decay": 0.0005,
+    "graph_lr": 0.01,
+    "graph_weight_decay": 0.0,
+    "historical_ema_enabled": false,
+    "ema_shadow_tracked_for_checkpoint": true,
+    "ema_decay": 0.99,
+    "graph_parameter_names": [
+      "mr_lhgr.high_projections.0.weight",
+      "mr_lhgr.high_projections.1.weight",
+      "mr_lhgr.high_projections.2.weight",
+      "mr_lhgr.high_projections.3.weight",
+      "mr_lhgr.high_projections.4.weight",
+      "mr_lhgr.high_projections.5.weight",
+      "mr_lhgr.low_projections.0.weight",
+      "mr_lhgr.low_projections.1.weight",
+      "mr_lhgr.low_projections.2.weight",
+      "mr_lhgr.low_projections.3.weight",
+      "mr_lhgr.low_projections.4.weight",
+      "mr_lhgr.low_projections.5.weight",
+      "mr_lhgr.output_projection.weight"
+    ]
+  },
+  "graph_gradient_max": {
+    "low": [
+      0.003765411674976349,
+      0.002003370551392436,
+      0.0031377424020320177,
+      0.0028785490430891514,
+      0.0021347017027437687,
+      0.0025781712029129267
+    ],
+    "high": [
+      0.00165361852850765,
+      0.0014056554064154625,
+      0.0018959649605676532,
+      0.0013649488100782037,
+      0.001948955119587481,
+      0.0011823015520349145
+    ],
+    "output": 0.08055595308542252
+  },
+  "mechanism": {
+    "per_modality": {
+      "MRI": {
+        "low_relation_increment_rms": 0.4297432005405426,
+        "high_relation_increment_rms": 0.4297432005405426,
+        "delta_low_norm_mean": 8.945789337158203,
+        "delta_high_norm_mean": 6.186810493469238,
+        "wl_gradient_max": 0.003765411674976349,
+        "wh_gradient_max": 0.00165361852850765
+      },
+      "PET": {
+        "low_relation_increment_rms": 0.37233442068099976,
+        "high_relation_increment_rms": 0.37233442068099976,
+        "delta_low_norm_mean": 7.314363479614258,
+        "delta_high_norm_mean": 4.792836666107178,
+        "wl_gradient_max": 0.002003370551392436,
+        "wh_gradient_max": 0.0014056554064154625
+      },
+      "CSF": {
+        "low_relation_increment_rms": 0.3959164023399353,
+        "high_relation_increment_rms": 0.3959164321422577,
+        "delta_low_norm_mean": 7.3033576011657715,
+        "delta_high_norm_mean": 3.751110553741455,
+        "wl_gradient_max": 0.0031377424020320177,
+        "wh_gradient_max": 0.0018959649605676532
+      },
+      "Risk": {
+        "low_relation_increment_rms": 0.4693024456501007,
+        "high_relation_increment_rms": 0.4693024456501007,
+        "delta_low_norm_mean": 6.467135906219482,
+        "delta_high_norm_mean": 4.746462345123291,
+        "wl_gradient_max": 0.0028785490430891514,
+        "wh_gradient_max": 0.0013649488100782037
+      },
+      "COG": {
+        "low_relation_increment_rms": 0.30047962069511414,
+        "high_relation_increment_rms": 0.30047962069511414,
+        "delta_low_norm_mean": 5.792032241821289,
+        "delta_high_norm_mean": 4.159616947174072,
+        "wl_gradient_max": 0.0021347017027437687,
+        "wh_gradient_max": 0.001948955119587481
+      },
+      "ROI": {
+        "low_relation_increment_rms": 0.3710818290710449,
+        "high_relation_increment_rms": 0.3710818290710449,
+        "delta_low_norm_mean": 9.255986213684082,
+        "delta_high_norm_mean": 5.871833324432373,
+        "wl_gradient_max": 0.0025781712029129267,
+        "wh_gradient_max": 0.0011823015520349145
+      }
+    },
+    "r_graph_h0_ratio_mean": 0.09871149063110352,
+    "r_graph_h0_ratio_max": 0.10000000894069672,
+    "cap_saturation_fraction": 0.9166666865348816,
+    "w_out_gradient_max": 0.08055595308542252
+  },
+  "edge_dependence": {
+    "numerator_squared": 1777.447265625,
+    "denominator_squared": 1777.447265625,
+    "edge_dependence_ratio": 0.9999999997628071,
+    "identity_r_graph_max_abs": 0.0,
+    "real_low_relation_increment_max_abs": 2.882708787918091,
+    "real_high_relation_increment_max_abs": 2.8827085494995117,
+    "logits_max_abs_diff": 0.5370938777923584,
+    "probability_abs_sum": 0.45055076479911804,
+    "probability_element_count": 180,
+    "probability_mean_abs_diff": 0.0025030598044395447,
+    "argmax_changed_count": 0
+  },
+  "comparison_vs_c1": {
+    "repairs": 0,
+    "damages": 0,
+    "net_repairs": 0,
+    "changed_predictions": 0,
+    "repair_subject_indices": [],
+    "damage_subject_indices": [],
+    "changed_subject_indices": []
+  },
+  "boundary_errors": {
+    "AD_SMCI": 2,
+    "CN_SMCI": 2,
+    "AD_CN": 0
+  },
+  "elapsed_seconds": 58.87078180001117,
+  "config": {
+    "experiment": "mr_lhgr_c1_v1",
+    "version": "v1",
+    "source_commit": "1d811643173abc406de2df10cfc25a210e88081f",
+    "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      7
+    ],
+    "seed_per_fold": 0,
+    "epochs_per_fold": 400,
+    "device": "cuda:0",
+    "full_batch_transductive": true,
+    "single_model": true,
+    "ensemble": false,
+    "multi_seed": false,
+    "orthogonality": false,
+    "graph_k": 8,
+    "relation_rank": 8,
+    "graph_residual_cap": 0.1,
+    "fixed_unlabeled_modality_graphs": true,
+    "old_graph_enabled": false,
+    "loss": "historical C1 weighted main CE plus three OVR auxiliary losses; no new loss",
+    "optimizer": "separate Adam for C1 and graph parameters",
+    "scheduler": "separate synchronized CustomCosineAnnealingLR(T_max=400)",
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "historical_ema_enabled": false,
+    "ema_shadow_checkpoint_audit_only": true,
+    "parameter_count": 873723,
+    "graph_parameter_count": 10752,
+    "v1_1_relation_dependence_ratio_threshold": 0.99,
+    "v1_1_identity_residual_max_abs_threshold": 1e-07,
+    "v1_1_relation_logit_max_abs_diff_threshold": 1e-08,
+    "v1_1_relation_probability_mean_abs_diff_threshold": 1e-10,
+    "v1_1_low_high_increment_nonzero_threshold": 1e-08,
+    "v1_1_edge_jaccard_max_threshold": 0.99,
+    "v1_1_cap_saturation_threshold": 0.7,
+    "obvious_bacc_decline_threshold": 0.003,
+    "graph_audit": {
+      "built_once": true,
+      "uses_labels": false,
+      "k": 8,
+      "per_modality": {
+        "MRI": {
+          "undirected_edge_count": 4215,
+          "nonzero_degree_mean": 14.096989631652832,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.8963578343391418
+        },
+        "PET": {
+          "undirected_edge_count": 4005,
+          "nonzero_degree_mean": 13.394648551940918,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.9524332284927368
+        },
+        "CSF": {
+          "undirected_edge_count": 3026,
+          "nonzero_degree_mean": 10.120401382446289,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.9910581707954407
+        },
+        "Risk": {
+          "undirected_edge_count": 3063,
+          "nonzero_degree_mean": 10.244147300720215,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.98813796043396
+        },
+        "COG": {
+          "undirected_edge_count": 3773,
+          "nonzero_degree_mean": 12.618728637695312,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.974890947341919
+        },
+        "ROI": {
+          "undirected_edge_count": 3335,
+          "nonzero_degree_mean": 11.15384578704834,
+          "nonzero_degree_min": 8,
+          "normalized_weighted_degree_mean": 0.9881846904754639
+        }
+      },
+      "edge_jaccard": {
+        "mean": 0.026779437304274692,
+        "min": 0.010454696315964155,
+        "max": 0.0919369235346623,
+        "pair_count": 15
+      }
+    }
+  }
+}

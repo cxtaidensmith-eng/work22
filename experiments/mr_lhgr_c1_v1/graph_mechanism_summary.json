@@ -1,0 +1,96 @@
+{
+  "per_modality": {
+    "MRI": {
+      "low_relation_increment_rms": 0.42080676040060955,
+      "high_relation_increment_rms": 0.4208067660804348,
+      "delta_low_norm_mean": 5.678706731285937,
+      "delta_high_norm_mean": 7.254561629981103,
+      "wl_gradient_max": 0.005076676607131958,
+      "wh_gradient_max": 0.0035129364114254713,
+      "undirected_edge_count": 4215,
+      "nonzero_degree_mean": 14.096989631652832,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.8963578343391418
+    },
+    "PET": {
+      "low_relation_increment_rms": 0.4097507876419587,
+      "high_relation_increment_rms": 0.4097507875510502,
+      "delta_low_norm_mean": 4.29534194700694,
+      "delta_high_norm_mean": 5.268249298417848,
+      "wl_gradient_max": 0.00392216956242919,
+      "wh_gradient_max": 0.003423115238547325,
+      "undirected_edge_count": 4005,
+      "nonzero_degree_mean": 13.394648551940918,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9524332284927368
+    },
+    "CSF": {
+      "low_relation_increment_rms": 0.43056098136444104,
+      "high_relation_increment_rms": 0.4305609869972882,
+      "delta_low_norm_mean": 4.789137514139896,
+      "delta_high_norm_mean": 4.997907399333839,
+      "wl_gradient_max": 0.005250127520412207,
+      "wh_gradient_max": 0.0053144036792218685,
+      "undirected_edge_count": 3026,
+      "nonzero_degree_mean": 10.120401382446289,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9910581707954407
+    },
+    "Risk": {
+      "low_relation_increment_rms": 0.4274769060726991,
+      "high_relation_increment_rms": 0.4274769060726991,
+      "delta_low_norm_mean": 4.673798770410161,
+      "delta_high_norm_mean": 4.925250227236029,
+      "wl_gradient_max": 0.004765102174133062,
+      "wh_gradient_max": 0.0029970775358378887,
+      "undirected_edge_count": 3063,
+      "nonzero_degree_mean": 10.244147300720215,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.98813796043396
+    },
+    "COG": {
+      "low_relation_increment_rms": 0.30643574412695956,
+      "high_relation_increment_rms": 0.30643574412695956,
+      "delta_low_norm_mean": 3.5937254668079492,
+      "delta_high_norm_mean": 4.130901986938655,
+      "wl_gradient_max": 0.0032445520628243685,
+      "wh_gradient_max": 0.002958615543320775,
+      "undirected_edge_count": 3773,
+      "nonzero_degree_mean": 12.618728637695312,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.974890947341919
+    },
+    "ROI": {
+      "low_relation_increment_rms": 0.38919898153290466,
+      "high_relation_increment_rms": 0.38919897849348073,
+      "delta_low_norm_mean": 4.895439009602652,
+      "delta_high_norm_mean": 5.407978852058334,
+      "wl_gradient_max": 0.003019079566001892,
+      "wh_gradient_max": 0.003908294253051281,
+      "undirected_edge_count": 3335,
+      "nonzero_degree_mean": 11.15384578704834,
+      "nonzero_degree_min": 8,
+      "normalized_weighted_degree_mean": 0.9881846904754639
+    }
+  },
+  "r_graph_h0_ratio_mean": 0.08944976091833418,
+  "r_graph_h0_ratio_max": 0.10000001639127731,
+  "cap_saturation_fraction": 0.7842809551186786,
+  "w_out_gradient_max": 0.08170726895332336,
+  "edge_jaccard": {
+    "mean": 0.026779437304274692,
+    "min": 0.010454696315964155,
+    "max": 0.0919369235346623,
+    "pair_count": 15
+  },
+  "edge_dependence": {
+    "edge_dependence_ratio": 0.9999999999434225,
+    "identity_r_graph_max_abs": 0.0,
+    "real_low_relation_increment_max_abs": 2.882708787918091,
+    "real_high_relation_increment_max_abs": 2.8827085494995117,
+    "logits_max_abs_diff": 0.9482386112213135,
+    "probability_mean_abs_diff": 0.002957072854457359,
+    "argmax_changed_count": 3,
+    "valid": true
+  }
+}
