@@ -1,0 +1,407 @@
+{
+  "manifest_version": 1,
+  "created_before_any_training": true,
+  "created_at_utc": "2026-08-09T02:20:54.133766+00:00",
+  "creation_head": "a5e515eaa8238a384210cfb7a875f78aa2be8178",
+  "runner_sha256": "c4d1fccf5c7c21137ac1494beb4c16a59aa14b21d19f788545d09066fb22f66e",
+  "manifest_core_sha256": "e5ff9db8efa63829e2962b67ff0b44d324a550384d239c43b5298d145c36f4a4",
+  "manifest_core": {
+    "experiment": "c1_broad_hparam_search_v1",
+    "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "protocol": {
+      "dataset": "TADPOLE",
+      "task": "AD_CN_SMCI",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "epochs_per_fold": 400,
+      "full_batch_transductive": true,
+      "single_model": true,
+      "ensemble": false,
+      "orthogonality": false,
+      "graph": false,
+      "optimizer": "Adam",
+      "scheduler": "CustomCosineAnnealingLR(T_max=400), ratio-preserving two-group compatibility",
+      "best_epoch_rule": [
+        "ACC",
+        "Probability Macro-AUC",
+        "Macro-F1"
+      ],
+      "ema": false
+    },
+    "sampler": {
+      "requested": "Optuna TPESampler(seed=20260808,n_startup_trials=8)",
+      "optuna_detected": false,
+      "effective": "python_stdlib_deterministic_fallback",
+      "reason": "Optuna unavailable; dependency installation forbidden",
+      "seed": 20260808
+    },
+    "search_space": {
+      "base_lr": {
+        "distribution": "log_uniform",
+        "low": 0.008,
+        "high": 0.013
+      },
+      "base_weight_decay": {
+        "distribution": "log_uniform",
+        "low": 0.0003,
+        "high": 0.0012
+      },
+      "lambda_aux": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "adapter_lr_multiplier": [
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "dropout_multiplier": [
+        0.9,
+        1.0,
+        1.1
+      ]
+    },
+    "stage_a": {
+      "n_trials": 24,
+      "rank": 8,
+      "configs": [
+        {
+          "trial_id": "A000",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.01091770674708269,
+          "base_weight_decay": 0.0003143871484026444,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 0.9,
+          "generation_index": 0
+        },
+        {
+          "trial_id": "A001",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.012999364576824633,
+          "base_weight_decay": 0.0008333048722803924,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 1
+        },
+        {
+          "trial_id": "A002",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.00813065926787048,
+          "base_weight_decay": 0.0009436201773735912,
+          "lambda_aux": 0.25,
+          "adapter_lr_multiplier": 2.0,
+          "dropout_multiplier": 1.0,
+          "generation_index": 2
+        },
+        {
+          "trial_id": "A003",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008221537804149586,
+          "base_weight_decay": 0.001028432427314339,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 2.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 3
+        },
+        {
+          "trial_id": "A004",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.010925774696611561,
+          "base_weight_decay": 0.0003572813253703121,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 0.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 4
+        },
+        {
+          "trial_id": "A005",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008434008826449563,
+          "base_weight_decay": 0.0009590415190217799,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 0.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 5
+        },
+        {
+          "trial_id": "A006",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009156469125045266,
+          "base_weight_decay": 0.0005553045510386114,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 6
+        },
+        {
+          "trial_id": "A007",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009954297170728382,
+          "base_weight_decay": 0.001118618078176869,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 7
+        },
+        {
+          "trial_id": "A008",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008305391183909829,
+          "base_weight_decay": 0.00036004970674397637,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 0.5,
+          "dropout_multiplier": 1.0,
+          "generation_index": 8
+        },
+        {
+          "trial_id": "A009",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008127020991687738,
+          "base_weight_decay": 0.0007579417572345449,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.1,
+          "generation_index": 9
+        },
+        {
+          "trial_id": "A010",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009493225876310428,
+          "base_weight_decay": 0.0011553792084187206,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 10
+        },
+        {
+          "trial_id": "A011",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008928619791215137,
+          "base_weight_decay": 0.000980462752203792,
+          "lambda_aux": 0.5,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 11
+        },
+        {
+          "trial_id": "A012",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.011271416075886307,
+          "base_weight_decay": 0.0010917677921787822,
+          "lambda_aux": 0.5,
+          "adapter_lr_multiplier": 2.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 12
+        },
+        {
+          "trial_id": "A013",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.010682365296333124,
+          "base_weight_decay": 0.0007446171998489365,
+          "lambda_aux": 0.25,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 1.1,
+          "generation_index": 13
+        },
+        {
+          "trial_id": "A014",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008601782674917216,
+          "base_weight_decay": 0.0006444801680279886,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 1.0,
+          "dropout_multiplier": 1.0,
+          "generation_index": 14
+        },
+        {
+          "trial_id": "A015",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.010003819887507877,
+          "base_weight_decay": 0.0009556745109310044,
+          "lambda_aux": 1.0,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.0,
+          "generation_index": 15
+        },
+        {
+          "trial_id": "A016",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.010117597037912152,
+          "base_weight_decay": 0.0008895453658310538,
+          "lambda_aux": 0.25,
+          "adapter_lr_multiplier": 0.5,
+          "dropout_multiplier": 1.0,
+          "generation_index": 16
+        },
+        {
+          "trial_id": "A017",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008092580568139527,
+          "base_weight_decay": 0.0003508818750106552,
+          "lambda_aux": 0.25,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 17
+        },
+        {
+          "trial_id": "A018",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008711147812881796,
+          "base_weight_decay": 0.0005894904371866145,
+          "lambda_aux": 0.5,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.1,
+          "generation_index": 18
+        },
+        {
+          "trial_id": "A019",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009705174700007311,
+          "base_weight_decay": 0.0008745888025368414,
+          "lambda_aux": 0.25,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.0,
+          "generation_index": 19
+        },
+        {
+          "trial_id": "A020",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.008409739783546435,
+          "base_weight_decay": 0.0003768984665775654,
+          "lambda_aux": 0.5,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 0.9,
+          "generation_index": 20
+        },
+        {
+          "trial_id": "A021",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009208590799445818,
+          "base_weight_decay": 0.0006994181696565131,
+          "lambda_aux": 0.5,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.1,
+          "generation_index": 21
+        },
+        {
+          "trial_id": "A022",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.009578967357949162,
+          "base_weight_decay": 0.0006792737441196888,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.1,
+          "generation_index": 22
+        },
+        {
+          "trial_id": "A023",
+          "stage": "A",
+          "rank": 8,
+          "base_lr": 0.01069133499340664,
+          "base_weight_decay": 0.0009859272459773758,
+          "lambda_aux": 0.75,
+          "adapter_lr_multiplier": 1.5,
+          "dropout_multiplier": 1.0,
+          "generation_index": 23
+        }
+      ]
+    },
+    "stage_b": {
+      "parent_slots": 3,
+      "ranks": [
+        4,
+        12,
+        16
+      ],
+      "n_trials": 9,
+      "selection": "protected Stage A top 3 by Correct>AUC>Macro-F1; fill from overall ranking only if fewer than 3 protected",
+      "protected_condition": {
+        "AD_CN_errors": 0,
+        "BACC_minimum": 0.9113359
+      },
+      "deferred_slots": [
+        {
+          "parent_slot": 1,
+          "rank": 4
+        },
+        {
+          "parent_slot": 1,
+          "rank": 12
+        },
+        {
+          "parent_slot": 1,
+          "rank": 16
+        },
+        {
+          "parent_slot": 2,
+          "rank": 4
+        },
+        {
+          "parent_slot": 2,
+          "rank": 12
+        },
+        {
+          "parent_slot": 2,
+          "rank": 16
+        },
+        {
+          "parent_slot": 3,
+          "rank": 4
+        },
+        {
+          "parent_slot": 3,
+          "rank": 12
+        },
+        {
+          "parent_slot": 3,
+          "rank": 16
+        }
+      ]
+    },
+    "objective_scalar": "correct + 1e-3 * macro_auc + 1e-6 * macro_f1",
+    "ranking": [
+      "Correct",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ]
+  }
+}

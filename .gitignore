@@ -29,6 +29,12 @@
 /OPT_Hyper
 # Generated experiment checkpoints
 /experiments/**/*.pt
+# C1 broad-search fold/trial state is resumable but remains local; only the
+# smoke summary, locked manifest, and compact top-level final artifacts commit.
+/experiments/c1_broad_hparam_search_v1/stage_a/
+/experiments/c1_broad_hparam_search_v1/stage_b/
+/experiments/c1_broad_hparam_search_v1/smoke/recovery_probe/
+/experiments/c1_broad_hparam_search_v1/stage_b_plan.json
 # Generated UM-LER best checkpoints remain local.
 /results/um_ler_v1*/**/*.pt
 # Frozen Original caches and refiner checkpoints remain local.
