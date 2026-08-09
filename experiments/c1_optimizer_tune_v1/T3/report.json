@@ -1,0 +1,278 @@
+{
+  "arm": "T3",
+  "metrics": {
+    "correct": 546,
+    "acc": 0.9130434782608695,
+    "macro_f1": 0.9006004315601839,
+    "bacc": 0.8824118236993881,
+    "macro_auc": 0.9582175308222262,
+    "weighted_f1": 0.9124829269532458,
+    "confusion_matrix": [
+      [
+        57,
+        0,
+        15
+      ],
+      [
+        0,
+        192,
+        17
+      ],
+      [
+        3,
+        17,
+        297
+      ]
+    ]
+  },
+  "ten_fold_acc_mean": 0.912994350282486,
+  "ten_fold_acc_sample_std": 0.01751716151296944,
+  "metric_delta_vs_c1": {
+    "correct": -14,
+    "acc": -0.02341137123745829,
+    "macro_f1": -0.0169452858620609,
+    "bacc": -0.033924110214995085,
+    "macro_auc": -0.0003432442634685451,
+    "weighted_f1": -0.02388305937243118
+  },
+  "comparison_vs_c1": {
+    "repairs": 16,
+    "damages": 30,
+    "net_repairs": -14,
+    "changed_predictions": 46,
+    "repair_subject_indices": [
+      24,
+      55,
+      89,
+      227,
+      234,
+      244,
+      282,
+      305,
+      350,
+      361,
+      391,
+      407,
+      428,
+      501,
+      519,
+      538
+    ],
+    "damage_subject_indices": [
+      27,
+      43,
+      47,
+      54,
+      68,
+      69,
+      119,
+      133,
+      145,
+      155,
+      169,
+      183,
+      191,
+      196,
+      197,
+      221,
+      242,
+      248,
+      273,
+      289,
+      296,
+      363,
+      374,
+      388,
+      437,
+      522,
+      524,
+      528,
+      562,
+      586
+    ],
+    "changed_subject_indices": [
+      24,
+      27,
+      43,
+      47,
+      54,
+      55,
+      68,
+      69,
+      89,
+      119,
+      133,
+      145,
+      155,
+      169,
+      183,
+      191,
+      196,
+      197,
+      221,
+      227,
+      234,
+      242,
+      244,
+      248,
+      273,
+      282,
+      289,
+      296,
+      305,
+      350,
+      361,
+      363,
+      374,
+      388,
+      391,
+      407,
+      428,
+      437,
+      501,
+      519,
+      522,
+      524,
+      528,
+      538,
+      562,
+      586
+    ]
+  },
+  "boundary_errors": {
+    "AD_SMCI": 18,
+    "CN_SMCI": 34,
+    "AD_CN": 0
+  },
+  "predicted_class_counts": {
+    "AD": 60,
+    "CN": 209,
+    "SMCI": 329
+  },
+  "bacc_risk": true,
+  "parameter_count": 862971,
+  "effective_use_ema": false,
+  "training_seconds": 443.1285498999059,
+  "folds": [
+    {
+      "fold": 0,
+      "best_epoch": 183,
+      "correct": 54,
+      "acc": 0.9
+    },
+    {
+      "fold": 1,
+      "best_epoch": 251,
+      "correct": 54,
+      "acc": 0.9
+    },
+    {
+      "fold": 2,
+      "best_epoch": 61,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 3,
+      "best_epoch": 61,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 4,
+      "best_epoch": 80,
+      "correct": 54,
+      "acc": 0.9
+    },
+    {
+      "fold": 5,
+      "best_epoch": 194,
+      "correct": 56,
+      "acc": 0.9333333333333333
+    },
+    {
+      "fold": 6,
+      "best_epoch": 134,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 7,
+      "best_epoch": 346,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 8,
+      "best_epoch": 166,
+      "correct": 53,
+      "acc": 0.8983050847457628
+    },
+    {
+      "fold": 9,
+      "best_epoch": 84,
+      "correct": 53,
+      "acc": 0.8983050847457628
+    }
+  ],
+  "config": {
+    "experiment": "c1_optimizer_tune_v1",
+    "arm": "T3",
+    "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "epochs_per_fold": 400,
+    "parameter_count": 862971,
+    "optimizer": "Adam",
+    "learning_rate": 0.0075,
+    "weight_decay": 0.00025,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "scheduler_eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75,
+    "gradient_clip": 1.0,
+    "loss": "historical C1 weighted main CE plus three OVR auxiliary losses",
+    "orthogonality": false,
+    "graph_enabled": false,
+    "full_batch_transductive": true,
+    "single_model": true,
+    "ensemble": false,
+    "multi_seed": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "tracked_base_use_ema": false,
+    "effective_use_ema": false,
+    "ema_20_21_conflict_disposition": "not applied; tracked C1=560 runner/config has EMA disabled, preserving lr/wd-only attribution",
+    "source_commit": "b8478d65b3765e83db0c4d6103e876e68ffcdb6b",
+    "canonical_config_sha256": "092a429dfb6a071518034118367afda580f9c9d5b9f1dfdd431e9473e8168caa",
+    "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+    "historical_config_sha256": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "runner_sha256": "1cc22239dfe9444644c9ab855a17f5c281a134be8faf0a4695e61773c4fd3913",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "torch_version": "2.5.1+cu121",
+    "torch_cuda_version": "12.1"
+  }
+}

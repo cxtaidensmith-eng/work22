@@ -1,0 +1,4 @@
+truth,pred_AD,pred_CN,pred_SMCI
+AD,59,0,13
+CN,0,190,19
+SMCI,8,8,301

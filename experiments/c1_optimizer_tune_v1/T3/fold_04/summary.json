@@ -1,0 +1,90 @@
+{
+  "arm": "T3",
+  "fold": 4,
+  "train_size": 538,
+  "test_size": 60,
+  "best_epoch": 80,
+  "best_metrics": {
+    "correct": 54,
+    "acc": 0.9,
+    "macro_f1": 0.8823953823953824,
+    "bacc": 0.8521825396825397,
+    "macro_auc": 0.9490596754747699,
+    "weighted_f1": 0.8987373737373737,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        2
+      ],
+      [
+        0,
+        2,
+        30
+      ]
+    ]
+  },
+  "parameter_count": 862971,
+  "optimizer": {
+    "lr": 0.0075,
+    "weight_decay": 0.00025
+  },
+  "effective_use_ema": false,
+  "elapsed_seconds": 42.88792929984629,
+  "config": {
+    "experiment": "c1_optimizer_tune_v1",
+    "arm": "T3",
+    "base_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+    "dataset": "TADPOLE",
+    "task": "AD_CN_SMCI",
+    "folds": [
+      4
+    ],
+    "seed_per_fold": 0,
+    "epochs_per_fold": 400,
+    "parameter_count": 862971,
+    "optimizer": "Adam",
+    "learning_rate": 0.0075,
+    "weight_decay": 0.00025,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "scheduler": "CustomCosineAnnealingLR",
+    "scheduler_t_max": 400,
+    "scheduler_eta_min": 0.0001,
+    "label_smoothing": 0.05,
+    "logit_adjust_tau": 0.75,
+    "gradient_clip": 1.0,
+    "loss": "historical C1 weighted main CE plus three OVR auxiliary losses",
+    "orthogonality": false,
+    "graph_enabled": false,
+    "full_batch_transductive": true,
+    "single_model": true,
+    "ensemble": false,
+    "multi_seed": false,
+    "best_epoch_rule": [
+      "ACC",
+      "Probability Macro-AUC",
+      "Macro-F1"
+    ],
+    "tracked_base_use_ema": false,
+    "effective_use_ema": false,
+    "ema_20_21_conflict_disposition": "not applied; tracked C1=560 runner/config has EMA disabled, preserving lr/wd-only attribution",
+    "source_commit": "b8478d65b3765e83db0c4d6103e876e68ffcdb6b",
+    "canonical_config_sha256": "1317c164350d7339c2c0cda3acecc4ab7a9e61f2ddbf5b51e8274a32a631608a",
+    "historical_config_path": "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini",
+    "historical_config_sha256": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "runner_sha256": "1cc22239dfe9444644c9ab855a17f5c281a134be8faf0a4695e61773c4fd3913",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "torch_version": "2.5.1+cu121",
+    "torch_cuda_version": "12.1"
+  }
+}
