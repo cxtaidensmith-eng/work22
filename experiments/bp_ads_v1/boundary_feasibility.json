@@ -1,0 +1,173 @@
+{
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "schemes": {
+    "B1_c1_protect_cn_a012_ads": {
+      "available": true,
+      "metrics": {
+        "correct": 564,
+        "acc": 0.9431438127090301,
+        "macro_f1": 0.9294627866574855,
+        "bacc": 0.9312763475141028,
+        "macro_auc": 0.9630257693637971,
+        "weighted_f1": 0.9431858020359235,
+        "confusion_matrix": [
+          [
+            64,
+            0,
+            8
+          ],
+          [
+            0,
+            201,
+            8
+          ],
+          [
+            9,
+            9,
+            299
+          ]
+        ],
+        "AD_to_SMCI": 8,
+        "SMCI_to_AD": 9,
+        "CN_to_SMCI": 8,
+        "SMCI_to_CN": 9,
+        "AD_SMCI_errors": 17,
+        "CN_SMCI_errors": 17,
+        "AD_CN_errors": 0,
+        "predicted_class_counts": {
+          "AD": 73,
+          "CN": 210,
+          "SMCI": 315
+        }
+      },
+      "vs_c1": {
+        "repairs": 9,
+        "damages": 5,
+        "changed": 14
+      },
+      "vs_a012": {
+        "repairs": 13,
+        "damages": 11,
+        "changed": 26
+      },
+      "protected_subject_count": 210,
+      "protected_probability_max_abs_diff": 0.0,
+      "passes_formal_gate": true
+    },
+    "B2_c1_protect_cn_pc_ads": {
+      "available": true,
+      "metrics": {
+        "correct": 564,
+        "acc": 0.9431438127090301,
+        "macro_f1": 0.9279445044378978,
+        "bacc": 0.920542032757706,
+        "macro_auc": 0.9669301631385068,
+        "weighted_f1": 0.9428446723622044,
+        "confusion_matrix": [
+          [
+            61,
+            0,
+            11
+          ],
+          [
+            0,
+            201,
+            8
+          ],
+          [
+            6,
+            9,
+            302
+          ]
+        ],
+        "AD_to_SMCI": 11,
+        "SMCI_to_AD": 6,
+        "CN_to_SMCI": 8,
+        "SMCI_to_CN": 9,
+        "AD_SMCI_errors": 17,
+        "CN_SMCI_errors": 17,
+        "AD_CN_errors": 0,
+        "predicted_class_counts": {
+          "AD": 67,
+          "CN": 210,
+          "SMCI": 321
+        }
+      },
+      "vs_c1": {
+        "repairs": 11,
+        "damages": 7,
+        "changed": 18
+      },
+      "vs_a012": {
+        "repairs": 21,
+        "damages": 19,
+        "changed": 41
+      },
+      "protected_subject_count": 210,
+      "protected_probability_max_abs_diff": 0.0,
+      "passes_formal_gate": false
+    },
+    "B3_a012_protect_ad_c1_cn_smci": {
+      "available": true,
+      "metrics": {
+        "correct": 565,
+        "acc": 0.9448160535117057,
+        "macro_f1": 0.9331137807941078,
+        "bacc": 0.9323278722249335,
+        "macro_auc": 0.9630549503916201,
+        "weighted_f1": 0.9447568821039385,
+        "confusion_matrix": [
+          [
+            64,
+            1,
+            7
+          ],
+          [
+            0,
+            201,
+            8
+          ],
+          [
+            7,
+            10,
+            300
+          ]
+        ],
+        "AD_to_SMCI": 7,
+        "SMCI_to_AD": 7,
+        "CN_to_SMCI": 8,
+        "SMCI_to_CN": 10,
+        "AD_SMCI_errors": 14,
+        "CN_SMCI_errors": 18,
+        "AD_CN_errors": 1,
+        "predicted_class_counts": {
+          "AD": 71,
+          "CN": 212,
+          "SMCI": 315
+        }
+      },
+      "vs_c1": {
+        "repairs": 8,
+        "damages": 3,
+        "changed": 12
+      },
+      "vs_a012": {
+        "repairs": 15,
+        "damages": 12,
+        "changed": 28
+      },
+      "protected_subject_count": 71,
+      "protected_probability_max_abs_diff": 0.0,
+      "passes_formal_gate": false
+    }
+  },
+  "eligible_ranked": [
+    "B1_c1_protect_cn_a012_ads"
+  ],
+  "selected_direction": "B1_c1_protect_cn_a012_ads",
+  "stage_d_required": true
+}

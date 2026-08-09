@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "fold": 0,
+  "epochs": 3,
+  "direction": "B1_c1_protect_cn_a012_ads",
+  "initial_probability_max_abs_diff": 0.0,
+  "c1_checkpoint_oof_probability_max_abs_diff": 0.0,
+  "c1_checkpoint_oof_prediction_match": true,
+  "losses": [
+    0.006938092410564423,
+    0.006889699958264828,
+    0.006373826880007982
+  ],
+  "expert_gradient_norms": [
+    0.0033408873714506626,
+    0.003562741680070758,
+    0.011685268953442574
+  ],
+  "expert_gradient_max_abs_by_parameter": {
+    "0.weight": [
+      0.0,
+      0.0004644038272090256,
+      0.0009467146592214704
+    ],
+    "0.bias": [
+      0.0,
+      1.869642801466398e-05,
+      8.021804387681186e-05
+    ],
+    "2.weight": [
+      0.0015406283782795072,
+      0.0011442431714385748,
+      0.007056110538542271
+    ],
+    "2.bias": [
+      0.0022168392315506935,
+      0.0021725869737565517,
+      0.0020367829129099846
+    ]
+  },
+  "expert_parameter_max_abs_change": 0.030041100457310677,
+  "expert_parameter_change_by_name": {
+    "0.weight": 0.030041100457310677,
+    "0.bias": 0.029815208166837692,
+    "2.weight": 0.029286710545420647,
+    "2.bias": 0.029951974749565125
+  },
+  "train_only_audit": {
+    "train_count": 350,
+    "AD_count": 64,
+    "SMCI_count": 286,
+    "AD_weight": 2.734375,
+    "SMCI_weight": 0.6118881118881119,
+    "train_subject_indices_sha256": "0888e66ad57f3fd80d96e92470a786f8c602a0527bfaea491a7fef215fb7f863",
+    "test_subject_count_read_by_loss": 0
+  },
+  "protected_cn_count": 22,
+  "checkpoint_strict_load": true,
+  "checkpoint_roundtrip_max_abs_diff": 0.0,
+  "backbone_parameters": 862971,
+  "expert_parameters": 3089,
+  "total_parameters": 866060,
+  "single_model": true,
+  "ensemble": false,
+  "config": {
+    "experiment": "bp_ads_v1",
+    "fold": 0,
+    "epochs": 3,
+    "direction": "B1_c1_protect_cn_a012_ads",
+    "source_commit_at_smoke": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+    "runner_sha256": "8f36d9079eca1b5c59111c4c3d980dfc49202a430791b9aca38ca55fac864cb7",
+    "model_sha256": "7985ca2764fd18126086e5e9410d6ef320441a69c52e280bcb87f57d2c26240e"
+  },
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_bp_ads_v1.py smoke --device cuda:0"
+}

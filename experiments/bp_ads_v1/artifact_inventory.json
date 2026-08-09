@@ -1,0 +1,128 @@
+{
+  "experiment": "bp_ads_v1",
+  "alignment": {
+    "subjects": 598,
+    "unique_ids": true,
+    "labels_and_folds_match": true,
+    "alignment_key": "subject_index"
+  },
+  "oof": {
+    "c1": {
+      "available": true,
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\oof_predictions.csv",
+      "sha256": "bac14e3347cacbe1f1e566be182a32df6848650c8b0e1a4c2a52d2bb3214e654",
+      "probabilities_available": true,
+      "raw_logits_available": true
+    },
+    "a012": {
+      "available": true,
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\c1_broad_hparam_search_v1\\experiments\\c1_broad_hparam_search_v1\\stage_a\\trial_A012\\oof_predictions.csv",
+      "sha256": "deec3a235781bb4d0510ba04792ca27003a2295da63f6f3eb27d8ad66872a4f0",
+      "probabilities_available": true,
+      "raw_logits_available": true
+    },
+    "pc_bbf": {
+      "available": true,
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\pc_bbf_c1_v1\\experiments\\pc_bbf_c1_v1\\formal\\oof_predictions.csv",
+      "sha256": "680b3e2c43d722c0b55ab1a92e8b7aa96f62734c1eb4ef5559189a134762ebca",
+      "probabilities_available": true,
+      "raw_logits_available": true
+    },
+    "a007": {
+      "available": true,
+      "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\c1_broad_hparam_search_v1\\experiments\\c1_broad_hparam_search_v1\\stage_a\\trial_A007\\oof_predictions.csv",
+      "sha256": "d1ddc50f681f7a97114dbd58b97c95550af3dc54b46c95c6c4a1db4dd3d4e794",
+      "probabilities_available": true,
+      "raw_logits_available": true
+    }
+  },
+  "checkpoints": {
+    "c1": {
+      "available_folds": 10,
+      "folds": [
+        {
+          "fold": 0,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_00\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 1,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_01\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 2,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_02\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 3,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_03\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 4,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_04\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 5,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_05\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 6,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_06\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 7,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_07\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 8,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_08\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+          "schema": "direct_state_dict"
+        },
+        {
+          "fold": 9,
+          "path": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_09\\checkpoint_best.pt",
+          "available": true,
+          "sha256": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c",
+          "schema": "direct_state_dict"
+        }
+      ]
+    },
+    "a012": {
+      "available_folds": 0,
+      "exact_rerun_required": true
+    },
+    "a007": {
+      "available_folds": 0,
+      "exact_rerun_required": true
+    },
+    "pc_bbf": {
+      "weight_soup_forbidden": true
+    }
+  },
+  "test_label_usage": "never enters features, model weights, soup generation, specialist inputs, or gradient-bearing loss; held-out truth is used only by the locked historical best-epoch scoring rule and final OOF metrics"
+}

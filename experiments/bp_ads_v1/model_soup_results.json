@@ -1,0 +1,178 @@
+{
+  "probability_feasibility": {
+    "S1_probability_only": {
+      "available": true,
+      "probability_feasibility_only": true,
+      "members": [
+        "c1",
+        "a012"
+      ],
+      "metrics": {
+        "correct": 561,
+        "acc": 0.9381270903010034,
+        "macro_f1": 0.9259565891835949,
+        "bacc": 0.9306131350585941,
+        "macro_auc": 0.9761066036676987,
+        "weighted_f1": 0.9382700899026163,
+        "confusion_matrix": [
+          [
+            65,
+            0,
+            7
+          ],
+          [
+            0,
+            199,
+            10
+          ],
+          [
+            10,
+            10,
+            297
+          ]
+        ],
+        "AD_to_SMCI": 7,
+        "SMCI_to_AD": 10,
+        "CN_to_SMCI": 10,
+        "SMCI_to_CN": 10,
+        "AD_SMCI_errors": 17,
+        "CN_SMCI_errors": 20,
+        "AD_CN_errors": 0,
+        "predicted_class_counts": {
+          "AD": 75,
+          "CN": 209,
+          "SMCI": 314
+        }
+      },
+      "vs_c1": {
+        "repairs": 10,
+        "damages": 9,
+        "changed": 19
+      },
+      "vs_a012": {
+        "repairs": 9,
+        "damages": 10,
+        "changed": 19
+      },
+      "permits_exact_checkpoint_rerun": false
+    },
+    "S2_probability_only": {
+      "available": true,
+      "probability_feasibility_only": true,
+      "members": [
+        "a012",
+        "a007"
+      ],
+      "metrics": {
+        "correct": 556,
+        "acc": 0.9297658862876255,
+        "macro_f1": 0.913509306804726,
+        "bacc": 0.9110430918292449,
+        "macro_auc": 0.9763224805926155,
+        "weighted_f1": 0.9296179529798635,
+        "confusion_matrix": [
+          [
+            61,
+            0,
+            11
+          ],
+          [
+            0,
+            199,
+            10
+          ],
+          [
+            9,
+            12,
+            296
+          ]
+        ],
+        "AD_to_SMCI": 11,
+        "SMCI_to_AD": 9,
+        "CN_to_SMCI": 10,
+        "SMCI_to_CN": 12,
+        "AD_SMCI_errors": 20,
+        "CN_SMCI_errors": 22,
+        "AD_CN_errors": 0,
+        "predicted_class_counts": {
+          "AD": 70,
+          "CN": 211,
+          "SMCI": 317
+        }
+      },
+      "vs_c1": {
+        "repairs": 15,
+        "damages": 19,
+        "changed": 34
+      },
+      "vs_a012": {
+        "repairs": 7,
+        "damages": 13,
+        "changed": 20
+      },
+      "permits_exact_checkpoint_rerun": false
+    },
+    "S3_probability_only": {
+      "available": true,
+      "probability_feasibility_only": true,
+      "members": [
+        "c1",
+        "a012",
+        "a007"
+      ],
+      "metrics": {
+        "correct": 569,
+        "acc": 0.9515050167224081,
+        "macro_f1": 0.9360789668734725,
+        "bacc": 0.9376207143100718,
+        "macro_auc": 0.9823765793115403,
+        "weighted_f1": 0.9515647389575356,
+        "confusion_matrix": [
+          [
+            64,
+            0,
+            8
+          ],
+          [
+            0,
+            203,
+            6
+          ],
+          [
+            9,
+            6,
+            302
+          ]
+        ],
+        "AD_to_SMCI": 8,
+        "SMCI_to_AD": 9,
+        "CN_to_SMCI": 6,
+        "SMCI_to_CN": 6,
+        "AD_SMCI_errors": 17,
+        "CN_SMCI_errors": 12,
+        "AD_CN_errors": 0,
+        "predicted_class_counts": {
+          "AD": 73,
+          "CN": 209,
+          "SMCI": 316
+        }
+      },
+      "vs_c1": {
+        "repairs": 13,
+        "damages": 4,
+        "changed": 17
+      },
+      "vs_a012": {
+        "repairs": 14,
+        "damages": 7,
+        "changed": 21
+      },
+      "permits_exact_checkpoint_rerun": true
+    }
+  },
+  "formal_weight_soups": {},
+  "checkpoint_rerun_allowed_configs": [
+    "a007",
+    "a012"
+  ]
+}

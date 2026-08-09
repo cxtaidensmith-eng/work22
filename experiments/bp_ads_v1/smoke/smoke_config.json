@@ -1,0 +1,9 @@
+{
+  "experiment": "bp_ads_v1",
+  "fold": 0,
+  "epochs": 3,
+  "direction": "B1_c1_protect_cn_a012_ads",
+  "source_commit_at_smoke": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+  "runner_sha256": "8f36d9079eca1b5c59111c4c3d980dfc49202a430791b9aca38ca55fac864cb7",
+  "model_sha256": "7985ca2764fd18126086e5e9410d6ef320441a69c52e280bcb87f57d2c26240e"
+}

@@ -35,6 +35,12 @@
 /experiments/c1_broad_hparam_search_v1/stage_b/
 /experiments/c1_broad_hparam_search_v1/smoke/recovery_probe/
 /experiments/c1_broad_hparam_search_v1/stage_b_plan.json
+# BP-ADS fold checkpoints and resumable intermediate state remain local.  The
+# compact top-level OOF/JSON/REPORT artifacts are committed after aggregation.
+/experiments/bp_ads_v1/checkpoint_materialization/
+/experiments/bp_ads_v1/weight_soup/
+/experiments/bp_ads_v1/specialist_folds/
+/experiments/bp_ads_v1/smoke/checkpoint_roundtrip.pt
 # Generated UM-LER best checkpoints remain local.
 /results/um_ler_v1*/**/*.pt
 # Frozen Original caches and refiner checkpoints remain local.

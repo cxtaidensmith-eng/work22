@@ -1,0 +1,79 @@
+{
+  "experiment": "bp_ads_v1",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_per_fold": 0,
+  "epochs_per_fold": 400,
+  "device": "cuda:0",
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph": false,
+  "stage_b_candidates": [
+    "B1_c1_protect_cn_a012_ads",
+    "B2_c1_protect_cn_pc_ads",
+    "B3_a012_protect_ad_c1_cn_smci"
+  ],
+  "stage_c_candidates": {
+    "S1": {
+      "members": [
+        "c1",
+        "a012"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "S2": {
+      "members": [
+        "a012",
+        "a007"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "S3": {
+      "members": [
+        "c1",
+        "a012",
+        "a007"
+      ],
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    }
+  },
+  "specialist": {
+    "backbone": "fold-specific frozen C1 best checkpoint",
+    "hidden": 8,
+    "learning_rate": 0.01,
+    "weight_decay": 0.001,
+    "loss": "class-balanced BCE, train-mask AD/sMCI only",
+    "scheduler": "CustomCosineAnnealingLR(T_max=400)",
+    "parameters": 3089
+  },
+  "base_c1_commit": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "broad_implementation_commit": "13a25931fd8e5a111a7ae1be056f7b1b213c3055"
+}
