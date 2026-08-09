@@ -35,6 +35,11 @@
 /experiments/c1_broad_hparam_search_v1/stage_b/
 /experiments/c1_broad_hparam_search_v1/smoke/recovery_probe/
 /experiments/c1_broad_hparam_search_v1/stage_b_plan.json
+# R-Drop/LAWA fold checkpoints and resumable training state stay local.  Only
+# compact top-level OOF/JSON/REPORT outputs are committed after aggregation.
+/experiments/rdrop_a012_lawa4_v1/v1/
+/experiments/rdrop_a012_lawa4_v1/v1_1/
+/experiments/rdrop_a012_lawa4_v1/smoke/continuation_checkpoint.pt
 # Generated UM-LER best checkpoints remain local.
 /results/um_ler_v1*/**/*.pt
 # Frozen Original caches and refiner checkpoints remain local.

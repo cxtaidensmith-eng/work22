@@ -1,0 +1,66 @@
+{
+  "experiment": "rdrop_a012_lawa4_v1",
+  "base_commit": "13a25931fd8e5a111a7ae1be056f7b1b213c3055",
+  "dataset": "TADPOLE",
+  "task": "AD_CN_SMCI",
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_per_fold": 0,
+  "epochs_per_fold": 400,
+  "device": "cuda:0",
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph": false,
+  "ema": false,
+  "model": "locked A012",
+  "a012_spec": {
+    "trial_id": "A012",
+    "stage": "A",
+    "rank": 8,
+    "base_lr": 0.011271416075886307,
+    "base_weight_decay": 0.0010917677921787822,
+    "lambda_aux": 0.5,
+    "adapter_lr_multiplier": 2.0,
+    "dropout_multiplier": 1.1,
+    "generation_index": 12
+  },
+  "label_smoothing": 0.05,
+  "rdrop": {
+    "v1_lambda": 0.3,
+    "conditional_v1_1_lambda": 0.15,
+    "two_forwards_one_backward_one_optimizer_step_one_scheduler_step": true,
+    "sym_kl": "train-mask final raw three-class logits only; bidirectional; no detach",
+    "shared_non_dropout_noise": true
+  },
+  "lawa": {
+    "window": 4,
+    "queue": "raw post-update states only",
+    "first_evaluation_epoch": 4,
+    "floating_average": "FP32 equal average",
+    "non_floating": "latest raw value"
+  },
+  "optimizer": "Adam with locked A012 base/private-adapter groups",
+  "scheduler": "RatioPreservingCustomCosineAnnealingLR(T_max=400)",
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "parameter_count": 862971
+}
