@@ -1,0 +1,182 @@
+[
+  {
+    "fold": 0,
+    "path": "folds/fold_00/artifact.pt",
+    "sha256": "af19431a361010f2078378e414816baad4c64b0ee973c05cc6e0b61ab9b3dade",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 0,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+      "c1_summary_sha256": "9d81e81d09168e66d3848204fa8b83f3fd9f0a4907c4362c413d1102689f6a8e",
+      "a012_checkpoint_sha256": "4214de02059a06819a4054b048320c94565cbb3e9e19cbf6331ebe126b91c3fd",
+      "a012_summary_sha256": "a7579c758fb8b313af7f49908aa78097d0d7e1b28a2be1367d1d7308b2adce08"
+    }
+  },
+  {
+    "fold": 1,
+    "path": "folds/fold_01/artifact.pt",
+    "sha256": "85731839cffb488bf479b07179ee9a43ecb2f0e616ba97e85d3b95773e36e8a8",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 1,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+      "c1_summary_sha256": "e82f6ca566a14c6182ae4fb68a227b0213a45bfc28da26475c217a642bb74049",
+      "a012_checkpoint_sha256": "0b6d1b64d34f9809fc3fd1aba064318b51c355b4fcf1096bc9a764da83869076",
+      "a012_summary_sha256": "f3eaaedd93a9b1f15e4a87fabebb52cfad3f6347b248eca9fdd99519e75fc5f8"
+    }
+  },
+  {
+    "fold": 2,
+    "path": "folds/fold_02/artifact.pt",
+    "sha256": "c9f8bd23161ef81ef74f5b1c6cb3c8f382667c28f07c162ad7febc0ab8fdd1e0",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 2,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+      "c1_summary_sha256": "9b94f8c783650057370d821a8978f723e02b5a5231abffd79b1127d4624354d7",
+      "a012_checkpoint_sha256": "8d4bac8dff537fc0ba405dddd0a3e4b57146088557e0808e5954b9a64a693aa8",
+      "a012_summary_sha256": "f8d5f98ded904442120cde75a742eb73e2352cc25bfcee647a9625182e50e940"
+    }
+  },
+  {
+    "fold": 3,
+    "path": "folds/fold_03/artifact.pt",
+    "sha256": "f0036d1651fe0b7b874ff7cc4538cc30ce2b01a8e1b94024d33b219ac87fadab",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 3,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+      "c1_summary_sha256": "2d74bdcb9ec0ae68b3421f9d8ccfd633b1f2709cafcbe95c7757249c5b6218a0",
+      "a012_checkpoint_sha256": "e840f993da689b9456613de195ef64d242e21034f7e5a8ed960c8b48394871c2",
+      "a012_summary_sha256": "5b329772efb7a87ae6865b9a9a7f52cac257eec46fa664dc45c184db596bbc5b"
+    }
+  },
+  {
+    "fold": 4,
+    "path": "folds/fold_04/artifact.pt",
+    "sha256": "0cee195096c5f2b4fbd366338551afd3ee62e2d314a3a2099abac52cfe7f3166",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 4,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+      "c1_summary_sha256": "a26d66c5cdd737cb96a56b8b0dfa6b0b5971395910dcf301d7b4b43e55ce9301",
+      "a012_checkpoint_sha256": "6e66281277371d705c92d80d88650e316ac689af1ca6f44a6c0fa53ca8a3b7ad",
+      "a012_summary_sha256": "6d77b8d261690280c45bcafc9d6788d985c8a0d573af5d727ad73e00c1d1b87a"
+    }
+  },
+  {
+    "fold": 5,
+    "path": "folds/fold_05/artifact.pt",
+    "sha256": "32ffe1d961ed28fda75623be73fb54a7bc0472b1958bd153c8a1ac40e61a1f69",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 5,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+      "c1_summary_sha256": "50ed1a294f127382631f23c2f6024513670758906f995e919073170903ed0cc6",
+      "a012_checkpoint_sha256": "dcc85ee6881f8380f801107f6b46ed1e5054369d0c445d92b07cb6cc1a3b4a26",
+      "a012_summary_sha256": "752ec14a0a32ac58a77b1bf4eacfb3208c64861f694d4767b521c4871733b019"
+    }
+  },
+  {
+    "fold": 6,
+    "path": "folds/fold_06/artifact.pt",
+    "sha256": "adc451d327ba4477316323f0995de5b59767bc278c13a74d1fe9f9d29e69558a",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 6,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+      "c1_summary_sha256": "eb60b2c37004ddf9065411ed72adb7e9cfc1c5a354347457e003b816f4e74e36",
+      "a012_checkpoint_sha256": "c6b9d3161aaed528735110c2bb152686a50cc7f804e4f7649bdc8273a41a54fc",
+      "a012_summary_sha256": "b50809a85693cecd64e6618634bbd58b0b3ea5add7f2810688f3cc94deb9e126"
+    }
+  },
+  {
+    "fold": 7,
+    "path": "folds/fold_07/artifact.pt",
+    "sha256": "e9aaf6d0b387fd3f94e32c9bf1186712529d1052ae1fc9aa4bd95c31841cd27d",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 7,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+      "c1_summary_sha256": "e7e63eed7c12e165f64236c68a0832c99bef9a2e1eb314056e3f190485d2b969",
+      "a012_checkpoint_sha256": "0e4c84dd198914c1e657e03c07917e59a34d5ffaadb8b7decb4d2f012b591cbc",
+      "a012_summary_sha256": "13a9fe82664c68c848fe225a9e204bd3e545f25240abe08c8f4b90e596aed94a"
+    }
+  },
+  {
+    "fold": 8,
+    "path": "folds/fold_08/artifact.pt",
+    "sha256": "cb0b764fb85a5161c03a94a08c75ef7c667e664d31ed6197dfc1c706ad5e2c6a",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 8,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+      "c1_summary_sha256": "cd0c49c380582eae2561cb9bf48c178f98d8ef5188cf8f0077368969c76231df",
+      "a012_checkpoint_sha256": "9ad9bbde0261b8aeedb090778bd0d352ff013d2a5d43720a966efc8bf3826f40",
+      "a012_summary_sha256": "3b1ba4c89bbf9c18397be4f0a6083756ad9450deb314f877be2f3285db4b2277"
+    }
+  },
+  {
+    "fold": 9,
+    "path": "folds/fold_09/artifact.pt",
+    "sha256": "70ef6b0ded2e674d996349d0789917bd887a7b028be22659a4f73a87fbc2bc43",
+    "bytes": 4949430,
+    "fold_lock": {
+      "experiment": "ra_bmg_a012_v1",
+      "fold": 9,
+      "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+      "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+      "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+      "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+      "c1_checkpoint_sha256": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c",
+      "c1_summary_sha256": "ebc2371192d7df6cc4b718971201583e01bfe972dff60b3479ba4f7837af8fee",
+      "a012_checkpoint_sha256": "27aa2960bb5b73e4af5055f2bdeffbf2e50fc75bd1caf18c67c198fbef00aa45",
+      "a012_summary_sha256": "5eeeb28cc32ce14fc1c3f331e8743ae2237e8c5e4cb82dbf53ca098e223de7ee"
+    }
+  }
+]

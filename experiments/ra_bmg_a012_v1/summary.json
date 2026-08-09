@@ -1,0 +1,922 @@
+{
+  "experiment": "ra_bmg_a012_v1",
+  "decision": "RA_BMG_NO_GAIN",
+  "metrics": {
+    "correct": 560,
+    "acc": 0.9364548494983278,
+    "macro_f1": 0.9268046374429352,
+    "bacc": 0.9265268770498722,
+    "macro_auc": 0.9628727174297529,
+    "weighted_f1": 0.9363927279817124,
+    "confusion_matrix": [
+      [
+        64,
+        0,
+        8
+      ],
+      [
+        0,
+        200,
+        9
+      ],
+      [
+        7,
+        14,
+        296
+      ]
+    ]
+  },
+  "predicted_class_counts": {
+    "AD": 71,
+    "CN": 214,
+    "SMCI": 313
+  },
+  "boundary_errors": {
+    "AD_to_SMCI": 8,
+    "SMCI_to_AD": 7,
+    "CN_to_SMCI": 9,
+    "SMCI_to_CN": 14,
+    "AD_to_CN": 0,
+    "CN_to_AD": 0,
+    "AD_SMCI": 15,
+    "CN_SMCI": 23,
+    "AD_CN": 0
+  },
+  "fold_acc_mean": 0.9363841807909605,
+  "fold_acc_sample_std": 0.026109126265935603,
+  "folds": [
+    {
+      "fold": 0,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "construction_seconds": 0.8057794999331236,
+      "inference_seconds_one_full_batch": 0.015435599721968174
+    },
+    {
+      "fold": 1,
+      "correct": 57,
+      "acc": 0.95,
+      "construction_seconds": 0.500768699683249,
+      "inference_seconds_one_full_batch": 0.015370399691164494
+    },
+    {
+      "fold": 2,
+      "correct": 58,
+      "acc": 0.9666666666666667,
+      "construction_seconds": 0.3623124002479017,
+      "inference_seconds_one_full_batch": 0.015145400073379278
+    },
+    {
+      "fold": 3,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "construction_seconds": 0.3834205996245146,
+      "inference_seconds_one_full_batch": 0.016449000220745802
+    },
+    {
+      "fold": 4,
+      "correct": 56,
+      "acc": 0.9333333333333333,
+      "construction_seconds": 0.4083417998626828,
+      "inference_seconds_one_full_batch": 0.01703110011294484
+    },
+    {
+      "fold": 5,
+      "correct": 59,
+      "acc": 0.9833333333333333,
+      "construction_seconds": 0.3517574002034962,
+      "inference_seconds_one_full_batch": 0.014515800401568413
+    },
+    {
+      "fold": 6,
+      "correct": 57,
+      "acc": 0.95,
+      "construction_seconds": 0.3903449000790715,
+      "inference_seconds_one_full_batch": 0.0176295000128448
+    },
+    {
+      "fold": 7,
+      "correct": 55,
+      "acc": 0.9166666666666666,
+      "construction_seconds": 0.36272169975563884,
+      "inference_seconds_one_full_batch": 0.015005100052803755
+    },
+    {
+      "fold": 8,
+      "correct": 53,
+      "acc": 0.8983050847457628,
+      "construction_seconds": 0.3499339995905757,
+      "inference_seconds_one_full_batch": 0.01538820005953312
+    },
+    {
+      "fold": 9,
+      "correct": 55,
+      "acc": 0.9322033898305084,
+      "construction_seconds": 0.3888915996067226,
+      "inference_seconds_one_full_batch": 0.01645920006558299
+    }
+  ],
+  "comparison_vs_a012": {
+    "repairs": 0,
+    "damages": 2,
+    "net_repairs": -2,
+    "changed": 2,
+    "repair_sources_from_baseline_errors": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 0,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 0,
+      "SMCI_to_AD": 0,
+      "SMCI_to_CN": 0
+    },
+    "damage_sources_in_candidate_errors": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 0,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 0,
+      "SMCI_to_AD": 0,
+      "SMCI_to_CN": 2
+    }
+  },
+  "comparison_vs_c1": {
+    "repairs": 20,
+    "damages": 20,
+    "net_repairs": 0,
+    "changed": 40,
+    "repair_sources_from_baseline_errors": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 5,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 5,
+      "SMCI_to_AD": 4,
+      "SMCI_to_CN": 6
+    },
+    "damage_sources_in_candidate_errors": {
+      "AD_to_CN": 0,
+      "AD_to_SMCI": 2,
+      "CN_to_AD": 0,
+      "CN_to_SMCI": 6,
+      "SMCI_to_AD": 1,
+      "SMCI_to_CN": 11
+    }
+  },
+  "a012_ad_smci_conditional_log_odds_max_abs_error": 5.861977570020827e-14,
+  "ra_bmg_cn_prediction_vs_c1_cn_prediction_agreement": 0.9531772575250836,
+  "alignment_diagnostics": {
+    "definitions": {
+      "cn_margin": "z_CN-logsumexp([z_AD,z_SMCI]) on fold-train rows",
+      "normalized_rmse": "unweighted RMSE/(population std(original C1 train margin)+1e-8)",
+      "full_logit_cosine": "unweighted train-row per-subject cosine mean"
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9958514038205677,
+        "cn_margin_sign_agreement": 0.9981412639405205,
+        "cn_margin_rmse": 0.4221183165587421,
+        "cn_margin_normalized_rmse": 0.09577928318198632,
+        "full_c1_logits_mean_cosine": 0.9918973448223711,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 1.2881014500914184e-15,
+        "svd_singular_max": 14.182268704254344,
+        "variance_scale_min": 0.8874169330797371,
+        "variance_scale_max": 1.0999237198851626,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 64,
+          "CN": 188,
+          "SMCI": 286
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 1,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9779021161349891,
+        "cn_margin_sign_agreement": 0.9851301115241635,
+        "cn_margin_rmse": 0.9100821424565342,
+        "cn_margin_normalized_rmse": 0.20936344201351198,
+        "full_c1_logits_mean_cosine": 0.9769888375489981,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 1.3682507542957154e-16,
+        "svd_singular_max": 14.47661384225767,
+        "variance_scale_min": 0.5323779364888382,
+        "variance_scale_max": 0.9238261863464157,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 2,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.995380104861866,
+        "cn_margin_sign_agreement": 0.9981412639405205,
+        "cn_margin_rmse": 0.4282180399695712,
+        "cn_margin_normalized_rmse": 0.09682752869380379,
+        "full_c1_logits_mean_cosine": 0.9959506909432992,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 9.59591031637366e-17,
+        "svd_singular_max": 9.767446692594367,
+        "variance_scale_min": 1.518895495455695,
+        "variance_scale_max": 2.1891867169969244,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 3,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9989656573491524,
+        "cn_margin_sign_agreement": 1.0,
+        "cn_margin_rmse": 0.24751755580117477,
+        "cn_margin_normalized_rmse": 0.05673225784623367,
+        "full_c1_logits_mean_cosine": 0.9950005108395805,
+        "folded_classifier_algebra_max_abs_diff": 3.552713678800501e-15,
+        "svd_singular_min": 3.4562996072307594e-16,
+        "svd_singular_max": 12.894355740253605,
+        "variance_scale_min": 0.8317523010433161,
+        "variance_scale_max": 1.106341334931514,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 0.9999999999999998,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 4,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9845895421233533,
+        "cn_margin_sign_agreement": 0.9925650557620818,
+        "cn_margin_rmse": 0.821035212890086,
+        "cn_margin_normalized_rmse": 0.18279966521392937,
+        "full_c1_logits_mean_cosine": 0.9762641640718486,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 1.6580637566432277e-15,
+        "svd_singular_max": 17.23440555681156,
+        "variance_scale_min": 0.8574974197794016,
+        "variance_scale_max": 1.1659727184005761,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 5,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9958623489269051,
+        "cn_margin_sign_agreement": 0.9962825278810409,
+        "cn_margin_rmse": 0.4221955065038881,
+        "cn_margin_normalized_rmse": 0.091671873259219,
+        "full_c1_logits_mean_cosine": 0.9953201571757732,
+        "folded_classifier_algebra_max_abs_diff": 3.552713678800501e-15,
+        "svd_singular_min": 8.876468195356767e-16,
+        "svd_singular_max": 9.282502491685147,
+        "variance_scale_min": 1.3396479498310576,
+        "variance_scale_max": 1.4292084183729838,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 0.9999999999999999,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 6,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9992907200665972,
+        "cn_margin_sign_agreement": 1.0,
+        "cn_margin_rmse": 0.20226044220427195,
+        "cn_margin_normalized_rmse": 0.04803775182195623,
+        "full_c1_logits_mean_cosine": 0.996741511185566,
+        "folded_classifier_algebra_max_abs_diff": 3.9968028886505635e-15,
+        "svd_singular_min": 5.398993410208237e-16,
+        "svd_singular_max": 12.163029353701322,
+        "variance_scale_min": 0.7764730478375412,
+        "variance_scale_max": 0.8918926197304002,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 0.9999999999999999,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 7,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9869467306480684,
+        "cn_margin_sign_agreement": 0.9925650557620818,
+        "cn_margin_rmse": 0.7189709876707697,
+        "cn_margin_normalized_rmse": 0.1633792311426548,
+        "full_c1_logits_mean_cosine": 0.9877022340487633,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 9.768688686474507e-16,
+        "svd_singular_max": 10.072216949734578,
+        "variance_scale_min": 1.2106466037048778,
+        "variance_scale_max": 1.2921957656541514,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 285
+        },
+        "fit_weight_sum": 0.9999999999999999,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 8,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.987246904741156,
+        "cn_margin_sign_agreement": 0.9925788497217068,
+        "cn_margin_rmse": 0.6909174713673458,
+        "cn_margin_normalized_rmse": 0.16041243558993581,
+        "full_c1_logits_mean_cosine": 0.983478720965116,
+        "folded_classifier_algebra_max_abs_diff": 2.6645352591003757e-15,
+        "svd_singular_min": 5.051916875808204e-16,
+        "svd_singular_max": 15.415820475273515,
+        "variance_scale_min": 0.7037035152952904,
+        "variance_scale_max": 1.0917300410001969,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 65,
+          "CN": 188,
+          "SMCI": 286
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      },
+      {
+        "fold": 9,
+        "cn_margin_definition": "z_CN-logsumexp([z_AD,z_SMCI])",
+        "cn_margin_pearson": 0.9700889100853437,
+        "cn_margin_sign_agreement": 0.9814471243042672,
+        "cn_margin_rmse": 1.0913411582020611,
+        "cn_margin_normalized_rmse": 0.24846065458238104,
+        "full_c1_logits_mean_cosine": 0.9697019257998813,
+        "folded_classifier_algebra_max_abs_diff": 3.1086244689504383e-15,
+        "svd_singular_min": 1.0596630490124576e-15,
+        "svd_singular_max": 13.121395291023024,
+        "variance_scale_min": 0.8058470736356683,
+        "variance_scale_max": 0.9885007565802296,
+        "svd_finite": true,
+        "variance_scale_finite": true,
+        "fit_class_counts": {
+          "AD": 64,
+          "CN": 189,
+          "SMCI": 286
+        },
+        "fit_weight_sum": 1.0,
+        "fit_uses_test_labels": false
+      }
+    ],
+    "cn_margin_pearson": {
+      "mean": 0.9892124438758,
+      "sample_std": 0.009701288412616749,
+      "min": 0.9700889100853437,
+      "max": 0.9992907200665972
+    },
+    "cn_margin_sign_agreement": {
+      "mean": 0.9936851252836382,
+      "sample_std": 0.006261930963807853,
+      "min": 0.9814471243042672,
+      "max": 1.0
+    },
+    "cn_margin_normalized_rmse": {
+      "mean": 0.1353464123345612,
+      "sample_std": 0.06724666294815353,
+      "min": 0.04803775182195623,
+      "max": 0.24846065458238104
+    },
+    "full_c1_logits_mean_cosine": {
+      "mean": 0.98690460974012,
+      "sample_std": 0.00977374912364345,
+      "min": 0.9697019257998813,
+      "max": 0.996741511185566
+    },
+    "svd_singular_min": {
+      "mean": 7.49384911184826e-16,
+      "sample_std": 5.111835956379961e-16,
+      "min": 9.59591031637366e-17,
+      "max": 1.6580637566432277e-15
+    },
+    "svd_singular_max": {
+      "mean": 12.861005509758915,
+      "sample_std": 2.5974100694810303,
+      "min": 9.282502491685147,
+      "max": 17.23440555681156
+    },
+    "variance_scale_min": {
+      "mean": 0.9464258276151423,
+      "sample_std": 0.30834580443867876,
+      "min": 0.5323779364888382,
+      "max": 1.518895495455695
+    },
+    "variance_scale_max": {
+      "mean": 1.2178778277898554,
+      "sample_std": 0.37770244938847936,
+      "min": 0.8918926197304002,
+      "max": 2.1891867169969244
+    },
+    "all_svd_and_variance_scales_finite": true,
+    "any_test_label_used_for_mapping": false
+  },
+  "storage": {
+    "a012_parameter_count": 862971,
+    "mapped_head_buffer_coefficients": 147,
+    "mapped_head_buffer_bytes": 588,
+    "inference_parameter_plus_mapped_coefficient_count": 863118,
+    "state_tensor_elements_per_fold": 1221454,
+    "state_tensor_bytes_per_fold": 4888696,
+    "artifact_file_bytes_per_fold": [
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430,
+      4949430
+    ],
+    "artifact_file_bytes_total": 49494300
+  },
+  "mechanism": {
+    "single_model": true,
+    "ensemble": false,
+    "distillation": false,
+    "one_backbone_forward": true,
+    "backbone": "A012 only",
+    "mapped_c1_head": "persistent frozen buffers folded into A012 hidden coordinates",
+    "mapping_fit_rows": "fold train only",
+    "test_labels_used_for_mapping": false,
+    "graph": false,
+    "direct_probability_evaluation_without_second_logit_adjustment": true
+  },
+  "b1_prerequisite": {
+    "paths": {
+      "c1_root": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2",
+      "c1_oof": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\oof_predictions.csv",
+      "a012_root": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012",
+      "a012_oof": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\oof_predictions.csv",
+      "a012_config": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\config.json",
+      "bp_boundary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\boundary_feasibility.json",
+      "bp_runner": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\scripts\\run_bp_ads_v1.py"
+    },
+    "sha256": {
+      "c1_oof": "bac14e3347cacbe1f1e566be182a32df6848650c8b0e1a4c2a52d2bb3214e654",
+      "a012_oof": "deec3a235781bb4d0510ba04792ca27003a2295da63f6f3eb27d8ad66872a4f0",
+      "bp_boundary": "71880d65867d38bf2eb7bce0a43524931c9ba28cf87bdf6bc01cfbec7945d343",
+      "bp_runner": "8f36d9079eca1b5c59111c4c3d980dfc49202a430791b9aca38ca55fac864cb7"
+    },
+    "c1_metrics_actual_locked_oof": {
+      "correct": 560,
+      "acc": 0.9364548494983278,
+      "macro_f1": 0.9175457174222448,
+      "bacc": 0.9163359339143832,
+      "macro_auc": 0.9585607750856947,
+      "weighted_f1": 0.936365986325677,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "c1_user_anchor": {
+      "correct": 560,
+      "acc": 0.9364548,
+      "macro_f1": 0.9175457,
+      "bacc": 0.9163359,
+      "macro_auc": 0.9585608,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "a012_metrics": {
+      "correct": 562,
+      "acc": 0.939799331103679,
+      "macro_f1": 0.9294205448780151,
+      "bacc": 0.9286299264715336,
+      "macro_auc": 0.961524845528226,
+      "weighted_f1": 0.9397414920986079,
+      "confusion_matrix": [
+        [
+          64,
+          0,
+          8
+        ],
+        [
+          0,
+          200,
+          9
+        ],
+        [
+          7,
+          12,
+          298
+        ]
+      ]
+    },
+    "b1_definition": "C1 argmax-CN rows retain C1; all other rows use C1 q_CN and A012 AD:SMCI conditional probability",
+    "b1_metrics": {
+      "correct": 564,
+      "acc": 0.9431438127090301,
+      "macro_f1": 0.9294627866574855,
+      "bacc": 0.9312763475141028,
+      "macro_auc": 0.9630257693637971,
+      "weighted_f1": 0.9431858020359235,
+      "confusion_matrix": [
+        [
+          64,
+          0,
+          8
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          9,
+          9,
+          299
+        ]
+      ]
+    },
+    "b1_boundary": {
+      "AD_to_SMCI": 8,
+      "SMCI_to_AD": 9,
+      "CN_to_SMCI": 8,
+      "SMCI_to_CN": 9,
+      "AD_to_CN": 0,
+      "CN_to_AD": 0,
+      "AD_SMCI": 17,
+      "CN_SMCI": 17,
+      "AD_CN": 0
+    },
+    "subject_alignment": "subject_index; truth and fold exact"
+  },
+  "c1_anchor": {
+    "correct": 560,
+    "acc": 0.9364548,
+    "macro_f1": 0.9175457,
+    "bacc": 0.9163359,
+    "macro_auc": 0.9585608,
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        11
+      ],
+      [
+        0,
+        201,
+        8
+      ],
+      [
+        10,
+        9,
+        298
+      ]
+    ]
+  },
+  "a012_anchor": {
+    "correct": 562,
+    "acc": 0.939799331103679,
+    "macro_f1": 0.9294205448780151,
+    "bacc": 0.9286299264715336,
+    "macro_auc": 0.961524845528226,
+    "weighted_f1": 0.9397414920986079,
+    "confusion_matrix": [
+      [
+        64,
+        0,
+        8
+      ],
+      [
+        0,
+        200,
+        9
+      ],
+      [
+        7,
+        12,
+        298
+      ]
+    ]
+  },
+  "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+  "result_commit": "SELF_REFERENCE_NOT_EMBEDDED; use the Git commit tracking this summary",
+  "branch": "experiment/ra-bmg-a012-v1",
+  "runtime_config": {
+    "experiment": "ra_bmg_a012_v1",
+    "branch": "experiment/ra-bmg-a012-v1",
+    "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+    "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+    "source_dependencies": {
+      ".gitignore": "0a708d9bc3c37c882ebb600df7e95b57b3194f3f542c75c305d9af0d6f9f7e07",
+      "Model/ra_bmg.py": "a74562fb9152bc3d5b5662ccb25621c0bb90ccacd3bdf86f2f2a4d4836698588",
+      "Model/cme_dual_branch.py": "df822015ceb42387d3d923e948616bdb6ded42d01b8ec704018ae48e6de535a2",
+      "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+      "scripts/run_ra_bmg_a012_v1.py": "1f4a232705ea596f98af1dd567ddba49372127629460816f9edf9352d714caf7",
+      "scripts/run_c1_broad_hparam_search_v1.py": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
+      "scripts/run_cme_dual_branch_v1.py": "e0fc8e1aee192072a984c4537f77cbdcb764b5b57732c7bbf4e6ae5b17c3816c",
+      "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+      "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79"
+    },
+    "checkpoint_inventory_sha256": "f483180fc3b2202e72e5f6307ee14ef874c54d1d7a2ada1f873d079432bab39d",
+    "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "device": "cuda:0",
+    "a012_spec": {
+      "trial_id": "A012",
+      "stage": "A",
+      "rank": 8,
+      "base_lr": 0.011271416075886307,
+      "base_weight_decay": 0.0010917677921787822,
+      "lambda_aux": 0.5,
+      "adapter_lr_multiplier": 2.0,
+      "dropout_multiplier": 1.1,
+      "generation_index": 12
+    },
+    "class_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "epsilon": 1e-08,
+    "class_total_weights": {
+      "AD": 0.25,
+      "CN": 0.5,
+      "SMCI": 0.25
+    },
+    "mapped_head_coefficients": 147,
+    "single_model": true,
+    "ensemble": false,
+    "distillation": false,
+    "one_backbone_forward": true,
+    "graph": false,
+    "config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d"
+  },
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "formal_wall_seconds_this_invocation": 8.878678400069475,
+  "construction_seconds_total": 4.3042725985869765,
+  "inference_seconds_total_one_forward_per_fold": 0.15842930041253567,
+  "artifacts": [
+    {
+      "fold": 0,
+      "path": "folds/fold_00/artifact.pt",
+      "sha256": "af19431a361010f2078378e414816baad4c64b0ee973c05cc6e0b61ab9b3dade",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 0,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+        "c1_summary_sha256": "9d81e81d09168e66d3848204fa8b83f3fd9f0a4907c4362c413d1102689f6a8e",
+        "a012_checkpoint_sha256": "4214de02059a06819a4054b048320c94565cbb3e9e19cbf6331ebe126b91c3fd",
+        "a012_summary_sha256": "a7579c758fb8b313af7f49908aa78097d0d7e1b28a2be1367d1d7308b2adce08"
+      }
+    },
+    {
+      "fold": 1,
+      "path": "folds/fold_01/artifact.pt",
+      "sha256": "85731839cffb488bf479b07179ee9a43ecb2f0e616ba97e85d3b95773e36e8a8",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 1,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+        "c1_summary_sha256": "e82f6ca566a14c6182ae4fb68a227b0213a45bfc28da26475c217a642bb74049",
+        "a012_checkpoint_sha256": "0b6d1b64d34f9809fc3fd1aba064318b51c355b4fcf1096bc9a764da83869076",
+        "a012_summary_sha256": "f3eaaedd93a9b1f15e4a87fabebb52cfad3f6347b248eca9fdd99519e75fc5f8"
+      }
+    },
+    {
+      "fold": 2,
+      "path": "folds/fold_02/artifact.pt",
+      "sha256": "c9f8bd23161ef81ef74f5b1c6cb3c8f382667c28f07c162ad7febc0ab8fdd1e0",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 2,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+        "c1_summary_sha256": "9b94f8c783650057370d821a8978f723e02b5a5231abffd79b1127d4624354d7",
+        "a012_checkpoint_sha256": "8d4bac8dff537fc0ba405dddd0a3e4b57146088557e0808e5954b9a64a693aa8",
+        "a012_summary_sha256": "f8d5f98ded904442120cde75a742eb73e2352cc25bfcee647a9625182e50e940"
+      }
+    },
+    {
+      "fold": 3,
+      "path": "folds/fold_03/artifact.pt",
+      "sha256": "f0036d1651fe0b7b874ff7cc4538cc30ce2b01a8e1b94024d33b219ac87fadab",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 3,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+        "c1_summary_sha256": "2d74bdcb9ec0ae68b3421f9d8ccfd633b1f2709cafcbe95c7757249c5b6218a0",
+        "a012_checkpoint_sha256": "e840f993da689b9456613de195ef64d242e21034f7e5a8ed960c8b48394871c2",
+        "a012_summary_sha256": "5b329772efb7a87ae6865b9a9a7f52cac257eec46fa664dc45c184db596bbc5b"
+      }
+    },
+    {
+      "fold": 4,
+      "path": "folds/fold_04/artifact.pt",
+      "sha256": "0cee195096c5f2b4fbd366338551afd3ee62e2d314a3a2099abac52cfe7f3166",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 4,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+        "c1_summary_sha256": "a26d66c5cdd737cb96a56b8b0dfa6b0b5971395910dcf301d7b4b43e55ce9301",
+        "a012_checkpoint_sha256": "6e66281277371d705c92d80d88650e316ac689af1ca6f44a6c0fa53ca8a3b7ad",
+        "a012_summary_sha256": "6d77b8d261690280c45bcafc9d6788d985c8a0d573af5d727ad73e00c1d1b87a"
+      }
+    },
+    {
+      "fold": 5,
+      "path": "folds/fold_05/artifact.pt",
+      "sha256": "32ffe1d961ed28fda75623be73fb54a7bc0472b1958bd153c8a1ac40e61a1f69",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 5,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+        "c1_summary_sha256": "50ed1a294f127382631f23c2f6024513670758906f995e919073170903ed0cc6",
+        "a012_checkpoint_sha256": "dcc85ee6881f8380f801107f6b46ed1e5054369d0c445d92b07cb6cc1a3b4a26",
+        "a012_summary_sha256": "752ec14a0a32ac58a77b1bf4eacfb3208c64861f694d4767b521c4871733b019"
+      }
+    },
+    {
+      "fold": 6,
+      "path": "folds/fold_06/artifact.pt",
+      "sha256": "adc451d327ba4477316323f0995de5b59767bc278c13a74d1fe9f9d29e69558a",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 6,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+        "c1_summary_sha256": "eb60b2c37004ddf9065411ed72adb7e9cfc1c5a354347457e003b816f4e74e36",
+        "a012_checkpoint_sha256": "c6b9d3161aaed528735110c2bb152686a50cc7f804e4f7649bdc8273a41a54fc",
+        "a012_summary_sha256": "b50809a85693cecd64e6618634bbd58b0b3ea5add7f2810688f3cc94deb9e126"
+      }
+    },
+    {
+      "fold": 7,
+      "path": "folds/fold_07/artifact.pt",
+      "sha256": "e9aaf6d0b387fd3f94e32c9bf1186712529d1052ae1fc9aa4bd95c31841cd27d",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 7,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+        "c1_summary_sha256": "e7e63eed7c12e165f64236c68a0832c99bef9a2e1eb314056e3f190485d2b969",
+        "a012_checkpoint_sha256": "0e4c84dd198914c1e657e03c07917e59a34d5ffaadb8b7decb4d2f012b591cbc",
+        "a012_summary_sha256": "13a9fe82664c68c848fe225a9e204bd3e545f25240abe08c8f4b90e596aed94a"
+      }
+    },
+    {
+      "fold": 8,
+      "path": "folds/fold_08/artifact.pt",
+      "sha256": "cb0b764fb85a5161c03a94a08c75ef7c667e664d31ed6197dfc1c706ad5e2c6a",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 8,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+        "c1_summary_sha256": "cd0c49c380582eae2561cb9bf48c178f98d8ef5188cf8f0077368969c76231df",
+        "a012_checkpoint_sha256": "9ad9bbde0261b8aeedb090778bd0d352ff013d2a5d43720a966efc8bf3826f40",
+        "a012_summary_sha256": "3b1ba4c89bbf9c18397be4f0a6083756ad9450deb314f877be2f3285db4b2277"
+      }
+    },
+    {
+      "fold": 9,
+      "path": "folds/fold_09/artifact.pt",
+      "sha256": "70ef6b0ded2e674d996349d0789917bd887a7b028be22659a4f73a87fbc2bc43",
+      "bytes": 4949430,
+      "fold_lock": {
+        "experiment": "ra_bmg_a012_v1",
+        "fold": 9,
+        "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+        "runtime_config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d",
+        "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+        "c1_checkpoint_sha256": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c",
+        "c1_summary_sha256": "ebc2371192d7df6cc4b718971201583e01bfe972dff60b3479ba4f7837af8fee",
+        "a012_checkpoint_sha256": "27aa2960bb5b73e4af5055f2bdeffbf2e50fc75bd1caf18c67c198fbef00aa45",
+        "a012_summary_sha256": "5eeeb28cc32ce14fc1c3f331e8743ae2237e8c5e4cb82dbf53ca098e223de7ee"
+      }
+    }
+  ],
+  "retained_model": "A012",
+  "next_recommendation": "DB-MoLA-A012: dual-boundary low-rank feature experts",
+  "reproduction_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_ra_bmg_a012_v1.py formal --device cuda:0"
+}

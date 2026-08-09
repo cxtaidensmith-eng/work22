@@ -1,0 +1,63 @@
+{
+  "experiment": "ra_bmg_a012_v1",
+  "branch": "experiment/ra-bmg-a012-v1",
+  "source_commit": "eb6bac6e024818290b6664bbfa5c5cff02294816",
+  "prepared_config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702",
+  "source_dependencies": {
+    ".gitignore": "0a708d9bc3c37c882ebb600df7e95b57b3194f3f542c75c305d9af0d6f9f7e07",
+    "Model/ra_bmg.py": "a74562fb9152bc3d5b5662ccb25621c0bb90ccacd3bdf86f2f2a4d4836698588",
+    "Model/cme_dual_branch.py": "df822015ceb42387d3d923e948616bdb6ded42d01b8ec704018ae48e6de535a2",
+    "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "scripts/run_ra_bmg_a012_v1.py": "1f4a232705ea596f98af1dd567ddba49372127629460816f9edf9352d714caf7",
+    "scripts/run_c1_broad_hparam_search_v1.py": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
+    "scripts/run_cme_dual_branch_v1.py": "e0fc8e1aee192072a984c4537f77cbdcb764b5b57732c7bbf4e6ae5b17c3816c",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79"
+  },
+  "checkpoint_inventory_sha256": "f483180fc3b2202e72e5f6307ee14ef874c54d1d7a2ada1f873d079432bab39d",
+  "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "device": "cuda:0",
+  "a012_spec": {
+    "trial_id": "A012",
+    "stage": "A",
+    "rank": 8,
+    "base_lr": 0.011271416075886307,
+    "base_weight_decay": 0.0010917677921787822,
+    "lambda_aux": 0.5,
+    "adapter_lr_multiplier": 2.0,
+    "dropout_multiplier": 1.1,
+    "generation_index": 12
+  },
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "epsilon": 1e-08,
+  "class_total_weights": {
+    "AD": 0.25,
+    "CN": 0.5,
+    "SMCI": 0.25
+  },
+  "mapped_head_coefficients": 147,
+  "single_model": true,
+  "ensemble": false,
+  "distillation": false,
+  "one_backbone_forward": true,
+  "graph": false,
+  "config_sha256": "64bf60ba5ef6670e14ffa228c7a99312edb4909e0cd807e4179ea93236e7c72d"
+}
