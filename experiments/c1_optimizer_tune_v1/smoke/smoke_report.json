@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "arm": "T1",
+  "fold": 0,
+  "epochs": 3,
+  "losses": [
+    3.3026833534240723,
+    2.791512966156006,
+    6.176076889038086
+  ],
+  "gradient_norms": [
+    4.917063236236572,
+    3.618272542953491,
+    17.12335968017578
+  ],
+  "parameter_count": 862971,
+  "optimizer_param_groups": [
+    {
+      "lr": 0.0075,
+      "weight_decay": 0.0005
+    }
+  ],
+  "effective_use_ema": false,
+  "checkpoint_roundtrip_logit_max_abs_diff": 0.0,
+  "run_head_at_smoke": "90326eef6ab1a8a4111e71a33280f8f7113c1ea7",
+  "runner_sha256": "1cc22239dfe9444644c9ab855a17f5c281a134be8faf0a4695e61773c4fd3913",
+  "wall_seconds": 4.758702099788934,
+  "run_command": "\"D:\\Anaconda\\envs\\work22-tabpfn-v1\\python.exe\" -u -B scripts/run_c1_optimizer_tune_v1.py smoke --device cuda:0"
+}
