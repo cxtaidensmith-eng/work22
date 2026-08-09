@@ -1,0 +1,52 @@
+{
+  "experiment": "rdrop_a012_lawa4_v1",
+  "variant": "v1",
+  "rdrop_lambda": 0.3,
+  "lawa_window": 4,
+  "a012_spec": {
+    "trial_id": "A012",
+    "stage": "A",
+    "rank": 8,
+    "base_lr": 0.011271416075886307,
+    "base_weight_decay": 0.0010917677921787822,
+    "lambda_aux": 0.5,
+    "adapter_lr_multiplier": 2.0,
+    "dropout_multiplier": 1.1,
+    "generation_index": 12
+  },
+  "source_commit": "e2545d183ae75b39dd888e879696e8878862a922",
+  "runner_sha256": "c9914651bceb5a2ab8966ae46235390ad2692a970f36bdc8ad1d02c65bd76c4c",
+  "broad_runner_sha256": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
+  "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_per_fold": 0,
+  "epochs_per_fold": 400,
+  "device": "cuda:0",
+  "parameter_count": 862971,
+  "label_smoothing": 0.05,
+  "grad_clip": 1.0,
+  "logit_adjust_tau": 0.75,
+  "scheduler": "RatioPreservingCustomCosineAnnealingLR(T_max=400,base_eta_min=0.0001,adapter_eta_min=0.0002)",
+  "best_epoch_rule": [
+    "ACC",
+    "Probability Macro-AUC",
+    "Macro-F1"
+  ],
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph": false,
+  "ema": false,
+  "config_sha256": "63b7cff1a8119d7d5fd5de1c4a7205c2eaa7cbcf6317f6be970a6b99f5c678f3"
+}
