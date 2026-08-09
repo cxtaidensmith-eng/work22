@@ -94,7 +94,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
             and self.category_branch_fusion == "concat"
             and self.semantic_branch == "both"
             and self.semantic_fusion == "add"
-            and self.adj_mode == "none"
+            and self.adj_mode in {"learned", "fixed", "none"}
         ):
             raise ValueError("CME requires the locked Original Query configuration")
 
@@ -146,7 +146,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         }
         if self.cme_arm == "c1":
             category_tokens = tokens + residuals
-            streams = [category_tokens, category_tokens, category_tokens]
+            streams = [category_tokens for _ in range(self._Label_num)]
         elif self.cme_arm == "c2":
             weights, scores = self.cme_router(tokens)
             category_tokens = tokens + 6.0 * weights.unsqueeze(-1) * residuals
@@ -241,11 +241,24 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         # gated raw modal features in Original Query; changing its interface to
         # post-transformer tokens would violate the required initial equality.
         global_embedding = self.Global_Message(X_gated)
-        adjacency = torch.eye(
-            X_raw.size(0), device=X_raw.device, dtype=X_raw.dtype
-        )
+        if self.adj_mode == "learned":
+            adjacency = self.Adj_Learning(X_gated)
+        elif self.adj_mode == "fixed" and self.fixed_adj is not None:
+            adjacency = self.fixed_adj.to(device=X_raw.device, dtype=X_raw.dtype)
+        else:
+            adjacency = torch.eye(
+                X_raw.size(0), device=X_raw.device, dtype=X_raw.dtype
+            )
         self.last_adj_base = adjacency
         self.last_label_relation = None
+        if self.label_graph_alpha > 0 or self.label_graph_reg_lambda > 0:
+            label_relation = self._label_relation_graph(label_embeddings)
+            self.last_label_relation = label_relation
+            alpha = max(0.0, min(1.0, self.label_graph_alpha))
+            if alpha > 0:
+                adjacency = (
+                    (1.0 - alpha) * adjacency + alpha * label_relation
+                )
         fused_embedding = self._fuse_semantic_branches(
             category_embedding, global_embedding
         )

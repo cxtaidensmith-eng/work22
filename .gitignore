@@ -29,6 +29,10 @@
 /OPT_Hyper
 # Generated experiment checkpoints
 /experiments/**/*.pt
+# Cross-dataset fold histories/checkpoints are strict-resume local state. The
+# compact task OOF, fold summaries, smoke JSON, and top-level report are tracked.
+/experiments/cross_dataset_a012_structure_v1/formal/
+/experiments/cross_dataset_a012_structure_v1/smoke/checkpoint_roundtrip_*.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
 /experiments/c1_broad_hparam_search_v1/stage_a/

@@ -1,0 +1,342 @@
+{
+  "experiment": "cross_dataset_a012_structure_v1",
+  "tasks": {
+    "tadpole_smci_pmci": {
+      "dataset": "TADPOLE",
+      "task": "SMCI_PMCI",
+      "sample_count": 535,
+      "class_names": [
+        "SMCI",
+        "PMCI"
+      ],
+      "class_counts": {
+        "SMCI": 490,
+        "PMCI": 45
+      },
+      "positive_class": "PMCI",
+      "positive_class_semantics": null,
+      "positive_index": 1,
+      "negative_class": "SMCI",
+      "negative_class_semantics": null,
+      "negative_index": 0,
+      "feature_count": 193,
+      "modalities": [
+        {
+          "name": "MRI",
+          "feature_count": 138
+        },
+        {
+          "name": "CSF",
+          "feature_count": 3
+        },
+        {
+          "name": "RISK_FACTOR",
+          "feature_count": 36
+        },
+        {
+          "name": "COGNITIVE_TEST",
+          "feature_count": 9
+        },
+        {
+          "name": "ROI_AVERAGE",
+          "feature_count": 7
+        }
+      ],
+      "data_csv": "DATASET/TADPOLE/SMCI_PMCI_ADNI_processed_standard_data.csv",
+      "data_sha256": "b7a406087875647c3663d2121eb7396d5c65ae75c158844aee57487d5ae97cfa",
+      "modality_manifest": "DATASET/TADPOLE/SMCI_PMCI_ADNI_modal_feat_dict.npy",
+      "modality_sha256": "534fcabbdeac19b186ea4dc53420cca578c7d142b579a59058605003da649900",
+      "fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+      "stable_subject_proxy": "dataset + original CSV index + feature-only canonical float64 row SHA256 (label excluded)",
+      "durable_external_subject_id_available": false,
+      "historical_protocol": {
+        "shuffle": true,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "loss_rate": 0.0001,
+        "label_smoothing": 0.05,
+        "drop_rate": 0.67,
+        "hidden_size": 96,
+        "modal_layers": 2,
+        "modal_heads": 4,
+        "input_noise_std": 0.05,
+        "drop_path": 0.05,
+        "cheb_k": 3,
+        "graph_head": "difformer",
+        "graph_layers": 2,
+        "graph_heads": 1,
+        "graph_beta": 0.1,
+        "graph_k_order": 3,
+        "graph_alpha": 0.1,
+        "graph_kernel": "simple",
+        "graph_use_graph": false,
+        "graph_dropout": 0.2,
+        "graph_hidden": 48,
+        "global_word_emb": 96,
+        "semantic_branch": "both",
+        "semantic_fusion": "add",
+        "adj_mode": "none",
+        "grad_clip": 1.0,
+        "scheduler": "CustomCosineAnnealingLR",
+        "scheduler_t_max": 400,
+        "scheduler_eta_min": 0.0001,
+        "ema": false,
+        "logit_adjust_tau": 0.0,
+        "class_weight_scope": "global_historical",
+        "auxiliary_loss": "two weighted OVR CE terms summed at coefficient 1.0",
+        "orthogonality": "rate_0.0001"
+      },
+      "historical_b0": {
+        "result_json": "RESULT/TADPOLE/SMCI_PMCI/20260722_142905_475422_T_ADNI2_dif_s3_400.json",
+        "result_json_sha256": "a28bf7b518f01986a7f199fa260a1aa8e4e5f98d60d17ce6914118bb4c94c6cf",
+        "result_json_verified": true,
+        "raw_logits_npz": "RESULT/TADPOLE/SMCI_PMCI/20260722_142905_475422_T_ADNI2_dif_s3_400_logits.npz",
+        "raw_logits_sha256": "853754a32a5c00e7f9bd7a5661eac97ecec86677d271d4bac102ef3ab0c36b3a",
+        "raw_logits_verified": true,
+        "legacy_shape_three_seeds_by_400_epochs": true,
+        "legacy_original_row_index_coverage": true,
+        "eligible_for_direct_reuse": false,
+        "rejection_reasons": [
+          "legacy artifact used three seeds while this experiment locks one seed-0 model",
+          "legacy artifact does not lock its training source commit",
+          "legacy artifact stores original CSV row indices, not external durable subject identifiers",
+          "legacy selection contained historical multi-seed ensemble behavior"
+        ]
+      }
+    },
+    "abide_ads_cn": {
+      "dataset": "ABIDE",
+      "task": "ADS_CN",
+      "sample_count": 871,
+      "class_names": [
+        "ADS",
+        "CN"
+      ],
+      "class_counts": {
+        "ADS": 403,
+        "CN": 468
+      },
+      "positive_class": "ADS",
+      "positive_class_semantics": "ADS is the repository's historical spelling alias for ASD (autism spectrum disorder); raw ABIDE label 1 maps to model index 0.",
+      "positive_index": 0,
+      "negative_class": "CN",
+      "negative_class_semantics": "Raw ABIDE label 2 maps to model index 1 (CN/NC control).",
+      "negative_index": 1,
+      "feature_count": 320,
+      "modalities": [
+        {
+          "name": "PHENO",
+          "feature_count": 48
+        },
+        {
+          "name": "ANAT",
+          "feature_count": 6
+        },
+        {
+          "name": "FUNC",
+          "feature_count": 10
+        },
+        {
+          "name": "Correlation",
+          "feature_count": 256
+        }
+      ],
+      "data_csv": "DATASET/ABIDE/ABIDE_processed_data_modal.csv",
+      "data_sha256": "a96b5e87b0a2a70aeb2dd4d98434da466da4bf06063816670e3ea97bd472fdbc",
+      "modality_manifest": "DATASET/ABIDE/ABIDE_modal_feat_dict.npy",
+      "modality_sha256": "85d7fc09576ab65136223c84a9bfcf2916f66f7ac978f7e91a06d6852c5e093f",
+      "fold_manifest_sha256": "725c3dcac039d42eece358941b8a350258c7e9c64a92628b3188b1ce1e653b90",
+      "stable_subject_proxy": "dataset + original CSV index + feature-only canonical float64 row SHA256 (label excluded)",
+      "durable_external_subject_id_available": false,
+      "historical_protocol": {
+        "shuffle": true,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.005,
+        "weight_decay": 0.001,
+        "loss_rate": 0.0,
+        "label_smoothing": 0.05,
+        "drop_rate": 0.45,
+        "hidden_size": 64,
+        "modal_layers": 3,
+        "modal_heads": 4,
+        "input_noise_std": 0.0,
+        "drop_path": 0.05,
+        "cheb_k": 3,
+        "graph_head": "difformer",
+        "graph_layers": 2,
+        "graph_heads": 1,
+        "graph_beta": 0.1,
+        "graph_k_order": 3,
+        "graph_alpha": 0.15,
+        "graph_kernel": "simple",
+        "graph_use_graph": false,
+        "graph_dropout": 0.2,
+        "graph_hidden": 32,
+        "global_word_emb": 64,
+        "semantic_branch": "both",
+        "semantic_fusion": "add",
+        "adj_mode": "none",
+        "grad_clip": 1.0,
+        "scheduler": "CustomCosineAnnealingLR",
+        "scheduler_t_max": 400,
+        "scheduler_eta_min": 0.0001,
+        "ema": false,
+        "logit_adjust_tau": 0.0,
+        "class_weight_scope": "global_historical",
+        "auxiliary_loss": "two weighted OVR CE terms summed at coefficient 1.0",
+        "declared_but_ineffective_legacy_aux_config": "aux_loss_weight=0.2, reduction=mean",
+        "orthogonality": "disabled_rate_0"
+      },
+      "historical_b0": {
+        "result_json": "RESULT/ABIDE/ADS_CN/20260722_153854_632118_ABIDE_dif_tuned_alpha015_wd001_s3_400.json",
+        "result_json_sha256": "46dff608e2a2397b0c9bfeb0b4cde73d6b2f9b48689ff4b27754869f81e67467",
+        "result_json_verified": true,
+        "raw_logits_npz": "RESULT/ABIDE/ADS_CN/20260722_153854_632118_ABIDE_dif_tuned_alpha015_wd001_s3_400_logits.npz",
+        "raw_logits_sha256": "8e5a44b43d805a94a0583b7ff4502f94efefe4200723725d74d362f0703ce852",
+        "raw_logits_verified": true,
+        "legacy_shape_three_seeds_by_400_epochs": true,
+        "legacy_original_row_index_coverage": true,
+        "eligible_for_direct_reuse": false,
+        "rejection_reasons": [
+          "legacy artifact used three seeds while this experiment locks one seed-0 model",
+          "legacy artifact does not lock its training source commit",
+          "legacy artifact stores original CSV row indices, not external durable subject identifiers",
+          "legacy selection contained historical multi-seed ensemble behavior"
+        ]
+      }
+    },
+    "abide5_ads_cn": {
+      "dataset": "ABIDE-5",
+      "task": "ADS_CN",
+      "sample_count": 864,
+      "class_names": [
+        "ADS",
+        "CN"
+      ],
+      "class_counts": {
+        "ADS": 397,
+        "CN": 467
+      },
+      "positive_class": "ADS",
+      "positive_class_semantics": "ADS is the repository's historical spelling alias for ASD (autism spectrum disorder); raw ABIDE label 1 maps to model index 0.",
+      "positive_index": 0,
+      "negative_class": "CN",
+      "negative_class_semantics": "Raw ABIDE label 2 maps to model index 1 (CN/NC control).",
+      "negative_index": 1,
+      "feature_count": 470,
+      "modalities": [
+        {
+          "name": "PHENO",
+          "feature_count": 48
+        },
+        {
+          "name": "ANAT",
+          "feature_count": 6
+        },
+        {
+          "name": "FUNC",
+          "feature_count": 10
+        },
+        {
+          "name": "MRI",
+          "feature_count": 150
+        },
+        {
+          "name": "fMRI",
+          "feature_count": 256
+        }
+      ],
+      "data_csv": "DATASET/ABIDE-5/ABIDE_processed_data_modal.csv",
+      "data_sha256": "3623d6d583abf08e8c4d07eaa2c4c913f0dad009554eb515630c39b3b835e868",
+      "modality_manifest": "DATASET/ABIDE-5/ABIDE_modal_feat_dict.npy",
+      "modality_sha256": "ccab56a9a95039230558712af45d98b13bd8bb858f6eeb4c97dbab7a53ce540a",
+      "fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+      "stable_subject_proxy": "dataset + original CSV index + feature-only canonical float64 row SHA256 (label excluded)",
+      "durable_external_subject_id_available": false,
+      "historical_protocol": {
+        "shuffle": true,
+        "seed": 0,
+        "epochs": 400,
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "loss_rate": 0.0,
+        "label_smoothing": 0.05,
+        "drop_rate": 0.45,
+        "hidden_size": 64,
+        "modal_layers": 3,
+        "modal_heads": 4,
+        "input_noise_std": 0.0,
+        "drop_path": 0.05,
+        "cheb_k": 3,
+        "graph_head": "difformer",
+        "graph_layers": 2,
+        "graph_heads": 2,
+        "graph_beta": 0.1,
+        "graph_k_order": 3,
+        "graph_alpha": 0.15,
+        "graph_kernel": "sigmoid",
+        "graph_use_graph": false,
+        "graph_dropout": 0.2,
+        "graph_hidden": 32,
+        "global_word_emb": 64,
+        "semantic_branch": "both",
+        "semantic_fusion": "add",
+        "adj_mode": "none",
+        "grad_clip": 1.0,
+        "scheduler": "CustomCosineAnnealingLR",
+        "scheduler_t_max": 400,
+        "scheduler_eta_min": 0.0001,
+        "ema": false,
+        "logit_adjust_tau": 0.0,
+        "class_weight_scope": "global_historical",
+        "auxiliary_loss": "two weighted OVR CE terms summed at coefficient 1.0",
+        "declared_but_ineffective_legacy_aux_config": "aux_loss_weight=0.2, reduction=mean",
+        "orthogonality": "disabled_rate_0"
+      },
+      "historical_b0": {
+        "result_json": "RESULT/ABIDE-5/ADS_CN/20260722_160903_486241_ABIDE5_dif_tuned_sig_a15_h2_s3_400.json",
+        "result_json_sha256": "ae82995c64dac3ad2a9f8cf922c1bbab5ba73a4b6c0a79c13f93d74da968ece2",
+        "result_json_verified": true,
+        "raw_logits_npz": "RESULT/ABIDE-5/ADS_CN/20260722_160903_486241_ABIDE5_dif_tuned_sig_a15_h2_s3_400_logits.npz",
+        "raw_logits_sha256": "2fd3056525c9fb3f54e50a699a9e5938ae9d9f1732e00a46a846c3e24a630884",
+        "raw_logits_verified": true,
+        "legacy_shape_three_seeds_by_400_epochs": true,
+        "legacy_original_row_index_coverage": true,
+        "eligible_for_direct_reuse": false,
+        "rejection_reasons": [
+          "legacy artifact used three seeds while this experiment locks one seed-0 model",
+          "legacy artifact does not lock its training source commit",
+          "legacy artifact stores original CSV row indices, not external durable subject identifiers",
+          "legacy selection contained historical multi-seed ensemble behavior"
+        ]
+      }
+    }
+  },
+  "abide_overlap": {
+    "shared_feature_count": 64,
+    "shared_feature_schema_sha256": "6ababf7d5230afae237bb8695a46104f254cb91da619140f896682cc1c57c3ad",
+    "abide_unique_shared_rows": 871,
+    "abide5_unique_shared_rows": 864,
+    "cross_dataset_shared_feature_overlap": 841,
+    "cross_dataset_shared_feature_and_label_overlap": 841,
+    "interpretation": "ABIDE-5 is a highly overlapping task view; tasks remain separately trained and reported."
+  },
+  "historical_b0_reused": false,
+  "paired_training_required": true,
+  "legacy_limitations": {
+    "offline_preprocessed_inputs": true,
+    "global_class_weights": true,
+    "test_fold_checkpoint_selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+    "no_additional_test_driven_search": true
+  },
+  "protocol_snapshot_sha256": {
+    "tadpole_smci_pmci": "9b114e68e0782320f827bcf8d3c465cb2e36349b5f7284e430959c30dcb59b68",
+    "abide_ads_cn": "adb284c718897e49afdcb9a381e09859e4afb42f5e5da424ebb49bfd089bf213",
+    "abide5_ads_cn": "3df3fd5d37fbe9acfb64334e4298b19b2aaf479c240950fb010c3b440c656dbc"
+  },
+  "fold_manifest_sha256": "5c5c29691c46f77e00b6c77be3f2a15359d3253b877e632efcea01bacfd4fcfc",
+  "sha256": "e62a2d168faca521d1ac68b02536e4f78b108282fdca275100fb275bde977e5a"
+}

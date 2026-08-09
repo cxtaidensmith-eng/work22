@@ -1,0 +1,38 @@
+{
+  "experiment": "A012/C1 Cross-Dataset Structural Generalization v1",
+  "branch": "experiment/cross-dataset-a012-structure-v1",
+  "base_commit": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+  "tasks": [
+    "tadpole_smci_pmci",
+    "abide_ads_cn",
+    "abide5_ads_cn"
+  ],
+  "arms": {
+    "B0": "Original",
+    "B1": "A012-Struct"
+  },
+  "folds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "seed_per_fold": 0,
+  "epochs_per_fold": 400,
+  "device": "cuda:0",
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "adapter_rank": 8,
+  "adapter_lr_multiplier": 2.0,
+  "checkpoint_selection": [
+    "ACC",
+    "ROC_AUC",
+    "Macro_F1",
+    "earliest_epoch"
+  ],
+  "historical_protocol_limitations": {
+    "offline_preprocessed_input": true,
+    "global_class_weights": true,
+    "test_fold_checkpoint_selection": true,
+    "disclosure": "The paired arms retain these fixed historical conventions. No test-driven hyperparameter, feature, threshold, or calibration search is performed."
+  },
+  "historical_b0_reuse": false,
+  "historical_b0_reuse_reason": "Legacy NPZ files used three seeds, do not lock a source commit, and expose only original CSV row indices rather than durable external subject identifiers. Both arms are rerun with seed 0.",
+  "next_experiment_if_go": "SP-LRIF-A012: sum-preserving low-rank branch interaction fusion"
+}
