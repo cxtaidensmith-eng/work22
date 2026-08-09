@@ -1,0 +1,410 @@
+{
+  "experiment": "ra_bmg_a012_v1",
+  "branch": "experiment/ra-bmg-a012-v1",
+  "base_commit": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+  "a012_spec": {
+    "trial_id": "A012",
+    "stage": "A",
+    "rank": 8,
+    "base_lr": 0.011271416075886307,
+    "base_weight_decay": 0.0010917677921787822,
+    "lambda_aux": 0.5,
+    "adapter_lr_multiplier": 2.0,
+    "dropout_multiplier": 1.1,
+    "generation_index": 12
+  },
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "class_order": [
+    "AD",
+    "CN",
+    "SMCI"
+  ],
+  "alignment": {
+    "fit_rows": "fold train rows only",
+    "class_total_weights": {
+      "AD": 0.25,
+      "CN": 0.5,
+      "SMCI": 0.25
+    },
+    "algorithm": "float64 weighted Procrustes plus per-dimension variance recovery",
+    "epsilon": 1e-08,
+    "rotation": "R=U@Vh without determinant correction",
+    "cn_margin": "z_CN-logsumexp([z_AD,z_SMCI])",
+    "sign_agreement": "sign(mapped_margin)==sign(original_margin)",
+    "normalized_rmse": "unweighted RMSE/(population std(original C1 train margin)+1e-8)",
+    "full_logit_cosine": "unweighted train-row mean cosine(mapped C1 logits, original C1 logits)"
+  },
+  "coupling": {
+    "q_cn": "softmax(mapped_C1_raw_logits)[CN]",
+    "q_ad_given_non_cn": "softmax(A012_raw_logits[AD,SMCI])[AD]",
+    "probability_order": [
+      "AD",
+      "CN",
+      "SMCI"
+    ],
+    "evaluation": "direct softmax(log(coupled_probability)); no second logit adjustment"
+  },
+  "single_model": true,
+  "ensemble": false,
+  "distillation": false,
+  "one_backbone_forward": true,
+  "expected_a012_parameters": 862971,
+  "expected_mapped_head_coefficients": 147,
+  "reference": {
+    "paths": {
+      "c1_root": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2",
+      "c1_oof": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\oof_predictions.csv",
+      "a012_root": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012",
+      "a012_oof": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\oof_predictions.csv",
+      "a012_config": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\config.json",
+      "bp_boundary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\boundary_feasibility.json",
+      "bp_runner": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\scripts\\run_bp_ads_v1.py"
+    },
+    "sha256": {
+      "c1_oof": "bac14e3347cacbe1f1e566be182a32df6848650c8b0e1a4c2a52d2bb3214e654",
+      "a012_oof": "deec3a235781bb4d0510ba04792ca27003a2295da63f6f3eb27d8ad66872a4f0",
+      "bp_boundary": "71880d65867d38bf2eb7bce0a43524931c9ba28cf87bdf6bc01cfbec7945d343",
+      "bp_runner": "8f36d9079eca1b5c59111c4c3d980dfc49202a430791b9aca38ca55fac864cb7"
+    },
+    "c1_metrics_actual_locked_oof": {
+      "correct": 560,
+      "acc": 0.9364548494983278,
+      "macro_f1": 0.9175457174222448,
+      "bacc": 0.9163359339143832,
+      "macro_auc": 0.9585607750856947,
+      "weighted_f1": 0.936365986325677,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "c1_user_anchor": {
+      "correct": 560,
+      "acc": 0.9364548,
+      "macro_f1": 0.9175457,
+      "bacc": 0.9163359,
+      "macro_auc": 0.9585608,
+      "confusion_matrix": [
+        [
+          61,
+          0,
+          11
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          10,
+          9,
+          298
+        ]
+      ]
+    },
+    "a012_metrics": {
+      "correct": 562,
+      "acc": 0.939799331103679,
+      "macro_f1": 0.9294205448780151,
+      "bacc": 0.9286299264715336,
+      "macro_auc": 0.961524845528226,
+      "weighted_f1": 0.9397414920986079,
+      "confusion_matrix": [
+        [
+          64,
+          0,
+          8
+        ],
+        [
+          0,
+          200,
+          9
+        ],
+        [
+          7,
+          12,
+          298
+        ]
+      ]
+    },
+    "b1_definition": "C1 argmax-CN rows retain C1; all other rows use C1 q_CN and A012 AD:SMCI conditional probability",
+    "b1_metrics": {
+      "correct": 564,
+      "acc": 0.9431438127090301,
+      "macro_f1": 0.9294627866574855,
+      "bacc": 0.9312763475141028,
+      "macro_auc": 0.9630257693637971,
+      "weighted_f1": 0.9431858020359235,
+      "confusion_matrix": [
+        [
+          64,
+          0,
+          8
+        ],
+        [
+          0,
+          201,
+          8
+        ],
+        [
+          9,
+          9,
+          299
+        ]
+      ]
+    },
+    "b1_boundary": {
+      "AD_to_SMCI": 8,
+      "SMCI_to_AD": 9,
+      "CN_to_SMCI": 8,
+      "SMCI_to_CN": 9,
+      "AD_to_CN": 0,
+      "CN_to_AD": 0,
+      "AD_SMCI": 17,
+      "CN_SMCI": 17,
+      "AD_CN": 0
+    },
+    "subject_alignment": "subject_index; truth and fold exact"
+  },
+  "checkpoint_inventory": [
+    {
+      "fold": 0,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_00\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "41a565c532496e7ffc5d041c0867a2862ae51657bf9b2ee34dde91d408df5d59",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_00\\summary.json",
+      "c1_summary_sha256": "9d81e81d09168e66d3848204fa8b83f3fd9f0a4907c4362c413d1102689f6a8e",
+      "c1_best_epoch": 116,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_00\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "4214de02059a06819a4054b048320c94565cbb3e9e19cbf6331ebe126b91c3fd",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_00\\summary.json",
+      "a012_summary_sha256": "a7579c758fb8b313af7f49908aa78097d0d7e1b28a2be1367d1d7308b2adce08",
+      "a012_best_epoch": 83,
+      "a012_fold_lock": {
+        "fold": 0,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 1,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_01\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "0e49f5f0820e3795cdedba825bf5f14ac47e20781f22617880194fe0fb88c94d",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_01\\summary.json",
+      "c1_summary_sha256": "e82f6ca566a14c6182ae4fb68a227b0213a45bfc28da26475c217a642bb74049",
+      "c1_best_epoch": 153,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_01\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "0b6d1b64d34f9809fc3fd1aba064318b51c355b4fcf1096bc9a764da83869076",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_01\\summary.json",
+      "a012_summary_sha256": "f3eaaedd93a9b1f15e4a87fabebb52cfad3f6347b248eca9fdd99519e75fc5f8",
+      "a012_best_epoch": 67,
+      "a012_fold_lock": {
+        "fold": 1,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 2,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_02\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "408a31061ccfc51ce52b064310246105b0e49d03c38c2e6e5d6a07df14364ae2",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_02\\summary.json",
+      "c1_summary_sha256": "9b94f8c783650057370d821a8978f723e02b5a5231abffd79b1127d4624354d7",
+      "c1_best_epoch": 105,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_02\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "8d4bac8dff537fc0ba405dddd0a3e4b57146088557e0808e5954b9a64a693aa8",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_02\\summary.json",
+      "a012_summary_sha256": "f8d5f98ded904442120cde75a742eb73e2352cc25bfcee647a9625182e50e940",
+      "a012_best_epoch": 306,
+      "a012_fold_lock": {
+        "fold": 2,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 3,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_03\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "79642ee494fd8a306ad5d28f0a62a040a22fe31fd115dd5216741acac827e9a8",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_03\\summary.json",
+      "c1_summary_sha256": "2d74bdcb9ec0ae68b3421f9d8ccfd633b1f2709cafcbe95c7757249c5b6218a0",
+      "c1_best_epoch": 159,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_03\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "e840f993da689b9456613de195ef64d242e21034f7e5a8ed960c8b48394871c2",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_03\\summary.json",
+      "a012_summary_sha256": "5b329772efb7a87ae6865b9a9a7f52cac257eec46fa664dc45c184db596bbc5b",
+      "a012_best_epoch": 106,
+      "a012_fold_lock": {
+        "fold": 3,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 4,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_04\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "b8e511f843d126c5996f517c6afb05448578d4473419e8756b297e564f69682b",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_04\\summary.json",
+      "c1_summary_sha256": "a26d66c5cdd737cb96a56b8b0dfa6b0b5971395910dcf301d7b4b43e55ce9301",
+      "c1_best_epoch": 103,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_04\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "6e66281277371d705c92d80d88650e316ac689af1ca6f44a6c0fa53ca8a3b7ad",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_04\\summary.json",
+      "a012_summary_sha256": "6d77b8d261690280c45bcafc9d6788d985c8a0d573af5d727ad73e00c1d1b87a",
+      "a012_best_epoch": 63,
+      "a012_fold_lock": {
+        "fold": 4,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 5,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_05\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "7cb5e1d13502c418abe6eed8b274de6af36cd3e7bc23dac5300c7b1ee77c9b29",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_05\\summary.json",
+      "c1_summary_sha256": "50ed1a294f127382631f23c2f6024513670758906f995e919073170903ed0cc6",
+      "c1_best_epoch": 180,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_05\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "dcc85ee6881f8380f801107f6b46ed1e5054369d0c445d92b07cb6cc1a3b4a26",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_05\\summary.json",
+      "a012_summary_sha256": "752ec14a0a32ac58a77b1bf4eacfb3208c64861f694d4767b521c4871733b019",
+      "a012_best_epoch": 268,
+      "a012_fold_lock": {
+        "fold": 5,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 6,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_06\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "79365b1aafc7701a0f53ecb96beca0a3639f47cb1ff2e234820d1c2a0fc4f30c",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_06\\summary.json",
+      "c1_summary_sha256": "eb60b2c37004ddf9065411ed72adb7e9cfc1c5a354347457e003b816f4e74e36",
+      "c1_best_epoch": 332,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_06\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "c6b9d3161aaed528735110c2bb152686a50cc7f804e4f7649bdc8273a41a54fc",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_06\\summary.json",
+      "a012_summary_sha256": "b50809a85693cecd64e6618634bbd58b0b3ea5add7f2810688f3cc94deb9e126",
+      "a012_best_epoch": 117,
+      "a012_fold_lock": {
+        "fold": 6,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 7,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_07\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "46b79438a41b9a9121c4845684474f33357ed37089435e9beb36d7e4e392ec6a",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_07\\summary.json",
+      "c1_summary_sha256": "e7e63eed7c12e165f64236c68a0832c99bef9a2e1eb314056e3f190485d2b969",
+      "c1_best_epoch": 181,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_07\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "0e4c84dd198914c1e657e03c07917e59a34d5ffaadb8b7decb4d2f012b591cbc",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_07\\summary.json",
+      "a012_summary_sha256": "13a9fe82664c68c848fe225a9e204bd3e545f25240abe08c8f4b90e596aed94a",
+      "a012_best_epoch": 228,
+      "a012_fold_lock": {
+        "fold": 7,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 8,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_08\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "85837e71602e5164f24d3e095dce5ce9bd518c296a9fb96c21e83333dea18e12",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_08\\summary.json",
+      "c1_summary_sha256": "cd0c49c380582eae2561cb9bf48c178f98d8ef5188cf8f0077368969c76231df",
+      "c1_best_epoch": 90,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_08\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "9ad9bbde0261b8aeedb090778bd0d352ff013d2a5d43720a966efc8bf3826f40",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_08\\summary.json",
+      "a012_summary_sha256": "3b1ba4c89bbf9c18397be4f0a6083756ad9450deb314f877be2f3285db4b2277",
+      "a012_best_epoch": 85,
+      "a012_fold_lock": {
+        "fold": 8,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    },
+    {
+      "fold": 9,
+      "c1_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_09\\checkpoint_best.pt",
+      "c1_checkpoint_sha256": "0b0487e0bade836625a1887f78ab4f948ab99cadd95b8041ac12084927d0e10c",
+      "c1_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\cme_dual_branch_v1\\experiments\\cme_dual_branch_v1\\c1_shared_private_control_2\\fold_09\\summary.json",
+      "c1_summary_sha256": "ebc2371192d7df6cc4b718971201583e01bfe972dff60b3479ba4f7837af8fee",
+      "c1_best_epoch": 181,
+      "a012_checkpoint": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_09\\checkpoint_best.pt",
+      "a012_checkpoint_sha256": "27aa2960bb5b73e4af5055f2bdeffbf2e50fc75bd1caf18c67c198fbef00aa45",
+      "a012_summary": "D:\\Work\\WORK2 final\\WORK2 final26.7,21\\tmp\\bp_ads_v1\\experiments\\bp_ads_v1\\checkpoint_materialization\\a012\\fold_09\\summary.json",
+      "a012_summary_sha256": "5eeeb28cc32ce14fc1c3f331e8743ae2237e8c5e4cb82dbf53ca098e223de7ee",
+      "a012_best_epoch": 84,
+      "a012_fold_lock": {
+        "fold": 9,
+        "config_name": "a012",
+        "source_commit": "371df39117b4d56f3277b9101bec1d95d41e221e",
+        "config_sha256": "1b77e4c3e699e7d2b70747cd231030aa2350b51e79506d5dafa8c3b7db055251",
+        "fold_manifest_sha256": "21474e24414c295d31e2d0c7d1d862a3a07d96ce8dfefe37d0d05f5ec50115c4"
+      }
+    }
+  ],
+  "checkpoint_inventory_sha256": "f483180fc3b2202e72e5f6307ee14ef874c54d1d7a2ada1f873d079432bab39d",
+  "source_dependencies": {
+    ".gitignore": "0a708d9bc3c37c882ebb600df7e95b57b3194f3f542c75c305d9af0d6f9f7e07",
+    "Model/ra_bmg.py": "a74562fb9152bc3d5b5662ccb25621c0bb90ccacd3bdf86f2f2a4d4836698588",
+    "Model/cme_dual_branch.py": "df822015ceb42387d3d923e948616bdb6ded42d01b8ec704018ae48e6de535a2",
+    "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
+    "scripts/run_ra_bmg_a012_v1.py": "3f84e1bdb23983810c3695e2bb8cbbfb0d1030b948198920ef9f963c197edcb7",
+    "scripts/run_c1_broad_hparam_search_v1.py": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
+    "scripts/run_cme_dual_branch_v1.py": "e0fc8e1aee192072a984c4537f77cbdcb764b5b57732c7bbf4e6ae5b17c3816c",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79"
+  },
+  "config_sha256": "b4feeda4b3079118e52a39bb7ce9a07fad30187e1d5392ce84e0496aa7cd2d06"
+}
