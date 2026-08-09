@@ -828,7 +828,16 @@ def audit_artifact_state(wrapper: RABMGA012) -> dict:
         all(key.startswith("backbone.") or key in {"mapped_c1_weight", "mapped_c1_bias"} for key in keys),
         "Artifact state contains a second model or unfurled mapping",
     )
-    require(not any("c1_backbone" in key or "transform" in key or "offset" in key for key in keys), "Artifact retained forbidden C1/map state")
+    forbidden_mapping_keys = {
+        "transform",
+        "offset",
+        "alignment_transform",
+        "alignment_offset",
+    }
+    require(
+        not any("c1_backbone" in key or key in forbidden_mapping_keys for key in keys),
+        "Artifact retained forbidden C1/map state",
+    )
     parameter_count = int(sum(parameter.numel() for parameter in wrapper.parameters()))
     mapped_coefficients = int(wrapper.mapped_head_coefficients)
     require(parameter_count == EXPECTED_PARAMETERS, "Artifact A012 parameter count changed")

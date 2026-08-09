@@ -1,7 +1,7 @@
 {
   "experiment": "ra_bmg_a012_v1",
   "branch": "experiment/ra-bmg-a012-v1",
-  "base_commit": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+  "base_commit": "93beb6cc8c5ac692bc0efb61802b0a50fd01dbcc",
   "a012_spec": {
     "trial_id": "A012",
     "stage": "A",
@@ -400,11 +400,11 @@
     "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
     "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
     "Config/T_ADNI3_tune_light_gm64_dif_lr006_wd0007.ini": "a01059d56c2cdf5a892362888a6164b2aef3896ee976cb28dc908256ea40234c",
-    "scripts/run_ra_bmg_a012_v1.py": "3f84e1bdb23983810c3695e2bb8cbbfb0d1030b948198920ef9f963c197edcb7",
+    "scripts/run_ra_bmg_a012_v1.py": "1f4a232705ea596f98af1dd567ddba49372127629460816f9edf9352d714caf7",
     "scripts/run_c1_broad_hparam_search_v1.py": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
     "scripts/run_cme_dual_branch_v1.py": "e0fc8e1aee192072a984c4537f77cbdcb764b5b57732c7bbf4e6ae5b17c3816c",
     "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
     "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79"
   },
-  "config_sha256": "b4feeda4b3079118e52a39bb7ce9a07fad30187e1d5392ce84e0496aa7cd2d06"
+  "config_sha256": "37dccb0c10278a85628781c5b02c3f28b671ba0d4ae292aa7904748d2c267702"
 }
