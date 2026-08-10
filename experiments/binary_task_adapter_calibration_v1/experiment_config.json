@@ -1,0 +1,36 @@
+{
+  "experiment": "Binary Task-Adaptive Private Residual Calibration v1",
+  "branch": "experiment/binary-task-adapter-calibration-v1",
+  "base_source_commit": "17004d29714471b5e1548e04bac0072e854e7e18",
+  "legacy_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+  "tasks": [
+    "tadpole_smci_pmci",
+    "abide_ads_cn",
+    "abide5_ads_cn"
+  ],
+  "outer_folds": 10,
+  "seed": 0,
+  "inner_validation_fraction": 0.2,
+  "max_search_epochs": 400,
+  "rank_candidates": [4, 8],
+  "adapter_lr_multiplier_candidates": [0.5, 1.0, 2.0],
+  "lambda_aux": 0.2,
+  "auxiliary_reduction": "mean_over_two_ovr_losses",
+  "corrected_loss": "main_weighted_ce + 0.2 * mean(two_weighted_ovr_ce) + historical_orthogonality_if_enabled",
+  "class_weight_scope": "current_training_mask_only",
+  "outer_test_used_for_selection": false,
+  "selection": {
+    "tadpole_smci_pmci": ["BACC", "PR_AUC", "Macro_F1", "pMCI_SEN", "ACC", "earlier_epoch"],
+    "abide_ads_cn": ["BACC", "ROC_AUC", "Macro_F1", "ACC", "earlier_epoch"],
+    "abide5_ads_cn": ["BACC", "ROC_AUC", "Macro_F1", "ACC", "earlier_epoch"]
+  },
+  "collapse_definition": "a predicted class below 25 percent of its true class count, min(SEN,SPE)<0.50, or absolute SEN-SPE gap>0.35",
+  "severe_degradation_definition": "BACC delta below -0.02 or Correct delta at most -10",
+  "sen_spe_exchange_definition": "SEN and SPE move in opposite directions, one drops by more than 0.05, and the absolute SEN-SPE gap worsens by more than 0.05",
+  "tadpole_clear_improvement_definition": "Correct delta>0, BACC delta>0, PR-AUC delta>0, and pMCI TP delta>=2",
+  "task_improvement_definition": "Correct delta>0, repairs>damages, and BACC delta>=0",
+  "single_model": true,
+  "ensemble": false,
+  "ema": false,
+  "device": "cuda:0"
+}
