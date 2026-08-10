@@ -551,7 +551,10 @@ def manual_historical_loss(criterion: Any, output: torch.Tensor, labels: torch.T
     one_hot = torch.nn.functional.one_hot(labels, num_classes=2).transpose(0, 1).reshape(2, -1)
     aux_terms = [criterion.aux_loss_dict[f"aux_loss_{index}"](auxiliary[index][mask], one_hot[index][mask]) for index in range(2)]
     orth = orthogonality_lossv2(embeddings)
-    total = main + aux_terms[0] + aux_terms[1] + criterion.rate * orth
+    # Match criterion_lossv2's exact floating-point association: it first
+    # accumulates the two OVR terms, then adds that sum to the main CE.
+    auxiliary_sum = aux_terms[0] + aux_terms[1]
+    total = main + auxiliary_sum + criterion.rate * orth
     return total, {
         "main": float(main.detach().cpu()),
         "ovr_0": float(aux_terms[0].detach().cpu()),
