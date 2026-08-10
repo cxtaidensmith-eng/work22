@@ -1,0 +1,3290 @@
+{
+  "task_id": "tadpole_smci_pmci",
+  "fold_manifest": {
+    "task_id": "tadpole_smci_pmci",
+    "folds": [
+      {
+        "fold": 0,
+        "train_count": 481,
+        "test_count": 54,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:210:9716519f599175037573",
+            "original_csv_index": 210,
+            "feature_sha256": "9716519f5991750375732facd2a8e5481aa9642f75a2b7d456b786186a0784ae",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:162:601528e470dbb8d7ebb0",
+            "original_csv_index": 162,
+            "feature_sha256": "601528e470dbb8d7ebb08684110fb34b35c943d0faf15a0f175e4244be399f0d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:336:4171fc40ea5bbd498554",
+            "original_csv_index": 336,
+            "feature_sha256": "4171fc40ea5bbd4985545acf5050bfb598bc0b51c3a775e68fcc17f83b6af350",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:142:6fd556b5b9a4182605ad",
+            "original_csv_index": 142,
+            "feature_sha256": "6fd556b5b9a4182605ad76b0055ffa865a0893af7641139172905f3eb7af8842",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:155:7f04c0a4a8d0be831713",
+            "original_csv_index": 155,
+            "feature_sha256": "7f04c0a4a8d0be831713a2fa49c03b0274677b59f5255107d318f41e97080f5a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:37:9bc4006dbeb822c73f87",
+            "original_csv_index": 37,
+            "feature_sha256": "9bc4006dbeb822c73f8704c028be0ba07afd12d1b4eb5690849dfa2051f7a3e4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:301:481078b9ed715d93477f",
+            "original_csv_index": 301,
+            "feature_sha256": "481078b9ed715d93477f2337649d1c824037fb30ac0336289816d7d5d3724c89",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:364:4496fd75ed81913837c4",
+            "original_csv_index": 364,
+            "feature_sha256": "4496fd75ed81913837c4f7a562278d3cf98c3052e71f605edef565537348095e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:316:2886541e7151e05cf4e6",
+            "original_csv_index": 316,
+            "feature_sha256": "2886541e7151e05cf4e6c52654a66836c222798f2913a2cb1820e9f94a906603",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:532:7f2d8390a4f0c2ca9a7a",
+            "original_csv_index": 532,
+            "feature_sha256": "7f2d8390a4f0c2ca9a7ae40e64bb42a3fd6fb64b48a12cef761a45acb5b2e818",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:7:d65eb2c824900a2203c7",
+            "original_csv_index": 7,
+            "feature_sha256": "d65eb2c824900a2203c71e31ddec583fb082437fcce2ca896bce9b48caca72ec",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:272:a04007e2d298bad66bd0",
+            "original_csv_index": 272,
+            "feature_sha256": "a04007e2d298bad66bd058576b2b08eca431d31cf421f3a495b42951efcda787",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:144:157bc53a94ccda35938c",
+            "original_csv_index": 144,
+            "feature_sha256": "157bc53a94ccda35938c5493f5228b186b182c3d14a26189800039fe723b13b9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:6:b547e3340039b27754c5",
+            "original_csv_index": 6,
+            "feature_sha256": "b547e3340039b27754c550ac251e8019a72204e25990e91ef44d71d0b94cc6bc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:175:e8b423b40fc7ee1e9923",
+            "original_csv_index": 175,
+            "feature_sha256": "e8b423b40fc7ee1e992397b66f89cc0aac6e9dd613a1b00b8d8378223e06ed6a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:499:27bb900b35b9215622d7",
+            "original_csv_index": 499,
+            "feature_sha256": "27bb900b35b9215622d70eef38ced871a6461bd418e96588251ffddc5470e02d",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:348:93ec7d98e0f9b8f9f3d8",
+            "original_csv_index": 348,
+            "feature_sha256": "93ec7d98e0f9b8f9f3d808b5d63c8df14f7d62839e7677749d64636e247c5cdb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:393:09a758ce794954a0d6ff",
+            "original_csv_index": 393,
+            "feature_sha256": "09a758ce794954a0d6ffdb0be25152f95026be959d9fda530442bf8b8ed5ce58",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:283:fa55b124ecc6bed40370",
+            "original_csv_index": 283,
+            "feature_sha256": "fa55b124ecc6bed40370c833bc1452658afa81e794b1d28e5fda5b379bfcb08e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:345:28bf33f64b0090c3d570",
+            "original_csv_index": 345,
+            "feature_sha256": "28bf33f64b0090c3d57062d7c914c06dd38f7c35c6e3ad5351cdd5211e63d28a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:438:c30e0b471171eb548921",
+            "original_csv_index": 438,
+            "feature_sha256": "c30e0b471171eb5489212b8e2ccfab0a6ebb965603347e79f74adc5d427a16c4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:517:149dd3f01cc19fe5a2a1",
+            "original_csv_index": 517,
+            "feature_sha256": "149dd3f01cc19fe5a2a176efff28eeee753d93eaa19c5dc85e1dd31d7b2ca63d",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:467:433d496baa443fb2f5a7",
+            "original_csv_index": 467,
+            "feature_sha256": "433d496baa443fb2f5a7170e285f9f4d29633788cc9e6386362b1b07d5474bfa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:319:bb93fd072a5ccc50eaa0",
+            "original_csv_index": 319,
+            "feature_sha256": "bb93fd072a5ccc50eaa0a3615818c570b392e32c050810f4b6de587435b7ce27",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:150:0a8550a296066d25c645",
+            "original_csv_index": 150,
+            "feature_sha256": "0a8550a296066d25c64511b379e031b45425ac409f16fbca7e6bfbea24e3cdab",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:39:98cbb483b97c0a2909d5",
+            "original_csv_index": 39,
+            "feature_sha256": "98cbb483b97c0a2909d52babd8f184ddac7a09af0b70678dbf788cc2937d3199",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:333:d49adb08a1f0978c40d0",
+            "original_csv_index": 333,
+            "feature_sha256": "d49adb08a1f0978c40d09e6289e3ccdf81562b085be876beeff823adf2eb710f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:487:0241bdfc0a6ca493143b",
+            "original_csv_index": 487,
+            "feature_sha256": "0241bdfc0a6ca493143b987ab65668f80bd86f8f1c5491dad3894d65afe995b4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:480:b9c758042a45e6ccf928",
+            "original_csv_index": 480,
+            "feature_sha256": "b9c758042a45e6ccf92865cbd73f748eec2a1e5094719ec93677df05097ee6ea",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:88:313a1f7a0fd5b928842a",
+            "original_csv_index": 88,
+            "feature_sha256": "313a1f7a0fd5b928842a787a7b53f313b420ec90bdf602ca993597a3aa36da90",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:395:a214d5e0df5ce20af673",
+            "original_csv_index": 395,
+            "feature_sha256": "a214d5e0df5ce20af673ff44fefc0ffa0ae0cbb212f7ffaefee105a6f014c39d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:443:0eb42c0360ea6c29ce47",
+            "original_csv_index": 443,
+            "feature_sha256": "0eb42c0360ea6c29ce4766bdad9fb0594422d34b9b970002e6474f95cf126e96",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:259:02060aa9b81c43283ec1",
+            "original_csv_index": 259,
+            "feature_sha256": "02060aa9b81c43283ec1511d802c770f78f361c7175303af1f8a941860934704",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:274:1dfda10978d1cdbd1492",
+            "original_csv_index": 274,
+            "feature_sha256": "1dfda10978d1cdbd1492a2dc06cce028126cb664817a7829e1fafc32b31856f4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:117:cdee56dc147693510aa8",
+            "original_csv_index": 117,
+            "feature_sha256": "cdee56dc147693510aa8c207d4869e68cb4d8a4928090d1e7e4f8c59fb33392e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:16:61edf03a4721a0ca42e1",
+            "original_csv_index": 16,
+            "feature_sha256": "61edf03a4721a0ca42e13e2e8e28668c600569184db0153ef34ce4cff56584d1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:296:11b2c5697ae3cb2c6da2",
+            "original_csv_index": 296,
+            "feature_sha256": "11b2c5697ae3cb2c6da29b709d31957259439673215d65f8be8e1e2a6290a01c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:455:ac0e254dd3c79023aaa3",
+            "original_csv_index": 455,
+            "feature_sha256": "ac0e254dd3c79023aaa32d0698b063555a7cef861117baafc0ad20333a95e0aa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:125:05c589c64d90348936d8",
+            "original_csv_index": 125,
+            "feature_sha256": "05c589c64d90348936d877f53d7adbed6c250221703d33e7aba200d755d4e8aa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:258:b442514475958ede798d",
+            "original_csv_index": 258,
+            "feature_sha256": "b442514475958ede798d36f3e95d0cae45f46a78ba50d3013362acafa29add8c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:11:25940eca55ae8b6bac88",
+            "original_csv_index": 11,
+            "feature_sha256": "25940eca55ae8b6bac88e7a4e08c3f830d536daae93f5de35817fa6dd034f80c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:360:6123bf3001f0565eddbf",
+            "original_csv_index": 360,
+            "feature_sha256": "6123bf3001f0565eddbf911c023169f92b8560113fada3b85ecc5df8ee2a6166",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:433:cca2b211cdaf0915b7cc",
+            "original_csv_index": 433,
+            "feature_sha256": "cca2b211cdaf0915b7ccaa83e6f9a880fae30f0cea6d96a210180bc111555bc4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:508:8d4f988d243e11f77319",
+            "original_csv_index": 508,
+            "feature_sha256": "8d4f988d243e11f77319e0b9e0b815f14417224fae8ac44f92077d73725ed241",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:148:d366fe320d2be70b2adf",
+            "original_csv_index": 148,
+            "feature_sha256": "d366fe320d2be70b2adfa89a26aebb67f84b5ec438936c366ede0ea17f584261",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:131:14d6a1d8794812491816",
+            "original_csv_index": 131,
+            "feature_sha256": "14d6a1d87948124918160c61763fa4afde085fb3cc93f51acba40ecc25c15ded",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:84:8aa1c8e6cddf361eae92",
+            "original_csv_index": 84,
+            "feature_sha256": "8aa1c8e6cddf361eae9274db378b43262318bc4756afdb407ed07c6105804bf8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:430:39f4d678345a7492729d",
+            "original_csv_index": 430,
+            "feature_sha256": "39f4d678345a7492729d90ddddb4470841aadd4ac42b849c3f678a71ab39afdc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:267:2e12117c4c1821b28075",
+            "original_csv_index": 267,
+            "feature_sha256": "2e12117c4c1821b2807521589d023d98486fda6f84bb0048adf737faf18bef08",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:183:3564a2ef03e9420f8fbc",
+            "original_csv_index": 183,
+            "feature_sha256": "3564a2ef03e9420f8fbcf4c7d0107e596d0a365c8f3241dd8e189a06349d2a87",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:510:06959d8e8c63a444eada",
+            "original_csv_index": 510,
+            "feature_sha256": "06959d8e8c63a444eada920127afd7b07529d56c0bbace0cb1a45d748c4ae594",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:265:37bc90ad5f263d0879c8",
+            "original_csv_index": 265,
+            "feature_sha256": "37bc90ad5f263d0879c8852a619748114468c2fc03dd88e38d5d7af2330f4588",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:486:3a65ea83b7988b8cc10e",
+            "original_csv_index": 486,
+            "feature_sha256": "3a65ea83b7988b8cc10ee8b76616a387b698530c4e58a3d0172fed16077e0f19",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:359:73fee9a94f86bd95729a",
+            "original_csv_index": 359,
+            "feature_sha256": "73fee9a94f86bd95729aa239384328185774ebb2f9eab58ad9ecd31483b2bf7a",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "train_count": 481,
+        "test_count": 54,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:485:6b93ca6fb616f636b30d",
+            "original_csv_index": 485,
+            "feature_sha256": "6b93ca6fb616f636b30d59e11b6923ddf5b7b4f88e350cb7fef7807822302dbb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:246:6f851064ac67976c6934",
+            "original_csv_index": 246,
+            "feature_sha256": "6f851064ac67976c693402c15d48ce8986a3b1d29cee989ec07297cae62eba01",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:313:20ba31f114971b85cc4a",
+            "original_csv_index": 313,
+            "feature_sha256": "20ba31f114971b85cc4af2c9712a52a987bad18de829f51235a666bea4aa19c6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:90:f50be50c8aaaea35bee7",
+            "original_csv_index": 90,
+            "feature_sha256": "f50be50c8aaaea35bee7520ebaf7eff2a50208b7e40395ceb99822f8c9f184d4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:463:6984e28ba36ffc1837eb",
+            "original_csv_index": 463,
+            "feature_sha256": "6984e28ba36ffc1837eb8b51851a93825e77dcd219b09b7a2d626083469e5330",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:190:5c5510c7098df294e428",
+            "original_csv_index": 190,
+            "feature_sha256": "5c5510c7098df294e428ab663fa80078fe326d3e10b3d0b2206ff161285fd9cd",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:12:b93935fe19d08fc18849",
+            "original_csv_index": 12,
+            "feature_sha256": "b93935fe19d08fc18849b32e6db1a8053525b9018e09d94d9c4b90b42611714b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:103:0f10c489c9ed30c8a1b0",
+            "original_csv_index": 103,
+            "feature_sha256": "0f10c489c9ed30c8a1b00cccdd490d35ca9922b237cfd1b2d31d5f8f399df188",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:76:ff912d2475a420107aa4",
+            "original_csv_index": 76,
+            "feature_sha256": "ff912d2475a420107aa4ba2c995d6b74dda7e4a92e35cc94daf2164e8c047ad8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:65:6800f6ee43fef6510bc4",
+            "original_csv_index": 65,
+            "feature_sha256": "6800f6ee43fef6510bc4f9ac69ec60b2725e8f0705123cccae50ffed9d65d48c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:445:206b23e15d1b6d35715a",
+            "original_csv_index": 445,
+            "feature_sha256": "206b23e15d1b6d35715a8b78dd59cd487f69fc1b8126724b5924224e013b9b1a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:137:d3dbfbe514626e39fbee",
+            "original_csv_index": 137,
+            "feature_sha256": "d3dbfbe514626e39fbeeb03cb124667be8b23f732e15acdd3b19112c114a249e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:482:8d6ab22e0bd41a18ebfc",
+            "original_csv_index": 482,
+            "feature_sha256": "8d6ab22e0bd41a18ebfcdeea5ffad021ab551a1ddacb399ea334bc861959ebd9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:278:5d37ce73a0c5b4540d65",
+            "original_csv_index": 278,
+            "feature_sha256": "5d37ce73a0c5b4540d653722f858281435dcac2fa9089f5dc957331beb7ba107",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:386:83dfd798b2301d300efd",
+            "original_csv_index": 386,
+            "feature_sha256": "83dfd798b2301d300efd76513353201721264945d4a13ff3a7cb7672f758aece",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:446:12edf6514e0d4add6be3",
+            "original_csv_index": 446,
+            "feature_sha256": "12edf6514e0d4add6be30442f77405e60fba08dfefba762f794d3d28cd0e6ae7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:124:f11ccdeea4fc5bb882c1",
+            "original_csv_index": 124,
+            "feature_sha256": "f11ccdeea4fc5bb882c1d6f286c4da1bd51985b25d7cf79dc3b1dc75cfdc6c5c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:59:dc35bb9632154691da55",
+            "original_csv_index": 59,
+            "feature_sha256": "dc35bb9632154691da554d1b2dbe17d0df80e0e1a35d3af17fb89fce55b60d41",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:34:95dcf8d3eb787cb5c42b",
+            "original_csv_index": 34,
+            "feature_sha256": "95dcf8d3eb787cb5c42bf0986914eb57d177e341f43a0049acdb3f4a218a933d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:74:38db8591c27a17857e65",
+            "original_csv_index": 74,
+            "feature_sha256": "38db8591c27a17857e65c9b918eeb644f44cd8b14ed51d894fdb6cd1a08bdf68",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:4:08e6469847444a6a2739",
+            "original_csv_index": 4,
+            "feature_sha256": "08e6469847444a6a27399b55030fe6b62e629f0968736484a1a5247cfec1f008",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:413:3574e4cc0ba5c88cbeff",
+            "original_csv_index": 413,
+            "feature_sha256": "3574e4cc0ba5c88cbeff968c2c00e640f5b3b1f3754ebc37079a039ba65c5c5b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:135:e1b41a0f67391186759c",
+            "original_csv_index": 135,
+            "feature_sha256": "e1b41a0f67391186759c54dc059a943512d4015a40b9265aed65856956a72e59",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:469:f3694ad453e54c552d0f",
+            "original_csv_index": 469,
+            "feature_sha256": "f3694ad453e54c552d0f138d922dc7fff6566257237a7332e9e415fa5c492ecf",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:493:c8f16a274a79dc1c9e72",
+            "original_csv_index": 493,
+            "feature_sha256": "c8f16a274a79dc1c9e72d3e65bc1ea211af7958913b9c4b621dd570d893f7a4f",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:478:6d9a788ebc11b9bc979c",
+            "original_csv_index": 478,
+            "feature_sha256": "6d9a788ebc11b9bc979cc97f37ad7e136b5e43f234c2faf39e2cbf1a1da0662f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:310:7d305d742052810fb2dc",
+            "original_csv_index": 310,
+            "feature_sha256": "7d305d742052810fb2dc6002c86798e89d390bab0f4e52f86a63bf16a02856fd",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:253:a6a6900949a20eea82bb",
+            "original_csv_index": 253,
+            "feature_sha256": "a6a6900949a20eea82bb46e46048826731c62a080fbd6f0c6c4480ba6f1c1b4c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:254:0f0b4d4644fa5fa764c8",
+            "original_csv_index": 254,
+            "feature_sha256": "0f0b4d4644fa5fa764c8dde11bf8db891ced07aadb6742fac102be7bd4b98113",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:512:06a525a538fb1755c4bf",
+            "original_csv_index": 512,
+            "feature_sha256": "06a525a538fb1755c4bfcefd40e5a37ac21fc9cc252739119c64b2ac99ed77f4",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:477:23d8072150bc8904e924",
+            "original_csv_index": 477,
+            "feature_sha256": "23d8072150bc8904e9246b9a28a935e8abaadf4648bf693a9133825b37af23eb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:484:74582cadc50d5720e097",
+            "original_csv_index": 484,
+            "feature_sha256": "74582cadc50d5720e0977884e73cfbb288152495487a2410ad2fb8e1ac61e1e3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:129:8a9f11de92a46d3db7b9",
+            "original_csv_index": 129,
+            "feature_sha256": "8a9f11de92a46d3db7b9a3b4cc6deeda74558366cc36ed7c8498e8103b8f96eb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:494:f4fe5baca5a37656fdc6",
+            "original_csv_index": 494,
+            "feature_sha256": "f4fe5baca5a37656fdc60eaead6eaa3564009f018ae40e729af52bed874c4c1c",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:237:0d1324ffe246f79ce4ed",
+            "original_csv_index": 237,
+            "feature_sha256": "0d1324ffe246f79ce4ed7e13b302890d52963f911d170fe9d18bc3ac5bb39d7b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:444:2a95d8d3edd2d46c5440",
+            "original_csv_index": 444,
+            "feature_sha256": "2a95d8d3edd2d46c5440f5723210ba949b10fabc8b7d2c0242fe3571b77d51e4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:363:1344c8b47aa6fdd82a6c",
+            "original_csv_index": 363,
+            "feature_sha256": "1344c8b47aa6fdd82a6c4658eb681f52c1786f5fdb5e6c6d69e685a68aa849a8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:399:8fc1d89906308b8fa030",
+            "original_csv_index": 399,
+            "feature_sha256": "8fc1d89906308b8fa030cc031d1868cd0467c4c900aaa2a57e1babad022a264d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:286:07f074e80eb6267dabcd",
+            "original_csv_index": 286,
+            "feature_sha256": "07f074e80eb6267dabcd8d6605a0008e2d15068286f496d77facbd416bf5ad4a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:503:31a7a1fd3305dc241a03",
+            "original_csv_index": 503,
+            "feature_sha256": "31a7a1fd3305dc241a032a799131a8ca5ff3377df4e390101679c29164209761",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:182:6576e28d762fdb667514",
+            "original_csv_index": 182,
+            "feature_sha256": "6576e28d762fdb667514495eba064333d7c691d297f7710ec2d14b5201520398",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:209:00dac87cda7ae85d4347",
+            "original_csv_index": 209,
+            "feature_sha256": "00dac87cda7ae85d434736565b0bcee897dd683ece67eaf531b1964b5828320a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:456:673a90c2af4f23e01ee7",
+            "original_csv_index": 456,
+            "feature_sha256": "673a90c2af4f23e01ee76b994e2c7675ca37ce0776452c497019f77a24d9c54d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:222:e8440e702a0bfe4cce62",
+            "original_csv_index": 222,
+            "feature_sha256": "e8440e702a0bfe4cce623f58143616941dabb225a2b0295edb8473cc506f212f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:418:bf3f6ba742b34aa3e580",
+            "original_csv_index": 418,
+            "feature_sha256": "bf3f6ba742b34aa3e580531cda24263469cd20f65f942cf9ccab351832407c0a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:95:5f3c3601dfc5e423f8ba",
+            "original_csv_index": 95,
+            "feature_sha256": "5f3c3601dfc5e423f8ba7f568270fd50bc3dd7acda3e3f8debf617731de965eb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:169:59ea0071081f04d48059",
+            "original_csv_index": 169,
+            "feature_sha256": "59ea0071081f04d48059b9ad6202a4de68ed4b5d079616c2891323ec505a7b90",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:373:20e6f1c812109a339714",
+            "original_csv_index": 373,
+            "feature_sha256": "20e6f1c812109a3397141b7054f14563e6492a6b91a6c9c31d8c7047d94dff21",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:491:a1785754dea8c29b8481",
+            "original_csv_index": 491,
+            "feature_sha256": "a1785754dea8c29b8481160f2a21dceee8b0dd9181fc2992f44bdb618e57e497",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:47:aff7affd847003a7729b",
+            "original_csv_index": 47,
+            "feature_sha256": "aff7affd847003a7729b6b71b85bdc0ac15d6d9c2dfbe8909821210ddeb30cf8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:290:a2330fa80d5ab3845506",
+            "original_csv_index": 290,
+            "feature_sha256": "a2330fa80d5ab3845506251ac239977cf31ad3795f07c4f9ca4fb42a84f937a0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:177:4acc129abc5abe295096",
+            "original_csv_index": 177,
+            "feature_sha256": "4acc129abc5abe295096810aec79b64a03fc525a0e8a085f104ffad573fa90eb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:448:75271c2f2fbbbae714ca",
+            "original_csv_index": 448,
+            "feature_sha256": "75271c2f2fbbbae714ca9c0e1ca59d6a86ca920f78dff71c51b6e250334d6a06",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:431:b9229f61b121dbf9e42c",
+            "original_csv_index": 431,
+            "feature_sha256": "b9229f61b121dbf9e42ca2e4aa1a74a700e23a453f5f1ddd1db7eecff2a80a78",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "train_count": 481,
+        "test_count": 54,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:470:be2f9de7c317e2fe7798",
+            "original_csv_index": 470,
+            "feature_sha256": "be2f9de7c317e2fe77987e751cd8769c4b2aa780b235c851c07db9a79c5d2867",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:421:f37264359f89ba3b87a3",
+            "original_csv_index": 421,
+            "feature_sha256": "f37264359f89ba3b87a3d11134574c529383b2046c34b859729243163605f6ec",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:247:055c3174496acfabede1",
+            "original_csv_index": 247,
+            "feature_sha256": "055c3174496acfabede19d83a8aebb72e7da230893f03f3e79affa166e15f647",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:365:31291b2f6bdbf402b520",
+            "original_csv_index": 365,
+            "feature_sha256": "31291b2f6bdbf402b520b69fd5258036b9d4a44043fa749ad60dd4aeff9bb36d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:337:40dd39a0f42bf11e1ff6",
+            "original_csv_index": 337,
+            "feature_sha256": "40dd39a0f42bf11e1ff6726d4482c4e705d070730cac297e1ac0633c9f11b6a7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:126:c84b5b499451e3b7b00f",
+            "original_csv_index": 126,
+            "feature_sha256": "c84b5b499451e3b7b00f40293ef955658dceb0e7d4f339fee8ab86db60debda4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:185:3e13517274fd9c356a90",
+            "original_csv_index": 185,
+            "feature_sha256": "3e13517274fd9c356a90c2f64770d1c40054f54893376680af6b627fb8cb2bdc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:500:9f59f75da2e79d96dd9a",
+            "original_csv_index": 500,
+            "feature_sha256": "9f59f75da2e79d96dd9a18bff99dae8a5d6a31d928b557299ad5dab2dedbbb6a",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:404:460739087fcde174e1fb",
+            "original_csv_index": 404,
+            "feature_sha256": "460739087fcde174e1fbb616b1558a9c94443df05891deb28946e999f6e8a253",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:458:2926bb00e232211db693",
+            "original_csv_index": 458,
+            "feature_sha256": "2926bb00e232211db693800c137323ffc24f60a4cdb93068aad5bda54aab76c2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:311:53f3f5d31a09f1627250",
+            "original_csv_index": 311,
+            "feature_sha256": "53f3f5d31a09f16272509ba8f85529395a2401700fc89c2f11be96f54a1e6b47",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:225:c2be0eee542adee2b287",
+            "original_csv_index": 225,
+            "feature_sha256": "c2be0eee542adee2b287d7cfe93a9f44eb5dd4c5cb3f433af8ea465661a14900",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:495:d9e202b8cf10a6ffbb80",
+            "original_csv_index": 495,
+            "feature_sha256": "d9e202b8cf10a6ffbb8016a87dfb78427919bf986d33ae228f7b5943d57f74b6",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:390:c4ba4f070629399caec8",
+            "original_csv_index": 390,
+            "feature_sha256": "c4ba4f070629399caec8db05da97c90aa9ce30d0fb6b20c6cc5a6aaa7fa79591",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:450:9120db3d5fa656a9f576",
+            "original_csv_index": 450,
+            "feature_sha256": "9120db3d5fa656a9f57674aa3820b1487ce95ddc677b27603692669e4469febb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:282:0edd9921b50d7d2381d9",
+            "original_csv_index": 282,
+            "feature_sha256": "0edd9921b50d7d2381d9e1a2b79ecc195d5ab90f93b4646600fc926e1db7743e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:285:ac43c134360da700f0d0",
+            "original_csv_index": 285,
+            "feature_sha256": "ac43c134360da700f0d013be25606f4cbc2c950a5ec4f5115326b1cd4069d43e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:122:44b778881773b19264f9",
+            "original_csv_index": 122,
+            "feature_sha256": "44b778881773b19264f98497aa35f5ae580d347c2df053f8f4b7a7d236458cf2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:120:296ef443a46eb5fb8135",
+            "original_csv_index": 120,
+            "feature_sha256": "296ef443a46eb5fb813500b5474d90c60ce3c7caa35b1eda3b3ee14a8e3562c0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:81:883abedebdf6a06f776b",
+            "original_csv_index": 81,
+            "feature_sha256": "883abedebdf6a06f776b3fbd83b1eaad2333a1d25918550165241309985269ec",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:160:d40dca1f252f0600fddf",
+            "original_csv_index": 160,
+            "feature_sha256": "d40dca1f252f0600fddfc908d8d49b288fd7eaefac06c14815307f5589fe3633",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:525:a5d8e40ecb946b5afd69",
+            "original_csv_index": 525,
+            "feature_sha256": "a5d8e40ecb946b5afd69be22d0378df8dac33bc37603c0d2f42b90f6a8aac19c",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:343:5f39f6bf003e195f8210",
+            "original_csv_index": 343,
+            "feature_sha256": "5f39f6bf003e195f8210fcc5013085cf90db2b9eb9b8c5c58b30bec7a248276d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:51:efb71eef2f92c91138b8",
+            "original_csv_index": 51,
+            "feature_sha256": "efb71eef2f92c91138b837838891f0ff2326f5eb42239bc11f90bd764c53db8b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:381:4d664dd3087a61716e80",
+            "original_csv_index": 381,
+            "feature_sha256": "4d664dd3087a61716e80853e3683b4b026a3f06dc2b69b1b70291725944ec219",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:483:700c397999a2b72c5730",
+            "original_csv_index": 483,
+            "feature_sha256": "700c397999a2b72c57308d5da6885c9265e9a1cea923af78f55c187d7e04f040",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:440:3cf4cb6f0fde15fb4699",
+            "original_csv_index": 440,
+            "feature_sha256": "3cf4cb6f0fde15fb46990c0a7aa3e2bfae6a81ab8262f350de252e9f6d2c14a7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:235:2fd9985329c6de209d47",
+            "original_csv_index": 235,
+            "feature_sha256": "2fd9985329c6de209d47e82a5fb8583ff4fd3f40635ffc921a5cf492b1b0b54b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:242:f0a827b3849b1c23e8be",
+            "original_csv_index": 242,
+            "feature_sha256": "f0a827b3849b1c23e8be73ab7801a6a32831725cd8067474e2bfde8a97cb83ae",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:366:8bd2b466b1092c26e18c",
+            "original_csv_index": 366,
+            "feature_sha256": "8bd2b466b1092c26e18c5edb0b125d7f65132c03e0c47233c5822257452453cd",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:505:3267736a4702305c770d",
+            "original_csv_index": 505,
+            "feature_sha256": "3267736a4702305c770d16bcf7f09618b371a5cf71d7e0cc1438264024f66ab5",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:176:ee8a0bc3c756f2e89fa4",
+            "original_csv_index": 176,
+            "feature_sha256": "ee8a0bc3c756f2e89fa487f7d973b318b69be35e91fedd41070a3209a09eb832",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:514:c8d77c9cf40e7181da19",
+            "original_csv_index": 514,
+            "feature_sha256": "c8d77c9cf40e7181da1956a4bab0b742284f16547203c27b002224ebcdd282e9",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:344:de3975765fc27c98603a",
+            "original_csv_index": 344,
+            "feature_sha256": "de3975765fc27c98603aec0b75191cdd86bf2745802f97f4fd8bcec21a671a14",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:297:2f18db3d1ece194e57d5",
+            "original_csv_index": 297,
+            "feature_sha256": "2f18db3d1ece194e57d5f683065a4870fe7520089202d3a993a09981c6a970fa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:104:11a0382fbc245a0ea16b",
+            "original_csv_index": 104,
+            "feature_sha256": "11a0382fbc245a0ea16b5f4177869d161999a6d76330f7ebab64ed183dff3cde",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:400:0df3bd97031bfa4be631",
+            "original_csv_index": 400,
+            "feature_sha256": "0df3bd97031bfa4be6318db5ca37df0353dbeee4f750d970d75d77b5fc78c9e7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:481:d0b90a4f42c507c41abe",
+            "original_csv_index": 481,
+            "feature_sha256": "d0b90a4f42c507c41abe1344e6b30806b8003d63fe5df913998ba12976a0dedc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:79:23bbc9173b901f79014f",
+            "original_csv_index": 79,
+            "feature_sha256": "23bbc9173b901f79014f0065217f6f36c6e792abe761bdfcd4eee875122db277",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:327:473dec5cbd23db27714a",
+            "original_csv_index": 327,
+            "feature_sha256": "473dec5cbd23db27714ae0a0c450d607d423eb1bca4cbefe8550efc9201486e3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:109:ea02b83137996e4a9a10",
+            "original_csv_index": 109,
+            "feature_sha256": "ea02b83137996e4a9a105046449789776c6e00cae2131a50164e6d9fc8d88bb1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:275:740a5f85ae2d08f731ac",
+            "original_csv_index": 275,
+            "feature_sha256": "740a5f85ae2d08f731ac400cfd37ddc91831727e2061fb0af722a40016d8eaeb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:80:7d79dccb0d56e5ec75d7",
+            "original_csv_index": 80,
+            "feature_sha256": "7d79dccb0d56e5ec75d74f39dabed68bf6136d048618a1782d074748ae2f0c5b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:266:1c438e1e23a2b0578d9d",
+            "original_csv_index": 266,
+            "feature_sha256": "1c438e1e23a2b0578d9d80492f59e14cfd33e265eb089172dc4183b9a5210779",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:394:7e928c27d1e90db65d79",
+            "original_csv_index": 394,
+            "feature_sha256": "7e928c27d1e90db65d79e0cdc31f615e4f9d16f06317a300fd1e470fc30e2178",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:405:bba84e9735192d891061",
+            "original_csv_index": 405,
+            "feature_sha256": "bba84e9735192d89106140f6b8a750889dac78e3668dd69941b759b011acdeb9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:292:6ed8323edbd5bb342e12",
+            "original_csv_index": 292,
+            "feature_sha256": "6ed8323edbd5bb342e123ce58c4a7eb1cfbeea7e9417aa506dd105430c151f67",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:305:7900e28613af1e7ff3df",
+            "original_csv_index": 305,
+            "feature_sha256": "7900e28613af1e7ff3dfd1979267e590366f2ab7dadc99a236ce656dd654e74c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:143:5e92370ba93b47179f2d",
+            "original_csv_index": 143,
+            "feature_sha256": "5e92370ba93b47179f2d1d4e04f43495f34619ec769c12a9339101d618b63249",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:324:01a958fd0e8ec42bd1fa",
+            "original_csv_index": 324,
+            "feature_sha256": "01a958fd0e8ec42bd1faa1f5cf9c1da1dd9fb09d911f472e49831553b01326b2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:119:e7bd68744a3ec3e817a9",
+            "original_csv_index": 119,
+            "feature_sha256": "e7bd68744a3ec3e817a90d71daafdce73733e6e23284e6baced62ece8a96b29d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:105:1fe16cbbd0ab505a0844",
+            "original_csv_index": 105,
+            "feature_sha256": "1fe16cbbd0ab505a0844d2313dadba3d7546d7814fee468b8cb9fbd7c6f074e5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:53:ae7d130c7918187fa305",
+            "original_csv_index": 53,
+            "feature_sha256": "ae7d130c7918187fa305ef1dd4f6ac1573dac662424c14b13e8cedb649538738",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:9:8933fee3020de8fe33ec",
+            "original_csv_index": 9,
+            "feature_sha256": "8933fee3020de8fe33ec5cdf5da28cec6d549ad297a7eb694070f2bccb40b578",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "train_count": 481,
+        "test_count": 54,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:464:2c1844e24fff56d01347",
+            "original_csv_index": 464,
+            "feature_sha256": "2c1844e24fff56d01347d3a532787a319b5097aa7273f01374bd13a4f802b392",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:502:3e1b54270ad20383ae33",
+            "original_csv_index": 502,
+            "feature_sha256": "3e1b54270ad20383ae33841f09eb94db31b7ffbf22b14e60f3195fdc882cfb0e",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:211:f009558606c4e83cc360",
+            "original_csv_index": 211,
+            "feature_sha256": "f009558606c4e83cc3603d82641d501a1539cef1248571e35baaabf876670389",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:102:e516391e713c13e5d2df",
+            "original_csv_index": 102,
+            "feature_sha256": "e516391e713c13e5d2df867816708b52e81737869eceeb28c58b69b6eaedd1e8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:245:3b380687a570e15918f6",
+            "original_csv_index": 245,
+            "feature_sha256": "3b380687a570e15918f66341af4ec1c86ad6864458a41e078b9a37ec6708c1a5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:220:b77dcdfb7dac6a81734c",
+            "original_csv_index": 220,
+            "feature_sha256": "b77dcdfb7dac6a81734cc04e667cb5886107a23c3b8689fe14ba827dd0657bd5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:490:e822e5a4f30862fa3343",
+            "original_csv_index": 490,
+            "feature_sha256": "e822e5a4f30862fa33434d55d906dbd2a8a8dfede8483d7da7bf76bac0c7eeea",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:10:6f0e79fe68bc9761f1c1",
+            "original_csv_index": 10,
+            "feature_sha256": "6f0e79fe68bc9761f1c146abb497648ba2555d379bdc0e1a6bef54add92a06b3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:250:e6759d0d179514bbf9d4",
+            "original_csv_index": 250,
+            "feature_sha256": "e6759d0d179514bbf9d4957ad704c8ce60c76ccad30ccfe5a1debb4d0deb1d13",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:213:bbc2a9a967fe35dafa84",
+            "original_csv_index": 213,
+            "feature_sha256": "bbc2a9a967fe35dafa843d6cce226dcadd9976c8a7fd5cd8bdef3a356847fb3b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:113:4cbeb0f9beb68b422bc5",
+            "original_csv_index": 113,
+            "feature_sha256": "4cbeb0f9beb68b422bc56077a49976cda9f8932d31f186b20955df5fa7521067",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:526:9031f16966e42e30d062",
+            "original_csv_index": 526,
+            "feature_sha256": "9031f16966e42e30d0624aa22a7e9ef4192e2156c96ad1ceea42ef634c2f2ce9",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:362:23c6fe9cdd834161e277",
+            "original_csv_index": 362,
+            "feature_sha256": "23c6fe9cdd834161e277f5cd8062dfb040257e9d3863d0fc9bd6d28447be3b33",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:271:a6bda8032c5036f2815b",
+            "original_csv_index": 271,
+            "feature_sha256": "a6bda8032c5036f2815b033777bfadd698ce74f359c50d0ed11b75aa413b9c6b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:30:40d9f7a65938b81b93c6",
+            "original_csv_index": 30,
+            "feature_sha256": "40d9f7a65938b81b93c64aa3c8d10a54b7cafd7dda3e8a990e17dd559f1650fb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:474:64303895b4a90a1d4ee7",
+            "original_csv_index": 474,
+            "feature_sha256": "64303895b4a90a1d4ee7041f2d7afd59d5fedec07e1ae2dfd3b8fc9698f5c13e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:158:568c98cffb98b68a6a5d",
+            "original_csv_index": 158,
+            "feature_sha256": "568c98cffb98b68a6a5d3ce84775983250d85892765ea4eec9675d560768461a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:350:c34da183652676e86e7c",
+            "original_csv_index": 350,
+            "feature_sha256": "c34da183652676e86e7c078d2a54c964fc4395ccccb54bbf7508ca6bf69e4e0d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:22:f76f0d1aa8b6903abcef",
+            "original_csv_index": 22,
+            "feature_sha256": "f76f0d1aa8b6903abcef47ed7c10724a3a5a811f26a8b556dc5519378734c732",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:68:8cec73ab33909a07ed4e",
+            "original_csv_index": 68,
+            "feature_sha256": "8cec73ab33909a07ed4e048060529dd7522856ed2e48f844bc9b83f9c45ee218",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:496:b2499eefa27c92674a89",
+            "original_csv_index": 496,
+            "feature_sha256": "b2499eefa27c92674a89032110c740fe8bf11840635b91c36c584cf6add1e8db",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:116:4f53511254eead2292c3",
+            "original_csv_index": 116,
+            "feature_sha256": "4f53511254eead2292c3be522ccb47ee049d0f9204d322d60e85ec392ab32bf2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:164:7aebf9b48032b789a7dc",
+            "original_csv_index": 164,
+            "feature_sha256": "7aebf9b48032b789a7dc82cc99b0ec28f5de8d5445cbe93c918ac79ba119c0b5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:299:64964480639c1858d2cb",
+            "original_csv_index": 299,
+            "feature_sha256": "64964480639c1858d2cb66883162107ff8257ddc4df6204a140ee55baa9e0af0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:224:d6396898d448fb9ecaa6",
+            "original_csv_index": 224,
+            "feature_sha256": "d6396898d448fb9ecaa62c186126733d6f00a9887531ab4b7a9980e8bcde1ea1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:145:c286cda2e91ce724ace5",
+            "original_csv_index": 145,
+            "feature_sha256": "c286cda2e91ce724ace5676671c09a6c9f87f8ca0841e943fc351cf9acd72311",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:447:526b7a31b6077e2a8a78",
+            "original_csv_index": 447,
+            "feature_sha256": "526b7a31b6077e2a8a78d75be934d9f5a316a5ba50f936fc87e2ccfe2c56054f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:221:0a08e083725c39686749",
+            "original_csv_index": 221,
+            "feature_sha256": "0a08e083725c39686749b74fff266673ce7ae705711f228d1d2ceb55a05d984f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:199:a2a03e0c3172fff9f4cf",
+            "original_csv_index": 199,
+            "feature_sha256": "a2a03e0c3172fff9f4cf62e71075dd3f8bffca4c6a0bfc18f89f57312b228597",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:412:9b5aa09262af69ef734d",
+            "original_csv_index": 412,
+            "feature_sha256": "9b5aa09262af69ef734d51ff9907ce7b760702bab32f3b69516406542d0aa83f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:473:732d622b0e8eea256909",
+            "original_csv_index": 473,
+            "feature_sha256": "732d622b0e8eea256909017d4a553424ca52a2ad2f62ba16d4401b95d2b1681c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:223:99849d56b8bdf1e3b1d2",
+            "original_csv_index": 223,
+            "feature_sha256": "99849d56b8bdf1e3b1d2e59d65ee1bb2ff39951c9d36c6daf5cdefb045c6304d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:453:722adccbe263f2298000",
+            "original_csv_index": 453,
+            "feature_sha256": "722adccbe263f229800033f6789738c07b50b75f5ce23cd3fa368a35421607bc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:40:9f93bf8eee6ef87c959a",
+            "original_csv_index": 40,
+            "feature_sha256": "9f93bf8eee6ef87c959a74093c5cbf08914f6eea37ca3deef73b4d02d0217178",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:260:d2c0db28b5b3001797b6",
+            "original_csv_index": 260,
+            "feature_sha256": "d2c0db28b5b3001797b6de9dd4f5bcc742c02d66841f9f0e86a396dd5f62ce1a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:248:dd4e256943c4e7ce7357",
+            "original_csv_index": 248,
+            "feature_sha256": "dd4e256943c4e7ce735791c0d95c02ac684752c418741e50e9ecedeb73e49170",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:307:2d647a2c026590431555",
+            "original_csv_index": 307,
+            "feature_sha256": "2d647a2c02659043155554c9ac1dcc61dd6bafa558f93651a580f27bb05e5a55",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:41:e622ec739ff1cc105165",
+            "original_csv_index": 41,
+            "feature_sha256": "e622ec739ff1cc105165b9c817dd4edfc56d6bd7d2af98cb2fe2da6e6834c6d1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:123:507914d2b1288f3f76e9",
+            "original_csv_index": 123,
+            "feature_sha256": "507914d2b1288f3f76e98bc71a91a0ceee0e39a8db78893480e641c63d4026b7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:43:5057ebaf3b8bc851b1b6",
+            "original_csv_index": 43,
+            "feature_sha256": "5057ebaf3b8bc851b1b685dbd4d1ef9976ce1b79bfc2d91cb87ca4c698b5f39b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:383:a2f011fa7498b10f24fb",
+            "original_csv_index": 383,
+            "feature_sha256": "a2f011fa7498b10f24fbd6d97be836d549c3f1373572520197ab01424aa672e5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:511:b36dea6b9c5e5888fb31",
+            "original_csv_index": 511,
+            "feature_sha256": "b36dea6b9c5e5888fb317f805b9e4ee370af98373da8d66c478cd83020f04165",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:426:5453eb6ae64c08da4213",
+            "original_csv_index": 426,
+            "feature_sha256": "5453eb6ae64c08da42139ad5c8ca1f5e4d8ad0e0905f89fefa0b93f40883602c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:398:3811e4ae2555a2374e6e",
+            "original_csv_index": 398,
+            "feature_sha256": "3811e4ae2555a2374e6eb89691dd92f4989ef42075c519cf65c717747f79c0e0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:384:9f7fffd4067939b2a235",
+            "original_csv_index": 384,
+            "feature_sha256": "9f7fffd4067939b2a2353c1644b097069f97e5e74d553b731eb9c0714198bf4f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:358:fc60ce5c9a1bfc905bd7",
+            "original_csv_index": 358,
+            "feature_sha256": "fc60ce5c9a1bfc905bd77b2366826fc4ad5591e214ce72981d882811f5d467e5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:376:a36650a96c5b17792687",
+            "original_csv_index": 376,
+            "feature_sha256": "a36650a96c5b177926870296e45a188ca578d4beeddd1ef8635c10a680039bf2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:42:77fe4b0ac5ce5aed6e02",
+            "original_csv_index": 42,
+            "feature_sha256": "77fe4b0ac5ce5aed6e02855bfabaac47b5d1c7b23529fa863b826a798d4542d8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:370:5d8c7a0db0caa10bec5f",
+            "original_csv_index": 370,
+            "feature_sha256": "5d8c7a0db0caa10bec5f7071778622a1fcb94216a26553050b7c43231202bf8e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:151:154c4689f305b0e014d2",
+            "original_csv_index": 151,
+            "feature_sha256": "154c4689f305b0e014d2176bd7d1eba49b1109566b0f4a29b3a7c1656b04cc49",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:288:def92209ac4fd1441b36",
+            "original_csv_index": 288,
+            "feature_sha256": "def92209ac4fd1441b3639b42d6c185c2e873e2b780f1cbd7d7827d3d0350646",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:396:96621d0a8d96a2022686",
+            "original_csv_index": 396,
+            "feature_sha256": "96621d0a8d96a2022686caf65f25bd6cf004854e07fb3d36f19a3bf0bb1ba32d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:277:7d0228c2010e26afe830",
+            "original_csv_index": 277,
+            "feature_sha256": "7d0228c2010e26afe83059c61e1221dce9b91b6f1cdcfe8f762e83e72bad84a5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:192:59b5bad0bf5aae2c0495",
+            "original_csv_index": 192,
+            "feature_sha256": "59b5bad0bf5aae2c0495afd5ade0ff47a67e2d37600c3946f16b169006f88235",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "train_count": 481,
+        "test_count": 54,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:172:1cd7eff96a78421ea1c5",
+            "original_csv_index": 172,
+            "feature_sha256": "1cd7eff96a78421ea1c51216753744ba5409dec9a6470ecc94771fa11d563fd0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:531:1217621e5659aa575e32",
+            "original_csv_index": 531,
+            "feature_sha256": "1217621e5659aa575e32d6ea490c178c1b9817149a06f03328e1b0939218260b",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:451:e2814ca6ceece6c1762d",
+            "original_csv_index": 451,
+            "feature_sha256": "e2814ca6ceece6c1762dc441d0957a5050ce161ddc7faef8684966a2bb9dcc1d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:489:d0589b68611786c37401",
+            "original_csv_index": 489,
+            "feature_sha256": "d0589b68611786c37401ba3a17000b48e0fc5087595317e07d46f472eaa60b8d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:165:4e739b4a393efd3618a1",
+            "original_csv_index": 165,
+            "feature_sha256": "4e739b4a393efd3618a19ccdb5481bf4f2ad9ba22470f9e6f690e32af5ceed54",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:437:4790144ed2b11d158535",
+            "original_csv_index": 437,
+            "feature_sha256": "4790144ed2b11d1585353baa38dc13948f97eae710e2adcc8066457a3613148d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:85:cab6c082808dcac5586f",
+            "original_csv_index": 85,
+            "feature_sha256": "cab6c082808dcac5586fa4e377a5e3800e38bfe0b6bc14834d3295492662602a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:239:fc806d5bf09acb6bc9bf",
+            "original_csv_index": 239,
+            "feature_sha256": "fc806d5bf09acb6bc9bffa04da2ec90403171505487319dd514cabf9e72106cc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:355:baad81ffa517cba05d89",
+            "original_csv_index": 355,
+            "feature_sha256": "baad81ffa517cba05d8986a92f938b09ed39569f39849387ab2a4914bc4e4ce7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:261:71678ad5b9c3beee0e42",
+            "original_csv_index": 261,
+            "feature_sha256": "71678ad5b9c3beee0e426b295e4f0db0e673dc146e29d77570a34073c5ddd201",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:240:a8f0d62541f71877711d",
+            "original_csv_index": 240,
+            "feature_sha256": "a8f0d62541f71877711d1a46624e2400fe5cb2f649f02d3137293bd34c21bfcb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:112:20fded5df53751a264e2",
+            "original_csv_index": 112,
+            "feature_sha256": "20fded5df53751a264e236f6dd37fa144b66b3832a82d65ee3110efe3dd650b3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:439:e8abf8ec964924106155",
+            "original_csv_index": 439,
+            "feature_sha256": "e8abf8ec964924106155798c8069d07800c3f284570ba8a36ea20f69c78b2221",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:97:e6b3a057674ac49fe91b",
+            "original_csv_index": 97,
+            "feature_sha256": "e6b3a057674ac49fe91b3666ae83b90099c0b95adc0efbbf449169eddd92c445",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:60:b165ee50aee3ee2d4a3e",
+            "original_csv_index": 60,
+            "feature_sha256": "b165ee50aee3ee2d4a3ee08048b5093e804edddd8022110ccf4c49720693d1a6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:8:2540b832ba3a7b8b016d",
+            "original_csv_index": 8,
+            "feature_sha256": "2540b832ba3a7b8b016ded676ef3738d0e3b0224aea4c5bba5a8efdb720b8583",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:200:fa20cab40bea71e0a9e5",
+            "original_csv_index": 200,
+            "feature_sha256": "fa20cab40bea71e0a9e561510e575ee43db0f26c462b21a8efb810674d1d9bbf",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:252:565f048fae3e2f001f7b",
+            "original_csv_index": 252,
+            "feature_sha256": "565f048fae3e2f001f7b590e6a5a133fd9ba9705689dcc82e0d9d94279d31428",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:154:fe7a9740b0ddb0074361",
+            "original_csv_index": 154,
+            "feature_sha256": "fe7a9740b0ddb00743617565854c60f8edff7d7cc418ee4326c16afa9389deed",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:353:5dad61d71da586b0c119",
+            "original_csv_index": 353,
+            "feature_sha256": "5dad61d71da586b0c11941dd1a3ef10762881236e14a60d56966bcd0c005a126",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:14:a152fe72054f173cc0a9",
+            "original_csv_index": 14,
+            "feature_sha256": "a152fe72054f173cc0a911c62c6e15d9fbcd61b30a5905c59e30d5059d6871b9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:170:bddb441f966aaa89b873",
+            "original_csv_index": 170,
+            "feature_sha256": "bddb441f966aaa89b87306f7f32a89959c0d7b8647edc658cac8945fa4c9c171",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:507:5239d00a935dfee3c6b9",
+            "original_csv_index": 507,
+            "feature_sha256": "5239d00a935dfee3c6b9d01d525b792aaa759fa2ddaf90d6e8e49fa5cd57c9e2",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:523:b4c5d8da740618ec016a",
+            "original_csv_index": 523,
+            "feature_sha256": "b4c5d8da740618ec016a3d51915024baa200bb85fecde37fbc5de0a07a890611",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:415:4102404fbeccfcd6d180",
+            "original_csv_index": 415,
+            "feature_sha256": "4102404fbeccfcd6d180e920a74c6c541f56e037d4a90e0baa40690009f46c25",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:329:ed8ff4485fba86a3a406",
+            "original_csv_index": 329,
+            "feature_sha256": "ed8ff4485fba86a3a406d6947124fd81d54d00bc54db0b0c8ea3ca2c17c9df67",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:429:ed3afadaf361ec91df44",
+            "original_csv_index": 429,
+            "feature_sha256": "ed3afadaf361ec91df44d72674ac57ed94f6ba0ec4bba742ca84bbbfaffb2800",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:2:03361bab2f7835774b0f",
+            "original_csv_index": 2,
+            "feature_sha256": "03361bab2f7835774b0f655426da2779334f6b7b95b6f0f3401e08364f4ce636",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:411:435fdd1b814100a26c35",
+            "original_csv_index": 411,
+            "feature_sha256": "435fdd1b814100a26c35d7eb814d639580d4b69e1768faf711557e05ba8c2e0b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:33:e6b3340d74fe35ab24bf",
+            "original_csv_index": 33,
+            "feature_sha256": "e6b3340d74fe35ab24bfe87bead4771caa475c221c7177b10c153e9dc4b84013",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:218:4946e97beadb46c4d4b9",
+            "original_csv_index": 218,
+            "feature_sha256": "4946e97beadb46c4d4b951ead30ecc4e45aacca261dc49fdb3b55af857ecbfa4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:372:8cd4afedd776633853ac",
+            "original_csv_index": 372,
+            "feature_sha256": "8cd4afedd776633853ac0218332903bbb9698fd69f3eec95d633b29f3d9f654c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:391:d2d9ac67eec0b0a90064",
+            "original_csv_index": 391,
+            "feature_sha256": "d2d9ac67eec0b0a9006434088aff3868e6244589d52114b79ee9f82144d6bdb6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:217:dec9871788aaeaa8b8d8",
+            "original_csv_index": 217,
+            "feature_sha256": "dec9871788aaeaa8b8d8ed57432add729f3baddfbd642829e8a2c489f2723e51",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:27:916e1cc918b86a21f8f7",
+            "original_csv_index": 27,
+            "feature_sha256": "916e1cc918b86a21f8f7d6a482ef5b81fe6e41952f5b0c6d1fc9cab5100265c6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:138:6709b877a7ed086c7f5b",
+            "original_csv_index": 138,
+            "feature_sha256": "6709b877a7ed086c7f5b2fd6154aec10b4c9c3ef4c3eb1e75d41bae3eff8ce70",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:212:15d9debb01e9a76d687c",
+            "original_csv_index": 212,
+            "feature_sha256": "15d9debb01e9a76d687c763199b87694a1e6e5bed383d4a4c48401a93fadef2a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:300:acab83e48f66117bb7f2",
+            "original_csv_index": 300,
+            "feature_sha256": "acab83e48f66117bb7f28768b9d45c7a1cb00f89944809d6d95e1b190c8e9628",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:13:c7ca71f654e06d6387f9",
+            "original_csv_index": 13,
+            "feature_sha256": "c7ca71f654e06d6387f914b862688655f52f33479a6e09ecc007fede1c7ef8c4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:149:87889777fd937134b6f3",
+            "original_csv_index": 149,
+            "feature_sha256": "87889777fd937134b6f3dd362177c6354d9395f93e9fdc8ddf11971d8a75cd44",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:77:f783352c9c4f0ea4e30c",
+            "original_csv_index": 77,
+            "feature_sha256": "f783352c9c4f0ea4e30c0426b736f1f65d6ba6a44904a5f7ef9ba22f1f3d5df2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:294:eee87837c4789be3a8e1",
+            "original_csv_index": 294,
+            "feature_sha256": "eee87837c4789be3a8e1c1ffc9f0eafb0dada9dc5bc577330a0abb7052c6933b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:424:3c1bee647d750ac8eaa4",
+            "original_csv_index": 424,
+            "feature_sha256": "3c1bee647d750ac8eaa4babdd731a2107657c996863bc635d503677d0bbf9b1e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:187:aff0947809bb57b7d41c",
+            "original_csv_index": 187,
+            "feature_sha256": "aff0947809bb57b7d41c72586a567e295575d600a097f74687f7111a0bf07227",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:428:626661b05faebb086fd2",
+            "original_csv_index": 428,
+            "feature_sha256": "626661b05faebb086fd2acb9849305e8b0463c63d85575206bdae238df0f57ca",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:304:50bfc68e02b1c5c884e8",
+            "original_csv_index": 304,
+            "feature_sha256": "50bfc68e02b1c5c884e8892e21f189cd2d74f076effe6d8770803343cfb39655",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:528:19f85f25b22f628109d6",
+            "original_csv_index": 528,
+            "feature_sha256": "19f85f25b22f628109d67d94ee083f80ef781596293706b5f1113202b7d195c5",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:91:0c620664d797eb14a334",
+            "original_csv_index": 91,
+            "feature_sha256": "0c620664d797eb14a334d327556ba15b09ed8b65576520eeec6c36790908db69",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:82:4c83b22f0b7da0a45db2",
+            "original_csv_index": 82,
+            "feature_sha256": "4c83b22f0b7da0a45db2d6322e243c3c5e51ba3f31ffbb7129d83d903dafc263",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:38:8aeb23091e5e395bebfb",
+            "original_csv_index": 38,
+            "feature_sha256": "8aeb23091e5e395bebfb29efe6ef8fd52542029ebef97ad90616970613e16a24",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:389:9a90e5f36e55683ec008",
+            "original_csv_index": 389,
+            "feature_sha256": "9a90e5f36e55683ec0088a3045384ce618b6ca26a5d9140924065ff2820bb688",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:504:edabbf3e995f1136cbdd",
+            "original_csv_index": 504,
+            "feature_sha256": "edabbf3e995f1136cbdd94e485def40527123969111ef9d617aba0515543e649",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:72:9d43d7315d062d7c6db3",
+            "original_csv_index": 72,
+            "feature_sha256": "9d43d7315d062d7c6db30dff22b0c44bd5709a4066d0bf381b4efa1b2e18fba4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:87:9866a8628763c0bbc53f",
+            "original_csv_index": 87,
+            "feature_sha256": "9866a8628763c0bbc53f5aba4c26231d5f3cf469b9956d6f2c4791e4d0cfca15",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 5,
+        "train_count": 482,
+        "test_count": 53,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:71:7ce34cdf1b0712c4c34a",
+            "original_csv_index": 71,
+            "feature_sha256": "7ce34cdf1b0712c4c34a9a28c55ea088142a65fe55052a4d44fd64d065c7baee",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:475:7628e1b60218db850ff7",
+            "original_csv_index": 475,
+            "feature_sha256": "7628e1b60218db850ff751c6db2fc847620db7eb788965207556e813e6ea5fc0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:410:91427dba9b48b7c9b4c0",
+            "original_csv_index": 410,
+            "feature_sha256": "91427dba9b48b7c9b4c0de791cc7804a3878e1f01a055c5e4406f0c93296b164",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:289:c68c6b2bf393bbed577c",
+            "original_csv_index": 289,
+            "feature_sha256": "c68c6b2bf393bbed577c026225ee04a8b786bb50988e10b589262352d9e30221",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:134:1c3641826d9619e1b17c",
+            "original_csv_index": 134,
+            "feature_sha256": "1c3641826d9619e1b17cfb53ab1c062c65097ee59b582fe021cddc51e7f2c6e3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:153:744d9e34fcea4fb9eefb",
+            "original_csv_index": 153,
+            "feature_sha256": "744d9e34fcea4fb9eefb0bfd936475fd43a998d4625a4ecbfc160b84fdc38f79",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:206:b3bba3aa75d3883426ad",
+            "original_csv_index": 206,
+            "feature_sha256": "b3bba3aa75d3883426adaa20f07934afcf9c0c0dcd439fe772eeb3cca7f4295b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:435:90267909f68698c8add8",
+            "original_csv_index": 435,
+            "feature_sha256": "90267909f68698c8add83ea6e0afafc4c1a346d71cd294675efb26f7b7e059bb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:527:9d68d4476f0232bb9d73",
+            "original_csv_index": 527,
+            "feature_sha256": "9d68d4476f0232bb9d7342be213be41d09fc5a189fa012b16d017b699e45b236",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:194:4ea80dee58c8f839da41",
+            "original_csv_index": 194,
+            "feature_sha256": "4ea80dee58c8f839da41e60f008d4e99d9410a3a3c282d1511d36bfd2f656d1b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:361:367d474ec497517e0129",
+            "original_csv_index": 361,
+            "feature_sha256": "367d474ec497517e0129ed89ae8730ed37a43712cbc928c7244f9169f822437c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:339:1a0aa31bb0be3b74767b",
+            "original_csv_index": 339,
+            "feature_sha256": "1a0aa31bb0be3b74767b5aad98605821c1a0631800bccad66a0e685020751289",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:238:9cf39ff1f295fcaca72a",
+            "original_csv_index": 238,
+            "feature_sha256": "9cf39ff1f295fcaca72ac71d6072537889a39328c1d7ea45886e15d3e721aed1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:534:0b2f67c436f7b2efc906",
+            "original_csv_index": 534,
+            "feature_sha256": "0b2f67c436f7b2efc9069d8784dd029ac6ee12724f3a1814fc85290035a04798",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:243:a25d177936e98745da4c",
+            "original_csv_index": 243,
+            "feature_sha256": "a25d177936e98745da4cee24e776a98c006fbcb80bdcbabff1443f215e2df833",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:320:348f5d3bddfbbe9b9bb7",
+            "original_csv_index": 320,
+            "feature_sha256": "348f5d3bddfbbe9b9bb70ae16296abfec19c5931afdc55d078225918c2170bd5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:18:c6314f1fa6bacf0a4ae4",
+            "original_csv_index": 18,
+            "feature_sha256": "c6314f1fa6bacf0a4ae4d0e55f18a2a1b102a1bb860f347fe7175d4f144319a4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:181:e361d72b06a73f840d1a",
+            "original_csv_index": 181,
+            "feature_sha256": "e361d72b06a73f840d1a1d03add027e84b1d2b49d76ff282351ba16fbf9d8b45",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:427:44b744a9cec0b06c15f5",
+            "original_csv_index": 427,
+            "feature_sha256": "44b744a9cec0b06c15f52f2e45ead086ea322dbfeaf298627813c3937b7869c0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:318:903ccc5de1486b3997e5",
+            "original_csv_index": 318,
+            "feature_sha256": "903ccc5de1486b3997e5d5852204a62e23103e6e4ee64f036a13f384e05e4a07",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:264:65b39debeecc7961d55f",
+            "original_csv_index": 264,
+            "feature_sha256": "65b39debeecc7961d55f0f7b97e8f2422cfae526e5d34007bf9104c124abad54",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:454:a5ede6cda77feb8cd8d9",
+            "original_csv_index": 454,
+            "feature_sha256": "a5ede6cda77feb8cd8d91e9f60888b3573a31202faf039f500d76d6ffcbb8078",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:276:5fdc97ef91abe09c1163",
+            "original_csv_index": 276,
+            "feature_sha256": "5fdc97ef91abe09c1163fd9d6b159de4d9ea8b6f04325c61cb472faaed21717b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:520:e3bc638cea995d626e45",
+            "original_csv_index": 520,
+            "feature_sha256": "e3bc638cea995d626e45a5c15354215a22f48ecdf281ff790bff8344a65f05c1",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:146:7b9ced98d3066a43e4ae",
+            "original_csv_index": 146,
+            "feature_sha256": "7b9ced98d3066a43e4ae55e79318a15f3c53f61bbf64e9674e5dc4785fd9078b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:441:4b2b4d221c28b7e67c2b",
+            "original_csv_index": 441,
+            "feature_sha256": "4b2b4d221c28b7e67c2b7b57c949d280d866cfd4b667dccadb5af90db9c54866",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:156:b58457809cc119550604",
+            "original_csv_index": 156,
+            "feature_sha256": "b58457809cc119550604424a3acbd1e45660456455ac80cae1a2fa00daa2f3f3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:189:6a66bdb35e6461a07661",
+            "original_csv_index": 189,
+            "feature_sha256": "6a66bdb35e6461a076612c45221328232ea830ded80affe1fcecd8380b4306eb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:67:6315ef7572a0cd428cf2",
+            "original_csv_index": 67,
+            "feature_sha256": "6315ef7572a0cd428cf2031fd5a4318e8b35696e09a6c33046948c18d71e925b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:287:75b2209485da4a0ecd9e",
+            "original_csv_index": 287,
+            "feature_sha256": "75b2209485da4a0ecd9ec665eb05887187bb6808fd458635065f442540168a45",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:161:bec8521e9b9fb14e582b",
+            "original_csv_index": 161,
+            "feature_sha256": "bec8521e9b9fb14e582b89ee5ec24ec58dffb4f81ebced0db9ff69c4250e523f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:110:0d98c2a452372b04c952",
+            "original_csv_index": 110,
+            "feature_sha256": "0d98c2a452372b04c9528a7bd30a432b64ea10eb1df3f287403ff26f861b4cea",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:403:f257af9356b019d6fda4",
+            "original_csv_index": 403,
+            "feature_sha256": "f257af9356b019d6fda464c0089f7bb80652fa827afec2d7e441aae6922a905f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:139:43164ce5d4aded3826c1",
+            "original_csv_index": 139,
+            "feature_sha256": "43164ce5d4aded3826c19a443ff3713183b90a0a63b6a89b07d38deb02d24ded",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:317:c06d7e7524b68a88c2ac",
+            "original_csv_index": 317,
+            "feature_sha256": "c06d7e7524b68a88c2ac52000c3bf0900ee4d7250ea3596e249b9c78fb8e7d3c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:328:2e33fcfeb21f4906c179",
+            "original_csv_index": 328,
+            "feature_sha256": "2e33fcfeb21f4906c17937135e4f965dff98a99357ed1f32582e446a937394f8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:226:0f52b09c98ca7ced5520",
+            "original_csv_index": 226,
+            "feature_sha256": "0f52b09c98ca7ced5520e6906312bb77f9e87b9e1b873979d86a16ee0a9295be",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:280:55d741a839c5e093db54",
+            "original_csv_index": 280,
+            "feature_sha256": "55d741a839c5e093db54d232a8104dad32b19de043a055bf4609d07c42070956",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:50:0c51a478eb460e013dfc",
+            "original_csv_index": 50,
+            "feature_sha256": "0c51a478eb460e013dfccf36dba1b65a532df47c28285d597590ca39356b6117",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:23:1df346271c00be5d1e39",
+            "original_csv_index": 23,
+            "feature_sha256": "1df346271c00be5d1e39a27b50cd5dc893cac16440191ae8d2a246e17736e40a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:387:c217118c0725c70a20da",
+            "original_csv_index": 387,
+            "feature_sha256": "c217118c0725c70a20daa30768b9932c751023eb16cd43c624511d61f11585da",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:69:b41173a3e1d1290f2dca",
+            "original_csv_index": 69,
+            "feature_sha256": "b41173a3e1d1290f2dcabca65b359025b64d75d2e447ffcc578a5d6fd1196932",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:341:7e4c3fc8ef6a7d7c5e09",
+            "original_csv_index": 341,
+            "feature_sha256": "7e4c3fc8ef6a7d7c5e0999a387901d7c3f8e29a5f2ed00e9914193464ed494ef",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:207:cf01f973e08486f658a8",
+            "original_csv_index": 207,
+            "feature_sha256": "cf01f973e08486f658a843c28a0a0de22232d8e69f7f2e5f4a70345a8e5ceb18",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:356:cabf837454ebabe6152c",
+            "original_csv_index": 356,
+            "feature_sha256": "cabf837454ebabe6152cac2dbc5312bb56909768ed031f29be9118a620113880",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:203:053eebfad2a0d9968722",
+            "original_csv_index": 203,
+            "feature_sha256": "053eebfad2a0d9968722eb7d4f5568f08bf55859afd1ea7873c6525db0b3e36e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:57:b7f3ec65c84a03196a50",
+            "original_csv_index": 57,
+            "feature_sha256": "b7f3ec65c84a03196a5019ee0e26f5a3250edc0d70b785ca8e3ba08d71ab083d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:31:299e825151bb1fbbc7a1",
+            "original_csv_index": 31,
+            "feature_sha256": "299e825151bb1fbbc7a1c23c56938a6c9ec4505945ab4616757eac8360a60bc0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:513:849ba136401185cccf68",
+            "original_csv_index": 513,
+            "feature_sha256": "849ba136401185cccf68acc71e44e30f8317f83d1ec96b5fc72217e5e7e427d5",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:128:3702391cfae2bc7bdafb",
+            "original_csv_index": 128,
+            "feature_sha256": "3702391cfae2bc7bdafb0ea945009c0bf256dc9da28e45b9632726801cb83d6b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:115:c1ba296109c2f69e19bf",
+            "original_csv_index": 115,
+            "feature_sha256": "c1ba296109c2f69e19bf3175add436b2793722b44c0e8ecb72aaa7607f6f1a3b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:174:efc7d683121434deaa47",
+            "original_csv_index": 174,
+            "feature_sha256": "efc7d683121434deaa478a588a36ad85efe1eb8bb20e44f01228bfe6f3d5ddad",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:472:443bc60343997898b5ff",
+            "original_csv_index": 472,
+            "feature_sha256": "443bc60343997898b5ff70163ff6a8ca61fa39eb986e257e5c6695bb6187239e",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 6,
+        "train_count": 482,
+        "test_count": 53,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:414:f777fe9e0aa992b839d3",
+            "original_csv_index": 414,
+            "feature_sha256": "f777fe9e0aa992b839d38835eae01595b46651de3c036af866b4a0cc7346ef53",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:78:0b6364eb5e4b9ee35069",
+            "original_csv_index": 78,
+            "feature_sha256": "0b6364eb5e4b9ee35069980867df5775bc980d263eecb051a84b6d880e57ca16",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:15:1bc5cda495687978bc92",
+            "original_csv_index": 15,
+            "feature_sha256": "1bc5cda495687978bc92fdf377d491a43d6fae60a68f03eddc2c03ff2bf4eaec",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:159:14ca7459696f1628616a",
+            "original_csv_index": 159,
+            "feature_sha256": "14ca7459696f1628616ab2483661797075fddd7ecbdf896a2af4c2282ba0dc49",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:325:20d5b97fdaa5b151ae1e",
+            "original_csv_index": 325,
+            "feature_sha256": "20d5b97fdaa5b151ae1e2136d6154daf857cc82bd9fb086419cfc4b3975ed94f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:96:863998852731f63dd36a",
+            "original_csv_index": 96,
+            "feature_sha256": "863998852731f63dd36a77b2f70a5cfe7d1d2776c940cdd4796704b581920998",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:66:3b86f5c27c9a51611c24",
+            "original_csv_index": 66,
+            "feature_sha256": "3b86f5c27c9a51611c24614b1964c257db207fede3b4aaa39f2e0d85eb6bb046",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:374:11cfc4b81d376dea0a30",
+            "original_csv_index": 374,
+            "feature_sha256": "11cfc4b81d376dea0a30c4c3e7c47d505aedc33d921cbf9fabb4a3e848ddc67b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:302:c086e2dab48fc4fd2987",
+            "original_csv_index": 302,
+            "feature_sha256": "c086e2dab48fc4fd298733246bd8ee74b8371c851afcf11bbc2e84a47038eb34",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:75:8c057ff591e03718f126",
+            "original_csv_index": 75,
+            "feature_sha256": "8c057ff591e03718f1267af03315b43495c94ac8bc6c575772884890d86e4032",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:515:e522d5cd778ae620971c",
+            "original_csv_index": 515,
+            "feature_sha256": "e522d5cd778ae620971c20dce47bce1cedc7f7a91f5bea40d3cac8963606a71e",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:342:87db1e57a15fb2f3f29b",
+            "original_csv_index": 342,
+            "feature_sha256": "87db1e57a15fb2f3f29bf4110c40bb2f34d7b981313efb951d05c0fe60833b6d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:263:4204d8e5ef7729990d81",
+            "original_csv_index": 263,
+            "feature_sha256": "4204d8e5ef7729990d818c6586ac390f6432b3ed584c3582dbd28b20cbce567c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:312:4d16a2fe45e3ad420a83",
+            "original_csv_index": 312,
+            "feature_sha256": "4d16a2fe45e3ad420a83fe105174ee242eaa9d8939841ed6a4722a044b65cf50",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:315:56ca37a1b85bb9dffe41",
+            "original_csv_index": 315,
+            "feature_sha256": "56ca37a1b85bb9dffe41e2f19fa141752d746044d2d328466d02a095aa78458c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:118:ae2c92d7ff940966e9c7",
+            "original_csv_index": 118,
+            "feature_sha256": "ae2c92d7ff940966e9c7240cbb27d19dbc38bd083b8b4735740afaae590684e6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:54:0345e9df245dfbb91dcd",
+            "original_csv_index": 54,
+            "feature_sha256": "0345e9df245dfbb91dcda39ca3bf91589f273f99612cda3e6541d8edfac41a6b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:205:46c664b49d692c9b723f",
+            "original_csv_index": 205,
+            "feature_sha256": "46c664b49d692c9b723fa516f0898a423a50b73d2ee7b3810da617bf968c490c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:449:eefad75e095d983463c4",
+            "original_csv_index": 449,
+            "feature_sha256": "eefad75e095d983463c4e06d82cbd4c9fa7f01cc6083053a56392e4d60994af0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:367:2166b18593e1fac17cc7",
+            "original_csv_index": 367,
+            "feature_sha256": "2166b18593e1fac17cc72ac1004fd710cda20870b410e9a042c64d8893376682",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:52:af87383f78796580b7af",
+            "original_csv_index": 52,
+            "feature_sha256": "af87383f78796580b7af9981e6a9f0c5a9f23266d2b89b5060d99b49c81727f7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:379:5ccc8d5a164ff8c43bdc",
+            "original_csv_index": 379,
+            "feature_sha256": "5ccc8d5a164ff8c43bdca840638f067f0acd7e7084208e8038176fa7f8200484",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:468:53bf3b0b8653c055826d",
+            "original_csv_index": 468,
+            "feature_sha256": "53bf3b0b8653c055826d595e2289106707aaafcf32ed627bd84dff7c9797dfdf",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:231:b6a7a258a1ceaa45b501",
+            "original_csv_index": 231,
+            "feature_sha256": "b6a7a258a1ceaa45b501ba98e8f32686a3bdb30c2dd80386ac21096ef7043309",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:191:616cef1aec22ceb3a1e3",
+            "original_csv_index": 191,
+            "feature_sha256": "616cef1aec22ceb3a1e35980a83fc9ba6557f21ae229d77c1d7795e9808d45e2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:186:a53c1e0a52e8adf1e76c",
+            "original_csv_index": 186,
+            "feature_sha256": "a53c1e0a52e8adf1e76c586145278473b8d381d2630510d421505b090ffcbc66",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:506:3af54a88beffac394031",
+            "original_csv_index": 506,
+            "feature_sha256": "3af54a88beffac394031fcb2d5a707d010a1b5399c6608032745880c6aba81b6",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:241:2fe69bb604a72633884f",
+            "original_csv_index": 241,
+            "feature_sha256": "2fe69bb604a72633884fdec29290e0336776abaf1336c22c8b85195b308ca4fc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:354:192b50b3aba61f605206",
+            "original_csv_index": 354,
+            "feature_sha256": "192b50b3aba61f60520656231482cfe5e3b79ffa686f0f48189437fe3b14c832",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:44:283c810d0e3a4864eaa6",
+            "original_csv_index": 44,
+            "feature_sha256": "283c810d0e3a4864eaa67ef46fb94c33f45608059d11ac1f84fea67135a4f6df",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:308:9e7eacb7eaa4bddc747f",
+            "original_csv_index": 308,
+            "feature_sha256": "9e7eacb7eaa4bddc747fb131248786087c76c8f8b4e143fa11efe1a2b44d0822",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:346:ee6b6da6e90b1bb46db2",
+            "original_csv_index": 346,
+            "feature_sha256": "ee6b6da6e90b1bb46db29e5d11b6f65f43ccfd86ad1d0f0749d7f22b74e679bf",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:295:190ea065a5aabd2b4687",
+            "original_csv_index": 295,
+            "feature_sha256": "190ea065a5aabd2b468725edd42312563ef2d13900db5baa587166c9d403fd97",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:204:78d21d434d499c005654",
+            "original_csv_index": 204,
+            "feature_sha256": "78d21d434d499c005654c83182cc110d810a5c7b1128df92fbd7eabd83be3bfa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:234:c837041c51025faf127c",
+            "original_csv_index": 234,
+            "feature_sha256": "c837041c51025faf127cad48a817c1682fbab9817716b4d15b4ccbae010e267b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:251:d0d6406811a5de23bc31",
+            "original_csv_index": 251,
+            "feature_sha256": "d0d6406811a5de23bc31a9e02d9cad7adbf57de90fe97034ab656782096d335f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:25:a76e6156ae0c21b41426",
+            "original_csv_index": 25,
+            "feature_sha256": "a76e6156ae0c21b41426c4ed8ab6eb1bf2733471780c6d9a8be46878981d5626",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:323:c548d1b65d8134d55690",
+            "original_csv_index": 323,
+            "feature_sha256": "c548d1b65d8134d55690c48efce26f33bb1eef4c80d6e0661fcedaf03b1ebc70",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:19:d6db406976e6fa6088ef",
+            "original_csv_index": 19,
+            "feature_sha256": "d6db406976e6fa6088efd7a2cd8266918cb70e1bc14e7ecdfecfedeb6bbca40d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:521:f39fe8e375d8419c745d",
+            "original_csv_index": 521,
+            "feature_sha256": "f39fe8e375d8419c745d0598e627e23e67f0b4c448957aa435e80d0d8d487350",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:193:2aa8afe4329256027c83",
+            "original_csv_index": 193,
+            "feature_sha256": "2aa8afe4329256027c8370dc75e034707341a35b2bcae1937176c95f91ac3654",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:62:e24fba20ca6453839b6d",
+            "original_csv_index": 62,
+            "feature_sha256": "e24fba20ca6453839b6d556ee85fff8087800b0aab6130fe80ac648c7f43488c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:377:1bf33d7bff85127921f6",
+            "original_csv_index": 377,
+            "feature_sha256": "1bf33d7bff85127921f633ea4cc0afb3120eba6bcb73a461acb89b4a594086c1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:0:962921d95cbeed3036a2",
+            "original_csv_index": 0,
+            "feature_sha256": "962921d95cbeed3036a27ac8c08099378c51576809417c4e3aadc2b73d503dc5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:492:11469f35e08175aea59d",
+            "original_csv_index": 492,
+            "feature_sha256": "11469f35e08175aea59d526b234c30272a38f5333e7d2ac775f4dec90f283816",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:349:ae0dc9795a22eb909b3e",
+            "original_csv_index": 349,
+            "feature_sha256": "ae0dc9795a22eb909b3e9961729428f1aec9e07d40cc8e4ee0be6c80c296ad14",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:397:417704b3a2b08f2af8ed",
+            "original_csv_index": 397,
+            "feature_sha256": "417704b3a2b08f2af8ed54027fb266a574b71499cb413c6e6e5aecd162e1d79d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:388:8c3a2523e41a40caf5de",
+            "original_csv_index": 388,
+            "feature_sha256": "8c3a2523e41a40caf5de9255a5f8ed947cdee43f26d7355bc08c14398f2a6d5d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:488:61bb772f500fb1cfd3e5",
+            "original_csv_index": 488,
+            "feature_sha256": "61bb772f500fb1cfd3e58d7f4ccbb4e54c58d75c099bfffd58f5ba7ad026f99e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:28:78622dc3fe7149bf89b9",
+            "original_csv_index": 28,
+            "feature_sha256": "78622dc3fe7149bf89b92ea2b79b338f03ce2b8f08fbf2b31259afeb3fee16b0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:459:942f596ced2512efc5a5",
+            "original_csv_index": 459,
+            "feature_sha256": "942f596ced2512efc5a597b239c6ea7f196e5af0519805b2fb764ca78163438d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:423:99bb05ddfd7c7a068381",
+            "original_csv_index": 423,
+            "feature_sha256": "99bb05ddfd7c7a068381480c3f304fc64ddb39683a977dfc9b396fdcb612c4ed",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:70:fe8c16d86fff56f3d0ff",
+            "original_csv_index": 70,
+            "feature_sha256": "fe8c16d86fff56f3d0ffd1c89a8fa6f731f5a4b2e846e258a26ccc85ffb7b54f",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 7,
+        "train_count": 482,
+        "test_count": 53,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:236:abbf6f4c283f8930e703",
+            "original_csv_index": 236,
+            "feature_sha256": "abbf6f4c283f8930e70334538d76086a421ffbd782790935be4a037027666b3d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:188:433fa0d551af0a408b3b",
+            "original_csv_index": 188,
+            "feature_sha256": "433fa0d551af0a408b3b7e41a88034d865ed2050db63d799f39e27a55c39bdb9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:229:7b351e0b7ea319dd267a",
+            "original_csv_index": 229,
+            "feature_sha256": "7b351e0b7ea319dd267acb682469c343ca3ad03d0b0587b69b4e117159543a27",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:17:7fa7d562c87cc6b64cf8",
+            "original_csv_index": 17,
+            "feature_sha256": "7fa7d562c87cc6b64cf8446bed7569de58908109c530ef4afc56ee3a8500836c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:107:28e4b4f87aa2e81a13fd",
+            "original_csv_index": 107,
+            "feature_sha256": "28e4b4f87aa2e81a13fda8dc339dd5ef575b9bd4a995cb2a626b257ddd4de519",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:21:1f8c17412897257ce2be",
+            "original_csv_index": 21,
+            "feature_sha256": "1f8c17412897257ce2beb65bd4944592ca7ac9cc53665e03a1f1588d94d047f8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:293:f54625c89b8eb505cfe8",
+            "original_csv_index": 293,
+            "feature_sha256": "f54625c89b8eb505cfe87b17d13d8029eb00a934b024f93a820ccadf791ffe70",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:249:6cd3f2639f03ad472a84",
+            "original_csv_index": 249,
+            "feature_sha256": "6cd3f2639f03ad472a847e3bc55a00af7980dc528fccbd5997bac06e7396b135",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:351:94ea7b4386147acb32f9",
+            "original_csv_index": 351,
+            "feature_sha256": "94ea7b4386147acb32f91be63521e1d27360ef25cdee78e088e471867ec5afab",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:132:a6649be2288737bb6757",
+            "original_csv_index": 132,
+            "feature_sha256": "a6649be2288737bb6757dc5eb5d0cfccb18fa454bfd11fed29dbbff00179dbba",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:268:5e31be44fb4b59c7c261",
+            "original_csv_index": 268,
+            "feature_sha256": "5e31be44fb4b59c7c261f8cbfdbd198849d975510f76271016cd3c76414e16e8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:498:0cbcd0c55d8f319b4373",
+            "original_csv_index": 498,
+            "feature_sha256": "0cbcd0c55d8f319b4373da63d0378199670573e5be6c92c72043b8f0969d44b5",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:284:798760e3b7d64f2e828a",
+            "original_csv_index": 284,
+            "feature_sha256": "798760e3b7d64f2e828ad322e72628954cfa2b28922ebb2cdb69ce80333956a5",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:309:bbe30e050316c8c9dec6",
+            "original_csv_index": 309,
+            "feature_sha256": "bbe30e050316c8c9dec65cc17c56ffab1bc3a2cdcf999e97b88cc7c22b66f79b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:522:054dc48098dd12e34abe",
+            "original_csv_index": 522,
+            "feature_sha256": "054dc48098dd12e34abe0d1e210fefc28aac9af0417fffec4e82999351e972df",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:202:9588dfbd7b860895ea9d",
+            "original_csv_index": 202,
+            "feature_sha256": "9588dfbd7b860895ea9d8891abfb3c6e612fac3b05ae79d985fc13f22a422016",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:100:b2761be4a3ac3a623044",
+            "original_csv_index": 100,
+            "feature_sha256": "b2761be4a3ac3a6230445c3963087954943157d0f2a6833e9a812e7a25817796",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:233:9862bf4d5dbc4730799e",
+            "original_csv_index": 233,
+            "feature_sha256": "9862bf4d5dbc4730799edf4594a277885db5ced3fc6c52b6d106c77b9857b84c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:167:d9e168836884fe5a0915",
+            "original_csv_index": 167,
+            "feature_sha256": "d9e168836884fe5a0915e9f9bc855d5a9a68c09f8f51d7dc20961a2f59d9e5ca",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:141:7191d9b4689ae8d7902a",
+            "original_csv_index": 141,
+            "feature_sha256": "7191d9b4689ae8d7902a34d61f7578bbffdd506edeee6b5577b307f4d293a053",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:347:6c0ffc3afc19d3669d13",
+            "original_csv_index": 347,
+            "feature_sha256": "6c0ffc3afc19d3669d131c8f48854acba9bb451620f8a906246cc38e20117045",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:64:e76a110fe841a34fe25d",
+            "original_csv_index": 64,
+            "feature_sha256": "e76a110fe841a34fe25dcf0258008ce87fafc211863130e1d41de18223d827af",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:407:f7f6464b066c2020e06f",
+            "original_csv_index": 407,
+            "feature_sha256": "f7f6464b066c2020e06fdc8d7f3a5fcd5e93d13630899094f38cdfd7bf9563b3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:471:017e3ffad7baf8086b0c",
+            "original_csv_index": 471,
+            "feature_sha256": "017e3ffad7baf8086b0cb558c0af9d579969931583e5cd1bb3d2f5d8493883da",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:93:890a4e6ff65e1dd05f52",
+            "original_csv_index": 93,
+            "feature_sha256": "890a4e6ff65e1dd05f52b1ba5bf6696b29d4e315b5347b4c59c5020e65845574",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:340:34ac19790bd2cb9f0d95",
+            "original_csv_index": 340,
+            "feature_sha256": "34ac19790bd2cb9f0d95e23cbbd5604b774bd41d63b75c2c89a7c7f2448c7d75",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:518:a846a36ee296d6cb9d8d",
+            "original_csv_index": 518,
+            "feature_sha256": "a846a36ee296d6cb9d8ddd3d1b26851b928a1ad583a103c7b3abf64e9e647b83",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:168:1e24883226be0c0b78cc",
+            "original_csv_index": 168,
+            "feature_sha256": "1e24883226be0c0b78ccae45fa2c2b851c35739be05a69f2b704751dad5879a7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:255:4378cb9ca557723aee31",
+            "original_csv_index": 255,
+            "feature_sha256": "4378cb9ca557723aee31e4197390d4db9f5d530d44cf56a901db2358b1fb7ebc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:73:b40f32123649034e1a2f",
+            "original_csv_index": 73,
+            "feature_sha256": "b40f32123649034e1a2fe1312145f91f1024cc104931f6afc5fda49669061e33",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:35:35c27c44a24ef85968b8",
+            "original_csv_index": 35,
+            "feature_sha256": "35c27c44a24ef85968b84d1233cef5ac4523443139625caae12af93348101618",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:29:049b4e3eaf8413a10277",
+            "original_csv_index": 29,
+            "feature_sha256": "049b4e3eaf8413a102772d622f330b3752d11840def28bab91da72bda69372fb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:516:30df0f53ccceaac49d07",
+            "original_csv_index": 516,
+            "feature_sha256": "30df0f53ccceaac49d0751cdffe495143c3d8f9a05ff47e004310555a0144bfb",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:215:4617c877ab9420b526df",
+            "original_csv_index": 215,
+            "feature_sha256": "4617c877ab9420b526dfa44d647dc496747998187ca0f5aaa797366feaa762f7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:214:43856f440dee7b667b97",
+            "original_csv_index": 214,
+            "feature_sha256": "43856f440dee7b667b97ef118052c0a1582bb1cd9795ae5197bcc2ac0caaf81a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:357:c0656d525662aa7a56a1",
+            "original_csv_index": 357,
+            "feature_sha256": "c0656d525662aa7a56a15ee357ff13712525f7fbefd3e26f31257f7c694b0572",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:326:445dd40bd3debfd936c8",
+            "original_csv_index": 326,
+            "feature_sha256": "445dd40bd3debfd936c844559bbd12f77b3f40d042755853a6a4347f6cc3b603",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:83:a7155b75e15439b7a1ad",
+            "original_csv_index": 83,
+            "feature_sha256": "a7155b75e15439b7a1adb169667263c679fd99155da42db1d4eec7dc975e5b1f",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:331:bd2291b0a5d0431737e2",
+            "original_csv_index": 331,
+            "feature_sha256": "bd2291b0a5d0431737e2af9f5b856f9c5da0a9dcc2f8321cbcce7acac0d18d4e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:352:b857a9172589279a341e",
+            "original_csv_index": 352,
+            "feature_sha256": "b857a9172589279a341ededb47cddcd863b7ea9c15013c32aecdba78689fd079",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:269:bae39e8b404b94418131",
+            "original_csv_index": 269,
+            "feature_sha256": "bae39e8b404b944181310543d878bdad084685df5707418b7caa17e7ee858574",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:32:c6d4d6a038d683fb55a9",
+            "original_csv_index": 32,
+            "feature_sha256": "c6d4d6a038d683fb55a94397c90d45a64eb8e5045bf1e0e9415a77d3a233c686",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:36:8cb9e09a0eecca142477",
+            "original_csv_index": 36,
+            "feature_sha256": "8cb9e09a0eecca142477d35e317d3ce8632a3c0a4ca9aee2b1ee756c394aa8f3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:270:51343ede299db1be804f",
+            "original_csv_index": 270,
+            "feature_sha256": "51343ede299db1be804f9e074a4ea8bde633284531e31616b8c73b541ad08147",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:130:46aaf345532c901810d3",
+            "original_csv_index": 130,
+            "feature_sha256": "46aaf345532c901810d36c06bf2e8c2720dce9bbc11a6808326dac162b972c34",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:201:c1cdaa5e3a4fed6e7233",
+            "original_csv_index": 201,
+            "feature_sha256": "c1cdaa5e3a4fed6e7233b8ccd96cc89fc79d03406c6700aad498608900da19f6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:197:6fe2db506dd451f1454e",
+            "original_csv_index": 197,
+            "feature_sha256": "6fe2db506dd451f1454ec05f76730a233b88ccad8243f270da57283eb71267d4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:48:841e9861b503aec53c71",
+            "original_csv_index": 48,
+            "feature_sha256": "841e9861b503aec53c71ed733b16ace289f7b95fea2362675d435ae226170c69",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:279:40d4a6247290fb1c64f6",
+            "original_csv_index": 279,
+            "feature_sha256": "40d4a6247290fb1c64f61be4853262d9604199a9cdc6a8ae71e3661f5c51227a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:334:d425dc49de96d75f5975",
+            "original_csv_index": 334,
+            "feature_sha256": "d425dc49de96d75f5975072d0fdf4e57ec6d5f46984f41f8c224a239662025cc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:127:1a19d72930422eea795e",
+            "original_csv_index": 127,
+            "feature_sha256": "1a19d72930422eea795ee5117741dd65ff1bc45c5a7bf4787453c5f9e07d6f5b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:121:2f1787c66ed547fb1c92",
+            "original_csv_index": 121,
+            "feature_sha256": "2f1787c66ed547fb1c929c1861521131ed8c254d9ad1267adcf7202d846a7194",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:314:32b6127f3bae35f76626",
+            "original_csv_index": 314,
+            "feature_sha256": "32b6127f3bae35f7662648e3bd911966b72b6b5f3019bc2e188006e15322f6a5",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 8,
+        "train_count": 482,
+        "test_count": 53,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:196:f09df1365f3a2e95170c",
+            "original_csv_index": 196,
+            "feature_sha256": "f09df1365f3a2e95170c24e9b80f4900742493664ffc236028f3ad526a315a1c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:419:c7313a6395c01e57a9c0",
+            "original_csv_index": 419,
+            "feature_sha256": "c7313a6395c01e57a9c021d34c32dbec03ffc229038e2c449cded382e11ff65a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:108:1bbab2f624576f2b4e06",
+            "original_csv_index": 108,
+            "feature_sha256": "1bbab2f624576f2b4e06c36c61468eeb89ca42445fa2594e16a2bcf0df86ee48",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:401:4aa93f02091c92d41410",
+            "original_csv_index": 401,
+            "feature_sha256": "4aa93f02091c92d41410675886465401e6830a31e2c17d913c9e7e4fb52a534c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:422:3901794416f9f11e2de9",
+            "original_csv_index": 422,
+            "feature_sha256": "3901794416f9f11e2de95f2133fb8586ec919f0a88016f9f0b7072351b637b61",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:434:493f713f1be15938e9d1",
+            "original_csv_index": 434,
+            "feature_sha256": "493f713f1be15938e9d19a38444cd5965daa4bcce80ec2d79b828ca25860c913",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:46:a1c1ad0d3595cdff72cb",
+            "original_csv_index": 46,
+            "feature_sha256": "a1c1ad0d3595cdff72cbca9ffc0dbb59a7b2c70e20997b37c892923a390c8097",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:417:bcb849f3618ff0273bac",
+            "original_csv_index": 417,
+            "feature_sha256": "bcb849f3618ff0273bac6aa1029486c28300965adb6d5961d2cd52d76758444b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:436:fea666b532eb75c9271d",
+            "original_csv_index": 436,
+            "feature_sha256": "fea666b532eb75c9271d43173b47faafd3cc678df0b1dad4a1d1470ec88b8dfd",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:380:3241a285b87cc86045b0",
+            "original_csv_index": 380,
+            "feature_sha256": "3241a285b87cc86045b00fdff361653acbe02d04bbc8a6d038aa3651cfa1114a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:465:ca06c1da74da036fad11",
+            "original_csv_index": 465,
+            "feature_sha256": "ca06c1da74da036fad11d29739835105cf2e56d78422882eb8fdf3c1d47e7daf",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:382:1323bc20d03b56bd5100",
+            "original_csv_index": 382,
+            "feature_sha256": "1323bc20d03b56bd5100af0b2a96d49ac8cfcb1e2cc1c6ac3e61fe2e9171477b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:392:6574bcf9bf12711e428d",
+            "original_csv_index": 392,
+            "feature_sha256": "6574bcf9bf12711e428dd6605402495840302942d7362255a800a4ae53e44e04",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:101:a86ecb8500b1807125a9",
+            "original_csv_index": 101,
+            "feature_sha256": "a86ecb8500b1807125a94140dcd287dc861415e94f2c07590fb344b353ef368d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:56:4eb03c767d7bc28a669d",
+            "original_csv_index": 56,
+            "feature_sha256": "4eb03c767d7bc28a669d77db7d4566ca17ab41b2101608917fd2e881c779d4fc",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:530:243f2d8b91a4331a727f",
+            "original_csv_index": 530,
+            "feature_sha256": "243f2d8b91a4331a727fac227697095f0823b688627e7cdaaf6a94b1a31de9e6",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:171:87160cd07acce0de122f",
+            "original_csv_index": 171,
+            "feature_sha256": "87160cd07acce0de122fb67f68f93fe7822844ab9fd0dc9eeaa51b4ba0ed5118",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:173:e557b53e1e93997ea8ed",
+            "original_csv_index": 173,
+            "feature_sha256": "e557b53e1e93997ea8ed3d813882c623f515af7d19df315db799c7b58fccbe3d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:416:c45322c91dd6832a48aa",
+            "original_csv_index": 416,
+            "feature_sha256": "c45322c91dd6832a48aa2f90c142609d29d3790777755d728526f91bb88f5607",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:106:5cc1c2c8089fad18a77a",
+            "original_csv_index": 106,
+            "feature_sha256": "5cc1c2c8089fad18a77ab23e7a24531a070f83e396905707a4ce5fd9d2812e87",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:63:424e1380ac386d6ac754",
+            "original_csv_index": 63,
+            "feature_sha256": "424e1380ac386d6ac754504a587f4db809ca66a5ced2b163f327053c3d3b99d2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:219:f93139d87cb1930850fe",
+            "original_csv_index": 219,
+            "feature_sha256": "f93139d87cb1930850fe1367b1c085d48ef79b638463200e4d38631ed61e2d0b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:461:3d2eeafb0c77102b1e27",
+            "original_csv_index": 461,
+            "feature_sha256": "3d2eeafb0c77102b1e273a5eefc1663a475e122b67afe6a7e184c7d46598c5b4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:114:813e7a17abb21aa88730",
+            "original_csv_index": 114,
+            "feature_sha256": "813e7a17abb21aa88730a13659e604810177f41df8340fa599018819fd35b3f2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:322:26c52397a98cad9966e1",
+            "original_csv_index": 322,
+            "feature_sha256": "26c52397a98cad9966e10fb8c30b58f0a0c6a92830d3eafe9d56002441dc9a72",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:136:edec38007d80bfc802be",
+            "original_csv_index": 136,
+            "feature_sha256": "edec38007d80bfc802be74c0f6752ab2d55404d9214036bba428d8c71bff575b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:232:089b8b384ac4ff2f01b8",
+            "original_csv_index": 232,
+            "feature_sha256": "089b8b384ac4ff2f01b801049689b579c34c1d04417366ed8ccbc93f660b62d4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:133:b1ee4112cc40bf103db5",
+            "original_csv_index": 133,
+            "feature_sha256": "b1ee4112cc40bf103db554db85a05d769e24088bf8256ad92aeb12217a7e1d6e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:402:db57eb5b23f88d55436a",
+            "original_csv_index": 402,
+            "feature_sha256": "db57eb5b23f88d55436a226ff8ce56497cef8023ece5b5edc234cdc594bbe990",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:24:96c77ce39fa19de9a6e4",
+            "original_csv_index": 24,
+            "feature_sha256": "96c77ce39fa19de9a6e4798da84311f3288ba8271f41678c9965cb65432c3e55",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:533:95eee5354ed93c50407f",
+            "original_csv_index": 533,
+            "feature_sha256": "95eee5354ed93c50407f950b3e09763a37ad297c00cf3d12a8ed0f475302b3e3",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:529:483d76a60adb8988489e",
+            "original_csv_index": 529,
+            "feature_sha256": "483d76a60adb8988489e2ab6fb4d402f536e7c2e90182c0753bc1a6849a3d89b",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:228:4ebd9fb3b91a600b6c84",
+            "original_csv_index": 228,
+            "feature_sha256": "4ebd9fb3b91a600b6c84e3d13eac95cc965c9f2c8d37a3941ca22aa3aaa24673",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:152:6a82a9149a661d7e34d2",
+            "original_csv_index": 152,
+            "feature_sha256": "6a82a9149a661d7e34d2019b8b324af7dd62bd79a87eb391ac913ad6d6195b6e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:462:18c98509b177cc7e0aa7",
+            "original_csv_index": 462,
+            "feature_sha256": "18c98509b177cc7e0aa727a04c92760fade20fa473bb189a46aa082581e17c7b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:375:b2704d6919ba13506a72",
+            "original_csv_index": 375,
+            "feature_sha256": "b2704d6919ba13506a729f2bd6990a6bde6c363f142495fe62420fff4a489570",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:184:85c47ca79ce8f74ab255",
+            "original_csv_index": 184,
+            "feature_sha256": "85c47ca79ce8f74ab255577ed5ed239d546fcbd762a138e0e0da4cb67aea8142",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:371:a6b30f73a1beae2a0962",
+            "original_csv_index": 371,
+            "feature_sha256": "a6b30f73a1beae2a0962ac86a79425faa58d221634771daa023c2d171dce8d4c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:432:4b707f36f086b7941834",
+            "original_csv_index": 432,
+            "feature_sha256": "4b707f36f086b79418342c6ea0bc8d632fed87ebbd6ce11d4200f6a132c0c9a6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:86:5e6834f2c5ee129cec2a",
+            "original_csv_index": 86,
+            "feature_sha256": "5e6834f2c5ee129cec2a4f560d71f90a11359307ba91f0789d98b4f92e8311aa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:479:0449639275f836db1327",
+            "original_csv_index": 479,
+            "feature_sha256": "0449639275f836db13278d904463f2bf389af5a90c7e2bca19369a5d5873f71a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:368:b2195771ef21eb24cc30",
+            "original_csv_index": 368,
+            "feature_sha256": "b2195771ef21eb24cc30c491c5714810353941ffa3ff7d1473775f1dca9851f4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:369:9fad415096941e757b2c",
+            "original_csv_index": 369,
+            "feature_sha256": "9fad415096941e757b2c9c1e464c59a829cd86c1daad0dde7cd4259037c1c677",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:227:21e2cb1e78de379c57ba",
+            "original_csv_index": 227,
+            "feature_sha256": "21e2cb1e78de379c57bae515f97a90ba623725f9a8ee4d2d4704c16f2fc39f09",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:460:ccb4fe6fd25743822f44",
+            "original_csv_index": 460,
+            "feature_sha256": "ccb4fe6fd25743822f4489ab2012ba0acac2b4eb791612c64f4ec5d9db84cc35",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:452:6d8661ac8649bb839ffc",
+            "original_csv_index": 452,
+            "feature_sha256": "6d8661ac8649bb839ffccc6d890f683eb6f2ef51d0249763fb198e2e0100f873",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:262:66561852290f2eb17e63",
+            "original_csv_index": 262,
+            "feature_sha256": "66561852290f2eb17e635df7ca5a87f6899061e6225c894ea81edc837c9b37cb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:501:ba3543ad9d299d89d457",
+            "original_csv_index": 501,
+            "feature_sha256": "ba3543ad9d299d89d457ba2533e19c87b93d511ec67b773464c2715493c18d87",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:425:e1a09d1be5154cd8a447",
+            "original_csv_index": 425,
+            "feature_sha256": "e1a09d1be5154cd8a447bb88dbe66f67fbd1391a328b1179e8b3bff723954391",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:321:1b601b9499df50fc9b4d",
+            "original_csv_index": 321,
+            "feature_sha256": "1b601b9499df50fc9b4d266886572e520aebf4b00f6120969859e593a2d30fd1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:273:9f87e70150324a2b3b0e",
+            "original_csv_index": 273,
+            "feature_sha256": "9f87e70150324a2b3b0e930413879cc6d6ea74bcda29ca132db334bdf5be3267",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:420:4859cea8d84772f88d6d",
+            "original_csv_index": 420,
+            "feature_sha256": "4859cea8d84772f88d6d694412185ce64377dab79f41bb2c8b780f8ac77ec4c3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:147:fec76e466557a91e3327",
+            "original_csv_index": 147,
+            "feature_sha256": "fec76e466557a91e3327c27bdf056d7e182b91f27e07d6d835438d7953dc9cb9",
+            "truth": 0
+          }
+        ]
+      },
+      {
+        "fold": 9,
+        "train_count": 482,
+        "test_count": 53,
+        "test_rows": [
+          {
+            "subject_id": "tadpole_smci_pmci:281:1371357aa2a8bd3dc35a",
+            "original_csv_index": 281,
+            "feature_sha256": "1371357aa2a8bd3dc35af96a2d2e73653b76390454d9a9a2186284eba6fd7883",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:378:59d5854a73adf75218b4",
+            "original_csv_index": 378,
+            "feature_sha256": "59d5854a73adf75218b412b691e143cddd10882b25e30fc13dd2508595d28915",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:140:5089659f30068be3ecd4",
+            "original_csv_index": 140,
+            "feature_sha256": "5089659f30068be3ecd42dbdabea450e169f6fc06c40a27cb69a1cba3fb6d670",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:306:f6d8589d272635118a73",
+            "original_csv_index": 306,
+            "feature_sha256": "f6d8589d272635118a73c4bbe4d82fd02ea0bc83c4645badf8e984440baf0be9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:45:3931191fa045bc2dff4a",
+            "original_csv_index": 45,
+            "feature_sha256": "3931191fa045bc2dff4ad6cf07b0b208767e0c2df007ea2940bbab8342464184",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:338:4406bbb26be8d7b182f4",
+            "original_csv_index": 338,
+            "feature_sha256": "4406bbb26be8d7b182f4e628a85ab5d8a94303577cdf116ad0be3bb2e6e78591",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:332:4d9f6753da507efb7d77",
+            "original_csv_index": 332,
+            "feature_sha256": "4d9f6753da507efb7d772fa6a0c9b39f6371cf34989e7ee4962452f1b1276add",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:1:f02cdfbded37df84fe57",
+            "original_csv_index": 1,
+            "feature_sha256": "f02cdfbded37df84fe579bdf06e149bf72e9c7c39d8a2a949cebf93f9b35ac4e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:298:fb67894e4a292e051b24",
+            "original_csv_index": 298,
+            "feature_sha256": "fb67894e4a292e051b242bfab51740499548485e61f0ef2967ea4980d919791c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:208:21df725364385868c2d1",
+            "original_csv_index": 208,
+            "feature_sha256": "21df725364385868c2d1db080d64f0f3b80cca5f492368ec6de6f38eac5ad7d0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:157:e874b2689eb57ceb571d",
+            "original_csv_index": 157,
+            "feature_sha256": "e874b2689eb57ceb571dc282c5bb5e745afd9dcea5744e5eb00c1be6b73406b3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:406:c2207d89e86956ca4924",
+            "original_csv_index": 406,
+            "feature_sha256": "c2207d89e86956ca4924ddb99f6d7c2fa85a8c746b6c2c5c2c1181aacf9e1610",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:49:333de446ec7003c9b38d",
+            "original_csv_index": 49,
+            "feature_sha256": "333de446ec7003c9b38de2e7f270a0d5703d2d6d788eb8731f443317737c30b6",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:330:5f71b0e80ae30316fb1e",
+            "original_csv_index": 330,
+            "feature_sha256": "5f71b0e80ae30316fb1ecaa052e3dc2d93373c4238e2ab7d709dd5f8fdbce28a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:385:cdaec7f844be8c0776f3",
+            "original_csv_index": 385,
+            "feature_sha256": "cdaec7f844be8c0776f3564990f38243ae2746ee80572a06e1baa6e8e4a069a1",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:476:1aa5ac042a86297342b4",
+            "original_csv_index": 476,
+            "feature_sha256": "1aa5ac042a86297342b432fa4b8d13c4fe565331dfb821fe70be9915a38cb5ad",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:179:4220641c971919a593d3",
+            "original_csv_index": 179,
+            "feature_sha256": "4220641c971919a593d388d5015ccc6ef08161267a76fad0cb8ee9c5b75d6284",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:55:d3f4c5bddeb1639b11c1",
+            "original_csv_index": 55,
+            "feature_sha256": "d3f4c5bddeb1639b11c19c854320308ae228c5e7229e1047f29543f778c7e4e2",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:230:5fc49bb572b24d98f92a",
+            "original_csv_index": 230,
+            "feature_sha256": "5fc49bb572b24d98f92a80c704d4ecc90950691a87e0f623244420181522b31d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:26:9b20a73aee73baa91ea5",
+            "original_csv_index": 26,
+            "feature_sha256": "9b20a73aee73baa91ea5fdf51374108b35ce16ed2c5a73e73b00032471ed95b9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:92:356ecb4cb0bfa24c4bc9",
+            "original_csv_index": 92,
+            "feature_sha256": "356ecb4cb0bfa24c4bc94c92eb953043029710ba4aba95fc4b3e492b6bb7fc11",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:5:6049d17cccce483681b2",
+            "original_csv_index": 5,
+            "feature_sha256": "6049d17cccce483681b293f5fd04f6169bd63bb2e57823870646aaf25db8eb92",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:20:966682a10eee91b06c05",
+            "original_csv_index": 20,
+            "feature_sha256": "966682a10eee91b06c0568e101f7f7c4988657812c9bdbe58d43a318a2968f9b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:497:d302ef03b0fc42baa182",
+            "original_csv_index": 497,
+            "feature_sha256": "d302ef03b0fc42baa182fd283b4a05b2b2e783400fdf8a134941a02b35ad31f3",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:195:5dbc5fae91ffb8527d60",
+            "original_csv_index": 195,
+            "feature_sha256": "5dbc5fae91ffb8527d60d9a46be91b9054dcd544254a20f8ce6da33499a4eefe",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:89:d0f696ada01a8b169361",
+            "original_csv_index": 89,
+            "feature_sha256": "d0f696ada01a8b169361e30a367b447e7ef96fe971fcf299fc59d2b6826c797c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:198:e88688731f6b60f181d0",
+            "original_csv_index": 198,
+            "feature_sha256": "e88688731f6b60f181d02be00eeb2bc7e5d45b54eebd1f79d76648aa71e2d06c",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:303:8d5bde62176f0cca2656",
+            "original_csv_index": 303,
+            "feature_sha256": "8d5bde62176f0cca2656423c1bd596ff58f7f129b35e2963787dd85496e18e0d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:466:ad191f95adb1dec82457",
+            "original_csv_index": 466,
+            "feature_sha256": "ad191f95adb1dec824571ef3f31cd3e10b52314ca6b966eeee9e29a98bdfd696",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:61:7a295aea0aa7971f976a",
+            "original_csv_index": 61,
+            "feature_sha256": "7a295aea0aa7971f976a5d6fabcfdc58a6c1969d5d3e694008c4250f9358abe0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:509:0aaf107f1c45dd3c40a8",
+            "original_csv_index": 509,
+            "feature_sha256": "0aaf107f1c45dd3c40a886324461fe1cdf2caf04ede606de17e38684e3893dee",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:216:2279660802bb3749422b",
+            "original_csv_index": 216,
+            "feature_sha256": "2279660802bb3749422bf1ba51149b76d72f4799fe0b885ed06102d63d0e932e",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:111:64614a519bdac25b3669",
+            "original_csv_index": 111,
+            "feature_sha256": "64614a519bdac25b366949ab0f66e8413e432f02c4a448b197e18f106c703bf0",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:166:4925e49ac87d13ed6feb",
+            "original_csv_index": 166,
+            "feature_sha256": "4925e49ac87d13ed6feba7418ca2b92c7854d5cfbdf6cac8d62fc46a7fefe8f8",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:408:db2ede28c4517d460722",
+            "original_csv_index": 408,
+            "feature_sha256": "db2ede28c4517d460722976ebc7c7dd92dd8167c59b7b5843b271ad034c91f07",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:409:f5cf3dfc0dee51f8f3b8",
+            "original_csv_index": 409,
+            "feature_sha256": "f5cf3dfc0dee51f8f3b8d7b575b0d4df2906c9140584bda7dd1df2799d7d27bb",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:3:2351b48e8d7267ffcd4c",
+            "original_csv_index": 3,
+            "feature_sha256": "2351b48e8d7267ffcd4c0461dcb2d91677199ac738b3920de3b3f5b75f854c6a",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:524:44a0145f5f40a5591e95",
+            "original_csv_index": 524,
+            "feature_sha256": "44a0145f5f40a5591e95ebc30e7f439f0b2d7eb270a97aa931c68bda17149dbb",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:58:5c27e22e41f1d5ce250d",
+            "original_csv_index": 58,
+            "feature_sha256": "5c27e22e41f1d5ce250d08c2fa921f1eea2db11904bced0e9cb02d4636c250b4",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:457:b6c798c4e377d8f1cf99",
+            "original_csv_index": 457,
+            "feature_sha256": "b6c798c4e377d8f1cf99ae6188f241cc7ec4e64f062ea01d88889ef2b7269c50",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:98:bc9a4958c77491ecd0da",
+            "original_csv_index": 98,
+            "feature_sha256": "bc9a4958c77491ecd0daf07c2e80970b5a94754a1e6015c38e169962cd8d4a7b",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:178:1e99fa89e69041202e0b",
+            "original_csv_index": 178,
+            "feature_sha256": "1e99fa89e69041202e0b02536c42fe7f51ddc1fbd3a61ceb3df986948de39fd7",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:256:91b692b6f5ed21620209",
+            "original_csv_index": 256,
+            "feature_sha256": "91b692b6f5ed2162020992396bd6543bc637eb6f33b3cac9229ed8f9ada09e86",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:94:1f1bfe84b03bf3bd77c5",
+            "original_csv_index": 94,
+            "feature_sha256": "1f1bfe84b03bf3bd77c5cac69da9a2a5c9f43b8467e11abdc6628b5c4829d195",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:180:91549be842d7eee4aebe",
+            "original_csv_index": 180,
+            "feature_sha256": "91549be842d7eee4aebe27ea63105328b261af541af44d60b65dd8f718a8ce8d",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:519:e92f172026a4ad79e59d",
+            "original_csv_index": 519,
+            "feature_sha256": "e92f172026a4ad79e59de4a5d79928c90a76765881db7843308c437e70420319",
+            "truth": 1
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:291:d10dbc554e9eb52644da",
+            "original_csv_index": 291,
+            "feature_sha256": "d10dbc554e9eb52644dab14ca7dfda41194efe789bac5c538415a8b92034efa3",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:257:38b2115c1a205d539ef3",
+            "original_csv_index": 257,
+            "feature_sha256": "38b2115c1a205d539ef35f843f438dbac59e87ae6e4552312a5d2413115dd9b9",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:442:0540762742d7f3a65a96",
+            "original_csv_index": 442,
+            "feature_sha256": "0540762742d7f3a65a96556b6a7c2c6f9b8bb441b7d67783e927425ca6c5e676",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:335:11ba88eef8d412a6c88f",
+            "original_csv_index": 335,
+            "feature_sha256": "11ba88eef8d412a6c88fb5af660eef0ffdb5e4ecb8e1ec087eb3e036d21166fa",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:163:c91c54841bc5edd6f85a",
+            "original_csv_index": 163,
+            "feature_sha256": "c91c54841bc5edd6f85a47bf965d020df5944100b808772589c6db9014da57ff",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:244:0cfd5ca3640b1acbb522",
+            "original_csv_index": 244,
+            "feature_sha256": "0cfd5ca3640b1acbb52207598052be786de498c3090f432f26705da9aa96d355",
+            "truth": 0
+          },
+          {
+            "subject_id": "tadpole_smci_pmci:99:b4ebe09257190d3ce90e",
+            "original_csv_index": 99,
+            "feature_sha256": "b4ebe09257190d3ce90ee3ef34ccaddbd2b3984ebffeee3d382c207d8d5b81b1",
+            "truth": 0
+          }
+        ]
+      }
+    ],
+    "sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6"
+  },
+  "sha256": "f644d21d57bccd3dcf7b722de51fbe5f15a378ef6c9217c04390831b8dc21b34"
+}

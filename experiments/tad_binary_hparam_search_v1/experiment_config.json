@@ -1,0 +1,32 @@
+{
+  "experiment": "TADPOLE Binary Task Hyperparameter Search v1",
+  "branch": "experiment/tad-binary-hparam-search-v1",
+  "base_commit": "17004d29714471b5e1548e04bac0072e854e7e18",
+  "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+  "dataset": "TADPOLE",
+  "task": "SMCI_PMCI",
+  "folds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "seed_per_fold": 0,
+  "epochs": 400,
+  "device": "cuda:0",
+  "full_batch_transductive": true,
+  "single_model": true,
+  "ensemble": false,
+  "graph": false,
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "stage_a_lr": [0.0075, 0.01, 0.0125],
+  "stage_b_weight_decay": [0.00025, 0.0005, 0.001],
+  "stage_c_dropout": [0.55, 0.67, 0.75],
+  "stage_d_rank": [4, 8],
+  "stage_d_adapter_lr_multiplier": [0.5, 1.0, 2.0],
+  "local_lr_multipliers": [0.9, 1.1],
+  "collapse_predicted_pmci_max": 4,
+  "target": {
+    "correct": 523,
+    "fold_acc_mean_strictly_greater_than": 0.9757,
+    "fold_roc_auc_mean_strictly_greater_than": 0.9049,
+    "pmci_tp": 35,
+    "bacc": 0.878,
+    "pr_auc": 0.67
+  }
+}
