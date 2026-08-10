@@ -41,6 +41,10 @@
 # state. Compact fold JSON, per-trial OOF, manifests, and reports are tracked.
 /experiments/abide_hparam_search_v1/work/
 /experiments/abide_hparam_search_v1/smoke/*.pt
+# ABIDE-5 binary search checkpoints and epoch histories are strict-resume local
+# state. Compact fold JSON, per-trial OOF, manifests, and reports are tracked.
+/experiments/abide5_hparam_search_v1/work/
+/experiments/abide5_hparam_search_v1/smoke/*.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
 /experiments/c1_broad_hparam_search_v1/stage_a/

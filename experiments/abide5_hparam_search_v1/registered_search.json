@@ -1,0 +1,48 @@
+{
+  "historical_center": {
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "dropout": 0.45
+  },
+  "stage_a_lr": [
+    0.00375,
+    0.005,
+    0.00625,
+    0.0075
+  ],
+  "stage_a_fixed": {
+    "weight_decay": 0.0005,
+    "dropout": 0.45
+  },
+  "stage_b_weight_decay": [
+    0.00025,
+    0.0005,
+    0.001,
+    0.0015
+  ],
+  "stage_b_fixed_dropout": 0.45,
+  "stage_c_dropout": [
+    0.35,
+    0.45,
+    0.55
+  ],
+  "stage_d_rank": [
+    4,
+    8
+  ],
+  "stage_d_adapter_lr_multiplier": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "local_lr_factors": [
+    0.9,
+    1.1
+  ],
+  "local_correct_window": [
+    783,
+    786
+  ],
+  "selection": "safe > pooled Correct > pooled ROC-AUC > Macro-F1 > BACC > fewer params > earlier trial",
+  "sha256": "d7cbe4a8f95649dda899affd41471203879d32b65efa51ad33056c5ffb4ade8c"
+}

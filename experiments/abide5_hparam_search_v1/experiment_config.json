@@ -1,0 +1,10 @@
+{
+  "experiment": "abide5_hparam_search_v1",
+  "branch": "experiment/abide5-hparam-search-v1",
+  "base_commit": "c9c7a289145a87fbab355e85828fa5f62f9819b0",
+  "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+  "device": "cuda:0", "folds": [0,1,2,3,4,5,6,7,8,9],
+  "seed_per_fold": 0, "epochs": 400,
+  "selection": "safe > pooled Correct > pooled ROC-AUC > Macro-F1 > BACC > fewer parameters > earlier trial",
+  "targets": {"correct": 787, "fold_acc_mean": 0.9105, "fold_roc_auc_mean": 0.9099, "macro_f1": 0.90, "bacc": 0.90}
+}
