@@ -1,0 +1,22 @@
+{
+  "experiment": "abide_hparam_search_v1",
+  "branch": "experiment/abide-hparam-search-v1",
+  "base_commit": "0d7a183a7106c673de2817f36c69d780dcd792d5",
+  "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+  "device": "cuda:0",
+  "folds": [0,1,2,3,4,5,6,7,8,9],
+  "seed_per_fold": 0,
+  "epochs": 400,
+  "search": {
+    "stage_a_lr": [0.00375, 0.005, 0.00625],
+    "stage_b_weight_decay": [0.0005, 0.001, 0.002],
+    "stage_c_dropout": [0.35, 0.45, 0.55],
+    "stage_d_rank": [4, 8],
+    "stage_d_adapter_lr_multiplier": [0.5, 1.0, 2.0],
+    "local_lr_factors": [0.9, 1.1]
+  },
+  "selection": "safety > Correct > pooled ROC-AUC > ten-fold mean ROC-AUC > Macro-F1 > BACC > smaller parameter count > earlier trial",
+  "collapse_min_predicted_per_class": 44,
+  "dgfmc_fold_acc_target": 0.9082,
+  "dgfmc_fold_auc_target": 0.9084
+}
