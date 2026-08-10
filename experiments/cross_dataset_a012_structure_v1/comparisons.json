@@ -1,0 +1,95 @@
+{
+  "tasks": {
+    "tadpole_smci_pmci": {
+      "task_id": "tadpole_smci_pmci",
+      "repairs": 6,
+      "damages": 4,
+      "changed": 10,
+      "net_correct": 2,
+      "correct_delta": 2,
+      "metric_deltas": {
+        "acc": 0.0037383177570093906,
+        "bacc": 0.03231292517006801,
+        "macro_f1": 0.017770645789039863,
+        "roc_auc": -0.042902494331065744,
+        "pr_auc": 0.03514164906890249,
+        "weighted_f1": 0.004611051326770421,
+        "sen": 0.06666666666666665,
+        "spe": -0.0020408163265306367
+      },
+      "positive_tp_delta": 3,
+      "positive_fn_delta": -3,
+      "prediction_transitions": {
+        "SMCI->PMCI": 7,
+        "PMCI->SMCI": 3
+      },
+      "majority_class": "SMCI",
+      "true_majority_count": 490,
+      "b0_majority_prediction_count": 494,
+      "b1_majority_prediction_count": 490,
+      "b1_minus_b0_majority_prediction_count": -4,
+      "b1_majority_prediction_bias_vs_truth": 0
+    },
+    "abide_ads_cn": {
+      "task_id": "abide_ads_cn",
+      "repairs": 41,
+      "damages": 44,
+      "changed": 85,
+      "net_correct": -3,
+      "correct_delta": -3,
+      "metric_deltas": {
+        "acc": -0.003444316877152742,
+        "bacc": -0.0023435346015991954,
+        "macro_f1": -0.003249158213669334,
+        "roc_auc": -0.007868337893151667,
+        "pr_auc": -0.011264200404102143,
+        "weighted_f1": -0.003379213419115512,
+        "sen": 0.012406947890818865,
+        "spe": -0.017094017094017144
+      },
+      "positive_tp_delta": 5,
+      "positive_fn_delta": -5,
+      "prediction_transitions": {
+        "ADS->CN": 36,
+        "CN->ADS": 49
+      },
+      "majority_class": "CN",
+      "true_majority_count": 468,
+      "b0_majority_prediction_count": 456,
+      "b1_majority_prediction_count": 443,
+      "b1_minus_b0_majority_prediction_count": -13,
+      "b1_majority_prediction_bias_vs_truth": -25
+    },
+    "abide5_ads_cn": {
+      "task_id": "abide5_ads_cn",
+      "repairs": 40,
+      "damages": 42,
+      "changed": 82,
+      "net_correct": -2,
+      "correct_delta": -2,
+      "metric_deltas": {
+        "acc": -0.0023148148148147696,
+        "bacc": -0.0004422893327363786,
+        "macro_f1": -0.0019036292391068077,
+        "roc_auc": -0.010604156440973345,
+        "pr_auc": -0.020489266481160673,
+        "weighted_f1": -0.0021031018197876783,
+        "sen": 0.02267002518891681,
+        "spe": -0.023554603854389677
+      },
+      "positive_tp_delta": 9,
+      "positive_fn_delta": -9,
+      "prediction_transitions": {
+        "CN->ADS": 51,
+        "ADS->CN": 31
+      },
+      "majority_class": "CN",
+      "true_majority_count": 467,
+      "b0_majority_prediction_count": 477,
+      "b1_majority_prediction_count": 457,
+      "b1_minus_b0_majority_prediction_count": -20,
+      "b1_majority_prediction_bias_vs_truth": -10
+    }
+  },
+  "sha256": "38fbb935f665d6aa01cda989fec53b75880e3d764fc2d913e31f8d4d4cafb0a1"
+}

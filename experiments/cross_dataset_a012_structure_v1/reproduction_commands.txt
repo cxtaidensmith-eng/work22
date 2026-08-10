@@ -1,0 +1,6 @@
+git clone https://github.com/cxtaidensmith-eng/work22.git work22-cross-dataset-repro
+cd work22-cross-dataset-repro
+git switch -C experiment/cross-dataset-a012-structure-v1 17004d29714471b5e1548e04bac0072e854e7e18
+& 'D:\Anaconda\envs\work22-tabpfn-v1\python.exe' -u -B scripts/run_cross_dataset_a012_structure_v1.py inspect --historical-root "D:\Work\WORK2 final\WORK2 final26.7,21"
+& 'D:\Anaconda\envs\work22-tabpfn-v1\python.exe' -u -B scripts/run_cross_dataset_a012_structure_v1.py smoke --device cuda:0 --historical-root "D:\Work\WORK2 final\WORK2 final26.7,21"
+& 'D:\Anaconda\envs\work22-tabpfn-v1\python.exe' -u -B scripts/run_cross_dataset_a012_structure_v1.py formal --device cuda:0 --historical-root "D:\Work\WORK2 final\WORK2 final26.7,21"
