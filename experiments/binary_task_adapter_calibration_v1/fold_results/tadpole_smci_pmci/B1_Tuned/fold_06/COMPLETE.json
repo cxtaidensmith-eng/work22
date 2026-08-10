@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_lock_sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "task_id": "tadpole_smci_pmci",
+    "task_protocol_sha256": "21660310d1eede6da68f9ec3d54a496c6a253efc2f24d9eb382af41f9bfa69bc",
+    "task_fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+    "selection_fold_sha256": "f63fdc871ccc5596c18b04a67fc45d6b537b3c4a2216eef8939c0c9662dfcb80",
+    "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+    "variant": "B1_Tuned",
+    "fold": 6,
+    "spec": {
+      "variant": "B1_Tuned",
+      "arm": "B1",
+      "selection_source_task": "tadpole_smci_pmci",
+      "rank": 4,
+      "adapter_lr_multiplier": 2.0,
+      "candidate_id": "r4_m2p0",
+      "training_epochs": 96,
+      "inner_validation_metrics": {
+        "n": 97,
+        "correct": 94,
+        "acc": 0.9690721649484536,
+        "roc_auc": 0.8033707865168539,
+        "pr_auc": 0.7115335381464414,
+        "macro_f1": 0.8916201117318436,
+        "bacc": 0.8693820224719101,
+        "weighted_f1": 0.9681276277141048,
+        "sen": 0.75,
+        "spe": 0.9887640449438202,
+        "tp": 6,
+        "fn": 2,
+        "tn": 88,
+        "fp": 1,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            88,
+            1
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 90,
+          "PMCI": 7
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      }
+    },
+    "outer_test_used_for_training_or_selection": false,
+    "sha256": "4c5bbaf274ef1ab6d0f473494081e16f74227f85db9c42fd4a39a6371ee3ac2c"
+  },
+  "summary_sha256": "4e8e7d4b6c79bfb57151a1a7b14e581d4531d82a9f63dd7f1bbcaacbe5633270",
+  "sha256": "6237d78580431f5cbd692016e277fdb626504ac7d9e5555e7a254791e9a6031b"
+}

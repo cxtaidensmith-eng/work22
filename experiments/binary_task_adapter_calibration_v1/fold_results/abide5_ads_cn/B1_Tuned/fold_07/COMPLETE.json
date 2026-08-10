@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_lock_sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "task_id": "abide5_ads_cn",
+    "task_protocol_sha256": "e352ef22a7754ef9db443bfa11fbe293ea5c1224978a514546dff0c001a47f58",
+    "task_fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+    "selection_fold_sha256": "03a3b747c057c8bffa44024e44638a229e8a9b5d9b7a01e4e89d7e325d62477a",
+    "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+    "variant": "B1_Tuned",
+    "fold": 7,
+    "spec": {
+      "variant": "B1_Tuned",
+      "arm": "B1",
+      "selection_source_task": "abide5_ads_cn",
+      "rank": 4,
+      "adapter_lr_multiplier": 2.0,
+      "candidate_id": "r4_m2p0",
+      "training_epochs": 75,
+      "inner_validation_metrics": {
+        "n": 156,
+        "correct": 136,
+        "acc": 0.8717948717948718,
+        "roc_auc": 0.8994708994708994,
+        "pr_auc": 0.9075033448043424,
+        "macro_f1": 0.8704318936877076,
+        "bacc": 0.8690476190476191,
+        "weighted_f1": 0.8714541272680808,
+        "sen": 0.8333333333333334,
+        "spe": 0.9047619047619048,
+        "tp": 60,
+        "fn": 12,
+        "tn": 76,
+        "fp": 8,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            60,
+            12
+          ],
+          [
+            8,
+            76
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 68,
+          "CN": 88
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      }
+    },
+    "outer_test_used_for_training_or_selection": false,
+    "sha256": "e93e735510a9a6819006bac9a7a485ef6670703fbdfeb5e4381426ce4733de0b"
+  },
+  "summary_sha256": "3320caae23a28d48eee37a98d1c26e9d646d44e5f079be3158b597a60fdd89c8",
+  "sha256": "172292e521a5e1e02e8d7488bd06a07291efe2fe551d022cbba9518f69dda1be"
+}

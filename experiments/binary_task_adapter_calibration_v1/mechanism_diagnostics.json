@@ -1,0 +1,110 @@
+{
+  "tadpole_smci_pmci": {
+    "B1_Tuned": {
+      "private_shared_ratio_mean_by_modality": {
+        "MRI": 0.03215000443160534,
+        "CSF": 0.23938420114573092,
+        "RISK_FACTOR": 0.09737556318286807,
+        "COGNITIVE_TEST": 0.03684331092517823,
+        "ROI_AVERAGE": 0.048057553358376026
+      },
+      "private_shared_ratio_max_by_modality": {
+        "MRI": 0.1261081099510193,
+        "CSF": 2.1587374210357666,
+        "RISK_FACTOR": 0.8339499831199646,
+        "COGNITIVE_TEST": 0.21006254851818085,
+        "ROI_AVERAGE": 0.21061964333057404
+      },
+      "private_shared_ratio_mean": 0.0907621109392494,
+      "private_shared_ratio_max": 2.1587374210357666,
+      "category_global_cosine_mean": 0.4596928238868713,
+      "adapter_max_gradient": 0.11324870586395264,
+      "all_folds_private_active": true,
+      "any_private_collapse": false,
+      "private_off_probability_max_abs_difference": 0.014226913452148438,
+      "private_off_argmax_changed": 0,
+      "private_off_direct_repairs": 0,
+      "private_off_direct_damages": 0
+    }
+  },
+  "abide_ads_cn": {
+    "B1_Tuned": {
+      "private_shared_ratio_mean_by_modality": {
+        "PHENO": 0.02754235751926899,
+        "ANAT": 0.02275083865970373,
+        "FUNC": 0.024251528922468422,
+        "Correlation": 0.027508051693439485
+      },
+      "private_shared_ratio_max_by_modality": {
+        "PHENO": 0.12919881939888,
+        "ANAT": 0.13192126154899597,
+        "FUNC": 0.11200752854347229,
+        "Correlation": 0.2125426083803177
+      },
+      "private_shared_ratio_mean": 0.025513194873929022,
+      "private_shared_ratio_max": 0.2125426083803177,
+      "category_global_cosine_mean": 0.1571632230654359,
+      "adapter_max_gradient": 0.034153059124946594,
+      "all_folds_private_active": true,
+      "any_private_collapse": false,
+      "private_off_probability_max_abs_difference": 0.05905751883983612,
+      "private_off_argmax_changed": 0,
+      "private_off_direct_repairs": 0,
+      "private_off_direct_damages": 0
+    }
+  },
+  "abide5_ads_cn": {
+    "B1_Transfer": {
+      "private_shared_ratio_mean_by_modality": {
+        "PHENO": 0.010155145218595863,
+        "ANAT": 0.010186181729659438,
+        "FUNC": 0.008661735546775162,
+        "MRI": 0.008026938699185849,
+        "fMRI": 0.027385019278153778
+      },
+      "private_shared_ratio_max_by_modality": {
+        "PHENO": 0.06687863171100616,
+        "ANAT": 0.06181856617331505,
+        "FUNC": 0.04846221208572388,
+        "MRI": 0.04188620299100876,
+        "fMRI": 0.19848386943340302
+      },
+      "private_shared_ratio_mean": 0.01288300440646708,
+      "private_shared_ratio_max": 0.19848386943340302,
+      "category_global_cosine_mean": 0.12456419952213764,
+      "adapter_max_gradient": 0.007982030510902405,
+      "all_folds_private_active": true,
+      "any_private_collapse": false,
+      "private_off_probability_max_abs_difference": 0.0950811505317688,
+      "private_off_argmax_changed": 0,
+      "private_off_direct_repairs": 0,
+      "private_off_direct_damages": 0
+    },
+    "B1_Tuned": {
+      "private_shared_ratio_mean_by_modality": {
+        "PHENO": 0.011592167709022761,
+        "ANAT": 0.009405839419923723,
+        "FUNC": 0.012798198871314526,
+        "MRI": 0.009783595614135266,
+        "fMRI": 0.06400894783437253
+      },
+      "private_shared_ratio_max_by_modality": {
+        "PHENO": 0.07029750198125839,
+        "ANAT": 0.0431060828268528,
+        "FUNC": 0.06371733546257019,
+        "MRI": 0.09286628663539886,
+        "fMRI": 0.515808641910553
+      },
+      "private_shared_ratio_mean": 0.02151774917729199,
+      "private_shared_ratio_max": 0.515808641910553,
+      "category_global_cosine_mean": 0.15692323073744774,
+      "adapter_max_gradient": 0.019236620515584946,
+      "all_folds_private_active": true,
+      "any_private_collapse": false,
+      "private_off_probability_max_abs_difference": 0.027574807405471802,
+      "private_off_argmax_changed": 0,
+      "private_off_direct_repairs": 0,
+      "private_off_direct_damages": 0
+    }
+  }
+}

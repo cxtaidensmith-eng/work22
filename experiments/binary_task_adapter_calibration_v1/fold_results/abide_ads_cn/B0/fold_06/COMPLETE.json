@@ -1,0 +1,64 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_lock_sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "task_id": "abide_ads_cn",
+    "task_protocol_sha256": "71f4c8c3aa61fdd2eb1e72934c98b5a9e6509957ec0f2d14e4f34af7baf25cfd",
+    "task_fold_manifest_sha256": "725c3dcac039d42eece358941b8a350258c7e9c64a92628b3188b1ce1e653b90",
+    "selection_fold_sha256": "8ec9449d69ae2f56a8c2d645aae223b7632cb04ff368e2460c4e0787d9b80b3c",
+    "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+    "variant": "B0",
+    "fold": 6,
+    "spec": {
+      "variant": "B0",
+      "arm": "B0",
+      "selection_source_task": "abide_ads_cn",
+      "rank": null,
+      "adapter_lr_multiplier": null,
+      "training_epochs": 212,
+      "inner_validation_metrics": {
+        "n": 157,
+        "correct": 139,
+        "acc": 0.8853503184713376,
+        "roc_auc": 0.8671722113502935,
+        "pr_auc": 0.7617093653817724,
+        "macro_f1": 0.8853456669912365,
+        "bacc": 0.889269406392694,
+        "weighted_f1": 0.8853968332723473,
+        "sen": 0.9452054794520548,
+        "spe": 0.8333333333333334,
+        "tp": 69,
+        "fn": 4,
+        "tn": 70,
+        "fp": 14,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            69,
+            4
+          ],
+          [
+            14,
+            70
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 83,
+          "CN": 74
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      }
+    },
+    "outer_test_used_for_training_or_selection": false,
+    "sha256": "275c677e2d16026ecc211e62502b63e7bddb9bc77bc4970b535fe545d1ac1d64"
+  },
+  "summary_sha256": "16e4ee0b7dab3c590462850f79f079961e1e28ed185de9532a3ca5421daffb50",
+  "sha256": "671909aba8d70a14dc2192dfdfce18ac3cb14f442f40cbeaf7d54cd11293711f"
+}

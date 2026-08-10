@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_lock_sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "task_id": "abide_ads_cn",
+    "task_protocol_sha256": "71f4c8c3aa61fdd2eb1e72934c98b5a9e6509957ec0f2d14e4f34af7baf25cfd",
+    "task_fold_manifest_sha256": "725c3dcac039d42eece358941b8a350258c7e9c64a92628b3188b1ce1e653b90",
+    "selection_fold_sha256": "3f7a2e2ba1341c1fe4f816dcd7f3812f8a163c3daef60bb92fec89209b76b96e",
+    "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+    "variant": "B1_Tuned",
+    "fold": 1,
+    "spec": {
+      "variant": "B1_Tuned",
+      "arm": "B1",
+      "selection_source_task": "abide_ads_cn",
+      "rank": 8,
+      "adapter_lr_multiplier": 1.0,
+      "candidate_id": "r8_m1p0",
+      "training_epochs": 120,
+      "inner_validation_metrics": {
+        "n": 157,
+        "correct": 139,
+        "acc": 0.8853503184713376,
+        "roc_auc": 0.896078431372549,
+        "pr_auc": 0.8338879672023325,
+        "macro_f1": 0.8849723217193097,
+        "bacc": 0.8866830065359477,
+        "weighted_f1": 0.8855183170277944,
+        "sen": 0.9027777777777778,
+        "spe": 0.8705882352941177,
+        "tp": 65,
+        "fn": 7,
+        "tn": 74,
+        "fp": 11,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            65,
+            7
+          ],
+          [
+            11,
+            74
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 76,
+          "CN": 81
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      }
+    },
+    "outer_test_used_for_training_or_selection": false,
+    "sha256": "175f1da4a26f0ee87697de6a34490da5e9596c0f948723022d10aea0b742a071"
+  },
+  "summary_sha256": "88f9e1b07d25111476202325d6a046f56185552fde89ad17567526726fe422a0",
+  "sha256": "4e1090ef5f8afd19cc7c23022c407c88c89163424556d8a4ac5030bc6d595020"
+}

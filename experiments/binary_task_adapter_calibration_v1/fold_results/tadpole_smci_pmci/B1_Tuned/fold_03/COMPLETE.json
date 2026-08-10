@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_lock_sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "task_id": "tadpole_smci_pmci",
+    "task_protocol_sha256": "21660310d1eede6da68f9ec3d54a496c6a253efc2f24d9eb382af41f9bfa69bc",
+    "task_fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+    "selection_fold_sha256": "2591e5b8eeafb65bba908964d779f9d333f8279d7e234c50d9da8399831de946",
+    "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+    "variant": "B1_Tuned",
+    "fold": 3,
+    "spec": {
+      "variant": "B1_Tuned",
+      "arm": "B1",
+      "selection_source_task": "tadpole_smci_pmci",
+      "rank": 8,
+      "adapter_lr_multiplier": 1.0,
+      "candidate_id": "r8_m1p0",
+      "training_epochs": 227,
+      "inner_validation_metrics": {
+        "n": 97,
+        "correct": 91,
+        "acc": 0.9381443298969072,
+        "roc_auc": 0.9466292134831461,
+        "pr_auc": 0.4646516677766678,
+        "macro_f1": 0.8461945031712474,
+        "bacc": 0.9662921348314606,
+        "weighted_f1": 0.9455003160349601,
+        "sen": 1.0,
+        "spe": 0.9325842696629213,
+        "tp": 8,
+        "fn": 0,
+        "tn": 83,
+        "fp": 6,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            83,
+            6
+          ],
+          [
+            0,
+            8
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 83,
+          "PMCI": 14
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      }
+    },
+    "outer_test_used_for_training_or_selection": false,
+    "sha256": "0ae92c1e888099d760e93ef481dc9bf630db7a3bdabede3856eab1615ed3892a"
+  },
+  "summary_sha256": "1518ecaec5cdc6dc4b2846c6dd1cfe8d18ff1dd8e6c7021c6484bf07da149cea",
+  "sha256": "a4905067a85f3bb858762069e334b97161213a4d4ec269519030a1c73dbd5d0e"
+}

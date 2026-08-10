@@ -1,0 +1,59 @@
+{
+  "experiment": "binary_task_adapter_calibration_v1",
+  "runtime_lock": {
+    "experiment": "binary_task_adapter_calibration_v1",
+    "source_commit": "76ecfaa5aa7891bac84c3f3a213eeba4e7f7e111",
+    "base_commit": "17004d29714471b5e1548e04bac0072e854e7e18",
+    "runner_sha256": "e834174d4b2496928318fc7a2320c7a73abd609d1c9ddc9e7c51377c9476f330",
+    "config_sha256": "a55a25a4d3d790abe2144bea1ab3fd07294e4092195188626a7c34e79b2de84d",
+    "inspect_sha256": "d4c6078de15b85bd943938186df87a9e9bf7c1b36f5c7d1c6031c0e6008d3a7f",
+    "selection_manifest_sha256": "dd06c07c5c04c8aa06bfc71e2807faca847da33bab29287fb3df2ff7353fd109",
+    "protocol_sha256": {
+      "tadpole_smci_pmci": "21660310d1eede6da68f9ec3d54a496c6a253efc2f24d9eb382af41f9bfa69bc",
+      "abide_ads_cn": "71f4c8c3aa61fdd2eb1e72934c98b5a9e6509957ec0f2d14e4f34af7baf25cfd",
+      "abide5_ads_cn": "e352ef22a7754ef9db443bfa11fbe293ea5c1224978a514546dff0c001a47f58"
+    },
+    "dependency_sha256": {
+      "Model/cme_dual_branch.py": "365bad7ae3e8e4c69bdae2e9d91eba0a14be4b549d59d16d5ed25628acd80805",
+      "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+      "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+      "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+      "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+      "config_re.py": "d4983438cd1033c769d52c5e43661a88aa114d60448779084d86d476c2d0e97f",
+      "scripts/run_cross_dataset_a012_structure_v1.py": "de04e8039536e04bced5e5b838c9f565cf40e2c5ad223587d73a7aac1caba1d3",
+      "scripts/run_c1_broad_hparam_search_v1.py": "d02a874ddedec71e5ffc83e30e82c7de088790261ea505e288c1d79c314bdc15",
+      "experiments/cross_dataset_a012_structure_v1/protocols/tadpole_smci_pmci.json": "7ae5d81327510d86d0a55960d1edd60ccb7d04d4ea05f2169b430965c7ff9487",
+      "experiments/cross_dataset_a012_structure_v1/protocols/abide_ads_cn.json": "06317c568c763e93339e965ce1a611d06039f0e678281c4d1b341fc6fb36ab72",
+      "experiments/cross_dataset_a012_structure_v1/protocols/abide5_ads_cn.json": "1da4d6c28e0c21e88556f6dc2e68fa527446725d13f4c5c517e0696a337f73f9"
+    },
+    "seed": 0,
+    "max_epochs": 400,
+    "lambda_aux": 0.2,
+    "class_weight_scope": "current_training_mask_only",
+    "outer_test_used_for_selection": false,
+    "sha256": "72f2ec9ae25685d58dd66e416a446d83a6b7eb01956edd936d898d949fcf5e1c"
+  },
+  "search_results_sha256": "360075e245d5c7532adad8c57f289fbd72d79603bfe92bb319baa23b61feefa9",
+  "variants": {
+    "tadpole_smci_pmci": [
+      "B0",
+      "B1_Tuned"
+    ],
+    "abide_ads_cn": [
+      "B0",
+      "B1_Tuned"
+    ],
+    "abide5_ads_cn": [
+      "B0",
+      "B1_Transfer",
+      "B1_Tuned"
+    ]
+  },
+  "fresh_outer_retrain": true,
+  "outer_test_used_for_training_or_selection": false,
+  "outer_test_inference_only_after_training": true,
+  "abide5_transfer_source": "corresponding ABIDE fold rank, multiplier, and epoch",
+  "sha256": "0e17e66f1f05f776dd5ea704ff6467bdc473b26e823804423f4fb62b29340671"
+}
