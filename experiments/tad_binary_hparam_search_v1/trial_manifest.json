@@ -1,0 +1,1463 @@
+{
+  "experiment": "tad_binary_hparam_search_v1",
+  "runtime_lock": {
+    "experiment": "tad_binary_hparam_search_v1",
+    "source_commit": "0d7a183a7106c673de2817f36c69d780dcd792d5",
+    "source_hashes": {
+      ".gitignore": "120ddb4edfc69ff738090be098725dd4d91edd05bef3e518f1e0366d7011a4c4",
+      "scripts/run_tad_binary_hparam_search_v1.py": "5b8ac94e55f08aec81427afca86c3a9a1bc275950f8268a34b8000f830bd5a8e",
+      "experiments/tad_binary_hparam_search_v1/experiment_config.json": "f10417eddf7600e033c0b16e10fd0ebc1784bd74ea88b3a36f2fd9dde493a1e4",
+      "experiments/tad_binary_hparam_search_v1/protocol.json": "65acde1c74af64f62af65dea7c296a1865db6b6eb4346f55a3e878a48877941a",
+      "experiments/tad_binary_hparam_search_v1/inspect_manifest.json": "b371ffb3a9aac64eda2bab074648194b863e071c0a5fb4f0b453bb860feeb48f",
+      "experiments/tad_binary_hparam_search_v1/fold_manifest.json": "001743a7b956350f14905196988eb1308425973db8e75eda13203267b6265dae",
+      "experiments/tad_binary_hparam_search_v1/historical/historical_B0_oof.csv": "402c53b8fc518416d52e50943b1955c24db4ee874e313ef6b85f6a4656d5fd98",
+      "experiments/tad_binary_hparam_search_v1/historical/historical_B1_oof.csv": "ad4fb145990d65df2da461564dbe7646ccefc3f4800c4660498c6bf0e9a76d5f",
+      "experiments/tad_binary_hparam_search_v1/historical/historical_fold_metrics.json": "11c12e82aa904b7406c33c94c2343ca559bba89e9e714eed9d58b76e8916cfa6",
+      "Model/cme_dual_branch.py": "365bad7ae3e8e4c69bdae2e9d91eba0a14be4b549d59d16d5ed25628acd80805",
+      "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+      "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+      "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+      "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+      "config_re.py": "d4983438cd1033c769d52c5e43661a88aa114d60448779084d86d476c2d0e97f",
+      "scripts/run_cross_dataset_a012_structure_v1.py": "de04e8039536e04bced5e5b838c9f565cf40e2c5ad223587d73a7aac1caba1d3",
+      "experiments/cross_dataset_a012_structure_v1/protocols/tadpole_smci_pmci.json": "7ae5d81327510d86d0a55960d1edd60ccb7d04d4ea05f2169b430965c7ff9487"
+    },
+    "experiment_config_sha256": "f10417eddf7600e033c0b16e10fd0ebc1784bd74ea88b3a36f2fd9dde493a1e4",
+    "protocol_sha256": "65acde1c74af64f62af65dea7c296a1865db6b6eb4346f55a3e878a48877941a",
+    "inspect_sha256": "b371ffb3a9aac64eda2bab074648194b863e071c0a5fb4f0b453bb860feeb48f",
+    "fold_manifest_sha256": "001743a7b956350f14905196988eb1308425973db8e75eda13203267b6265dae",
+    "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "device": "cuda:0",
+    "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+    "sha256": "b5403cd3c9b2aba6326ae6318196c047165a4432484f39794f453f5284647fcb"
+  },
+  "strategy": "fixed staged coordinate search A -> B -> C -> D; optional registered local LR pair only",
+  "trials": {
+    "A1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A1",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.0075,
+        "weight_decay": 0.0005,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 1,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "ecdcbb474749a29d96e2252694d22dd2ca747a190bbe9e1a88172dd3376bda72"
+      },
+      "config_key": "798c026c5c5bd0793f183179732f3132f2e6d9264bb7917e956758efdd6b9e5e",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/A1/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/A1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 513,
+        "acc": 0.9588785046728971,
+        "roc_auc": 0.9245804988662132,
+        "pr_auc": 0.6972331350020378,
+        "macro_f1": 0.8691873388459145,
+        "bacc": 0.8766439909297052,
+        "weighted_f1": 0.9592834309294525,
+        "sen": 0.7777777777777778,
+        "spe": 0.9755102040816327,
+        "tp": 35,
+        "fn": 10,
+        "tn": 478,
+        "fp": 12,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            478,
+            12
+          ],
+          [
+            10,
+            35
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 488,
+          "PMCI": 47
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "A2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A2",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.01,
+        "weight_decay": 0.0005,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 2,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "408658b6b48a326424d705db75af926ed0720dfc85945e57921e7e4ae57baaeb"
+      },
+      "config_key": "26b8fc12c090650d056a69403896a31f2526424ff325e93f1cc841333f02017d",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/A2/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/A2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "historical:e7d18205ddfefaf898a81c999cce15b348331206:B0",
+      "metrics": {
+        "n": 535,
+        "correct": 513,
+        "acc": 0.9588785046728971,
+        "roc_auc": 0.922358276643991,
+        "pr_auc": 0.6378392083225689,
+        "macro_f1": 0.860914161467196,
+        "bacc": 0.8463718820861679,
+        "weighted_f1": 0.9580057711031361,
+        "sen": 0.7111111111111111,
+        "spe": 0.9816326530612245,
+        "tp": 32,
+        "fn": 13,
+        "tn": 481,
+        "fp": 9,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            481,
+            9
+          ],
+          [
+            13,
+            32
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 494,
+          "PMCI": 41
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "A3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A3",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.0005,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 3,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "3041119b1380ebb72ed7f4aad5bdfedf44171cc2090927d99128640328544391"
+      },
+      "config_key": "748de5149beed79c4602eacedd1635efb46e5910dc70fa3cf54a64d50de3215e",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/A3/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/A3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8741496598639454,
+        "pr_auc": 0.7150517944742428,
+        "macro_f1": 0.8735583286065418,
+        "bacc": 0.8585034013605441,
+        "weighted_f1": 0.9618234282755781,
+        "sen": 0.7333333333333333,
+        "spe": 0.9836734693877551,
+        "tp": 33,
+        "fn": 12,
+        "tn": 482,
+        "fp": 8,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            482,
+            8
+          ],
+          [
+            12,
+            33
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 494,
+          "PMCI": 41
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "B1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B1",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 4,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "6a1fa49ac142486c8052018b077c26239ec42a4e7a40bd43baa2da8287f44602"
+      },
+      "config_key": "f811140ebdd33d4868bec3d601c14575e489648a306aa97d2d27ea88015b942f",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/B1/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/B1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8963265306122449,
+        "pr_auc": 0.6734920203382179,
+        "macro_f1": 0.8786848072562359,
+        "bacc": 0.8786848072562359,
+        "weighted_f1": 0.9626168224299065,
+        "sen": 0.7777777777777778,
+        "spe": 0.9795918367346939,
+        "tp": 35,
+        "fn": 10,
+        "tn": 480,
+        "fp": 10,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            480,
+            10
+          ],
+          [
+            10,
+            35
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 490,
+          "PMCI": 45
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "B2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B2",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.0005,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 5,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "f5c88614109b31bdd542cccdfa66517c5acd98e72dfce88af2645171447c2a86"
+      },
+      "config_key": "748de5149beed79c4602eacedd1635efb46e5910dc70fa3cf54a64d50de3215e",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/B2/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/B2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "trial:A3",
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8741496598639454,
+        "pr_auc": 0.7150517944742428,
+        "macro_f1": 0.8735583286065418,
+        "bacc": 0.8585034013605441,
+        "weighted_f1": 0.9618234282755781,
+        "sen": 0.7333333333333333,
+        "spe": 0.9836734693877551,
+        "tp": 33,
+        "fn": 12,
+        "tn": 482,
+        "fp": 8,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            482,
+            8
+          ],
+          [
+            12,
+            33
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 494,
+          "PMCI": 41
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "B3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B3",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.001,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 6,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "b3b1a0be5ebf12c1289ff603d5a06d7946bdc0db58684db1ac7f9d2c9dedbf90"
+      },
+      "config_key": "2ad9e2ae019c1d383ea352e71c1c1a1a593ced7ba6a2a09c012a324039d0fb83",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/B3/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/B3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8634240362811791,
+        "pr_auc": 0.6678754357321277,
+        "macro_f1": 0.8810793989508314,
+        "bacc": 0.8887755102040816,
+        "weighted_f1": 0.9629849372085932,
+        "sen": 0.8,
+        "spe": 0.9775510204081632,
+        "tp": 36,
+        "fn": 9,
+        "tn": 479,
+        "fp": 11,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            479,
+            11
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 488,
+          "PMCI": 47
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "C1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C1",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.55,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 7,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "7937d5ce3484f88898243ac2a7d39ac4120bd1aa1ac2c6a0dea1f76c3727493a"
+      },
+      "config_key": "e35e583275b8f0345a6a025201a164558a7bbd9d11ceb7d0161b37a4d55c8b7d",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/C1/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/C1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 512,
+        "acc": 0.9570093457943926,
+        "roc_auc": 0.9151020408163265,
+        "pr_auc": 0.7099820051506591,
+        "macro_f1": 0.8671524966261808,
+        "bacc": 0.8857142857142857,
+        "weighted_f1": 0.9580304463531222,
+        "sen": 0.8,
+        "spe": 0.9714285714285714,
+        "tp": 36,
+        "fn": 9,
+        "tn": 476,
+        "fp": 14,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            476,
+            14
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 485,
+          "PMCI": 50
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "C2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C2",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 8,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "087eaea60553b977ed10a35822227cbcaed3505a436db334719e366ad1f7d590"
+      },
+      "config_key": "f811140ebdd33d4868bec3d601c14575e489648a306aa97d2d27ea88015b942f",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/C2/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/C2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "trial:B1",
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8963265306122449,
+        "pr_auc": 0.6734920203382179,
+        "macro_f1": 0.8786848072562359,
+        "bacc": 0.8786848072562359,
+        "weighted_f1": 0.9626168224299065,
+        "sen": 0.7777777777777778,
+        "spe": 0.9795918367346939,
+        "tp": 35,
+        "fn": 10,
+        "tn": 480,
+        "fp": 10,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            480,
+            10
+          ],
+          [
+            10,
+            35
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 490,
+          "PMCI": 45
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "C3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C3",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.75,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 9,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "c5dfd0cd7c7a884c38f16922f0a3eabe262e710fa849087be621bb618e85073b"
+      },
+      "config_key": "8446a5be5c3d011d083f3246dbd4c1fb253abc0a1c490d0437f29ae5d7035c69",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/C3/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/C3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8933333333333333,
+        "pr_auc": 0.6665360172553281,
+        "macro_f1": 0.8786848072562359,
+        "bacc": 0.8786848072562359,
+        "weighted_f1": 0.9626168224299065,
+        "sen": 0.7777777777777778,
+        "spe": 0.9795918367346939,
+        "tp": 35,
+        "fn": 10,
+        "tn": 480,
+        "fp": 10,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            480,
+            10
+          ],
+          [
+            10,
+            35
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 490,
+          "PMCI": 45
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D1",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 4,
+        "adapter_lr_multiplier": 0.5,
+        "ordinal": 10,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "7f23a227b7d6fe068a70f28838d0e43deb2f2e8bdf650839af3e25e0f141fa70"
+      },
+      "config_key": "fc67e904bda4c295c5b74602bd8528b5b5e59ec75ad5c91d9f3398cc4cdb8446",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D1/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.9174149659863945,
+        "pr_auc": 0.754597927863716,
+        "macro_f1": 0.8810793989508314,
+        "bacc": 0.8887755102040816,
+        "weighted_f1": 0.9629849372085932,
+        "sen": 0.8,
+        "spe": 0.9775510204081632,
+        "tp": 36,
+        "fn": 9,
+        "tn": 479,
+        "fp": 11,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            479,
+            11
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 488,
+          "PMCI": 47
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D2",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 4,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 11,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "14dfeee8cf7e6dd8904601e6f0015ef8b60f6ceacc1254daa1f202e8cd2675af"
+      },
+      "config_key": "77281c138735e6d13720397005121f7f1de2e668da8d3785d3c6314e3f9615fa",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D2/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D2/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 514,
+        "acc": 0.9607476635514018,
+        "roc_auc": 0.9446258503401361,
+        "pr_auc": 0.7502516038947632,
+        "macro_f1": 0.8809612104131128,
+        "bacc": 0.9079365079365079,
+        "weighted_f1": 0.9620227895147991,
+        "sen": 0.8444444444444444,
+        "spe": 0.9714285714285714,
+        "tp": 38,
+        "fn": 7,
+        "tn": 476,
+        "fp": 14,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            476,
+            14
+          ],
+          [
+            7,
+            38
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 483,
+          "PMCI": 52
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D3",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 4,
+        "adapter_lr_multiplier": 2.0,
+        "ordinal": 12,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "716919b8cefd835fc8d7ccbf130d1fe6a3e7134cd25279c4545f41499ac8c234"
+      },
+      "config_key": "6d2d43c1b2bb757f21d6093b8830096c8028dfffaa8c3a086b8cc09f8063669d",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D3/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 513,
+        "acc": 0.9588785046728971,
+        "roc_auc": 0.9331972789115647,
+        "pr_auc": 0.6755717354376249,
+        "macro_f1": 0.8764382296128328,
+        "bacc": 0.9069160997732426,
+        "weighted_f1": 0.96038770879299,
+        "sen": 0.8444444444444444,
+        "spe": 0.9693877551020408,
+        "tp": 38,
+        "fn": 7,
+        "tn": 475,
+        "fp": 15,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            475,
+            15
+          ],
+          [
+            7,
+            38
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 482,
+          "PMCI": 53
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D4": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D4",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 8,
+        "adapter_lr_multiplier": 0.5,
+        "ordinal": 13,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "b44a82170f2cc32bbf7a98e087b018cf6551878d10af10c65e10e5ff6923d893"
+      },
+      "config_key": "a91c391b439f9b2171f99d1097efe29879b47bb130bd8e9d789138a50b16a0de",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D4/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D4/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 515,
+        "acc": 0.9626168224299065,
+        "roc_auc": 0.8944217687074829,
+        "pr_auc": 0.6658839486743995,
+        "macro_f1": 0.8833711196372516,
+        "bacc": 0.8988662131519274,
+        "weighted_f1": 0.9633356043146474,
+        "sen": 0.8222222222222222,
+        "spe": 0.9755102040816327,
+        "tp": 37,
+        "fn": 8,
+        "tn": 478,
+        "fp": 12,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            478,
+            12
+          ],
+          [
+            8,
+            37
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 486,
+          "PMCI": 49
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "PR-AUC < 0.67"
+        ]
+      }
+    },
+    "D5": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D5",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 8,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 14,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "992d674a92247abe10b7449f5369efe228a17c62b1877ffc9c208e657dadd1a2"
+      },
+      "config_key": "71c74f6f918d039ac09cde6b02e110a10e194df49be73808cbc5c55d4f0f6fc0",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D5/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D5/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 519,
+        "acc": 0.9700934579439252,
+        "roc_auc": 0.9182766439909297,
+        "pr_auc": 0.7321647746112192,
+        "macro_f1": 0.9009442695797074,
+        "bacc": 0.8928571428571429,
+        "weighted_f1": 0.9697840656022508,
+        "sen": 0.8,
+        "spe": 0.9857142857142858,
+        "tp": 36,
+        "fn": 9,
+        "tn": 483,
+        "fp": 7,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            483,
+            7
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 492,
+          "PMCI": 43
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D6": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D6",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 8,
+        "adapter_lr_multiplier": 2.0,
+        "ordinal": 15,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "a93a1e5ace9afbea5578040c0149bedce7cb0a0e3840b905f91ac6602f409215"
+      },
+      "config_key": "2a1564923f8193d4d5a1d1cc19745be338322a653043042a4ef5ab0d3923afcc",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/D6/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D6/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 517,
+        "acc": 0.9663551401869159,
+        "roc_auc": 0.8970068027210885,
+        "pr_auc": 0.7003609209212598,
+        "macro_f1": 0.8885623032771709,
+        "bacc": 0.8807256235827665,
+        "weighted_f1": 0.9660070738025323,
+        "sen": 0.7777777777777778,
+        "spe": 0.9836734693877551,
+        "tp": 35,
+        "fn": 10,
+        "tn": 482,
+        "fp": 8,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            482,
+            8
+          ],
+          [
+            10,
+            35
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 492,
+          "PMCI": 43
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "L1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "L1",
+        "stage": "LOCAL",
+        "arm": "B1",
+        "lr": 0.011250000000000001,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 8,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 16,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "02df0b277cc57d7fdfa9e141439aaaae3152b0d0244bfdcdaa3511a585c039d1"
+      },
+      "config_key": "cb9a488968d4d09716b3309451a9535de4b2341f416d92515627263a8b533d80",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/L1/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/L1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 514,
+        "acc": 0.9607476635514018,
+        "roc_auc": 0.9001360544217686,
+        "pr_auc": 0.6611601044339839,
+        "macro_f1": 0.8787044534412956,
+        "bacc": 0.8978458049886622,
+        "weighted_f1": 0.9616799727571985,
+        "sen": 0.8222222222222222,
+        "spe": 0.9734693877551021,
+        "tp": 37,
+        "fn": 8,
+        "tn": 477,
+        "fp": 13,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            477,
+            13
+          ],
+          [
+            8,
+            37
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 485,
+          "PMCI": 50
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "PR-AUC < 0.67"
+        ]
+      }
+    },
+    "L2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "L2",
+        "stage": "LOCAL",
+        "arm": "B1",
+        "lr": 0.013750000000000002,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "rank": 8,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 17,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "a95903fba31183cdfcd465001a9bdcaafccfbdda829f9e9ee08c4f84fb39615f"
+      },
+      "config_key": "3d0fd006e6fd6a05c05a4f063a44537a5e4a694e93f35ffc24ffb6bde6a96015",
+      "summary_path": "experiments/tad_binary_hparam_search_v1/trials/L2/summary.json",
+      "oof_path": "experiments/tad_binary_hparam_search_v1/trials/L2/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 535,
+        "correct": 513,
+        "acc": 0.9588785046728971,
+        "roc_auc": 0.8776643990929706,
+        "pr_auc": 0.6677162063513717,
+        "macro_f1": 0.8637983706720977,
+        "bacc": 0.8564625850340135,
+        "weighted_f1": 0.958453090203095,
+        "sen": 0.7333333333333333,
+        "spe": 0.9795918367346939,
+        "tp": 33,
+        "fn": 12,
+        "tn": 480,
+        "fp": 10,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            480,
+            10
+          ],
+          [
+            12,
+            33
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 492,
+          "PMCI": 43
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "pMCI TP < 35",
+          "pMCI sensitivity < 0.7778",
+          "BACC < 0.878",
+          "PR-AUC < 0.67"
+        ]
+      }
+    }
+  },
+  "stages": {
+    "A": {
+      "stage": "A",
+      "candidate_trial_ids": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "safe_trial_ids": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "best_overall_trial_id": "A3",
+      "selected_trial_id": "A3",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "B": {
+      "stage": "B",
+      "candidate_trial_ids": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "safe_trial_ids": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "best_overall_trial_id": "B1",
+      "selected_trial_id": "B1",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "C": {
+      "stage": "C",
+      "candidate_trial_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "safe_trial_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "best_overall_trial_id": "C2",
+      "selected_trial_id": "C2",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "D": {
+      "stage": "D",
+      "candidate_trial_ids": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "safe_trial_ids": [
+        "D1",
+        "D2",
+        "D3",
+        "D5",
+        "D6"
+      ],
+      "best_overall_trial_id": "D5",
+      "selected_trial_id": "D5",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "LOCAL": {
+      "stage": "LOCAL",
+      "candidate_trial_ids": [
+        "D5",
+        "L1",
+        "L2"
+      ],
+      "safe_trial_ids": [
+        "D5"
+      ],
+      "best_overall_trial_id": "D5",
+      "selected_trial_id": "D5",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    }
+  },
+  "local_refinement": {
+    "triggered": true,
+    "reason": "Stage D best entered the registered 519-522 safe-improvement window"
+  },
+  "tuned_b0_trial_id": "C2",
+  "tuned_b1_trial_id": "D5",
+  "sha256": "7b561dbf2e41289bb04f7331921da2562c1fb395eab176aaf5049c479057666c"
+}

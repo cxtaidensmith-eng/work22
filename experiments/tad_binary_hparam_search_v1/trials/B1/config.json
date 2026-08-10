@@ -1,0 +1,26 @@
+{
+  "trial_id": "B1",
+  "stage": "B",
+  "arm": "B0",
+  "lr": 0.0125,
+  "weight_decay": 0.00025,
+  "dropout": 0.67,
+  "rank": 0,
+  "adapter_lr_multiplier": 0.0,
+  "ordinal": 4,
+  "epochs": 400,
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_per_fold": 0,
+  "config_sha256": "6a1fa49ac142486c8052018b077c26239ec42a4e7a40bd43baa2da8287f44602"
+}

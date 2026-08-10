@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "lock": {
+    "runtime_sha256": "b5403cd3c9b2aba6326ae6318196c047165a4432484f39794f453f5284647fcb",
+    "trial_spec": {
+      "trial_id": "C3",
+      "stage": "C",
+      "arm": "B0",
+      "lr": 0.0125,
+      "weight_decay": 0.00025,
+      "dropout": 0.75,
+      "rank": 0,
+      "adapter_lr_multiplier": 0.0,
+      "ordinal": 9,
+      "epochs": 400,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "config_sha256": "c5dfd0cd7c7a884c38f16922f0a3eabe262e710fa849087be621bb618e85073b"
+    },
+    "config_key": "8446a5be5c3d011d083f3246dbd4c1fb253abc0a1c490d0437f29ae5d7035c69",
+    "fold": 7,
+    "fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+    "sha256": "070ba50fd55bae402db0b6b61c3d7501d0c7d9c17f8656856fe6375901e8f04a"
+  },
+  "checkpoint_sha256": "4e0b3fd863173b58c2a72679bdf988949fb2075219569648729a82288120c4fc",
+  "oof_sha256": "bd74d614c4184d971d701bd9379f4bb11adb48769815c45f40b3de586bd44387",
+  "history_sha256": "b9663cb41725435f77aeabee73481a67440b4568a93bfd982e321778c663e192",
+  "summary_sha256": "409e73db22c68c57c480861294664733906d7910fe6653bdf7df8151c203fb5e",
+  "sha256": "863a9c790eee38f55982b7d2d85934162a4d8c040e1285b3eb07babd94ea932e"
+}

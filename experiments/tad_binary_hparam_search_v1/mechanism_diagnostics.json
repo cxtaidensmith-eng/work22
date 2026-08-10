@@ -1,0 +1,51 @@
+{
+  "tuned_b1_trial_id": "D5",
+  "mechanism": {
+    "adapter_rank": 8,
+    "adapter_lr_multiplier": 1.0,
+    "private_shared_ratio_mean_by_modality": {
+      "MRI": 0.04874670824501663,
+      "CSF": 0.04961572287138551,
+      "RISK_FACTOR": 0.30878231902606784,
+      "COGNITIVE_TEST": 0.10547049483284354,
+      "ROI_AVERAGE": 0.03891415111720562
+    },
+    "private_shared_ratio_max_by_modality": {
+      "MRI": 0.4259990155696869,
+      "CSF": 0.6545774340629578,
+      "RISK_FACTOR": 3.1193816661834717,
+      "COGNITIVE_TEST": 1.0771219730377197,
+      "ROI_AVERAGE": 0.3557499647140503
+    },
+    "private_shared_ratio_mean": 0.11030587321147323,
+    "private_shared_ratio_max": 3.1193816661834717,
+    "category_global_cosine_mean": 0.5516194790601731,
+    "adapter_max_gradient_by_tensor": {
+      "private_adapters.0.down.bias": 0.025855038315057755,
+      "private_adapters.0.down.weight": 0.23617923259735107,
+      "private_adapters.0.up.bias": 0.05760420486330986,
+      "private_adapters.0.up.weight": 0.11315993219614029,
+      "private_adapters.1.down.bias": 0.029101043939590454,
+      "private_adapters.1.down.weight": 0.30760830640792847,
+      "private_adapters.1.up.bias": 0.06156489998102188,
+      "private_adapters.1.up.weight": 0.11424951255321503,
+      "private_adapters.2.down.bias": 0.018333490937948227,
+      "private_adapters.2.down.weight": 0.18277981877326965,
+      "private_adapters.2.up.bias": 0.062253616750240326,
+      "private_adapters.2.up.weight": 0.11538179218769073,
+      "private_adapters.3.down.bias": 0.016633648425340652,
+      "private_adapters.3.down.weight": 0.19696739315986633,
+      "private_adapters.3.up.bias": 0.04214617982506752,
+      "private_adapters.3.up.weight": 0.07029659301042557,
+      "private_adapters.4.down.bias": 0.02582528069615364,
+      "private_adapters.4.down.weight": 0.2736918330192566,
+      "private_adapters.4.up.bias": 0.04567548632621765,
+      "private_adapters.4.up.weight": 0.14022690057754517
+    },
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "parameter_count_b0": 608997,
+    "parameter_count_b1": 617197,
+    "parameter_delta": 8200
+  }
+}

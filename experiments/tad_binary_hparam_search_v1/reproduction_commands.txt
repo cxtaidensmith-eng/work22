@@ -1,0 +1,5 @@
+# Reproduce from source commit 0d7a183a7106c673de2817f36c69d780dcd792d5 on local branch experiment/tad-binary-hparam-search-v1
+python -u -B scripts/run_tad_binary_hparam_search_v1.py inspect
+python -u -B scripts/run_tad_binary_hparam_search_v1.py smoke --device cuda:0
+python -u -B scripts/run_tad_binary_hparam_search_v1.py search --device cuda:0
+python -u -B scripts/run_tad_binary_hparam_search_v1.py formal --device cuda:0
