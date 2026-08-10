@@ -1,0 +1,45 @@
+{
+  "tuned_b1_trial_id": "D3",
+  "mechanism": {
+    "adapter_rank": 4,
+    "adapter_lr_multiplier": 2.0,
+    "private_shared_ratio_mean_by_modality": {
+      "PHENO": 0.05848925393074751,
+      "ANAT": 0.07679566033184529,
+      "FUNC": 0.06890136804431676,
+      "Correlation": 0.05453234203159809
+    },
+    "private_shared_ratio_max_by_modality": {
+      "PHENO": 0.3852912485599518,
+      "ANAT": 0.7462564706802368,
+      "FUNC": 0.44147124886512756,
+      "Correlation": 0.2675062119960785
+    },
+    "private_shared_ratio_mean": 0.06467965822666884,
+    "private_shared_ratio_max": 0.7462564706802368,
+    "category_global_cosine_mean": 0.10200805375352502,
+    "adapter_max_gradient_by_tensor": {
+      "private_adapters.0.down.bias": 0.0032279230654239655,
+      "private_adapters.0.down.weight": 0.0062576644122600555,
+      "private_adapters.0.up.bias": 0.13015328347682953,
+      "private_adapters.0.up.weight": 0.004905348177999258,
+      "private_adapters.1.down.bias": 0.0048756166361272335,
+      "private_adapters.1.down.weight": 0.007676133420318365,
+      "private_adapters.1.up.bias": 0.3011397123336792,
+      "private_adapters.1.up.weight": 0.006230068393051624,
+      "private_adapters.2.down.bias": 0.0044170827604830265,
+      "private_adapters.2.down.weight": 0.015119727700948715,
+      "private_adapters.2.up.bias": 0.2076619416475296,
+      "private_adapters.2.up.weight": 0.018914341926574707,
+      "private_adapters.3.down.bias": 0.0070923068560659885,
+      "private_adapters.3.down.weight": 0.01677273027598858,
+      "private_adapters.3.up.bias": 0.14187751710414886,
+      "private_adapters.3.up.weight": 0.01125749945640564
+    },
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "parameter_count_b0": 333033,
+    "parameter_count_b1": 335353,
+    "parameter_delta": 2320
+  }
+}

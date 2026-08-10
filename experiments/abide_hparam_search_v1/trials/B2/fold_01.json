@@ -1,0 +1,74 @@
+{
+  "schema": "duplicate_config_reuse",
+  "spec": {
+    "trial_id": "B2",
+    "stage": "B",
+    "arm": "B0",
+    "lr": 0.00625,
+    "weight_decay": 0.001,
+    "dropout": 0.45,
+    "rank": 0,
+    "adapter_lr_multiplier": 0.0,
+    "ordinal": 5,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "f181f39525fc398637d968f4e6c2d3ac5a84bfc5f24ab9783623301758724837"
+  },
+  "fold": 1,
+  "best_epoch": 175,
+  "best_metrics": {
+    "n": 87,
+    "correct": 80,
+    "acc": 0.9195402298850575,
+    "roc_auc": 0.9435312831389183,
+    "pr_auc": 0.9400312251311702,
+    "macro_f1": 0.9193697868396664,
+    "bacc": 0.9199363732767762,
+    "weighted_f1": 0.9195828406464054,
+    "sen": 0.926829268292683,
+    "spe": 0.9130434782608695,
+    "tp": 38,
+    "fn": 3,
+    "tn": 42,
+    "fp": 4,
+    "confusion_matrix_class_order": [
+      "ADS",
+      "CN"
+    ],
+    "confusion_matrix": [
+      [
+        38,
+        3
+      ],
+      [
+        4,
+        42
+      ]
+    ],
+    "predicted_counts": {
+      "ADS": 42,
+      "CN": 45
+    },
+    "positive_class": "ADS",
+    "positive_index": 0,
+    "negative_class": "CN",
+    "negative_index": 1
+  },
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "elapsed_seconds": 46.487975399941206,
+  "inference_seconds_full_graph": 0.013881099876016378,
+  "resumed_from_epoch": 0,
+  "alias_of": "A3"
+}

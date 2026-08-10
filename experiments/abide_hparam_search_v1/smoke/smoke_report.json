@@ -1,0 +1,230 @@
+{
+  "runtime_lock": {
+    "experiment": "abide_hparam_search_v1",
+    "source_commit": "c9c7a289145a87fbab355e85828fa5f62f9819b0",
+    "source_hashes": {
+      ".gitignore": "63c5bae923339d5310c018328fe028d72001c6fd170cad23d8c2d6f4f4df76f7",
+      "scripts/run_abide_hparam_search_v1.py": "0e8a0e2c98db5d9e6628e3d59f7793e418a68d52962b9e2d645c98507e62ecd2",
+      "experiments/abide_hparam_search_v1/experiment_config.json": "5668715eeb24d857690280c4b561e0f14bc47008adeb9132239fe175d5491e0f",
+      "experiments/abide_hparam_search_v1/protocol.json": "cdec8979db0ab6909e2e39fc2c3ef380802ad7c1e18fc369b0fc5dc6c461d445",
+      "experiments/abide_hparam_search_v1/inspect_manifest.json": "09a54b1d2191abe11fb0a02c058e5043fb5b0ff48ecb28669984dbee1567a908",
+      "experiments/abide_hparam_search_v1/fold_manifest.json": "e00e26577644f8c30107eb040008fb9d3a8587fdf0f36c59397ff10bc67fafaf",
+      "experiments/abide_hparam_search_v1/historical/historical_B0_oof.csv": "1fa7a49d2ede3c1d2d1c9cca94041c28d3e9c5d0fa1ed3c6a0cbb6c50cafc2a2",
+      "experiments/abide_hparam_search_v1/historical/historical_B1_oof.csv": "ff7c87b9bfe8970e603fff6626f6210808f1cffced3e603326c9882371ba0c59",
+      "experiments/abide_hparam_search_v1/historical/historical_fold_metrics.json": "41db86cb88193cca87d8bab0933c82196ce89d8c4b62961e27637e7800b64477",
+      "Model/cme_dual_branch.py": "365bad7ae3e8e4c69bdae2e9d91eba0a14be4b549d59d16d5ed25628acd80805",
+      "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+      "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+      "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+      "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+      "config_re.py": "d4983438cd1033c769d52c5e43661a88aa114d60448779084d86d476c2d0e97f",
+      "scripts/run_cross_dataset_a012_structure_v1.py": "de04e8039536e04bced5e5b838c9f565cf40e2c5ad223587d73a7aac1caba1d3",
+      "scripts/run_tad_binary_hparam_search_v1.py": "e74ca73db0c9a1fbb9afb944a6d5438dda2002de633123244267bfb6bb2aef7b",
+      "experiments/cross_dataset_a012_structure_v1/protocols/abide_ads_cn.json": "06317c568c763e93339e965ce1a611d06039f0e678281c4d1b341fc6fb36ab72"
+    },
+    "experiment_config_sha256": "5668715eeb24d857690280c4b561e0f14bc47008adeb9132239fe175d5491e0f",
+    "protocol_sha256": "cdec8979db0ab6909e2e39fc2c3ef380802ad7c1e18fc369b0fc5dc6c461d445",
+    "inspect_sha256": "09a54b1d2191abe11fb0a02c058e5043fb5b0ff48ecb28669984dbee1567a908",
+    "fold_manifest_sha256": "e00e26577644f8c30107eb040008fb9d3a8587fdf0f36c59397ff10bc67fafaf",
+    "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "device": "cuda:0",
+    "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+    "sha256": "f8a6269c525325ee45520df938e326c8bd8914232638fe328a367412411ff568"
+  },
+  "smoke_config_sha256": "c9368039530556a05653fd892665dfdd1fab33e9c33db947fe9dd6112dd46fcd",
+  "spec": {
+    "trial_id": "SMOKE_D1",
+    "stage": "smoke",
+    "arm": "B1",
+    "lr": 0.005,
+    "weight_decay": 0.001,
+    "dropout": 0.45,
+    "rank": 4,
+    "adapter_lr_multiplier": 0.5,
+    "ordinal": 0,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "cfcbb7cca4396da2661a514702ac337ff08f10da22f7fcaec116514cf95ade10"
+  },
+  "fold": 0,
+  "epochs": 3,
+  "losses": [
+    2.2066807746887207,
+    2.346822738647461,
+    2.9230785369873047
+  ],
+  "historical_loss_components_last_epoch": {
+    "main": 0.725075364112854,
+    "ovr_0": 1.1046817302703857,
+    "ovr_1": 1.093321442604065,
+    "orthogonality": 18336.021484375,
+    "orthogonality_rate": 0.0
+  },
+  "historical_loss_formula_max_abs_error": 0.0,
+  "probability_sum_max_abs_error": 1.1920928955078125e-07,
+  "initial_b0_b1_logits_max_abs_diff": 0.0,
+  "adapter_gradient_max_by_tensor": {
+    "private_adapters.0.down.weight": 0.0006377376848831773,
+    "private_adapters.0.down.bias": 0.00034092256100848317,
+    "private_adapters.0.up.weight": 0.0017352881841361523,
+    "private_adapters.0.up.bias": 0.00879390724003315,
+    "private_adapters.1.down.weight": 0.000701937940903008,
+    "private_adapters.1.down.bias": 0.0003449812938924879,
+    "private_adapters.1.up.weight": 0.003176044439896941,
+    "private_adapters.1.up.bias": 0.008661847561597824,
+    "private_adapters.2.down.weight": 0.0003922832547686994,
+    "private_adapters.2.down.bias": 0.0002038277598330751,
+    "private_adapters.2.up.weight": 0.004902038723230362,
+    "private_adapters.2.up.bias": 0.008527512662112713,
+    "private_adapters.3.down.weight": 0.0009754379279911518,
+    "private_adapters.3.down.bias": 0.00044573828927241266,
+    "private_adapters.3.up.weight": 0.003942159470170736,
+    "private_adapters.3.up.bias": 0.00851818174123764
+  },
+  "adapter_parameter_delta_by_tensor": {
+    "private_adapters.0.down.weight": 0.007510624825954437,
+    "private_adapters.0.down.bias": 0.007501073181629181,
+    "private_adapters.0.up.weight": 0.007498519495129585,
+    "private_adapters.0.up.bias": 0.007364874705672264,
+    "private_adapters.1.down.weight": 0.007510967552661896,
+    "private_adapters.1.down.bias": 0.0074903592467308044,
+    "private_adapters.1.up.weight": 0.007346643600612879,
+    "private_adapters.1.up.bias": 0.007459045387804508,
+    "private_adapters.2.down.weight": 0.007508754730224609,
+    "private_adapters.2.down.bias": 0.007452383637428284,
+    "private_adapters.2.up.weight": 0.0073606395162642,
+    "private_adapters.2.up.bias": 0.007336760871112347,
+    "private_adapters.3.down.weight": 0.00751069188117981,
+    "private_adapters.3.down.bias": 0.007491946220397949,
+    "private_adapters.3.up.weight": 0.0074666342698037624,
+    "private_adapters.3.up.bias": 0.0073499297723174095
+  },
+  "object_audit": {
+    "common_state_max_abs_diff": 0.0,
+    "parameter_count": 335353,
+    "query_count": 2,
+    "ovr_head_count": 2,
+    "adapter_count": 4,
+    "base_parameter_tensors": 140,
+    "adapter_parameter_tensors": 16,
+    "adapter_parameter_names": [
+      "private_adapters.0.down.weight",
+      "private_adapters.0.down.bias",
+      "private_adapters.0.up.weight",
+      "private_adapters.0.up.bias",
+      "private_adapters.1.down.weight",
+      "private_adapters.1.down.bias",
+      "private_adapters.1.up.weight",
+      "private_adapters.1.up.bias",
+      "private_adapters.2.down.weight",
+      "private_adapters.2.down.bias",
+      "private_adapters.2.up.weight",
+      "private_adapters.2.up.bias",
+      "private_adapters.3.down.weight",
+      "private_adapters.3.down.bias",
+      "private_adapters.3.up.weight",
+      "private_adapters.3.up.bias"
+    ],
+    "base_lr": 0.005,
+    "adapter_lr": 0.0025,
+    "weight_decay": 0.001
+  },
+  "checkpoint_sha256": "95c056e4efcb6c288851aba4ebfbfb077fac61d6d24eca76fe444dc69f58912e",
+  "checkpoint_reload_logits_max_abs_diff": 0.0,
+  "positive_direction_audit": {
+    "positive_class": "ADS/ASD",
+    "positive_index": 0,
+    "negative_class": "CN",
+    "test_metrics": {
+      "n": 88,
+      "correct": 41,
+      "acc": 0.4659090909090909,
+      "roc_auc": 0.5121951219512195,
+      "pr_auc": 0.518636712113159,
+      "macro_f1": 0.3178294573643411,
+      "bacc": 0.5,
+      "weighted_f1": 0.29615926708949963,
+      "sen": 1.0,
+      "spe": 0.0,
+      "tp": 41,
+      "fn": 0,
+      "tn": 0,
+      "fp": 47,
+      "confusion_matrix_class_order": [
+        "ADS",
+        "CN"
+      ],
+      "confusion_matrix": [
+        [
+          41,
+          0
+        ],
+        [
+          47,
+          0
+        ]
+      ],
+      "predicted_counts": {
+        "ADS": 88,
+        "CN": 0
+      },
+      "positive_class": "ADS",
+      "positive_index": 0,
+      "negative_class": "CN",
+      "negative_index": 1
+    }
+  },
+  "test_labels_unchanged": true,
+  "three_class_compatibility": {
+    "passed": true,
+    "parameter_count": 862971,
+    "state_tensor_count": 184,
+    "state_key_shape_dtype_schema_sha256": "66d73f7f7a5a8eca4e39806fb814fbb738710bfe85238b88b8b2a10e0947737b",
+    "schema_anchor": "constant derived from the verified real A012 fold-0 checkpoint; checkpoint is not a runtime dependency",
+    "query_count": 3,
+    "ovr_head_count": 3,
+    "category_token_stream_shape": [
+      598,
+      3,
+      6,
+      96
+    ],
+    "output_shape": [
+      598,
+      3
+    ],
+    "dropout_module_count": 10
+  },
+  "device": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "torch_version": "2.5.1+cu121",
+  "cuda_version": "12.1",
+  "sha256": "8e340e7afcb02aa4e91f889c95b3d90539571b0d827e19f9dd46ed91c4775f59"
+}
