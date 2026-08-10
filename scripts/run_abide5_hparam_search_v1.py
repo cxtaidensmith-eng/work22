@@ -28,6 +28,7 @@ from Utils import CustomCosineAnnealingLR, SET_Random
 from scripts import run_abide_hparam_search_v1 as parent
 
 engine = parent.engine
+_BASE_PREDICTION_ROWS = engine.prediction_rows
 EXPERIMENT_ID = "abide5_hparam_search_v1"
 BRANCH = "experiment/abide5-hparam-search-v1"
 BASE_COMMIT = "c9c7a289145a87fbab355e85828fa5f62f9819b0"
@@ -100,9 +101,20 @@ def validate_oof(rows: list[dict[str, Any]], context: dict[str, Any], arm: str |
         require(row["subject_id"] == anchor["subject_id"] and row["feature_sha256"] == anchor["feature_sha256"], "OOF subject anchor changed")
         require(row["truth"] == anchor["truth"] and row["fold"] == anchor["fold"], "OOF truth/fold changed")
         require(row["prediction"] == int(np.argmax([row["probability_0"], row["probability_1"]])), "OOF argmax changed")
+        require(abs(float(row["positive_probability"]) - float(row["probability_0"])) <= 2e-6, "OOF ADS-positive probability changed")
         if arm is not None: require(row["arm"] == arm, "OOF arm changed")
     probability = np.asarray([[row["probability_0"], row["probability_1"]] for row in ordered], dtype=float)
     require(np.isfinite(probability).all() and float(np.max(np.abs(probability.sum(1) - 1.0))) <= 2e-6, "OOF probabilities invalid")
+
+
+def prediction_rows(context: dict[str, Any], spec: dict[str, Any], fold: int, logits: np.ndarray, probabilities: np.ndarray, truth: np.ndarray) -> list[dict[str, Any]]:
+    """Preserve the shared engine schema while honoring ABIDE-5's class-0 positive label."""
+    rows = _BASE_PREDICTION_ROWS(context, spec, fold, logits, probabilities, truth)
+    positive_index = int(context["protocol"]["positive_index"])
+    require(positive_index == 0, "ABIDE-5 positive index changed")
+    for row, probability in zip(rows, probabilities):
+        row["positive_probability"] = float(probability[positive_index])
+    return rows
 
 
 def registered_search() -> dict[str, Any]:
@@ -404,7 +416,7 @@ def install_profile() -> None:
     parent.install_profile()
     values={"ROOT":ROOT,"EXPERIMENT_ID":EXPERIMENT_ID,"BRANCH":BRANCH,"BASE_COMMIT":BASE_COMMIT,"HISTORICAL_RESULT_COMMIT":HISTORICAL_RESULT_COMMIT,"RESULT_DIR":RESULT_DIR,"PROTOCOL_PATH":PROTOCOL_PATH,"CONFIG_PATH":CONFIG_PATH,"INSPECT_PATH":INSPECT_PATH,"FOLD_MANIFEST_PATH":FOLD_MANIFEST_PATH,"HISTORICAL_DIR":HISTORICAL_DIR,"SMOKE_DIR":SMOKE_DIR,"WORK_DIR":WORK_DIR,"TRIALS_DIR":TRIALS_DIR,"TRIAL_MANIFEST_PATH":TRIAL_MANIFEST_PATH,"ALL_TRIALS_PATH":ALL_TRIALS_PATH,"SEARCH_SUMMARY_PATH":SEARCH_SUMMARY_PATH,"HISTORICAL_PATHS":HISTORICAL_PATHS,"HISTORICAL_ANCHORS":HISTORICAL_ANCHORS,"REQUIRED_TRACKED":REQUIRED_TRACKED,"LOCKED_DEPENDENCIES":LOCKED_DEPENDENCIES}
     for name,value in values.items(): setattr(engine,name,value)
-    overrides={"protocol":protocol,"validate_oof":validate_oof,"historical_payload":historical_payload,"build_model":build_model,"make_training_objects":make_training_objects,"run_smoke":run_smoke,"safety":safety,"rank_key":rank_key,"is_historical_exact":is_historical_exact,"run_search":run_search,"historical_reference":historical_reference,"target_gate":target_gate,"final_decision":final_decision,"render_report":render_report,"run_formal":run_formal}
+    overrides={"protocol":protocol,"validate_oof":validate_oof,"prediction_rows":prediction_rows,"historical_payload":historical_payload,"build_model":build_model,"make_training_objects":make_training_objects,"run_smoke":run_smoke,"safety":safety,"rank_key":rank_key,"is_historical_exact":is_historical_exact,"run_search":run_search,"historical_reference":historical_reference,"target_gate":target_gate,"final_decision":final_decision,"render_report":render_report,"run_formal":run_formal}
     for name,value in overrides.items(): setattr(engine,name,value)
 
 
