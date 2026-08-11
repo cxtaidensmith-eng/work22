@@ -1,0 +1,1724 @@
+{
+  "fold_allocations": [
+    {
+      "fold": 0,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        4,
+        4,
+        2,
+        4,
+        6
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          3.326252384907961e-09,
+          6.5419470752124945e-09,
+          3.3747792253582262e-09,
+          4.179091019207921e-09,
+          6.880095539265539e-09,
+          1.2851846171731996e-08,
+          2.4107723501718524e-09,
+          5.021862048431274e-09
+        ],
+        [
+          2.0310877128534375e-09,
+          6.637054834083861e-09,
+          6.281592153378404e-09,
+          3.067715264928425e-09,
+          1.1159526803392162e-09,
+          4.874842505352433e-09,
+          1.8935175188728953e-09,
+          1.2397976426197939e-08
+        ],
+        [
+          8.998802011001786e-09,
+          2.0523314965407432e-09,
+          4.299748719909677e-09,
+          5.580426522962898e-09,
+          3.5359882178920103e-09,
+          2.1602174941267333e-09,
+          3.341546509828323e-09,
+          1.850899425660148e-09
+        ],
+        [
+          7.912008491268928e-09,
+          2.478845221453326e-09,
+          1.756696451799115e-09,
+          3.958974196299262e-09,
+          2.4433468690690928e-09,
+          1.7198681723037708e-08,
+          1.0404948827754957e-08,
+          3.5700606605104453e-09
+        ],
+        [
+          2.8986610288297676e-09,
+          6.108956802617912e-09,
+          4.064004880740408e-09,
+          6.771628552949367e-09,
+          2.1906513282238994e-08,
+          7.528944946972133e-07,
+          4.397813406716507e-09,
+          7.143968128658448e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 7.528944946972133e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 2.1906513282238994e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 1.7198681723037708e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.2851846171731996e-08
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 1.2397976426197939e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 1.0404948827754957e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 8.998802011001786e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 7.912008491268928e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 7.143968128658448e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 6.880095539265539e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 6.771628552949367e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 6.637054834083861e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 6.5419470752124945e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 2,
+          "importance": 6.281592153378404e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 6.108956802617912e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "86b17750edd8199cfaddf6a0e3c75767ae379d25da9b386638d7768944bbcb21"
+    },
+    {
+      "fold": 1,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        4,
+        3,
+        4,
+        3,
+        6
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          1.084391543996e-09,
+          2.0952581725522757e-08,
+          5.695160991563494e-09,
+          1.4401554091637807e-09,
+          1.6488772054666023e-09,
+          7.2903171587322955e-09,
+          2.969083417414101e-09,
+          3.2398349008324066e-09
+        ],
+        [
+          3.25521961223096e-09,
+          1.9555280343061694e-09,
+          2.0461961279228227e-09,
+          1.6598912657618589e-09,
+          1.357988709547121e-09,
+          2.2257386640078357e-09,
+          3.861561417262819e-09,
+          1.2332543056668861e-09
+        ],
+        [
+          4.079539283289331e-09,
+          2.431183259724926e-09,
+          4.291991227387196e-09,
+          1.3499419833105866e-08,
+          2.8900898955190467e-09,
+          9.868376237890487e-10,
+          1.0843292642044388e-09,
+          7.894397926322726e-10
+        ],
+        [
+          2.7409728188724983e-09,
+          2.656995245351189e-09,
+          1.511265294146553e-09,
+          3.2288032987317453e-09,
+          3.040969832670758e-09,
+          3.6272353689783106e-09,
+          3.755286792501747e-09,
+          3.2533144794800003e-09
+        ],
+        [
+          1.5617214332673744e-09,
+          1.7580762102112173e-09,
+          3.504524550295239e-09,
+          2.687335660927143e-09,
+          6.435636037507713e-09,
+          1.7068630401180435e-07,
+          3.281152377773928e-09,
+          5.225340271794052e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 1.7068630401180435e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 2.0952581725522757e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 1.3499419833105866e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 7.2903171587322955e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 6.435636037507713e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 5.695160991563494e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 5.225340271794052e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 4.291991227387196e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 4.079539283289331e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 6,
+          "importance": 3.861561417262819e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 3.755286792501747e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 3.6272353689783106e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 2,
+          "importance": 3.504524550295239e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 3.281152377773928e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 0,
+          "importance": 3.25521961223096e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "c91db6b3ec9bc2f61c4f150129e6702201de5b6bb2398696f465e30b7d67569f"
+    },
+    {
+      "fold": 2,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        3,
+        3,
+        3,
+        3,
+        8
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          1.7616775998247284e-09,
+          1.0215156337911574e-08,
+          4.4757663635130895e-09,
+          2.422884614916454e-09,
+          8.731830495253799e-09,
+          4.558058561629888e-09,
+          2.9875341973620445e-09,
+          1.5756652068579831e-09
+        ],
+        [
+          4.540249818664126e-09,
+          1.883103449393461e-09,
+          5.954654079128124e-09,
+          8.09893559247981e-09,
+          1.4475011632974379e-09,
+          1.6733533851785286e-09,
+          1.979841321643185e-09,
+          4.696674790022902e-09
+        ],
+        [
+          2.849637142777668e-09,
+          6.862840498309667e-09,
+          1.3004517048761692e-09,
+          2.8161433524896197e-09,
+          3.3334988011651405e-08,
+          1.985869428144626e-09,
+          4.227456637162235e-09,
+          2.004301214805201e-09
+        ],
+        [
+          5.740472057422058e-09,
+          1.053421037051455e-08,
+          2.1694405983698538e-09,
+          5.4452166764940744e-09,
+          2.9637479785886735e-09,
+          3.3104114275699087e-09,
+          5.3521232611599545e-09,
+          5.776615974091417e-09
+        ],
+        [
+          4.524835806494941e-09,
+          6.411341185116733e-09,
+          8.529558430713788e-09,
+          1.0370908267703368e-08,
+          5.099394689665548e-08,
+          2.4926415349580446e-07,
+          8.665109952874796e-09,
+          2.073227420822391e-08
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 2.4926415349580446e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 5.099394689665548e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 3.3334988011651405e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 2.073227420822391e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 1.053421037051455e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 1.0370908267703368e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.0215156337911574e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 8.731830495253799e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 8.665109952874796e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 2,
+          "importance": 8.529558430713788e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 3,
+          "importance": 8.09893559247981e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 6.862840498309667e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 6.411341185116733e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 2,
+          "importance": 5.954654079128124e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 5.776615974091417e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "7f9ccb84a186d25068f158c55cd976064fc4b001b1b2ebd43c1332b03755dfea"
+    },
+    {
+      "fold": 3,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.8437303157290872e-09,
+          2.284637374747907e-09,
+          2.7570493673176547e-09,
+          2.353112075722007e-09,
+          5.8687015187740215e-09,
+          4.482553878648972e-09,
+          5.611577909658358e-09,
+          1.7120586409167323e-09
+        ],
+        [
+          2.1299510609919726e-09,
+          8.650030752735416e-09,
+          3.4023905633296314e-09,
+          2.335539924454714e-09,
+          2.5267106103601915e-09,
+          2.0513518910202354e-09,
+          1.5450896449126444e-09,
+          1.8511616255856856e-09
+        ],
+        [
+          2.046280933113248e-09,
+          2.545833435934042e-09,
+          5.0575581645119825e-09,
+          1.5548024208924438e-09,
+          2.627369046264811e-09,
+          3.5984394500069773e-09,
+          2.5092195691723604e-09,
+          1.47516348560631e-09
+        ],
+        [
+          7.580385009965097e-09,
+          2.1628852610123352e-09,
+          1.469243771080392e-09,
+          3.6860111487617083e-09,
+          5.569311521136744e-09,
+          2.532148108208353e-09,
+          1.6665336593301127e-09,
+          6.1752123197540405e-09
+        ],
+        [
+          2.0869520622472042e-09,
+          8.078764213741399e-09,
+          7.60345647098033e-09,
+          3.0669729920870876e-09,
+          8.433790358047756e-09,
+          4.0915028177536135e-09,
+          3.4365196737856037e-09,
+          6.861830397609065e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 8.650030752735416e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 8.433790358047756e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 8.078764213741399e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 2,
+          "importance": 7.60345647098033e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 7.580385009965097e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 6.861830397609065e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 6.1752123197540405e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 5.8687015187740215e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 5.611577909658358e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 5.569311521136744e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 5.0575581645119825e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 4.482553878648972e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 4.0915028177536135e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 3.6860111487617083e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 3.5984394500069773e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "a0dc7a22329d5fd66768220e8b19432d9ba9bfe19b7c2ab78172541883c5ddba"
+    },
+    {
+      "fold": 4,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        4,
+        4,
+        3,
+        6,
+        3
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          9.136805102518724e-09,
+          1.8721680179153395e-08,
+          1.0174609367927746e-08,
+          5.776996635943624e-09,
+          6.0557437069512106e-09,
+          7.0496941265294304e-09,
+          1.1331057886884566e-08,
+          7.675263873969533e-09
+        ],
+        [
+          6.506127817216723e-09,
+          1.8387914828835703e-08,
+          8.8192667974239e-09,
+          4.200049829112384e-09,
+          1.3536658135708882e-08,
+          8.382173937155925e-09,
+          5.847173768127748e-09,
+          2.2213683860724237e-08
+        ],
+        [
+          8.362729982495692e-09,
+          3.5570400000251764e-09,
+          1.0808637964569925e-08,
+          8.996059473740538e-09,
+          2.4233402254081593e-08,
+          1.8556134381109258e-09,
+          5.411133088948198e-09,
+          6.904584915402418e-09
+        ],
+        [
+          1.1026185453034e-07,
+          8.896639903564399e-09,
+          7.451720420258647e-09,
+          4.015428202937575e-09,
+          2.0673240172297764e-08,
+          2.503312062790983e-08,
+          2.8413656681704423e-08,
+          1.5187749199077716e-08
+        ],
+        [
+          5.081417475125774e-09,
+          5.406691461081426e-09,
+          4.9955962816897815e-09,
+          5.178339470766536e-09,
+          1.3588995276259553e-08,
+          1.2912387040694996e-08,
+          6.808866327132324e-09,
+          8.176936921981062e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 1.1026185453034e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 2.8413656681704423e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 2.503312062790983e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 2.4233402254081593e-08
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 2.2213683860724237e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 2.0673240172297764e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.8721680179153395e-08
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 1.8387914828835703e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 1.5187749199077716e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 1.3588995276259553e-08
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 4,
+          "importance": 1.3536658135708882e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 1.2912387040694996e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 1.1331057886884566e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 1.0808637964569925e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 1.0174609367927746e-08
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "d5fd387d8a40e3b2879e53376e8fd4ee649698cd095f2001f5dd1280aba44b70"
+    },
+    {
+      "fold": 5,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        2,
+        4,
+        4,
+        2,
+        8
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.0888055518849463e-09,
+          1.3086150160680322e-08,
+          4.619234539718012e-09,
+          1.803372142440404e-09,
+          2.93457496232995e-09,
+          2.4240509183805575e-09,
+          2.7604566596913585e-09,
+          3.7127106230821353e-09
+        ],
+        [
+          1.2105938366039729e-08,
+          7.401712543293989e-09,
+          2.686110062026465e-09,
+          3.6280277431405916e-09,
+          1.6924593589530764e-09,
+          3.0087878674580704e-09,
+          2.262844777517416e-09,
+          7.787369813325652e-09
+        ],
+        [
+          3.324804538286365e-09,
+          2.9106148189516393e-09,
+          2.241637721644069e-09,
+          6.362241127245047e-09,
+          1.8115018663954987e-08,
+          9.018878963994448e-09,
+          1.2957745789346337e-09,
+          2.604538657909616e-09
+        ],
+        [
+          2.971496346484863e-09,
+          2.6489737582044395e-09,
+          3.954545578388321e-09,
+          2.6000050931130535e-09,
+          6.892494421072032e-09,
+          4.118486643279084e-09,
+          2.460616748409683e-09,
+          3.55785479441207e-09
+        ],
+        [
+          7.2943946620751535e-09,
+          8.974853085865679e-09,
+          1.7538994792237322e-09,
+          1.4885108012742013e-08,
+          1.1184673548401682e-08,
+          3.064732296955013e-08,
+          5.791355278913959e-09,
+          1.6814195908558757e-08
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 3.064732296955013e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 1.8115018663954987e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 1.6814195908558757e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 1.4885108012742013e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.3086150160680322e-08
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 0,
+          "importance": 1.2105938366039729e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 1.1184673548401682e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 9.018878963994448e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 8.974853085865679e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 7.787369813325652e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 7.401712543293989e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 0,
+          "importance": 7.2943946620751535e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 6.892494421072032e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 6.362241127245047e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 5.791355278913959e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "357e02084c4016739c6deed635737f2512ce4c8e93d4ee3c95d19feaee84ed66"
+    },
+    {
+      "fold": 6,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        7,
+        1,
+        2,
+        5,
+        5
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          9.532371533352121e-10,
+          1.1015843348182742e-08,
+          6.703736844478367e-09,
+          2.8217345751650847e-09,
+          1.9042820525394616e-09,
+          3.1512006285257827e-09,
+          2.576357543828711e-09,
+          3.835441257381756e-09
+        ],
+        [
+          1.8669965298294605e-09,
+          1.4463635040570624e-09,
+          1.1631621046535099e-09,
+          1.7931803962814746e-09,
+          1.0584959471588186e-09,
+          7.438552994791269e-10,
+          2.4921561957654757e-09,
+          9.578125251395292e-10
+        ],
+        [
+          2.0580619986555052e-09,
+          3.5759398443338388e-09,
+          1.2580743845800478e-09,
+          1.9762524788792223e-09,
+          1.6930657430330625e-09,
+          1.881111023192636e-09,
+          9.735364459849741e-10,
+          9.342669880319098e-10
+        ],
+        [
+          2.719622532991742e-09,
+          3.742283374963103e-09,
+          9.41164622077555e-10,
+          2.501886718432688e-09,
+          2.523493326483039e-09,
+          8.217049524564109e-10,
+          1.7630361036496685e-09,
+          3.1742460179580558e-09
+        ],
+        [
+          1.5840273385551693e-09,
+          2.0584058303077583e-09,
+          1.9224291621562997e-09,
+          3.945556595044226e-09,
+          3.6811431316994075e-09,
+          1.620836595177913e-07,
+          3.5146086975034917e-09,
+          1.6594049575647501e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 1.620836595177913e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.1015843348182742e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 6.703736844478367e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 3.945556595044226e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 7,
+          "importance": 3.835441257381756e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 3.742283374963103e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 3.6811431316994075e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 3.5759398443338388e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 3.5146086975034917e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 3.1742460179580558e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 3.1512006285257827e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 2.8217345751650847e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 2.719622532991742e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 2.576357543828711e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 2.523493326483039e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "6624e0df5d664bca520ecf3f1721d9bca810ff818b4235811135e56a12552efc"
+    },
+    {
+      "fold": 7,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        7,
+        3,
+        4,
+        2,
+        4
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          4.5677230168506825e-09,
+          5.303546718730945e-09,
+          6.591228468687494e-09,
+          3.861007925616812e-09,
+          9.309559814186596e-09,
+          9.316071794640482e-09,
+          2.1186216070835797e-09,
+          8.986498844571658e-09
+        ],
+        [
+          3.398006594714244e-08,
+          5.051023413746515e-09,
+          2.3828530675699362e-09,
+          1.9075076091955988e-09,
+          1.2540495197590735e-09,
+          3.182319997335162e-09,
+          1.2765420833764112e-09,
+          3.847402540289777e-09
+        ],
+        [
+          1.6987378170970188e-09,
+          2.6963240216582293e-09,
+          1.734823324728923e-08,
+          5.165154839966013e-09,
+          2.958893673666931e-09,
+          1.1907576165153768e-08,
+          2.4072380594914147e-09,
+          2.9453869000310765e-09
+        ],
+        [
+          2.93643486677405e-09,
+          2.5738918374270762e-09,
+          2.3630924378122323e-09,
+          2.2312556512054866e-09,
+          4.993167462543753e-07,
+          2.600627115324269e-09,
+          3.053555549345041e-09,
+          3.193724867068399e-09
+        ],
+        [
+          2.3081501939776224e-09,
+          1.92148163490848e-09,
+          2.281116025933468e-09,
+          1.8935032555760856e-09,
+          1.1498352613593143e-08,
+          9.318697642260434e-09,
+          5.154787702226994e-09,
+          3.2338190147151614e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 4.993167462543753e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 0,
+          "importance": 3.398006594714244e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 1.734823324728923e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 1.1907576165153768e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 1.1498352613593143e-08
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 9.318697642260434e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 9.316071794640482e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 9.309559814186596e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 7,
+          "importance": 8.986498844571658e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 6.591228468687494e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 5.303546718730945e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 5.165154839966013e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 5.154787702226994e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 5.051023413746515e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 4.5677230168506825e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "172bde8848e1eb929806a6115f21fdb12268b4c6daacd7cc5227c908f88c424c"
+    },
+    {
+      "fold": 8,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        3,
+        3,
+        4,
+        5,
+        5
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.4668468162654958e-09,
+          1.116822452368354e-08,
+          2.717386926294266e-09,
+          1.9629275581287266e-09,
+          8.365477074873887e-09,
+          5.065146698684231e-09,
+          3.0400972104123674e-09,
+          4.040307480120624e-09
+        ],
+        [
+          2.995472851549726e-09,
+          2.5383181348394323e-09,
+          2.4241978740669722e-09,
+          7.96325447291837e-09,
+          2.026594265054847e-09,
+          6.5829118559983235e-09,
+          1.7668370966190924e-09,
+          2.007290561461935e-09
+        ],
+        [
+          7.921418046079138e-09,
+          8.194952707477413e-09,
+          2.144185906739619e-09,
+          4.7815460178546136e-09,
+          1.6133610661892074e-08,
+          1.4406962557477506e-09,
+          3.980381907560426e-09,
+          2.791697992673293e-09
+        ],
+        [
+          1.1074591117961068e-08,
+          4.194585519304806e-09,
+          6.467066938583519e-09,
+          4.090712873763754e-09,
+          2.1937150363516653e-09,
+          5.336557448974846e-09,
+          6.824073118006523e-09,
+          6.973439280480858e-09
+        ],
+        [
+          1.8491639505222726e-09,
+          7.576722973261938e-09,
+          1.6226007580750583e-09,
+          6.336620481074603e-09,
+          3.848939657643745e-08,
+          1.0696990515162668e-07,
+          3.7072317974325898e-09,
+          1.9444458512495942e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 1.0696990515162668e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 3.848939657643745e-08
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 1.6133610661892074e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.116822452368354e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 1.1074591117961068e-08
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 8.365477074873887e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 8.194952707477413e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 3,
+          "importance": 7.96325447291837e-09
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 7.921418046079138e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 7.576722973261938e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 6.973439280480858e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 6.824073118006523e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 5,
+          "importance": 6.5829118559983235e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 6.467066938583519e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 6.336620481074603e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "b08a679daf5215f75c718ce21e60d3e61e2f06f32a1015f3e61af20ee040e29b"
+    },
+    {
+      "fold": 9,
+      "modality_names": [
+        "PHENO",
+        "ANAT",
+        "FUNC",
+        "MRI",
+        "fMRI"
+      ],
+      "ranks": [
+        4,
+        4,
+        2,
+        7,
+        3
+      ],
+      "total_rank": 20,
+      "rank_budget": 20,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 129,
+      "private_parameter_count": 2900,
+      "reference_private_parameter_count": 2900,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.2201996790897337e-09,
+          5.293277960008858e-09,
+          3.7162710779768422e-09,
+          4.997345172302811e-09,
+          4.184099156127103e-09,
+          5.9664437575263115e-09,
+          2.390361603926549e-09,
+          4.0798496309686065e-09
+        ],
+        [
+          2.7176263835623425e-09,
+          4.611090784528284e-09,
+          2.9500326497765636e-09,
+          6.561442948026667e-09,
+          1.3656683805373466e-09,
+          3.6366509869935243e-09,
+          2.299679681494773e-09,
+          6.3514993352059596e-09
+        ],
+        [
+          3.150143073444575e-09,
+          2.762307952313526e-09,
+          2.6687057110047858e-08,
+          2.3569182195190405e-09,
+          2.744277772792098e-09,
+          4.566074309568449e-09,
+          2.2279629180779594e-09,
+          4.4288605076404395e-09
+        ],
+        [
+          1.253951542396213e-08,
+          4.7615406279809375e-09,
+          1.4020551191279163e-09,
+          1.1459274165686144e-08,
+          5.7418000370217994e-09,
+          9.242706876652053e-09,
+          6.787455037805877e-09,
+          2.7718068667575724e-09
+        ],
+        [
+          1.8210040248649496e-09,
+          2.20460186477606e-09,
+          3.4683177322658184e-09,
+          3.0368792511057814e-09,
+          4.5202786680152125e-09,
+          5.5907471857786e-07,
+          4.444502616603174e-09,
+          5.504984173918108e-09
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 5.5907471857786e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 2.6687057110047858e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 1.253951542396213e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 1.1459274165686144e-08
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 9.242706876652053e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 6.787455037805877e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 3,
+          "importance": 6.561442948026667e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 6.3514993352059596e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 5.9664437575263115e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 5.7418000370217994e-09
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 5.504984173918108e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 5.293277960008858e-09
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 4.997345172302811e-09
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 4.7615406279809375e-09
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 4.611090784528284e-09
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "341d1e149f543c4071e6089322f4903e0949ac2db12cd956f2969c0cded83689"
+    }
+  ],
+  "fold_ranks": [
+    [
+      4,
+      4,
+      2,
+      4,
+      6
+    ],
+    [
+      4,
+      3,
+      4,
+      3,
+      6
+    ],
+    [
+      3,
+      3,
+      3,
+      3,
+      8
+    ],
+    [
+      4,
+      2,
+      3,
+      5,
+      6
+    ],
+    [
+      4,
+      4,
+      3,
+      6,
+      3
+    ],
+    [
+      2,
+      4,
+      4,
+      2,
+      8
+    ],
+    [
+      7,
+      1,
+      2,
+      5,
+      5
+    ],
+    [
+      7,
+      3,
+      4,
+      2,
+      4
+    ],
+    [
+      3,
+      3,
+      4,
+      5,
+      5
+    ],
+    [
+      4,
+      4,
+      2,
+      7,
+      3
+    ]
+  ],
+  "allocation_hashes": [
+    "86b17750edd8199cfaddf6a0e3c75767ae379d25da9b386638d7768944bbcb21",
+    "c91db6b3ec9bc2f61c4f150129e6702201de5b6bb2398696f465e30b7d67569f",
+    "7f9ccb84a186d25068f158c55cd976064fc4b001b1b2ebd43c1332b03755dfea",
+    "a0dc7a22329d5fd66768220e8b19432d9ba9bfe19b7c2ab78172541883c5ddba",
+    "d5fd387d8a40e3b2879e53376e8fd4ee649698cd095f2001f5dd1280aba44b70",
+    "357e02084c4016739c6deed635737f2512ce4c8e93d4ee3c95d19feaee84ed66",
+    "6624e0df5d664bca520ecf3f1721d9bca810ff818b4235811135e56a12552efc",
+    "172bde8848e1eb929806a6115f21fdb12268b4c6daacd7cc5227c908f88c424c",
+    "b08a679daf5215f75c718ce21e60d3e61e2f06f32a1015f3e61af20ee040e29b",
+    "341d1e149f543c4071e6089322f4903e0949ac2db12cd956f2969c0cded83689"
+  ],
+  "rank_mean_by_modality": {
+    "PHENO": 4.2,
+    "ANAT": 3.1,
+    "FUNC": 3.1,
+    "MRI": 4.2,
+    "fMRI": 5.4
+  },
+  "rank_sample_sd_by_modality": {
+    "PHENO": 1.6193277068654823,
+    "ANAT": 0.9944289260117531,
+    "FUNC": 0.8755950357709131,
+    "MRI": 1.6865480854231356,
+    "fMRI": 1.776388345929897
+  },
+  "rank_frequency_by_modality": {
+    "PHENO": {
+      "2": 1,
+      "3": 2,
+      "4": 5,
+      "7": 2
+    },
+    "ANAT": {
+      "1": 1,
+      "2": 1,
+      "3": 4,
+      "4": 4
+    },
+    "FUNC": {
+      "2": 3,
+      "3": 3,
+      "4": 4
+    },
+    "MRI": {
+      "2": 2,
+      "3": 2,
+      "4": 1,
+      "5": 3,
+      "6": 1,
+      "7": 1
+    },
+    "fMRI": {
+      "3": 2,
+      "4": 1,
+      "5": 2,
+      "6": 3,
+      "8": 2
+    }
+  },
+  "fold_pairwise_rank_l1_mean": 7.911111111111111,
+  "fold_pairwise_rank_l1_max": 16.0,
+  "importance_mean_by_modality": {
+    "PHENO": 5.219882537300553e-09,
+    "ANAT": 4.529128891942315e-09,
+    "FUNC": 5.155772503150771e-09,
+    "MRI": 1.2914098994420055e-08,
+    "fMRI": 3.168254499407938e-08
+  },
+  "importance_max_by_modality": {
+    "PHENO": 2.0952581725522757e-08,
+    "ANAT": 3.398006594714244e-08,
+    "FUNC": 3.3334988011651405e-08,
+    "MRI": 4.993167462543753e-07,
+    "fMRI": 7.528944946972133e-07
+  },
+  "private_shared_norm_ratio_mean_by_modality": {
+    "PHENO": 0.008456438640132546,
+    "ANAT": 0.00842405108269304,
+    "FUNC": 0.00772124114446342,
+    "MRI": 0.008548931358382106,
+    "fMRI": 0.017940441938117148
+  },
+  "adapter_max_gradient": 0.01356218196451664,
+  "private_collapse_any": false,
+  "parameter_budget_all_folds": true,
+  "allocation_train_only_all_folds": true,
+  "scout_weight_transfer_count": 0
+}

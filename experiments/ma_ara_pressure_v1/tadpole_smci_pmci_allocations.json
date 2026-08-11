@@ -1,0 +1,3133 @@
+{
+  "fold_allocations": [
+    {
+      "fold": 0,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        10,
+        4,
+        12,
+        8,
+        6
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          3.624262909190098e-08,
+          1.2192656373875903e-06,
+          9.670089704224845e-07,
+          4.0540606495335357e-07,
+          3.871519905274494e-06,
+          1.7555281220132062e-06,
+          9.37325358213805e-06,
+          1.4711154475940625e-06,
+          5.622307160914884e-06,
+          4.031438630286397e-08,
+          3.6587059186554777e-07,
+          9.104184733410155e-06,
+          2.245469074970257e-06,
+          4.0760807020716273e-08,
+          3.8594068520122207e-07,
+          6.933626791393568e-07
+        ],
+        [
+          8.23519177600017e-08,
+          2.255364252131384e-06,
+          3.5506205072473963e-07,
+          2.4083214185167418e-08,
+          2.7093798705726596e-08,
+          1.2779941254085516e-08,
+          1.9320282177766352e-08,
+          4.0618585038910284e-07,
+          3.257633090470226e-07,
+          1.2021392264544674e-06,
+          9.742455577231236e-07,
+          1.2238990705210865e-07,
+          4.070177608748498e-08,
+          3.375990674584014e-08,
+          3.1109373847245843e-07,
+          2.7488150284298305e-07
+        ],
+        [
+          7.56173901091801e-06,
+          1.756167032971881e-06,
+          1.7947753189012714e-06,
+          2.7378692793716296e-07,
+          8.090669845918042e-07,
+          6.737110175043688e-07,
+          7.615338303303902e-07,
+          1.9221914201750187e-07,
+          1.4572209260974797e-05,
+          6.315507262437356e-06,
+          2.074431253920544e-06,
+          4.0800916064460524e-07,
+          1.079338541131985e-06,
+          1.1707676834082009e-05,
+          8.28239633142821e-07,
+          1.924994565739123e-06
+        ],
+        [
+          6.969238361688966e-08,
+          5.729057452464242e-08,
+          8.615826341680871e-07,
+          1.2269399577663188e-06,
+          1.8984481768475003e-06,
+          2.1825550547979315e-08,
+          2.985369358280597e-07,
+          1.078352923859336e-06,
+          8.334238255338351e-08,
+          1.0018690270806034e-05,
+          4.9410512680545294e-08,
+          9.601669959002198e-07,
+          5.118442734444801e-08,
+          2.593753303859573e-06,
+          2.8306787629971316e-08,
+          5.327511496517137e-08
+        ],
+        [
+          6.94942834940301e-07,
+          7.081928457426023e-07,
+          2.080677265773633e-07,
+          1.2766679841149724e-07,
+          3.164260805660117e-08,
+          1.2394305867901728e-06,
+          2.19101312173247e-06,
+          4.483776429180044e-08,
+          1.2923085495143468e-07,
+          4.335416873895433e-07,
+          5.46644523021338e-07,
+          6.796543839866142e-06,
+          4.934833022911911e-07,
+          1.9396575320038773e-07,
+          2.653183689140038e-06,
+          1.5184177492912447e-06
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 2,
+          "channel_index": 8,
+          "importance": 1.4572209260974797e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 1.1707676834082009e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 9,
+          "importance": 1.0018690270806034e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 9.37325358213805e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 11,
+          "importance": 9.104184733410155e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 7.56173901091801e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 11,
+          "importance": 6.796543839866142e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 9,
+          "importance": 6.315507262437356e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 5.622307160914884e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 3.871519905274494e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 14,
+          "importance": 2.653183689140038e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 2.593753303859573e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 2.255364252131384e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 2.245469074970257e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 2.19101312173247e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 10,
+          "importance": 2.074431253920544e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 15,
+          "importance": 1.924994565739123e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 1.8984481768475003e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 1.7947753189012714e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 1.756167032971881e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.7555281220132062e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 1.5184177492912447e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 7,
+          "importance": 1.4711154475940625e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 1.2394305867901728e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 1.2269399577663188e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.2192656373875903e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 9,
+          "importance": 1.2021392264544674e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 12,
+          "importance": 1.079338541131985e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 1.078352923859336e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 10,
+          "importance": 9.742455577231236e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 9.670089704224845e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 9.601669959002198e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 8.615826341680871e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 8.28239633142821e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 8.090669845918042e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "9fe46da89b5d06e09b4adbc6998c6d02a9a91f01549be98c72b36b22da05d625"
+    },
+    {
+      "fold": 1,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        10,
+        8,
+        6,
+        10,
+        6
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          8.658932420363358e-07,
+          2.082159879205639e-06,
+          1.5530640697912407e-07,
+          4.294878569142681e-06,
+          2.4370369294941105e-08,
+          1.197544784143645e-06,
+          4.143087272957385e-08,
+          4.457483534395252e-08,
+          5.794897181976431e-07,
+          6.821353794719289e-08,
+          2.8283928622825673e-08,
+          4.178313142376678e-08,
+          5.043117913459592e-07,
+          5.399539235214946e-08,
+          1.867704674098683e-07,
+          1.3614523886462905e-07
+        ],
+        [
+          2.430680147457661e-08,
+          2.335916353961477e-07,
+          2.6771404733951996e-08,
+          3.605349646611319e-08,
+          1.4506255092076842e-07,
+          3.9265342006784077e-08,
+          8.681502988171398e-08,
+          5.4983501673833266e-08,
+          2.2864824301549912e-07,
+          4.3220903809340496e-08,
+          1.432631154279362e-07,
+          8.070621703581712e-06,
+          5.991950622762578e-08,
+          1.572540705713228e-07,
+          6.772358897121178e-08,
+          3.0732412111210323e-06
+        ],
+        [
+          1.612229566382559e-08,
+          1.486087346503986e-07,
+          2.469629827346678e-08,
+          6.117661480244253e-08,
+          4.2297092246004667e-07,
+          4.462800608461097e-08,
+          1.4421060813268686e-07,
+          1.3141147444475194e-07,
+          6.288210081484183e-08,
+          1.4026888680450319e-08,
+          1.063066352596691e-07,
+          5.832365816448567e-06,
+          2.0026311675222224e-08,
+          8.718556362264165e-08,
+          3.876593709134736e-06,
+          1.7976008316621198e-08
+        ],
+        [
+          4.0336029265901436e-06,
+          3.1234086995429183e-08,
+          3.805730622572917e-06,
+          6.211778892299233e-06,
+          1.952116203912943e-07,
+          6.485922485276433e-08,
+          2.471771455540367e-07,
+          2.0211399950271582e-08,
+          3.91392359949926e-08,
+          1.3955117291730539e-08,
+          5.790838364355666e-06,
+          4.052706830203475e-08,
+          1.5772829409781345e-05,
+          1.7572497450669784e-07,
+          9.23496386142519e-06,
+          3.470187253560677e-08
+        ],
+        [
+          3.628203644002134e-08,
+          2.767418237553479e-08,
+          2.1174620705291244e-06,
+          1.2633875842548375e-05,
+          8.407102086957114e-08,
+          1.2778861789009033e-08,
+          4.025840665571247e-08,
+          7.141482837186722e-07,
+          9.574675641407623e-08,
+          3.0414302008668823e-07,
+          9.392746379754983e-08,
+          1.2749263961564241e-08,
+          5.630704731471599e-08,
+          3.0271939976851526e-07,
+          8.290752099937059e-08,
+          5.537823593720001e-08
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 1.5772829409781345e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 1.2633875842548375e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 14,
+          "importance": 9.23496386142519e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 11,
+          "importance": 8.070621703581712e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 6.211778892299233e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 5.832365816448567e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 10,
+          "importance": 5.790838364355666e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 4.294878569142681e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 4.0336029265901436e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 3.876593709134736e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 3.805730622572917e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 3.0732412111210323e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 2,
+          "importance": 2.1174620705291244e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 2.082159879205639e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.197544784143645e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 8.658932420363358e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 7.141482837186722e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 5.794897181976431e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 5.043117913459592e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 4.2297092246004667e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 9,
+          "importance": 3.0414302008668823e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 3.0271939976851526e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 2.471771455540367e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 2.335916353961477e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 8,
+          "importance": 2.2864824301549912e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 1.952116203912943e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 14,
+          "importance": 1.867704674098683e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 1.7572497450669784e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 13,
+          "importance": 1.572540705713228e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 1.5530640697912407e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 1.486087346503986e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 4,
+          "importance": 1.4506255092076842e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 6,
+          "importance": 1.4421060813268686e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 10,
+          "importance": 1.432631154279362e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 15,
+          "importance": 1.3614523886462905e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "782baac9b76def45206a55417a7e59427543441fadaccf463a37a5977795807e"
+    },
+    {
+      "fold": 2,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        9,
+        5,
+        11,
+        9,
+        6
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          1.3380600193536382e-06,
+          1.7556611437501599e-06,
+          6.946299611806388e-07,
+          7.587701539623749e-06,
+          9.758343018490587e-07,
+          1.2476816439973683e-06,
+          1.1012222379935086e-05,
+          3.4598604516605635e-07,
+          1.7339262174722547e-06,
+          1.5292149464354955e-07,
+          2.848313019013241e-06,
+          6.759019749565621e-07,
+          3.4678399786252285e-06,
+          7.571638586483821e-08,
+          5.072841058294517e-07,
+          1.036047425564916e-06
+        ],
+        [
+          1.0926321427203448e-06,
+          5.371715904920212e-07,
+          5.581112877869958e-07,
+          7.024598919560619e-07,
+          2.4813025442554947e-07,
+          7.116261128994221e-07,
+          6.574441852422827e-07,
+          1.4766517531214787e-06,
+          1.1901412588891345e-06,
+          9.887882607162182e-07,
+          1.7126112815260233e-07,
+          5.55132445254798e-06,
+          8.439306395711667e-07,
+          4.6765627726178844e-07,
+          7.540956765563226e-07,
+          4.447800003938572e-06
+        ],
+        [
+          1.7829125515030107e-06,
+          3.5782299679803757e-07,
+          4.1948725022384247e-07,
+          1.110461852841896e-06,
+          1.0645782527533625e-05,
+          7.625406059908735e-08,
+          1.7864401674656554e-06,
+          3.880539283738139e-06,
+          5.145126896409361e-06,
+          2.5375023885052387e-06,
+          6.650743163610161e-07,
+          1.8556065717157044e-06,
+          3.467033389015411e-07,
+          5.705926057284757e-06,
+          2.100078301641714e-05,
+          1.2112681228359007e-06
+        ],
+        [
+          1.8302029116754519e-07,
+          1.923321172384401e-06,
+          2.3335711506678803e-05,
+          5.024222315225746e-07,
+          1.9684573830222312e-07,
+          8.129493416896733e-07,
+          1.8629594838534986e-06,
+          2.229060687909887e-06,
+          2.699203961230147e-07,
+          1.9710160800257627e-06,
+          1.2956258057230931e-05,
+          1.1290192537397655e-06,
+          2.9304732276578673e-06,
+          1.5122478944748736e-06,
+          1.3735806739666623e-07,
+          4.507068635861579e-07
+        ],
+        [
+          2.613535303833083e-07,
+          1.9143902600232557e-07,
+          3.321831984504518e-07,
+          1.0960963377523344e-06,
+          1.2393380478839818e-07,
+          2.7739115438313475e-06,
+          3.086202132891581e-07,
+          1.3344809159286285e-06,
+          9.815738331148014e-07,
+          1.0835203662445594e-05,
+          6.136539216818028e-08,
+          9.164621576219382e-08,
+          1.3480568874780633e-06,
+          5.833424877636611e-06,
+          2.1839593877403602e-07,
+          1.6263611623657604e-07
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 2.3335711506678803e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 2.100078301641714e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 10,
+          "importance": 1.2956258057230931e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 1.1012222379935086e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 9,
+          "importance": 1.0835203662445594e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 1.0645782527533625e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 7.587701539623749e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 5.833424877636611e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 5.705926057284757e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 11,
+          "importance": 5.55132445254798e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 8,
+          "importance": 5.145126896409361e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 4.447800003938572e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 7,
+          "importance": 3.880539283738139e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 3.4678399786252285e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 2.9304732276578673e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 2.848313019013241e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 2.7739115438313475e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 9,
+          "importance": 2.5375023885052387e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 2.229060687909887e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 9,
+          "importance": 1.9710160800257627e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 1.923321172384401e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 1.8629594838534986e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 1.8556065717157044e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 6,
+          "importance": 1.7864401674656554e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 1.7829125515030107e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.7556611437501599e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 1.7339262174722547e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 1.5122478944748736e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 1.4766517531214787e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 12,
+          "importance": 1.3480568874780633e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 1.3380600193536382e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 1.3344809159286285e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.2476816439973683e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 15,
+          "importance": 1.2112681228359007e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 8,
+          "importance": 1.1901412588891345e-06
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "93e419e4c9170016a91ac9dbb5aa8644d851616ebe65f563f6e57bf8dfec4f03"
+    },
+    {
+      "fold": 3,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        10,
+        8,
+        8,
+        9,
+        5
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          3.9460316523452473e-07,
+          9.498022839200121e-07,
+          3.9421910381085646e-07,
+          6.475806097872041e-07,
+          4.0488442202054654e-07,
+          4.401824368037785e-07,
+          3.492436916876268e-07,
+          6.760999315876429e-08,
+          2.2717717627708224e-07,
+          5.00148449907609e-07,
+          3.717213360342979e-06,
+          6.701029441580165e-07,
+          9.188882086975145e-07,
+          1.8854490567185475e-07,
+          1.2746429655027676e-06,
+          8.688999789179731e-06
+        ],
+        [
+          4.1816594482071605e-07,
+          5.615796833441342e-07,
+          6.722085040722925e-07,
+          3.192004936389e-08,
+          3.368467374424984e-07,
+          1.9262897806685964e-07,
+          1.151183099819049e-06,
+          4.144369529729008e-07,
+          1.5120654513064454e-07,
+          1.2736568001952671e-06,
+          9.959298954831382e-08,
+          3.8286432056919023e-07,
+          1.7804622754797053e-07,
+          6.054541835076864e-07,
+          1.2026775370776114e-06,
+          6.654657278181702e-07
+        ],
+        [
+          4.296602664465855e-08,
+          1.4848902778381407e-06,
+          5.768184717361664e-07,
+          3.291497340416114e-07,
+          5.24981810950514e-07,
+          1.001242265608742e-06,
+          1.4152838073815268e-06,
+          9.426579215332454e-08,
+          2.784307782247768e-07,
+          3.143097671301325e-07,
+          3.9068663320471603e-07,
+          2.117369023130915e-07,
+          5.603441324450601e-08,
+          9.406446067946023e-07,
+          2.9840686308801857e-07,
+          6.625754473351511e-07
+        ],
+        [
+          7.515125781002608e-07,
+          1.467659279262474e-06,
+          7.689433510847562e-07,
+          1.2898067091592722e-07,
+          2.9711264415799716e-07,
+          2.536045271652121e-06,
+          1.249194447954193e-07,
+          1.6413318856476115e-07,
+          4.198387091154393e-06,
+          4.370529521779876e-07,
+          8.059183760018516e-07,
+          1.75961639177749e-07,
+          3.0401668345989623e-06,
+          7.416140138046834e-06,
+          2.911502681723608e-07,
+          2.5055944458289656e-07
+        ],
+        [
+          1.7065915431537239e-07,
+          3.44318378945018e-08,
+          3.752108811117856e-07,
+          9.999605711786193e-08,
+          6.7374769251205e-08,
+          1.0773290800204183e-07,
+          4.1045944841001667e-07,
+          2.1118539418512355e-07,
+          1.4568329701351912e-08,
+          1.592998563677088e-07,
+          7.763954889207751e-07,
+          1.6770277257117625e-08,
+          6.980987223421512e-07,
+          1.431892954199939e-07,
+          4.6237374474837193e-07,
+          7.209076707286835e-07
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 0,
+          "channel_index": 15,
+          "importance": 8.688999789179731e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 7.416140138046834e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 8,
+          "importance": 4.198387091154393e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 3.717213360342979e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 3.0401668345989623e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 2.536045271652121e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 1.4848902778381407e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 1.467659279262474e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 6,
+          "importance": 1.4152838073815268e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 14,
+          "importance": 1.2746429655027676e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 9,
+          "importance": 1.2736568001952671e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 14,
+          "importance": 1.2026775370776114e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 6,
+          "importance": 1.151183099819049e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 1.001242265608742e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 9.498022839200121e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 9.406446067946023e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 9.188882086975145e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 10,
+          "importance": 8.059183760018516e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 10,
+          "importance": 7.763954889207751e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 7.689433510847562e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 7.515125781002608e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 7.209076707286835e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 12,
+          "importance": 6.980987223421512e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 2,
+          "importance": 6.722085040722925e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 11,
+          "importance": 6.701029441580165e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 6.654657278181702e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 15,
+          "importance": 6.625754473351511e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 6.475806097872041e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 13,
+          "importance": 6.054541835076864e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 5.768184717361664e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 5.615796833441342e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 5.24981810950514e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 9,
+          "importance": 5.00148449907609e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 14,
+          "importance": 4.6237374474837193e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 4.401824368037785e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "c20fea22c5a972895cc3af2ab381699d5dbaa013875e1a0e7a63e312aa8828d0"
+    },
+    {
+      "fold": 4,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        11,
+        4,
+        8,
+        12,
+        5
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.4778538660287184e-06,
+          1.1085176613826686e-06,
+          5.195105762676291e-07,
+          7.027316223446821e-06,
+          1.3492342542110124e-07,
+          1.0233089028955473e-06,
+          9.025739095774055e-07,
+          5.420600568739299e-07,
+          1.0577038387911877e-07,
+          3.789652722557554e-07,
+          2.165268438105781e-06,
+          2.9406289726360814e-07,
+          6.79785360878857e-07,
+          2.845747078219496e-07,
+          1.5574974455794144e-06,
+          7.804673881968204e-07
+        ],
+        [
+          1.0934591632887123e-07,
+          4.611021625565454e-07,
+          1.1692525157566933e-07,
+          6.866673183764337e-08,
+          5.719896631431666e-08,
+          7.050900796876652e-08,
+          1.363892806944955e-07,
+          6.536839289807801e-07,
+          1.4336766088462895e-06,
+          1.8283964036166547e-07,
+          6.273208992737732e-07,
+          2.6126802726995787e-07,
+          1.895996651907219e-07,
+          1.9466251569530408e-07,
+          1.474837958147261e-07,
+          3.9353249468843984e-07
+        ],
+        [
+          8.121044794004157e-07,
+          2.4303927594418964e-07,
+          9.321192427321229e-07,
+          1.4117111924421236e-06,
+          6.425987527249894e-06,
+          1.714692901206967e-07,
+          6.635407851960984e-08,
+          2.112655430695784e-07,
+          1.0874664021413457e-07,
+          1.1437945322093629e-06,
+          3.7649093631846365e-07,
+          9.217402813938252e-08,
+          1.6940209054520475e-07,
+          8.318861655812272e-07,
+          4.129574461933564e-06,
+          1.8253627140240488e-07
+        ],
+        [
+          3.297687430434239e-06,
+          6.009314832341063e-08,
+          4.630366901041516e-06,
+          5.36121593282173e-07,
+          2.266811278673448e-06,
+          1.1904859363434565e-07,
+          1.4402044129398418e-06,
+          5.469622026696547e-06,
+          1.0476540824302284e-07,
+          1.9398169147609018e-06,
+          4.0786532706237487e-07,
+          1.4447673467287516e-06,
+          8.060597402770738e-06,
+          8.670470407886314e-07,
+          2.5408555912758245e-06,
+          6.419736911456582e-07
+        ],
+        [
+          2.571798455712658e-07,
+          4.848186610028961e-07,
+          9.33041992079999e-08,
+          8.836949931939988e-08,
+          3.859295888734272e-07,
+          6.541600954487253e-08,
+          1.4270386605042772e-06,
+          6.786188644324044e-07,
+          2.9178462436716493e-07,
+          3.2510522115269104e-07,
+          8.822273378636305e-08,
+          1.065461564065795e-06,
+          3.3204467486581115e-07,
+          1.3995627953361126e-06,
+          4.7142848216020943e-07,
+          3.6315947603443685e-07
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 8.060597402770738e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 7.027316223446821e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 6.425987527249894e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 5.469622026696547e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 4.630366901041516e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 4.129574461933564e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 3.297687430434239e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 14,
+          "importance": 2.5408555912758245e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 2.4778538660287184e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 2.266811278673448e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 2.165268438105781e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 9,
+          "importance": 1.9398169147609018e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 14,
+          "importance": 1.5574974455794144e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 1.4447673467287516e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 1.4402044129398418e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 8,
+          "importance": 1.4336766088462895e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 1.4270386605042772e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 1.4117111924421236e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 1.3995627953361126e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 9,
+          "importance": 1.1437945322093629e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.1085176613826686e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 11,
+          "importance": 1.065461564065795e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.0233089028955473e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 9.321192427321229e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 9.025739095774055e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 8.670470407886314e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 8.318861655812272e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 8.121044794004157e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 15,
+          "importance": 7.804673881968204e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 6.79785360878857e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 6.786188644324044e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 6.536839289807801e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 15,
+          "importance": 6.419736911456582e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 10,
+          "importance": 6.273208992737732e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 7,
+          "importance": 5.420600568739299e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "370e80474891102e34380dcdf0e06679560fa35776abdd2e4ac31efbdba67d91"
+    },
+    {
+      "fold": 5,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        4,
+        8,
+        10,
+        8,
+        10
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          2.6693766854826587e-06,
+          3.638319474854047e-06,
+          1.1991930963569917e-05,
+          6.773751658239486e-07,
+          1.6408486809507963e-07,
+          2.741732305626353e-06,
+          8.58941769863334e-07,
+          1.7959980330589315e-05,
+          3.826099709174941e-06,
+          2.3124880914082135e-05,
+          3.0432158723220916e-07,
+          9.778208294252184e-08,
+          2.587901357921383e-06,
+          1.1897174664907066e-05,
+          2.126709625714449e-06,
+          8.41888029965627e-06
+        ],
+        [
+          1.0053452947530675e-07,
+          2.2332596059974384e-05,
+          4.218042118435066e-05,
+          2.3259600429641718e-05,
+          2.4274365685982748e-05,
+          3.5800959808489715e-05,
+          3.898018399433711e-06,
+          1.8336721173477385e-07,
+          5.278068890087042e-07,
+          1.8028946872432388e-07,
+          7.857874318695701e-06,
+          1.1279387849483435e-06,
+          8.784826594080744e-06,
+          1.9384736917363332e-05,
+          2.5966951419411084e-05,
+          1.931992674083415e-06
+        ],
+        [
+          3.40719390194254e-05,
+          1.9374894472034233e-05,
+          1.4897803456009213e-05,
+          2.0977837242524302e-05,
+          2.0739632086719374e-07,
+          1.5787689275449095e-05,
+          1.0961198648661367e-07,
+          2.9888074218208416e-07,
+          6.80213628135869e-05,
+          1.698421286873819e-05,
+          2.2045678784187864e-05,
+          1.5523731034383903e-06,
+          5.413221013329861e-06,
+          1.4840211212698434e-07,
+          2.1428696423442181e-07,
+          2.832949717679124e-05
+        ],
+        [
+          4.457866420217087e-05,
+          3.9164541079705244e-05,
+          2.8381850727657723e-06,
+          2.80263843929992e-06,
+          2.179057668885471e-05,
+          6.61862174989392e-06,
+          1.1485824332914656e-07,
+          4.8064983374159625e-06,
+          6.158158567269011e-06,
+          6.194417659735243e-05,
+          8.370163583213966e-07,
+          1.4637584134810845e-05,
+          1.4024647648838835e-07,
+          3.1761873465161605e-05,
+          7.911129779311763e-07,
+          3.082819188066766e-05
+        ],
+        [
+          1.8474540197351006e-05,
+          3.6267581152503674e-05,
+          2.372738303556578e-06,
+          6.429384285354333e-07,
+          1.5667442091356898e-05,
+          4.081508012865145e-05,
+          1.9664211571415478e-05,
+          3.499193263922586e-06,
+          4.3133550966940666e-07,
+          6.592503365199163e-07,
+          1.7634478832329297e-05,
+          1.1262250485155522e-05,
+          1.5608576228813783e-05,
+          2.058712026634195e-07,
+          2.9259765476323074e-05,
+          1.53883488276102e-05
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 2,
+          "channel_index": 8,
+          "importance": 6.80213628135869e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 9,
+          "importance": 6.194417659735243e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 4.457866420217087e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 2,
+          "importance": 4.218042118435066e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 4.081508012865145e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 3.9164541079705244e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 3.6267581152503674e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 5,
+          "importance": 3.5800959808489715e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 3.40719390194254e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 3.1761873465161605e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 15,
+          "importance": 3.082819188066766e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 14,
+          "importance": 2.9259765476323074e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 15,
+          "importance": 2.832949717679124e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 14,
+          "importance": 2.5966951419411084e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 4,
+          "importance": 2.4274365685982748e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 3,
+          "importance": 2.3259600429641718e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 9,
+          "importance": 2.3124880914082135e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 1,
+          "importance": 2.2332596059974384e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 10,
+          "importance": 2.2045678784187864e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 2.179057668885471e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 2.0977837242524302e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 1.9664211571415478e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 13,
+          "importance": 1.9384736917363332e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 1.9374894472034233e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 0,
+          "importance": 1.8474540197351006e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 7,
+          "importance": 1.7959980330589315e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 10,
+          "importance": 1.7634478832329297e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 9,
+          "importance": 1.698421286873819e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 1.5787689275449095e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 1.5667442091356898e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 12,
+          "importance": 1.5608576228813783e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 1.53883488276102e-05
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 1.4897803456009213e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 1.4637584134810845e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 1.1991930963569917e-05
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "2a17230a9e510e4f960baac1f865f81dbc45b3f7841430b91cf37303e28bbf44"
+    },
+    {
+      "fold": 6,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        8,
+        3,
+        9,
+        13,
+        7
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          1.1647619737988106e-06,
+          9.871645848202692e-07,
+          2.4519664925309034e-07,
+          4.052947783685567e-06,
+          2.5457557180907937e-08,
+          4.037328915911937e-06,
+          4.874511874722751e-07,
+          2.88752974298111e-07,
+          4.652139661381381e-08,
+          1.4885717583685759e-06,
+          1.2023534360274477e-06,
+          2.724909747818737e-06,
+          7.636957275834507e-07,
+          2.6635190456094733e-07,
+          6.149778297708133e-07,
+          1.0212757729095538e-05
+        ],
+        [
+          7.138506848874098e-07,
+          8.811168001129861e-07,
+          6.799398362336215e-07,
+          8.067677920195656e-07,
+          6.213552709917857e-07,
+          3.4443237751212175e-07,
+          6.801264888571735e-06,
+          3.235802209429919e-07,
+          4.456077283378484e-07,
+          7.512122635216665e-07,
+          3.1026447452148886e-07,
+          8.058215031553729e-07,
+          4.571545101192968e-07,
+          2.691225344435546e-07,
+          2.009637200303532e-06,
+          3.9524822510775097e-07
+        ],
+        [
+          2.2065588534720288e-07,
+          1.3999268626503425e-06,
+          1.3111542951884152e-06,
+          1.2737895028387132e-06,
+          1.912551578540143e-06,
+          1.0636346862326727e-06,
+          3.375516233886496e-06,
+          1.040200308705917e-06,
+          1.4441488560283136e-07,
+          2.577044093057579e-07,
+          1.4899918944852418e-06,
+          1.418168175154031e-06,
+          2.261471225302842e-07,
+          1.942542583926849e-06,
+          8.368316963303111e-07,
+          3.896968466001329e-07
+        ],
+        [
+          4.160050182818268e-06,
+          2.0018486956271053e-06,
+          3.165117414841874e-06,
+          2.1816358221906253e-06,
+          2.1884589800450183e-06,
+          1.1114750347125412e-05,
+          5.028571482935563e-06,
+          1.3066840945003537e-05,
+          2.5752385123038945e-05,
+          9.713686994276729e-07,
+          9.358621550552985e-07,
+          2.8220969837724684e-06,
+          1.0731494026713473e-06,
+          1.0528903539584736e-05,
+          3.6528318325406807e-07,
+          2.1018218678425866e-06
+        ],
+        [
+          1.3850925961095507e-07,
+          4.899978217121192e-07,
+          2.440284507041645e-07,
+          1.948497319426836e-06,
+          1.3830033049387137e-07,
+          1.3114329518985646e-07,
+          5.782540918197161e-07,
+          2.872042496642026e-06,
+          7.112261038701976e-09,
+          8.319387402655764e-07,
+          3.4422354355777884e-06,
+          2.539233769160091e-07,
+          3.0088811596364534e-06,
+          1.332143234615508e-06,
+          4.60026083952746e-07,
+          4.892473694668029e-06
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 8,
+          "importance": 2.5752385123038945e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 1.3066840945003537e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 1.1114750347125412e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 13,
+          "importance": 1.0528903539584736e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 15,
+          "importance": 1.0212757729095538e-05
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 6,
+          "importance": 6.801264888571735e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 5.028571482935563e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 4.892473694668029e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 0,
+          "importance": 4.160050182818268e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 4.052947783685567e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 4.037328915911937e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 10,
+          "importance": 3.4422354355777884e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 6,
+          "importance": 3.375516233886496e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 3.165117414841874e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 12,
+          "importance": 3.0088811596364534e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 2.872042496642026e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 2.8220969837724684e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 11,
+          "importance": 2.724909747818737e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 2.1884589800450183e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 2.1816358221906253e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 15,
+          "importance": 2.1018218678425866e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 14,
+          "importance": 2.009637200303532e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 2.0018486956271053e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 1.948497319426836e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 1.942542583926849e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 1.912551578540143e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 10,
+          "importance": 1.4899918944852418e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 9,
+          "importance": 1.4885717583685759e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 1.418168175154031e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 1,
+          "importance": 1.3999268626503425e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 1.332143234615508e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 1.3111542951884152e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 3,
+          "importance": 1.2737895028387132e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 1.2023534360274477e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 1.1647619737988106e-06
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "b82865e5e0eb0f6561dcf7e49a5f761e58a199adcc1e34b88a1183731d891bf8"
+    },
+    {
+      "fold": 7,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        9,
+        5,
+        9,
+        8,
+        9
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          4.4480768452149827e-07,
+          7.122406211044061e-07,
+          1.6960811054384805e-06,
+          4.91925462597164e-06,
+          4.3808292907923903e-07,
+          9.704059847470822e-07,
+          5.691548807014288e-06,
+          4.1921248053562e-08,
+          9.920637142028754e-06,
+          2.6926379978939027e-07,
+          5.118446510849511e-06,
+          1.946986128949525e-06,
+          1.0136569073264658e-06,
+          1.2502279289330583e-07,
+          1.6542479260678555e-07,
+          7.450391751792803e-07
+        ],
+        [
+          7.451084865968087e-08,
+          1.8833042510836182e-07,
+          5.015642384395808e-08,
+          4.6611086732974456e-08,
+          2.2326788681583494e-07,
+          9.943273793452277e-08,
+          1.945037210246127e-07,
+          3.1312361948840364e-06,
+          2.771720562628743e-06,
+          1.5430759290894355e-07,
+          9.170760145163186e-08,
+          1.2006692661064895e-06,
+          1.4871130002161892e-07,
+          1.8525984287238402e-07,
+          6.357817120889142e-07,
+          2.1505658925996592e-06
+        ],
+        [
+          3.419679313375539e-07,
+          3.0913187297220036e-07,
+          2.0783646997782236e-06,
+          7.006252871174555e-08,
+          5.860970149081806e-07,
+          2.262754383565867e-06,
+          8.885838028354965e-07,
+          5.980513899968734e-06,
+          1.458057004859319e-07,
+          1.1073657883887222e-07,
+          3.4213097968240997e-06,
+          1.6088087043621354e-06,
+          2.501578301609126e-06,
+          4.81708668974478e-07,
+          1.4354925233964478e-06,
+          1.1760397871204563e-07
+        ],
+        [
+          2.736273369249935e-07,
+          4.7662043128396564e-07,
+          4.8875010813157e-06,
+          7.214613972670922e-07,
+          1.444662277505511e-05,
+          1.8233412915724663e-07,
+          5.755730353455873e-07,
+          1.2831973342795556e-05,
+          2.7218455469340525e-07,
+          3.3474098597780776e-07,
+          4.867267337300703e-07,
+          3.296344350390109e-06,
+          5.108690913264924e-06,
+          4.252142070178662e-07,
+          1.001958183076425e-06,
+          8.61880542475974e-07
+        ],
+        [
+          1.2787441643057173e-06,
+          9.394869216096823e-07,
+          1.373947261400017e-07,
+          5.756661642921648e-06,
+          3.5850912224496686e-08,
+          3.3951603008256e-05,
+          1.7519421902287908e-07,
+          2.02545244170742e-07,
+          2.4688912206361376e-07,
+          9.001726969696717e-07,
+          6.280935579717334e-08,
+          7.908988266506774e-07,
+          1.9522395379952966e-07,
+          9.062243999115015e-06,
+          2.7517552485164334e-06,
+          1.0258575388148357e-06
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 4,
+          "channel_index": 5,
+          "importance": 3.3951603008256e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 1.444662277505511e-05
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 1.2831973342795556e-05
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 9.920637142028754e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 9.062243999115015e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 7,
+          "importance": 5.980513899968734e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 5.756661642921648e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 5.691548807014288e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 5.118446510849511e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 5.108690913264924e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 4.91925462597164e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 4.8875010813157e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 10,
+          "importance": 3.4213097968240997e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 3.296344350390109e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 3.1312361948840364e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 8,
+          "importance": 2.771720562628743e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 14,
+          "importance": 2.7517552485164334e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 12,
+          "importance": 2.501578301609126e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 5,
+          "importance": 2.262754383565867e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 2.1505658925996592e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 2,
+          "importance": 2.0783646997782236e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 11,
+          "importance": 1.946986128949525e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 2,
+          "importance": 1.6960811054384805e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 1.6088087043621354e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 1.4354925233964478e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 0,
+          "importance": 1.2787441643057173e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 11,
+          "importance": 1.2006692661064895e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 1.0258575388148357e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 1.0136569073264658e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 14,
+          "importance": 1.001958183076425e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 9.704059847470822e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 9.394869216096823e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 9,
+          "importance": 9.001726969696717e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 6,
+          "importance": 8.885838028354965e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 15,
+          "importance": 8.61880542475974e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "dff9376c552a0b18fe5ab89d889c832adc068cd74cb23d391853cc8828fe9017"
+    },
+    {
+      "fold": 8,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        11,
+        6,
+        6,
+        13,
+        4
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          1.159655271317896e-06,
+          1.2122468420356892e-06,
+          3.3907743247200174e-07,
+          3.018009137213797e-06,
+          1.3304486495176597e-07,
+          1.2368886896310483e-06,
+          1.1283387421904858e-06,
+          1.836596173952945e-07,
+          1.5420255161615648e-06,
+          7.048586870299187e-08,
+          2.836101537198792e-06,
+          5.932832453879557e-07,
+          3.151295354300157e-06,
+          1.4465501282239837e-08,
+          2.181691173190697e-06,
+          1.7185856939204316e-06
+        ],
+        [
+          8.338382595269714e-06,
+          1.355392931017472e-07,
+          7.68395889918345e-08,
+          3.184605859534879e-07,
+          6.748593515670429e-08,
+          7.365946898956815e-08,
+          2.608804501289882e-07,
+          8.121661793267052e-08,
+          1.7081040699034094e-06,
+          4.944644712935895e-07,
+          7.350526414059418e-07,
+          1.1275564958926119e-06,
+          1.3382699761760554e-07,
+          1.4505304096551153e-07,
+          1.7269017658562704e-07,
+          4.860379862199375e-06
+        ],
+        [
+          4.5059264535854367e-07,
+          9.329857532876398e-08,
+          9.768272291195204e-08,
+          7.987725429011603e-08,
+          5.57718226315239e-06,
+          1.6339758602726464e-07,
+          6.820116719434268e-07,
+          3.863702538160013e-06,
+          1.0296596474292779e-07,
+          1.9089386811503897e-07,
+          1.0241470232356815e-07,
+          5.808573928856554e-06,
+          6.570990195157163e-08,
+          5.067142393827593e-06,
+          1.0885236055078422e-06,
+          6.037923134356329e-07
+        ],
+        [
+          5.318770346695465e-08,
+          3.7334464698794277e-06,
+          2.0448965292686527e-06,
+          1.9458076640503853e-06,
+          1.6158392680057247e-06,
+          1.1708663443104725e-06,
+          4.688629204057698e-06,
+          2.3644971681547553e-06,
+          1.4796826567753324e-06,
+          9.464774938931912e-08,
+          3.2189249122014333e-06,
+          1.5346482140671111e-06,
+          1.1183462229105463e-05,
+          2.9673277536076414e-07,
+          1.5249804291921613e-06,
+          7.19686509916998e-08
+        ],
+        [
+          1.0968297741220055e-07,
+          7.686703620893961e-08,
+          7.462230653489423e-07,
+          5.277068130180363e-07,
+          3.721617961019905e-08,
+          3.927179199129199e-07,
+          6.693194990360013e-08,
+          1.1428935352820533e-06,
+          4.4999485847043343e-07,
+          9.063335390812532e-06,
+          6.572099349064267e-07,
+          5.219061683647416e-07,
+          1.8648259741183974e-07,
+          2.068682236301179e-07,
+          6.686714161735984e-08,
+          1.975718935057871e-07
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 1.1183462229105463e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 9,
+          "importance": 9.063335390812532e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 0,
+          "importance": 8.338382595269714e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 5.808573928856554e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 5.57718226315239e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 13,
+          "importance": 5.067142393827593e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 4.860379862199375e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 4.688629204057698e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 7,
+          "importance": 3.863702538160013e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 1,
+          "importance": 3.7334464698794277e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 10,
+          "importance": 3.2189249122014333e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 3.151295354300157e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 3,
+          "importance": 3.018009137213797e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 2.836101537198792e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 7,
+          "importance": 2.3644971681547553e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 14,
+          "importance": 2.181691173190697e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 2.0448965292686527e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 3,
+          "importance": 1.9458076640503853e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 15,
+          "importance": 1.7185856939204316e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 8,
+          "importance": 1.7081040699034094e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 4,
+          "importance": 1.6158392680057247e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 1.5420255161615648e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 11,
+          "importance": 1.5346482140671111e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 14,
+          "importance": 1.5249804291921613e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 8,
+          "importance": 1.4796826567753324e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 1.2368886896310483e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 1.2122468420356892e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 5,
+          "importance": 1.1708663443104725e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 1.159655271317896e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 1.1428935352820533e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 6,
+          "importance": 1.1283387421904858e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 11,
+          "importance": 1.1275564958926119e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 1.0885236055078422e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 2,
+          "importance": 7.462230653489423e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 10,
+          "importance": 7.350526414059418e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "d9a846dee964be1c48adc863952ff4607ab055995202ac265e759a1f641268b6"
+    },
+    {
+      "fold": 9,
+      "modality_names": [
+        "MRI",
+        "CSF",
+        "RISK_FACTOR",
+        "COGNITIVE_TEST",
+        "ROI_AVERAGE"
+      ],
+      "ranks": [
+        8,
+        7,
+        7,
+        6,
+        12
+      ],
+      "total_rank": 40,
+      "rank_budget": 40,
+      "minimum_rank": 1,
+      "per_rank_parameter_cost": 193,
+      "private_parameter_count": 8200,
+      "reference_private_parameter_count": 8200,
+      "budget_compliant": true,
+      "importance": [
+        [
+          3.835723957907853e-06,
+          2.1525493095968806e-06,
+          9.847039452272919e-08,
+          2.496798778787916e-07,
+          8.533575570693185e-07,
+          2.440188326012768e-06,
+          2.9984644408489355e-07,
+          3.056935291121366e-08,
+          6.2328184615276336e-06,
+          2.616517073756134e-07,
+          1.3893800505347188e-06,
+          1.2325495830670495e-07,
+          3.3047645517008375e-06,
+          4.1353663694869185e-08,
+          2.3556081236618275e-07,
+          2.2038157704429794e-07
+        ],
+        [
+          7.230591588271987e-08,
+          1.1396148169862991e-07,
+          3.186576009954964e-06,
+          6.74856796366257e-08,
+          1.8559975259992185e-07,
+          9.552723567378204e-08,
+          4.965574317371133e-06,
+          7.15414405520817e-07,
+          7.25569196792859e-08,
+          9.825551768745871e-08,
+          6.896666922014588e-08,
+          1.683952207935072e-06,
+          7.815248599759792e-06,
+          1.352738615557706e-07,
+          3.922185943394105e-07,
+          8.695728376939296e-07
+        ],
+        [
+          1.4598916891385278e-06,
+          1.3063736410905235e-07,
+          1.6226375646188497e-07,
+          1.668511498732618e-07,
+          8.542931362558341e-07,
+          5.2046340448148176e-08,
+          2.447139308317939e-07,
+          1.692618986590515e-06,
+          4.9601695017029964e-06,
+          8.156867510090262e-08,
+          1.3537932523151787e-07,
+          4.781650222259253e-07,
+          1.7625196466139523e-07,
+          4.7219142792207047e-07,
+          5.323563552591766e-07,
+          3.132685358740275e-07
+        ],
+        [
+          5.5317780586699074e-08,
+          5.540720555260541e-08,
+          6.570847767598241e-06,
+          4.42435214640685e-07,
+          3.267322505948403e-07,
+          1.5171183560814087e-07,
+          7.737365524775009e-07,
+          8.010334660531043e-08,
+          5.846441358675914e-07,
+          2.616133534143182e-06,
+          1.4172789166711308e-07,
+          1.7455572242103913e-07,
+          2.3131670333332715e-05,
+          1.9599952794948284e-07,
+          3.366233542437655e-07,
+          2.4143438569256387e-07
+        ],
+        [
+          7.737673400762136e-08,
+          3.355478329090499e-06,
+          3.34721524204343e-08,
+          1.0297435900115418e-05,
+          5.007220508406545e-06,
+          2.513887679081827e-07,
+          7.859761850691478e-06,
+          9.111417429392075e-07,
+          7.1562750090929075e-06,
+          2.312522426572899e-07,
+          2.4113200535931703e-06,
+          4.509565832002043e-06,
+          1.2564275321541913e-07,
+          6.897341083929436e-07,
+          1.2862059765159603e-05,
+          1.2575499689431318e-06
+        ]
+      ],
+      "selected_additional_channels": [
+        {
+          "modality_index": 3,
+          "channel_index": 12,
+          "importance": 2.3131670333332715e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 14,
+          "importance": 1.2862059765159603e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 3,
+          "importance": 1.0297435900115418e-05
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 6,
+          "importance": 7.859761850691478e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 12,
+          "importance": 7.815248599759792e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 8,
+          "importance": 7.1562750090929075e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 2,
+          "importance": 6.570847767598241e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 8,
+          "importance": 6.2328184615276336e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 4,
+          "importance": 5.007220508406545e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 6,
+          "importance": 4.965574317371133e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 8,
+          "importance": 4.9601695017029964e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 11,
+          "importance": 4.509565832002043e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 0,
+          "importance": 3.835723957907853e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 1,
+          "importance": 3.355478329090499e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 12,
+          "importance": 3.3047645517008375e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 2,
+          "importance": 3.186576009954964e-06
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 9,
+          "importance": 2.616133534143182e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 5,
+          "importance": 2.440188326012768e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 10,
+          "importance": 2.4113200535931703e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 1,
+          "importance": 2.1525493095968806e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 7,
+          "importance": 1.692618986590515e-06
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 11,
+          "importance": 1.683952207935072e-06
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 0,
+          "importance": 1.4598916891385278e-06
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 10,
+          "importance": 1.3893800505347188e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 15,
+          "importance": 1.2575499689431318e-06
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 7,
+          "importance": 9.111417429392075e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 15,
+          "importance": 8.695728376939296e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 4,
+          "importance": 8.542931362558341e-07
+        },
+        {
+          "modality_index": 0,
+          "channel_index": 4,
+          "importance": 8.533575570693185e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 6,
+          "importance": 7.737365524775009e-07
+        },
+        {
+          "modality_index": 1,
+          "channel_index": 7,
+          "importance": 7.15414405520817e-07
+        },
+        {
+          "modality_index": 4,
+          "channel_index": 13,
+          "importance": 6.897341083929436e-07
+        },
+        {
+          "modality_index": 3,
+          "channel_index": 8,
+          "importance": 5.846441358675914e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 14,
+          "importance": 5.323563552591766e-07
+        },
+        {
+          "modality_index": 2,
+          "channel_index": 11,
+          "importance": 4.781650222259253e-07
+        }
+      ],
+      "tie_break": "importance descending, modality index ascending, channel index ascending",
+      "allocation_train_only": true,
+      "allocation_hash": "d3e62a0f529e92576e513cd8117ad6aa6788e65ceeff3ef2291909c8f3b510cb"
+    }
+  ],
+  "fold_ranks": [
+    [
+      10,
+      4,
+      12,
+      8,
+      6
+    ],
+    [
+      10,
+      8,
+      6,
+      10,
+      6
+    ],
+    [
+      9,
+      5,
+      11,
+      9,
+      6
+    ],
+    [
+      10,
+      8,
+      8,
+      9,
+      5
+    ],
+    [
+      11,
+      4,
+      8,
+      12,
+      5
+    ],
+    [
+      4,
+      8,
+      10,
+      8,
+      10
+    ],
+    [
+      8,
+      3,
+      9,
+      13,
+      7
+    ],
+    [
+      9,
+      5,
+      9,
+      8,
+      9
+    ],
+    [
+      11,
+      6,
+      6,
+      13,
+      4
+    ],
+    [
+      8,
+      7,
+      7,
+      6,
+      12
+    ]
+  ],
+  "allocation_hashes": [
+    "9fe46da89b5d06e09b4adbc6998c6d02a9a91f01549be98c72b36b22da05d625",
+    "782baac9b76def45206a55417a7e59427543441fadaccf463a37a5977795807e",
+    "93e419e4c9170016a91ac9dbb5aa8644d851616ebe65f563f6e57bf8dfec4f03",
+    "c20fea22c5a972895cc3af2ab381699d5dbaa013875e1a0e7a63e312aa8828d0",
+    "370e80474891102e34380dcdf0e06679560fa35776abdd2e4ac31efbdba67d91",
+    "2a17230a9e510e4f960baac1f865f81dbc45b3f7841430b91cf37303e28bbf44",
+    "b82865e5e0eb0f6561dcf7e49a5f761e58a199adcc1e34b88a1183731d891bf8",
+    "dff9376c552a0b18fe5ab89d889c832adc068cd74cb23d391853cc8828fe9017",
+    "d9a846dee964be1c48adc863952ff4607ab055995202ac265e759a1f641268b6",
+    "d3e62a0f529e92576e513cd8117ad6aa6788e65ceeff3ef2291909c8f3b510cb"
+  ],
+  "rank_mean_by_modality": {
+    "MRI": 9.0,
+    "CSF": 5.8,
+    "RISK_FACTOR": 8.6,
+    "COGNITIVE_TEST": 9.6,
+    "ROI_AVERAGE": 7.0
+  },
+  "rank_sample_sd_by_modality": {
+    "MRI": 2.0548046676563256,
+    "CSF": 1.8737959096740262,
+    "RISK_FACTOR": 2.011080417199781,
+    "COGNITIVE_TEST": 2.3664319132398464,
+    "ROI_AVERAGE": 2.5385910352879693
+  },
+  "rank_frequency_by_modality": {
+    "MRI": {
+      "4": 1,
+      "8": 2,
+      "9": 2,
+      "10": 3,
+      "11": 2
+    },
+    "CSF": {
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 1,
+      "7": 1,
+      "8": 3
+    },
+    "RISK_FACTOR": {
+      "6": 2,
+      "7": 1,
+      "8": 2,
+      "9": 2,
+      "10": 1,
+      "11": 1,
+      "12": 1
+    },
+    "COGNITIVE_TEST": {
+      "6": 1,
+      "8": 3,
+      "9": 2,
+      "10": 1,
+      "12": 1,
+      "13": 2
+    },
+    "ROI_AVERAGE": {
+      "4": 1,
+      "5": 2,
+      "6": 3,
+      "7": 1,
+      "9": 1,
+      "10": 1,
+      "12": 1
+    }
+  },
+  "fold_pairwise_rank_l1_mean": 12.444444444444445,
+  "fold_pairwise_rank_l1_max": 24.0,
+  "importance_mean_by_modality": {
+    "MRI": 2.0086040563052444e-06,
+    "CSF": 2.1113927156716736e-06,
+    "RISK_FACTOR": 2.9577020520124708e-06,
+    "COGNITIVE_TEST": 4.065654401462454e-06,
+    "ROI_AVERAGE": 2.8159077962626204e-06
+  },
+  "importance_max_by_modality": {
+    "MRI": 2.3124880914082135e-05,
+    "CSF": 4.218042118435066e-05,
+    "RISK_FACTOR": 6.80213628135869e-05,
+    "COGNITIVE_TEST": 6.194417659735243e-05,
+    "ROI_AVERAGE": 4.081508012865145e-05
+  },
+  "private_shared_norm_ratio_mean_by_modality": {
+    "MRI": 0.1112835946609266,
+    "CSF": 0.1893473609816283,
+    "RISK_FACTOR": 0.17656340175308288,
+    "COGNITIVE_TEST": 0.2553643877618015,
+    "ROI_AVERAGE": 0.10462915736716241
+  },
+  "adapter_max_gradient": 0.4444485902786255,
+  "private_collapse_any": false,
+  "parameter_budget_all_folds": true,
+  "allocation_train_only_all_folds": true,
+  "scout_weight_transfer_count": 0
+}

@@ -1,0 +1,225 @@
+{
+  "task_id": "abide5_ads_cn",
+  "folds": [
+    {
+      "fold": 0,
+      "best_epoch": 39,
+      "correct": 74,
+      "acc": 0.8505747126436781,
+      "roc_auc": 0.8571808510638298,
+      "pr_auc": 0.8701645828624928,
+      "macro_f1": 0.8493004663557628,
+      "bacc": 0.8486702127659574,
+      "ranks": [
+        4,
+        4,
+        2,
+        4,
+        6
+      ],
+      "allocation_hash": "86b17750edd8199cfaddf6a0e3c75767ae379d25da9b386638d7768944bbcb21",
+      "scout_seconds": 5.231657899916172,
+      "formal_seconds": 50.699248699937016,
+      "inference_seconds": 0.014865400269627571,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 1,
+      "best_epoch": 81,
+      "correct": 80,
+      "acc": 0.9195402298850575,
+      "roc_auc": 0.9457446808510639,
+      "pr_auc": 0.9432443530677057,
+      "macro_f1": 0.9184629803186504,
+      "bacc": 0.9162234042553192,
+      "ranks": [
+        4,
+        3,
+        4,
+        3,
+        6
+      ],
+      "allocation_hash": "c91db6b3ec9bc2f61c4f150129e6702201de5b6bb2398696f465e30b7d67569f",
+      "scout_seconds": 4.974326100200415,
+      "formal_seconds": 51.555395000148565,
+      "inference_seconds": 0.015761499758809805,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 2,
+      "best_epoch": 195,
+      "correct": 72,
+      "acc": 0.8275862068965517,
+      "roc_auc": 0.814095744680851,
+      "pr_auc": 0.7438460508557685,
+      "macro_f1": 0.8272209717992851,
+      "bacc": 0.8292553191489361,
+      "ranks": [
+        3,
+        3,
+        3,
+        3,
+        8
+      ],
+      "allocation_hash": "7f9ccb84a186d25068f158c55cd976064fc4b001b1b2ebd43c1332b03755dfea",
+      "scout_seconds": 5.029133100062609,
+      "formal_seconds": 51.62156239990145,
+      "inference_seconds": 0.013985199853777885,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 3,
+      "best_epoch": 242,
+      "correct": 70,
+      "acc": 0.8045977011494253,
+      "roc_auc": 0.8311170212765959,
+      "pr_auc": 0.8008241090080583,
+      "macro_f1": 0.8019815236310082,
+      "bacc": 0.800531914893617,
+      "ranks": [
+        4,
+        2,
+        3,
+        5,
+        6
+      ],
+      "allocation_hash": "a0dc7a22329d5fd66768220e8b19432d9ba9bfe19b7c2ab78172541883c5ddba",
+      "scout_seconds": 5.099051400087774,
+      "formal_seconds": 51.03174699982628,
+      "inference_seconds": 0.015566499903798103,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 4,
+      "best_epoch": 66,
+      "correct": 80,
+      "acc": 0.9302325581395349,
+      "roc_auc": 0.9492635024549918,
+      "pr_auc": 0.9310916667182736,
+      "macro_f1": 0.9298913043478261,
+      "bacc": 0.9318057828696127,
+      "ranks": [
+        4,
+        4,
+        3,
+        6,
+        3
+      ],
+      "allocation_hash": "d5fd387d8a40e3b2879e53376e8fd4ee649698cd095f2001f5dd1280aba44b70",
+      "scout_seconds": 4.946153699886054,
+      "formal_seconds": 51.499616800341755,
+      "inference_seconds": 0.014231599867343903,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 5,
+      "best_epoch": 247,
+      "correct": 75,
+      "acc": 0.872093023255814,
+      "roc_auc": 0.8666121112929623,
+      "pr_auc": 0.8819282873545452,
+      "macro_f1": 0.8706766917293233,
+      "bacc": 0.8698854337152209,
+      "ranks": [
+        2,
+        4,
+        4,
+        2,
+        8
+      ],
+      "allocation_hash": "357e02084c4016739c6deed635737f2512ce4c8e93d4ee3c95d19feaee84ed66",
+      "scout_seconds": 7.23386810021475,
+      "formal_seconds": 50.702265199739486,
+      "inference_seconds": 0.01431509992107749,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 6,
+      "best_epoch": 15,
+      "correct": 75,
+      "acc": 0.872093023255814,
+      "roc_auc": 0.8936170212765957,
+      "pr_auc": 0.8699757903648352,
+      "macro_f1": 0.8716592049925382,
+      "bacc": 0.8742498636115658,
+      "ranks": [
+        7,
+        1,
+        2,
+        5,
+        5
+      ],
+      "allocation_hash": "6624e0df5d664bca520ecf3f1721d9bca810ff818b4235811135e56a12552efc",
+      "scout_seconds": 5.717249600216746,
+      "formal_seconds": 51.02649800013751,
+      "inference_seconds": 0.013797699939459562,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 7,
+      "best_epoch": 138,
+      "correct": 79,
+      "acc": 0.9186046511627907,
+      "roc_auc": 0.9364130434782609,
+      "pr_auc": 0.9094069917636516,
+      "macro_f1": 0.9183285849952516,
+      "bacc": 0.9190217391304347,
+      "ranks": [
+        7,
+        3,
+        4,
+        2,
+        4
+      ],
+      "allocation_hash": "172bde8848e1eb929806a6115f21fdb12268b4c6daacd7cc5227c908f88c424c",
+      "scout_seconds": 5.106111700180918,
+      "formal_seconds": 51.906665999908,
+      "inference_seconds": 0.013424899894744158,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 8,
+      "best_epoch": 269,
+      "correct": 77,
+      "acc": 0.8953488372093024,
+      "roc_auc": 0.8880434782608695,
+      "pr_auc": 0.9078039714617404,
+      "macro_f1": 0.8936082474226804,
+      "bacc": 0.8907608695652174,
+      "ranks": [
+        3,
+        3,
+        4,
+        5,
+        5
+      ],
+      "allocation_hash": "b08a679daf5215f75c718ce21e60d3e61e2f06f32a1015f3e61af20ee040e29b",
+      "scout_seconds": 5.099779000040144,
+      "formal_seconds": 51.143604199867696,
+      "inference_seconds": 0.013987499754875898,
+      "resumed_from_epoch": 0
+    },
+    {
+      "fold": 9,
+      "best_epoch": 32,
+      "correct": 74,
+      "acc": 0.8604651162790697,
+      "roc_auc": 0.8239130434782608,
+      "pr_auc": 0.720665444541687,
+      "macro_f1": 0.8604651162790697,
+      "bacc": 0.8646739130434783,
+      "ranks": [
+        4,
+        4,
+        2,
+        7,
+        3
+      ],
+      "allocation_hash": "341d1e149f543c4071e6089322f4903e0949ac2db12cd956f2969c0cded83689",
+      "scout_seconds": 5.0610948000103235,
+      "formal_seconds": 51.829467200208455,
+      "inference_seconds": 0.013853100128471851,
+      "resumed_from_epoch": 0
+    }
+  ]
+}
