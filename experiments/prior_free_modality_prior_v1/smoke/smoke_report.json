@@ -1,0 +1,297 @@
+{
+  "experiment": "prior_free_modality_prior_v1",
+  "source_commit": "9d4312cdfd52923b2ba93ce80083946a0a7aeb43",
+  "smoke_config_sha256": "645c8aff4280d3388c49bb1198bb8a8be2cae79997b75dcfcdd00e35a3fde630",
+  "tasks": {
+    "tadpole_smci_pmci": {
+      "reference_checkpoint_replay": {
+        "fold": 0,
+        "checkpoint_sha256": "69811b701131d3f9e9864b6c209d8989d570a7ffc2f53ccaf491d8500152d672",
+        "logits_max_abs_diff": 0.0,
+        "probabilities_max_abs_diff": 7.027775528190006e-08
+      },
+      "initialization_audit": {
+        "all_state_initialization_max_abs_diff": 0.0,
+        "common_trainable_initialization_max_abs_diff": 0.0,
+        "step0_logits_max_abs_diff_expected_due_to_prior_removal": 0.9226095080375671,
+        "comparison_scope": "all state tensors; modal_gate_logit retained with identical seeded value but frozen and bypassed"
+      },
+      "renamed_modality_audit": {
+        "renamed_modalities": [
+          "ANON_0",
+          "ANON_1",
+          "ANON_2",
+          "ANON_3",
+          "ANON_4"
+        ],
+        "trainable_state_max_abs_diff": 0.0,
+        "eval_logits_max_abs_diff": 0.0,
+        "effective_gate_original": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "effective_gate_renamed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "effective_noise_original": [
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806
+        ],
+        "effective_noise_renamed": [
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806,
+          0.05000000074505806
+        ]
+      },
+      "object_audit": {
+        "total_parameter_count": 617197,
+        "trainable_parameter_count": 617192,
+        "frozen_parameter_count": 5,
+        "private_parameter_count": 8200,
+        "common_parameter_tensors": 133,
+        "adapter_parameter_tensors": 20,
+        "legacy_gate_parameter_count": 5,
+        "legacy_gate_trainable": false,
+        "legacy_gate_in_optimizer": false,
+        "new_parameter_count": 0,
+        "base_lr": 0.0125,
+        "adapter_lr": 0.0125,
+        "adapter_lr_multiplier": 1.0
+      },
+      "losses": [
+        2.8341622352600098,
+        3.760547399520874,
+        4.875714302062988
+      ],
+      "adapter_cumulative_max_gradient": {
+        "private_adapters.0.down.weight": 0.0427807942032814,
+        "private_adapters.0.down.bias": 0.010582616552710533,
+        "private_adapters.0.up.weight": 0.07578679919242859,
+        "private_adapters.0.up.bias": 0.06361919641494751,
+        "private_adapters.1.down.weight": 0.058533795177936554,
+        "private_adapters.1.down.bias": 0.014181545004248619,
+        "private_adapters.1.up.weight": 0.07872402667999268,
+        "private_adapters.1.up.bias": 0.06110858917236328,
+        "private_adapters.2.down.weight": 0.05514979362487793,
+        "private_adapters.2.down.bias": 0.015202929265797138,
+        "private_adapters.2.up.weight": 0.0717916339635849,
+        "private_adapters.2.up.bias": 0.06878117471933365,
+        "private_adapters.3.down.weight": 0.01942950114607811,
+        "private_adapters.3.down.bias": 0.00498805521056056,
+        "private_adapters.3.up.weight": 0.1331113576889038,
+        "private_adapters.3.up.bias": 0.060928162187337875,
+        "private_adapters.4.down.weight": 0.06299053132534027,
+        "private_adapters.4.down.bias": 0.013094046153128147,
+        "private_adapters.4.up.weight": 0.12123286724090576,
+        "private_adapters.4.up.bias": 0.06301495432853699
+      },
+      "target_group_cumulative_max_gradient": {
+        "private": 0.1331113576889038,
+        "shared_modal": 0.5269831418991089,
+        "global": 0.1388007402420044,
+        "query": 1.1587995290756226,
+        "difformer": 0.6153697967529297
+      },
+      "adapter_parameter_max_delta": {
+        "private_adapters.0.down.weight": 0.037511859089136124,
+        "private_adapters.0.down.bias": 0.036533962935209274,
+        "private_adapters.0.up.weight": 0.037499088793992996,
+        "private_adapters.0.up.bias": 0.03745032101869583,
+        "private_adapters.1.down.weight": 0.03742358833551407,
+        "private_adapters.1.down.bias": 0.03476130962371826,
+        "private_adapters.1.up.weight": 0.03753332048654556,
+        "private_adapters.1.up.bias": 0.03726901859045029,
+        "private_adapters.2.down.weight": 0.03747439756989479,
+        "private_adapters.2.down.bias": 0.034454308450222015,
+        "private_adapters.2.up.weight": 0.037476856261491776,
+        "private_adapters.2.up.bias": 0.0374055914580822,
+        "private_adapters.3.down.weight": 0.03743894398212433,
+        "private_adapters.3.down.bias": 0.0358792245388031,
+        "private_adapters.3.up.weight": 0.03750750422477722,
+        "private_adapters.3.up.bias": 0.03739263117313385,
+        "private_adapters.4.down.weight": 0.037439651787281036,
+        "private_adapters.4.down.bias": 0.03673082962632179,
+        "private_adapters.4.up.weight": 0.03753682225942612,
+        "private_adapters.4.up.bias": 0.037308793514966965
+      },
+      "effective_gate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_gradient_is_none": true,
+      "optimizer_steps": 3,
+      "scheduler_steps": 3,
+      "probability_simplex_max_abs_error": 5.960464477539063e-08,
+      "checkpoint_roundtrip_logits_max_abs_diff": 0.0,
+      "checkpoint_sha256": "131fe0a9e4949001db3c4c697b5b408c874aa1903242d04f862b145115a84b2f"
+    },
+    "abide5_ads_cn": {
+      "reference_checkpoint_replay": {
+        "fold": 0,
+        "checkpoint_sha256": "1246984495387b6ce3f0966b261b76f5307afa13e43736fa58bb1299404d772f",
+        "logits_max_abs_diff": 0.0,
+        "probabilities_max_abs_diff": 8.144665697429332e-08
+      },
+      "initialization_audit": {
+        "scope": "full comparison performed once on TADPOLE fold0"
+      },
+      "renamed_modality_audit": {
+        "renamed_modalities": [
+          "ANON_0",
+          "ANON_1",
+          "ANON_2",
+          "ANON_3",
+          "ANON_4"
+        ],
+        "trainable_state_max_abs_diff": 0.0,
+        "eval_logits_max_abs_diff": 0.0,
+        "effective_gate_original": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "effective_gate_renamed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "effective_noise_original": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_noise_renamed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "object_audit": {
+        "total_parameter_count": 383616,
+        "trainable_parameter_count": 383611,
+        "frozen_parameter_count": 5,
+        "private_parameter_count": 2900,
+        "common_parameter_tensors": 145,
+        "adapter_parameter_tensors": 20,
+        "legacy_gate_parameter_count": 5,
+        "legacy_gate_trainable": false,
+        "legacy_gate_in_optimizer": false,
+        "new_parameter_count": 0,
+        "base_lr": 0.005,
+        "adapter_lr": 0.01,
+        "adapter_lr_multiplier": 2.0
+      },
+      "losses": [
+        2.192903995513916,
+        2.551682949066162,
+        2.5073564052581787
+      ],
+      "adapter_cumulative_max_gradient": {
+        "private_adapters.0.down.weight": 0.00083252222975716,
+        "private_adapters.0.down.bias": 0.0003709829179570079,
+        "private_adapters.0.up.weight": 0.0037362975999712944,
+        "private_adapters.0.up.bias": 0.00691644661128521,
+        "private_adapters.1.down.weight": 0.0011097090318799019,
+        "private_adapters.1.down.bias": 0.00048182549653574824,
+        "private_adapters.1.up.weight": 0.003050275146961212,
+        "private_adapters.1.up.bias": 0.0073781427927315235,
+        "private_adapters.2.down.weight": 0.0017682516481727362,
+        "private_adapters.2.down.bias": 0.0006661305669695139,
+        "private_adapters.2.up.weight": 0.0049333227798342705,
+        "private_adapters.2.up.bias": 0.00619839783757925,
+        "private_adapters.3.down.weight": 0.00033363705733790994,
+        "private_adapters.3.down.bias": 0.0001793743867892772,
+        "private_adapters.3.up.weight": 0.0008301815250888467,
+        "private_adapters.3.up.bias": 0.006776994094252586,
+        "private_adapters.4.down.weight": 0.0007882464560680091,
+        "private_adapters.4.down.bias": 0.0003420806606300175,
+        "private_adapters.4.up.weight": 0.0035284014884382486,
+        "private_adapters.4.up.bias": 0.006931972689926624
+      },
+      "target_group_cumulative_max_gradient": {
+        "private": 0.0073781427927315235,
+        "shared_modal": 0.036736197769641876,
+        "global": 0.07174743711948395,
+        "query": 0.1276688277721405,
+        "difformer": 0.7983226180076599
+      },
+      "adapter_parameter_max_delta": {
+        "private_adapters.0.down.weight": 0.030034877359867096,
+        "private_adapters.0.down.bias": 0.029248595237731934,
+        "private_adapters.0.up.weight": 0.029703866690397263,
+        "private_adapters.0.up.bias": 0.029359452426433563,
+        "private_adapters.1.down.weight": 0.030036531388759613,
+        "private_adapters.1.down.bias": 0.02826378494501114,
+        "private_adapters.1.up.weight": 0.0298872459679842,
+        "private_adapters.1.up.bias": 0.029664840549230576,
+        "private_adapters.2.down.weight": 0.029995813965797424,
+        "private_adapters.2.down.bias": 0.029667764902114868,
+        "private_adapters.2.up.weight": 0.029790962114930153,
+        "private_adapters.2.up.bias": 0.02981005236506462,
+        "private_adapters.3.down.weight": 0.030043087899684906,
+        "private_adapters.3.down.bias": 0.02944815158843994,
+        "private_adapters.3.up.weight": 0.029836241155862808,
+        "private_adapters.3.up.bias": 0.02987874485552311,
+        "private_adapters.4.down.weight": 0.03003423660993576,
+        "private_adapters.4.down.bias": 0.008257217705249786,
+        "private_adapters.4.up.weight": 0.029514877125620842,
+        "private_adapters.4.up.bias": 0.029636254534125328
+      },
+      "effective_gate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "effective_noise_std": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "legacy_gate_gradient_is_none": true,
+      "optimizer_steps": 3,
+      "scheduler_steps": 3,
+      "probability_simplex_max_abs_error": 5.960464477539063e-08,
+      "checkpoint_roundtrip_logits_max_abs_diff": 0.0,
+      "checkpoint_sha256": "663a9c470170ab547ace084bfc0cd2ed500ed964b96d9a512e12ae79a8f3938e"
+    }
+  },
+  "all_gates_one": true,
+  "all_noise_uniform": true,
+  "name_independent": true,
+  "formal_go": true,
+  "sha256": "3dee905b0f234f32857dc4762d215e8544daccab3c45caf3891adf34b80515c3"
+}
