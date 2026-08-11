@@ -1,0 +1,170 @@
+{
+  "tadpole_smci_pmci": {
+    "effective_gate_by_modality": {
+      "MRI": 1.0,
+      "CSF": 1.0,
+      "RISK_FACTOR": 1.0,
+      "COGNITIVE_TEST": 1.0,
+      "ROI_AVERAGE": 1.0
+    },
+    "legacy_effective_gate_by_modality": {
+      "MRI": 0.2689414322376251,
+      "CSF": 0.11920291930437088,
+      "RISK_FACTOR": 0.11920291930437088,
+      "COGNITIVE_TEST": 0.9820137619972229,
+      "ROI_AVERAGE": 0.8807970285415649
+    },
+    "input_norm_ratio_after_gate_to_before_gate_legacy": {
+      "MRI": 0.2689414322376251,
+      "CSF": 0.11920291930437088,
+      "RISK_FACTOR": 0.11920291930437088,
+      "COGNITIVE_TEST": 0.9820137619972229,
+      "ROI_AVERAGE": 0.8807970285415649
+    },
+    "input_norm_ratio_after_gate_to_before_gate_prior_free": {
+      "MRI": 1.0,
+      "CSF": 1.0,
+      "RISK_FACTOR": 1.0,
+      "COGNITIVE_TEST": 1.0,
+      "ROI_AVERAGE": 1.0
+    },
+    "category_and_global_effective_scaling_prior_free": 1.0,
+    "effective_noise_std_by_modality": {
+      "MRI": 0.05000000074505806,
+      "CSF": 0.05000000074505806,
+      "RISK_FACTOR": 0.05000000074505806,
+      "COGNITIVE_TEST": 0.05000000074505806,
+      "ROI_AVERAGE": 0.05000000074505806
+    },
+    "legacy_noise_factor_by_modality": {
+      "MRI": 0.30000001192092896,
+      "CSF": 0.30000001192092896,
+      "RISK_FACTOR": 0.30000001192092896,
+      "COGNITIVE_TEST": 0.0,
+      "ROI_AVERAGE": 0.05000000074505806
+    },
+    "legacy_effective_noise_std_by_modality": {
+      "MRI": 0.15000000596046448,
+      "CSF": 0.15000000596046448,
+      "RISK_FACTOR": 0.15000000596046448,
+      "COGNITIVE_TEST": 0.0,
+      "ROI_AVERAGE": 0.02500000037252903
+    },
+    "legacy_gate_trainable_any_fold": false,
+    "legacy_gate_in_optimizer_any_fold": false,
+    "private_shared_ratio_mean_by_modality": {
+      "MRI": 0.05427857649046928,
+      "CSF": 0.04959586246404797,
+      "RISK_FACTOR": 0.029453848907724022,
+      "COGNITIVE_TEST": 0.05687280265847221,
+      "ROI_AVERAGE": 0.08161114057293162
+    },
+    "private_shared_ratio_max_by_modality": {
+      "MRI": 0.3101142644882202,
+      "CSF": 0.37101972103118896,
+      "RISK_FACTOR": 0.656001091003418,
+      "COGNITIVE_TEST": 0.30029091238975525,
+      "ROI_AVERAGE": 0.7861191630363464
+    },
+    "category_global_cosine_mean": 0.6217829167842865,
+    "adapter_max_gradient": 0.19657301902770996,
+    "adapter_max_gradient_by_modality": {
+      "MRI": 0.1211545392870903,
+      "CSF": 0.14313571155071259,
+      "RISK_FACTOR": 0.12999966740608215,
+      "COGNITIVE_TEST": 0.16874077916145325,
+      "ROI_AVERAGE": 0.19657301902770996
+    },
+    "adapter_min_parameter_delta": 0.027288541197776794,
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "total_parameter_count": 617197,
+    "trainable_parameter_count": 617192,
+    "frozen_parameter_count": 5,
+    "new_parameter_count": 0
+  },
+  "abide5_ads_cn": {
+    "effective_gate_by_modality": {
+      "PHENO": 1.0,
+      "ANAT": 1.0,
+      "FUNC": 1.0,
+      "MRI": 1.0,
+      "fMRI": 1.0
+    },
+    "legacy_effective_gate_by_modality": {
+      "PHENO": 0.11920291930437088,
+      "ANAT": 0.11920291930437088,
+      "FUNC": 0.11920291930437088,
+      "MRI": 0.2689414322376251,
+      "fMRI": 0.2689414322376251
+    },
+    "input_norm_ratio_after_gate_to_before_gate_legacy": {
+      "PHENO": 0.11920291930437088,
+      "ANAT": 0.11920291930437088,
+      "FUNC": 0.11920291930437088,
+      "MRI": 0.2689414322376251,
+      "fMRI": 0.2689414322376251
+    },
+    "input_norm_ratio_after_gate_to_before_gate_prior_free": {
+      "PHENO": 1.0,
+      "ANAT": 1.0,
+      "FUNC": 1.0,
+      "MRI": 1.0,
+      "fMRI": 1.0
+    },
+    "category_and_global_effective_scaling_prior_free": 1.0,
+    "effective_noise_std_by_modality": {
+      "PHENO": 0.0,
+      "ANAT": 0.0,
+      "FUNC": 0.0,
+      "MRI": 0.0,
+      "fMRI": 0.0
+    },
+    "legacy_noise_factor_by_modality": {
+      "PHENO": 0.30000001192092896,
+      "ANAT": 0.30000001192092896,
+      "FUNC": 0.30000001192092896,
+      "MRI": 0.30000001192092896,
+      "fMRI": 0.30000001192092896
+    },
+    "legacy_effective_noise_std_by_modality": {
+      "PHENO": 0.0,
+      "ANAT": 0.0,
+      "FUNC": 0.0,
+      "MRI": 0.0,
+      "fMRI": 0.0
+    },
+    "legacy_gate_trainable_any_fold": false,
+    "legacy_gate_in_optimizer_any_fold": false,
+    "private_shared_ratio_mean_by_modality": {
+      "PHENO": 0.00563322901725769,
+      "ANAT": 0.005489925527945161,
+      "FUNC": 0.006645146454684436,
+      "MRI": 0.007120157219469547,
+      "fMRI": 0.012380167399533093
+    },
+    "private_shared_ratio_max_by_modality": {
+      "PHENO": 0.01787029393017292,
+      "ANAT": 0.01569187082350254,
+      "FUNC": 0.03237389773130417,
+      "MRI": 0.04238395765423775,
+      "fMRI": 0.13916338980197906
+    },
+    "category_global_cosine_mean": 0.38920772075653076,
+    "adapter_max_gradient": 0.01081790216267109,
+    "adapter_max_gradient_by_modality": {
+      "PHENO": 0.010574803687632084,
+      "ANAT": 0.010231420397758484,
+      "FUNC": 0.01081790216267109,
+      "MRI": 0.009595937095582485,
+      "fMRI": 0.010096902027726173
+    },
+    "adapter_min_parameter_delta": 8.04731753305532e-05,
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "total_parameter_count": 383616,
+    "trainable_parameter_count": 383611,
+    "frozen_parameter_count": 5,
+    "new_parameter_count": 0
+  }
+}

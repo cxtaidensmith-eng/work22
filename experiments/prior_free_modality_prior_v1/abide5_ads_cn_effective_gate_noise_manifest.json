@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "manifest_type": "effective_gate_and_noise",
+  "task_id": "abide5_ads_cn",
+  "source_commit": "00c61f99808f321bedfc8d2043cd4b921854034a",
+  "prior_free_modality_prior": true,
+  "effective_gate_by_modality": {
+    "PHENO": 1,
+    "ANAT": 1,
+    "FUNC": 1,
+    "MRI": 1,
+    "fMRI": 1
+  },
+  "effective_noise_std_by_modality": {
+    "PHENO": 0,
+    "ANAT": 0,
+    "FUNC": 0,
+    "MRI": 0,
+    "fMRI": 0
+  },
+  "legacy_effective_gate_by_modality": {
+    "PHENO": 0.11920291930437088,
+    "ANAT": 0.11920291930437088,
+    "FUNC": 0.11920291930437088,
+    "MRI": 0.2689414322376251,
+    "fMRI": 0.2689414322376251
+  },
+  "legacy_noise_factor_by_modality": {
+    "PHENO": 0.30000001192092896,
+    "ANAT": 0.30000001192092896,
+    "FUNC": 0.30000001192092896,
+    "MRI": 0.30000001192092896,
+    "fMRI": 0.30000001192092896
+  },
+  "legacy_effective_noise_std_by_modality": {
+    "PHENO": 0,
+    "ANAT": 0,
+    "FUNC": 0,
+    "MRI": 0,
+    "fMRI": 0
+  },
+  "legacy_gate_trainable_any_fold": false,
+  "legacy_gate_in_optimizer_any_fold": false,
+  "fold_count": 10,
+  "fold_values_verified": [
+    {
+      "fold": 0,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 1,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 2,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 3,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 4,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 5,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 6,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 7,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 8,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 9,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    }
+  ]
+}

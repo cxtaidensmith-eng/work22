@@ -1,0 +1,140 @@
+{
+  "tadpole_smci_pmci": {
+    "reference_trial_id": "D5",
+    "reference_metrics": {
+      "n": 535,
+      "correct": 519,
+      "acc": 0.9700934579439252,
+      "roc_auc": 0.9182766439909297,
+      "pr_auc": 0.7321647746112192,
+      "macro_f1": 0.9009442695797074,
+      "bacc": 0.8928571428571429,
+      "weighted_f1": 0.9697840656022508,
+      "sen": 0.8,
+      "spe": 0.9857142857142858,
+      "tp": 36,
+      "fn": 9,
+      "tn": 483,
+      "fp": 7,
+      "confusion_matrix_class_order": [
+        "SMCI",
+        "PMCI"
+      ],
+      "confusion_matrix": [
+        [
+          483,
+          7
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "predicted_counts": {
+        "SMCI": 492,
+        "PMCI": 43
+      },
+      "positive_class": "PMCI",
+      "positive_index": 1,
+      "negative_class": "SMCI",
+      "negative_index": 0
+    },
+    "repairs": 6,
+    "damages": 12,
+    "changed": 18,
+    "net_correct": -6,
+    "correct_delta": -6,
+    "repairs_by_truth": {
+      "SMCI": 3,
+      "PMCI": 3
+    },
+    "damages_by_truth": {
+      "SMCI": 6,
+      "PMCI": 6
+    },
+    "prediction_transitions": {
+      "PMCI->SMCI": 9,
+      "SMCI->PMCI": 9
+    },
+    "metric_deltas": {
+      "acc": -0.01121495327102806,
+      "roc_auc": -0.02353741496598638,
+      "pr_auc": -0.1102501356625114,
+      "macro_f1": -0.037145898907609665,
+      "bacc": -0.03639455782312939,
+      "weighted_f1": -0.01133097539915584,
+      "sen": -0.06666666666666676,
+      "spe": -0.00612244897959191
+    },
+    "exact_mcnemar_p": 0.237884521484375
+  },
+  "abide5_ads_cn": {
+    "reference_trial_id": "D3",
+    "reference_metrics": {
+      "n": 864,
+      "correct": 769,
+      "acc": 0.8900462962962963,
+      "roc_auc": 0.8862642193323589,
+      "pr_auc": 0.8505649758766733,
+      "macro_f1": 0.8893405326700237,
+      "bacc": 0.8894141823850182,
+      "weighted_f1": 0.8900565247546481,
+      "sen": 0.8816120906801007,
+      "spe": 0.8972162740899358,
+      "tp": 350,
+      "fn": 47,
+      "tn": 419,
+      "fp": 48,
+      "confusion_matrix_class_order": [
+        "ADS",
+        "CN"
+      ],
+      "confusion_matrix": [
+        [
+          350,
+          47
+        ],
+        [
+          48,
+          419
+        ]
+      ],
+      "predicted_counts": {
+        "ADS": 398,
+        "CN": 466
+      },
+      "positive_class": "ADS",
+      "positive_index": 0,
+      "negative_class": "CN",
+      "negative_index": 1
+    },
+    "repairs": 37,
+    "damages": 52,
+    "changed": 89,
+    "net_correct": -15,
+    "correct_delta": -15,
+    "repairs_by_truth": {
+      "ADS": 15,
+      "CN": 22
+    },
+    "damages_by_truth": {
+      "ADS": 25,
+      "CN": 27
+    },
+    "prediction_transitions": {
+      "CN->ADS": 42,
+      "ADS->CN": 47
+    },
+    "metric_deltas": {
+      "acc": -0.01736111111111105,
+      "roc_auc": -0.012802118673779228,
+      "pr_auc": -0.019984869401168948,
+      "macro_f1": -0.017596180290870622,
+      "bacc": -0.01794777749610299,
+      "weighted_f1": -0.017422195396815998,
+      "sen": -0.02518891687657432,
+      "spe": -0.010706638115631661
+    },
+    "exact_mcnemar_p": 0.13736797135565199
+  }
+}

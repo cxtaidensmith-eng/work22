@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "manifest_type": "effective_gate_and_noise",
+  "task_id": "tadpole_smci_pmci",
+  "source_commit": "00c61f99808f321bedfc8d2043cd4b921854034a",
+  "prior_free_modality_prior": true,
+  "effective_gate_by_modality": {
+    "MRI": 1,
+    "CSF": 1,
+    "RISK_FACTOR": 1,
+    "COGNITIVE_TEST": 1,
+    "ROI_AVERAGE": 1
+  },
+  "effective_noise_std_by_modality": {
+    "MRI": 0.05000000074505806,
+    "CSF": 0.05000000074505806,
+    "RISK_FACTOR": 0.05000000074505806,
+    "COGNITIVE_TEST": 0.05000000074505806,
+    "ROI_AVERAGE": 0.05000000074505806
+  },
+  "legacy_effective_gate_by_modality": {
+    "MRI": 0.2689414322376251,
+    "CSF": 0.11920291930437088,
+    "RISK_FACTOR": 0.11920291930437088,
+    "COGNITIVE_TEST": 0.9820137619972229,
+    "ROI_AVERAGE": 0.8807970285415649
+  },
+  "legacy_noise_factor_by_modality": {
+    "MRI": 0.30000001192092896,
+    "CSF": 0.30000001192092896,
+    "RISK_FACTOR": 0.30000001192092896,
+    "COGNITIVE_TEST": 0,
+    "ROI_AVERAGE": 0.05000000074505806
+  },
+  "legacy_effective_noise_std_by_modality": {
+    "MRI": 0.15000000596046448,
+    "CSF": 0.15000000596046448,
+    "RISK_FACTOR": 0.15000000596046448,
+    "COGNITIVE_TEST": 0,
+    "ROI_AVERAGE": 0.02500000037252903
+  },
+  "legacy_gate_trainable_any_fold": false,
+  "legacy_gate_in_optimizer_any_fold": false,
+  "fold_count": 10,
+  "fold_values_verified": [
+    {
+      "fold": 0,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 1,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 2,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 3,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 4,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 5,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 6,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 7,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 8,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    },
+    {
+      "fold": 9,
+      "effective_gate": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_noise_std": [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "legacy_gate_trainable": false,
+      "legacy_gate_in_optimizer": false
+    }
+  ]
+}
