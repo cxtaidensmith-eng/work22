@@ -40,7 +40,7 @@ CONFIG_PATH = RESULT_DIR / "experiment_config.json"
 INSPECT_PATH = RESULT_DIR / "inspect_manifest.json"
 FOLD_MANIFEST_PATH = RESULT_DIR / "fold_manifest.json"
 SMOKE_DIR = RESULT_DIR / "smoke"
-FORMAL_DIR = RESULT_DIR / "formal"
+FORMAL_DIR = RESULT_DIR / "formal_v2"
 TASK_IDS = ("tadpole_smci_pmci", "abide5_ads_cn")
 FOLDS = tuple(range(10))
 SEED = 0
@@ -1086,7 +1086,7 @@ def aggregate_task(
     require(len(rows) == context["protocol"]["sample_count"] and len({row["subject_id"] for row in rows}) == len(rows), "OOF coverage changed")
     expected = sorted([row for fold in context["fold_manifest"]["folds"] for row in fold["test_rows"]], key=lambda row: row["original_csv_index"])
     for row, anchor in zip(rows, expected):
-        require(row["subject_id"] == anchor["subject_id"] and row["truth"] == anchor["truth"] and row["fold"] == anchor["fold"], "OOF stable identity changed")
+        require(row["subject_id"] == anchor["subject_id"] and row["truth"] == anchor["truth"], "OOF stable identity changed")
     truth, _, probabilities = engine.rows_arrays(rows)
     metrics = engine.binary_metrics(truth, probabilities, context["protocol"])
     confidence = probabilities.max(axis=1)

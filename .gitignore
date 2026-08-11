@@ -36,6 +36,7 @@
 # Prior-free fold histories/checkpoints are strict-resume local state. Only
 # compact top-level OOF, summaries, smoke JSON, and report are tracked.
 /experiments/prior_free_modality_prior_v1/formal/
+/experiments/prior_free_modality_prior_v1/formal_v2/
 /experiments/prior_free_modality_prior_v1/smoke/*_checkpoint_roundtrip.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
