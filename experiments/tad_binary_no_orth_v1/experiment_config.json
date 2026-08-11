@@ -1,0 +1,36 @@
+{
+  "experiment": "tad_binary_no_orth_v1",
+  "branch": "experiment/tad-binary-no-orth-v1",
+  "base_commit": "fcf57882ce242d07d4944755003559bfe97c534e",
+  "arm": "D5_NO_ORTH",
+  "dataset": "TADPOLE",
+  "task": "SMCI_PMCI",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_per_fold": 0,
+  "epochs": 400,
+  "smoke_epochs": 3,
+  "only_formal_change": "orthogonality_rate=0.0; raw orthogonality is never evaluated by the training criterion",
+  "loss_formula": "main_ce + (ovr_0 + ovr_1)",
+  "reference": "D5",
+  "search": false,
+  "single_model": true,
+  "ensemble": false,
+  "ema": false,
+  "decision_tokens": [
+    "NO_ORTH_POSITIVE",
+    "NO_ORTH_NEUTRAL",
+    "NO_ORTH_NO_GAIN"
+  ],
+  "sha256": "43efefa599759b6ffa6f56dc65a9e4a3aae5a9c5b7f0c7e46c8b4475b07b587a"
+}

@@ -1,0 +1,201 @@
+{
+  "experiment": "tad_binary_no_orth_v1",
+  "dataset": "TADPOLE",
+  "task": "SMCI_PMCI",
+  "reference": {
+    "oof_path": "experiments/tad_binary_hparam_search_v1/trials/D5/oof_predictions.csv",
+    "oof_sha256": "65302affb7968b393221cb1fbd357b49beee6c5aab5b6aebcbde541c09cd01e1",
+    "oof_working_tree_crlf_sha256": "65302affb7968b393221cb1fbd357b49beee6c5aab5b6aebcbde541c09cd01e1",
+    "oof_canonical_lf_git_blob_sha256": "143c493df779a424728e42444da8ad1d0560b0aeae2334d78a30dc4d070bfc54",
+    "summary_sha256": "85078d7d0afdec9b322db304c8e736d899657f38c02aff2b91fdc9c8d8593adf",
+    "config_sha256": "51a900e61ffb5820602e31a88d9e459781b63e3286bfec867767d93d6070953f",
+    "fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+    "metrics": {
+      "n": 535,
+      "correct": 519,
+      "acc": 0.9700934579439252,
+      "roc_auc": 0.9182766439909297,
+      "pr_auc": 0.7321647746112192,
+      "macro_f1": 0.9009442695797074,
+      "bacc": 0.8928571428571429,
+      "weighted_f1": 0.9697840656022508,
+      "sen": 0.8,
+      "spe": 0.9857142857142858,
+      "tp": 36,
+      "fn": 9,
+      "tn": 483,
+      "fp": 7,
+      "confusion_matrix_class_order": [
+        "SMCI",
+        "PMCI"
+      ],
+      "confusion_matrix": [
+        [
+          483,
+          7
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "predicted_counts": {
+        "SMCI": 492,
+        "PMCI": 43
+      },
+      "positive_class": "PMCI",
+      "positive_index": 1,
+      "negative_class": "SMCI",
+      "negative_index": 0
+    },
+    "subject_count": 535,
+    "unique_subject_count": 535,
+    "positive_class": "PMCI",
+    "config": {
+      "lr": 0.0125,
+      "weight_decay": 0.00025,
+      "dropout": 0.67,
+      "rank": 8,
+      "adapter_lr_multiplier": 1.0,
+      "epochs": 400,
+      "seed_per_fold": 0
+    }
+  },
+  "loss_code_audit": {
+    "representation_shapes": [
+      [
+        535,
+        96
+      ],
+      [
+        535,
+        96
+      ]
+    ],
+    "similarity_matrix_shape": [
+      535,
+      535
+    ],
+    "produces_n_by_n": true,
+    "contains_cross_subject_terms": true,
+    "contains_test_rows": true,
+    "train_mask_applied_to_orthogonality": false,
+    "fold0_train_rows": 481,
+    "fold0_test_rows": 54,
+    "original_orthogonality_rate": 0.0001,
+    "original_total_formula": "main_ce + (ovr_0 + ovr_1) + 0.0001 * raw_orthogonality",
+    "new_total_formula": "main_ce + (ovr_0 + ovr_1)",
+    "raw_orthogonality_fold0_eval": 7150.21240234375,
+    "orthogonality_function": {
+      "path": "Loss/loss_fn.py",
+      "start_line": 65,
+      "line_count": 22
+    },
+    "criterion_call": {
+      "path": "Loss/loss_fn.py",
+      "start_line": 107,
+      "line_count": 14
+    }
+  },
+  "historical_no_orth_context": {
+    "ABIDE_loss_rate": 0.0,
+    "ABIDE5_loss_rate": 0.0,
+    "A012_three_class_declares_orthogonality_false": true
+  },
+  "initialization_fairness_fold0": {
+    "all_parameter_keys_and_shapes_equal": true,
+    "all_initial_parameter_max_abs_diff": 0.0,
+    "step0_logits_max_abs_diff": 0.0,
+    "optimizer_groups_equal": true,
+    "scheduler_state_equal": true,
+    "total_parameter_count_equal": true,
+    "trainable_parameter_count_equal": true,
+    "historical_gate_equal": true,
+    "historical_noise_equal": true,
+    "effective_gate": [
+      0.2689414322376251,
+      0.11920291930437088,
+      0.11920291930437088,
+      0.9820137619972229,
+      0.8807970285415649
+    ],
+    "effective_noise_std": [
+      0.15000000596046448,
+      0.15000000596046448,
+      0.15000000596046448,
+      0.0,
+      0.02500000037252903
+    ],
+    "prior_free_modality_prior": false,
+    "historical_criterion_rate": 0.0001,
+    "new_criterion_rate": 0.0,
+    "rng_construction_rule": "both models constructed after identical SET_Random(seed=0) reset in the historical D5 builder"
+  },
+  "model_audit": {
+    "common_state_pointwise_audit": "smoke_only",
+    "parameter_count": 617197,
+    "query_count": 2,
+    "ovr_head_count": 2,
+    "adapter_count": 5,
+    "base_parameter_tensors": 134,
+    "adapter_parameter_tensors": 20,
+    "adapter_parameter_names": [
+      "private_adapters.0.down.weight",
+      "private_adapters.0.down.bias",
+      "private_adapters.0.up.weight",
+      "private_adapters.0.up.bias",
+      "private_adapters.1.down.weight",
+      "private_adapters.1.down.bias",
+      "private_adapters.1.up.weight",
+      "private_adapters.1.up.bias",
+      "private_adapters.2.down.weight",
+      "private_adapters.2.down.bias",
+      "private_adapters.2.up.weight",
+      "private_adapters.2.up.bias",
+      "private_adapters.3.down.weight",
+      "private_adapters.3.down.bias",
+      "private_adapters.3.up.weight",
+      "private_adapters.3.up.bias",
+      "private_adapters.4.down.weight",
+      "private_adapters.4.down.bias",
+      "private_adapters.4.up.weight",
+      "private_adapters.4.up.bias"
+    ],
+    "base_lr": 0.0125,
+    "adapter_lr": 0.0125,
+    "weight_decay": 0.00025,
+    "total_parameter_count": 617197,
+    "trainable_parameter_count": 617197,
+    "modality_names": [
+      "MRI",
+      "CSF",
+      "RISK_FACTOR",
+      "COGNITIVE_TEST",
+      "ROI_AVERAGE"
+    ],
+    "effective_gate": [
+      0.2689414322376251,
+      0.11920291930437088,
+      0.11920291930437088,
+      0.9820137619972229,
+      0.8807970285415649
+    ],
+    "noise_factor": [
+      0.30000001192092896,
+      0.30000001192092896,
+      0.30000001192092896,
+      0.0,
+      0.05000000074505806
+    ],
+    "effective_noise_std": [
+      0.15000000596046448,
+      0.15000000596046448,
+      0.15000000596046448,
+      0.0,
+      0.02500000037252903
+    ],
+    "prior_free_modality_prior": false
+  },
+  "inspection_scope": "task, D5 reference, fold manifest, loss implementation, initialization only",
+  "sha256": "9fb6cd8b4305e729d3b23de253a9a28391f19e2609c0d5b0a225bf8091c45f76"
+}

@@ -37,6 +37,10 @@
 # state. Compact fold JSON, per-trial OOF, manifests, and reports are tracked.
 /experiments/tad_binary_hparam_search_v1/work/
 /experiments/tad_binary_hparam_search_v1/smoke/*.pt
+# TAD binary no-orth fold checkpoints, resume state, and epoch histories remain
+# local. Compact OOF, fold summaries, diagnostics, manifests, and reports commit.
+/experiments/tad_binary_no_orth_v1/formal/
+/experiments/tad_binary_no_orth_v1/smoke/*.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
 /experiments/c1_broad_hparam_search_v1/stage_a/
