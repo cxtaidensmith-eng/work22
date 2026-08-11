@@ -31,6 +31,8 @@
 /experiments/**/*.pt
 /experiments/sp_lrif_cross_task_v1/work/
 /experiments/sp_lrif_cross_task_v1/*/work/
+/experiments/sp_lrif_cross_task_v1/*/trials/
+/experiments/sp_lrif_cross_task_v1/*/source_fix1/
 /experiments/sp_lrif_cross_task_v1/smoke/checkpoint_*.pt
 /experiments/sp_lrif_cross_task_v1/smoke/*/checkpoint_*.pt
 __pycache__/

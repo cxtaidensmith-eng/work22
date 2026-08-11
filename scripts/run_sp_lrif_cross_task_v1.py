@@ -45,6 +45,7 @@ FOLDS = tuple(range(10))
 EPOCHS = 400
 SEED = 0
 INTERACTION_RANK = 4
+RUN_REVISION = "source_fix1"
 RUNNER_REL = "scripts/run_sp_lrif_cross_task_v1.py"
 MODEL_REL = "Model/sp_lrif.py"
 
@@ -390,7 +391,7 @@ def binary_safety(result):
 def install_binary_profile(task: str) -> dict[str, Any]:
     global ACTIVE_BINARY_TASK
     ACTIVE_BINARY_TASK=task; p=BINARY_PROFILES[task]
-    task_root=RESULT/task
+    task_root=RESULT/task/RUN_REVISION
     protocol_value=task_protocol(task)
     def current_protocol(): return copy.deepcopy(protocol_value)
     values={"ROOT":ROOT,"EXPERIMENT_ID":EXPERIMENT,"BRANCH":BRANCH,"BASE_COMMIT":BASE_COMMIT,
@@ -475,7 +476,7 @@ def tri_lock(runtime:dict[str,Any],context:dict[str,Any],fold:int)->dict[str,Any
     return {**core,"sha256":digest(core)}
 
 def tri_paths(fold:int)->dict[str,Path]:
-    root=RESULT/"tad_triclass"/"work"/f"fold_{fold:02d}"
+    root=RESULT/"tad_triclass"/RUN_REVISION/"work"/f"fold_{fold:02d}"
     return {"root":root,"resume":root/"resume.pt","checkpoint":root/"checkpoint_best.pt","oof":root/"oof_predictions.csv",
             "history":root/"epoch_metrics.csv","summary":root/"summary.json","complete":root/"complete.json"}
 
@@ -499,11 +500,11 @@ def tri_mechanism(context,model,test_mask,cumulative,initial_private):
         c,g=inter["Y"][test_mask],inter["G"][test_mask]; agreement=inter["sp_lrif_agreement"][test_mask]; disagreement=inter["sp_lrif_disagreement"][test_mask]
         delta,direct=inter["sp_lrif_delta"][test_mask],inter["sp_lrif_sum"][test_mask]
         cosine=torch.nn.functional.cosine_similarity(c,g,dim=-1); ratio=delta.norm(dim=-1)/(direct.norm(dim=-1)+1e-12)
-        enabled=torch.softmax(broad.cme.score_logits(inter["raw_logits"][test_mask],context["dataset_dict"]["Label_Weight"],float(context["config"].logit_adjust_tau)),dim=-1)
+        _,enabled,_=broad.cme.score_logits(inter["raw_logits"][test_mask],context["dataset_dict"]["Label_Weight"],float(context["config"].logit_adjust_tau))
         model.sp_lrif.enabled=False
         try:
             disabled_raw=model(context["dataset_data"]["Feature"])[0][test_mask]
-            disabled=torch.softmax(broad.cme.score_logits(disabled_raw,context["dataset_dict"]["Label_Weight"],float(context["config"].logit_adjust_tau)),dim=-1)
+            _,disabled,_=broad.cme.score_logits(disabled_raw,context["dataset_dict"]["Label_Weight"],float(context["config"].logit_adjust_tau))
         finally:model.sp_lrif.enabled=True
         diff=(enabled-disabled).abs()
     spgrad={n:float(v) for n,v in cumulative.items() if n.startswith("sp_lrif.")}; privategrad={n:float(v) for n,v in cumulative.items() if n.startswith("private_adapters.")}
@@ -651,51 +652,58 @@ def runtime_lock(source:str)->dict[str,Any]:
 def smoke_binary(task:str,device:torch.device,runtime:dict[str,Any])->dict[str,Any]:
     install_binary_profile(task); base=binary.build_context(device); spec=binary_spec(task,"SMOKE_SP_LRIF"); context=binary_trial_context(base,spec)
     reference,_=build_private_reference(context,task); model,criterion,optimizer,scheduler,audit=make_binary_training(context,spec,True)
-    features=context["dataset_data"]["Feature"]; labels=context["dataset_data"]["Label"]; labels_before=labels.detach().clone(); train_mask=context["dataset_data"]["Mask"][0][0]
+    features=context["dataset_data"]["Feature"]; labels=context["dataset_data"]["Label"]; labels_before=labels.detach().clone(); train_mask,test_mask=context["dataset_data"]["Mask"][0][:2]
     reference.eval(); model.eval()
     with torch.no_grad(): old=reference(features)[0]; new,_,_,inter=model(features,return_intermediates=True)
     initial=float((old-new).abs().max().cpu()); initial_delta=float(inter["sp_lrif_delta"].abs().max().cpu()); require(initial<=1e-7 and initial_delta==0,"Binary smoke equivalence failed")
-    initial_sp={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("sp_lrif.")}; gradients={n:0.0 for n in initial_sp}; by_epoch=[]; losses=[]; simplex=[]
+    initial_sp={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("sp_lrif.")}; initial_private={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("private_adapters.")}
+    gradients={n:0.0 for n,q in model.named_parameters() if n.startswith(("private_adapters.","sp_lrif."))}; by_epoch=[]; losses=[]; simplex=[]
     for epoch in range(1,4):
         loss,current,_=sp_train_update(model,criterion,optimizer,features,labels,train_mask,float(context["protocol"]["training"]["grad_clip"])); scheduler.step(); scheduler.assert_ratio()
         now={n:float(v) for n,v in current.items() if n.startswith("sp_lrif.")}; by_epoch.append(now)
-        for n,v in now.items():gradients[n]=max(gradients[n],v)
+        for n,v in current.items():
+            if n in gradients:gradients[n]=max(gradients[n],v)
         losses.append(float(loss)); model.eval()
         with torch.no_grad():prob=torch.softmax(model(features)[0],dim=-1)
         simplex.append(float((prob.sum(1)-1).abs().max().cpu()))
     deltas={n:float((q.detach().cpu()-initial_sp[n]).abs().max()) for n,q in model.named_parameters() if n in initial_sp}
-    require(by_epoch[0]["sp_lrif.proj_out.weight"]>0 and all(v>0 and math.isfinite(v) for v in gradients.values()) and all(v>0 and math.isfinite(v) for v in deltas.values()),"Binary SP did not activate by epoch3")
+    sp_gradients={n:v for n,v in gradients.items() if n.startswith("sp_lrif.")}
+    require(by_epoch[0]["sp_lrif.proj_out.weight"]>0 and all(v>0 and math.isfinite(v) for v in sp_gradients.values()) and all(v>0 and math.isfinite(v) for v in deltas.values()),"Binary SP did not activate by epoch3")
     require(torch.equal(labels,labels_before) and max(simplex)<=2e-6,"Binary smoke numeric failure")
+    mechanism_probe=sp_diagnostics(context,model,test_mask,gradients,initial_private)
     path=SMOKE/task/"checkpoint_roundtrip.pt"; checkpoint={"runtime":runtime,"task":task,"epoch":3,"model":binary.clone_cpu_state(model),"optimizer":copy.deepcopy(optimizer.state_dict()),"scheduler":copy.deepcopy(scheduler.state_dict()),"rng":binary.capture_rng()}; binary.atomic_torch_save(path,checkpoint)
     restored,_,ropt,rsched,_=make_binary_training(context,spec); payload=torch.load(path,map_location="cpu",weights_only=False); restored.load_state_dict(payload["model"],strict=True); ropt.load_state_dict(payload["optimizer"]); rsched.load_state_dict(payload["scheduler"]); rsched.assert_ratio(); model.eval();restored.eval()
     with torch.no_grad(): reload=float((model(features)[0]-restored(features)[0]).abs().max().cpu())
     require(reload==0,"Binary smoke checkpoint reload failed")
     value={"task":task,"runtime":runtime,"fold":0,"epochs":3,"initial_logits_max_abs_diff":initial,"initial_delta_max_abs":initial_delta,"losses":losses,
-           "probability_sum_max_abs_error":max(simplex),"sp_gradient_by_epoch":by_epoch,"sp_max_gradient_by_tensor":gradients,"sp_parameter_delta_by_tensor":deltas,
+           "probability_sum_max_abs_error":max(simplex),"sp_gradient_by_epoch":by_epoch,"sp_max_gradient_by_tensor":sp_gradients,"sp_parameter_delta_by_tensor":deltas,"mechanism_probe":mechanism_probe,
            "proj_out_step1_gradient_nonzero":True,"all_projections_active_by_epoch3":True,"optimizer_audit":audit,"checkpoint_sha256":file_sha(path),"checkpoint_reload_logits_max_abs_diff":reload}
     del reference,model,restored,base,context;torch.cuda.empty_cache();return value
 
 def smoke_tri(device:torch.device,runtime:dict[str,Any])->dict[str,Any]:
     context=broad.load_context("cuda:0"); reference,_=build_tri_reference(context); model,criterion,optimizer,scheduler,audit=make_tri_training(context,True)
-    features=context["dataset_data"]["Feature"];labels=context["dataset_data"]["Label"];train_mask=context["dataset_data"]["Mask"][0][0];reference.eval();model.eval()
+    features=context["dataset_data"]["Feature"];labels=context["dataset_data"]["Label"];train_mask,test_mask=context["dataset_data"]["Mask"][0][:2];reference.eval();model.eval()
     with torch.no_grad():old=reference(features)[0];new,_,_,inter=model(features,return_intermediates=True)
     initial=float((old-new).abs().max().cpu());delta=float(inter["sp_lrif_delta"].abs().max().cpu());require(initial<=1e-7 and delta==0,"Tri smoke equivalence failed")
-    initial_sp={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("sp_lrif.")}; gradients={n:0.0 for n in initial_sp};by_epoch=[];losses=[];simplex=[]
+    initial_sp={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("sp_lrif.")};initial_private={n:q.detach().cpu().clone() for n,q in model.named_parameters() if n.startswith("private_adapters.")}
+    gradients={n:0.0 for n,q in model.named_parameters() if n.startswith(("private_adapters.","sp_lrif."))};by_epoch=[];losses=[];simplex=[]
     for epoch in range(1,4):
         model.train();optimizer.zero_grad(set_to_none=True);raw,_,aux=model(features);loss=broad.loss_components(criterion,raw,labels,train_mask,aux,.5)["total"];loss.backward()
-        now={n:float(q.grad.detach().abs().max().cpu()) for n,q in model.named_parameters() if n.startswith("sp_lrif.")};by_epoch.append(now)
-        for n,v in now.items():gradients[n]=max(gradients[n],v)
+        current={n:float(q.grad.detach().abs().max().cpu()) for n,q in model.named_parameters() if n in gradients};now={n:v for n,v in current.items() if n.startswith("sp_lrif.")};by_epoch.append(now)
+        for n,v in current.items():gradients[n]=max(gradients[n],v)
         torch.nn.utils.clip_grad_norm_(model.parameters(),1.0);optimizer.step();scheduler.step();losses.append(float(loss.detach().cpu()));model.eval()
         with torch.no_grad():prob=torch.softmax(model(features)[0],dim=-1)
         simplex.append(float((prob.sum(1)-1).abs().max().cpu()))
     changes={n:float((q.detach().cpu()-initial_sp[n]).abs().max()) for n,q in model.named_parameters() if n in initial_sp}
-    require(by_epoch[0]["sp_lrif.proj_out.weight"]>0 and all(v>0 and math.isfinite(v) for v in gradients.values()) and all(v>0 and math.isfinite(v) for v in changes.values()),"Tri SP did not activate")
+    sp_gradients={n:v for n,v in gradients.items() if n.startswith("sp_lrif.")}
+    require(by_epoch[0]["sp_lrif.proj_out.weight"]>0 and all(v>0 and math.isfinite(v) for v in sp_gradients.values()) and all(v>0 and math.isfinite(v) for v in changes.values()),"Tri SP did not activate")
+    mechanism_probe=tri_mechanism(context,model,test_mask,gradients,initial_private)
     path=SMOKE/"tad_triclass"/"checkpoint_roundtrip.pt";payload={"runtime":runtime,"task":"tad_triclass","epoch":3,"model":binary.clone_cpu_state(model),"optimizer":copy.deepcopy(optimizer.state_dict()),"scheduler":copy.deepcopy(scheduler.state_dict())};binary.atomic_torch_save(path,payload)
     restored,_,ropt,rsched,_=make_tri_training(context);loaded=torch.load(path,map_location="cpu",weights_only=False);restored.load_state_dict(loaded["model"],strict=True);ropt.load_state_dict(loaded["optimizer"]);rsched.load_state_dict(loaded["scheduler"]);rsched.assert_ratio();model.eval();restored.eval()
     with torch.no_grad():reload=float((model(features)[0]-restored(features)[0]).abs().max().cpu())
     require(reload==0 and max(simplex)<=2e-6,"Tri smoke reload/numeric failed")
     value={"task":"tad_triclass","runtime":runtime,"fold":0,"epochs":3,"initial_logits_max_abs_diff":initial,"initial_delta_max_abs":delta,"losses":losses,
-           "probability_sum_max_abs_error":max(simplex),"sp_gradient_by_epoch":by_epoch,"sp_max_gradient_by_tensor":gradients,"sp_parameter_delta_by_tensor":changes,
+           "probability_sum_max_abs_error":max(simplex),"sp_gradient_by_epoch":by_epoch,"sp_max_gradient_by_tensor":sp_gradients,"sp_parameter_delta_by_tensor":changes,"mechanism_probe":mechanism_probe,
            "proj_out_step1_gradient_nonzero":True,"all_projections_active_by_epoch3":True,"optimizer_audit":audit,"checkpoint_sha256":file_sha(path),"checkpoint_reload_logits_max_abs_diff":reload}
     del reference,model,restored,context;torch.cuda.empty_cache();return value
 
@@ -782,7 +790,7 @@ def cross_decision(tasks:dict[str,Any],abide:dict[str,Any])->dict[str,Any]:
 
 def run_binary_formal(task:str,source:str)->dict[str,Any]:
     install_binary_profile(task);base=binary.build_context(torch.device("cuda:0"));spec=binary_spec(task);runtime=binary_runtime(task,source)
-    result=binary.train_trial(spec,base,runtime);path=RESULT/task/"trials"/spec["trial_id"]/"oof_predictions.csv";rows=binary.parse_trial_rows(path)
+    result=binary.train_trial(spec,base,runtime);path=RESULT/task/RUN_REVISION/"trials"/spec["trial_id"]/"oof_predictions.csv";rows=binary.parse_trial_rows(path)
     validate_binary_oof(rows,binary_trial_context(base,spec),"B1");reference,refrows=reference_binary(task);comparison=paired(refrows,rows,"subject_id")
     require(comparison["net"]==int(result["metrics"]["correct"])-int(reference["correct"]),f"{task}: paired delta changed")
     labels=classification_labels(task,result,reference,comparison);collapse=bool(result["safety"]["collapse"])
