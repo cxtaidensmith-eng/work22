@@ -1,0 +1,54 @@
+{
+  "runtime_lock": {
+    "experiment": "pg_pal_abide5_v1",
+    "source_commit": "e8930b576910aba1be3f4429eb149d9b3d43210b",
+    "config_sha256": "227c55c011bc658754960fa0a709f15e24f0b56d8b50395f09a6265809433b05",
+    "inspect_sha256": "7a753f96289b1092bf7a652b9cecef6debb8689214fa0d3a192a1328b546b292",
+    "fold_manifest_sha256": "2f4ae03d2c6b37e06b072a9fbdaf076b904c0377996805a8341bb5425333e8f1",
+    "d3_oof_sha256": "0283fc37c50d2cdd7d24f15ff841ec157d6ec1ca7e053d4836386f0b2cb763bc",
+    "runner_sha256": "f86db9506e9c312f8da1fec36620d45419684b41219c7df55c6e09680860ec49",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "epochs": 400,
+    "device": "cuda:0",
+    "sha256": "1118cd72bdc5df840a15ec231ad4769600028c04f9814dc664791d05891a2053"
+  },
+  "smoke_report_sha256": "eaf44f8a8fefc4d48062fca4f082dd1aaf7b4d29ca89af50efefd68d03d0d3c7",
+  "spec": {
+    "trial_id": "PG_PAL",
+    "stage": "formal",
+    "arm": "B1",
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "dropout": 0.45,
+    "rank": 4,
+    "adapter_lr_multiplier": 2.0,
+    "ordinal": 0,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "88d137b61b3118377c9dc7fa4ed6e9eeb0c490fc502279b772eff4d2605a40e8"
+  },
+  "sha256": "80566a05fd86f96855ee890ada01cb8c65a005ca95742e20c762a907c49c3075"
+}

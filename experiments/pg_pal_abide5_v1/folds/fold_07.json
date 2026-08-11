@@ -1,0 +1,203 @@
+{
+  "schema": 1,
+  "lock": {
+    "runtime_sha256": "1118cd72bdc5df840a15ec231ad4769600028c04f9814dc664791d05891a2053",
+    "spec": {
+      "trial_id": "PG_PAL",
+      "stage": "formal",
+      "arm": "B1",
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.45,
+      "rank": 4,
+      "adapter_lr_multiplier": 2.0,
+      "ordinal": 0,
+      "epochs": 400,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "config_sha256": "88d137b61b3118377c9dc7fa4ed6e9eeb0c490fc502279b772eff4d2605a40e8"
+    },
+    "fold": 7,
+    "fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+    "sha256": "33769eb8aa171a538a5e6fe4d2f123ed5611586674f21358a8a86f04d40319b3"
+  },
+  "fold": 7,
+  "best_epoch": 166,
+  "best_metrics": {
+    "n": 86,
+    "correct": 79,
+    "acc": 0.9186046511627907,
+    "roc_auc": 0.928804347826087,
+    "pr_auc": 0.945766497904656,
+    "macro_f1": 0.918061793929495,
+    "bacc": 0.9173913043478261,
+    "weighted_f1": 0.9185271001294626,
+    "sen": 0.9,
+    "spe": 0.9347826086956522,
+    "tp": 36,
+    "fn": 4,
+    "tn": 43,
+    "fp": 3,
+    "confusion_matrix_class_order": [
+      "ADS",
+      "CN"
+    ],
+    "confusion_matrix": [
+      [
+        36,
+        4
+      ],
+      [
+        3,
+        43
+      ]
+    ],
+    "predicted_counts": {
+      "ADS": 39,
+      "CN": 47
+    },
+    "positive_class": "ADS",
+    "positive_index": 0,
+    "negative_class": "CN",
+    "negative_index": 1
+  },
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "selection_uses_test_truth_after_probability_output": true,
+  "object_audit": {
+    "common_state_pointwise_audit": "smoke_only",
+    "parameter_count": 383616,
+    "query_count": 2,
+    "ovr_head_count": 2,
+    "adapter_count": 5,
+    "base_parameter_tensors": 146,
+    "adapter_parameter_tensors": 20,
+    "adapter_parameter_names": [
+      "private_adapters.0.down.weight",
+      "private_adapters.0.down.bias",
+      "private_adapters.0.up.weight",
+      "private_adapters.0.up.bias",
+      "private_adapters.1.down.weight",
+      "private_adapters.1.down.bias",
+      "private_adapters.1.up.weight",
+      "private_adapters.1.up.bias",
+      "private_adapters.2.down.weight",
+      "private_adapters.2.down.bias",
+      "private_adapters.2.up.weight",
+      "private_adapters.2.up.bias",
+      "private_adapters.3.down.weight",
+      "private_adapters.3.down.bias",
+      "private_adapters.3.up.weight",
+      "private_adapters.3.up.bias",
+      "private_adapters.4.down.weight",
+      "private_adapters.4.down.bias",
+      "private_adapters.4.up.weight",
+      "private_adapters.4.up.bias"
+    ],
+    "base_lr": 0.005,
+    "adapter_lr": 0.01,
+    "weight_decay": 0.0005
+  },
+  "mechanism": {
+    "projection_applied_epochs": 239,
+    "projection_applied_fraction": 0.5975,
+    "raw_private_marginal_shared_cosine_mean": -0.050695659499515655,
+    "pre_norm_preservation_gradient_norm_ratio_mean": 1.0706407043637056,
+    "post_norm_preservation_gradient_norm_ratio_mean": 1.0000000009761743,
+    "post_projection_common_shared_dot_min": 2.8546339267067972e-05,
+    "private_adapter_max_gradient": 0.011503290385007858,
+    "private_trained": true,
+    "private_collapse": false
+  },
+  "private_diagnostics": {
+    "residual_mean_norm_by_modality": {
+      "PHENO": 0.040055807679891586,
+      "ANAT": 0.04902990534901619,
+      "FUNC": 0.05016208067536354,
+      "MRI": 0.054838091135025024,
+      "fMRI": 0.08530816435813904
+    },
+    "private_shared_ratio_mean_by_modality": {
+      "PHENO": 0.003132537240162492,
+      "ANAT": 0.00382360746152699,
+      "FUNC": 0.003954609390348196,
+      "MRI": 0.004017835482954979,
+      "fMRI": 0.0077985599637031555
+    },
+    "private_shared_ratio_max_by_modality": {
+      "PHENO": 0.009457516483962536,
+      "ANAT": 0.011655682697892189,
+      "FUNC": 0.012970130890607834,
+      "MRI": 0.012583046220242977,
+      "fMRI": 0.026748191565275192
+    },
+    "private_shared_ratio_mean": 0.004545430187135935,
+    "private_shared_ratio_max": 0.026748191565275192,
+    "category_global_cosine_mean": 0.08292806893587112,
+    "adapter_cumulative_max_gradient": {
+      "private_adapters.0.down.weight": 0.0019285129383206367,
+      "private_adapters.0.down.bias": 0.0008147049229592085,
+      "private_adapters.0.up.weight": 0.003444110043346882,
+      "private_adapters.0.up.bias": 0.011503290385007858,
+      "private_adapters.1.down.weight": 0.0013271889183670282,
+      "private_adapters.1.down.bias": 0.0003804173902608454,
+      "private_adapters.1.up.weight": 0.0037352796643972397,
+      "private_adapters.1.up.bias": 0.01149131078273058,
+      "private_adapters.2.down.weight": 0.002604342997074127,
+      "private_adapters.2.down.bias": 0.0011744527146220207,
+      "private_adapters.2.up.weight": 0.005862640682607889,
+      "private_adapters.2.up.bias": 0.011393348686397076,
+      "private_adapters.3.down.weight": 0.0014504508581012487,
+      "private_adapters.3.down.bias": 0.00039347249548882246,
+      "private_adapters.3.up.weight": 0.0021504417527467012,
+      "private_adapters.3.up.bias": 0.01126568391919136,
+      "private_adapters.4.down.weight": 0.0015856735408306122,
+      "private_adapters.4.down.bias": 0.00047972245374694467,
+      "private_adapters.4.up.weight": 0.0016186862485483289,
+      "private_adapters.4.up.bias": 0.011405499652028084
+    },
+    "adapter_parameter_max_delta": {
+      "private_adapters.0.down.weight": 0.12483891099691391,
+      "private_adapters.0.down.bias": 0.12379778176546097,
+      "private_adapters.0.up.weight": 0.0003611109859775752,
+      "private_adapters.0.up.bias": 0.011779719032347202,
+      "private_adapters.1.down.weight": 0.1249568834900856,
+      "private_adapters.1.down.bias": 0.05074034631252289,
+      "private_adapters.1.up.weight": 0.0012576875742524862,
+      "private_adapters.1.up.bias": 0.015646513551473618,
+      "private_adapters.2.down.weight": 0.12406190484762192,
+      "private_adapters.2.down.bias": 0.08529811352491379,
+      "private_adapters.2.up.weight": 0.00018304682453162968,
+      "private_adapters.2.up.bias": 0.023410288617014885,
+      "private_adapters.3.down.weight": 0.12466976791620255,
+      "private_adapters.3.down.bias": 0.1238909438252449,
+      "private_adapters.3.up.weight": 0.00011694730346789584,
+      "private_adapters.3.up.bias": 0.015544920228421688,
+      "private_adapters.4.down.weight": 0.12402401864528656,
+      "private_adapters.4.down.bias": 0.060603655874729156,
+      "private_adapters.4.up.weight": 5.6247990869451314e-05,
+      "private_adapters.4.up.bias": 0.02604498341679573
+    },
+    "private_trained": true,
+    "private_collapse": false
+  },
+  "optimizer_steps": 400,
+  "scheduler_steps": 400,
+  "resumed_from_epoch": 0,
+  "elapsed_seconds": 141.60470640007406,
+  "inference_seconds_full_graph": 0.01968529960140586,
+  "oof_count": 86,
+  "checkpoint_sha256": "9e8f111344ab99884cf07339e3e50ccefed715a1d91c430492102b902bc0b430",
+  "oof_sha256": "46d45282f36f2fe70fd2a80c5ddafd3860561575b32bf4849fbb0d0565b287cf",
+  "history_sha256": "698ee61301e3f496d54ba6f42a321ab1e2d115062775cd524e3e29f9ed57e179"
+}

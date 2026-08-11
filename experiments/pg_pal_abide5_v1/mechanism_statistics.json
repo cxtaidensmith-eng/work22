@@ -1,0 +1,23 @@
+{
+  "projection_applied_fraction_mean": 0.5325,
+  "projection_applied_fraction_by_fold": [
+    0.5475,
+    0.5325,
+    0.5325,
+    0.535,
+    0.53,
+    0.4475,
+    0.53,
+    0.5975,
+    0.52,
+    0.5525
+  ],
+  "raw_private_marginal_shared_cosine_mean": -0.015959475678929153,
+  "pre_norm_preservation_gradient_norm_ratio_mean": 1.0449486394577219,
+  "post_norm_preservation_gradient_norm_ratio_mean": 0.9999999999015194,
+  "post_projection_common_shared_dot_min": 2.8102708841927097e-05,
+  "private_adapter_max_gradient": 0.013551291078329086,
+  "private_trained_all_folds": true,
+  "private_collapse_any_fold": false,
+  "parameter_count": 383616
+}
