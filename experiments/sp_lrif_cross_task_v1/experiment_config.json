@@ -1,0 +1,15 @@
+{
+  "experiment": "sp_lrif_cross_task_v1",
+  "branch": "experiment/sp-lrif-cross-task-v1",
+  "base_commit": "6c1400078a5efc4a6e3f69c962c78f6b6f3be2dd",
+  "sp_lrif_source_commit": "6c1400078a5efc4a6e3f69c962c78f6b6f3be2dd",
+  "interaction_rank": 4,
+  "folds": [0,1,2,3,4,5,6,7,8,9],
+  "seed_per_fold": 0,
+  "epochs": 400,
+  "tasks": {
+    "tad_binary": {"reference_commit": "fcf57882ce242d07d4944755003559bfe97c534e", "trial_id": "D5", "lr": 0.0125, "weight_decay": 0.00025, "dropout": 0.67, "private_rank": 8, "private_lr_multiplier": 1.0},
+    "abide5": {"reference_commit": "a23134cf23e3c95cb237931d92c327c001545a06", "trial_id": "D3", "lr": 0.005, "weight_decay": 0.0005, "dropout": 0.45, "private_rank": 4, "private_lr_multiplier": 2.0},
+    "tad_triclass": {"reference_commit": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2", "trial_id": "A012", "lr": 0.011271416075886307, "weight_decay": 0.0010917677921787822, "dropout_multiplier": 1.1, "lambda_aux": 0.5, "private_rank": 8, "private_lr_multiplier": 2.0}
+  }
+}
