@@ -691,6 +691,7 @@ def validate_smoke_and_source() -> tuple[str, dict[str, Any]]:
     require(config["sha256"] == engine.payload_sha256(config_core), "Smoke config digest changed")
     require(report["sha256"] == engine.payload_sha256(report_core), "Smoke report digest changed")
     require(report["passed"] is True and report["config_sha256"] == config["sha256"], "Smoke did not pass")
+    require(config["source_hashes"] == source_hashes(), "Source changed after smoke")
     require(git("merge-base", "--is-ancestor", config["implementation_commit"], source_commit, check=False).returncode == 0, "Smoke implementation commit is not an ancestor")
     for task in TASK_IDS:
         require(report["tasks"][task]["scout_state_used_by_formal"] is False, "Scout state transfer detected")
