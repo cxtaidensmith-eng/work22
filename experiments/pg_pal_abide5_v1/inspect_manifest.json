@@ -1,0 +1,69 @@
+{
+  "experiment": "pg_pal_abide5_v1",
+  "dataset": "ABIDE-5",
+  "task": "ADS_CN",
+  "sample_count": 864,
+  "class_counts": {
+    "ADS": 397,
+    "CN": 467
+  },
+  "positive_index": 0,
+  "modality_count": 5,
+  "feature_count": 470,
+  "fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+  "subject_count": 864,
+  "subject_id_unique": true,
+  "d3_config_sha256": "ef04c3d66f6948527a050ffee149a3c8cbb56e577c6452e7ddb5299a8c846e9c",
+  "d3_summary_sha256": "1591df3ef991023e889d51ae7c549e1be334cbc4fa139398e3cf3f1c83e4145b",
+  "d3_oof_sha256": "0283fc37c50d2cdd7d24f15ff841ec157d6ec1ca7e053d4836386f0b2cb763bc",
+  "d3_metrics": {
+    "n": 864,
+    "correct": 769,
+    "acc": 0.8900462962962963,
+    "roc_auc": 0.8862642193323589,
+    "pr_auc": 0.8505649758766733,
+    "macro_f1": 0.8893405326700237,
+    "bacc": 0.8894141823850182,
+    "weighted_f1": 0.8900565247546481,
+    "sen": 0.8816120906801007,
+    "spe": 0.8972162740899358,
+    "tp": 350,
+    "fn": 47,
+    "tn": 419,
+    "fp": 48,
+    "confusion_matrix_class_order": [
+      "ADS",
+      "CN"
+    ],
+    "confusion_matrix": [
+      [
+        350,
+        47
+      ],
+      [
+        48,
+        419
+      ]
+    ],
+    "predicted_counts": {
+      "ADS": 398,
+      "CN": 466
+    },
+    "positive_class": "ADS",
+    "positive_index": 0,
+    "negative_class": "CN",
+    "negative_index": 1
+  },
+  "d3_parameter_count": 383616,
+  "runtime_parameter_count": 383616,
+  "common_parameter_tensors": 146,
+  "private_parameter_tensors": 20,
+  "optimizer_parameter_groups": 2,
+  "common_none_gradient_whitelist": {
+    "Adj_Learning.layer_.weight": "graph=False makes learned adjacency irrelevant to classification",
+    "Adj_Learning.layer_.bias": "graph=False makes learned adjacency irrelevant to classification"
+  },
+  "batchnorm_modules": 0,
+  "private_toggle": "temporary output-zero forward hooks on each private adapter; common trunk remains attached",
+  "sha256": "67c599d3b22222cab4571a96e46605c032dc4a8de21c106d9ae4336801e0fbf5"
+}

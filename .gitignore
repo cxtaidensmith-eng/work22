@@ -45,6 +45,10 @@
 # state. Compact fold JSON, per-trial OOF, manifests, and reports are tracked.
 /experiments/abide5_hparam_search_v1/work/
 /experiments/abide5_hparam_search_v1/smoke/*.pt
+# PG-PAL formal checkpoints/epoch histories are strict-resume local state.
+# Compact fold OOF/JSON artifacts and top-level results remain trackable.
+/experiments/pg_pal_abide5_v1/formal/
+/experiments/pg_pal_abide5_v1/smoke/*.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
 /experiments/c1_broad_hparam_search_v1/stage_a/
