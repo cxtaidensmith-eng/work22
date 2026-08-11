@@ -78,6 +78,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         *args,
         cme_arm: str,
         adapter_rank: int = 8,
+        adapter_ranks: list[int] | tuple[int, ...] | None = None,
         router_hidden: int = 16,
         modality_embedding_dim: int = 8,
         **kwargs,
@@ -100,10 +101,21 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
 
         self.cme_arm = arm
         self.adapter_rank = int(adapter_rank)
+        if adapter_ranks is None:
+            resolved_adapter_ranks = [self.adapter_rank] * self._modal_num
+        else:
+            resolved_adapter_ranks = [int(rank) for rank in adapter_ranks]
+            if len(resolved_adapter_ranks) != self._modal_num:
+                raise ValueError(
+                    "adapter_ranks must contain exactly one rank per modality"
+                )
+            if any(rank < 1 for rank in resolved_adapter_ranks):
+                raise ValueError("Every private adapter rank must be at least one")
+        self.adapter_ranks = tuple(resolved_adapter_ranks)
         self.private_adapters = nn.ModuleList(
             [
-                PrivateResidualAdapter(self.Hidden_size, self.adapter_rank)
-                for _ in range(self._modal_num)
+                PrivateResidualAdapter(self.Hidden_size, rank)
+                for rank in self.adapter_ranks
             ]
         )
         if arm == "c2":

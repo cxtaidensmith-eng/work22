@@ -1,0 +1,18 @@
+{
+  "experiment": "ma_ara_pressure_v1",
+  "branch": "experiment/ma-ara-pressure-v1",
+  "tasks": ["tadpole_smci_pmci", "abide5_ads_cn"],
+  "seed": 0,
+  "folds": 10,
+  "formal_epochs": 400,
+  "scout_epochs": 60,
+  "smoke_scout_epochs": 3,
+  "smoke_formal_epochs": 3,
+  "importance_ema_beta": 0.9,
+  "allocation_min_rank": 1,
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "single_model": true,
+  "ensemble": false,
+  "ema": false,
+  "graph": false
+}

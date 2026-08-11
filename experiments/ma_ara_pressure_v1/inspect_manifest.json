@@ -1,0 +1,357 @@
+{
+  "experiment": "ma_ara_pressure_v1",
+  "tasks": {
+    "tadpole_smci_pmci": {
+      "dataset": "TADPOLE",
+      "task": "SMCI_PMCI",
+      "sample_count": 535,
+      "class_names": [
+        "SMCI",
+        "PMCI"
+      ],
+      "class_counts": {
+        "SMCI": 490,
+        "PMCI": 45
+      },
+      "positive_class": "PMCI",
+      "positive_index": 1,
+      "modalities": [
+        {
+          "name": "MRI",
+          "feature_count": 138
+        },
+        {
+          "name": "CSF",
+          "feature_count": 3
+        },
+        {
+          "name": "RISK_FACTOR",
+          "feature_count": 36
+        },
+        {
+          "name": "COGNITIVE_TEST",
+          "feature_count": 9
+        },
+        {
+          "name": "ROI_AVERAGE",
+          "feature_count": 7
+        }
+      ],
+      "fold_manifest_sha256": "f1be6098605c541e3828447c7daae91b9e786e649cd2fa0c3cf69f1a28bbe8d6",
+      "reference": {
+        "trial_id": "D5",
+        "correct": 519,
+        "rank": 8,
+        "lr": 0.0125,
+        "weight_decay": 0.00025,
+        "dropout": 0.67,
+        "adapter_lr_multiplier": 1.0,
+        "roc_auc": 0.9182766,
+        "pr_auc": 0.7321648,
+        "macro_f1": 0.9009443,
+        "bacc": 0.8928571,
+        "confusion_matrix": [
+          [
+            483,
+            7
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "worktree": "tad_binary_hparam_search_v1",
+        "experiment_dir": "experiments/tad_binary_hparam_search_v1",
+        "oof": "tuned_b1_oof_predictions.csv",
+        "work_trial": "work/D5"
+      },
+      "reference_oof_sha256": "143c493df779a424728e42444da8ad1d0560b0aeae2334d78a30dc4d070bfc54",
+      "reference_metrics_recomputed": {
+        "n": 535,
+        "correct": 519,
+        "acc": 0.9700934579439252,
+        "roc_auc": 0.9182766439909297,
+        "pr_auc": 0.7321647746112192,
+        "macro_f1": 0.9009442695797074,
+        "bacc": 0.8928571428571429,
+        "weighted_f1": 0.9697840656022508,
+        "sen": 0.8,
+        "spe": 0.9857142857142858,
+        "tp": 36,
+        "fn": 9,
+        "tn": 483,
+        "fp": 7,
+        "confusion_matrix_class_order": [
+          "SMCI",
+          "PMCI"
+        ],
+        "confusion_matrix": [
+          [
+            483,
+            7
+          ],
+          [
+            9,
+            36
+          ]
+        ],
+        "predicted_counts": {
+          "SMCI": 492,
+          "PMCI": 43
+        },
+        "positive_class": "PMCI",
+        "positive_index": 1,
+        "negative_class": "SMCI",
+        "negative_index": 0
+      },
+      "reference_checkpoint_audit": [
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_00/checkpoint_best.pt",
+          "sha256": "69811b701131d3f9e9864b6c209d8989d570a7ffc2f53ccaf491d8500152d672",
+          "best_epoch": 128,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_01/checkpoint_best.pt",
+          "sha256": "e7610caecee5ba80fde260c086fe970c421df97b0c223ce47ba48ac653d56c65",
+          "best_epoch": 29,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_02/checkpoint_best.pt",
+          "sha256": "29498aa29aaaeabf7b4681d1005c3412046543b1a6f9953f000b18d9163a5f7c",
+          "best_epoch": 133,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_03/checkpoint_best.pt",
+          "sha256": "f5bbe4e9fc6d8b09ae78f31d91bfdc7a4044252fc15e2fe4be268ef16a679d26",
+          "best_epoch": 58,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_04/checkpoint_best.pt",
+          "sha256": "d429b6452d75da4fb8f8e718ba8f4ee97f03972abf040211567639571f71b3cf",
+          "best_epoch": 74,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_05/checkpoint_best.pt",
+          "sha256": "1f8811e3e71f6a27e0a9c43b2ee90a591f75e80b02e10525c35d09945d8245ee",
+          "best_epoch": 104,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_06/checkpoint_best.pt",
+          "sha256": "7f7ed7250eb64ff1abec2dbb8082703954017e5de1269c8657f0d200de4198fe",
+          "best_epoch": 122,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_07/checkpoint_best.pt",
+          "sha256": "ed926de69687759815fbe198c33daacf8157be40be240f4d831700b8deb52683",
+          "best_epoch": 37,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_08/checkpoint_best.pt",
+          "sha256": "b08b17cd4aad7c4bdab0e6daa18b9e5c7adf2bba89bd079872b185aadd31e27c",
+          "best_epoch": 90,
+          "state_tensor_count": 159
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/tad_binary_hparam_search_v1/experiments/tad_binary_hparam_search_v1/work/D5/fold_09/checkpoint_best.pt",
+          "sha256": "9a421e4866318d6e2d65903fec17c011b74e3a992a72db4cb90840c3fd0833ad",
+          "best_epoch": 89,
+          "state_tensor_count": 159
+        }
+      ],
+      "reference_parameter_count": 617197,
+      "reference_private_parameter_count": 8200,
+      "per_rank_parameter_cost": 193,
+      "equal_rank_cost_across_modalities": true,
+      "rank_budget": 40,
+      "scout_rank_per_modality": 16
+    },
+    "abide5_ads_cn": {
+      "dataset": "ABIDE-5",
+      "task": "ADS_CN",
+      "sample_count": 864,
+      "class_names": [
+        "ADS",
+        "CN"
+      ],
+      "class_counts": {
+        "ADS": 397,
+        "CN": 467
+      },
+      "positive_class": "ADS",
+      "positive_index": 0,
+      "modalities": [
+        {
+          "name": "PHENO",
+          "feature_count": 48
+        },
+        {
+          "name": "ANAT",
+          "feature_count": 6
+        },
+        {
+          "name": "FUNC",
+          "feature_count": 10
+        },
+        {
+          "name": "MRI",
+          "feature_count": 150
+        },
+        {
+          "name": "fMRI",
+          "feature_count": 256
+        }
+      ],
+      "fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+      "reference": {
+        "trial_id": "D3",
+        "correct": 769,
+        "rank": 4,
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "adapter_lr_multiplier": 2.0,
+        "roc_auc": 0.8862642,
+        "pr_auc": 0.850565,
+        "macro_f1": 0.8893405,
+        "bacc": 0.8894142,
+        "confusion_matrix": [
+          [
+            350,
+            47
+          ],
+          [
+            48,
+            419
+          ]
+        ],
+        "worktree": "abide5_hparam_search_v1",
+        "experiment_dir": "experiments/abide5_hparam_search_v1",
+        "oof": "retained_oof_predictions.csv",
+        "work_trial": "work/D3"
+      },
+      "reference_oof_sha256": "4a63b209166f35d08b8a1f37c5073a5fedc65c64eaae1e8b97e83837cde8ffa3",
+      "reference_metrics_recomputed": {
+        "n": 864,
+        "correct": 769,
+        "acc": 0.8900462962962963,
+        "roc_auc": 0.8862642193323589,
+        "pr_auc": 0.8505649758766733,
+        "macro_f1": 0.8893405326700237,
+        "bacc": 0.8894141823850182,
+        "weighted_f1": 0.8900565247546481,
+        "sen": 0.8816120906801007,
+        "spe": 0.8972162740899358,
+        "tp": 350,
+        "fn": 47,
+        "tn": 419,
+        "fp": 48,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            350,
+            47
+          ],
+          [
+            48,
+            419
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 398,
+          "CN": 466
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "reference_checkpoint_audit": [
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_00/checkpoint_best.pt",
+          "sha256": "1246984495387b6ce3f0966b261b76f5307afa13e43736fa58bb1299404d772f",
+          "best_epoch": 74,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_01/checkpoint_best.pt",
+          "sha256": "c4c66f791dda53dc847612420225c3a05de36045c0f42b80ae8cf05f8961d26e",
+          "best_epoch": 197,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_02/checkpoint_best.pt",
+          "sha256": "61ba2c816f7bca7b9dcf12e958eb2cc49a1fd64ee0ea4411a9845a2ba79b8e8d",
+          "best_epoch": 176,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_03/checkpoint_best.pt",
+          "sha256": "37ca4ca3a9456dad9cbd3a3965a6c4ce4ab24fbcf42aeb2bf449f7861c19ed62",
+          "best_epoch": 182,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_04/checkpoint_best.pt",
+          "sha256": "3943c72f8e9f55cae5dca39f03e30f88ae390e3fc0e391d0aa4027096c1d1071",
+          "best_epoch": 174,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_05/checkpoint_best.pt",
+          "sha256": "3c6c180f41107c6844b6bb05d36467d6c06f5978341969561c32f86289738fdb",
+          "best_epoch": 205,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_06/checkpoint_best.pt",
+          "sha256": "ae3ad6c322091df4cbde2dd6085534a7077d6d6d2273c1f2bda5d51b0bc077a3",
+          "best_epoch": 105,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_07/checkpoint_best.pt",
+          "sha256": "56f56f9301a71a02b63ad26324cfaaf1e776da9adba2d3964ba0008b8e735f7c",
+          "best_epoch": 219,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_08/checkpoint_best.pt",
+          "sha256": "431c32dda9af03dd2d988bb4f507763e2a0e09d629d39749125afcb3ca043701",
+          "best_epoch": 175,
+          "state_tensor_count": 171
+        },
+        {
+          "path": "D:/Work/WORK2 final/WORK2 final26.7,21/tmp/abide5_hparam_search_v1/experiments/abide5_hparam_search_v1/work/D3/fold_09/checkpoint_best.pt",
+          "sha256": "662d780b8c06a70620619435c0c644c183524c4884c3248fbaf9a0c204404d4e",
+          "best_epoch": 128,
+          "state_tensor_count": 171
+        }
+      ],
+      "reference_parameter_count": 383616,
+      "reference_private_parameter_count": 2900,
+      "per_rank_parameter_cost": 129,
+      "equal_rank_cost_across_modalities": true,
+      "rank_budget": 20,
+      "scout_rank_per_modality": 8
+    }
+  },
+  "disk_free_bytes": 15010971648,
+  "disk_minimum_bytes": 6000000000,
+  "data_protocol_compatible": true,
+  "checkpoint_compatible": true,
+  "scout_uses_train_mask_only": true,
+  "test_labels_used_for_allocation": false,
+  "fold_manifest_sha256": "bc3fdcbe9b547ec09e61e8ddabaad02b23f2dd4de27899d3d48a7d86f468f33c",
+  "sha256": "3183e89e0894ba5bfd0297dcc488b0ea039ddce2aa3cbcd5505d5426dc3684e2"
+}
