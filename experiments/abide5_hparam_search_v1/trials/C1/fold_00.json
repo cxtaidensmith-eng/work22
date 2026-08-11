@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "lock": {
+    "runtime_sha256": "aab3fffd89e187ba6d7513b8d545c2a23928a57ec9f59a0d1259df975ede91dd",
+    "trial_spec": {
+      "trial_id": "C1",
+      "stage": "C",
+      "arm": "B0",
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.35,
+      "rank": 0,
+      "adapter_lr_multiplier": 0.0,
+      "ordinal": 9,
+      "epochs": 400,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seed_per_fold": 0,
+      "config_sha256": "815824a85d534635fbc1f2f557a6e6622244db37e05969112113de7721011bd7"
+    },
+    "config_key": "9996d46ad3b0efb349bfb80be27298e261ce708973b6735e38ccdd4bb5bbe015",
+    "fold": 0,
+    "fold_manifest_sha256": "e4232c4aadc20c48a78207584028ee1aa6474f16849bea4947bc82964f21917c",
+    "sha256": "bbd41357fcd2369884205427935e5d497e565842a265bec545ea70f78beff6e4"
+  },
+  "spec": {
+    "trial_id": "C1",
+    "stage": "C",
+    "arm": "B0",
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "dropout": 0.35,
+    "rank": 0,
+    "adapter_lr_multiplier": 0.0,
+    "ordinal": 9,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "815824a85d534635fbc1f2f557a6e6622244db37e05969112113de7721011bd7"
+  },
+  "fold": 0,
+  "best_epoch": 142,
+  "best_metrics": {
+    "n": 87,
+    "correct": 73,
+    "acc": 0.8390804597701149,
+    "roc_auc": 0.8531914893617022,
+    "pr_auc": 0.7855389571808935,
+    "macro_f1": 0.8373397435897436,
+    "bacc": 0.8361702127659575,
+    "weighted_f1": 0.8386936339522546,
+    "sen": 0.8,
+    "spe": 0.8723404255319149,
+    "tp": 32,
+    "fn": 8,
+    "tn": 41,
+    "fp": 6,
+    "confusion_matrix_class_order": [
+      "ADS",
+      "CN"
+    ],
+    "confusion_matrix": [
+      [
+        32,
+        8
+      ],
+      [
+        6,
+        41
+      ]
+    ],
+    "predicted_counts": {
+      "ADS": 38,
+      "CN": 49
+    },
+    "positive_class": "ADS",
+    "positive_index": 0,
+    "negative_class": "CN",
+    "negative_index": 1
+  },
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "selection_uses_test_fold_truth": true,
+  "object_audit": {
+    "parameter_count": 380716,
+    "query_count": 2,
+    "ovr_head_count": 2,
+    "adapter_count": 0,
+    "base_parameter_tensors": 146,
+    "adapter_parameter_tensors": 0,
+    "base_lr": 0.005,
+    "weight_decay": 0.0005
+  },
+  "diagnostics": null,
+  "optimizer_steps": 400,
+  "scheduler_steps": 400,
+  "resumed_from_epoch": 0,
+  "elapsed_seconds": 46.93870500009507,
+  "inference_seconds_full_graph": 0.015035700052976608,
+  "oof_count": 87,
+  "checkpoint_sha256": "bdee06f107fefeb04b0cfd1e1600f1ea23fe2ba449b9862b91fa346775ed01e1",
+  "oof_sha256": "cbfa2efe8e12b54ce4d9fd8c778c107e73158247579696ce9a5791e44e092f8b",
+  "history_sha256": "af53268b5ea358d63d2da4fbfc6bce8a7da633d54ccf7a33ddff2a6be1deab4d"
+}

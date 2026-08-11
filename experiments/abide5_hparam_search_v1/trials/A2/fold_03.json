@@ -1,0 +1,44 @@
+{
+  "schema": "historical_reuse",
+  "spec": {
+    "trial_id": "A2",
+    "stage": "A",
+    "arm": "B0",
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "dropout": 0.45,
+    "rank": 0,
+    "adapter_lr_multiplier": 0.0,
+    "ordinal": 2,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "65c58d72a524fc6181b784fb5b90a5b208e32792fa440814490bb2125b7343ed"
+  },
+  "fold": 3,
+  "best_epoch": 51,
+  "best_metrics": {
+    "correct": 71,
+    "acc": 0.8160919540229885,
+    "roc_auc": 0.8707446808510638,
+    "pr_auc": 0.8244993230937606,
+    "macro_f1": 0.8131041890440387,
+    "bacc": 0.8111702127659575
+  },
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "elapsed_seconds": 112.84496559994295,
+  "inference_seconds_full_graph": 0.018276499584317207,
+  "resumed_from_epoch": 0,
+  "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206"
+}

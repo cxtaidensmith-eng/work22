@@ -1,0 +1,45 @@
+{
+  "complete": true,
+  "spec": {
+    "trial_id": "D6",
+    "stage": "D",
+    "arm": "B1",
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "dropout": 0.45,
+    "rank": 8,
+    "adapter_lr_multiplier": 2.0,
+    "ordinal": 17,
+    "epochs": 400,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed_per_fold": 0,
+    "config_sha256": "544d7143b96a34c8c6b84880fa8623fbffceaa87187ab75c6b28dc789bb9abf2"
+  },
+  "config_sha256": "57b83f3bdac2f9a6cc6847962f9bb5caa578ced7d5d62813373f7b3eadaa8d92",
+  "oof_sha256": "1d8407dcf4329bef54933ea174c25a173754b8d09a07dd62675fa285ec18eca6",
+  "summary_sha256": "674d87234845306a97e441f0e1a0da58882a4f33b31aae74610e0254f8fe687a",
+  "fold_summary_sha256": {
+    "fold_00": "0db56ca7a882344abf1b66f322d1f2d039d5e2eed4ad03c2758d2d9a27b78852",
+    "fold_01": "57164f7865aa71763dd3d83b1df99a08f8c7425c8f6d14789ae259ff2d0e151d",
+    "fold_02": "55963b4f7fa9b292769aa0e7f90900a2f017b07495d9d14e8f8376263dfe661b",
+    "fold_03": "daa8a1758d352a30f990f90efbc39b81d822ef02a1c0037c7dddbdabff5fb9fe",
+    "fold_04": "0131ad53ed9c3da70695a5f8f53b3db7d6bdd81db5c7b7ffa96e34bb305013ac",
+    "fold_05": "6887e8b6593ac9b2f362b6b564b3d549fc0ddf0a297ba3aa87da55a1bcc1e4d6",
+    "fold_06": "6d8921ba91e3bac1adc0f9ee7632a19716ad4431e449af9fbe4cf04e526face7",
+    "fold_07": "74fcd9c347f726e7961fdeb4951622224d97a36e2d97f992fa4c930650ffd857",
+    "fold_08": "1fe8e25327076ffe2ac27e6424b010bbdf870a45e38448531c1af968b5a6d0fd",
+    "fold_09": "9e810ab8f3aad604308c83df6a7c293aef6f09284722283efd86ff3384d37993"
+  },
+  "sha256": "0c9d7ad2df32a0ae6e87c71dc0b589f3a75537e8e64c94beee8faa5cc0d1082c"
+}

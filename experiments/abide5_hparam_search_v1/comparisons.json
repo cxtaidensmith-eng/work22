@@ -1,0 +1,59 @@
+{
+  "tuned_b0_vs_historical_b0": {
+    "left_trial_id": "HISTORICAL_B0",
+    "right_trial_id": "A2",
+    "repairs": 0,
+    "damages": 0,
+    "changed": 0,
+    "correct_delta": 0,
+    "metric_deltas": {
+      "acc": 0.0,
+      "roc_auc": 0.0,
+      "pr_auc": 0.0,
+      "macro_f1": 0.0,
+      "bacc": 0.0,
+      "weighted_f1": 0.0,
+      "sen": 0.0,
+      "spe": 0.0
+    },
+    "exact_mcnemar_p": 1.0
+  },
+  "tuned_b1_vs_historical_b1": {
+    "left_trial_id": "HISTORICAL_B1",
+    "right_trial_id": "D3",
+    "repairs": 41,
+    "damages": 38,
+    "changed": 79,
+    "correct_delta": 3,
+    "metric_deltas": {
+      "acc": 0.00347222222222221,
+      "roc_auc": -0.009824756336334062,
+      "pr_auc": -0.019549443135222333,
+      "macro_f1": 0.003316109332167416,
+      "bacc": 0.002645645337892799,
+      "weighted_f1": 0.0033908422245376713,
+      "sen": -0.007556675062972307,
+      "spe": 0.012847965738758016
+    },
+    "exact_mcnemar_p": 0.8221442424521863
+  },
+  "tuned_b1_vs_tuned_b0": {
+    "left_trial_id": "A2",
+    "right_trial_id": "D3",
+    "repairs": 40,
+    "damages": 39,
+    "changed": 79,
+    "correct_delta": 1,
+    "metric_deltas": {
+      "acc": 0.0011574074074074403,
+      "roc_auc": -0.020428912777307406,
+      "pr_auc": -0.040038709616383006,
+      "macro_f1": 0.0014124800930606085,
+      "bacc": 0.0022033560051564205,
+      "weighted_f1": 0.001287740404749993,
+      "sen": 0.015113350125944502,
+      "spe": -0.010706638115631661
+    },
+    "exact_mcnemar_p": 1.0
+  }
+}

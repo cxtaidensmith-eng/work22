@@ -1,0 +1,1536 @@
+{
+  "experiment": "abide5_hparam_search_v1",
+  "runtime_lock": {
+    "experiment": "abide5_hparam_search_v1",
+    "source_commit": "35bcf76af36719b96ae81ec2f5015256ee43f728",
+    "source_hashes": {
+      ".gitignore": "eb5f495f3636d1fabed92afb39373f8a58cb7737ea726b001760542521bd6119",
+      "scripts/run_abide5_hparam_search_v1.py": "0b7fe6a3db906da2ffcc04cc231227881490ebc5e1dbbd83840b13aba0e11024",
+      "experiments/abide5_hparam_search_v1/experiment_config.json": "3b998ecff33628b0c26de0e7dcef3b3d6cb41de8932369bbe1d9c37de3cca1a0",
+      "experiments/abide5_hparam_search_v1/protocol.json": "3fce61f0b97fc1825368e11555e0a30d40e24d84ba9783211896ba2e4f917a32",
+      "experiments/abide5_hparam_search_v1/inspect_manifest.json": "ccdfb06e5332cc75c7160d5fad96e38e2a57aeff2f8b864a1c2163754cedbac6",
+      "experiments/abide5_hparam_search_v1/fold_manifest.json": "2f4ae03d2c6b37e06b072a9fbdaf076b904c0377996805a8341bb5425333e8f1",
+      "experiments/abide5_hparam_search_v1/registered_search.json": "6c9c2554ec99a5a0c74860ccdd03901ab9fc244d52d333f482411743e7bd10b1",
+      "experiments/abide5_hparam_search_v1/historical/historical_B0_oof.csv": "346d2374a969aa89ca1fcde83bb7b752e0785c07df9c6898d6b5b8408b39ede2",
+      "experiments/abide5_hparam_search_v1/historical/historical_B1_oof.csv": "fc94378ac83d81e5b49a43b4bb132f07a50129af5fe3ec2a3dffa2225c1b756c",
+      "experiments/abide5_hparam_search_v1/historical/historical_fold_metrics.json": "68b157c143c193984a3be3f2958744f510fb87fdd97c51e8815870142c977317",
+      "Model/cme_dual_branch.py": "365bad7ae3e8e4c69bdae2e9d91eba0a14be4b549d59d16d5ed25628acd80805",
+      "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+      "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+      "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+      "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+      "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+      "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+      "config_re.py": "d4983438cd1033c769d52c5e43661a88aa114d60448779084d86d476c2d0e97f",
+      "scripts/run_cross_dataset_a012_structure_v1.py": "de04e8039536e04bced5e5b838c9f565cf40e2c5ad223587d73a7aac1caba1d3",
+      "scripts/run_tad_binary_hparam_search_v1.py": "e74ca73db0c9a1fbb9afb944a6d5438dda2002de633123244267bfb6bb2aef7b",
+      "scripts/run_abide_hparam_search_v1.py": "509eca17452dd42a8e47cf1f2b583fd3690c358175c084356db4c55504d423c6",
+      "experiments/cross_dataset_a012_structure_v1/protocols/abide5_ads_cn.json": "1da4d6c28e0c21e88556f6dc2e68fa527446725d13f4c5c517e0696a337f73f9"
+    },
+    "experiment_config_sha256": "3b998ecff33628b0c26de0e7dcef3b3d6cb41de8932369bbe1d9c37de3cca1a0",
+    "protocol_sha256": "3fce61f0b97fc1825368e11555e0a30d40e24d84ba9783211896ba2e4f917a32",
+    "inspect_sha256": "ccdfb06e5332cc75c7160d5fad96e38e2a57aeff2f8b864a1c2163754cedbac6",
+    "fold_manifest_sha256": "2f4ae03d2c6b37e06b072a9fbdaf076b904c0377996805a8341bb5425333e8f1",
+    "historical_result_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "device": "cuda:0",
+    "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+    "sha256": "aab3fffd89e187ba6d7513b8d545c2a23928a57ec9f59a0d1259df975ede91dd"
+  },
+  "strategy": "fixed staged coordinate search A -> B -> C -> D; optional registered local LR pair only",
+  "trials": {
+    "A1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A1",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.00375,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 1,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "36a469f3c24c2d7e4cffda841c1dfd9749effe62690886936852541e4f20561f"
+      },
+      "config_key": "d1bff6cf455aae8ae595a21871b74a1ca007949b06cd2b32f5e9ef5cd3b072e7",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/A1/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/A1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 761,
+        "acc": 0.8807870370370371,
+        "roc_auc": 0.8782005296684446,
+        "pr_auc": 0.854121350039565,
+        "macro_f1": 0.8799298943423007,
+        "bacc": 0.8797161796989197,
+        "weighted_f1": 0.8807518119947875,
+        "sen": 0.8664987405541562,
+        "spe": 0.892933618843683,
+        "tp": 344,
+        "fn": 53,
+        "tn": 417,
+        "fp": 50,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            344,
+            53
+          ],
+          [
+            50,
+            417
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 394,
+          "CN": 470
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "BACC is more than 0.005 below Historical B0"
+        ]
+      }
+    },
+    "A2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A2",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 2,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "65c58d72a524fc6181b784fb5b90a5b208e32792fa440814490bb2125b7343ed"
+      },
+      "config_key": "8c4d4d0e6dccfdd7b1cfa38447a4445665f21580ff03d7c602a27c8bb5590d5e",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/A2/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/A2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "historical:e7d18205ddfefaf898a81c999cce15b348331206:B0",
+      "metrics": {
+        "n": 864,
+        "correct": 768,
+        "acc": 0.8888888888888888,
+        "roc_auc": 0.9066931321096663,
+        "pr_auc": 0.8906036854930564,
+        "macro_f1": 0.8879280525769631,
+        "bacc": 0.8872108263798618,
+        "weighted_f1": 0.8887687843498981,
+        "sen": 0.8664987405541562,
+        "spe": 0.9079229122055674,
+        "tp": 344,
+        "fn": 53,
+        "tn": 424,
+        "fp": 43,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            344,
+            53
+          ],
+          [
+            43,
+            424
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 387,
+          "CN": 477
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "A3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A3",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.00625,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 3,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "e07b7822c61c87ef3cb0e1523e2a6fbd5be73415590f4bb27d537cdd6b9d14cc"
+      },
+      "config_key": "f773669574a48a0d31aa827a4a87f3e2d4327e5579271507a7d409e72f364bc3",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/A3/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/A3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 760,
+        "acc": 0.8796296296296297,
+        "roc_auc": 0.8808893251851413,
+        "pr_auc": 0.8328574711894078,
+        "macro_f1": 0.8789655172413793,
+        "bacc": 0.8794006440164186,
+        "weighted_f1": 0.8796918901660281,
+        "sen": 0.8765743073047859,
+        "spe": 0.8822269807280514,
+        "tp": 348,
+        "fn": 49,
+        "tn": 412,
+        "fp": 55,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            348,
+            49
+          ],
+          [
+            55,
+            412
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 403,
+          "CN": 461
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "BACC is more than 0.005 below Historical B0"
+        ]
+      }
+    },
+    "A4": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "A4",
+        "stage": "A",
+        "arm": "B0",
+        "lr": 0.0075,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 4,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "52752b111e582968243c4c33950b068c2a54cb1f00368cd586e9d02b0eef25f8"
+      },
+      "config_key": "cd2339792aa620d40d9313a7b04d64db66c263535edc5483475a03531e5cf60d",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/A4/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/A4/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 750,
+        "acc": 0.8680555555555556,
+        "roc_auc": 0.8709809653773752,
+        "pr_auc": 0.852121888519673,
+        "macro_f1": 0.8670805106474859,
+        "bacc": 0.8668061855781315,
+        "weighted_f1": 0.8680028504253896,
+        "sen": 0.8513853904282116,
+        "spe": 0.8822269807280514,
+        "tp": 338,
+        "fn": 59,
+        "tn": 412,
+        "fp": 55,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            338,
+            59
+          ],
+          [
+            55,
+            412
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 393,
+          "CN": 471
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "BACC is more than 0.005 below Historical B0"
+        ]
+      }
+    },
+    "B1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B1",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.00025,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 5,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "dda3a7a39a337f1b00c3c01d2cbc26d303ae22ddd90f2a7b87e96a213ca4682b"
+      },
+      "config_key": "26ba15f08b9f436ade3542d27a51443012bdf3ab78d406ee732a8bebba7a9ba0",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/B1/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/B1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 754,
+        "acc": 0.8726851851851852,
+        "roc_auc": 0.8734189504797761,
+        "pr_auc": 0.8310003213431387,
+        "macro_f1": 0.8719827586206896,
+        "bacc": 0.8724103150502429,
+        "weighted_f1": 0.8727510376756066,
+        "sen": 0.8690176322418136,
+        "spe": 0.8758029978586723,
+        "tp": 345,
+        "fn": 52,
+        "tn": 409,
+        "fp": 58,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            345,
+            52
+          ],
+          [
+            58,
+            409
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 403,
+          "CN": 461
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "BACC is more than 0.005 below Historical B0"
+        ]
+      }
+    },
+    "B2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B2",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 6,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "28a16810061fd4cdbe966d958295553b593eb7783b3b36e4ed3f237fe55b1e81"
+      },
+      "config_key": "8c4d4d0e6dccfdd7b1cfa38447a4445665f21580ff03d7c602a27c8bb5590d5e",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/B2/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/B2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "trial:A2",
+      "metrics": {
+        "n": 864,
+        "correct": 768,
+        "acc": 0.8888888888888888,
+        "roc_auc": 0.9066931321096663,
+        "pr_auc": 0.8906036854930564,
+        "macro_f1": 0.8879280525769631,
+        "bacc": 0.8872108263798618,
+        "weighted_f1": 0.8887687843498981,
+        "sen": 0.8664987405541562,
+        "spe": 0.9079229122055674,
+        "tp": 344,
+        "fn": 53,
+        "tn": 424,
+        "fp": 43,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            344,
+            53
+          ],
+          [
+            43,
+            424
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 387,
+          "CN": 477
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "B3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B3",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.001,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 7,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "d574f3443b59493ae83c2b0a52922ca715bfb728277bef5c60896abdbd26063f"
+      },
+      "config_key": "58afaf245feba7031dcf1a0d1ab5ac01eb49c51782fd9f9e8ba9b36e6b37eab0",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/B3/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/B3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 766,
+        "acc": 0.8865740740740741,
+        "roc_auc": 0.8947782889875349,
+        "pr_auc": 0.8567570466251685,
+        "macro_f1": 0.8856420479408762,
+        "bacc": 0.8850694987567356,
+        "weighted_f1": 0.8864784816501563,
+        "sen": 0.8664987405541562,
+        "spe": 0.9036402569593148,
+        "tp": 344,
+        "fn": 53,
+        "tn": 422,
+        "fp": 45,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            344,
+            53
+          ],
+          [
+            45,
+            422
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 389,
+          "CN": 475
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "B4": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "B4",
+        "stage": "B",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0015,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 8,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "90b1e49f3d4ac637eb15dbee7fd2b63ebccb885557b4dd8ebdbaa3263bda8519"
+      },
+      "config_key": "ea9a4a9d0de1b2e65d74e7b99630100c328b90f35574b30889b821904bbbf7e6",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/B4/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/B4/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 767,
+        "acc": 0.8877314814814815,
+        "roc_auc": 0.8852367056995992,
+        "pr_auc": 0.8571806750581407,
+        "macro_f1": 0.8867359970808246,
+        "bacc": 0.8859513805360331,
+        "weighted_f1": 0.887596292241886,
+        "sen": 0.8639798488664987,
+        "spe": 0.9079229122055674,
+        "tp": 343,
+        "fn": 54,
+        "tn": 424,
+        "fp": 43,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            343,
+            54
+          ],
+          [
+            43,
+            424
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 386,
+          "CN": 478
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "C1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C1",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.35,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 9,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "815824a85d534635fbc1f2f557a6e6622244db37e05969112113de7721011bd7"
+      },
+      "config_key": "9996d46ad3b0efb349bfb80be27298e261ce708973b6735e38ccdd4bb5bbe015",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/C1/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/C1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 755,
+        "acc": 0.8738425925925926,
+        "roc_auc": 0.8667252789928749,
+        "pr_auc": 0.8190342816047459,
+        "macro_f1": 0.8729355192554444,
+        "bacc": 0.872725850732744,
+        "weighted_f1": 0.8738053156061345,
+        "sen": 0.8589420654911839,
+        "spe": 0.8865096359743041,
+        "tp": 341,
+        "fn": 56,
+        "tn": 414,
+        "fp": 53,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            341,
+            56
+          ],
+          [
+            53,
+            414
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 394,
+          "CN": 470
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": false,
+        "collapse": false,
+        "reasons": [
+          "BACC is more than 0.005 below Historical B0"
+        ]
+      }
+    },
+    "C2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C2",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 10,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "2441c9c4759127ecbafb52072f07042c0298ab0abf43b8d0e77f7474470507d7"
+      },
+      "config_key": "8c4d4d0e6dccfdd7b1cfa38447a4445665f21580ff03d7c602a27c8bb5590d5e",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/C2/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/C2/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "trial:A2",
+      "metrics": {
+        "n": 864,
+        "correct": 768,
+        "acc": 0.8888888888888888,
+        "roc_auc": 0.9066931321096663,
+        "pr_auc": 0.8906036854930564,
+        "macro_f1": 0.8879280525769631,
+        "bacc": 0.8872108263798618,
+        "weighted_f1": 0.8887687843498981,
+        "sen": 0.8664987405541562,
+        "spe": 0.9079229122055674,
+        "tp": 344,
+        "fn": 53,
+        "tn": 424,
+        "fp": 43,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            344,
+            53
+          ],
+          [
+            43,
+            424
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 387,
+          "CN": 477
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "C3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "C3",
+        "stage": "C",
+        "arm": "B0",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.55,
+        "rank": 0,
+        "adapter_lr_multiplier": 0.0,
+        "ordinal": 11,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "1585d64914be26c9a887a137303aff519b7791b327d7787fd9a7acd4a8d42c55"
+      },
+      "config_key": "0e72e2ae006f895f4c4450724adb61253fbab70a55a042a167f04474c4aed53f",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/C3/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/C3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 767,
+        "acc": 0.8877314814814815,
+        "roc_auc": 0.8931143102174228,
+        "pr_auc": 0.8529762855497217,
+        "macro_f1": 0.8868326565996054,
+        "bacc": 0.8863289446005642,
+        "weighted_f1": 0.8876497701285836,
+        "sen": 0.8690176322418136,
+        "spe": 0.9036402569593148,
+        "tp": 345,
+        "fn": 52,
+        "tn": 422,
+        "fp": 45,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            345,
+            52
+          ],
+          [
+            45,
+            422
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 390,
+          "CN": 474
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D1": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D1",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 4,
+        "adapter_lr_multiplier": 0.5,
+        "ordinal": 12,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "3d05bd59fa17233eb139b4a48884a64782e5ea81aec1a01003417e428c3c2374"
+      },
+      "config_key": "855df147d007eafa7389ebc7e48ec25abc2d32a5c5f9798505b31a384775cb69",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D1/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D1/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 766,
+        "acc": 0.8865740740740741,
+        "roc_auc": 0.8907895943343815,
+        "pr_auc": 0.8518033882459997,
+        "macro_f1": 0.885867103759139,
+        "bacc": 0.8860134089180631,
+        "weighted_f1": 0.886594867318631,
+        "sen": 0.8790931989924433,
+        "spe": 0.892933618843683,
+        "tp": 349,
+        "fn": 48,
+        "tn": 417,
+        "fp": 50,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            349,
+            48
+          ],
+          [
+            50,
+            417
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 399,
+          "CN": 465
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D2": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D2",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 4,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 13,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "7ebfb191355cf43cbd1fe93eeac2c3c4a30d5ca92e3f7e172f0ef084f7763adc"
+      },
+      "config_key": "f6b4cbb32ca337fa905452750fdbc7b9ce8d083a12c7faed69a1731b47bf570e",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D2/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D2/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 763,
+        "acc": 0.8831018518518519,
+        "roc_auc": 0.8860889217309694,
+        "pr_auc": 0.82983651392214,
+        "macro_f1": 0.8823070853929098,
+        "bacc": 0.882235071386577,
+        "weighted_f1": 0.883090657958064,
+        "sen": 0.871536523929471,
+        "spe": 0.892933618843683,
+        "tp": 346,
+        "fn": 51,
+        "tn": 417,
+        "fp": 50,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            346,
+            51
+          ],
+          [
+            50,
+            417
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 396,
+          "CN": 468
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D3": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D3",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 4,
+        "adapter_lr_multiplier": 2.0,
+        "ordinal": 14,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "2e2df16513bac7c63b53159c7d08b83b95777ddc4ee40a11f2910245ad5d58ef"
+      },
+      "config_key": "fe4dc686ed4991ca738b9fd0770c19806355a179a691cdb371dd59792742e1ec",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D3/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D3/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 769,
+        "acc": 0.8900462962962963,
+        "roc_auc": 0.8862642193323589,
+        "pr_auc": 0.8505649758766733,
+        "macro_f1": 0.8893405326700237,
+        "bacc": 0.8894141823850182,
+        "weighted_f1": 0.8900565247546481,
+        "sen": 0.8816120906801007,
+        "spe": 0.8972162740899358,
+        "tp": 350,
+        "fn": 47,
+        "tn": 419,
+        "fp": 48,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            350,
+            47
+          ],
+          [
+            48,
+            419
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 398,
+          "CN": 466
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D4": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D4",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 8,
+        "adapter_lr_multiplier": 0.5,
+        "ordinal": 15,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "4ed38d928cf5334ff2afa8f282509d1dd02f71f06353a75f155511c37048baf8"
+      },
+      "config_key": "de882a6916cd3680ed4eccda998244bc965b0872047c748a50884f2db45572de",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D4/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D4/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 758,
+        "acc": 0.8773148148148148,
+        "roc_auc": 0.8875614215826407,
+        "pr_auc": 0.8639617968170603,
+        "macro_f1": 0.8764568764568764,
+        "bacc": 0.8763154062319646,
+        "weighted_f1": 0.877290983193761,
+        "sen": 0.8639798488664987,
+        "spe": 0.8886509635974305,
+        "tp": 343,
+        "fn": 54,
+        "tn": 415,
+        "fp": 52,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            343,
+            54
+          ],
+          [
+            52,
+            415
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 395,
+          "CN": 469
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D5": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D5",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 8,
+        "adapter_lr_multiplier": 1.0,
+        "ordinal": 16,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "36af39ccdade03748acc6fb7be9174ec3132a767e0005542db08d8123bd05c48"
+      },
+      "config_key": "a307f6c9cefbb06e092985e8e0a38646ed2d493aa95d0cc59bc1c26a5e4066bd",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D5/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D5/oof_predictions.csv",
+      "reused": false,
+      "reused_from": null,
+      "metrics": {
+        "n": 864,
+        "correct": 767,
+        "acc": 0.8877314814814815,
+        "roc_auc": 0.8887156888656357,
+        "pr_auc": 0.8702905644261084,
+        "macro_f1": 0.8868326565996054,
+        "bacc": 0.8863289446005642,
+        "weighted_f1": 0.8876497701285836,
+        "sen": 0.8690176322418136,
+        "spe": 0.9036402569593148,
+        "tp": 345,
+        "fn": 52,
+        "tn": 422,
+        "fp": 45,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            345,
+            52
+          ],
+          [
+            45,
+            422
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 390,
+          "CN": 474
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    },
+    "D6": {
+      "status": "complete",
+      "spec": {
+        "trial_id": "D6",
+        "stage": "D",
+        "arm": "B1",
+        "lr": 0.005,
+        "weight_decay": 0.0005,
+        "dropout": 0.45,
+        "rank": 8,
+        "adapter_lr_multiplier": 2.0,
+        "ordinal": 17,
+        "epochs": 400,
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "seed_per_fold": 0,
+        "config_sha256": "544d7143b96a34c8c6b84880fa8623fbffceaa87187ab75c6b28dc789bb9abf2"
+      },
+      "config_key": "a8a51ebc1ef29dae8a55a390a76ebade6d6be150198fa1e1bf095ae0f9fef717",
+      "summary_path": "experiments/abide5_hparam_search_v1/trials/D6/summary.json",
+      "oof_path": "experiments/abide5_hparam_search_v1/trials/D6/oof_predictions.csv",
+      "reused": true,
+      "reused_from": "historical:e7d18205ddfefaf898a81c999cce15b348331206:B1",
+      "metrics": {
+        "n": 864,
+        "correct": 766,
+        "acc": 0.8865740740740741,
+        "roc_auc": 0.8960889756686929,
+        "pr_auc": 0.8701144190118957,
+        "macro_f1": 0.8860244233378562,
+        "bacc": 0.8867685370471254,
+        "weighted_f1": 0.8866656825301105,
+        "sen": 0.889168765743073,
+        "spe": 0.8843683083511777,
+        "tp": 353,
+        "fn": 44,
+        "tn": 413,
+        "fp": 54,
+        "confusion_matrix_class_order": [
+          "ADS",
+          "CN"
+        ],
+        "confusion_matrix": [
+          [
+            353,
+            44
+          ],
+          [
+            54,
+            413
+          ]
+        ],
+        "predicted_counts": {
+          "ADS": 407,
+          "CN": 457
+        },
+        "positive_class": "ADS",
+        "positive_index": 0,
+        "negative_class": "CN",
+        "negative_index": 1
+      },
+      "safety": {
+        "safe": true,
+        "collapse": false,
+        "reasons": []
+      }
+    }
+  },
+  "stages": {
+    "A": {
+      "stage": "A",
+      "candidate_trial_ids": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "safe_trial_ids": [
+        "A2"
+      ],
+      "best_overall_trial_id": "A2",
+      "selected_trial_id": "A2",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "B": {
+      "stage": "B",
+      "candidate_trial_ids": [
+        "B1",
+        "B2",
+        "B3",
+        "B4"
+      ],
+      "safe_trial_ids": [
+        "B2",
+        "B3",
+        "B4"
+      ],
+      "best_overall_trial_id": "B2",
+      "selected_trial_id": "B2",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "C": {
+      "stage": "C",
+      "candidate_trial_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "safe_trial_ids": [
+        "C2",
+        "C3"
+      ],
+      "best_overall_trial_id": "C2",
+      "selected_trial_id": "C2",
+      "selection_rule": "safety > Correct > pooled ROC-AUC > fold mean ROC-AUC > Macro-F1 > BACC > smaller params > earlier trial"
+    },
+    "B0_ALL": {
+      "stage": "B0_ALL",
+      "candidate_trial_ids": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "safe_trial_ids": [
+        "A2",
+        "B2",
+        "B3",
+        "B4",
+        "C2",
+        "C3"
+      ],
+      "selected_trial_id": "A2",
+      "selection_rule": "all completed safe B0 trials > Correct > pooled ROC-AUC > Macro-F1 > BACC > fewer params > earlier trial"
+    },
+    "D": {
+      "stage": "D",
+      "candidate_trial_ids": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "safe_trial_ids": [
+        "D1",
+        "D2",
+        "D3",
+        "D5",
+        "D6"
+      ],
+      "best_overall_trial_id": "D3",
+      "selected_trial_id": "D3",
+      "dynamic_safety": {
+        "D1": {
+          "safe": true,
+          "reasons": [],
+          "collapse": false,
+          "repairs": 44,
+          "damages": 46,
+          "changed": 90,
+          "bacc_delta_vs_tuned_b0": -0.0011974174617986888
+        },
+        "D2": {
+          "safe": true,
+          "reasons": [],
+          "collapse": false,
+          "repairs": 34,
+          "damages": 39,
+          "changed": 73,
+          "bacc_delta_vs_tuned_b0": -0.004975754993284842
+        },
+        "D3": {
+          "safe": true,
+          "reasons": [],
+          "collapse": false,
+          "repairs": 40,
+          "damages": 39,
+          "changed": 79,
+          "bacc_delta_vs_tuned_b0": 0.0022033560051564205
+        },
+        "D4": {
+          "safe": false,
+          "reasons": [
+            "BACC is more than 0.005 below TUNED_B0"
+          ],
+          "collapse": false,
+          "repairs": 38,
+          "damages": 48,
+          "changed": 86,
+          "bacc_delta_vs_tuned_b0": -0.010895420147897239
+        },
+        "D5": {
+          "safe": true,
+          "reasons": [],
+          "collapse": false,
+          "repairs": 39,
+          "damages": 40,
+          "changed": 79,
+          "bacc_delta_vs_tuned_b0": -0.0008818817792975997
+        },
+        "D6": {
+          "safe": true,
+          "reasons": [],
+          "collapse": false,
+          "repairs": 40,
+          "damages": 42,
+          "changed": 82,
+          "bacc_delta_vs_tuned_b0": -0.0004422893327363786
+        }
+      },
+      "selection_rule": "B1 safety > Correct > pooled ROC-AUC > Macro-F1 > BACC > fewer params > earlier trial"
+    }
+  },
+  "local_refinement": {
+    "triggered": false,
+    "reason": "Current best Correct <= 782"
+  },
+  "tuned_b0_trial_id": "A2",
+  "tuned_b1_trial_id": "D3",
+  "sha256": "8c79a6b9c2aea375addb7a4ed98e9ab924a54f3c015fd3d2b721373b87ec5fad"
+}

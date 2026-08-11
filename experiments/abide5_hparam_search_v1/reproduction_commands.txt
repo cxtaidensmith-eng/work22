@@ -1,0 +1,5 @@
+# Reproduce from corrected source commit 111f5dcd8350729bfbd227f8116ce158a259bbea on local branch experiment/abide5-hparam-search-v1
+python -u -B scripts/run_abide5_hparam_search_v1.py inspect
+python -u -B scripts/run_abide5_hparam_search_v1.py smoke --device cuda:0
+python -u -B scripts/run_abide5_hparam_search_v1.py search --device cuda:0
+python -u -B scripts/run_abide5_hparam_search_v1.py formal --device cuda:0
