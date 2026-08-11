@@ -1,0 +1,40 @@
+{
+  "runtime": {
+    "experiment": "sp_lrif_cross_task_v1",
+    "source_commit": "063bff69a47e471dd2bf5688c3a35ee15f3c36de",
+    "runner_sha256": "afba2a025d212f11af4cedddcc85956e97c3d49f5af2d7d5edfcf9d0ce2d5da8",
+    "model_sha256": "88813d7e65cca6ee47c444968dd6c74343989558026a4f064f0fd3290e094f3f",
+    "config_sha256": "ef46bc1201eabe7dd828e1f2fec5b874fdccda54901201eb308550f428ac7fe3",
+    "inspect_sha256": "68c9aa105abd4d07adb2cc4708fe3e4494cec8b8aea694ce331af05a4d8cf7be",
+    "reference_commits": {
+      "tad_binary": "fcf57882ce242d07d4944755003559bfe97c534e",
+      "abide5": "a23134cf23e3c95cb237931d92c327c001545a06",
+      "tad_triclass": "c37c336eff5b5b7d9b62e98f84587dccf02b61e2",
+      "abide": "83aa87adf86a822eeca3841d62e818ec70596fdb"
+    },
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "seed": 0,
+    "epochs": 400,
+    "device": "cuda:0",
+    "sha256": "dbb621082e8e244dbeee4bc55260f12583665595ed0f8533591a5ee85d2baa2a"
+  },
+  "tasks": [
+    "tad_binary",
+    "abide5",
+    "tad_triclass"
+  ],
+  "fold": 0,
+  "epochs": 3,
+  "sha256": "185f004a6f4f13b27855eda326ef2bcac4d04f88f4f8c48aa00fdeb754d87229"
+}

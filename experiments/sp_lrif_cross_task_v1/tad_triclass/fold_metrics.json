@@ -1,0 +1,65 @@
+{
+  "task": "tad_triclass",
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "best_epoch": 111,
+      "correct": 54,
+      "acc": 0.9
+    },
+    {
+      "fold": 1,
+      "best_epoch": 86,
+      "correct": 58,
+      "acc": 0.9666666666666667
+    },
+    {
+      "fold": 2,
+      "best_epoch": 100,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 3,
+      "best_epoch": 179,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 4,
+      "best_epoch": 261,
+      "correct": 56,
+      "acc": 0.9333333333333333
+    },
+    {
+      "fold": 5,
+      "best_epoch": 38,
+      "correct": 57,
+      "acc": 0.95
+    },
+    {
+      "fold": 6,
+      "best_epoch": 190,
+      "correct": 58,
+      "acc": 0.9666666666666667
+    },
+    {
+      "fold": 7,
+      "best_epoch": 109,
+      "correct": 55,
+      "acc": 0.9166666666666666
+    },
+    {
+      "fold": 8,
+      "best_epoch": 143,
+      "correct": 54,
+      "acc": 0.9152542372881356
+    },
+    {
+      "fold": 9,
+      "best_epoch": 176,
+      "correct": 57,
+      "acc": 0.9661016949152542
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "tad_binary": {
+    "comparison": {
+      "repairs": 6,
+      "damages": 10,
+      "changed": 16,
+      "net": -4,
+      "exact_mcnemar_p": 0.454498291015625
+    },
+    "labels": {
+      "hard_classification": "ACC_NEGATIVE",
+      "ranking_balance": "RANKING_NEGATIVE",
+      "target": "BELOW_TARGET",
+      "target_safety_met": false,
+      "correct_delta": -4,
+      "metric_deltas": {
+        "roc_auc": -0.026530612244897833,
+        "pr_auc": -0.0545325480678871,
+        "macro_f1": -0.022259462323471535,
+        "bacc": -0.014172335600907027
+      }
+    }
+  },
+  "abide5": {
+    "comparison": {
+      "repairs": 41,
+      "damages": 53,
+      "changed": 94,
+      "net": -12,
+      "exact_mcnemar_p": 0.25644234893296985
+    },
+    "labels": {
+      "hard_classification": "ACC_NEGATIVE",
+      "ranking_balance": "RANKING_NEGATIVE",
+      "target": "BELOW_TARGET",
+      "target_safety_met": false,
+      "correct_delta": -12,
+      "metric_deltas": {
+        "roc_auc": -0.006766487413632172,
+        "pr_auc": -0.004178534357956343,
+        "macro_f1": -0.013650894421674664,
+        "bacc": -0.01247040167422686
+      }
+    }
+  },
+  "tad_triclass": {
+    "comparison": {
+      "repairs": 15,
+      "damages": 14,
+      "changed": 29,
+      "net": 1,
+      "exact_mcnemar_p": 1.0
+    },
+    "labels": {
+      "hard_classification": "ACC_POSITIVE",
+      "ranking_balance": "RANKING_MIXED",
+      "target": "ACC_POSITIVE",
+      "target_safety_met": false,
+      "correct_delta": 1,
+      "metric_deltas": {
+        "macro_auc": 0.007877714635822985,
+        "macro_f1": 0.0004015744689854772,
+        "bacc": -0.00664805674767488
+      }
+    }
+  }
+}

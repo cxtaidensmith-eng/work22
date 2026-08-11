@@ -1,0 +1,23 @@
+{
+  "interaction_rank": 4,
+  "category_global_cosine_mean": 0.5816473633050918,
+  "delta_direct_sum_ratio_mean": 0.01677762888906131,
+  "delta_direct_sum_ratio_max": 0.4658571779727936,
+  "agreement_mean_norm": 1.0902752789815133,
+  "disagreement_mean_norm": 1.1609733098725412,
+  "sp_lrif_max_gradient_by_tensor": {
+    "sp_lrif.proj_c.weight": 0.022828705608844757,
+    "sp_lrif.proj_diff.weight": 0.031180955469608307,
+    "sp_lrif.proj_g.weight": 0.025011427700519562,
+    "sp_lrif.proj_out.weight": 0.0638967975974083
+  },
+  "sp_lrif_all_parameters_changed_all_folds": true,
+  "delta_collapse_any_fold": false,
+  "delta_disabled_probability_max_abs_diff": 0.625826358795166,
+  "delta_disabled_probability_mean_abs_diff": 0.001508287168781257,
+  "delta_disabled_argmax_changed": 1,
+  "private_trained_all_folds": true,
+  "reference_parameter_count": 862971,
+  "parameter_count": 864507,
+  "parameter_delta": 1536
+}
