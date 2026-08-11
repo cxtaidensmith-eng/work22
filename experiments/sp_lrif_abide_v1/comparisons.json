@@ -1,0 +1,40 @@
+{
+  "vs_TUNED_B0": {
+    "left_trial_id": "C2",
+    "right_trial_id": "SP_LRIF",
+    "repairs": 33,
+    "damages": 30,
+    "changed": 63,
+    "correct_delta": 3,
+    "metric_deltas": {
+      "acc": 0.003444316877152742,
+      "roc_auc": -0.01279665330533808,
+      "pr_auc": -0.02602852982907533,
+      "macro_f1": 0.003567059087506319,
+      "bacc": 0.0038944030879514147,
+      "weighted_f1": 0.003499716102821182,
+      "sen": 0.00992555831265507,
+      "spe": -0.002136752136752129
+    },
+    "exact_mcnemar_p": 0.8013064925040663
+  },
+  "vs_D3": {
+    "left_trial_id": "D3",
+    "right_trial_id": "SP_LRIF",
+    "repairs": 32,
+    "damages": 27,
+    "changed": 59,
+    "correct_delta": 5,
+    "metric_deltas": {
+      "acc": 0.00574052812858783,
+      "roc_auc": 0.005288859197047913,
+      "pr_auc": 6.904546592223504e-05,
+      "macro_f1": 0.005967992282699841,
+      "bacc": 0.006548111386821098,
+      "weighted_f1": 0.005847561119147193,
+      "sen": 0.017369727047146455,
+      "spe": -0.004273504273504258
+    },
+    "exact_mcnemar_p": 0.6029232012571504
+  }
+}

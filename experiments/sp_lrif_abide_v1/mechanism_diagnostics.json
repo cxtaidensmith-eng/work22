@@ -1,0 +1,42 @@
+{
+  "interaction_rank": 4,
+  "category_global_cosine_mean": 0.20659134848974645,
+  "delta_direct_sum_ratio_mean": 0.04703927501484358,
+  "delta_direct_sum_ratio_max": 1.5466463565826416,
+  "agreement_mean_norm": 0.029046565702194483,
+  "disagreement_mean_norm": 0.9253603445984055,
+  "sp_lrif_max_gradient_by_tensor": {
+    "sp_lrif.proj_c.weight": 0.035543330013751984,
+    "sp_lrif.proj_diff.weight": 0.07284703105688095,
+    "sp_lrif.proj_g.weight": 0.0539802685379982,
+    "sp_lrif.proj_out.weight": 0.07905123382806778
+  },
+  "private_max_gradient_by_tensor": {
+    "private_adapters.0.down.bias": 0.004727508872747421,
+    "private_adapters.0.down.weight": 0.008457470685243607,
+    "private_adapters.0.up.bias": 0.08267712593078613,
+    "private_adapters.0.up.weight": 0.009810980409383774,
+    "private_adapters.1.down.bias": 0.0073120552115142345,
+    "private_adapters.1.down.weight": 0.0072985924780368805,
+    "private_adapters.1.up.bias": 0.09487760812044144,
+    "private_adapters.1.up.weight": 0.00806424394249916,
+    "private_adapters.2.down.bias": 0.007121483329683542,
+    "private_adapters.2.down.weight": 0.01503448374569416,
+    "private_adapters.2.up.bias": 0.09201149642467499,
+    "private_adapters.2.up.weight": 0.01891973242163658,
+    "private_adapters.3.down.bias": 0.006901468615978956,
+    "private_adapters.3.down.weight": 0.01665067858994007,
+    "private_adapters.3.up.bias": 0.08574950695037842,
+    "private_adapters.3.up.weight": 0.011160386726260185
+  },
+  "sp_lrif_all_parameters_changed_all_folds": true,
+  "delta_collapse_any_fold": false,
+  "delta_disabled_probability_max_abs_diff": 0.41272395849227905,
+  "delta_disabled_probability_mean_abs_diff": 0.0009768061986187447,
+  "delta_disabled_argmax_changed": 0,
+  "private_trained_all_folds": true,
+  "private_collapse_any_fold": false,
+  "parameter_count_d3": 335353,
+  "parameter_count_sp_lrif": 336377,
+  "parameter_delta": 1024
+}

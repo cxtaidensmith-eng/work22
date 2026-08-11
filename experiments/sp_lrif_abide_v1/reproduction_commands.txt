@@ -1,0 +1,4 @@
+# Reproduce on branch experiment/sp-lrif-abide-v1 at source commit 6c1400078a5efc4a6e3f69c962c78f6b6f3be2dd
+python -u -B scripts/run_sp_lrif_abide_v1.py inspect
+python -u -B scripts/run_sp_lrif_abide_v1.py smoke --device cuda:0
+python -u -B scripts/run_sp_lrif_abide_v1.py formal --device cuda:0
