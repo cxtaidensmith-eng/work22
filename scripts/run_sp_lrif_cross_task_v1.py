@@ -45,7 +45,7 @@ FOLDS = tuple(range(10))
 EPOCHS = 400
 SEED = 0
 INTERACTION_RANK = 4
-RUN_REVISION = "source_fix1"
+RUN_REVISION = "source_fix2"
 RUNNER_REL = "scripts/run_sp_lrif_cross_task_v1.py"
 MODEL_REL = "Model/sp_lrif.py"
 
@@ -485,7 +485,7 @@ def tri_typed_rows(path:Path)->list[dict[str,Any]]:
     for r in binary.read_csv(path):
         rows.append({"fold":int(r["fold"]),"subject_index":int(r["subject_index"]),"truth":int(r["truth"]),"prediction":int(r["prediction"]),
                      "raw_logit_AD":float(r["raw_logit_AD"]),"raw_logit_CN":float(r["raw_logit_CN"]),"raw_logit_SMCI":float(r["raw_logit_SMCI"]),
-                     "adjusted_logit_AD":float(r["adjusted_logit_AD"]),"adjusted_logit_CN":float(r["adjusted_logit_CN"]),"adjusted_logit_SMCI":float(r["adjusted_logit_SMCI"]),
+                     "adjusted_score_AD":float(r["adjusted_score_AD"]),"adjusted_score_CN":float(r["adjusted_score_CN"]),"adjusted_score_SMCI":float(r["adjusted_score_SMCI"]),
                      "probability_AD":float(r["probability_AD"]),"probability_CN":float(r["probability_CN"]),"probability_SMCI":float(r["probability_SMCI"])})
     return rows
 
@@ -698,13 +698,17 @@ def smoke_tri(device:torch.device,runtime:dict[str,Any])->dict[str,Any]:
     sp_gradients={n:v for n,v in gradients.items() if n.startswith("sp_lrif.")}
     require(by_epoch[0]["sp_lrif.proj_out.weight"]>0 and all(v>0 and math.isfinite(v) for v in sp_gradients.values()) and all(v>0 and math.isfinite(v) for v in changes.values()),"Tri SP did not activate")
     mechanism_probe=tri_mechanism(context,model,test_mask,gradients,initial_private)
+    with torch.no_grad(): final_raw=model(features)[0]
+    contract_rows=broad.cme.prediction_rows(0,final_raw,labels,test_mask,context["dataset_dict"],context["config"])
+    required_oof_fields={"fold","subject_index","truth","prediction","raw_logit_AD","raw_logit_CN","raw_logit_SMCI","adjusted_score_AD","adjusted_score_CN","adjusted_score_SMCI","probability_AD","probability_CN","probability_SMCI"}
+    require(bool(contract_rows) and set(contract_rows[0])==required_oof_fields,"Tri OOF field contract changed")
     path=SMOKE/"tad_triclass"/"checkpoint_roundtrip.pt";payload={"runtime":runtime,"task":"tad_triclass","epoch":3,"model":binary.clone_cpu_state(model),"optimizer":copy.deepcopy(optimizer.state_dict()),"scheduler":copy.deepcopy(scheduler.state_dict())};binary.atomic_torch_save(path,payload)
     restored,_,ropt,rsched,_=make_tri_training(context);loaded=torch.load(path,map_location="cpu",weights_only=False);restored.load_state_dict(loaded["model"],strict=True);ropt.load_state_dict(loaded["optimizer"]);rsched.load_state_dict(loaded["scheduler"]);rsched.assert_ratio();model.eval();restored.eval()
     with torch.no_grad():reload=float((model(features)[0]-restored(features)[0]).abs().max().cpu())
     require(reload==0 and max(simplex)<=2e-6,"Tri smoke reload/numeric failed")
     value={"task":"tad_triclass","runtime":runtime,"fold":0,"epochs":3,"initial_logits_max_abs_diff":initial,"initial_delta_max_abs":delta,"losses":losses,
            "probability_sum_max_abs_error":max(simplex),"sp_gradient_by_epoch":by_epoch,"sp_max_gradient_by_tensor":sp_gradients,"sp_parameter_delta_by_tensor":changes,"mechanism_probe":mechanism_probe,
-           "proj_out_step1_gradient_nonzero":True,"all_projections_active_by_epoch3":True,"optimizer_audit":audit,"checkpoint_sha256":file_sha(path),"checkpoint_reload_logits_max_abs_diff":reload}
+           "proj_out_step1_gradient_nonzero":True,"all_projections_active_by_epoch3":True,"optimizer_audit":audit,"oof_field_contract":sorted(required_oof_fields),"checkpoint_sha256":file_sha(path),"checkpoint_reload_logits_max_abs_diff":reload}
     del reference,model,restored,context;torch.cuda.empty_cache();return value
 
 def run_smoke(device_text:str)->None:
