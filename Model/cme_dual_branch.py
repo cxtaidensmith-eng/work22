@@ -80,6 +80,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         adapter_rank: int = 8,
         router_hidden: int = 16,
         modality_embedding_dim: int = 8,
+        prior_free_modality_prior: bool = False,
         **kwargs,
     ):
         # Construct every historical module first so its seeded initialization
@@ -100,6 +101,11 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
 
         self.cme_arm = arm
         self.adapter_rank = int(adapter_rank)
+        self.prior_free_modality_prior = bool(prior_free_modality_prior)
+        if self.prior_free_modality_prior:
+            # Keep the historical state key for checkpoint/schema compatibility,
+            # but remove it from optimization and bypass it in every forward.
+            self.modal_gate_logit.requires_grad_(False)
         self.private_adapters = nn.ModuleList(
             [
                 PrivateResidualAdapter(self.Hidden_size, self.adapter_rank)
@@ -130,6 +136,18 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
                     ),
                 }
             )
+
+    def effective_modal_gate(self) -> torch.Tensor:
+        """Return the gate actually used by the forward path."""
+        if self.prior_free_modality_prior:
+            return torch.ones_like(self.modal_gate_logit)
+        return torch.sigmoid(self.modal_gate_logit)
+
+    def effective_modal_noise_std(self) -> torch.Tensor:
+        """Return the per-modality Gaussian standard deviation actually used."""
+        if self.prior_free_modality_prior:
+            return torch.full_like(self._modal_noise_std, float(self.input_noise_std))
+        return self._modal_noise_std * float(self.noise_scale)
 
     def _category_token_streams(
         self, tokens: torch.Tensor
@@ -189,12 +207,12 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         feature_modal_output = self.Feature_Modal(X_raw)
         X = feature_modal_output
         if self.training:
-            per_feature_noise_std = self._modal_noise_std[self.feature_to_modal]
+            per_feature_noise_std = self.effective_modal_noise_std()[self.feature_to_modal]
             X = X + torch.randn_like(X) * (
-                per_feature_noise_std * self.noise_scale
+                per_feature_noise_std
             ).view(1, -1)
 
-        modal_gate = torch.sigmoid(self.modal_gate_logit)
+        modal_gate = self.effective_modal_gate()
         feature_gate = modal_gate[self.feature_to_modal]
         X_gated = X * feature_gate.view(1, -1)
 

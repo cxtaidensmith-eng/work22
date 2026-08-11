@@ -1,0 +1,41 @@
+{
+  "experiment": "prior_free_modality_prior_v1",
+  "branch": "experiment/prior-free-modality-prior-v1",
+  "base_commit": "e7d18205ddfefaf898a81c999cce15b348331206",
+  "tasks": [
+    "tadpole_smci_pmci",
+    "abide5_ads_cn"
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed": 0,
+  "smoke_epochs": 3,
+  "formal_epochs": 400,
+  "model_switch": {
+    "prior_free_modality_prior": true
+  },
+  "effective_gate_formula": "ones(modality_count), direct identity multiplication",
+  "effective_noise_formula": "input_noise_std * ones(modality_count)",
+  "legacy_gate_compatibility": "modal_gate_logit retained, requires_grad=False, bypassed, excluded from optimizer",
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "single_model": true,
+  "ema": false,
+  "ensemble": false,
+  "search": false,
+  "decision_tokens": [
+    "PRIOR_FREE_PASS",
+    "PRIOR_FREE_NEUTRAL",
+    "PRIOR_FREE_STOP"
+  ],
+  "sha256": "74b788e83310ac711a5d90df8ced09460a828c95a392096efaba095f3fe11f96"
+}
