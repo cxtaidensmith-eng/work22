@@ -1,0 +1,68 @@
+{
+  "task_id": "abide5_ads_cn",
+  "source_commit": "4cdcfcd4dbd76369ab6cbfc566ca0a26553b9246",
+  "private_source": "pre_shared",
+  "folds": [
+    {
+      "fold": 0,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_00/checkpoint_best.pt",
+      "sha256": "c9b87c7c59be8ae743c31d72c544ca4f73c1b25fce8749cfee3d6d6dbfe746a2",
+      "complete_marker_sha256": "3ee16337e9a6c16f3d9bb0460aa58c3884f4b42d6ad568950c15b5cbd8e14264"
+    },
+    {
+      "fold": 1,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_01/checkpoint_best.pt",
+      "sha256": "ca472efed16c0b773fd87905caf1d336cc43bdde3647106644d4fe685318f154",
+      "complete_marker_sha256": "f1afde39180265a7afd27356bb16afd80500665e5ffb94d387c573ce83d6df42"
+    },
+    {
+      "fold": 2,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_02/checkpoint_best.pt",
+      "sha256": "08995697d0bd38c75dc41a27301ea80590aec5624b9a55bcb1f29dd8f3fcd8ee",
+      "complete_marker_sha256": "932bd631abb0635268502467925805ae562c9fa3c07b209152d0bac96debd57f"
+    },
+    {
+      "fold": 3,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_03/checkpoint_best.pt",
+      "sha256": "8ee4ca97031e694a734c9828ca6a095ed310f0cfa1b5813a8fd4a821b56115b6",
+      "complete_marker_sha256": "384884f0fe15d8887e1a6042101d04ce09a19e6b34cafcd2e2837f7b92cd13a3"
+    },
+    {
+      "fold": 4,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_04/checkpoint_best.pt",
+      "sha256": "923d1e37ba3022e4effbb4075f1d386b744f22cf6c83f4a2ace2e5732a68ff67",
+      "complete_marker_sha256": "40aa8682e303c9bab85f6aa2920b8bc63e37a3eefdf10a6354c94e799f42d269"
+    },
+    {
+      "fold": 5,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_05/checkpoint_best.pt",
+      "sha256": "832b79763471a9c50495f4cc9974bbb7a1620992fc91eba3b5f2d25c049c57f0",
+      "complete_marker_sha256": "b93789ceff274b08e399001c4f8933cb339c7867d45dc25168ed278368ae956a"
+    },
+    {
+      "fold": 6,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_06/checkpoint_best.pt",
+      "sha256": "39e64fdae85a3eca207c41b645fcf15d9efbc7ea0360e7a743b1303e017ac208",
+      "complete_marker_sha256": "9ae7710fc4c19ea5671c1727d683e788f008c2ec2a7e646488c84e19f12198df"
+    },
+    {
+      "fold": 7,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_07/checkpoint_best.pt",
+      "sha256": "963e386d3c2b7a5ac0d74ba6a31dd46c1c012771d90a32a633c397d02e69a3f2",
+      "complete_marker_sha256": "e14d54ff5fcf9f7482e132b81262ada822a2333da18c04c014a1447da8204b19"
+    },
+    {
+      "fold": 8,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_08/checkpoint_best.pt",
+      "sha256": "a4a5b25e9eb6ffa1c74191698d05f43f43d5a6e9fc2f11bd142ffa9864c1fea4",
+      "complete_marker_sha256": "31f17292e7a69c54789902643d94e9e20606b96f9b698ef4a95c0adb12615620"
+    },
+    {
+      "fold": 9,
+      "path": "experiments/pre_shared_source_residual_v1/formal/abide5_ads_cn/fold_09/checkpoint_best.pt",
+      "sha256": "982166df83077f7fca2c49d5aaec50012836ce0bb5f7c39e8cb320d42d00b84c",
+      "complete_marker_sha256": "a90f9ea6c35d0f1ae5501e4f12b2b001a291e05c41bd370309e94b72301814c2"
+    }
+  ],
+  "sha256": "7a8ef477f36b314b1da6f917a8e1dac232e786098af6c3fdf35af4c0a632d97a"
+}

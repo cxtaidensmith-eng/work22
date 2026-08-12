@@ -1,0 +1,150 @@
+{
+  "tadpole_smci_pmci": {
+    "reference_trial_id": "D5",
+    "reference_metrics": {
+      "n": 535,
+      "correct": 519,
+      "acc": 0.9700934579439252,
+      "roc_auc": 0.9182766439909297,
+      "pr_auc": 0.7321647746112192,
+      "macro_f1": 0.9009442695797074,
+      "bacc": 0.8928571428571429,
+      "weighted_f1": 0.9697840656022508,
+      "sen": 0.8,
+      "spe": 0.9857142857142858,
+      "tp": 36,
+      "fn": 9,
+      "tn": 483,
+      "fp": 7,
+      "confusion_matrix_class_order": [
+        "SMCI",
+        "PMCI"
+      ],
+      "confusion_matrix": [
+        [
+          483,
+          7
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "predicted_counts": {
+        "SMCI": 492,
+        "PMCI": 43
+      },
+      "positive_class": "PMCI",
+      "positive_index": 1,
+      "negative_class": "SMCI",
+      "negative_index": 0
+    },
+    "repairs": 2,
+    "damages": 8,
+    "changed": 10,
+    "net_correct": -6,
+    "correct_delta": -6,
+    "repairs_by_truth": {
+      "SMCI": 0,
+      "PMCI": 2
+    },
+    "damages_by_truth": {
+      "SMCI": 5,
+      "PMCI": 3
+    },
+    "prediction_transitions": {
+      "SMCI->PMCI": 7,
+      "PMCI->SMCI": 3
+    },
+    "metric_deltas": {
+      "acc": -0.01121495327102806,
+      "roc_auc": -0.03882086167800458,
+      "pr_auc": -0.09828450314157422,
+      "macro_f1": -0.03175693073379293,
+      "bacc": -0.016213151927437663,
+      "weighted_f1": -0.010500634672798381,
+      "sen": -0.022222222222222254,
+      "spe": -0.010204081632653073
+    },
+    "exact_mcnemar_p": 0.109375,
+    "parameter_delta": 0,
+    "training_time_delta_seconds": 92.53685450134799,
+    "inference_time_delta_seconds": 0.0020372015424072742,
+    "reference_training_time_seconds": 515.9687503995374,
+    "reference_inference_time_seconds": 0.13531409949064255
+  },
+  "abide5_ads_cn": {
+    "reference_trial_id": "D3",
+    "reference_metrics": {
+      "n": 864,
+      "correct": 769,
+      "acc": 0.8900462962962963,
+      "roc_auc": 0.8862642193323589,
+      "pr_auc": 0.8505649758766733,
+      "macro_f1": 0.8893405326700237,
+      "bacc": 0.8894141823850182,
+      "weighted_f1": 0.8900565247546481,
+      "sen": 0.8816120906801007,
+      "spe": 0.8972162740899358,
+      "tp": 350,
+      "fn": 47,
+      "tn": 419,
+      "fp": 48,
+      "confusion_matrix_class_order": [
+        "ADS",
+        "CN"
+      ],
+      "confusion_matrix": [
+        [
+          350,
+          47
+        ],
+        [
+          48,
+          419
+        ]
+      ],
+      "predicted_counts": {
+        "ADS": 398,
+        "CN": 466
+      },
+      "positive_class": "ADS",
+      "positive_index": 0,
+      "negative_class": "CN",
+      "negative_index": 1
+    },
+    "repairs": 41,
+    "damages": 46,
+    "changed": 87,
+    "net_correct": -5,
+    "correct_delta": -5,
+    "repairs_by_truth": {
+      "ADS": 19,
+      "CN": 22
+    },
+    "damages_by_truth": {
+      "ADS": 20,
+      "CN": 26
+    },
+    "prediction_transitions": {
+      "CN->ADS": 45,
+      "ADS->CN": 42
+    },
+    "metric_deltas": {
+      "acc": -0.0057870370370369795,
+      "roc_auc": 0.002793974077530015,
+      "pr_auc": -0.013147598574218766,
+      "macro_f1": -0.005760615134248748,
+      "bacc": -0.005542101090081353,
+      "weighted_f1": -0.005756093269723261,
+      "sen": -0.0025188916876573986,
+      "spe": -0.008565310492505307
+    },
+    "exact_mcnemar_p": 0.6682849967188074,
+    "parameter_delta": 0,
+    "training_time_delta_seconds": 93.27322429930791,
+    "inference_time_delta_seconds": -0.0031971982680261135,
+    "reference_training_time_seconds": 516.6130678001791,
+    "reference_inference_time_seconds": 0.1567737995646894
+  }
+}

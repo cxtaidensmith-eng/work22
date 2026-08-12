@@ -1,0 +1,68 @@
+{
+  "task_id": "tadpole_smci_pmci",
+  "source_commit": "4cdcfcd4dbd76369ab6cbfc566ca0a26553b9246",
+  "private_source": "pre_shared",
+  "folds": [
+    {
+      "fold": 0,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_00/checkpoint_best.pt",
+      "sha256": "e508b4b1b23c58182b1c81e62cd3fa636776cd6626088287cf217f6c5f33ae62",
+      "complete_marker_sha256": "836290a1ca134b03b7f1e62d9d1ae1ca8472476404ab337334d56c7f38ba1549"
+    },
+    {
+      "fold": 1,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_01/checkpoint_best.pt",
+      "sha256": "c2af2ac5375de282cbd31db12666472575ca22d652d0c7a273f65fc77e39d7e7",
+      "complete_marker_sha256": "b8ea68eeaf74c0c5505f349614ab9aaadd609e53bb4b3913970470a3d830bf37"
+    },
+    {
+      "fold": 2,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_02/checkpoint_best.pt",
+      "sha256": "7bdc52d410ea3835758e2a6cae6a33e57a03099cf371130c6e04adeb778a2939",
+      "complete_marker_sha256": "44b649515d437afe2f09bab5e6b974df4e66524fcbd80eec97fc9a7d3611ecaa"
+    },
+    {
+      "fold": 3,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_03/checkpoint_best.pt",
+      "sha256": "880913253be0bd596579913324c324115192cf38adc3dfc37b5a8eae9f616188",
+      "complete_marker_sha256": "08eec5e98d5367c542e3be0716059ac0a9287086449523226b959fb2002d852a"
+    },
+    {
+      "fold": 4,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_04/checkpoint_best.pt",
+      "sha256": "271eeff987fa7367fdca4580d2b680b88cd51d92d37da801b12aa7d64ad5d6f9",
+      "complete_marker_sha256": "80bd1035010e0fc06833a5c160fd946936ab8617d54968645fa184db01011ed7"
+    },
+    {
+      "fold": 5,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_05/checkpoint_best.pt",
+      "sha256": "50ea42b52ee4a6c6359f74efb59746e1c8df19c7b0e228ff3a3b98b0d7793e92",
+      "complete_marker_sha256": "dcd6c07b0d0f59f58b3a53eb74728efefa5f9f5ea35d2a28539ace8cfaa15657"
+    },
+    {
+      "fold": 6,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_06/checkpoint_best.pt",
+      "sha256": "479599cffa73790729e89a79603656d464075022e6e4b2c1914e04dfba6197cb",
+      "complete_marker_sha256": "315712d05b910d13c0b764e87b80c55fb113cc20ad8990b2becaab39dc0dfb7c"
+    },
+    {
+      "fold": 7,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_07/checkpoint_best.pt",
+      "sha256": "6f0b6752b78706d1814c427d430b700ac1de404b4fa93c8dc838ab49fb882c9b",
+      "complete_marker_sha256": "acca8b307f051e33c0a7548942667873d8ef8814cd31b674807c5f0cf9cfafbd"
+    },
+    {
+      "fold": 8,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_08/checkpoint_best.pt",
+      "sha256": "1445187eba2bdcb629ac4097efc01a474c2008c9ca5be5f2552073639348f35c",
+      "complete_marker_sha256": "31ea6fdbfa54f782d70e0f91c84ff123a05e1a5d3932145bc2d0d3d49de4ed3c"
+    },
+    {
+      "fold": 9,
+      "path": "experiments/pre_shared_source_residual_v1/formal/tadpole_smci_pmci/fold_09/checkpoint_best.pt",
+      "sha256": "abae95a434090ce44167e30770e502ded122f7745f0b91222963d4e0b96e3ebd",
+      "complete_marker_sha256": "aef76c28743c20cf08d4efc8ab7ca363d761cb731ed7d5a46f515619f2dd1d82"
+    }
+  ],
+  "sha256": "5758b89cfec2b43302d335f879f56f0535c93e85a8de6e6c8073583e30b50390"
+}

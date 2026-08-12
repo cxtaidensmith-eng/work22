@@ -1,0 +1,180 @@
+{
+  "tadpole_smci_pmci": {
+    "effective_gate_by_modality": {
+      "MRI": 0.2724095284938812,
+      "CSF": 0.11850165575742722,
+      "RISK_FACTOR": 0.126991406083107,
+      "COGNITIVE_TEST": 0.9781702160835266,
+      "ROI_AVERAGE": 0.8679243922233582
+    },
+    "effective_noise_std_by_modality": {
+      "MRI": 0.15000000596046448,
+      "CSF": 0.15000000596046448,
+      "RISK_FACTOR": 0.15000000596046448,
+      "COGNITIVE_TEST": 0.0,
+      "ROI_AVERAGE": 0.02500000037252903
+    },
+    "historical_gate_trainable_all_folds": true,
+    "historical_gate_in_optimizer_all_folds": true,
+    "pre_shared_shape": [
+      54,
+      5,
+      96
+    ],
+    "post_shared_shape": [
+      54,
+      5,
+      96
+    ],
+    "source_mean_norm_by_modality": {
+      "MRI": 2.506104302406311,
+      "CSF": 1.3955479979515075,
+      "RISK_FACTOR": 1.6960553407669068,
+      "COGNITIVE_TEST": 8.154176235198975,
+      "ROI_AVERAGE": 6.4586510181427
+    },
+    "shared_mean_norm_by_modality": {
+      "MRI": 144.79545478820802,
+      "CSF": 149.1553955078125,
+      "RISK_FACTOR": 145.89005966186522,
+      "COGNITIVE_TEST": 144.64470977783202,
+      "ROI_AVERAGE": 149.50720291137696
+    },
+    "source_shared_norm_ratio_by_modality": {
+      "MRI": 0.01730789344231823,
+      "CSF": 0.009356336009168445,
+      "RISK_FACTOR": 0.01162557164414023,
+      "COGNITIVE_TEST": 0.05637382969431398,
+      "ROI_AVERAGE": 0.04319959769410695
+    },
+    "private_source_ratio_mean_by_modality": {
+      "MRI": 0.1395512118935585,
+      "CSF": 0.2572490029036999,
+      "RISK_FACTOR": 0.21937274262309076,
+      "COGNITIVE_TEST": 0.14013638542965054,
+      "ROI_AVERAGE": 0.04554399736225605
+    },
+    "private_shared_ratio_mean_by_modality": {
+      "MRI": 0.0026993206585757433,
+      "CSF": 0.0025089710485190152,
+      "RISK_FACTOR": 0.0026099137030541897,
+      "COGNITIVE_TEST": 0.007932323589920997,
+      "ROI_AVERAGE": 0.002222655015066266
+    },
+    "private_shared_ratio_max_by_modality": {
+      "MRI": 0.011137822642922401,
+      "CSF": 0.009290131740272045,
+      "RISK_FACTOR": 0.014269163832068443,
+      "COGNITIVE_TEST": 0.12505993247032166,
+      "ROI_AVERAGE": 0.010941744782030582
+    },
+    "category_global_cosine_mean": 0.5000096552073956,
+    "adapter_max_gradient_by_modality": {
+      "MRI": 0.05766819790005684,
+      "CSF": 0.06156207621097565,
+      "RISK_FACTOR": 0.06219763308763504,
+      "COGNITIVE_TEST": 0.08438242971897125,
+      "ROI_AVERAGE": 0.047100622206926346
+    },
+    "private_off_probability_mean_abs_change": 6.980664283275927e-05,
+    "private_off_probability_max_abs_change": 0.009837985038757324,
+    "private_off_argmax_change_count_sum_across_folds": 0,
+    "adapter_max_gradient": 0.08438242971897125,
+    "adapter_min_parameter_delta": 4.3835640099132434e-05,
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "total_parameter_count": 617197,
+    "trainable_parameter_count": 617197,
+    "frozen_parameter_count": 0,
+    "new_parameter_count": 0
+  },
+  "abide5_ads_cn": {
+    "effective_gate_by_modality": {
+      "PHENO": 0.15934427082538605,
+      "ANAT": 0.17367978394031525,
+      "FUNC": 0.17196425795555115,
+      "MRI": 0.31970807909965515,
+      "fMRI": 0.341159462928772
+    },
+    "effective_noise_std_by_modality": {
+      "PHENO": 0.0,
+      "ANAT": 0.0,
+      "FUNC": 0.0,
+      "MRI": 0.0,
+      "fMRI": 0.0
+    },
+    "historical_gate_trainable_all_folds": true,
+    "historical_gate_in_optimizer_all_folds": true,
+    "pre_shared_shape": [
+      87,
+      5,
+      64
+    ],
+    "post_shared_shape": [
+      87,
+      5,
+      64
+    ],
+    "source_mean_norm_by_modality": {
+      "PHENO": 1.168846893310547,
+      "ANAT": 1.216852104663849,
+      "FUNC": 1.253613781929016,
+      "MRI": 2.3453012704849243,
+      "fMRI": 2.360831308364868
+    },
+    "shared_mean_norm_by_modality": {
+      "PHENO": 20.265643215179445,
+      "ANAT": 20.39130382537842,
+      "FUNC": 20.1579797744751,
+      "MRI": 20.59523105621338,
+      "fMRI": 18.99520597457886
+    },
+    "source_shared_norm_ratio_by_modality": {
+      "PHENO": 0.05767627905513766,
+      "ANAT": 0.059675051437828634,
+      "FUNC": 0.062189455290375666,
+      "MRI": 0.11387593875900556,
+      "fMRI": 0.12428563878298297
+    },
+    "private_source_ratio_mean_by_modality": {
+      "PHENO": 0.09074503108859062,
+      "ANAT": 0.09323961474001408,
+      "FUNC": 0.09062971137464046,
+      "MRI": 0.04349667653441429,
+      "fMRI": 0.04280423801392317
+    },
+    "private_shared_ratio_mean_by_modality": {
+      "PHENO": 0.005294262408278882,
+      "ANAT": 0.005553888878785074,
+      "FUNC": 0.005728602432645858,
+      "MRI": 0.0053714524488896135,
+      "fMRI": 0.005893679009750486
+    },
+    "private_shared_ratio_max_by_modality": {
+      "PHENO": 0.02674298919737339,
+      "ANAT": 0.02820548601448536,
+      "FUNC": 0.02602042816579342,
+      "MRI": 0.030127154663205147,
+      "fMRI": 0.028357187286019325
+    },
+    "category_global_cosine_mean": 0.17317981757223605,
+    "adapter_max_gradient_by_modality": {
+      "PHENO": 0.013530678115785122,
+      "ANAT": 0.013574980199337006,
+      "FUNC": 0.01298862136900425,
+      "MRI": 0.012708465568721294,
+      "fMRI": 0.012708145193755627
+    },
+    "private_off_probability_mean_abs_change": 0.00024644511514821944,
+    "private_off_probability_max_abs_change": 0.18522071838378906,
+    "private_off_argmax_change_count_sum_across_folds": 0,
+    "adapter_max_gradient": 0.013574980199337006,
+    "adapter_min_parameter_delta": 1.1181437002960593e-06,
+    "private_trained_all_folds": true,
+    "private_collapse_any_fold": false,
+    "total_parameter_count": 383616,
+    "trainable_parameter_count": 383616,
+    "frozen_parameter_count": 0,
+    "new_parameter_count": 0
+  }
+}
