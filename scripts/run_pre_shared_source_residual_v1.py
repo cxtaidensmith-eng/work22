@@ -836,6 +836,14 @@ def run_smoke(device_text: str) -> None:
             for name, parameter in model.named_parameters()
             if name.startswith("private_adapters.")
         }
+        # The historical gate is trainable, so its value is expected to change
+        # during the three smoke updates.  Lock the restored historical
+        # initialization before training; after training, audit participation,
+        # finite gradients, and finite values instead of requiring immutability.
+        initial_effective_gate = torch.sigmoid(model.modal_gate_logit.detach()).cpu().tolist()
+        initial_effective_noise = (
+            model._modal_noise_std.detach() * float(model.noise_scale)
+        ).cpu().tolist()
         cumulative_adapter = {name: 0.0 for name in initial_private}
         cumulative_targets = {name: 0.0 for name in ("private", "shared_modal", "global", "query", "difformer")}
         losses = []
@@ -885,6 +893,12 @@ def run_smoke(device_text: str) -> None:
         expected_noise = list(inspect_task["historical_noise"]["effective_std_by_modality"].values())
         effective_gate = torch.sigmoid(model.modal_gate_logit.detach()).cpu().tolist()
         effective_noise = (model._modal_noise_std.detach() * float(model.noise_scale)).cpu().tolist()
+        gate_gradient_is_finite = bool(
+            model.modal_gate_logit.grad is not None
+            and torch.isfinite(model.modal_gate_logit.grad).all()
+        )
+        gate_values_are_finite = all(math.isfinite(value) for value in effective_gate)
+        gate_in_optimizer = id(model.modal_gate_logit) in optimizer_parameter_ids(optimizer)
         reports[task_id] = {
             "reference_checkpoint_replay": replay,
             "initialization_audit": init_audit,
@@ -894,11 +908,17 @@ def run_smoke(device_text: str) -> None:
             "adapter_cumulative_max_gradient": cumulative_adapter,
             "target_group_cumulative_max_gradient": cumulative_targets,
             "adapter_parameter_max_delta": private_delta,
+            "initial_effective_gate": initial_effective_gate,
             "effective_gate": effective_gate,
+            "initial_effective_noise_std": initial_effective_noise,
             "effective_noise_std": effective_noise,
-            "historical_gate_matches_inspect": effective_gate == expected_gate,
-            "historical_noise_matches_inspect": effective_noise == expected_noise,
-            "historical_gate_gradient_is_finite": bool(model.modal_gate_logit.grad is not None and torch.isfinite(model.modal_gate_logit.grad).all()),
+            "historical_gate_matches_inspect": initial_effective_gate == expected_gate,
+            "historical_noise_matches_inspect": (
+                initial_effective_noise == expected_noise and effective_noise == expected_noise
+            ),
+            "historical_gate_gradient_is_finite": gate_gradient_is_finite,
+            "historical_gate_values_are_finite": gate_values_are_finite,
+            "historical_gate_in_optimizer": gate_in_optimizer,
             "optimizer_steps": SMOKE_EPOCHS,
             "scheduler_steps": SMOKE_EPOCHS,
             "probability_simplex_max_abs_error": simplex,
@@ -921,6 +941,25 @@ def run_smoke(device_text: str) -> None:
         "fold_manifest_sha256": engine.file_sha256(FOLD_MANIFEST_PATH),
     }
     smoke_config = {**config_core, "sha256": engine.payload_sha256(config_core)}
+    historical_gate_restored = all(
+        report["historical_gate_matches_inspect"]
+        and report["historical_gate_gradient_is_finite"]
+        and report["historical_gate_values_are_finite"]
+        and report["historical_gate_in_optimizer"]
+        for report in reports.values()
+    )
+    historical_noise_restored = all(
+        report["historical_noise_matches_inspect"] for report in reports.values()
+    )
+    source_preserving_all_passed = all(
+        report["source_preserving_diagnostic"]["p_m_max_abs_diff_after_e_n_perturbation"] < 1e-7
+        and report["source_preserving_diagnostic"]["p_n_min_abs_diff_after_e_n_perturbation"] > 0.0
+        and report["source_preserving_diagnostic"]["modal_encoder_private_only_gradient_max"] > 0.0
+        and report["source_preserving_diagnostic"]["shared_transformer_private_only_gradient_max"] == 0.0
+        and report["source_preserving_diagnostic"]["shared_main_path_gradient_max"] > 0.0
+        for report in reports.values()
+    )
+    formal_go = historical_gate_restored and historical_noise_restored and source_preserving_all_passed
     report_core = {
         "experiment": EXPERIMENT_ID,
         "source_commit": source_commit,
@@ -930,21 +969,15 @@ def run_smoke(device_text: str) -> None:
             task_id: engine.file_sha256(SMOKE_DIR / f"{task_id}_source_token_diagnostic.json")
             for task_id in TASK_IDS
         },
-        "historical_gate_restored": all(report["historical_gate_gradient_is_finite"] and report["historical_gate_matches_inspect"] for report in reports.values()),
-        "historical_noise_restored": all(report["historical_noise_matches_inspect"] for report in reports.values()),
-        "source_preserving_all_passed": all(
-            report["source_preserving_diagnostic"]["p_m_max_abs_diff_after_e_n_perturbation"] < 1e-7
-            and report["source_preserving_diagnostic"]["p_n_min_abs_diff_after_e_n_perturbation"] > 0.0
-            and report["source_preserving_diagnostic"]["modal_encoder_private_only_gradient_max"] > 0.0
-            and report["source_preserving_diagnostic"]["shared_transformer_private_only_gradient_max"] == 0.0
-            for report in reports.values()
-        ),
-        "formal_go": True,
+        "historical_gate_restored": historical_gate_restored,
+        "historical_noise_restored": historical_noise_restored,
+        "source_preserving_all_passed": source_preserving_all_passed,
+        "formal_go": formal_go,
     }
     smoke_report = {**report_core, "sha256": engine.payload_sha256(report_core)}
     engine.atomic_write_json(SMOKE_DIR / "smoke_config.json", smoke_config)
     engine.atomic_write_json(SMOKE_DIR / "smoke_report.json", smoke_report)
-    print(json.dumps({"formal_go": True, "source_commit": source_commit, "report_sha256": smoke_report["sha256"]}, indent=2))
+    print(json.dumps({"formal_go": formal_go, "source_commit": source_commit, "report_sha256": smoke_report["sha256"]}, indent=2))
 
 
 def validate_smoke_and_source() -> tuple[str, dict[str, Any]]:

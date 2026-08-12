@@ -587,7 +587,7 @@
       }
     }
   },
-  "disk_free_bytes": 14275239936,
+  "disk_free_bytes": 14258429952,
   "disk_minimum_bytes": 4000000000,
   "only_allowed_change": "P_m=A_m(H_m) -> P_m=A_m(E_m); Z_m=H_m+P_m unchanged",
   "historical_gate_noise_restored": true,
@@ -595,5 +595,5 @@
   "no_orthogonality": false,
   "references_reused_without_retraining": true,
   "fold_manifest_sha256": "bc3fdcbe9b547ec09e61e8ddabaad02b23f2dd4de27899d3d48a7d86f468f33c",
-  "sha256": "864b9b0906dc3498de8fc1fc310aeeb4f996c66e5c96a911a9f4e978491d2cc4"
+  "sha256": "a7499173319f168f10562345ad4581cfc7c1a1b88aa92aa847d43fdf57f52884"
 }
