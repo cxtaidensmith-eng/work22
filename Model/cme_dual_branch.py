@@ -80,6 +80,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         adapter_rank: int = 8,
         router_hidden: int = 16,
         modality_embedding_dim: int = 8,
+        private_source: str = "post_shared",
         **kwargs,
     ):
         # Construct every historical module first so its seeded initialization
@@ -88,6 +89,9 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
         arm = str(cme_arm).lower()
         if arm not in self.VALID_ARMS:
             raise ValueError(f"Unsupported CME arm: {cme_arm}")
+        source = str(private_source).lower()
+        if source not in {"post_shared", "pre_shared"}:
+            raise ValueError(f"Unsupported private source: {private_source}")
         if not (
             self.category_branch_variant == "original"
             and self.query_pool_variant == "independent"
@@ -99,6 +103,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
             raise ValueError("CME requires the locked Original Query configuration")
 
         self.cme_arm = arm
+        self.private_source = source
         self.adapter_rank = int(adapter_rank)
         self.private_adapters = nn.ModuleList(
             [
@@ -132,16 +137,27 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
             )
 
     def _category_token_streams(
-        self, tokens: torch.Tensor
+        self,
+        tokens: torch.Tensor,
+        private_tokens: torch.Tensor | None = None,
     ) -> tuple[list[torch.Tensor], dict[str, torch.Tensor]]:
+        if private_tokens is None:
+            private_tokens = tokens
+        if private_tokens.shape != tokens.shape:
+            raise ValueError(
+                "Private-source and post-shared token shapes must match: "
+                f"{tuple(private_tokens.shape)} != {tuple(tokens.shape)}"
+            )
         residuals = torch.stack(
             [
-                adapter(tokens[:, modality_index])
+                adapter(private_tokens[:, modality_index])
                 for modality_index, adapter in enumerate(self.private_adapters)
             ],
             dim=1,
         )
         extras: dict[str, torch.Tensor] = {
+            "private_adapter_inputs": private_tokens,
+            "private_residual_addback_base": tokens,
             "private_residuals": residuals,
         }
         if self.cme_arm == "c1":
@@ -216,13 +232,17 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
             keep[sample_mask, modal_index] = 0.0
             H = H * keep.unsqueeze(-1)
         H = H * modal_gate.view(1, -1, 1)
-        modal_tokens_pre_transformer = H if return_intermediates else None
+        pre_shared_tokens = H
+        modal_tokens_pre_transformer = pre_shared_tokens if return_intermediates else None
         for block in self.shared_transformer:
             H = block(H)
         modal_tokens_post_transformer = H if return_intermediates else None
         self.last_modal_tokens = H.detach()
 
-        pool_token_streams, cme_intermediates = self._category_token_streams(H)
+        private_tokens = pre_shared_tokens if self.private_source == "pre_shared" else H
+        pool_token_streams, cme_intermediates = self._category_token_streams(
+            H, private_tokens=private_tokens
+        )
         label_embeddings = []
         auxiliary_outputs = []
         for label_index, (pool, auxiliary_head) in enumerate(
@@ -275,6 +295,7 @@ class CMEDualBranchModel(HeterGraph_Model_Kmeans):
                 "H_fused": fused_embedding,
                 "raw_logits": raw_logits,
                 "counterfactual_modal_index": counterfactual_modal_index,
+                "private_source": self.private_source,
                 **cme_intermediates,
             }
             return raw_logits, label_embeddings, auxiliary_outputs, intermediates

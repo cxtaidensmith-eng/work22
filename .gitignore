@@ -45,6 +45,10 @@
 # state. Compact fold JSON, per-trial OOF, manifests, and reports are tracked.
 /experiments/abide5_hparam_search_v1/work/
 /experiments/abide5_hparam_search_v1/smoke/*.pt
+# PS-SPR formal checkpoints, histories, and resume state remain local. Compact
+# per-task OOF/fold summaries, diagnostics, smoke JSON, and REPORT are tracked.
+/experiments/pre_shared_source_residual_v1/formal/
+/experiments/pre_shared_source_residual_v1/smoke/*_checkpoint_roundtrip.pt
 # C1 broad-search fold/trial state is resumable but remains local; only the
 # smoke summary, locked manifest, and compact top-level final artifacts commit.
 /experiments/c1_broad_hparam_search_v1/stage_a/

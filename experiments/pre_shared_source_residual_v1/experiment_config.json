@@ -1,0 +1,44 @@
+{
+  "experiment": "pre_shared_source_residual_v1",
+  "branch": "experiment/pre-shared-source-residual-v1",
+  "base_commit": "a23134cf23e3c95cb237931d92c327c001545a06",
+  "tasks": [
+    "tadpole_smci_pmci",
+    "abide5_ads_cn"
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed": 0,
+  "smoke_epochs": 3,
+  "formal_epochs": 400,
+  "model_switch": {
+    "private_source": "pre_shared"
+  },
+  "reference_switch": {
+    "private_source": "post_shared"
+  },
+  "prior_free_modality_prior": false,
+  "no_orthogonality": false,
+  "residual_formula": "Z_m = H_m + A_m(E_m)",
+  "selection": "ACC > ROC-AUC > Macro-F1 > earliest epoch",
+  "single_model": true,
+  "ema": false,
+  "ensemble": false,
+  "search": false,
+  "decision_tokens": [
+    "PS_SPR_PASS",
+    "PS_SPR_NEAR",
+    "PS_SPR_STOP"
+  ],
+  "sha256": "742952e61d3c08a16d9cf692af712cd0f1add35a98147eb2804a07d999cb1816"
+}
