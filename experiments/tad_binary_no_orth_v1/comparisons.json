@@ -1,0 +1,31 @@
+{
+  "reference": "D5",
+  "repairs": 6,
+  "damages": 14,
+  "changed": 20,
+  "net_correct": -8,
+  "correct_delta": -8,
+  "metric_deltas": {
+    "acc": -0.01495327102803734,
+    "roc_auc": -0.007437641723356037,
+    "pr_auc": -0.11088046082974112,
+    "macro_f1": -0.046522500872224426,
+    "bacc": -0.03843537414965992,
+    "weighted_f1": -0.014643878686362966,
+    "sen": -0.06666666666666676,
+    "spe": -0.010204081632653073
+  },
+  "exact_two_sided_mcnemar_p": 0.11531829833984375,
+  "repairs_by_truth": {
+    "SMCI": 3,
+    "PMCI": 3
+  },
+  "damages_by_truth": {
+    "SMCI": 8,
+    "PMCI": 6
+  },
+  "prediction_transitions": {
+    "SMCI->PMCI": 11,
+    "PMCI->SMCI": 9
+  }
+}
