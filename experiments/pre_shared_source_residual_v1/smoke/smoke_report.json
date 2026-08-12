@@ -1,0 +1,408 @@
+{
+  "experiment": "pre_shared_source_residual_v1",
+  "source_commit": "3662e95b8dfef9b57f93d4d4cf8015baba18c63a",
+  "smoke_config_sha256": "13b317b69d1baac1e0bcf783c86e7599f71ac8ec4578119c68238ca058cbb401",
+  "tasks": {
+    "tadpole_smci_pmci": {
+      "reference_checkpoint_replay": {
+        "fold": 0,
+        "checkpoint_sha256": "69811b701131d3f9e9864b6c209d8989d570a7ffc2f53ccaf491d8500152d672",
+        "logits_max_abs_diff": 0.0,
+        "probabilities_max_abs_diff": 7.027775528190006e-08
+      },
+      "initialization_audit": {
+        "all_state_initialization_max_abs_diff": 0.0,
+        "common_trainable_initialization_max_abs_diff": 0.0,
+        "adapter_state_initialization_max_abs_diff": 0.0,
+        "step0_logits_max_abs_diff": 0.0,
+        "step0_probability_max_abs_diff": 0.0,
+        "step0_private_residual_max_abs": 0.0,
+        "step0_final_category_token_max_abs_diff": 0.0,
+        "post_adapter_input_matches_H_max_abs_diff": 0.0,
+        "pre_adapter_input_matches_E_max_abs_diff": 0.0,
+        "only_forward_difference": "private adapter input: H_m versus E_m",
+        "parameter_key_shape_trainability_identical": true,
+        "optimizer_parameter_groups_identical": true,
+        "scheduler_class_and_config_identical": true,
+        "scheduler_class": "RatioPreservingCustomCosineAnnealingLR",
+        "scheduler_config": {
+          "T_max": 400,
+          "eta_min": 0.0001,
+          "adapter_lr_multiplier": 1.0
+        }
+      },
+      "source_preserving_diagnostic": {
+        "per_modality_perturbations": [
+          {
+            "modality_m": 0,
+            "modality_n": 1,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 2.205371856689453e-05
+          },
+          {
+            "modality_m": 1,
+            "modality_n": 2,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 3.2724812626838684e-05
+          },
+          {
+            "modality_m": 2,
+            "modality_n": 3,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 8.512288331985474e-05
+          },
+          {
+            "modality_m": 3,
+            "modality_n": 4,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 0.0001090802252292633
+          },
+          {
+            "modality_m": 4,
+            "modality_n": 0,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 4.74248081445694e-05
+          }
+        ],
+        "p_m_max_abs_diff_after_e_n_perturbation": 0.0,
+        "p_n_min_abs_diff_after_e_n_perturbation": 2.205371856689453e-05,
+        "modal_encoder_private_only_gradient_max": 0.0014028779696673155,
+        "modal_encoder_private_only_gradient_by_modality": {
+          "MRI": 4.046497633680701e-05,
+          "CSF": 6.857902917545289e-05,
+          "RISK_FACTOR": 4.8684294597478583e-05,
+          "COGNITIVE_TEST": 0.0014028779696673155,
+          "ROI_AVERAGE": 0.0002649493399076164
+        },
+        "non_corresponding_modal_encoder_private_only_gradient_by_modality": {
+          "MRI": 0.0,
+          "CSF": 0.0,
+          "RISK_FACTOR": 0.0,
+          "COGNITIVE_TEST": 0.0,
+          "ROI_AVERAGE": 0.0
+        },
+        "shared_transformer_private_only_gradient_max": 0.0,
+        "pre_shared_requires_grad": true,
+        "private_path_detached": false,
+        "private_path_traverses_shared_transformer": false,
+        "shared_main_path_traverses_shared_transformer": true,
+        "shared_main_path_gradient_max": 0.004716359078884125,
+        "interpretation": "graph-origin check only; it does not establish statistical independence"
+      },
+      "object_audit": {
+        "total_parameter_count": 617197,
+        "trainable_parameter_count": 617197,
+        "frozen_parameter_count": 0,
+        "private_parameter_count": 8200,
+        "common_parameter_tensors": 134,
+        "adapter_parameter_tensors": 20,
+        "legacy_gate_parameter_count": 5,
+        "historical_gate_trainable": true,
+        "historical_gate_in_optimizer": true,
+        "new_parameter_count": 0,
+        "base_lr": 0.0125,
+        "adapter_lr": 0.0125,
+        "adapter_lr_multiplier": 1.0
+      },
+      "losses": [
+        2.811572790145874,
+        3.3214573860168457,
+        4.426970958709717
+      ],
+      "adapter_cumulative_max_gradient": {
+        "private_adapters.0.down.weight": 0.0008878310327418149,
+        "private_adapters.0.down.bias": 0.0014611307997256517,
+        "private_adapters.0.up.weight": 0.004556646570563316,
+        "private_adapters.0.up.bias": 0.04836338758468628,
+        "private_adapters.1.down.weight": 0.0003952923871111125,
+        "private_adapters.1.down.bias": 0.0013936716131865978,
+        "private_adapters.1.up.weight": 0.0029210797511041164,
+        "private_adapters.1.up.bias": 0.05185552313923836,
+        "private_adapters.2.down.weight": 0.00025409896625205874,
+        "private_adapters.2.down.bias": 0.001391099183820188,
+        "private_adapters.2.up.weight": 0.0013613736955448985,
+        "private_adapters.2.up.bias": 0.0520627461373806,
+        "private_adapters.3.down.weight": 0.005694583989679813,
+        "private_adapters.3.down.bias": 0.0013496468309313059,
+        "private_adapters.3.up.weight": 0.027662094682455063,
+        "private_adapters.3.up.bias": 0.03380616009235382,
+        "private_adapters.4.down.weight": 0.003068870399147272,
+        "private_adapters.4.down.bias": 0.00166052405256778,
+        "private_adapters.4.up.weight": 0.025343334302306175,
+        "private_adapters.4.up.bias": 0.0358370840549469
+      },
+      "target_group_cumulative_max_gradient": {
+        "private": 0.0520627461373806,
+        "shared_modal": 0.38814225792884827,
+        "global": 0.27031946182250977,
+        "query": 1.04587984085083,
+        "difformer": 0.41591715812683105
+      },
+      "adapter_parameter_max_delta": {
+        "private_adapters.0.down.weight": 0.037542108446359634,
+        "private_adapters.0.down.bias": 0.03735368698835373,
+        "private_adapters.0.up.weight": 0.037507809698581696,
+        "private_adapters.0.up.bias": 0.03697091341018677,
+        "private_adapters.1.down.weight": 0.03754816949367523,
+        "private_adapters.1.down.bias": 0.036432452499866486,
+        "private_adapters.1.up.weight": 0.03713734820485115,
+        "private_adapters.1.up.bias": 0.03700265288352966,
+        "private_adapters.2.down.weight": 0.03754057735204697,
+        "private_adapters.2.down.bias": 0.03526808321475983,
+        "private_adapters.2.up.weight": 0.03502371907234192,
+        "private_adapters.2.up.bias": 0.036531489342451096,
+        "private_adapters.3.down.weight": 0.03747454285621643,
+        "private_adapters.3.down.bias": 0.03575502336025238,
+        "private_adapters.3.up.weight": 0.037550054490566254,
+        "private_adapters.3.up.bias": 0.036851316690444946,
+        "private_adapters.4.down.weight": 0.03754251077771187,
+        "private_adapters.4.down.bias": 0.03617585822939873,
+        "private_adapters.4.up.weight": 0.037368543446063995,
+        "private_adapters.4.up.bias": 0.036935772746801376
+      },
+      "initial_effective_gate": [
+        0.2689414322376251,
+        0.11920291930437088,
+        0.11920291930437088,
+        0.9820137619972229,
+        0.8807970285415649
+      ],
+      "effective_gate": [
+        0.2755894362926483,
+        0.1162327378988266,
+        0.11943290382623672,
+        0.9813414812088013,
+        0.8776432275772095
+      ],
+      "initial_effective_noise_std": [
+        0.15000000596046448,
+        0.15000000596046448,
+        0.15000000596046448,
+        0.0,
+        0.02500000037252903
+      ],
+      "effective_noise_std": [
+        0.15000000596046448,
+        0.15000000596046448,
+        0.15000000596046448,
+        0.0,
+        0.02500000037252903
+      ],
+      "historical_gate_matches_inspect": true,
+      "historical_noise_matches_inspect": true,
+      "historical_gate_gradient_is_finite": true,
+      "historical_gate_values_are_finite": true,
+      "historical_gate_in_optimizer": true,
+      "optimizer_steps": 3,
+      "scheduler_steps": 3,
+      "probability_simplex_max_abs_error": 1.1920928955078125e-07,
+      "checkpoint_roundtrip_logits_max_abs_diff": 0.0,
+      "checkpoint_sha256": "6d73cc0ae597b90b53c91e153570704e8989f8fe8b733137d77b4a08dcd075e3"
+    },
+    "abide5_ads_cn": {
+      "reference_checkpoint_replay": {
+        "fold": 0,
+        "checkpoint_sha256": "1246984495387b6ce3f0966b261b76f5307afa13e43736fa58bb1299404d772f",
+        "logits_max_abs_diff": 0.0,
+        "probabilities_max_abs_diff": 8.144665697429332e-08
+      },
+      "initialization_audit": {
+        "all_state_initialization_max_abs_diff": 0.0,
+        "common_trainable_initialization_max_abs_diff": 0.0,
+        "adapter_state_initialization_max_abs_diff": 0.0,
+        "step0_logits_max_abs_diff": 0.0,
+        "step0_probability_max_abs_diff": 0.0,
+        "step0_private_residual_max_abs": 0.0,
+        "step0_final_category_token_max_abs_diff": 0.0,
+        "post_adapter_input_matches_H_max_abs_diff": 0.0,
+        "pre_adapter_input_matches_E_max_abs_diff": 0.0,
+        "only_forward_difference": "private adapter input: H_m versus E_m",
+        "parameter_key_shape_trainability_identical": true,
+        "optimizer_parameter_groups_identical": true,
+        "scheduler_class_and_config_identical": true,
+        "scheduler_class": "RatioPreservingCustomCosineAnnealingLR",
+        "scheduler_config": {
+          "T_max": 400,
+          "eta_min": 0.0001,
+          "adapter_lr_multiplier": 2.0
+        }
+      },
+      "source_preserving_diagnostic": {
+        "per_modality_perturbations": [
+          {
+            "modality_m": 0,
+            "modality_n": 1,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 2.8915703296661377e-05
+          },
+          {
+            "modality_m": 1,
+            "modality_n": 2,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 1.1421740055084229e-05
+          },
+          {
+            "modality_m": 2,
+            "modality_n": 3,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 3.955326974391937e-05
+          },
+          {
+            "modality_m": 3,
+            "modality_n": 4,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 3.4356489777565e-05
+          },
+          {
+            "modality_m": 4,
+            "modality_n": 0,
+            "p_m_max_abs_diff": 0.0,
+            "p_n_max_abs_diff": 2.0002946257591248e-05
+          }
+        ],
+        "p_m_max_abs_diff_after_e_n_perturbation": 0.0,
+        "p_n_min_abs_diff_after_e_n_perturbation": 1.1421740055084229e-05,
+        "modal_encoder_private_only_gradient_max": 6.995572039159015e-05,
+        "modal_encoder_private_only_gradient_by_modality": {
+          "PHENO": 3.4200613299617544e-05,
+          "ANAT": 2.5846155040198937e-05,
+          "FUNC": 3.061116149183363e-05,
+          "MRI": 6.995572039159015e-05,
+          "fMRI": 3.4968627005582675e-05
+        },
+        "non_corresponding_modal_encoder_private_only_gradient_by_modality": {
+          "PHENO": 0.0,
+          "ANAT": 0.0,
+          "FUNC": 0.0,
+          "MRI": 0.0,
+          "fMRI": 0.0
+        },
+        "shared_transformer_private_only_gradient_max": 0.0,
+        "pre_shared_requires_grad": true,
+        "private_path_detached": false,
+        "private_path_traverses_shared_transformer": false,
+        "shared_main_path_traverses_shared_transformer": true,
+        "shared_main_path_gradient_max": 0.015485169366002083,
+        "interpretation": "graph-origin check only; it does not establish statistical independence"
+      },
+      "object_audit": {
+        "total_parameter_count": 383616,
+        "trainable_parameter_count": 383616,
+        "frozen_parameter_count": 0,
+        "private_parameter_count": 2900,
+        "common_parameter_tensors": 146,
+        "adapter_parameter_tensors": 20,
+        "legacy_gate_parameter_count": 5,
+        "historical_gate_trainable": true,
+        "historical_gate_in_optimizer": true,
+        "new_parameter_count": 0,
+        "base_lr": 0.005,
+        "adapter_lr": 0.01,
+        "adapter_lr_multiplier": 2.0
+      },
+      "losses": [
+        2.199331283569336,
+        2.7508556842803955,
+        3.0183839797973633
+      ],
+      "adapter_cumulative_max_gradient": {
+        "private_adapters.0.down.weight": 0.00011521694250404835,
+        "private_adapters.0.down.bias": 0.0006531421677209437,
+        "private_adapters.0.up.weight": 0.000516555504873395,
+        "private_adapters.0.up.bias": 0.010815778747200966,
+        "private_adapters.1.down.weight": 0.00014557954273186624,
+        "private_adapters.1.down.bias": 0.000692015397362411,
+        "private_adapters.1.up.weight": 0.0003141667111776769,
+        "private_adapters.1.up.bias": 0.010656135156750679,
+        "private_adapters.2.down.weight": 0.0001502098166383803,
+        "private_adapters.2.down.bias": 0.0007005886873230338,
+        "private_adapters.2.up.weight": 0.000557931954972446,
+        "private_adapters.2.up.bias": 0.010208847001194954,
+        "private_adapters.3.down.weight": 0.000337720790412277,
+        "private_adapters.3.down.bias": 0.0007188032614067197,
+        "private_adapters.3.up.weight": 0.0005141145084053278,
+        "private_adapters.3.up.bias": 0.010226350277662277,
+        "private_adapters.4.down.weight": 0.00021396737429313362,
+        "private_adapters.4.down.bias": 0.0005664488999173045,
+        "private_adapters.4.up.weight": 0.0003711140598170459,
+        "private_adapters.4.up.bias": 0.010381139814853668
+      },
+      "target_group_cumulative_max_gradient": {
+        "private": 0.010815778747200966,
+        "shared_modal": 0.11054190993309021,
+        "global": 0.09587273001670837,
+        "query": 0.15473605692386627,
+        "difformer": 0.906527578830719
+      },
+      "adapter_parameter_max_delta": {
+        "private_adapters.0.down.weight": 0.030040614306926727,
+        "private_adapters.0.down.bias": 0.02957955002784729,
+        "private_adapters.0.up.weight": 0.028506111353635788,
+        "private_adapters.0.up.bias": 0.028975466266274452,
+        "private_adapters.1.down.weight": 0.030031118541955948,
+        "private_adapters.1.down.bias": 0.027974139899015427,
+        "private_adapters.1.up.weight": 0.027281582355499268,
+        "private_adapters.1.up.bias": 0.02842056192457676,
+        "private_adapters.2.down.weight": 0.030029788613319397,
+        "private_adapters.2.down.bias": 0.029166296124458313,
+        "private_adapters.2.up.weight": 0.028271446004509926,
+        "private_adapters.2.up.bias": 0.029938090592622757,
+        "private_adapters.3.down.weight": 0.030040547251701355,
+        "private_adapters.3.down.bias": 0.029732197523117065,
+        "private_adapters.3.up.weight": 0.02964637242257595,
+        "private_adapters.3.up.bias": 0.027353258803486824,
+        "private_adapters.4.down.weight": 0.030038580298423767,
+        "private_adapters.4.down.bias": 0.02800455503165722,
+        "private_adapters.4.up.weight": 0.029822347685694695,
+        "private_adapters.4.up.bias": 0.028748219832777977
+      },
+      "initial_effective_gate": [
+        0.11920291930437088,
+        0.11920291930437088,
+        0.11920291930437088,
+        0.2689414322376251,
+        0.2689414322376251
+      ],
+      "effective_gate": [
+        0.11865845322608948,
+        0.12017785012722015,
+        0.1207607239484787,
+        0.2714459300041199,
+        0.2718837857246399
+      ],
+      "initial_effective_noise_std": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "effective_noise_std": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "historical_gate_matches_inspect": true,
+      "historical_noise_matches_inspect": true,
+      "historical_gate_gradient_is_finite": true,
+      "historical_gate_values_are_finite": true,
+      "historical_gate_in_optimizer": true,
+      "optimizer_steps": 3,
+      "scheduler_steps": 3,
+      "probability_simplex_max_abs_error": 5.960464477539063e-08,
+      "checkpoint_roundtrip_logits_max_abs_diff": 0.0,
+      "checkpoint_sha256": "d38d05e7464d1a56f61c34e4a97b075f86fbc36ab20df3ab1aa28e88f29d7547"
+    }
+  },
+  "source_token_diagnostic_sha256": {
+    "tadpole_smci_pmci": "3ea067df139a29c3b1e9fe5e4cd4e92b737b1f12418fc163baacd37a53f562a4",
+    "abide5_ads_cn": "79931a111737d7bb230bd6a991a3c0401850cf30b3463912384afa46c1af46dc"
+  },
+  "historical_gate_restored": true,
+  "historical_noise_restored": true,
+  "source_preserving_all_passed": true,
+  "formal_go": true,
+  "sha256": "2cf952a049255824128ac479bb8c7672ab8aa7d72bbe2ac36ec1306dff043c48"
+}

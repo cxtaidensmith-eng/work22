@@ -1,0 +1,27 @@
+{
+  "experiment": "pre_shared_source_residual_v1",
+  "source_commit": "3662e95b8dfef9b57f93d4d4cf8015baba18c63a",
+  "source_hashes": {
+    ".gitignore": "cef865301bf228a8eba6d1d9cc9c155e7331709a5b28b539752c1d1b4e48c82a",
+    "Model/cme_dual_branch.py": "c2a9fe0808aa136074541f06e59e444e0163837980604d7f86b022a87f012c78",
+    "scripts/run_pre_shared_source_residual_v1.py": "76969ecf4e5429f6beb175e82c33ed7cde20d72a6d51361787525b098de0e716",
+    "experiments/pre_shared_source_residual_v1/experiment_config.json": "94c5f8339237478b2e7dddab77fa77bad26a3b9dcb312b0b5a6d513f835c5f82",
+    "experiments/pre_shared_source_residual_v1/protocols/tadpole_smci_pmci.json": "10cf82511fe2e121ff8f74beeb8af6254c1bea5d68906a2bdc482eac17d593ca",
+    "experiments/pre_shared_source_residual_v1/protocols/abide5_ads_cn.json": "8ae0ef1ba566a932cada01b72d23a9d7a69a18f8e91f1b9296fd06b4b1357d90",
+    "experiments/pre_shared_source_residual_v1/inspect_manifest.json": "35fb934d40f2eaef00b8016e7080c03e23525df599eafad28630492a8aaa0553",
+    "experiments/pre_shared_source_residual_v1/fold_manifest.json": "ed4ac1b843cbe2a8077c73dd64cd40f82536fec7b717277b0f2c223bde912628",
+    "Model/network.py": "033aaae12cd20e4c6191caff3324e1721935ff329fd300dd2bdcae7aae7b5467",
+    "Model/models.py": "7c1a6a6162c230a1be05f3dc02e3c44aba0038fa19d556099a6358f95a8625c9",
+    "Loss/loss_fn.py": "37520db8fe47042b18ac5118121be7d420007a05bddb50cd74c3a320ea096dc9",
+    "Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "Utils/graph_load.py": "85576bebae58b5c80ae80fbb99bf6bc440f53bce32ab56ff04ad4f3d403f706f",
+    "Utils/utils.py": "eaa860ff36ff8144dc07f6fea47377711c02f07d3529fc9ca520003f8fd22f79",
+    "config_re.py": "d4983438cd1033c769d52c5e43661a88aa114d60448779084d86d476c2d0e97f",
+    "scripts/run_cross_dataset_a012_structure_v1.py": "de04e8039536e04bced5e5b838c9f565cf40e2c5ad223587d73a7aac1caba1d3"
+  },
+  "device": "cuda:0",
+  "epochs": 3,
+  "inspect_sha256": "35fb934d40f2eaef00b8016e7080c03e23525df599eafad28630492a8aaa0553",
+  "fold_manifest_sha256": "ed4ac1b843cbe2a8077c73dd64cd40f82536fec7b717277b0f2c223bde912628",
+  "sha256": "13b317b69d1baac1e0bcf783c86e7599f71ac8ec4578119c68238ca058cbb401"
+}

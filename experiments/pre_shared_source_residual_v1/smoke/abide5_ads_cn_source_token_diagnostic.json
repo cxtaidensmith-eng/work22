@@ -1,0 +1,58 @@
+{
+  "per_modality_perturbations": [
+    {
+      "modality_m": 0,
+      "modality_n": 1,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 2.8915703296661377e-05
+    },
+    {
+      "modality_m": 1,
+      "modality_n": 2,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 1.1421740055084229e-05
+    },
+    {
+      "modality_m": 2,
+      "modality_n": 3,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 3.955326974391937e-05
+    },
+    {
+      "modality_m": 3,
+      "modality_n": 4,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 3.4356489777565e-05
+    },
+    {
+      "modality_m": 4,
+      "modality_n": 0,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 2.0002946257591248e-05
+    }
+  ],
+  "p_m_max_abs_diff_after_e_n_perturbation": 0.0,
+  "p_n_min_abs_diff_after_e_n_perturbation": 1.1421740055084229e-05,
+  "modal_encoder_private_only_gradient_max": 6.995572039159015e-05,
+  "modal_encoder_private_only_gradient_by_modality": {
+    "PHENO": 3.4200613299617544e-05,
+    "ANAT": 2.5846155040198937e-05,
+    "FUNC": 3.061116149183363e-05,
+    "MRI": 6.995572039159015e-05,
+    "fMRI": 3.4968627005582675e-05
+  },
+  "non_corresponding_modal_encoder_private_only_gradient_by_modality": {
+    "PHENO": 0.0,
+    "ANAT": 0.0,
+    "FUNC": 0.0,
+    "MRI": 0.0,
+    "fMRI": 0.0
+  },
+  "shared_transformer_private_only_gradient_max": 0.0,
+  "pre_shared_requires_grad": true,
+  "private_path_detached": false,
+  "private_path_traverses_shared_transformer": false,
+  "shared_main_path_traverses_shared_transformer": true,
+  "shared_main_path_gradient_max": 0.015485169366002083,
+  "interpretation": "graph-origin check only; it does not establish statistical independence"
+}

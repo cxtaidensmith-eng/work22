@@ -1,0 +1,58 @@
+{
+  "per_modality_perturbations": [
+    {
+      "modality_m": 0,
+      "modality_n": 1,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 2.205371856689453e-05
+    },
+    {
+      "modality_m": 1,
+      "modality_n": 2,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 3.2724812626838684e-05
+    },
+    {
+      "modality_m": 2,
+      "modality_n": 3,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 8.512288331985474e-05
+    },
+    {
+      "modality_m": 3,
+      "modality_n": 4,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 0.0001090802252292633
+    },
+    {
+      "modality_m": 4,
+      "modality_n": 0,
+      "p_m_max_abs_diff": 0.0,
+      "p_n_max_abs_diff": 4.74248081445694e-05
+    }
+  ],
+  "p_m_max_abs_diff_after_e_n_perturbation": 0.0,
+  "p_n_min_abs_diff_after_e_n_perturbation": 2.205371856689453e-05,
+  "modal_encoder_private_only_gradient_max": 0.0014028779696673155,
+  "modal_encoder_private_only_gradient_by_modality": {
+    "MRI": 4.046497633680701e-05,
+    "CSF": 6.857902917545289e-05,
+    "RISK_FACTOR": 4.8684294597478583e-05,
+    "COGNITIVE_TEST": 0.0014028779696673155,
+    "ROI_AVERAGE": 0.0002649493399076164
+  },
+  "non_corresponding_modal_encoder_private_only_gradient_by_modality": {
+    "MRI": 0.0,
+    "CSF": 0.0,
+    "RISK_FACTOR": 0.0,
+    "COGNITIVE_TEST": 0.0,
+    "ROI_AVERAGE": 0.0
+  },
+  "shared_transformer_private_only_gradient_max": 0.0,
+  "pre_shared_requires_grad": true,
+  "private_path_detached": false,
+  "private_path_traverses_shared_transformer": false,
+  "shared_main_path_traverses_shared_transformer": true,
+  "shared_main_path_gradient_max": 0.004716359078884125,
+  "interpretation": "graph-origin check only; it does not establish statistical independence"
+}
