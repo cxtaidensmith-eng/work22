@@ -658,8 +658,8 @@
       "bytes": 18931
     },
     "MSCQ-GN-mainline/README.md": {
-      "sha256": "27fe63fe4a9aec0dde3a5bef048cfdfb2f56c29246b28cff77a760dfb1f936bc",
-      "bytes": 6171
+      "sha256": "9232f1cbb4b9fce0a1df6e96d88b95befd2098771d227c5d122a48962bc7a289",
+      "bytes": 7849
     },
     "MSCQ-GN-mainline/readout_controls_seed0_experiment.py": {
       "sha256": "aa8f6ef647119c5699bee06d3cbd5f932a338903f77a91a72fc7688906de49c1",
@@ -1614,8 +1614,8 @@
       "bytes": 199
     },
     "README.md": {
-      "sha256": "7c54e80571399d21c0c47e6d8c4735d9bc6078b0565c18fb15b4bffe41e292a1",
-      "bytes": 689
+      "sha256": "4e6c573995d0ec6bbf614f9f6edb7e92209f89805408feff87dbef454c10fb04",
+      "bytes": 1057
     },
     ".gitattributes": {
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
@@ -1658,5 +1658,13 @@
     ],
     "model_code_changed": false,
     "diagram_local_reference_paths_omitted": true
+  },
+  "clarification": {
+    "date": "2026-10-12",
+    "six_candidate_graphs_built_before_propagation": true,
+    "fusion_after_propagation": true,
+    "candidate_topology_rebuilt_in_forward": false,
+    "alternating_fusion_graph_propagation_loop": false,
+    "model_code_changed": false
   }
 }
