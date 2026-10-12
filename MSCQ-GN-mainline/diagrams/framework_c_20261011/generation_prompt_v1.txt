@@ -1,0 +1,26 @@
+Use case: scientific-educational.
+Asset type: a Chinese raster research architecture figure explaining the REAL implemented Framework C, suitable for a paper draft and a supervisor discussion. This is a NEW image, not an edit. Create ONE polished, very legible landscape framework diagram, approximately 16:9, high resolution. White background, black Chinese sans-serif text, clean dark thin strokes. Minimal flat scientific graphics, no photographs, no 3D blocks, no gradients, no ornamental icons. Use only restrained teal-blue for MRI content and muted orange for PET content; ordinary context modules light gray. Strong visual hierarchy and generous whitespace. The two core innovation illustrations should occupy about 70% of the canvas, while the end-to-end context is small and simplified. All labels must be accurate Simplified Chinese, crisp and easy to read. Do NOT densely reproduce every neural-network layer.
+
+Title at the top: "框架C：关系来源与传播内容分开建模"
+
+Upper narrow overall architecture strip, left to right with clean arrows:
+"多模态输入" → "逐模态编码" → highlighted larger box "关系—内容解耦传播" → "模态融合与类别读取" → a plus-in-circle → "MLP分类".
+A simple gray secondary path branches DIRECTLY from "多模态输入", runs below this strip, passes through a compact gray box "患者自身语义分支", and connects UP to the plus-in-circle. It must NOT start from the propagation output. The branch is an individual patient's own features, not another population graph. Link the highlighted propagation box to a large lower zoom area with a subtle thin dashed connector.
+
+Lower zoom area: two clearly separated large panels side by side, with generous padding.
+LEFT PANEL title: "① 关系来源 × 传播内容"
+Illustrate the cross product as an extremely clear 2-by-2 table of tiny PATIENT graphs. Column headers are "传播MRI内容" and "传播PET内容". Row headers are "MRI关系图" and "PET关系图". The nodes are patients, NOT biomarkers. The same 3 patient nodes labeled 1, 2, 3 have IDENTICAL positions in all four cells. In BOTH cells of the MRI relation row, draw the EXACT SAME edge topology: edges between 1–2 and 1–3. In BOTH cells of the PET relation row, draw the EXACT SAME DIFFERENT edge topology: edges between 1–2 and 2–3. Within each node put a small teal-blue square for the MRI-content column and a small muted orange square for the PET-content column. The colors encode CONTENT, while the row encodes RELATION SOURCE. The two off-diagonal cells must be just as visible as the diagonal cells. Put a short readable sentence under this matrix: "每张关系图都可传播各模态内容". Below it, smaller text: "仅示意MRI/PET；六模态形成36条关系—内容路径". This is symbolic architecture illustration, not an experimental adjacency plot.
+
+RIGHT PANEL title: "② 按传播内容调整边权与变换"
+At top of this panel, two small plainly labeled inputs "关系相似度" and "当前内容相似度" feed a compact box "内容感知边权". Show a short formula beneath that box using conventional mathematical typography: "w = sigmoid(内容相似度 + a × 关系相似度 + b)". Do not add numerical values. The a and b are learned for each relation-content pair.
+Below, explicitly enlarge the SAME candidate patient edge j → i from one fixed relation graph. Two parallel compact horizontal rows:
+- teal-blue MRI row labeled "MRI内容": patient j's teal token → a small box "发送变换 S_MRI" → an arrow labeled "w_MRI" → a small box "接收变换 T_MRI" → patient i's updated teal token.
+- muted orange PET row labeled "PET内容": patient j's orange token → a small box "发送变换 S_PET" → an arrow labeled "w_PET" → a small box "接收变换 T_PET" → patient i's updated orange token.
+Use different thicknesses of the two weighted arrows as a schematic illustration, without suggesting these are measured magnitudes. Put near the rows "同一候选边，传播内容不同". The send/receive blocks and arrows illustrate the roles inside the cooperative operator, NOT a separate new one-pass GCN; add a small label "协同传播示意" above the paired rows.
+Below the rows, one crisp sentence: "边权随当前内容变化；发送／接收变换由内容模态ID决定".
+Do NOT imply that S and T vary by patient or relation source. The same content-specific S/T pair is reused across relation graphs.
+
+At bottom of the lower zoom area, a single modest shared output strip with arrows: "各关系来源等权汇总" → "残差更新模态表示". This output corresponds to the highlighted propagation box above. Keep it visually secondary to the two large illustrations.
+Small footer, readable but unobtrusive: "候选图逐模态建立并固定；传播边权可更新。"
+
+Critical scientific constraints: early graph propagation BEFORE within-patient multimodal fusion and class-query readout; final classifier is MLP. NO Graph Learner after fusion, NO ChebGCN, NO diagnosis-specific graph topology, NO biomarker nodes, NO dynamically regenerated send/receive maps from patient states, NO feedback loop, NO attention-weighted relation aggregation, NO extra modules or unverified claims. Do not call individual patient's own branch population-global. Avoid long prose, dense dimensions, auxiliary losses, layer counts, training metrics, or performance claims. Prefer large readable labels, visually obvious graph reuse and content-specific transformations. Every arrow should have an unambiguous destination; do not route arrows across text or graph nodes. Deliver one complete clean ordinary PNG-style framework figure.

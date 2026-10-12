@@ -305,7 +305,20 @@
     "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_innovation_explainer.svg": "fb13965a23d0fe43572c499d76ce2fbd32a7a6a127a51eaf70799da5e3d2e4cd",
     "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_revised.png": "4228ffa38c79a93bfc49bad42349430150d8ce2a6311332ee8697d636ef046b1",
     "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_simplified.png": "8e46a1ba9437cab523bffbfc29a1a169c8a653320a3de6e450a98b12e0e225d2",
-    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_two_innovations.png": "f549688a1f76b6e85f555dfc65c0ec9f1edcd68b537fa7e002237300a1849642"
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_two_innovations.png": "f549688a1f76b6e85f555dfc65c0ec9f1edcd68b537fa7e002237300a1849642",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_notes_zh_v1.md": "5598f9c85ce5008e9985317e77cb03b6e0309e1c198134addd623e98c786fd1d",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_notes_zh_v2.md": "34aeafacec0e16928e81c7919f8ba94ede960e6330e0186b8dccf16c7aa03cdd",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_reference_notes_zh_v3.txt": "8529ef89702c0b64857de06c7ec7d8821df037c2f779c171dcc8ff83ac4fda27",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_innovations_zh_v1.png": "fa5330c615396bc23054b13ffd0b2060882df724e2e920d5e8be7866e5c27af2",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_original_layout_zh_v2.png": "e14212743775f24fd2372a510ffbca12f9a08ccf8bbe767a2dbc1aa7ddff1ce6",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_paper_reference_zh_v3.png": "f19b2b00e8b6ea2fff15b39fa39b90d7a0fcd869ce61235e00e5baa1d1f07952",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompts_v2.txt": "184009fddec950e40ef22e7f15d7e3f30b8f4b0a6777a72bb49837a7b5a02ad0",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompts_v3.txt": "2b8bcf581798148bedca237d3215edcc805e2416e1e06567f2e07a90de63892d",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompt_v1.txt": "d4af95fe2d08e8239404b992a152c9dfb946f20e0da82c6986495a64dd048c26",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/paper_figure_references_v3.json": "5b608c17ef3d7fe1b01699c0dab9bd6fa7b325bd8aad0b7abbf5234602c35089",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/figure_notes_zh_v4.txt": "539d8b23cfd9ab4646587f8c294d38536486d8d9cd55edc5043a8ae67dff589f",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/framework_c_parallel_modality_zh_v4.png": "7997af4f22c5957f8252929ab7c2eb1f36b784e667692b55d1112d56fcb09ab9",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/generation_prompts_v4.txt": "b074fdfd9a6fbbe4d41f233321dd1e68c05496f09424a8233f6ac0854f5b8418"
   },
   "files": {
     "MSCQ-GN-mainline/.gitignore": {
@@ -645,8 +658,8 @@
       "bytes": 18931
     },
     "MSCQ-GN-mainline/README.md": {
-      "sha256": "2e564587c6b2f04d9970f386b4b0528c19497b7f24de614b2b826c512c570636",
-      "bytes": 5155
+      "sha256": "27fe63fe4a9aec0dde3a5bef048cfdfb2f56c29246b28cff77a760dfb1f936bc",
+      "bytes": 6171
     },
     "MSCQ-GN-mainline/readout_controls_seed0_experiment.py": {
       "sha256": "aa8f6ef647119c5699bee06d3cbd5f932a338903f77a91a72fc7688906de49c1",
@@ -851,6 +864,58 @@
     "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_two_innovations.png": {
       "sha256": "f549688a1f76b6e85f555dfc65c0ec9f1edcd68b537fa7e002237300a1849642",
       "bytes": 312863
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_notes_zh_v1.md": {
+      "sha256": "269a0acec74aa3663daf92a0c5b9718b163299b9bf87a3652846563a7f47aee4",
+      "bytes": 1908
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_notes_zh_v2.md": {
+      "sha256": "34aeafacec0e16928e81c7919f8ba94ede960e6330e0186b8dccf16c7aa03cdd",
+      "bytes": 2785
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/figure_reference_notes_zh_v3.txt": {
+      "sha256": "f4b79a205035deb7455d1ed496eaad1493b2de412b2f36e86b5018456856aee5",
+      "bytes": 3126
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_innovations_zh_v1.png": {
+      "sha256": "fa5330c615396bc23054b13ffd0b2060882df724e2e920d5e8be7866e5c27af2",
+      "bytes": 1554250
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_original_layout_zh_v2.png": {
+      "sha256": "e14212743775f24fd2372a510ffbca12f9a08ccf8bbe767a2dbc1aa7ddff1ce6",
+      "bytes": 1685553
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/framework_c_paper_reference_zh_v3.png": {
+      "sha256": "f19b2b00e8b6ea2fff15b39fa39b90d7a0fcd869ce61235e00e5baa1d1f07952",
+      "bytes": 1706561
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompts_v2.txt": {
+      "sha256": "184009fddec950e40ef22e7f15d7e3f30b8f4b0a6777a72bb49837a7b5a02ad0",
+      "bytes": 8361
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompts_v3.txt": {
+      "sha256": "2b8bcf581798148bedca237d3215edcc805e2416e1e06567f2e07a90de63892d",
+      "bytes": 15753
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/generation_prompt_v1.txt": {
+      "sha256": "d4af95fe2d08e8239404b992a152c9dfb946f20e0da82c6986495a64dd048c26",
+      "bytes": 5706
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261011/paper_figure_references_v3.json": {
+      "sha256": "551c1812dcf527236c7efb4124efb59359a3aacef7d26d95de74fe66ad84ec17",
+      "bytes": 1688
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/figure_notes_zh_v4.txt": {
+      "sha256": "593d8c2926d142a220bd5e91d3b6cf54cd6486cc24b9c87565e8508fe2d46c5c",
+      "bytes": 2399
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/framework_c_parallel_modality_zh_v4.png": {
+      "sha256": "7997af4f22c5957f8252929ab7c2eb1f36b784e667692b55d1112d56fcb09ab9",
+      "bytes": 1589858
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261012/generation_prompts_v4.txt": {
+      "sha256": "b074fdfd9a6fbbe4d41f233321dd1e68c05496f09424a8233f6ac0854f5b8418",
+      "bytes": 10343
     },
     "MSCQ-GN-mainline/Loss/loss_fn.py": {
       "sha256": "e24c0f911b02fd406fec4c95f662ae41ca313ff954fd682f2f44e292528b4678",
@@ -1575,5 +1640,23 @@
       "cuda"
     ],
     "original_snapshot_replay_performed": false
+  },
+  "supplement": {
+    "date": "2026-10-12",
+    "scope": "Framework figures v1-v4 from 2026-10-11 and 2026-10-12",
+    "model_alignment_files_verified": [
+      "Model/relation_sheaf.py",
+      "Model/network.py",
+      "relation_experiment.py",
+      "analyze_c_edge_content_weights.py",
+      "analyze_c_content_map_swap.py",
+      "analyze_c_relation_neighbor_overlap.py",
+      "diagnose_c_relation_paths_visual.py",
+      "plot_c_edge_content_weights.py",
+      "plot_c_content_map_swap.py",
+      "plot_c_relation_neighbor_overlap.py"
+    ],
+    "model_code_changed": false,
+    "diagram_local_reference_paths_omitted": true
   }
 }

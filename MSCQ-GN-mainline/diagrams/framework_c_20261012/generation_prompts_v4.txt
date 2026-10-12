@@ -1,0 +1,62 @@
+工具：内置imagegen。
+布局参照：用户上传的MGDR框架图；仅采用平行模态行与分区布局，不采用其GCN、表示解耦和SVD等方法模块。
+
+初始绘图提示词：
+Use case: scientific-educational, precise architecture redesign from a supplied figure.
+Use the supplied second image as the EDIT TARGET / LAYOUT REFERENCE. The user specifically likes its vertically arranged PARALLEL MODALITY ROWS and horizontal flow. Rebuild it into the accurate real Framework C. Keep its academic journal diagram style: flat colors, generous white space, clean narrow feature bars, several small patient graph cards aligned in one vertical column, simple dark blue arrows, clear grouped regions. Output ONE ordinary high-resolution landscape raster figure, about 2.2:1. All human-readable labels in Chinese except MRI/PET/MLP and mathematical symbols. No giant poster title. Small "框架C" title at upper left.
+
+Critical visual requirement: the MRI, PET, and other-modality PATIENT RELATION GRAPHS must be three SEPARATE PARALLEL ROWS, vertically aligned like the supplied reference, not side by side horizontally, not stacked overlapping sheets, not a 2×2 graph table. Their row arrows run left to right. This is the main change the user requested.
+
+Three broad horizontal regions with modest headings:
+LEFT "多模态输入与关系图"
+CENTER highlighted pale blue "关系—内容协同传播"
+RIGHT light neutral "语义融合与分类".
+Central propagation is the main visual focus. The patient's own branch must be only ONE TINY GRAY pill at the bottom, without internals or a large container.
+
+LEFT region, three parallel rows with aligned columns:
+Row1: tiny MRI/brain icon with "MRI" → narrow teal feature matrix/bar X^MRI → patient graph card G^MRI.
+Row2: tiny PET/scan icon with "PET" → narrow orange feature matrix/bar X^PET → patient graph card G^PET.
+Row3: small generic medical/document icon with "其他模态" → narrow pale gray feature matrix/bar X^other → patient graph card G^other.
+Use a vertical ellipsis between PET and other rows to indicate additional modalities.
+Each graph card has the SAME four neutral-gray outlined PATIENT circles at identical positions. Their gray edge sets differ across rows. Beside EACH patient circle in ALL THREE GRAPHS, put the SAME small two-segment feature bar, teal and orange, to show that each source graph can carry multiple modality contents. Do not make teal circles into MRI patients or orange circles into PET patients. Keep graph cards flat with no shadow.
+Small header over the graph column: "逐模态候选关系图".
+All graph card outputs feed a common COLLECTION BRACE/BUS immediately on their right, then a clearly forward arrow to the ENTIRE common central propagation region. This bus supplies a collection of distinct graphs, NOT a fused adjacency matrix. Do not draw a union graph or merge graph edges.
+
+A separate small TOP BRANCH collects ALL ORIGINAL X feature bars (not graph outputs) into a small gray box "逐模态编码", then produces a compact set of encoded teal/orange/pale-gray content bars labeled "H={H^MRI,H^PET,…}". This content-set output goes by ONE clear forward arrow into the TOP of the common central propagation region. Add a small short label "全模态内容". The graph source input and encoded content input must be distinct and visually unambiguous. A shared input collection bracket by the original X bars is allowed to show all original modalities feeding the encoder. No line may make PET graph originate from MRI features only.
+
+CENTER common propagation region:
+ONE common large propagation block handles the collection of ALL graphs and ALL encoded content, with its title "内容适配协同传播". This block is not a separate GCN per modality.
+Inside the block, show a concise scientific mini-illustration of ONE SAME candidate patient edge j→i carrying a teal curved content arrow above and an orange curved content arrow below. Put tiny teal and orange vector-transform marks near the two endpoints. Short labels beside this mini-illustration: "内容感知边权" and "内容专属发送／接收变换". No lengthy formulas or conditioner network. Small symbols w^(r,c), S_c, T_c are allowed. No repeated long process boxes.
+At bottom of the common block, a short clear line: "每张关系图传播全部模态内容".
+Immediately after this block, ONE small vertical/slim aggregation module "按内容汇总\n全部关系来源". This is equal averaging over graph-source updates WITHIN each content modality. A smaller line may say "等权平均＋残差更新".
+Only AFTER this common relation aggregation, output a compact set of separate updated content bars H'^MRI (teal), H'^PET (orange), ... (gray). Collect these separate bars with a small brace into ONE arrow to the right readout. The common propagation output is NOT a fused modality vector yet. Critically, do NOT draw a direct one-row MRI-graph→MRI-Hprime or PET-graph→PET-Hprime connection; every Hprime receives updates from ALL relation sources.
+Tiny footer below center: "六模态：6类关系 × 6种内容".
+
+RIGHT region:
+ONE compact box "模态融合\n类别查询读取" → plus-in-circle → small "MLP" → compact "预测".
+A thin GRAY bypass starts from the ALL ORIGINAL FEATURE COLLECTION on the left, travels along the bottom, through ONE TINY GRAY pill "自身语义", and terminates in the plus-in-circle. Do not show any attention, token shapes, linear layers or flatten inside this own branch. It should occupy minimal height and visual weight.
+All routine right modules are much smaller than the center innovation illustration.
+
+Important scientific constraints: candidate graph topology from original per-modality features is fixed; scalar weights depend on BOTH source relation similarity and current encoded content similarity; each source graph carries every content modality; S/T depend on content modality ID only, shared across all source graphs and all patients for that content; graph propagation occurs BEFORE within-patient modality fusion; sources are averaged equally and content states updated residually; own semantic branch uses original patient features and adds before MLP classification. The single-edge picture is a "局部示意" of roles within two-pass cooperative propagation, not its full literal one-pass computation.
+Remove the supplied reference's GCN boxes, per-row GCN residuals, graph/contrastive losses, private/common disentangled features, Q/K/V matrix internals, SVD path and classifier losses. These are NOT Framework C. No Graph Learner after fusion, no ChebGCN, no extra cross-modal attention propagation loop.
+All arrows must have continuous origins and destinations with arrowheads pointing FORWARD, no backwards orphan heads, no disconnected duplicate H bars, no crossings over labels. Use sparse simple connection buses instead of M×M crossing arrows. Keep the precise parallel-row patient-graph visual requested by the user. This should resemble a clean journal architecture, not a teaching poster or generic flowchart.
+
+局部科学标注与连接修订提示词：
+Edit this Framework C parallel-modality-row figure with a small, precise scientific labeling and connector cleanup. Preserve its entire pleasing three-column composition, three parallel relation graph cards, common cooperative module and common relation aggregation, output Hprime collection, fusion/MLP, small own semantic branch, all fonts and colors. No new detailed model components, no 2×2 graph grid. High-resolution landscape ordinary raster.
+
+Only fix TWO things:
+
+1. ALL-ORIGINAL-MODALITY INPUT TO ENCODER.
+The small top "逐模态编码" currently has two orphan input lines that look MRI-only. Replace those two lines with a ONE clear original-feature collection brace beside all three X^MRI, X^PET, X^other feature bars. It indicates the collection {X^MRI,X^PET,...}, while retaining the existing direct each-X→its-own-G arrows independently.
+Draw ONE thin branch FROM THIS ALL-X COLLECTION to the top "逐模态编码" box. A small label "{X^MRI,X^PET,…}" beside this branch makes its all-modality source explicit. The encoder must not be fed by graph output.
+The tiny own semantic bypass at bottom must originate from the SAME ALL-X collection, not the other-modality icon alone. Preserve the bottom text "原始患者特征 {X^MRI,X^PET,X^other,…}", tiny own semantic gray box and connection to plus. This is a graphical brace grouping distinct modality features, not a fused graph or merged adjacency. Place braces and wires in empty margins and do not cover text or node graphs.
+
+2. LOCAL CONTENT ILLUSTRATION MUST HAVE TWO CONTENTS ON THE SAME DIRECTED EDGE.
+Inside the large common cooperative block, keep the two gray patient nodes in exactly their current positions, labeled "患者j" LEFT and "患者i" RIGHT. Both curve arrows must point LEFT-TO-RIGHT from patient j to patient i:
+- teal TOP curve j→i, label "w_MRI" above it; short text "MRI内容：S_MRI / T_MRI" near its top.
+- orange BOTTOM curve ALSO j→i, label "w_PET" below it; short text "PET内容：S_PET / T_PET" near its bottom.
+Remove the original wrong labels that use teal as a sending-role color and orange as a receiving-role color, namely "来自内容c的发送变换 S_c" and "来自内容c的接收变换 T_c". Color distinguishes CONTENT, not sending-vs-receiving roles. Each content has BOTH send and receive transforms, reused across graphs and patients.
+The candidate edge direction is the same for both contents; do NOT keep the orange arrowhead at patient j. It must terminate at patient i, just like the teal arrow.
+Preserve the existing line "内容感知边权 w^(r,c)" and small local caption "局部示意：候选边 j→i". Add only the short necessary label "内容专属发送／接收变换" within the local card if needed; no long equations or more process boxes.
+
+Do not change the common all-graphs collection, the rule "每张关系图传播全部模态内容", the "按内容汇总全部关系来源" module, its equal-average/residual caption, or the downstream classifier. They are already correct. Keep all arrows continuous and directed toward their intended destinations. Preserve large clear spacing and the requested PARALLEL MRI/PET/other graph rows.

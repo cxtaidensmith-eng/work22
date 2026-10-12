@@ -1,0 +1,77 @@
+工具：内置imagegen；原始新构图及小范围图像编辑。下面是完整提示词集。
+
+整体构图
+Use case: scientific-educational.
+Generate ONE ORIGINAL high-resolution ordinary raster architecture figure for a medical graph-learning paper, with accurate Simplified Chinese labels. This is a NEW composition informed by paper diagram conventions, not a copy of an existing published figure. White background, landscape about 2:1, elegant journal figure typography, fine dark strokes, restrained blue/teal and orange for modality CONTENT, neutral gray for patients and routine modules. No gradients, no decorative giant headline, no poster-style paragraphs, no numbered innovation badges, no table or 2×2 grid. Prioritize visual structure over explanatory prose. Use real tiny patient-node graphs, narrow feature matrices and compact vector drawings rather than an ordinary chain of text boxes. Text large enough to read, no overlaps.
+
+Reference design principles that have been directly observed in original papers:
+MMGK Fig.1 arranges modality feature matrices and small patient graphs as parallel data streams; its auxiliary demographic information is a very small side box.
+MMGL Fig.2 groups the main computations in dashed regions and represents its auxiliary network with one small block.
+CSNN Fig.1 explains local mappings using a single patient edge and small vector sketches above its endpoints.
+Borrow ONLY these graphical conventions. Do NOT reproduce their topology, GCN architecture, task labels, text, proprietary art, or their specific scientific mechanisms.
+
+The figure has TWO CLEAR LEVELS:
+(a) A TOP OVERALL ARCHITECTURE occupying approximately 60% of height, grouped into 3 horizontal regions.
+(b) A BOTTOM LOCAL EDGE DETAIL occupying approximately 35% of height, centered and smaller than the overall figure. Connect it to the highlighted main propagation module with one thin dashed zoom line. This detail is separate from the overall computation path.
+Overall small figure title "框架C" in upper left if needed, not a giant banner.
+
+TOP (a) title "整体架构".
+Left region header "模态表征":
+A slim column of three flat feature matrices labeled "MRI", "PET", "其他模态" with an ellipsis. MRI feature matrix uses teal-blue entries, PET uses orange, other modalities pale gray. Label underneath "原始模态特征". A small routine box "模态编码" produces narrow same-colored feature bars labeled H^MRI and H^PET, plus ellipsis. These are encoded patient CONTENT tokens.
+From the raw feature column, a separate very thin branch runs ABOVE the encoder and enters the TOP LEFT of the central region. Label this raw graph branch simply "逐模态建图". It does not come from the encoded content output. This makes graph source vs content source unmistakable.
+A separate thin GRAY patient-own branch originates directly at the raw feature inputs, travels below the main architecture, passes through a TINY gray pill "自身语义", and finally enters the additive plus node in the right region. Do NOT expand that tiny pill or put a large lower branch container around it.
+
+DOMINANT CENTRAL highlighted region header "关系—内容解耦传播"; give it about half of the top architecture's width:
+On the left/top inside this region, draw TWO separate small patient graphs in parallel, labeled G^MRI and G^PET, followed by ellipsis. Each has the same 4 gray outlined circular PATIENT nodes in the same positions. Their gray edge sets visibly differ. Patient nodes are NOT modalities or brain regions. Attach a miniature TWO-SEGMENT FEATURE BAR, teal plus orange, beside each patient node in BOTH graphs. This important graphical fact shows that BOTH relation graphs carry BOTH MRI and PET CONTENT. Avoid duplicate graph grid cells. Add the short header over these graph illustrations "关系来源".
+The encoded teal/orange content bars from the encoder enter the LOWER LEFT of this same central region, under a short label "模态内容".
+Both the graph illustrations and encoded content streams feed a compact central cooperative-propagation motif: a modest vertical light-blue operator rectangle labeled "内容适配\n协同传播", with tiny labels w^(r,c) and S_c / T_c. A small clear caption directly under this motif says "各关系 × 各内容". Keep this operator motif visibly associated with the graphs.
+On the right within central region, draw updated teal and orange feature bars labeled H'^MRI and H'^PET with ellipsis. A short modest caption under them "等权汇总与残差更新". They retain separate modal identities at this stage; do NOT prematurely concatenate them.
+Only one slim line/arrow exits this central highlighted region toward the right routine readout.
+A tiny footnote beneath central region: "六模态任务：6×6条关系—内容路径". Do not use 36 separate arrows or a cross-product table.
+
+Right compact region header "语义融合与预测":
+ONE small box "模态融合\n类别查询读取" → plus-in-circle → ONE small box "MLP" → a tiny vector/icon labeled "预测".
+The thin gray "自身语义" bypass joins this plus-in-circle.
+Everything in this right region smaller and lighter than the central propagation region. No detailed Q/K/V, class-specific query stacks, MLP layers, loss boxes or dimensions.
+
+BOTTOM (b) title "同一候选边上的内容适配（局部示意）".
+Use the local-edge vector language of sheaf papers, NOT two rows of SEND boxes and RECEIVE boxes:
+Draw just TWO neutral gray patient circles, "患者j" on LEFT and "患者i" on RIGHT, joined by one thin gray candidate edge in the middle. On top of this SAME underlying edge, a clear teal curved transmission arrow j→i labeled w_MRI; below it a clear orange curved transmission arrow j→i labeled w_PET. Both share EXACTLY the same endpoints; only their content-specific weights and transformations differ. No numeric widths or measured values.
+Above/near the left patient endpoint put a very small white square with a teal vector sketch and label S_MRI; above/near right endpoint another small teal vector sketch with label T_MRI. Below/near left endpoint a small orange vector sketch with label S_PET; below/near right endpoint a small orange vector sketch with label T_PET. The tiny vector sketches show a rotation/scaling effect with two faint before/after arrows of different orientations. The transform labels refer to content-specific sending and receiving roles, NOT patient-generated maps.
+Place two short simple descriptions at bottom of this lower detail: "边权：结合关系与当前内容相似度" and "发送／接收变换：由内容模态ID决定". Do not show a formula, feature dimension, conditioner network, sheaf equations, or a long paragraph.
+An unobtrusive small legend has just "蓝：MRI内容" and "橙：PET内容". Relation source is given by graph identity, not by content color.
+IMPORTANT: This single-edge illustration explains the roles within cooperative propagation, not the full literal one-pass forward equation. Keep "局部示意" in the detail title. Do not invent a new GCN layer or imply hard one-way switches.
+
+Scientific constraints: the candidate patient topologies are built separately from original source features and fixed, while scalar weights adapt to current encoded content; all relation graphs propagate all content modalities; send/receive maps depend ONLY on content ID and are shared across patients and relation sources for the same content; relation updates are equally averaged and residual; group propagation precedes within-patient fusion and class readout; own features branch enters additive fusion; final classifier is MLP. No biomarker nodes, no diagnosis-specific topologies, no patient-conditioned maps, no dynamic topology feedback, no learned attention over relation sources, no Graph Learner after fusion or ChebGCN. No performance claims.
+Aim for an actual academic model overview with graphic parallel modal streams, a highlighted multiplex propagation module, and one clean local edge inset. It must look substantially different from a teaching infographic or a table-based innovation explanation.
+
+数据流连接整理
+Use case: precise-object-edit, scientific-educational.
+Edit this academic Framework C figure with ONLY DATA-FLOW CONNECTOR REPAIRS. Preserve the three-region journal layout, all labels, matrix drawings, patient graphs carrying both blue and orange content, all colors, small own-semantic bypass, and bottom single-edge local illustration. White background, high resolution, same landscape aspect ratio. Do not add new scientific components or decorative panels. Keep this as a real scientific architecture diagram with crisp arrows that have an obvious origin and destination.
+
+Five necessary connector fixes:
+1. The thin "逐模态建图" line currently branches ONLY from the MRI matrix. It must clearly branch from ALL original modality feature matrices, not only MRI and not encoded H. Add a small shared ORIGINAL INPUT COLLECTION BRACE/BUS immediately beside the right edges of the MRI/PET/other matrices, showing that these are a bundle X={X^MRI,X^PET,...}. From this original input bundle, one upper branch labeled "逐模态建图" goes to the ENTIRE collection of G^MRI,G^PET,..., with a small final fork into the two drawn graph illustrations. This graph branch represents separately building each graph from its own modality of raw features; it does not fuse modalities into one graph. Do not let this original-input bus overlap the content-encoder outputs.
+2. The own-semantic gray line currently looks as though it starts only at the other-modality matrix. Start the "自身语义" bypass from the same ALL-ORIGINAL-MODALITY input collection bus of fix1. Keep this own branch tiny and otherwise unchanged; its output must continue to the additive plus node before MLP.
+3. The modality encoder's MRI/PET/... outputs are currently disconnected from the same-named MRI/PET CONTENT bars inside the central region. Repair this by removing the redundant left set of H feature strips that floats directly after the encoder. Draw clear continuous forward encoder-output arrows DIRECTLY into the already-existing CENTRAL "模态内容" H^MRI/H^PET/... feature strips. The arrows can run through a narrow unobstructed lower corridor between the encoder and those central strips. Do NOT let these content lines pass through the relation graph nodes. The central H content strips then continue to feed the bottom/left inlet of "内容适配协同传播". Avoid duplicate disconnected representations.
+4. Replace the awkward graph-to-operator and operator-to-Hprime bracket lines, including their isolated backwards-pointing arrowheads. Use simple, clean ONE-WAY arrows: both G patient graphs → the TOP inlet of "内容适配协同传播"; the operator's RIGHT output → a small fork → both H'^MRI/H'^PET/... updated strips. All arrowheads point toward the indicated destinations; no arrow points back to graphs or back into the operator from Hprime. There must be NO feedback loop. Graph connection lines can originate at the outside of each graph illustration, but may not overlap patient nodes or graph edges.
+5. The readout arrow currently starts vaguely from the right edge of the large central region. Connect ALL updated H'^MRI/H'^PET/... feature strips into a single SMALL MODAL-CONTENT COLLECTION BRACE/BUS immediately on their right, then draw one obvious forward arrow from that bus to "模态融合/类别查询读取". A bus collects the separate tokens as a modality list for fusion, it is not a premature summation of modalities. Keep the caption "等权汇总与残差更新" because it refers to aggregating relation-source updates WITHIN each content, not summing MRI and PET before readout.
+
+All five connectors must be visually unambiguous and not overlap labels, arrowheads, feature bars, or patient nodes. Preserve the tiny gray own-branch module; no detailed lower path. Preserve all lower local edge mechanics exactly, including blue/orange w and content-specific S/T vector sketches. Do not recreate the old 2×2 graph table. Do not add Ghost arrows, cross lines, a ChebGCN, an after-fusion graph builder, or diagnosis labels feeding graphs. Maintain adequate whitespace after these fixes.
+
+连接简化
+Make a surgical connector cleanup to this existing figure. Preserve all other artwork, labels, the patient graphs, right-side classifier, tiny own branch, bottom local-edge inset, colors, and three-region layout.
+
+There are TWO SETS of H^MRI and H^PET feature strips in the central area. This is confusing. Keep ONLY the set immediately reached by the modality encoder's teal and orange output arrows, on the LEFT SIDE of the central region (currently H^MRI above H^PET). ERASE the redundant lower/middle duplicate H^MRI and H^PET strips and their text (the second set beside the text "模态内容" and directly before the propagation operator). Use the newly emptied area to draw two unmistakable forward arrows from the KEPT encoder-output content strips into the LEFT SIDE of the "内容适配协同传播" operator: one teal arrow from the kept H^MRI strip and one orange arrow from the kept H^PET strip. Put the short label "模态内容" near these kept strips, only once. No H strip may be left disconnected. Avoid graph nodes and text. The two content arrows terminate at the operator, not at another duplicate H strip.
+
+The top raw-feature-to-graph connector currently has a small DOWNWARD ARROWHEAD immediately above the X input-bundle text. REMOVE THAT SINGLE WRONG ARROWHEAD. Treat that spot as an undirected wire junction originating from the X raw-input bundle; the top branch proceeds RIGHT and has only a final forward arrowhead at the patient graph collection. The bottom "自身语义" branch starts from the SAME X input-bundle wire junction. There must be NO backward arrow into raw features or X.
+
+All remaining graph→operator, operator→Hprime, all Hprime→readout, own→plus, readout→plus→MLP arrows already correct; preserve them. Do not add new components, new tables, new math, or new duplicate representations. High-resolution, exact same composition, readable Chinese.
+
+MRI内容连线校正
+Make ONE exact local scientific connector correction to this existing diagram. Keep all other artwork, text, lines, operator, graphs, classifiers, bottom inset, dimensions and layout unchanged.
+
+In the central main panel, the TEAL/BLUE arrow that goes into the LEFT SIDE of the "内容适配协同传播" operator currently begins at the ORANGE H^PET strip. This is incorrect. DELETE ONLY that incorrect teal polyline from the orange H^PET strip to the operator.
+
+Draw ONE NEW continuous TEAL/BLUE arrow starting from the RIGHT EDGE of the TEAL H^MRI feature strip (the upper strip directly reached by the encoder's teal output). Route it diagonally right/down through the clear corridor to the UPPER-LEFT inlet of the cooperative operator. It must visibly and unambiguously connect H^MRI → operator, and MUST NOT touch or start from the orange PET strip. A clean simple diagonal arrow is better than another shared routing junction. The orange existing H^PET → operator arrow remains attached to H^PET and goes to the lower-left inlet. These two content lines must be independent and have NO shared junction.
+
+If the "模态内容" label lies in the new teal arrow's corridor, move just that label below the two kept H content strips, into whitespace. Do not move graph nodes, strips or the operator. No duplicate H strips or new content blocks. The teal strip's last pixel should meet the arrow's tail. High resolution, same clear Chinese typography and exact same scientific figure composition.

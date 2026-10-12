@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-11",
+  "output": "framework_c_paper_reference_zh_v3.png",
+  "references": [
+    {
+      "paper": "MMGK: Multimodality Multiview Graph Representations and Knowledge Embedding for Mild Cognitive Impairment Diagnosis",
+      "figure": "Fig.1",
+      "primary_page": "http[本机参考路径省略]",
+      "figure_url": "http[本机参考路径省略]",
+      "doi": "http[本机参考路径省略]",
+      "observed": "作者库原图经浏览器像素检查；三列分组、六条并列模态患者图、辅助人口学小属性框",
+      "borrowed": "并列患者图、持续一致的内容颜色、压缩辅助信息",
+      "not_copied": "逐视图单独GCN分类及决策融合"
+    },
+    {
+      "paper": "Multi-modal Graph Learning for Disease Prediction",
+      "figure": "Fig.2",
+      "primary_page": "http[本机参考路径省略]",
+      "figure_url": "http[本机参考路径省略]",
+      "observed": "原图经浏览器像素检查；表示学习与建图两大虚线区域，辅助f(.)用小模块表示",
+      "borrowed": "模块分区与辅助分支的小尺寸",
+      "not_copied": "融合后建图、其GNN分类结构"
+    },
+    {
+      "paper": "Cooperative Sheaf Neural Networks",
+      "figure": "Fig.1–2",
+      "primary_page": "http[本机参考路径省略]",
+      "figure_url": "http[本机参考路径省略]",
+      "observed": "Fig.1原图经浏览器像素检查；两节点/单边上方小向量图表示局部变换。子代理另查Fig.2。",
+      "borrowed": "单边局部示意与向量变化的视觉表示",
+      "not_copied": "零映射开关、按患者特征生成映射及原论文完整算子细节"
+    }
+  ]
+}

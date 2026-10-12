@@ -1,0 +1,41 @@
+工具：内置 imagegen；基于用户提供旧图编辑，保留布局并简化。
+
+第一轮修改提示词：
+Use case: scientific-educational; precise-object-edit.
+Edit the attached original research architecture figure into an accurate, greatly simplified Framework C architecture. The attachment is the EDIT TARGET and a reference for its broad layout and restrained teal/orange/blue academic style. Preserve recognizable MRI/PET input thumbnails and the LEFT input column, TOP main branch, BOTTOM secondary branch, and RIGHT classification direction. Rebuild the crowded internals with much clearer hierarchy. Produce ONE crisp, high-resolution landscape ordinary raster framework figure, white background, approximately the reference aspect ratio. All labels in Simplified Chinese except MRI, PET, MLP and short S/T symbols. Use clean readable black sans-serif text, thin arrows, flat light-color modules, generous whitespace. No gradient backgrounds or heavy 3D tensor cubes.
+
+The user's critical request: the patient's own semantic branch is routine, so compress it to ONE SMALL LIGHT-GRAY BOX and two simple connecting lines. Allocate approximately two thirds of the diagram's internal detail to the central Framework C propagation innovation. Everything else is compact.
+
+Overall spatial composition:
+- Left slim input panel: original MRI image and PET image, followed by small simplified cognitive-test/demographics icons, labels "MRI", "PET", "认知测验", "人口学信息", and ellipsis. Bottom label "多模态输入". Keep this panel visually secondary.
+- Upper main chain, flowing left to right: ONE compact box "逐模态编码" → a DOMINANT LARGE CENTRAL BOX "关系—内容解耦传播" → ONE compact two-line box "模态融合\n类别查询读取" → plus-in-circle → ONE compact right box "MLP分类" → small label "预测结果".
+- Below the main chain, ONE compact gray box "患者自身语义分支". A thin line branches directly from the INPUT PANEL to this gray box and then routes cleanly along the lower margin to the plus-in-circle above. Do NOT connect this own branch from the propagation block or encoded propagated states. There is NO large orange container around it and NO internals, no token stacks, no modalities linear, no attention, no flatten, no matrices. This lower path must take no more than around one fifth of the figure's height.
+- Make the old original right "Graph Learner" / adjacency / "ChebGCN" patient-graph panel disappear completely. True C has early propagation and final MLP, not fusion-then-ChebGCN. Keep the overall rightward classification direction.
+- Remove all old H/H'/T/X_gated/P tensor shapes, G gate circles, query vectors, class-specific embedding stacks, MHA+FFN layers, Concat+MLP details, and auxiliary-loss boxes. Collapse original Transformer and class-query mechanism into the compact readout box named above.
+
+CENTRAL DOMINANT BOX has ONLY TWO SIMPLE SUBILLUSTRATIONS, not many serial flowchart boxes:
+LEFT TWO THIRDS of its width: a clear small 2×2 grid titled "关系来源 × 传播内容".
+Columns "MRI内容" and "PET内容"; rows "MRI关系图" and "PET关系图".
+Each of four cells is a tiny graph with the SAME three neutral outlined PATIENT circles at exactly the same positions. MRI relation row BOTH cells share the exact topology edges 1–2, 1–3. PET relation row BOTH cells share the exact different topology edges 1–2, 2–3. Put a teal small feature square inside every patient circle in the MRI-content column, and an orange small feature square inside every patient circle in the PET-content column. No small numeric patient labels are needed. Graph edges thin gray. Both diagonal and cross-modality cells are equally visible. This must visually show reuse of graph structure across DIFFERENT content. Beneath the grid just ONE short line: "每张关系图传播各模态内容".
+RIGHT ONE THIRD of central box: a compact colored content-adaptation vignette titled "内容适配传播".
+Two neat rows with no dense equations:
+teal row: small teal square and "MRI" → small send/receive map motif labeled "S_MRI / T_MRI" → a teal arrow with label "w_MRI" → updated small teal square.
+orange row: small orange square and "PET" → small send/receive map motif labeled "S_PET / T_PET" → an orange arrow with label "w_PET" → updated small orange square.
+Two short bold explanatory labels BELOW the vignette, spaced clearly: "内容感知边权" and "内容专属发送／接收变换". These names explain the w and S/T motifs. This is a schematic of the cooperative operator, not a new literal one-pass pipeline. Small unobtrusive caption above the two rows: "同一候选边".
+Add ONE modest slim output band INSIDE bottom of central box: "关系来源等权汇总与残差更新".
+Just outside/beneath the central box, a short small footnote: "MRI/PET仅作示意，六模态形成36条关系—内容路径".
+
+Scientific invariants:
+Nodes are patients, not brain regions or biomarker nodes. Candidates are constructed per modality from source features and fixed; current content similarity influences weights on those existing edges. Each source graph carries all content modalities. S_c/T_c are determined only by content modality ID, and the same content pair is reused across relation graphs and patients; do NOT draw patient-dependent S/T generation or relation-specific S/T. Main group propagation occurs BEFORE multimodal fusion and class readout. Source outputs are averaged equally and update content tokens residually. The own semantic branch feeds an additive fusion immediately before MLP classification. No labels or diagnosis classes feed graph construction. No feedback arrows. No new modules. No extra charts, equations, dimensions, losses, performance numbers, layer counts, decorative badges, or long paragraph text.
+Text must be crisp and fully legible with no overlaps or crossing connectors. Keep the figure elegant and much less detailed than the original, while the central colored small graph grid makes the innovation concrete.
+
+最终定稿微调提示词：
+Use case: scientific-educational / precise-object-edit.
+Edit this existing simplified Framework C figure with MINIMAL CHANGES. Preserve its exact overall composition, MRI/PET input thumbnails, central large cross-product matrix and content-adaptation illustration, compact encoder/readout/MLP modules, ONE SMALL GRAY patient-own semantic branch below, arrows, colors, and all existing accurate Chinese labels. Do not add boxes, new detailed branches, equations, tensor cubes or additional technical internals. Keep white background, same landscape aspect ratio, high resolution, readable typography.
+
+Only polish the labeling of the central innovation area:
+1. Change its main title from "Framework C: 关系—内容解耦传播" to the exact Chinese title "框架C：关系—内容解耦传播".
+2. Just under the existing left subsection title "关系来源 × 传播内容", and above the 2×2 matrix, add one small unobtrusive but readable line: "候选关系图由原始模态特征构建". Create enough internal vertical space by shifting the matrix slightly downward if needed. Keep the matrix fully inside the central box and retain the line "每张关系图传播各模态内容" below it. This clarifies that the relation graphs come from raw source features, while the horizontal "逐模态编码" → central box arrow provides the CONTENT tokens. Do not add a new relation-building flowchart.
+3. Keep the SAME topology in both content columns within each relation row. In the MRI relation row retain the two-edge V pattern. In the PET relation row use exactly two different edges: top node to bottom-left node, and bottom-left node to bottom-right node, in BOTH content columns; remove only the top-to-bottom-right edge in that row. This makes a clear schematic of different relation sources, with graph reuse across MRI/PET content. Keep node positions and feature colors identical to the current image.
+
+Everything else unchanged. In particular keep the patient-own branch as a SINGLE tiny gray box; do not expand it. Send/receive S/T and scalar edge-weight symbols are schematic roles inside cooperative propagation, not literal one-pass GCN. The central box remains the dominant focus. All text legible with no overlap or clipping.
