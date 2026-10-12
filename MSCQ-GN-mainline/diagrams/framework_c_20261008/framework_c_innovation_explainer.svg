@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="921.6pt" height="482.4pt" viewBox="0 0 921.6 482.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>框架 C 的核心设计</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>框架 C 的核心设计</dc:title>
+    <dc:date>2026-10-08T16:27:18.551689</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 482.4 
+L 921.6 482.4 
+L 921.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.24 122.4 
+L 135.36 122.4 
+Q 144 122.4 144 131.04 
+L 144 189.36 
+Q 144 198 135.36 198 
+L 30.24 198 
+Q 21.6 198 21.6 189.36 
+L 21.6 131.04 
+Q 21.6 122.4 30.24 122.4 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f4f6f8; stroke: #b9c3cc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 185.04 86.4 
+L 351.36 86.4 
+Q 360 86.4 360 95.04 
+L 360 144 
+Q 360 152.64 351.36 152.64 
+L 185.04 152.64 
+Q 176.4 152.64 176.4 144 
+L 176.4 95.04 
+Q 176.4 86.4 185.04 86.4 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f2f7fa; stroke: #b7cbd8; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 185.04 176.4 
+L 351.36 176.4 
+Q 360 176.4 360 185.04 
+L 360 234 
+Q 360 242.64 351.36 242.64 
+L 185.04 242.64 
+Q 176.4 242.64 176.4 234 
+L 176.4 185.04 
+Q 176.4 176.4 185.04 176.4 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f5f3fa; stroke: #c7bfd8; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 144 159.84 
+L 159.84 159.84 
+L 159.84 119.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 159.84 159.84 
+L 159.84 209.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 429.12 79.2 
+L 683.28 79.2 
+Q 694.8 79.2 694.8 90.72 
+L 694.8 254.88 
+Q 694.8 266.4 683.28 266.4 
+L 429.12 266.4 
+Q 417.6 266.4 417.6 254.88 
+L 417.6 90.72 
+Q 417.6 79.2 429.12 79.2 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #ecf8f7; stroke: #137f86; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 435.6 149.04 
+L 676.8 149.04 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #c2dfdd; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 757.44 151.2 
+L 891.36 151.2 
+Q 900 151.2 900 159.84 
+L 900 214.56 
+Q 900 223.2 891.36 223.2 
+L 757.44 223.2 
+Q 748.8 223.2 748.8 214.56 
+L 748.8 159.84 
+Q 748.8 151.2 757.44 151.2 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f4f6f8; stroke: #b9c3cc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 82.8 198 
+L 82.8 294.48 
+L 824.4 294.48 
+L 824.4 238.32 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #bfab96; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 31.68 332.64 
+L 889.92 332.64 
+Q 900 332.64 900 342.72 
+L 900 441.36 
+Q 900 451.44 889.92 451.44 
+L 31.68 451.44 
+Q 21.6 451.44 21.6 441.36 
+L 21.6 342.72 
+Q 21.6 332.64 31.68 332.64 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #faf9fc; stroke: #dedbe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 123.84 386.64 
+L 304.56 386.64 
+Q 313.2 386.64 313.2 395.28 
+L 313.2 422.64 
+Q 313.2 431.28 304.56 431.28 
+L 123.84 431.28 
+Q 115.2 431.28 115.2 422.64 
+L 115.2 395.28 
+Q 115.2 386.64 123.84 386.64 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f1ecfa; stroke: #c8bcdc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 617.04 386.64 
+L 797.76 386.64 
+Q 806.4 386.64 806.4 395.28 
+L 806.4 422.64 
+Q 806.4 431.28 797.76 431.28 
+L 617.04 431.28 
+Q 608.4 431.28 608.4 422.64 
+L 608.4 395.28 
+Q 608.4 386.64 617.04 386.64 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #f1ecfa; stroke: #c8bcdc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 159.84 119.52 
+Q 168.12 119.52 174.722949 119.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 169.522949 116.92 
+L 174.722949 119.52 
+L 169.522949 122.12 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #7d8a96; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 159.84 209.52 
+Q 168.12 209.52 174.722949 209.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 169.522949 206.92 
+L 174.722949 209.52 
+L 169.522949 212.12 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #7d8a96; stroke: #7d8a96; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 360 119.52 
+Q 388.8 119.52 415.587539 119.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 410.387539 116.92 
+L 415.587539 119.52 
+L 410.387539 122.12 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #137f86; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 360 209.52 
+Q 388.8 209.52 415.587539 209.52 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 410.387539 206.92 
+L 415.587539 209.52 
+L 410.387539 212.12 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #137f86; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 694.8 178.56 
+Q 721.8 178.56 746.787539 178.56 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 741.587539 175.96 
+L 746.787539 178.56 
+L 741.587539 181.16 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #137f86; stroke: #137f86; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 824.4 238.32 
+Q 824.4 230.76 824.4 224.541641 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #bfab96; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 821.8 229.741641 
+L 824.4 224.541641 
+L 827 229.741641 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #bfab96; stroke: #bfab96; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 327.6 408.96 
+Q 460.8 408.96 591.763932 408.96 
+" clip-path="url(#pa34ab3f3ae)" style="fill: none; stroke: #8d78b0; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 585.763932 405.96 
+L 591.763932 408.96 
+L 585.763932 411.96 
+z
+" clip-path="url(#pa34ab3f3ae)" style="fill: #8d78b0; stroke: #8d78b0; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="460.8" y="34.138594" transform="rotate(-0 460.8 34.138594)">框架 C：关系从哪里来，内容如何传播？</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 12.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="460.8" y="59.602383" transform="rotate(-0 460.8 59.602383)">先保留模态身份进行患者间传播，再进行模态融合</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="82.8" y="149.570859" transform="rotate(-0 82.8 149.570859)">多模态输入</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="82.8" y="176.824688" transform="rotate(-0 82.8 176.824688)">MRI / PET / …</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="268.2" y="108.255469" transform="rotate(-0 268.2 108.255469)">模态关系图</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="268.2" y="127.006992" transform="rotate(-0 268.2 127.006992)">用什么找邻居？</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="268.2" y="144.011602" transform="rotate(-0 268.2 144.011602)">MRI 图 / PET 图 / …</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="268.2" y="198.255469" transform="rotate(-0 268.2 198.255469)">模态内容编码</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="268.2" y="217.006992" transform="rotate(-0 268.2 217.006992)">从邻居传什么？</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="268.2" y="234.011602" transform="rotate(-0 268.2 234.011602)">MRI 表示 / PET 表示 / …</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #137f86" x="556.2" y="109.250859" transform="rotate(-0 556.2 109.250859)">① 关系来源与内容分开</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="556.2" y="133.624687" transform="rotate(-0 556.2 133.624687)">每种内容利用多种关系图</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #137f86" x="556.2" y="178.370859" transform="rotate(-0 556.2 178.370859)">② 按内容调整传播方式</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="556.2" y="204.629297" transform="rotate(-0 556.2 204.629297)">边权结合关系先验与内容相似性</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 11px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="556.2" y="224.069297" transform="rotate(-0 556.2 224.069297)">发送／接收变换按内容模态区分</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="556.2" y="251.291602" transform="rotate(-0 556.2 251.291602)">分别传播 → 关系平均 → 残差更新</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203040" x="824.4" y="176.824688" transform="rotate(-0 824.4 176.824688)">模态融合与类别读取</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="824.4" y="203.909297" transform="rotate(-0 824.4 203.909297)">双分支相加 → 分类</text>
+   </g>
+   <g id="text_19">
+    <g id="patch_17">
+     <path d="M 423.315 305.966836 
+L 498.285 305.966836 
+L 498.285 282.993164 
+L 423.315 282.993164 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #8f7963" x="460.8" y="297.371602" transform="rotate(-0 460.8 297.371602)">自身信息分支</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei'; text-anchor: start; fill: #675887" x="41.76" y="355.215469" transform="rotate(-0 41.76 355.215469)">例：用 MRI 关系，补充 PET 内容</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #57446f" x="214.2" y="412.464375" transform="rotate(-0 214.2 412.464375)">邻居患者 j 的 PET 表示</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #57446f" x="707.4" y="412.264688" transform="rotate(-0 707.4 412.264688)">目标患者 i 的 PET 表示</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #675887" x="460.8" y="392.411602" transform="rotate(-0 460.8 392.411602)">MRI 决定候选邻居</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10.5px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #675887" x="460.8" y="432.011602" transform="rotate(-0 460.8 432.011602)">采用 PET 模态的传播变换</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #677684" x="460.8" y="471.198516" transform="rotate(-0 460.8 471.198516)">核心机制示意：省略门控、网络层数和训练损失。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa34ab3f3ae">
+   <rect x="0" y="0" width="921.6" height="482.4"/>
+  </clipPath>
+ </defs>
+</svg>

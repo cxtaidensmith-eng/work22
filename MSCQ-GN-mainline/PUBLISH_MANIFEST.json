@@ -1,0 +1,1579 @@
+{
+  "published_date": "2026-10-12",
+  "source_local_head": "84b30fb71f0654e2271773d56fb3415a4d30343e",
+  "remote_base": "4227309eabfac9ed6deee3a16714d1ee4d2a49c3",
+  "branch": "codex/c-framework-20261012",
+  "scope": "Current C source, configurations, tests, aggregate results and framework diagrams",
+  "excluded": "Raw datasets, patient predictions/splits/graphs, checkpoints, caches and full historical snapshot manifests",
+  "original_source_sha256": {
+    "MSCQ-GN-mainline/abide5_fine_tune.py": "2307958a5ef8e200097ce10a8a05f8a68ad8549c1c1012fb0f7e6cbb53a89142",
+    "MSCQ-GN-mainline/abide5_tie_completion.py": "3f7a44366f0ae6047fcbe23488b2a53479a806a51486a1a98c75d5f7675ae266",
+    "MSCQ-GN-mainline/abide_fine_tune.py": "452cbc639135a9315f28b585daf6df9cbae6eabc28d8b1265f416d7244e15519",
+    "MSCQ-GN-mainline/abide_late_readout_experiment.py": "ef148729ed021873d8ccbc26ac47fc321e7cc47b1d94b40a5399ee939e871869",
+    "MSCQ-GN-mainline/abide_n1_followup.py": "503afa7605ef947b98425c270cb15c1ca75d12ef8b516938f632ba4e1a976ba2",
+    "MSCQ-GN-mainline/abide_noise_adaptation.py": "6498085fcda516f87349d7c067c14d372707d03121ddbc23446625106182ef8f",
+    "MSCQ-GN-mainline/abide_noise_experiment.py": "f7b7e58b22e6017797a0962797b37e71e333cd85062a1bc365ff992459284f3e",
+    "MSCQ-GN-mainline/alternating_a1_seeds12_experiment.py": "c1dd4535bd43eeb753bbf8712174382f68001b8a4d2029f3706dfe3e83ff01f1",
+    "MSCQ-GN-mainline/alternating_cooperative_experiment.py": "11f84747dfe0443b52eb71733374fb9d24f0dd0a93206bb3ff3dc981a40564e2",
+    "MSCQ-GN-mainline/analyze_abide_late_readout.py": "a29912c4ecbbd10c8c290382a77647f903274bd78ebf4b7cdb5a2ce9e6d05e47",
+    "MSCQ-GN-mainline/analyze_abide_noise.py": "b878d226f350dda3027f4b278d372c0667a2b46602353fa31a20dd0c7988c056",
+    "MSCQ-GN-mainline/analyze_alternating_a1_multiseed.py": "65c41da5eff8463d13567c3813df70578612aa8eef93d6b99c3193075f39566b",
+    "MSCQ-GN-mainline/analyze_alternating_cooperative.py": "c7602b5c1edb2ebe5ff551f38e929bae78c38fceb1c7ecb9cfe9b16e55c93b9c",
+    "MSCQ-GN-mainline/analyze_branch_fusion.py": "15c3c40342ae3bc45655c61e6af1aa4f1870ffe60bacbbbb043936e4deaa0caf",
+    "MSCQ-GN-mainline/analyze_c_content_map_swap.py": "8973301c83406f7bb8096d888852537dbadd083a2639aea24c8dd2c3c365ba02",
+    "MSCQ-GN-mainline/analyze_c_disagreements.py": "2e60f892cbfe5a9ba705a2c1a1df0133853564f97d85c66566dafb09a134faed",
+    "MSCQ-GN-mainline/analyze_c_edge_content_weights.py": "1913a9ecec090d7b0643c728da4b20f2566080e511ec8b46fa00ad643150b337",
+    "MSCQ-GN-mainline/analyze_c_relation_neighbor_overlap.py": "9e78c543740a3710e3bc177bd037fe65a23a8e29db4d946da694743aedd52df2",
+    "MSCQ-GN-mainline/analyze_grouped_content.py": "d7513eb61f48f561c961d71ac9e509ed4a82a1b9a24604fe61fd800a791f64ea",
+    "MSCQ-GN-mainline/analyze_joint_evidence_routing.py": "ba7763a492f16d7dd44915570ec416b188c1fd8bbf80ff6f92c569e138caef0f",
+    "MSCQ-GN-mainline/analyze_learned_topology.py": "2a1c1441402aa0c09a49683d9efaa02209548f6bcd4c724a9b67388d7232b2cd",
+    "MSCQ-GN-mainline/analyze_matched_shared_mapping_control.py": "378335623c2ab74341776ce82f5582be6c324b4b28175f0a40df4f1403e52f21",
+    "MSCQ-GN-mainline/analyze_modal_evidence.py": "086dba5b1dba8179ec9b4cfa13cbcbf76b36736566611c68c6f121c6c5170998",
+    "MSCQ-GN-mainline/analyze_no_content_similarity_control.py": "0654387473aead2cf4078a72ef3bcfc125b2bfd5e73ce1593f665df7674744d3",
+    "MSCQ-GN-mainline/analyze_own_branch_optimization.py": "aa2f95d1b5f7b0a78327889be0b104a17456f21ae6febacfe818911eb138e021",
+    "MSCQ-GN-mainline/analyze_readout_controls.py": "2efa18977a5a04e36f247535276109fe790b16e461fb3d96d6444694ad9b84a2",
+    "MSCQ-GN-mainline/analyze_reciprocity_control.py": "79b563243b622485a07d8d40e6d1b881909116dd94346e3e1bf9da0494f4488e",
+    "MSCQ-GN-mainline/analyze_reference_replication.py": "615650762334f04f03136713ba9e118dd3b02cc3bf5fe7cc7a3f2e11c4b908de",
+    "MSCQ-GN-mainline/analyze_reference_selection.py": "9d39e51a0648177407f6cd927e67b621a37cb8dd57d24b695a2af9b8b979c1d7",
+    "MSCQ-GN-mainline/analyze_relation_aggregation.py": "a36b1837e97a70d6ab69e9a47b2bce5e9501a582468ee2f33d801f7b98b0f510",
+    "MSCQ-GN-mainline/analyze_selection_only.py": "a3f76d4762d7c8fef4e9b6edc3781bd18c9db471f5d9655930ce2fcfb5b89115",
+    "MSCQ-GN-mainline/analyze_self_preservation.py": "31155b1390ed9f3ec51b65c67dcc62ef3fe046834059cafae0e7a5db11809ddd",
+    "MSCQ-GN-mainline/analyze_shared_mapping_control.py": "e9a357fd37c336183b5a2fd68d9e894217bce5e6605828a8a75720bbfd9db497",
+    "MSCQ-GN-mainline/analyze_task_guided_graph.py": "c70e7bde35e999b6c2de711ca7b6d1667011f58e22146b0092da03c385a0f72c",
+    "MSCQ-GN-mainline/audit_abide5_fine_tune.py": "14cbc42c9fdb3609fc5e1cdca3dcb37fe692714b51c80713ca65091b31832314",
+    "MSCQ-GN-mainline/audit_abide5_tie_completion.py": "8c32ac01c0340909f78070e6dece6b31cbf57008ef4fbd787fe3b95fd24db561",
+    "MSCQ-GN-mainline/audit_abide_historical_provenance.py": "75d315d30bfe85faf8312ee199aa92ddfd79e35219e5b733dbbab2c3603a311f",
+    "MSCQ-GN-mainline/audit_c_result_20260924.py": "a6aa09ecb3d90b9931d8c4e1b466f86ec8957c6dce500b9f53bd1b9ff66084c7",
+    "MSCQ-GN-mainline/audit_no_content_similarity_control.py": "840cd13aebfac1c5857e3c15dd5f25b5503ba2acf0dbcf958fc6583f63879b5d",
+    "MSCQ-GN-mainline/audit_tad_binary_fine_tune.py": "a572a15fccfa9314dcd2bf0af6c3b941bde62e92f01532cd08c8db410fbe33af",
+    "MSCQ-GN-mainline/audit_tad_binary_joint_tune.py": "b573fb5b2bddd55ba6d44c6b825c9797fb61ba3f04bce16182d010328a92278c",
+    "MSCQ-GN-mainline/audit_tad_binary_loss_tune.py": "f691a387e87d08731433e34d96035837f87477fc7baf30b3ab5cd8f230d77411",
+    "MSCQ-GN-mainline/branch_fusion_seed0_experiment.py": "ad93f56a75558a1fff3a920f4671a78b0e5ca802fb07350e97f3a040ffea419a",
+    "MSCQ-GN-mainline/build_no_content_similarity_delivery.py": "a6a3505fcafd7b4d0b2d3b07803a1da93144aa5fa8fed1efa44b654bcffbfcf4",
+    "MSCQ-GN-mainline/build_shared_mapping_visual_report.py": "b402c6037276c7b7e639175171550c55f22cd0e7d071270fa1f62c9807a7fbcd",
+    "MSCQ-GN-mainline/centered_cognitive_residual_experiment.py": "e1de930be095dfabe6041f1ea6304655b3fd43b61eab74e46c150bf2ff10287d",
+    "MSCQ-GN-mainline/cognitive_direct_supervision_experiment.py": "f25c149a2ed55acf07e6be4e5cbb519f0455a52fca54ab1c5797022c100c2d44",
+    "MSCQ-GN-mainline/cognitive_pair_experiment.py": "80fafeb4d810b47b62dca80f355b5495ffcaff90e9aceb82034b657d28c758b8",
+    "MSCQ-GN-mainline/cognitive_pet_aux_experiment.py": "4f77679f2d1091f77c73d9adcb7269fb0ad00bd873e36c52df1ca35b3fecf1af",
+    "MSCQ-GN-mainline/cognitive_residual_experiment.py": "a7172cb057f0a54f6aa6132c0ea2d43a8424406640efdee938ca16b9cb926128",
+    "MSCQ-GN-mainline/c_abide_repair_experiment.py": "c4075e5d0c0ec1062d7f8c7a5904541ed34bf25dace66c096a403aa59b5740bd",
+    "MSCQ-GN-mainline/c_abide_repair_v2_experiment.py": "6e4e50c1844a74f9e012e4ce179e08167c0d8a285c65e6c3bab7d7f14bc555ea",
+    "MSCQ-GN-mainline/c_abide_transfer_experiment.py": "0e802323cc34f7b49219dbc405dd9504a90b538165d224f8c3fe91eb76343850",
+    "MSCQ-GN-mainline/c_cross_relation_null_experiment.py": "fcf7a8919da98f40d32349133a4b515f476ad4e67be1e7d1a2e88e618ba833cd",
+    "MSCQ-GN-mainline/c_d3_fuse_first_experiment.py": "0a4a3b0f14b00bc5764c293185bcb2708339a85adf0408fdf3ec7185c8ccf904",
+    "MSCQ-GN-mainline/c_mechanism_controls_experiment.py": "aa28dbfbc08a6463bb939038dd01ebc47b2b5d3ccf27c227f4451c77891ff7ff",
+    "MSCQ-GN-mainline/c_tadpole_binary_experiment.py": "a81d6f98b39271b6fcfbc72e6f1adb7ee60e8852ad5e77fa66c8ea0253e06ad8",
+    "MSCQ-GN-mainline/diagnose_abide_c.py": "25e29d91b3fbe48cc882c57e32a1f1bc0a1c20ee1fd6eba8abb5e3678d39d2f7",
+    "MSCQ-GN-mainline/diagnose_abide_capacity.py": "fb58ec09ad050326440989f977f6cc747e49cb833c63843125f84dd283c43136",
+    "MSCQ-GN-mainline/diagnose_abide_readout.py": "f923d2b484044ebd42d2e0949cbbb359f6e6f644f735fb5a81eab62033898273",
+    "MSCQ-GN-mainline/diagnose_current_c_readout_20260928.py": "117646c247a532f8a89d6dd067bd18ea73278e0b3b3395aea1c993f47bc40d5d",
+    "MSCQ-GN-mainline/diagnose_c_disagreements.py": "7c270c4a26b277e91f5f5e518dc9d023d9f6bd10bb9587a4a8ec14bee007159f",
+    "MSCQ-GN-mainline/diagnose_c_relation_paths_visual.py": "aed3fccec08349464d235d7fd244d36d6f9b36ad9c6022d88b436083f69c5e92",
+    "MSCQ-GN-mainline/diagnose_gate_objective.py": "7f6bf1628dd3cdf4df5cf5d4d7b5653d5062ec6d1f7721a1b50801f65f9d457a",
+    "MSCQ-GN-mainline/diagnose_reference_flow.py": "aa76e72d2dbec94efaabbbdacd93f5bad7f913a0f00cc6b4c0846fed36489f9b",
+    "MSCQ-GN-mainline/diagnose_reference_signal.py": "3930bce60bbeff34fb035c01cf964d2d333e91a38f436b6171c94b3adf7bc4bb",
+    "MSCQ-GN-mainline/full_modal_ablation_experiment.py": "018bcfaf76f0a4e5db265f997fa91d4ad6ed42723417f3045db8b7ca6a14a673",
+    "MSCQ-GN-mainline/grouped_content_seed0_experiment.py": "940ae0cdaad4ad44bda7dfc8d3d06111df27b24379600695140d8d46a9d4ca79",
+    "MSCQ-GN-mainline/joint_evidence_routing_experiment.py": "4ca61ec58cd7b5ac88457628cbccdda0f007254de5f72b08ae8dc7c63b779c35",
+    "MSCQ-GN-mainline/learned_topology_pilot.py": "5576adc59e05c77675755e543123c755e071a21b51b5507aeb350d7ba572e93b",
+    "MSCQ-GN-mainline/main.py": "1bc54338b9231561858d342a25e8b49eeb5715cf67cb678055dd48a77ef86db6",
+    "MSCQ-GN-mainline/matched_shared_mapping_seed0_experiment.py": "9ec892480a547da5807dc2c4eacf087a3e204d8880f4ee4eccb3498cff9f87f3",
+    "MSCQ-GN-mainline/modal_evidence_experiment.py": "331aa5a97ca753a78ca3bfb6182bf1f0ea22a48bf586fe84d48a18f64eaad856",
+    "MSCQ-GN-mainline/modal_pairing_experiment.py": "af0298d2871141cbf59292c8afe0ba60346aed432b5c5cf95554d88c45e0a26e",
+    "MSCQ-GN-mainline/no_content_similarity_seed0_experiment.py": "fa68935fd5203158dfb0462e102cb6122a97d4b289668bf32e6880adabbd64f0",
+    "MSCQ-GN-mainline/own_branch_optimization_seed0.py": "007e19531a03f013e063fb78d381765fcb74e08c4d3b0a98d67a81f8d44ee5a1",
+    "MSCQ-GN-mainline/plot_c_content_map_swap.py": "e887913adf1ec8e6466a1392486750f6d95a928a5f2f2c74e2cca9d0182d2da9",
+    "MSCQ-GN-mainline/plot_c_edge_content_weights.py": "34ef2a2ca93c22181ff712b3fc7d8bb1f012cd629def4f935deecbb3b3fd2218",
+    "MSCQ-GN-mainline/plot_c_relation_neighbor_overlap.py": "4c59f108bd584ea473098c400745408e7f27dae1f4687b3cf1792af90ce68488",
+    "MSCQ-GN-mainline/plot_c_relation_path_heatmap.py": "0a54a029c8943ecea0a91608428148a79e47c5c684e3be0429c94846f014aa7d",
+    "MSCQ-GN-mainline/plot_matched_shared_mapping_control.py": "4c35e7630d8450fb74571a43ec975df482752d75d4c7e7597ceeffefaad7ef76",
+    "MSCQ-GN-mainline/plot_no_content_similarity_control.py": "0aa862e2f8a65dddaf55bc10f66d8733b7d8f68a971ab7d925fc26d85055b90e",
+    "MSCQ-GN-mainline/plot_shared_mapping_results.py": "a1ad9a7484c4b77ee62e1ad27192681adb66a2836567081b0a8c976eb615b11d",
+    "MSCQ-GN-mainline/readout_controls_seed0_experiment.py": "aa8f6ef647119c5699bee06d3cbd5f932a338903f77a91a72fc7688906de49c1",
+    "MSCQ-GN-mainline/reciprocity_seed0_experiment.py": "215206ea48e2c03af63c72f17dd504144407436f7826d6ee9dc641d4ef759686",
+    "MSCQ-GN-mainline/reference.py": "077e9384085ccb9155f10d8174cfa9854b393c8e11fd4ca379630b20e159b107",
+    "MSCQ-GN-mainline/REFERENCE_RESULTS.md": "0e38437ccbeb8beb8d3a553e0aa05dd48ccf017e84312fda35e600405d3e45c6",
+    "MSCQ-GN-mainline/reference_selection_experiment.py": "91684852593066c4a24e3b64a636d081cd300d43227d7daa7b8bdd78ee9cdee4",
+    "MSCQ-GN-mainline/REFERENCE_SELECTION_PLAN.md": "8cf4c7dcf13ea5e3e553d6223c51eea679dc3cf3e45e363b5ce651179c4f2455",
+    "MSCQ-GN-mainline/reference_selection_replication.py": "ed2bce6ebb951708d307f640eeda2531df7de6572d5066f5fb75a26c1203ba62",
+    "MSCQ-GN-mainline/reference_selection_space.py": "0d0ff3fd672d108aa0d1d1b18624e6d03de71ccb1870e05baf10b9d005e5ad4b",
+    "MSCQ-GN-mainline/relation_aggregation_seed0_experiment.py": "74dbf9c7b3e2fca86608bed41cc5bd9dc268fb7da6c81e00c0f9919beedf448e",
+    "MSCQ-GN-mainline/relation_audit.py": "77586d9e79eb371822196e37a9ac1697d2d352d6c4eeb9284c1cc5448838328b",
+    "MSCQ-GN-mainline/relation_decay.py": "bb4d890b46c6e09d32bb279b138015f80781a06d782975e75fc3ef15a8a8c4b9",
+    "MSCQ-GN-mainline/RELATION_EXPERIMENT.md": "13281b854b1a29541866bbab27d726aaaf9f9e4b420c9f1017d584c2ea90ca72",
+    "MSCQ-GN-mainline/relation_experiment.py": "76edd1f2936d17f4424191264097208dff9c2cf7ec13b4bf90cf5858219d8991",
+    "MSCQ-GN-mainline/relation_followup.py": "0f7e6fb954f70b41fdc2cc44dd41734b3ef898756c0b40f780fa653333ab4b10",
+    "MSCQ-GN-mainline/relation_mechanism.py": "dbc4a68987d0876cd4629e6580f9644855671881052429d5899f7a25675b340e",
+    "MSCQ-GN-mainline/requirements.txt": "06acfffc0bb4b7ce8404978d07234b656862b625073bb64e8142e6e812886e3a",
+    "MSCQ-GN-mainline/run_main_experiments.ps1": "b9d78ad9d0f225951b6fa30b17aa73812ee8dbd0d80a8f320caf4babe2f3faf5",
+    "MSCQ-GN-mainline/selection_only_pilot.py": "34e9ecdcadcc02e2a27304a11b9d9817cf7b4f38dc98f564d088447babc38c4d",
+    "MSCQ-GN-mainline/self_preservation_pilot.py": "05a89de9e2964195f7d5f5a4ec29c52ec80e0a63c1e306773a7232436cb183cc",
+    "MSCQ-GN-mainline/shared_mapping_seed0_experiment.py": "7ba41ef05ebaea933b5f536ff47a0f3bbee6d2a78091ac96f43ff92b42f3132d",
+    "MSCQ-GN-mainline/snapshot_c_framework.py": "7e2cc9ff271835c83ba876ab781cdb2516ce545fd73e2e900785e6544c1b071f",
+    "MSCQ-GN-mainline/summarize_abide5_tuning_20260928.py": "e823ce37931a88c08c513cc1868dc7b1bd48bcc7decbfc4011ca951061a955b5",
+    "MSCQ-GN-mainline/summarize_abide_fine_tune.py": "93bb218315c41cb95cabee59c66338d9fad5cf809bd82ec21444b33608732785",
+    "MSCQ-GN-mainline/summarize_tad_tuning_20260928.py": "8e6d74db13566c3b344382145e2fa1e8702efb6ef85fb85c93db404dec41f528",
+    "MSCQ-GN-mainline/tad_binary_fine_tune.py": "a465213f90fc889d40d805d026bbb8a0d6dc6b3a032aca44b84aff144cc0ebaf",
+    "MSCQ-GN-mainline/tad_binary_joint_tune.py": "93a09b8734b94d7083a80ed0c7ad50d7bfd40c0d797ac8341375ae1b22905fee",
+    "MSCQ-GN-mainline/tad_binary_loss_tune.py": "c2d867758f70c10d48435532fbda9f140777860f465b4752f8cb508fb0c82b34",
+    "MSCQ-GN-mainline/task_guided_graph_pilot.py": "ac95a365586e7f7dfa8702d9e3fff0cf2e652b1231fb5cd44ef6534162d82bce",
+    "MSCQ-GN-mainline/unimodal_round_experiment.py": "1ff4b89238d03b0fee360e5cfe42b5204cbcb01333f642e2ab36f5371748714a",
+    "MSCQ-GN-mainline/visualize_mapping_parameters.py": "14dacfb2984c78534294581d1e84f9e5ba446add788a4612b7fca839f5fcf1e2",
+    "MSCQ-GN-mainline/Model/alternating_cooperative.py": "7d43d64aa8a88401e01dfc7cb4b2161f4ab4c9abbd52eafdf36dad653d87789f",
+    "MSCQ-GN-mainline/Model/aux_subset_fusion.py": "82e5fed4928c31152e3eb8fe0334f2b993bdd3ab3cd25e5f578072a0fb2a1a4d",
+    "MSCQ-GN-mainline/Model/branch_fusion.py": "5b9d3a12830d04b8d83e46c9037474746394ea945a443516983b59b4f3c5792e",
+    "MSCQ-GN-mainline/Model/centered_cognitive_residual.py": "97458e39e92e5f8831e33baac70793146e48416e98af7d8ae10fb0bc8945377e",
+    "MSCQ-GN-mainline/Model/cognitive_direct_supervision.py": "7f004765073d33f9904246a91ed04a0a0b408c0ee35dab708e1da6ce58fbdadd",
+    "MSCQ-GN-mainline/Model/cognitive_residual.py": "606bc3c868bcb4c4f6d95f6ea77bc81eeaef91ee2c6c43e8b80aa6b9abf0ccf6",
+    "MSCQ-GN-mainline/Model/c_cross_relation_null.py": "7bea7d41bbfe0c59dc4db8af96d27aa41321171ea81a2bb13b3f64c0747a1a5c",
+    "MSCQ-GN-mainline/Model/c_fuse_first.py": "957a279a6d5cb5724aaec0632b590519985354fc0651cff85cd0e778e338dc83",
+    "MSCQ-GN-mainline/Model/c_mechanism_controls.py": "8323d319267fce92f7d58234eb1c97bccd921c7b6e99866af7ffc9cd36945835",
+    "MSCQ-GN-mainline/Model/fixed_reference.py": "c646fe56222738d3049e83f5eff71c5a7c53586aafd2b4a6238a9d47cc31662c",
+    "MSCQ-GN-mainline/Model/grouped_content_propagation.py": "0c2d5a6b377f481b0d4375302aed1c69ef0e2070457978a23cdc9d0eb697d5ac",
+    "MSCQ-GN-mainline/Model/joint_evidence_routing.py": "6b713774df9401a3ef38edf8c769be2210d063d48a2a2a614bb2997be7ee7f3f",
+    "MSCQ-GN-mainline/Model/late_patient_readout.py": "6d4fa9aa811b22e2f4b57c6f4160bac5a96cf914484b0448527cf663f35e39fb",
+    "MSCQ-GN-mainline/Model/layers.py": "d491d0722a7a06fd5e18bae28ef29bec063e04805cda161cfc441f60f9441b7a",
+    "MSCQ-GN-mainline/Model/learned_topology.py": "83180d0b6babd7e426670a51606b84d827657c17f38b8ce18ff053c8c36c246e",
+    "MSCQ-GN-mainline/Model/matched_shared_mapping_control.py": "e22992f97a4abdddb380099077c363806735c3bfdc72fa3320c18f963637f057",
+    "MSCQ-GN-mainline/Model/modal_evidence.py": "2b1ad7b736003b7bcf812fe69f802aab74dfd224582ae27107fb702d961230f5",
+    "MSCQ-GN-mainline/Model/models.py": "2d8278980ae284f08982178819d761c7abe9ccba758033106e38ff354119bd7f",
+    "MSCQ-GN-mainline/Model/network.py": "bb856c7212ea72c9dae6a86a59040133ba4f429d5c0d4deeb68dd0b65d4c819e",
+    "MSCQ-GN-mainline/Model/no_content_similarity_control.py": "1eedaa05ce881870d9446543dab74857a53c90addaa20ef9ee0d2cd253824d26",
+    "MSCQ-GN-mainline/Model/own_branch_optimization.py": "b24860a2ed4dde75f99917e755716e528de967dce770114aa08906d3f59fafc5",
+    "MSCQ-GN-mainline/Model/readout_controls.py": "7c22c2c9322d6d7b7a6ce727675c9a2856fe3748c29b9920d5fb03f3d7cce104",
+    "MSCQ-GN-mainline/Model/reciprocity_control.py": "d8b120f05dba8a0a03d5bd94f56d0a5a3a7cf69f9b6a02a8168d1f759acb2517",
+    "MSCQ-GN-mainline/Model/reference_selection.py": "1c9734f50a4f17ac7bac177fbf8a44e618420007d1154042f3425d3b047dc467",
+    "MSCQ-GN-mainline/Model/relation_aggregation.py": "eff114d8a2aa1663d0d61c2539b91d009e61d3df98724266e7a55d716047ce28",
+    "MSCQ-GN-mainline/Model/relation_sheaf.py": "cd19464c63a976a23960f8eb36a8fabb1ca721ecc25552377aeca6eb3a09a58f",
+    "MSCQ-GN-mainline/Model/selection_only.py": "793265042db1d32cb0c14c8f94dd668b9bb772a933cfb27cdc796ea0ae3eb6cb",
+    "MSCQ-GN-mainline/Model/shared_mapping_control.py": "424818f10cae0c25a56670d93988db7ef67aba4559c6681aa574878c70e754ff",
+    "MSCQ-GN-mainline/Model/single_modal_evidence.py": "9a9091883855d8c13ab41e62fad95000bf064747e4cade60cc2100d884543b3b",
+    "MSCQ-GN-mainline/Model/subset_fusion.py": "8746abb8774ed9b6ad7eee2f510f2e5408e09fc06b8713befa3be4313ef6a560",
+    "MSCQ-GN-mainline/Model/task_guided_graph.py": "1162d2f160baa82ec45e8d23722044644b7ae5d814ceb43d4464ee8f3000d1cc",
+    "MSCQ-GN-mainline/Model/__init__.py": "77704b97d51efa2aa435e9f5ac4705924ff537a5d8fc043c0647c44d6abd1a22",
+    "MSCQ-GN-mainline/Utils/data_load.py": "8ea35b6b842ae86972356d37dafb5a5232bda2e308408c61e732fd402e50f7ea",
+    "MSCQ-GN-mainline/Utils/graph_diagnostics.py": "b42ce3423916378ead0812e11a79ea516ae6f4ee1ae5767cfcb954ec821324e9",
+    "MSCQ-GN-mainline/Utils/graph_load.py": "70cec177af6f9b2e63f39a213c6595b286c68df9b70ac9c80cb5809a43af483a",
+    "MSCQ-GN-mainline/Utils/modal_pairing.py": "e715e0db0c193b9c0ce508a22f8d010f271ec4b369e07b66a9dadf29339cc653",
+    "MSCQ-GN-mainline/Utils/reference_selection.py": "3a00abec6079c082c7db1f011f77c2fad138fc02fa7440c578de05e1331348a0",
+    "MSCQ-GN-mainline/Utils/relation_optimizer.py": "cabf65dddf7b59310d9cbc74e2eb35053c791eeead08b2eb4d5795da5d9d076e",
+    "MSCQ-GN-mainline/Utils/utils.py": "8f10c312a4404acdfa351dd5f84902aa5136685516c6e43ce83c9413273f870e",
+    "MSCQ-GN-mainline/Utils/__init__.py": "47a5a6e4e86f57086d7de57ee379a505e73ed071b3d5a70cb566cfe0fd8e1a7b",
+    "MSCQ-GN-mainline/Loss/loss_fn.py": "0b77751a9b2324ad3331e8ca0ce212546efecaac07dc6127b26acb8355dfdecd",
+    "MSCQ-GN-mainline/Loss/__init__.py": "4c01462d0d64620556a8afb3efa84333c529d4357a3baff23889c1e8699d87be",
+    "MSCQ-GN-mainline/Config/c_abide5_transfer.ini": "b3784476b04d4042db840799df364275d301eaa21efc4771e1f60a67439e8494",
+    "MSCQ-GN-mainline/Config/c_abide_repair_v1.ini": "8ae4a0115aa17ad2262ddfffd223313e53aab43bb6553f1c396aba5798071429",
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_A.ini": "50b773f7568d9f24f54c93bb239c0e67377e11864a33f05d3081f7dab01fd495",
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_G.ini": "8ae4a0115aa17ad2262ddfffd223313e53aab43bb6553f1c396aba5798071429",
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_W.ini": "bc103dd5e7e686868b8a5ce45e15504f2836d684f911be3e54a621b4bc62b47e",
+    "MSCQ-GN-mainline/Config/c_abide_transfer.ini": "1d4b1110077c016b8e2f25a68c56695307c16f8980af62098fd4b9a2d85943ee",
+    "MSCQ-GN-mainline/Config/c_tadpole_binary_transfer.ini": "cae3cea32223f887543d87f64b1006408bbfeafb73932903e83c5e3416682a60",
+    "MSCQ-GN-mainline/Config/main_abide.ini": "33e707c31682022cc54864aeed082af2e3bb67d6307f694e9e0099ef6ce5ef7f",
+    "MSCQ-GN-mainline/Config/main_abide5.ini": "ee18193f4847bfab8bcfce53536464d8500be3a248ca84284f0c1634b39c2811",
+    "MSCQ-GN-mainline/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/Config/main_tadpole_conversion.ini": "7fd758d62ed9606ce29fc9a1f10c6d0bb2ebfa36f5f07ee3c596779337a8a97d",
+    "MSCQ-GN-mainline/tests/test_abide_noise_adaptation.py": "66f8846eebad8e2770060914c30270dbf675c510dd20c935bf123fc00a4a701c",
+    "MSCQ-GN-mainline/tests/test_alternating_cooperative.py": "dc65ffd3970ad46eda855182e69280a53938b7ef62810237ae86c2f3eac21632",
+    "MSCQ-GN-mainline/tests/test_aux_subset_fusion.py": "d390ca75ee944979e212dd13992d2a508b9d80c75002414a6699b835c729c17a",
+    "MSCQ-GN-mainline/tests/test_branch_fusion.py": "22546acaa7874beae1946fabc351783f4940c3fc86936a47783dcb0aff80f902",
+    "MSCQ-GN-mainline/tests/test_centered_cognitive_residual.py": "7f6b05330addf7f942a1108f536c8ebfbfcbea2f55b0e53eea3dc6cbfc8f8d03",
+    "MSCQ-GN-mainline/tests/test_cognitive_direct_supervision.py": "a24d55fe975b3460b62731f8a9349775acf49c11f89dd7778d940c29093a4320",
+    "MSCQ-GN-mainline/tests/test_cognitive_residual.py": "cc84dc4d2005f4b43fdd632be1190bf783662660a6959ee1007d74fc84ad2fc2",
+    "MSCQ-GN-mainline/tests/test_c_cross_relation_null.py": "9e82cff1f713ac3ff38cc9fc129f12d215c347dc6675b6bd15b0fa47b3751214",
+    "MSCQ-GN-mainline/tests/test_c_disagreements.py": "53cde83579ffb08f4a8335bfe599cb24d46ac64b481901ef01f16555d96fa983",
+    "MSCQ-GN-mainline/tests/test_c_fuse_first.py": "7d272cbbfe393e35cb00062727387d217d80ad38051fd2814603e3b35b2bcae6",
+    "MSCQ-GN-mainline/tests/test_c_mechanism_controls.py": "38e2bf64553ba8726cc00bd0c7b9c301c957564e5a0fa7e53ea3da6c2e709772",
+    "MSCQ-GN-mainline/tests/test_full_modal_ablation.py": "07a53f9899dc1b98547df8ffa31b535fdee4ec4b7668760e2bfd7031e08bd22d",
+    "MSCQ-GN-mainline/tests/test_grouped_content_propagation.py": "91f474496d863405d6aba6f6a30e52e7ecf0f4f01589016fbf6cbe02bc80da5b",
+    "MSCQ-GN-mainline/tests/test_joint_evidence_routing.py": "67be3e1b8381ba41e8948525127359640c7f96c62e7bace51c5ec46436671767",
+    "MSCQ-GN-mainline/tests/test_late_patient_readout.py": "52cc9f898a5b130abd0e6ed5fe46e36de9f2351d6f0b7869f0717c961c0b0ec5",
+    "MSCQ-GN-mainline/tests/test_learned_topology.py": "ad2692b23008fd2c40086ac7aab2b0656ad497f5637183832169f58e5ac33b12",
+    "MSCQ-GN-mainline/tests/test_matched_shared_mapping_control.py": "73eccf874c39b6ca3e1202d5222cf1be27470dfd78aa0715814fda2e56b49af8",
+    "MSCQ-GN-mainline/tests/test_modal_evidence.py": "4a57057e0072794e4dc5e863ef3049cb29493401bfd08a74e48b18501ecbf807",
+    "MSCQ-GN-mainline/tests/test_modal_pairing.py": "2868dfb371bd1fa08eb083c9791a67d75f2f1805ccafc312d82d80b644d461cf",
+    "MSCQ-GN-mainline/tests/test_no_content_similarity_control.py": "8c384c5ee5f403d0a78090969231bb500960c231efd41705f330587a17bfe564",
+    "MSCQ-GN-mainline/tests/test_own_branch_optimization.py": "ddc3c3b4aa938f240576197b0f57f2a5954dce08687f8d45d75119a4d5f63087",
+    "MSCQ-GN-mainline/tests/test_readout_controls.py": "347a12c9aeab63e931901cc58e57f680bbddc467f9a6b6a2333c67a78f1c8ebc",
+    "MSCQ-GN-mainline/tests/test_reciprocity_control.py": "001bbb09c95822c31510576247d4bfd36976fa6b4f493e1767b105cb38fb217d",
+    "MSCQ-GN-mainline/tests/test_reference_selection.py": "6fdc695b9ce30b15234462a16b03b1ff16076848cc50f5b9ca55ebfc0b868e6a",
+    "MSCQ-GN-mainline/tests/test_reference_selection_space.py": "ae96616ed19dcc841c45e5fcaa5b6262ae94614f1702cc24c4d4b39451602cae",
+    "MSCQ-GN-mainline/tests/test_relation_aggregation.py": "82f587137793fdfafab8b77558a9cde7bfd8d43724014df6d6e3b3d42d6b58e4",
+    "MSCQ-GN-mainline/tests/test_relation_decay.py": "24e914bfae39698885b86f3dc4bc31b617dae295459560da88692a3bab3361f2",
+    "MSCQ-GN-mainline/tests/test_relation_mechanism.py": "ddda51664f30fed958051f34940b2b33e98a47ddbf86092de824bfdd137d6c60",
+    "MSCQ-GN-mainline/tests/test_relation_sheaf.py": "0da23d8dace01dc910ca91012d7da3edaebd544a1a90fff1c210a27dc1086884",
+    "MSCQ-GN-mainline/tests/test_selection_only.py": "42dcb38218408b549f172ada5f000c6d2aa0ff519026afceeaa882e057b3b4c8",
+    "MSCQ-GN-mainline/tests/test_self_preservation.py": "5b2d34d3bc535af6668e77b040ab0593d1ca5f3d9e1a1be85b89668e9e57bb19",
+    "MSCQ-GN-mainline/tests/test_shared_mapping_control.py": "76b74c6c38f165e9da90a7068eaa20c09fd0f87649e496c000c3d2ddd532f039",
+    "MSCQ-GN-mainline/tests/test_single_modal_evidence.py": "737267cff822de35940656bc77dc3c3e7984c5878cb0b8828376976d3b99a3f8",
+    "MSCQ-GN-mainline/tests/test_subset_fusion.py": "53130de2c1d615e2f29e75305e3ccfa3513416988735de134ac12865b47e4792",
+    "MSCQ-GN-mainline/tests/test_task_guided_graph.py": "9bfab3ed3655d91666b11fd66b027c36be5ad29af7c8d19c94b1b153b570e21f",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/metrics.json": "a480ff64d12ef0a534dc56a00af20d991ee9d75cd4694493ed64e7f24f0fce7d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/metrics.csv": "416c6e6ce82af8a618ee8f614bc93910ce8f1fbada52e7f36cd299225aa9fa94",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/fold_metrics.csv": "6fc8061193503c12385c9e9885a55b15aa2c5d3ec964bbf0ff4011df272670e2",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/requirements-snapshot.txt": "f66323a7e40db1d4ef6e086eaa5b4f4d94dd2abcffaab5372ca644a7adb4e42d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/A050.ini": "9d4b120ec4e0b1fc52fa7e9c3be3cefa11c5a17d214f43611d7085df7627716d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/BASE.ini": "1c96a38fb8c6944eb7b9d9dc4df5143936612806e9b09e4a1f05ca4c7661bef0",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/D050.ini": "f9f27017360970c0e37ec910aebacb29fd2b4b95f7959ceadf9b786b701063ab",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/G005.ini": "57613af421c205c2734d1d6b1e30282578d0d89785b6673f41cfcf785b9c5e2a",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/L0015.ini": "44e6ad9b51bc34c5418141a3fef10df8ad088074e21be1610e10170f0610d7d3",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/L003.ini": "e02852efd9d4165066064d59a3fa315be70562b2fc0c023518cf6302d998e590",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/N005.ini": "edb24e0c70e0e53a8a9d1f2c0380185cb73b292f13c1367c89f3dd0756da676b",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/N015.ini": "97dabed016fb64b6d45201999a0059ead9e7251038fa9e02bd407438608cb6cb",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/O00001.ini": "5e51f1f1f6e5e5bf1adc07fd56eb1cb440512d862eb7dfb7ead31d6b64c3acf7",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_DMINUS.ini": "66535b6664d9745502813386b22b03dd3f135d7a588d27f6885742877ef4f65c",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_DPLUS.ini": "bded49869e8b855f17496a931c5efedcee13d5dd745b4b05cd0afc8c863fe624",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_L080.ini": "aec72a94d9e2221a4564766953a0149b74e82d24d1d4340f9d049d127e094ff1",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_L120.ini": "74cd29674b16fc9815ffe24fb1ae4eb6c36ceeb80c9bebb077c485fafeef35ef",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_N075.ini": "a34922603deefe3053940296f8902dd11f81398e20682510d76f72f717e2ae79",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_N125.ini": "b80dd7fd6e0ec3f0c7a45d44c9253248f0ef421a37f452a10dc17346c8e6c2cb",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/W002.ini": "3c769e75a2c2b7afed3364dc48ca0be49416a4544b017b18cecdf0f7ff11d96f",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/source_snapshot/Config/c_abide5_transfer.ini": "b3784476b04d4042db840799df364275d301eaa21efc4771e1f60a67439e8494",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/A050.ini": "9d4b120ec4e0b1fc52fa7e9c3be3cefa11c5a17d214f43611d7085df7627716d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/BASE.ini": "1c96a38fb8c6944eb7b9d9dc4df5143936612806e9b09e4a1f05ca4c7661bef0",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/N005.ini": "edb24e0c70e0e53a8a9d1f2c0380185cb73b292f13c1367c89f3dd0756da676b",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/N015.ini": "97dabed016fb64b6d45201999a0059ead9e7251038fa9e02bd407438608cb6cb",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/source_snapshot/Config/c_abide5_transfer.ini": "b3784476b04d4042db840799df364275d301eaa21efc4771e1f60a67439e8494",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_fine_tune_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": "bc103dd5e7e686868b8a5ce45e15504f2836d684f911be3e54a621b4bc62b47e",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_n1_followup_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": "bc103dd5e7e686868b8a5ce45e15504f2836d684f911be3e54a621b4bc62b47e",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_noise_adaptation_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": "bc103dd5e7e686868b8a5ce45e15504f2836d684f911be3e54a621b4bc62b47e",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/alternating_a1_seeds12_20260924/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/alternating_cooperative_seed0_20260923/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/branch_fusion_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide5_seed0_20260924/source_snapshot/Config/c_abide5_transfer.ini": "b3784476b04d4042db840799df364275d301eaa21efc4771e1f60a67439e8494",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v1.ini": "8ae4a0115aa17ad2262ddfffd223313e53aab43bb6553f1c396aba5798071429",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_A.ini": "50b773f7568d9f24f54c93bb239c0e67377e11864a33f05d3081f7dab01fd495",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_G.ini": "8ae4a0115aa17ad2262ddfffd223313e53aab43bb6553f1c396aba5798071429",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": "bc103dd5e7e686868b8a5ce45e15504f2836d684f911be3e54a621b4bc62b47e",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_cross_relation_null_seed0_20260928/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_d3_fuse_first_seed0_20260925/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_mechanism_controls_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_tadpole_binary_seed0_20260924/source_snapshot/Config/c_tadpole_binary_transfer.ini": "cae3cea32223f887543d87f64b1006408bbfeafb73932903e83c5e3416682a60",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/grouped_content_seed0_20260929/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/relation_aggregation_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/A025.ini": "38d2d0b0af2ea42f2909bee1ecb44bb880a5fb3244997806eb964deb3e95865b",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/BASE.ini": "f431a62632d99875f8b824491b0cf37aa759c439094a2a9219fbf2f5585045f1",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/D050.ini": "793052952b2c1482ed91444c18ae3135bf144e283053591eec0571838675491b",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/L0015.ini": "23031d6ddf9e5dfcc1de1f01d24ebbfd79224d20df833cf9287734ae49d0a0a9",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/L003.ini": "9d9c0238f17ec7ade29f73fb48eabc7dc06b8084181fb3f56778a385a643adc1",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/N005.ini": "ffe5495d4367fb2fc4ff6652ff9be474e2824781bfb53e7b36ceb86fafd42b79",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/N015.ini": "15395acd9315b45201babb67fc6c83bf51192c99f5e5a78f18be14138b1653da",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/O00001.ini": "c58bc80034175dbacee14e8f481a376d15be973cccd1191f1b9308cf3469c60a",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_A050.ini": "eb3c85170ac8532b327acd3e14521e4f92e27a66a5e19063e0c942f5941d9652",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_L075.ini": "e4ab49790f0224c6d2b3b3fe9e5b5ddb0f2dbb7af1d334d7eca76d1f23e86023",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_L125.ini": "3ef730c20bd3ae8405e421d73d294ad433b37d793b1e81415e1680d5c92a74c4",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_O010.ini": "a89788e82ea7c2160d212dcd423ea932945bddc716fa9f6cdcf7851f91eb45df",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/W002.ini": "c54ddd9974bd27f5633ac6b00357b84febe7125a5728bb27b0d75b237ea2c01f",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": "cae3cea32223f887543d87f64b1006408bbfeafb73932903e83c5e3416682a60",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/BASE.ini": "f431a62632d99875f8b824491b0cf37aa759c439094a2a9219fbf2f5585045f1",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/D050.ini": "793052952b2c1482ed91444c18ae3135bf144e283053591eec0571838675491b",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_DN.ini": "778c6ff9cc67151264cb29f4a61bc871e91e7788599c59b7da0cae028905d16d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_DW.ini": "0674d31b57d291aa79074fb99cc7af03cdb9be60bc0d6cde62a7e58afeef20ab",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_LDN.ini": "8325b145a737db1d78788c21d8935875e6a7902622942e0141600f80159e1d23",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_MID.ini": "ac9fa35fed9a63f7997d1667fb8fd7a08c7fbd3077e90d3414578b706ec9b08d",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_OW.ini": "6f2e23d0b7f69e6bf80982874dec487897046fe55b4b30f5c284fa103e34d424",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/N015.ini": "15395acd9315b45201babb67fc6c83bf51192c99f5e5a78f18be14138b1653da",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/O00001.ini": "c58bc80034175dbacee14e8f481a376d15be973cccd1191f1b9308cf3469c60a",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/W002.ini": "c54ddd9974bd27f5633ac6b00357b84febe7125a5728bb27b0d75b237ea2c01f",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": "cae3cea32223f887543d87f64b1006408bbfeafb73932903e83c5e3416682a60",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/A050.ini": "0eb26b7ad517b8ebfe09edb8433049304467386ebcad026337bd93c11a9a72d3",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/A075.ini": "4670473918b78323e4d654f664073a58261dafeb37cd831d7e67581034b2706f",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/ANCHOR.ini": "c1ca6f0edc9b5b7e6b0fa716a0dedebb6b0458e6f0b26baf5d56ed0e4529ec77",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/LS000.ini": "cd664936ba96c348f573950ce8afb3b947f5b2190798e1f80e8842d1931dd994",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/LS002.ini": "dbf54dc1ea5c4707a4a1a4fc82795e1058704507c43ed8533fff093ece0a1303",
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": "cae3cea32223f887543d87f64b1006408bbfeafb73932903e83c5e3416682a60",
+    "MSCQ-GN-mainline/published_results/readout_controls_seed0_20260929/结果分析.md": "b5780a9df1c8d96994d089e767a5510d2912fa45dec92f07121cada30232a338",
+    "MSCQ-GN-mainline/published_results/readout_controls_seed0_20260929/进度与结果.md": "f8d2ab55dd9d6e7acf2dd2536655714dc4c7cba3ecc75ddda573d08b26c99fd3",
+    "MSCQ-GN-mainline/published_results/shared_mapping_seed0_20261003/进度与结果.md": "6479023dd4e6af5b7cb5a488c8fb3cb14bfc71e7b21c44cc9eb827b3e9e52d22",
+    "MSCQ-GN-mainline/published_results/reciprocity_seed0_20261003/结果分析.md": "3c0f53e35f317ffc4ca29f8ce43e2b50e2f563714a2c6ff4f141a2bb7c20a083",
+    "MSCQ-GN-mainline/published_results/reciprocity_seed0_20261003/进度与结果.md": "3c0f53e35f317ffc4ca29f8ce43e2b50e2f563714a2c6ff4f141a2bb7c20a083",
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/paired_folds.csv": "dacf1355a00e8ab75e5ae3c6d0ce2b42a07a4da95bdb18c16760b680f06b1c5b",
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/结果分析.md": "4ff6fc83b774418653865380e5a94a280457a04e5047216e41993a6a7d9e5182",
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/进度与结果.md": "46bd95f809f6f6733177344c2947fb766e8d7042b1c769c753556fe019e5aa63",
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_C.csv": "e0d24b6485fc1072e4ef261bf259ee72e2cacc4121a7cf952edec436880273f7",
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_D1.csv": "434c87e1d4cb82cd85aea19fe5c2d0fe0d37d6e15772bfef313bc457530ff5b1",
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_D1_SHARED_MAP.csv": "3c64950da3777567c6f68e018a469f6b3f4a38a71439f633c867991761c08bfc",
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_SHARED_MAP.csv": "dd9138ced0f402852bd763c47514475f428be22d6adcf1301e06023e1cf27ba4",
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/实验结果说明.txt": "6631c80540d9086034afad2185b0fe1fca1733866e44ba7aedbd7b9ab847ca07",
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/metrics_C.csv": "45e7e21cae8f34dc0d6184fbe27889a8f84f95b3702864504ce7125035f1f88a",
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/metrics_NO_CONTENT_SIMILARITY.csv": "f072630e0aa7780ac325ffd6c2749f560f81fb8f3f6f8f0ec1950956af71df04",
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/实验结果说明.txt": "a7301bb3dc62e4dbb3c9e54f7538a7f010700d0472100775ff6c5f9cb87a0982",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_framework_c_blackwhite.py": "c636d9fd24199cb46d6d072ac269e8e84d4e7315024b49b95244394438bed93b",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_innovation_explainer.py": "29079ae2c2e3c8f7f1b1312dfa0e442d6021c1c3d013c3187a4afb387cceaf29",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_two_innovations.py": "099b2970392067dc44aa897c9c05d7a9c396511c36aad6363526626b80d4c029",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_blackwhite_cn.png": "25e6de8e7d12ea5fccec1570e0c38f2649a4300cd9b19088d6335800d3845ca8",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_innovation_explainer.png": "33dabece5e707df0edcd1681e3aa763f11e22677ba19d1a4bf67af32117314ca",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_innovation_explainer.svg": "fb13965a23d0fe43572c499d76ce2fbd32a7a6a127a51eaf70799da5e3d2e4cd",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_revised.png": "4228ffa38c79a93bfc49bad42349430150d8ce2a6311332ee8697d636ef046b1",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_simplified.png": "8e46a1ba9437cab523bffbfc29a1a169c8a653320a3de6e450a98b12e0e225d2",
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_two_innovations.png": "f549688a1f76b6e85f555dfc65c0ec9f1edcd68b537fa7e002237300a1849642"
+  },
+  "files": {
+    "MSCQ-GN-mainline/.gitignore": {
+      "sha256": "26aaf30bb3b156096b875f7255510c83231707756ffb81f7a9e4de605c844296",
+      "bytes": 199
+    },
+    "MSCQ-GN-mainline/abide5_fine_tune.py": {
+      "sha256": "2307958a5ef8e200097ce10a8a05f8a68ad8549c1c1012fb0f7e6cbb53a89142",
+      "bytes": 37582
+    },
+    "MSCQ-GN-mainline/abide5_tie_completion.py": {
+      "sha256": "3f7a44366f0ae6047fcbe23488b2a53479a806a51486a1a98c75d5f7675ae266",
+      "bytes": 22600
+    },
+    "MSCQ-GN-mainline/abide_fine_tune.py": {
+      "sha256": "452cbc639135a9315f28b585daf6df9cbae6eabc28d8b1265f416d7244e15519",
+      "bytes": 16789
+    },
+    "MSCQ-GN-mainline/abide_late_readout_experiment.py": {
+      "sha256": "ef148729ed021873d8ccbc26ac47fc321e7cc47b1d94b40a5399ee939e871869",
+      "bytes": 8057
+    },
+    "MSCQ-GN-mainline/abide_n1_followup.py": {
+      "sha256": "503afa7605ef947b98425c270cb15c1ca75d12ef8b516938f632ba4e1a976ba2",
+      "bytes": 14940
+    },
+    "MSCQ-GN-mainline/abide_noise_adaptation.py": {
+      "sha256": "6498085fcda516f87349d7c067c14d372707d03121ddbc23446625106182ef8f",
+      "bytes": 1175
+    },
+    "MSCQ-GN-mainline/abide_noise_experiment.py": {
+      "sha256": "f7b7e58b22e6017797a0962797b37e71e333cd85062a1bc365ff992459284f3e",
+      "bytes": 11840
+    },
+    "MSCQ-GN-mainline/alternating_a1_seeds12_experiment.py": {
+      "sha256": "0d1058d638260205a360007ea97584566c14f56b58cf936a62b6e924bcb23446",
+      "bytes": 21416
+    },
+    "MSCQ-GN-mainline/alternating_cooperative_experiment.py": {
+      "sha256": "a43563a937f224e053f88351ff307f6d7801affc50429d40bfa136c8ad15f487",
+      "bytes": 27056
+    },
+    "MSCQ-GN-mainline/analyze_abide_late_readout.py": {
+      "sha256": "a29912c4ecbbd10c8c290382a77647f903274bd78ebf4b7cdb5a2ce9e6d05e47",
+      "bytes": 4691
+    },
+    "MSCQ-GN-mainline/analyze_abide_noise.py": {
+      "sha256": "b878d226f350dda3027f4b278d372c0667a2b46602353fa31a20dd0c7988c056",
+      "bytes": 6766
+    },
+    "MSCQ-GN-mainline/analyze_alternating_a1_multiseed.py": {
+      "sha256": "65c41da5eff8463d13567c3813df70578612aa8eef93d6b99c3193075f39566b",
+      "bytes": 10562
+    },
+    "MSCQ-GN-mainline/analyze_alternating_cooperative.py": {
+      "sha256": "c7602b5c1edb2ebe5ff551f38e929bae78c38fceb1c7ecb9cfe9b16e55c93b9c",
+      "bytes": 9645
+    },
+    "MSCQ-GN-mainline/analyze_branch_fusion.py": {
+      "sha256": "15c3c40342ae3bc45655c61e6af1aa4f1870ffe60bacbbbb043936e4deaa0caf",
+      "bytes": 6824
+    },
+    "MSCQ-GN-mainline/analyze_c_content_map_swap.py": {
+      "sha256": "8973301c83406f7bb8096d888852537dbadd083a2639aea24c8dd2c3c365ba02",
+      "bytes": 20795
+    },
+    "MSCQ-GN-mainline/analyze_c_disagreements.py": {
+      "sha256": "2e60f892cbfe5a9ba705a2c1a1df0133853564f97d85c66566dafb09a134faed",
+      "bytes": 12849
+    },
+    "MSCQ-GN-mainline/analyze_c_edge_content_weights.py": {
+      "sha256": "1913a9ecec090d7b0643c728da4b20f2566080e511ec8b46fa00ad643150b337",
+      "bytes": 20405
+    },
+    "MSCQ-GN-mainline/analyze_c_relation_neighbor_overlap.py": {
+      "sha256": "9e78c543740a3710e3bc177bd037fe65a23a8e29db4d946da694743aedd52df2",
+      "bytes": 12700
+    },
+    "MSCQ-GN-mainline/analyze_grouped_content.py": {
+      "sha256": "d7513eb61f48f561c961d71ac9e509ed4a82a1b9a24604fe61fd800a791f64ea",
+      "bytes": 9787
+    },
+    "MSCQ-GN-mainline/analyze_joint_evidence_routing.py": {
+      "sha256": "ba7763a492f16d7dd44915570ec416b188c1fd8bbf80ff6f92c569e138caef0f",
+      "bytes": 20101
+    },
+    "MSCQ-GN-mainline/analyze_learned_topology.py": {
+      "sha256": "2a1c1441402aa0c09a49683d9efaa02209548f6bcd4c724a9b67388d7232b2cd",
+      "bytes": 14842
+    },
+    "MSCQ-GN-mainline/analyze_matched_shared_mapping_control.py": {
+      "sha256": "378335623c2ab74341776ce82f5582be6c324b4b28175f0a40df4f1403e52f21",
+      "bytes": 21970
+    },
+    "MSCQ-GN-mainline/analyze_modal_evidence.py": {
+      "sha256": "086dba5b1dba8179ec9b4cfa13cbcbf76b36736566611c68c6f121c6c5170998",
+      "bytes": 15824
+    },
+    "MSCQ-GN-mainline/analyze_no_content_similarity_control.py": {
+      "sha256": "0654387473aead2cf4078a72ef3bcfc125b2bfd5e73ce1593f665df7674744d3",
+      "bytes": 19775
+    },
+    "MSCQ-GN-mainline/analyze_own_branch_optimization.py": {
+      "sha256": "aa2f95d1b5f7b0a78327889be0b104a17456f21ae6febacfe818911eb138e021",
+      "bytes": 6888
+    },
+    "MSCQ-GN-mainline/analyze_readout_controls.py": {
+      "sha256": "2efa18977a5a04e36f247535276109fe790b16e461fb3d96d6444694ad9b84a2",
+      "bytes": 7095
+    },
+    "MSCQ-GN-mainline/analyze_reciprocity_control.py": {
+      "sha256": "79b563243b622485a07d8d40e6d1b881909116dd94346e3e1bf9da0494f4488e",
+      "bytes": 4926
+    },
+    "MSCQ-GN-mainline/analyze_reference_replication.py": {
+      "sha256": "615650762334f04f03136713ba9e118dd3b02cc3bf5fe7cc7a3f2e11c4b908de",
+      "bytes": 15075
+    },
+    "MSCQ-GN-mainline/analyze_reference_selection.py": {
+      "sha256": "9d39e51a0648177407f6cd927e67b621a37cb8dd57d24b695a2af9b8b979c1d7",
+      "bytes": 9557
+    },
+    "MSCQ-GN-mainline/analyze_relation_aggregation.py": {
+      "sha256": "a36b1837e97a70d6ab69e9a47b2bce5e9501a582468ee2f33d801f7b98b0f510",
+      "bytes": 6890
+    },
+    "MSCQ-GN-mainline/analyze_selection_only.py": {
+      "sha256": "083f698c4eda4a866369f2902c06b1537ca600b0273a96134089b501032c00c4",
+      "bytes": 21208
+    },
+    "MSCQ-GN-mainline/analyze_self_preservation.py": {
+      "sha256": "31155b1390ed9f3ec51b65c67dcc62ef3fe046834059cafae0e7a5db11809ddd",
+      "bytes": 14989
+    },
+    "MSCQ-GN-mainline/analyze_shared_mapping_control.py": {
+      "sha256": "e9a357fd37c336183b5a2fd68d9e894217bce5e6605828a8a75720bbfd9db497",
+      "bytes": 11029
+    },
+    "MSCQ-GN-mainline/analyze_task_guided_graph.py": {
+      "sha256": "c70e7bde35e999b6c2de711ca7b6d1667011f58e22146b0092da03c385a0f72c",
+      "bytes": 18459
+    },
+    "MSCQ-GN-mainline/audit_abide5_fine_tune.py": {
+      "sha256": "14cbc42c9fdb3609fc5e1cdca3dcb37fe692714b51c80713ca65091b31832314",
+      "bytes": 42721
+    },
+    "MSCQ-GN-mainline/audit_abide5_tie_completion.py": {
+      "sha256": "8c32ac01c0340909f78070e6dece6b31cbf57008ef4fbd787fe3b95fd24db561",
+      "bytes": 23509
+    },
+    "MSCQ-GN-mainline/audit_abide_historical_provenance.py": {
+      "sha256": "75d315d30bfe85faf8312ee199aa92ddfd79e35219e5b733dbbab2c3603a311f",
+      "bytes": 4014
+    },
+    "MSCQ-GN-mainline/audit_c_result_20260924.py": {
+      "sha256": "a6aa09ecb3d90b9931d8c4e1b466f86ec8957c6dce500b9f53bd1b9ff66084c7",
+      "bytes": 18564
+    },
+    "MSCQ-GN-mainline/audit_no_content_similarity_control.py": {
+      "sha256": "840cd13aebfac1c5857e3c15dd5f25b5503ba2acf0dbcf958fc6583f63879b5d",
+      "bytes": 27945
+    },
+    "MSCQ-GN-mainline/audit_tad_binary_fine_tune.py": {
+      "sha256": "a572a15fccfa9314dcd2bf0af6c3b941bde62e92f01532cd08c8db410fbe33af",
+      "bytes": 23074
+    },
+    "MSCQ-GN-mainline/audit_tad_binary_joint_tune.py": {
+      "sha256": "b573fb5b2bddd55ba6d44c6b825c9797fb61ba3f04bce16182d010328a92278c",
+      "bytes": 17270
+    },
+    "MSCQ-GN-mainline/audit_tad_binary_loss_tune.py": {
+      "sha256": "f691a387e87d08731433e34d96035837f87477fc7baf30b3ab5cd8f230d77411",
+      "bytes": 30735
+    },
+    "MSCQ-GN-mainline/branch_fusion_seed0_experiment.py": {
+      "sha256": "af1b8b2ef721189767741df67b8bdc03bf36b4147eb98d40ae36542cad909a7d",
+      "bytes": 21341
+    },
+    "MSCQ-GN-mainline/build_no_content_similarity_delivery.py": {
+      "sha256": "a6a3505fcafd7b4d0b2d3b07803a1da93144aa5fa8fed1efa44b654bcffbfcf4",
+      "bytes": 3507
+    },
+    "MSCQ-GN-mainline/build_shared_mapping_visual_report.py": {
+      "sha256": "b402c6037276c7b7e639175171550c55f22cd0e7d071270fa1f62c9807a7fbcd",
+      "bytes": 11938
+    },
+    "MSCQ-GN-mainline/centered_cognitive_residual_experiment.py": {
+      "sha256": "e1de930be095dfabe6041f1ea6304655b3fd43b61eab74e46c150bf2ff10287d",
+      "bytes": 22292
+    },
+    "MSCQ-GN-mainline/cognitive_direct_supervision_experiment.py": {
+      "sha256": "f25c149a2ed55acf07e6be4e5cbb519f0455a52fca54ab1c5797022c100c2d44",
+      "bytes": 22596
+    },
+    "MSCQ-GN-mainline/cognitive_pair_experiment.py": {
+      "sha256": "80fafeb4d810b47b62dca80f355b5495ffcaff90e9aceb82034b657d28c758b8",
+      "bytes": 15667
+    },
+    "MSCQ-GN-mainline/cognitive_pet_aux_experiment.py": {
+      "sha256": "4f77679f2d1091f77c73d9adcb7269fb0ad00bd873e36c52df1ca35b3fecf1af",
+      "bytes": 20118
+    },
+    "MSCQ-GN-mainline/cognitive_residual_experiment.py": {
+      "sha256": "a7172cb057f0a54f6aa6132c0ea2d43a8424406640efdee938ca16b9cb926128",
+      "bytes": 14480
+    },
+    "MSCQ-GN-mainline/c_abide_repair_experiment.py": {
+      "sha256": "c2893fd12dcc925e90a611d1c9873d03b56900a4cfbbd529b604f7f18226a4d0",
+      "bytes": 11702
+    },
+    "MSCQ-GN-mainline/c_abide_repair_v2_experiment.py": {
+      "sha256": "6e4e50c1844a74f9e012e4ce179e08167c0d8a285c65e6c3bab7d7f14bc555ea",
+      "bytes": 11076
+    },
+    "MSCQ-GN-mainline/c_abide_transfer_experiment.py": {
+      "sha256": "e7f623d29a80e684d43103462efc7fdd64228f96f7945195cdd41ca25be94c3f",
+      "bytes": 11221
+    },
+    "MSCQ-GN-mainline/c_cross_relation_null_experiment.py": {
+      "sha256": "fcf7a8919da98f40d32349133a4b515f476ad4e67be1e7d1a2e88e618ba833cd",
+      "bytes": 29594
+    },
+    "MSCQ-GN-mainline/c_d3_fuse_first_experiment.py": {
+      "sha256": "4ab6d87f8add9c9cca38f92a0f847a09b67f7c295c61d09fa76b3850220bbcbc",
+      "bytes": 16625
+    },
+    "MSCQ-GN-mainline/c_mechanism_controls_experiment.py": {
+      "sha256": "aa28dbfbc08a6463bb939038dd01ebc47b2b5d3ccf27c227f4451c77891ff7ff",
+      "bytes": 16118
+    },
+    "MSCQ-GN-mainline/c_tadpole_binary_experiment.py": {
+      "sha256": "a81d6f98b39271b6fcfbc72e6f1adb7ee60e8852ad5e77fa66c8ea0253e06ad8",
+      "bytes": 9554
+    },
+    "MSCQ-GN-mainline/diagnose_abide_c.py": {
+      "sha256": "25e29d91b3fbe48cc882c57e32a1f1bc0a1c20ee1fd6eba8abb5e3678d39d2f7",
+      "bytes": 7452
+    },
+    "MSCQ-GN-mainline/diagnose_abide_capacity.py": {
+      "sha256": "fb58ec09ad050326440989f977f6cc747e49cb833c63843125f84dd283c43136",
+      "bytes": 13961
+    },
+    "MSCQ-GN-mainline/diagnose_abide_readout.py": {
+      "sha256": "f923d2b484044ebd42d2e0949cbbb359f6e6f644f735fb5a81eab62033898273",
+      "bytes": 2789
+    },
+    "MSCQ-GN-mainline/diagnose_current_c_readout_20260928.py": {
+      "sha256": "117646c247a532f8a89d6dd067bd18ea73278e0b3b3395aea1c993f47bc40d5d",
+      "bytes": 6031
+    },
+    "MSCQ-GN-mainline/diagnose_c_disagreements.py": {
+      "sha256": "7c270c4a26b277e91f5f5e518dc9d023d9f6bd10bb9587a4a8ec14bee007159f",
+      "bytes": 13504
+    },
+    "MSCQ-GN-mainline/diagnose_c_relation_paths_visual.py": {
+      "sha256": "aed3fccec08349464d235d7fd244d36d6f9b36ad9c6022d88b436083f69c5e92",
+      "bytes": 23511
+    },
+    "MSCQ-GN-mainline/diagnose_gate_objective.py": {
+      "sha256": "7f6bf1628dd3cdf4df5cf5d4d7b5653d5062ec6d1f7721a1b50801f65f9d457a",
+      "bytes": 3988
+    },
+    "MSCQ-GN-mainline/diagnose_reference_flow.py": {
+      "sha256": "aa76e72d2dbec94efaabbbdacd93f5bad7f913a0f00cc6b4c0846fed36489f9b",
+      "bytes": 6417
+    },
+    "MSCQ-GN-mainline/diagnose_reference_signal.py": {
+      "sha256": "3930bce60bbeff34fb035c01cf964d2d333e91a38f436b6171c94b3adf7bc4bb",
+      "bytes": 13802
+    },
+    "MSCQ-GN-mainline/full_modal_ablation_experiment.py": {
+      "sha256": "018bcfaf76f0a4e5db265f997fa91d4ad6ed42723417f3045db8b7ca6a14a673",
+      "bytes": 16402
+    },
+    "MSCQ-GN-mainline/grouped_content_seed0_experiment.py": {
+      "sha256": "940ae0cdaad4ad44bda7dfc8d3d06111df27b24379600695140d8d46a9d4ca79",
+      "bytes": 25698
+    },
+    "MSCQ-GN-mainline/joint_evidence_routing_experiment.py": {
+      "sha256": "4ca61ec58cd7b5ac88457628cbccdda0f007254de5f72b08ae8dc7c63b779c35",
+      "bytes": 23678
+    },
+    "MSCQ-GN-mainline/learned_topology_pilot.py": {
+      "sha256": "5576adc59e05c77675755e543123c755e071a21b51b5507aeb350d7ba572e93b",
+      "bytes": 12956
+    },
+    "MSCQ-GN-mainline/main.py": {
+      "sha256": "5fadf402d3f95b236db989f7218c9d6fd6afbad972e960f6069b46a512e61ada",
+      "bytes": 16229
+    },
+    "MSCQ-GN-mainline/matched_shared_mapping_seed0_experiment.py": {
+      "sha256": "9ec892480a547da5807dc2c4eacf087a3e204d8880f4ee4eccb3498cff9f87f3",
+      "bytes": 23317
+    },
+    "MSCQ-GN-mainline/modal_evidence_experiment.py": {
+      "sha256": "331aa5a97ca753a78ca3bfb6182bf1f0ea22a48bf586fe84d48a18f64eaad856",
+      "bytes": 24457
+    },
+    "MSCQ-GN-mainline/modal_pairing_experiment.py": {
+      "sha256": "af0298d2871141cbf59292c8afe0ba60346aed432b5c5cf95554d88c45e0a26e",
+      "bytes": 16437
+    },
+    "MSCQ-GN-mainline/no_content_similarity_seed0_experiment.py": {
+      "sha256": "fa68935fd5203158dfb0462e102cb6122a97d4b289668bf32e6880adabbd64f0",
+      "bytes": 21057
+    },
+    "MSCQ-GN-mainline/own_branch_optimization_seed0.py": {
+      "sha256": "007e19531a03f013e063fb78d381765fcb74e08c4d3b0a98d67a81f8d44ee5a1",
+      "bytes": 19896
+    },
+    "MSCQ-GN-mainline/plot_c_content_map_swap.py": {
+      "sha256": "e887913adf1ec8e6466a1392486750f6d95a928a5f2f2c74e2cca9d0182d2da9",
+      "bytes": 27592
+    },
+    "MSCQ-GN-mainline/plot_c_edge_content_weights.py": {
+      "sha256": "34ef2a2ca93c22181ff712b3fc7d8bb1f012cd629def4f935deecbb3b3fd2218",
+      "bytes": 35260
+    },
+    "MSCQ-GN-mainline/plot_c_relation_neighbor_overlap.py": {
+      "sha256": "4c59f108bd584ea473098c400745408e7f27dae1f4687b3cf1792af90ce68488",
+      "bytes": 26528
+    },
+    "MSCQ-GN-mainline/plot_c_relation_path_heatmap.py": {
+      "sha256": "0a54a029c8943ecea0a91608428148a79e47c5c684e3be0429c94846f014aa7d",
+      "bytes": 6265
+    },
+    "MSCQ-GN-mainline/plot_matched_shared_mapping_control.py": {
+      "sha256": "4c35e7630d8450fb74571a43ec975df482752d75d4c7e7597ceeffefaad7ef76",
+      "bytes": 19933
+    },
+    "MSCQ-GN-mainline/plot_no_content_similarity_control.py": {
+      "sha256": "0aa862e2f8a65dddaf55bc10f66d8733b7d8f68a971ab7d925fc26d85055b90e",
+      "bytes": 19183
+    },
+    "MSCQ-GN-mainline/plot_shared_mapping_results.py": {
+      "sha256": "a1ad9a7484c4b77ee62e1ad27192681adb66a2836567081b0a8c976eb615b11d",
+      "bytes": 18931
+    },
+    "MSCQ-GN-mainline/README.md": {
+      "sha256": "2e564587c6b2f04d9970f386b4b0528c19497b7f24de614b2b826c512c570636",
+      "bytes": 5155
+    },
+    "MSCQ-GN-mainline/readout_controls_seed0_experiment.py": {
+      "sha256": "aa8f6ef647119c5699bee06d3cbd5f932a338903f77a91a72fc7688906de49c1",
+      "bytes": 24477
+    },
+    "MSCQ-GN-mainline/reciprocity_seed0_experiment.py": {
+      "sha256": "215206ea48e2c03af63c72f17dd504144407436f7826d6ee9dc641d4ef759686",
+      "bytes": 19004
+    },
+    "MSCQ-GN-mainline/reference.py": {
+      "sha256": "077e9384085ccb9155f10d8174cfa9854b393c8e11fd4ca379630b20e159b107",
+      "bytes": 6815
+    },
+    "MSCQ-GN-mainline/REFERENCE_RESULTS.md": {
+      "sha256": "0e38437ccbeb8beb8d3a553e0aa05dd48ccf017e84312fda35e600405d3e45c6",
+      "bytes": 1917
+    },
+    "MSCQ-GN-mainline/reference_selection_experiment.py": {
+      "sha256": "91684852593066c4a24e3b64a636d081cd300d43227d7daa7b8bdd78ee9cdee4",
+      "bytes": 29209
+    },
+    "MSCQ-GN-mainline/REFERENCE_SELECTION_PLAN.md": {
+      "sha256": "8cf4c7dcf13ea5e3e553d6223c51eea679dc3cf3e45e363b5ce651179c4f2455",
+      "bytes": 5062
+    },
+    "MSCQ-GN-mainline/reference_selection_replication.py": {
+      "sha256": "ed2bce6ebb951708d307f640eeda2531df7de6572d5066f5fb75a26c1203ba62",
+      "bytes": 13504
+    },
+    "MSCQ-GN-mainline/reference_selection_space.py": {
+      "sha256": "0d0ff3fd672d108aa0d1d1b18624e6d03de71ccb1870e05baf10b9d005e5ad4b",
+      "bytes": 12921
+    },
+    "MSCQ-GN-mainline/relation_aggregation_seed0_experiment.py": {
+      "sha256": "378e16bca0f3cd9a1d4903e38756848a324243695f0975d446e8e543b4317151",
+      "bytes": 22685
+    },
+    "MSCQ-GN-mainline/relation_audit.py": {
+      "sha256": "77586d9e79eb371822196e37a9ac1697d2d352d6c4eeb9284c1cc5448838328b",
+      "bytes": 8839
+    },
+    "MSCQ-GN-mainline/relation_decay.py": {
+      "sha256": "bb4d890b46c6e09d32bb279b138015f80781a06d782975e75fc3ef15a8a8c4b9",
+      "bytes": 9834
+    },
+    "MSCQ-GN-mainline/RELATION_EXPERIMENT.md": {
+      "sha256": "13281b854b1a29541866bbab27d726aaaf9f9e4b420c9f1017d584c2ea90ca72",
+      "bytes": 13833
+    },
+    "MSCQ-GN-mainline/relation_experiment.py": {
+      "sha256": "76edd1f2936d17f4424191264097208dff9c2cf7ec13b4bf90cf5858219d8991",
+      "bytes": 21698
+    },
+    "MSCQ-GN-mainline/relation_followup.py": {
+      "sha256": "0f7e6fb954f70b41fdc2cc44dd41734b3ef898756c0b40f780fa653333ab4b10",
+      "bytes": 10036
+    },
+    "MSCQ-GN-mainline/relation_mechanism.py": {
+      "sha256": "dbc4a68987d0876cd4629e6580f9644855671881052429d5899f7a25675b340e",
+      "bytes": 18735
+    },
+    "MSCQ-GN-mainline/requirements.txt": {
+      "sha256": "06acfffc0bb4b7ce8404978d07234b656862b625073bb64e8142e6e812886e3a",
+      "bytes": 43
+    },
+    "MSCQ-GN-mainline/run_main_experiments.ps1": {
+      "sha256": "b9d78ad9d0f225951b6fa30b17aa73812ee8dbd0d80a8f320caf4babe2f3faf5",
+      "bytes": 567
+    },
+    "MSCQ-GN-mainline/selection_only_pilot.py": {
+      "sha256": "e156be6fa314b0e8064c9bfb07ebb356327f1e644c0ec6fb2ecc7d6d8311938d",
+      "bytes": 14476
+    },
+    "MSCQ-GN-mainline/self_preservation_pilot.py": {
+      "sha256": "05a89de9e2964195f7d5f5a4ec29c52ec80e0a63c1e306773a7232436cb183cc",
+      "bytes": 17924
+    },
+    "MSCQ-GN-mainline/shared_mapping_seed0_experiment.py": {
+      "sha256": "7ba41ef05ebaea933b5f536ff47a0f3bbee6d2a78091ac96f43ff92b42f3132d",
+      "bytes": 18741
+    },
+    "MSCQ-GN-mainline/snapshot_c_framework.py": {
+      "sha256": "7e2cc9ff271835c83ba876ab781cdb2516ce545fd73e2e900785e6544c1b071f",
+      "bytes": 18356
+    },
+    "MSCQ-GN-mainline/summarize_abide5_tuning_20260928.py": {
+      "sha256": "e823ce37931a88c08c513cc1868dc7b1bd48bcc7decbfc4011ca951061a955b5",
+      "bytes": 31634
+    },
+    "MSCQ-GN-mainline/summarize_abide_fine_tune.py": {
+      "sha256": "93bb218315c41cb95cabee59c66338d9fad5cf809bd82ec21444b33608732785",
+      "bytes": 4131
+    },
+    "MSCQ-GN-mainline/summarize_tad_tuning_20260928.py": {
+      "sha256": "8e6d74db13566c3b344382145e2fa1e8702efb6ef85fb85c93db404dec41f528",
+      "bytes": 27158
+    },
+    "MSCQ-GN-mainline/tad_binary_fine_tune.py": {
+      "sha256": "a465213f90fc889d40d805d026bbb8a0d6dc6b3a032aca44b84aff144cc0ebaf",
+      "bytes": 20236
+    },
+    "MSCQ-GN-mainline/tad_binary_joint_tune.py": {
+      "sha256": "93a09b8734b94d7083a80ed0c7ad50d7bfd40c0d797ac8341375ae1b22905fee",
+      "bytes": 9836
+    },
+    "MSCQ-GN-mainline/tad_binary_loss_tune.py": {
+      "sha256": "c2d867758f70c10d48435532fbda9f140777860f465b4752f8cb508fb0c82b34",
+      "bytes": 31405
+    },
+    "MSCQ-GN-mainline/task_guided_graph_pilot.py": {
+      "sha256": "dfb3c6d8166652ff0894d12ec00885c5152c4c947898a36ccf710379687dd377",
+      "bytes": 17547
+    },
+    "MSCQ-GN-mainline/unimodal_round_experiment.py": {
+      "sha256": "1ff4b89238d03b0fee360e5cfe42b5204cbcb01333f642e2ab36f5371748714a",
+      "bytes": 16039
+    },
+    "MSCQ-GN-mainline/visualize_mapping_parameters.py": {
+      "sha256": "14dacfb2984c78534294581d1e84f9e5ba446add788a4612b7fca839f5fcf1e2",
+      "bytes": 17429
+    },
+    "MSCQ-GN-mainline/Config/c_abide5_transfer.ini": {
+      "sha256": "4480bca5d64d2a5681b983d6c6227c9ef425d5b5b8e3ab6dbadb0c3be93f5353",
+      "bytes": 589
+    },
+    "MSCQ-GN-mainline/Config/c_abide_repair_v1.ini": {
+      "sha256": "ebbbab49c062bb598bbd741b461ecfd87af3d3e28c6c55cf503b770589adcabd",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_A.ini": {
+      "sha256": "33fab4220eb61ec92cbb414126e16654e26f9aa06362ac84903b8e21fba86bb3",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_G.ini": {
+      "sha256": "ebbbab49c062bb598bbd741b461ecfd87af3d3e28c6c55cf503b770589adcabd",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/Config/c_abide_repair_v2_W.ini": {
+      "sha256": "ac9bfb719f276e5883fe160f80c5caefadcee2efc8fb004047cf64f74eeb472a",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/Config/c_abide_transfer.ini": {
+      "sha256": "1c91216058316297c63c9b126279c8fc051bffe57bc865bf09a1043373997985",
+      "bytes": 587
+    },
+    "MSCQ-GN-mainline/Config/c_tadpole_binary_transfer.ini": {
+      "sha256": "7ba713d18888044c805c2123781aa7cd7298e9d7308608f60c6168b36e03dffa",
+      "bytes": 592
+    },
+    "MSCQ-GN-mainline/Config/main_abide.ini": {
+      "sha256": "33e707c31682022cc54864aeed082af2e3bb67d6307f694e9e0099ef6ce5ef7f",
+      "bytes": 567
+    },
+    "MSCQ-GN-mainline/Config/main_abide5.ini": {
+      "sha256": "ee18193f4847bfab8bcfce53536464d8500be3a248ca84284f0c1634b39c2811",
+      "bytes": 569
+    },
+    "MSCQ-GN-mainline/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/Config/main_tadpole_conversion.ini": {
+      "sha256": "7fd758d62ed9606ce29fc9a1f10c6d0bb2ebfa36f5f07ee3c596779337a8a97d",
+      "bytes": 598
+    },
+    "MSCQ-GN-mainline/DATASET/README.md": {
+      "sha256": "55784f5a307629b89ba39a0645b1fc9580901e6f7ce9888e6949ae5b01ee4611",
+      "bytes": 105
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_framework_c_blackwhite.py": {
+      "sha256": "c636d9fd24199cb46d6d072ac269e8e84d4e7315024b49b95244394438bed93b",
+      "bytes": 4592
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_innovation_explainer.py": {
+      "sha256": "29079ae2c2e3c8f7f1b1312dfa0e442d6021c1c3d013c3187a4afb387cceaf29",
+      "bytes": 4671
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/draw_two_innovations.py": {
+      "sha256": "099b2970392067dc44aa897c9c05d7a9c396511c36aad6363526626b80d4c029",
+      "bytes": 5573
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_blackwhite_cn.png": {
+      "sha256": "25e6de8e7d12ea5fccec1570e0c38f2649a4300cd9b19088d6335800d3845ca8",
+      "bytes": 392259
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_innovation_explainer.png": {
+      "sha256": "33dabece5e707df0edcd1681e3aa763f11e22677ba19d1a4bf67af32117314ca",
+      "bytes": 342042
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_innovation_explainer.svg": {
+      "sha256": "ffc110cf1a1a6bb3d71b9435d4ff98795a5f14b219bfc2e83f0ca0beedc229f9",
+      "bytes": 13744
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_revised.png": {
+      "sha256": "4228ffa38c79a93bfc49bad42349430150d8ce2a6311332ee8697d636ef046b1",
+      "bytes": 1865668
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_simplified.png": {
+      "sha256": "8e46a1ba9437cab523bffbfc29a1a169c8a653320a3de6e450a98b12e0e225d2",
+      "bytes": 1600633
+    },
+    "MSCQ-GN-mainline/diagrams/framework_c_20261008/framework_c_two_innovations.png": {
+      "sha256": "f549688a1f76b6e85f555dfc65c0ec9f1edcd68b537fa7e002237300a1849642",
+      "bytes": 312863
+    },
+    "MSCQ-GN-mainline/Loss/loss_fn.py": {
+      "sha256": "e24c0f911b02fd406fec4c95f662ae41ca313ff954fd682f2f44e292528b4678",
+      "bytes": 3387
+    },
+    "MSCQ-GN-mainline/Loss/__init__.py": {
+      "sha256": "4c01462d0d64620556a8afb3efa84333c529d4357a3baff23889c1e8699d87be",
+      "bytes": 32
+    },
+    "MSCQ-GN-mainline/Model/alternating_cooperative.py": {
+      "sha256": "7d43d64aa8a88401e01dfc7cb4b2161f4ab4c9abbd52eafdf36dad653d87789f",
+      "bytes": 4459
+    },
+    "MSCQ-GN-mainline/Model/aux_subset_fusion.py": {
+      "sha256": "82e5fed4928c31152e3eb8fe0334f2b993bdd3ab3cd25e5f578072a0fb2a1a4d",
+      "bytes": 1963
+    },
+    "MSCQ-GN-mainline/Model/branch_fusion.py": {
+      "sha256": "5b9d3a12830d04b8d83e46c9037474746394ea945a443516983b59b4f3c5792e",
+      "bytes": 5348
+    },
+    "MSCQ-GN-mainline/Model/centered_cognitive_residual.py": {
+      "sha256": "97458e39e92e5f8831e33baac70793146e48416e98af7d8ae10fb0bc8945377e",
+      "bytes": 1983
+    },
+    "MSCQ-GN-mainline/Model/cognitive_direct_supervision.py": {
+      "sha256": "7f004765073d33f9904246a91ed04a0a0b408c0ee35dab708e1da6ce58fbdadd",
+      "bytes": 1089
+    },
+    "MSCQ-GN-mainline/Model/cognitive_residual.py": {
+      "sha256": "606bc3c868bcb4c4f6d95f6ea77bc81eeaef91ee2c6c43e8b80aa6b9abf0ccf6",
+      "bytes": 1749
+    },
+    "MSCQ-GN-mainline/Model/c_cross_relation_null.py": {
+      "sha256": "7bea7d41bbfe0c59dc4db8af96d27aa41321171ea81a2bb13b3f64c0747a1a5c",
+      "bytes": 12942
+    },
+    "MSCQ-GN-mainline/Model/c_fuse_first.py": {
+      "sha256": "957a279a6d5cb5724aaec0632b590519985354fc0651cff85cd0e778e338dc83",
+      "bytes": 1643
+    },
+    "MSCQ-GN-mainline/Model/c_mechanism_controls.py": {
+      "sha256": "8323d319267fce92f7d58234eb1c97bccd921c7b6e99866af7ffc9cd36945835",
+      "bytes": 3741
+    },
+    "MSCQ-GN-mainline/Model/fixed_reference.py": {
+      "sha256": "c646fe56222738d3049e83f5eff71c5a7c53586aafd2b4a6238a9d47cc31662c",
+      "bytes": 4671
+    },
+    "MSCQ-GN-mainline/Model/grouped_content_propagation.py": {
+      "sha256": "0c2d5a6b377f481b0d4375302aed1c69ef0e2070457978a23cdc9d0eb697d5ac",
+      "bytes": 7469
+    },
+    "MSCQ-GN-mainline/Model/joint_evidence_routing.py": {
+      "sha256": "6b713774df9401a3ef38edf8c769be2210d063d48a2a2a614bb2997be7ee7f3f",
+      "bytes": 9184
+    },
+    "MSCQ-GN-mainline/Model/late_patient_readout.py": {
+      "sha256": "6d4fa9aa811b22e2f4b57c6f4160bac5a96cf914484b0448527cf663f35e39fb",
+      "bytes": 2294
+    },
+    "MSCQ-GN-mainline/Model/layers.py": {
+      "sha256": "d491d0722a7a06fd5e18bae28ef29bec063e04805cda161cfc441f60f9441b7a",
+      "bytes": 1695
+    },
+    "MSCQ-GN-mainline/Model/learned_topology.py": {
+      "sha256": "83180d0b6babd7e426670a51606b84d827657c17f38b8ce18ff053c8c36c246e",
+      "bytes": 7723
+    },
+    "MSCQ-GN-mainline/Model/matched_shared_mapping_control.py": {
+      "sha256": "e22992f97a4abdddb380099077c363806735c3bfdc72fa3320c18f963637f057",
+      "bytes": 2022
+    },
+    "MSCQ-GN-mainline/Model/modal_evidence.py": {
+      "sha256": "2b1ad7b736003b7bcf812fe69f802aab74dfd224582ae27107fb702d961230f5",
+      "bytes": 9346
+    },
+    "MSCQ-GN-mainline/Model/models.py": {
+      "sha256": "2d8278980ae284f08982178819d761c7abe9ccba758033106e38ff354119bd7f",
+      "bytes": 2231
+    },
+    "MSCQ-GN-mainline/Model/network.py": {
+      "sha256": "fab8b22560425bfeb101b341583800f2d4682ea585e0a6788a6362ac42a9eddf",
+      "bytes": 22533
+    },
+    "MSCQ-GN-mainline/Model/no_content_similarity_control.py": {
+      "sha256": "1eedaa05ce881870d9446543dab74857a53c90addaa20ef9ee0d2cd253824d26",
+      "bytes": 2694
+    },
+    "MSCQ-GN-mainline/Model/own_branch_optimization.py": {
+      "sha256": "b24860a2ed4dde75f99917e755716e528de967dce770114aa08906d3f59fafc5",
+      "bytes": 4771
+    },
+    "MSCQ-GN-mainline/Model/readout_controls.py": {
+      "sha256": "7c22c2c9322d6d7b7a6ce727675c9a2856fe3748c29b9920d5fb03f3d7cce104",
+      "bytes": 13661
+    },
+    "MSCQ-GN-mainline/Model/reciprocity_control.py": {
+      "sha256": "d8b120f05dba8a0a03d5bd94f56d0a5a3a7cf69f9b6a02a8168d1f759acb2517",
+      "bytes": 4471
+    },
+    "MSCQ-GN-mainline/Model/reference_selection.py": {
+      "sha256": "1c9734f50a4f17ac7bac177fbf8a44e618420007d1154042f3425d3b047dc467",
+      "bytes": 6133
+    },
+    "MSCQ-GN-mainline/Model/relation_aggregation.py": {
+      "sha256": "eff114d8a2aa1663d0d61c2539b91d009e61d3df98724266e7a55d716047ce28",
+      "bytes": 5372
+    },
+    "MSCQ-GN-mainline/Model/relation_sheaf.py": {
+      "sha256": "cd19464c63a976a23960f8eb36a8fabb1ca721ecc25552377aeca6eb3a09a58f",
+      "bytes": 12148
+    },
+    "MSCQ-GN-mainline/Model/selection_only.py": {
+      "sha256": "793265042db1d32cb0c14c8f94dd668b9bb772a933cfb27cdc796ea0ae3eb6cb",
+      "bytes": 3727
+    },
+    "MSCQ-GN-mainline/Model/shared_mapping_control.py": {
+      "sha256": "424818f10cae0c25a56670d93988db7ef67aba4559c6681aa574878c70e754ff",
+      "bytes": 3316
+    },
+    "MSCQ-GN-mainline/Model/single_modal_evidence.py": {
+      "sha256": "9a9091883855d8c13ab41e62fad95000bf064747e4cade60cc2100d884543b3b",
+      "bytes": 3032
+    },
+    "MSCQ-GN-mainline/Model/subset_fusion.py": {
+      "sha256": "8746abb8774ed9b6ad7eee2f510f2e5408e09fc06b8713befa3be4313ef6a560",
+      "bytes": 4508
+    },
+    "MSCQ-GN-mainline/Model/task_guided_graph.py": {
+      "sha256": "1162d2f160baa82ec45e8d23722044644b7ae5d814ceb43d4464ee8f3000d1cc",
+      "bytes": 5473
+    },
+    "MSCQ-GN-mainline/Model/__init__.py": {
+      "sha256": "77704b97d51efa2aa435e9f5ac4705924ff537a5d8fc043c0647c44d6abd1a22",
+      "bytes": 28
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/fold_metrics.csv": {
+      "sha256": "3cab6e68c1390896c60903dd12b740194034eeb4d30f2818b59490b409924d4c",
+      "bytes": 38986
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/metrics.csv": {
+      "sha256": "4fb7cab4a1a5bc5c2a7f397b7b655c114ad918dfb7ceeba396248d365f8750f6",
+      "bytes": 3871
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/metrics.json": {
+      "sha256": "3e9cdc960243b5f43b8995537532804d60f292b46657231280eabf990dd1e558",
+      "bytes": 164865
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/requirements-snapshot.txt": {
+      "sha256": "c4d63f61192b28e397682b2095c8c2b0425cabdb971e8d4e21ca2a5d16da1ea8",
+      "bytes": 87
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/A050.ini": {
+      "sha256": "77d3fe03445c3f58478bbc8beed4ef909840ff00014be330b2037f9fb16314e3",
+      "bytes": 711
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/BASE.ini": {
+      "sha256": "b394b384501b7acf52346b1620876ce42711f8a1d6474360e9faade71b552eeb",
+      "bytes": 711
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/D050.ini": {
+      "sha256": "38ead36473c85d2324bc76dd7924543fb5d8c0b058f6cb9ddf73da3ebbd18321",
+      "bytes": 710
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/G005.ini": {
+      "sha256": "4f638a7ce7584a519e4924b15c806ebda347737f85cdc616b398a11d3d55682b",
+      "bytes": 714
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/L0015.ini": {
+      "sha256": "fccdf3a89660c305bb34d4f5f3d0eb945cc8ca69266994d991c2dd27e826d609",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/L003.ini": {
+      "sha256": "e700b0e0b9ebc47534193529cec84fec7225f5a6e9cc94a22c6d7f9f2c2ce4c6",
+      "bytes": 711
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/N005.ini": {
+      "sha256": "95d2ed4eacd5adeddec07ca9e6aae15b8cc25ea2abd2558117ad8cf618297483",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/N015.ini": {
+      "sha256": "68cc696a8d380a812058866c4964bec73019d95fca4283cf8f840c275657b4ae",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/O00001.ini": {
+      "sha256": "2d95d9c4ad74571b09192637be18600a329d113c75f21c478951995eb693ef8b",
+      "bytes": 710
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_DMINUS.ini": {
+      "sha256": "2cd794052c5319e475aace031f38a2b9de02e5ceb5e40ba24ad92d0dcc6bfbc0",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_DPLUS.ini": {
+      "sha256": "1838ac4a9c92fe457345c421cf456b4f7a49d4fa6fefbd9c8c9ec5f095e835bf",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_L080.ini": {
+      "sha256": "197f52de3fafe1bf1e147014882603b945ad324e145a6d98d04eb46ab5d46aa9",
+      "bytes": 713
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_L120.ini": {
+      "sha256": "536bb7a8d398744e2cc23659b4e9270e870f4d5dd8386e2bf0bf702e3f51a888",
+      "bytes": 713
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_N075.ini": {
+      "sha256": "34b02d216c66b6216aa6b8abddff6bdb0c2995b817191582c8b04ec4e4bcd8e1",
+      "bytes": 714
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/R_N125.ini": {
+      "sha256": "0336c7842a2c8b27e85a8a78d324b3c4449dbe95ecff304befc33bbfe1d59ef1",
+      "bytes": 714
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/configs/W002.ini": {
+      "sha256": "efec8052525bfda788e7e002c2fb84328689af7c91281f603a665f8b7f3c272c",
+      "bytes": 710
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_fine_tune_20260928/source_snapshot/Config/c_abide5_transfer.ini": {
+      "sha256": "4480bca5d64d2a5681b983d6c6227c9ef425d5b5b8e3ab6dbadb0c3be93f5353",
+      "bytes": 589
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/A050.ini": {
+      "sha256": "77d3fe03445c3f58478bbc8beed4ef909840ff00014be330b2037f9fb16314e3",
+      "bytes": 711
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/BASE.ini": {
+      "sha256": "b394b384501b7acf52346b1620876ce42711f8a1d6474360e9faade71b552eeb",
+      "bytes": 711
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/N005.ini": {
+      "sha256": "95d2ed4eacd5adeddec07ca9e6aae15b8cc25ea2abd2558117ad8cf618297483",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/configs/N015.ini": {
+      "sha256": "68cc696a8d380a812058866c4964bec73019d95fca4283cf8f840c275657b4ae",
+      "bytes": 712
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide5_tie_completion_20260928/source_snapshot/Config/c_abide5_transfer.ini": {
+      "sha256": "4480bca5d64d2a5681b983d6c6227c9ef425d5b5b8e3ab6dbadb0c3be93f5353",
+      "bytes": 589
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_fine_tune_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": {
+      "sha256": "ac9bfb719f276e5883fe160f80c5caefadcee2efc8fb004047cf64f74eeb472a",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_n1_followup_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": {
+      "sha256": "ac9bfb719f276e5883fe160f80c5caefadcee2efc8fb004047cf64f74eeb472a",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/abide_noise_adaptation_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": {
+      "sha256": "ac9bfb719f276e5883fe160f80c5caefadcee2efc8fb004047cf64f74eeb472a",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/alternating_a1_seeds12_20260924/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/alternating_cooperative_seed0_20260923/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/branch_fusion_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide5_seed0_20260924/source_snapshot/Config/c_abide5_transfer.ini": {
+      "sha256": "4480bca5d64d2a5681b983d6c6227c9ef425d5b5b8e3ab6dbadb0c3be93f5353",
+      "bytes": 589
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v1.ini": {
+      "sha256": "ebbbab49c062bb598bbd741b461ecfd87af3d3e28c6c55cf503b770589adcabd",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_A.ini": {
+      "sha256": "33fab4220eb61ec92cbb414126e16654e26f9aa06362ac84903b8e21fba86bb3",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_G.ini": {
+      "sha256": "ebbbab49c062bb598bbd741b461ecfd87af3d3e28c6c55cf503b770589adcabd",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_abide_repair_v2_20260927/source_snapshot/Config/c_abide_repair_v2_W.ini": {
+      "sha256": "ac9bfb719f276e5883fe160f80c5caefadcee2efc8fb004047cf64f74eeb472a",
+      "bytes": 612
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_cross_relation_null_seed0_20260928/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_d3_fuse_first_seed0_20260925/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_mechanism_controls_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/c_tadpole_binary_seed0_20260924/source_snapshot/Config/c_tadpole_binary_transfer.ini": {
+      "sha256": "7ba713d18888044c805c2123781aa7cd7298e9d7308608f60c6168b36e03dffa",
+      "bytes": 592
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/grouped_content_seed0_20260929/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/relation_aggregation_seed0_20260924/source_snapshot/Config/main_tadpole_3class.ini": {
+      "sha256": "ff3053aa3a71f037e3bf191c6c054542e17dc1d10da212dfbefd00fbdbaabb98",
+      "bytes": 593
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/A025.ini": {
+      "sha256": "f433c6e2fe349da7e49d57fc86b51cba47f9d027e54daa51f2fdc6a1b83c56ce",
+      "bytes": 616
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/BASE.ini": {
+      "sha256": "816b8934fc78ddc23705640f58b83d01c0872d9bd6d9d73c65ad4aa9775b4ec2",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/D050.ini": {
+      "sha256": "568ce166e74d305bdecd17fdae6f5b7e4e8f69aea85dbd7eec0c49b4cb4d9829",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/L0015.ini": {
+      "sha256": "ea99dba8968caf1d1940bc0cb0e36ba3bfe5b0af248cc2493d493558b4413bbb",
+      "bytes": 616
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/L003.ini": {
+      "sha256": "82ee70bff753288c1d40a4838c475c843cea37635fc7e97b1018d02af90a4f75",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/N005.ini": {
+      "sha256": "e24d643c14a44f23801a5128c67c706fa8746a1b173eaecbf62637e4976feb80",
+      "bytes": 616
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/N015.ini": {
+      "sha256": "eb363dc38968816020eb09247d747994a7adefd10dace79ac6843266a7c6f3a5",
+      "bytes": 616
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/O00001.ini": {
+      "sha256": "fcad635990fcaaba28bac5517aaacc35b1e3830ef5b20dfd7db98d7a70e8050f",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_A050.ini": {
+      "sha256": "cd4daef89beba5c786b1bab397ae03a121bbc8eab688ccffaebc74e9dafcff2e",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_L075.ini": {
+      "sha256": "da33c8a5416b44e41ac684f163a8e9b3e7592f976d6205426126e1580e89ff86",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_L125.ini": {
+      "sha256": "9468fcb0c355f9716c8870fc7ec0e20dadd657fcd043cca73a69ed46f50b78d7",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/R_O010.ini": {
+      "sha256": "7cdbcb4d61354c80f9b2a233e57c743024550024902dec338a8eafd979c6e0f3",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/configs/W002.ini": {
+      "sha256": "b83b605b6af56e1b57a692a5386a127bb5e12735a5b4fbca032fb5372ac12238",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_fine_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": {
+      "sha256": "7ba713d18888044c805c2123781aa7cd7298e9d7308608f60c6168b36e03dffa",
+      "bytes": 592
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/BASE.ini": {
+      "sha256": "816b8934fc78ddc23705640f58b83d01c0872d9bd6d9d73c65ad4aa9775b4ec2",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/D050.ini": {
+      "sha256": "568ce166e74d305bdecd17fdae6f5b7e4e8f69aea85dbd7eec0c49b4cb4d9829",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_DN.ini": {
+      "sha256": "210c519f21c0deef3956ff249204958cdf764fb6d5c1b41730a3e22c03942906",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_DW.ini": {
+      "sha256": "41d635b8cde9e08897a7d8e10d92d285ee053eb790b5b8766d7877d18b5b533c",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_LDN.ini": {
+      "sha256": "068783b7fe38b7b233170951295acf605fa366d979601e854ecc915bc1169075",
+      "bytes": 615
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_MID.ini": {
+      "sha256": "112c9581ea228ea517da8a85442d987ed9281d434a61407d371e216c47bec8fa",
+      "bytes": 617
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/J_OW.ini": {
+      "sha256": "f9bb0a85156526bb0aa07c120f704a1c239cf11595e1807a12eb762b2c985aca",
+      "bytes": 613
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/N015.ini": {
+      "sha256": "eb363dc38968816020eb09247d747994a7adefd10dace79ac6843266a7c6f3a5",
+      "bytes": 616
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/O00001.ini": {
+      "sha256": "fcad635990fcaaba28bac5517aaacc35b1e3830ef5b20dfd7db98d7a70e8050f",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/configs/W002.ini": {
+      "sha256": "b83b605b6af56e1b57a692a5386a127bb5e12735a5b4fbca032fb5372ac12238",
+      "bytes": 614
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_joint_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": {
+      "sha256": "7ba713d18888044c805c2123781aa7cd7298e9d7308608f60c6168b36e03dffa",
+      "bytes": 592
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/A050.ini": {
+      "sha256": "87726f1c801da34674a2853338611dc900046395456ab4fb43793171a139fc1d",
+      "bytes": 638
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/A075.ini": {
+      "sha256": "a73deb24dec6666592268e41c0bf1700206d42f8fd0a6028c41336c72acd6fb7",
+      "bytes": 639
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/ANCHOR.ini": {
+      "sha256": "c99733d60cd5e1be76e34c03cd59c317b6236c438833b81adb3255ce4e8ec6d5",
+      "bytes": 638
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/LS000.ini": {
+      "sha256": "b7f09922b80b003e7621d4f59658cb79ecef24a0610a8da90dc02295f1fe8578",
+      "bytes": 637
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/configs/LS002.ini": {
+      "sha256": "ca1732c6b941ae19b325838fc51d0a76c423e05503a6a811af514d84bcbf9c99",
+      "bytes": 638
+    },
+    "MSCQ-GN-mainline/published_results/c_framework_20260929/configs/tad_binary_loss_tune_20260928/source_snapshot/Config/c_tadpole_binary_transfer.ini": {
+      "sha256": "7ba713d18888044c805c2123781aa7cd7298e9d7308608f60c6168b36e03dffa",
+      "bytes": 592
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_C.csv": {
+      "sha256": "5a184befc7b1ff1cda8172d40ce34b3d7b0a02fbed977043feda6a6c9ea10ee3",
+      "bytes": 2255
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_D1.csv": {
+      "sha256": "1dd4c580c821f4a0e16da17377af6d920d7c7012556fffc115b97dd7e86bf7ab",
+      "bytes": 3036
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_D1_SHARED_MAP.csv": {
+      "sha256": "c93a363b0bb8e3ce898f45e51553cba70635f80991f3ebdf312a4405707138dd",
+      "bytes": 3077
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/metrics_SHARED_MAP.csv": {
+      "sha256": "9d3d1f013b21d6a46bf101ff747c3cd88ea79303e779831ccbef60786cde112d",
+      "bytes": 3048
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/summary.json": {
+      "sha256": "bb541dc212fc843c0c08f11e7bd81c72ee20657a297d1fe46f9dedd13b490817",
+      "bytes": 216305
+    },
+    "MSCQ-GN-mainline/published_results/matched_shared_mapping_seed0_20261011/实验结果说明.txt": {
+      "sha256": "daf66806d1c725327cc2c4ca238f1972be85d7bbbdb98888258e4d52dd3b5423",
+      "bytes": 4613
+    },
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/metrics_C.csv": {
+      "sha256": "b55d2135412d19c5c398615454e8f7b5e92396a98da868d7d6a0031d7026f9bd",
+      "bytes": 3938
+    },
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/metrics_NO_CONTENT_SIMILARITY.csv": {
+      "sha256": "8a8faf77dbb413f04f8e0ff5ad20ae6d257c5ea70f6bb04be21d8b5d986e1deb",
+      "bytes": 4881
+    },
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/summary.json": {
+      "sha256": "dedfa53a13f2208e8130ac6e43d1f34ba197685a12d3c8537425c7ae3af23cad",
+      "bytes": 84937
+    },
+    "MSCQ-GN-mainline/published_results/no_content_similarity_seed0_20261011/实验结果说明.txt": {
+      "sha256": "eec949c43e2e4336a0c6d1fde25ea1a5ae13ee919aeb0d953de3c10c5517c8cf",
+      "bytes": 4071
+    },
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/paired_folds.csv": {
+      "sha256": "c3495e8c74a019b34035438684777d791bc75ff0f8bee0238206598da0dba4a3",
+      "bytes": 8347
+    },
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/summary.json": {
+      "sha256": "5b3787fc47293a44d260d98b4e00f3a266ef1b51f2e32332d7a40d6be6070ffc",
+      "bytes": 116800
+    },
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/结果分析.md": {
+      "sha256": "b07c0da30a7abbbf9743309d8f1e163e44581d7a5966dec17f656b1a7d568796",
+      "bytes": 2507
+    },
+    "MSCQ-GN-mainline/published_results/own_branch_optimization_seed0_20261004/进度与结果.md": {
+      "sha256": "051101486fcfa47099d3230ef62407d2d02ac1439dc84089e4dd29fb81841842",
+      "bytes": 1840
+    },
+    "MSCQ-GN-mainline/published_results/readout_controls_seed0_20260929/summary.json": {
+      "sha256": "f7a83cea00c9c29f3a50a3499d0524cc1d6c74a4e2a37c5196a7cdbb1a4cc2f2",
+      "bytes": 78651
+    },
+    "MSCQ-GN-mainline/published_results/readout_controls_seed0_20260929/结果分析.md": {
+      "sha256": "b0e2de09beb57e98d94fbaec2fefe2d29b74e7b346746cd76febc7304f7ece9d",
+      "bytes": 1818
+    },
+    "MSCQ-GN-mainline/published_results/readout_controls_seed0_20260929/进度与结果.md": {
+      "sha256": "f7fc12bfc0ae03209e9d4e92ecbaaa5794c8decd3ab26c1f54bbf1a513ad4e26",
+      "bytes": 1024
+    },
+    "MSCQ-GN-mainline/published_results/reciprocity_seed0_20261003/summary.json": {
+      "sha256": "1385f35f999608fd838fb5efb951e40c4e942ee70f2d79bc56edbe2346588fca",
+      "bytes": 79255
+    },
+    "MSCQ-GN-mainline/published_results/reciprocity_seed0_20261003/结果分析.md": {
+      "sha256": "755ac2616f4c2739e63d5a594fb6c18b294a8860ebe43f4dd7263440c2951f77",
+      "bytes": 2227
+    },
+    "MSCQ-GN-mainline/published_results/reciprocity_seed0_20261003/进度与结果.md": {
+      "sha256": "755ac2616f4c2739e63d5a594fb6c18b294a8860ebe43f4dd7263440c2951f77",
+      "bytes": 2227
+    },
+    "MSCQ-GN-mainline/published_results/shared_mapping_seed0_20261003/summary.json": {
+      "sha256": "7cbe6446a11d57b8dc50a0f847207e7d458a5875ac2775a72047271e39ca0e91",
+      "bytes": 44919
+    },
+    "MSCQ-GN-mainline/published_results/shared_mapping_seed0_20261003/进度与结果.md": {
+      "sha256": "556eee3a33556a8136bd230e1ebe3976569c9d6074cf63daff3e02393e46da40",
+      "bytes": 3329
+    },
+    "MSCQ-GN-mainline/reference_fixed10/README.md": {
+      "sha256": "58335d1ad21d1730c31c6827a7b5c071d82ddcb041a94723dfe73781f2511608",
+      "bytes": 139
+    },
+    "MSCQ-GN-mainline/tests/test_abide_noise_adaptation.py": {
+      "sha256": "66f8846eebad8e2770060914c30270dbf675c510dd20c935bf123fc00a4a701c",
+      "bytes": 2414
+    },
+    "MSCQ-GN-mainline/tests/test_alternating_cooperative.py": {
+      "sha256": "dc65ffd3970ad46eda855182e69280a53938b7ef62810237ae86c2f3eac21632",
+      "bytes": 8598
+    },
+    "MSCQ-GN-mainline/tests/test_aux_subset_fusion.py": {
+      "sha256": "d390ca75ee944979e212dd13992d2a508b9d80c75002414a6699b835c729c17a",
+      "bytes": 4495
+    },
+    "MSCQ-GN-mainline/tests/test_branch_fusion.py": {
+      "sha256": "22546acaa7874beae1946fabc351783f4940c3fc86936a47783dcb0aff80f902",
+      "bytes": 5618
+    },
+    "MSCQ-GN-mainline/tests/test_centered_cognitive_residual.py": {
+      "sha256": "7f6b05330addf7f942a1108f536c8ebfbfcbea2f55b0e53eea3dc6cbfc8f8d03",
+      "bytes": 8079
+    },
+    "MSCQ-GN-mainline/tests/test_cognitive_direct_supervision.py": {
+      "sha256": "a24d55fe975b3460b62731f8a9349775acf49c11f89dd7778d940c29093a4320",
+      "bytes": 7831
+    },
+    "MSCQ-GN-mainline/tests/test_cognitive_residual.py": {
+      "sha256": "cc84dc4d2005f4b43fdd632be1190bf783662660a6959ee1007d74fc84ad2fc2",
+      "bytes": 3844
+    },
+    "MSCQ-GN-mainline/tests/test_c_cross_relation_null.py": {
+      "sha256": "9e82cff1f713ac3ff38cc9fc129f12d215c347dc6675b6bd15b0fa47b3751214",
+      "bytes": 9035
+    },
+    "MSCQ-GN-mainline/tests/test_c_disagreements.py": {
+      "sha256": "53cde83579ffb08f4a8335bfe599cb24d46ac64b481901ef01f16555d96fa983",
+      "bytes": 2399
+    },
+    "MSCQ-GN-mainline/tests/test_c_fuse_first.py": {
+      "sha256": "7d272cbbfe393e35cb00062727387d217d80ad38051fd2814603e3b35b2bcae6",
+      "bytes": 2750
+    },
+    "MSCQ-GN-mainline/tests/test_c_mechanism_controls.py": {
+      "sha256": "38e2bf64553ba8726cc00bd0c7b9c301c957564e5a0fa7e53ea3da6c2e709772",
+      "bytes": 4023
+    },
+    "MSCQ-GN-mainline/tests/test_full_modal_ablation.py": {
+      "sha256": "07a53f9899dc1b98547df8ffa31b535fdee4ec4b7668760e2bfd7031e08bd22d",
+      "bytes": 2753
+    },
+    "MSCQ-GN-mainline/tests/test_grouped_content_propagation.py": {
+      "sha256": "91f474496d863405d6aba6f6a30e52e7ecf0f4f01589016fbf6cbe02bc80da5b",
+      "bytes": 16892
+    },
+    "MSCQ-GN-mainline/tests/test_joint_evidence_routing.py": {
+      "sha256": "67be3e1b8381ba41e8948525127359640c7f96c62e7bace51c5ec46436671767",
+      "bytes": 8339
+    },
+    "MSCQ-GN-mainline/tests/test_late_patient_readout.py": {
+      "sha256": "52cc9f898a5b130abd0e6ed5fe46e36de9f2351d6f0b7869f0717c961c0b0ec5",
+      "bytes": 3502
+    },
+    "MSCQ-GN-mainline/tests/test_learned_topology.py": {
+      "sha256": "ad2692b23008fd2c40086ac7aab2b0656ad497f5637183832169f58e5ac33b12",
+      "bytes": 5116
+    },
+    "MSCQ-GN-mainline/tests/test_matched_shared_mapping_control.py": {
+      "sha256": "73eccf874c39b6ca3e1202d5222cf1be27470dfd78aa0715814fda2e56b49af8",
+      "bytes": 14812
+    },
+    "MSCQ-GN-mainline/tests/test_modal_evidence.py": {
+      "sha256": "4a57057e0072794e4dc5e863ef3049cb29493401bfd08a74e48b18501ecbf807",
+      "bytes": 11726
+    },
+    "MSCQ-GN-mainline/tests/test_modal_pairing.py": {
+      "sha256": "2868dfb371bd1fa08eb083c9791a67d75f2f1805ccafc312d82d80b644d461cf",
+      "bytes": 2410
+    },
+    "MSCQ-GN-mainline/tests/test_no_content_similarity_control.py": {
+      "sha256": "8c384c5ee5f403d0a78090969231bb500960c231efd41705f330587a17bfe564",
+      "bytes": 13127
+    },
+    "MSCQ-GN-mainline/tests/test_own_branch_optimization.py": {
+      "sha256": "ddc3c3b4aa938f240576197b0f57f2a5954dce08687f8d45d75119a4d5f63087",
+      "bytes": 6544
+    },
+    "MSCQ-GN-mainline/tests/test_readout_controls.py": {
+      "sha256": "347a12c9aeab63e931901cc58e57f680bbddc467f9a6b6a2333c67a78f1c8ebc",
+      "bytes": 18970
+    },
+    "MSCQ-GN-mainline/tests/test_reciprocity_control.py": {
+      "sha256": "001bbb09c95822c31510576247d4bfd36976fa6b4f493e1767b105cb38fb217d",
+      "bytes": 7453
+    },
+    "MSCQ-GN-mainline/tests/test_reference_selection.py": {
+      "sha256": "6fdc695b9ce30b15234462a16b03b1ff16076848cc50f5b9ca55ebfc0b868e6a",
+      "bytes": 7554
+    },
+    "MSCQ-GN-mainline/tests/test_reference_selection_space.py": {
+      "sha256": "ae96616ed19dcc841c45e5fcaa5b6262ae94614f1702cc24c4d4b39451602cae",
+      "bytes": 1910
+    },
+    "MSCQ-GN-mainline/tests/test_relation_aggregation.py": {
+      "sha256": "82f587137793fdfafab8b77558a9cde7bfd8d43724014df6d6e3b3d42d6b58e4",
+      "bytes": 6450
+    },
+    "MSCQ-GN-mainline/tests/test_relation_decay.py": {
+      "sha256": "24e914bfae39698885b86f3dc4bc31b617dae295459560da88692a3bab3361f2",
+      "bytes": 4215
+    },
+    "MSCQ-GN-mainline/tests/test_relation_mechanism.py": {
+      "sha256": "ddda51664f30fed958051f34940b2b33e98a47ddbf86092de824bfdd137d6c60",
+      "bytes": 2635
+    },
+    "MSCQ-GN-mainline/tests/test_relation_sheaf.py": {
+      "sha256": "0da23d8dace01dc910ca91012d7da3edaebd544a1a90fff1c210a27dc1086884",
+      "bytes": 12931
+    },
+    "MSCQ-GN-mainline/tests/test_selection_only.py": {
+      "sha256": "42dcb38218408b549f172ada5f000c6d2aa0ff519026afceeaa882e057b3b4c8",
+      "bytes": 6598
+    },
+    "MSCQ-GN-mainline/tests/test_self_preservation.py": {
+      "sha256": "5b2d34d3bc535af6668e77b040ab0593d1ca5f3d9e1a1be85b89668e9e57bb19",
+      "bytes": 4037
+    },
+    "MSCQ-GN-mainline/tests/test_shared_mapping_control.py": {
+      "sha256": "76b74c6c38f165e9da90a7068eaa20c09fd0f87649e496c000c3d2ddd532f039",
+      "bytes": 13904
+    },
+    "MSCQ-GN-mainline/tests/test_single_modal_evidence.py": {
+      "sha256": "737267cff822de35940656bc77dc3c3e7984c5878cb0b8828376976d3b99a3f8",
+      "bytes": 2948
+    },
+    "MSCQ-GN-mainline/tests/test_subset_fusion.py": {
+      "sha256": "53130de2c1d615e2f29e75305e3ccfa3513416988735de134ac12865b47e4792",
+      "bytes": 3596
+    },
+    "MSCQ-GN-mainline/tests/test_task_guided_graph.py": {
+      "sha256": "9bfab3ed3655d91666b11fd66b027c36be5ad29af7c8d19c94b1b153b570e21f",
+      "bytes": 4989
+    },
+    "MSCQ-GN-mainline/Utils/data_load.py": {
+      "sha256": "39e1002de5eff35c525093407ae5ae30657e5ad7e543c039fef1de0c05b85548",
+      "bytes": 4257
+    },
+    "MSCQ-GN-mainline/Utils/graph_diagnostics.py": {
+      "sha256": "b42ce3423916378ead0812e11a79ea516ae6f4ee1ae5767cfcb954ec821324e9",
+      "bytes": 6538
+    },
+    "MSCQ-GN-mainline/Utils/graph_load.py": {
+      "sha256": "70cec177af6f9b2e63f39a213c6595b286c68df9b70ac9c80cb5809a43af483a",
+      "bytes": 1362
+    },
+    "MSCQ-GN-mainline/Utils/modal_pairing.py": {
+      "sha256": "e715e0db0c193b9c0ce508a22f8d010f271ec4b369e07b66a9dadf29339cc653",
+      "bytes": 1999
+    },
+    "MSCQ-GN-mainline/Utils/reference_selection.py": {
+      "sha256": "3a00abec6079c082c7db1f011f77c2fad138fc02fa7440c578de05e1331348a0",
+      "bytes": 5037
+    },
+    "MSCQ-GN-mainline/Utils/relation_optimizer.py": {
+      "sha256": "cabf65dddf7b59310d9cbc74e2eb35053c791eeead08b2eb4d5795da5d9d076e",
+      "bytes": 1525
+    },
+    "MSCQ-GN-mainline/Utils/utils.py": {
+      "sha256": "083870d2f0ed41ae14ddf24801e873055316382c696698f9563b3a2d3fe7e99c",
+      "bytes": 16488
+    },
+    "MSCQ-GN-mainline/Utils/__init__.py": {
+      "sha256": "308ef96c1db472974877684ec06e54916bf6f6206189ac04ffebfa68481ff1d2",
+      "bytes": 199
+    },
+    "README.md": {
+      "sha256": "7c54e80571399d21c0c47e6d8c4735d9bc6078b0565c18fb15b4bffe41e292a1",
+      "bytes": 689
+    },
+    ".gitattributes": {
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+      "bytes": 19
+    }
+  },
+  "verification": {
+    "python_syntax_files": 188,
+    "unit_tests_passed": 53,
+    "suites": [
+      "relation_sheaf",
+      "relation_decay",
+      "readout_controls",
+      "shared_mapping_control",
+      "reciprocity_control",
+      "own_branch_optimization",
+      "matched_shared_mapping_control",
+      "no_content_similarity_control"
+    ],
+    "backends": [
+      "cpu",
+      "cuda"
+    ],
+    "original_snapshot_replay_performed": false
+  }
+}
